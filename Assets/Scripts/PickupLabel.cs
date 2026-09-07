@@ -4,19 +4,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 // Attach to any pickupable object alongside its XR Grab Interactable.
-// Shows a floating "Pick up (ItemName)" 3D text label above the item.
-// The label is parented to the item so it always follows the item's
-// position automatically (handled by Unity's transform hierarchy itself,
-// not per-frame script logic), with its local offset and scale compensated
-// so it sits at a fixed real-world height/size regardless of the item's own
-// scale. Rotation is corrected every frame so it stays upright and facing
-// the camera instead of tumbling with the item. Hides while the item is held.
+// Shows a floating "Pick up (ItemName)" 3D text label above the item, only
+// while a hand/controller is hovering it (close enough or pointed at it) and
+// it isn't currently held. The label is parented to the item so it always
+// follows the item's position automatically (handled by Unity's transform
+// hierarchy itself, not per-frame script logic), with its local offset and
+// scale compensated so it sits at a fixed real-world height/size regardless
+// of the item's own scale. Rotation is corrected every frame so it stays
+// upright and facing the camera instead of tumbling with the item.
 [RequireComponent(typeof(XRBaseInteractable))]
 public class PickupLabel : MonoBehaviour
 {
     [SerializeField] string itemName;
     [SerializeField] float heightAboveObject = 0.16f;
-    [SerializeField] bool hideWhileHeld = true;
     [SerializeField] Color textColor = Color.white;
     [SerializeField] float fontSize = 0.6f;
 
@@ -37,13 +37,16 @@ public class PickupLabel : MonoBehaviour
 
     void OnEnable()
     {
-        if (!hideWhileHeld) return;
+        _interactable.hoverEntered.AddListener(OnHoverEntered);
+        _interactable.hoverExited.AddListener(OnHoverExited);
         _interactable.selectEntered.AddListener(OnSelectEntered);
         _interactable.selectExited.AddListener(OnSelectExited);
     }
 
     void OnDisable()
     {
+        _interactable.hoverEntered.RemoveListener(OnHoverEntered);
+        _interactable.hoverExited.RemoveListener(OnHoverExited);
         _interactable.selectEntered.RemoveListener(OnSelectEntered);
         _interactable.selectExited.RemoveListener(OnSelectExited);
     }
@@ -93,15 +96,18 @@ public class PickupLabel : MonoBehaviour
         text.enableAutoSizing = false; // otherwise TMP recalculates its own "best fit" size and ignores fontSize below
         text.fontSize = fontSize;
         text.ForceMeshUpdate(); // TMP set up via script right after creation doesn't always apply values until forced
+
+        UpdateVisibility(); // starts hidden unless already hovered, via the same logic hover/select events use
     }
 
-    void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        if (_label != null) _label.gameObject.SetActive(false);
-    }
+    void OnHoverEntered(HoverEnterEventArgs args) => UpdateVisibility();
+    void OnHoverExited(HoverExitEventArgs args) => UpdateVisibility();
+    void OnSelectEntered(SelectEnterEventArgs args) => UpdateVisibility();
+    void OnSelectExited(SelectExitEventArgs args) => UpdateVisibility();
 
-    void OnSelectExited(SelectExitEventArgs args)
+    void UpdateVisibility()
     {
-        if (_label != null) _label.gameObject.SetActive(true);
+        if (_label == null) return;
+        _label.gameObject.SetActive(_interactable.isHovered && !_interactable.isSelected);
     }
 }
