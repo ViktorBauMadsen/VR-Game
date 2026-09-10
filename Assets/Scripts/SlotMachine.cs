@@ -10,12 +10,21 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] int betAmount = 10;
     [SerializeField] float payoutDelay = 0.5f;
     [SerializeField] float loseWeight = 79f; // relative chance of no win at all
+    [SerializeField] SlotMachineReels reels;
     [SerializeField] PayoutTier[] winTiers =
     {
         new PayoutTier { label = "Small Win", weight = 15f, payoutMultiplier = 3 },
         new PayoutTier { label = "Big Win", weight = 5f, payoutMultiplier = 8 },
         new PayoutTier { label = "Jackpot", weight = 1f, payoutMultiplier = 20 },
     };
+
+    void Start()
+    {
+        if (reels == null) return;
+        var symbols = new Sprite[winTiers.Length];
+        for (int i = 0; i < winTiers.Length; i++) symbols[i] = winTiers[i].symbol;
+        reels.SetSymbolPool(symbols);
+    }
 
     public void Spin()
     {
@@ -36,9 +45,13 @@ public class SlotMachine : MonoBehaviour
 
     IEnumerator ResolveSpin()
     {
+        // Roll the outcome up front so the reel animation can be timed to
+        // settle on the real result exactly when the payout delay ends.
+        var tier = RollOutcome();
+        if (reels != null) reels.PlaySpin(tier, payoutDelay);
+
         yield return new WaitForSeconds(payoutDelay);
 
-        var tier = RollOutcome();
         if (tier != null)
         {
             int payout = betAmount * tier.payoutMultiplier;
@@ -73,4 +86,5 @@ public class PayoutTier
     public string label = "Win";
     public float weight = 10f;
     public int payoutMultiplier = 2;
+    public Sprite symbol;
 }
