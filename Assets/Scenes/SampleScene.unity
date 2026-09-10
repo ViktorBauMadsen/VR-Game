@@ -621,7 +621,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 83c76f3c2546e4145abfef9aa418b820, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -792,7 +792,7 @@ Transform:
   m_GameObject: {fileID: 35616206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.23, y: 0.88, z: 18.3}
+  m_LocalPosition: {x: -1.36, y: 4.9, z: 18.3}
   m_LocalScale: {x: 0.5669, y: 0.5669, z: 0.5669}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15610,7 +15610,7 @@ MonoBehaviour:
   returnSpeed: 180
   slotMachine: {fileID: 3751193414279120759}
   audioSource: {fileID: 1267303740}
-  pullClip: {fileID: 8300000, guid: d8813a41a7f74aa44872c1f0c31fbbb7, type: 3}
+  pullClip: {fileID: 8300000, guid: 124dea0a84c7ea141864102952a528b2, type: 3}
 --- !u!114 &1267303739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30404,7 +30404,7 @@ MonoBehaviour:
   loseWeight: 60
   reels: {fileID: 3751193414279120761}
   audioSource: {fileID: 3751193414279120762}
-  spinStartClip: {fileID: 8300000, guid: abfc050aed75f7245b0da45203bf942e, type: 3}
+  spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
   winTiers:
   - label: Cherry
     weight: 15
