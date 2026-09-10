@@ -14023,6 +14023,8 @@ GameObject:
   - component: {fileID: 1267303736}
   - component: {fileID: 1267303735}
   - component: {fileID: 1267303734}
+  - component: {fileID: 1267303739}
+  - component: {fileID: 1267303738}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -14119,13 +14121,108 @@ Transform:
   m_GameObject: {fileID: 1267303733}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40152973, y: -0.03914172, z: 0.08671559, w: 0.9108909}
-  m_LocalPosition: {x: -0.454, y: 1.1779999, z: 0.48400116}
-  m_LocalScale: {x: 0.05000001, y: 0.31136304, z: 0.050000004}
+  m_LocalPosition: {x: -0.074, y: 0.286, z: 0.047}
+  m_LocalScale: {x: 0.050000012, y: 0.31136304, z: 0.05000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1740827430}
-  m_Father: {fileID: 261544251235190995}
+  m_Father: {fileID: 1795953320}
   m_LocalEulerAnglesHint: {x: 47.586, y: -0.142, z: 10.814}
+--- !u!114 &1267303738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267303733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9884c1439ff8ee42b56ec24f3ec9c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineLever
+  handle: {fileID: 1795953320}
+  pivot: {fileID: 0}
+  hingeAxis: {x: 1, y: 0, z: 0}
+  invertRotation: 0
+  maxPullAngle: 45
+  maxPullDistance: 0.15
+  pullThreshold: 0.95
+  returnSpeed: 180
+  slotMachine: {fileID: 3751193414279120759}
+--- !u!114 &1267303739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267303733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
 --- !u!1 &1267427208
 GameObject:
   m_ObjectHideFlags: 0
@@ -21139,6 +21236,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1274422953327334844, guid: 865f3ad33d794954a10fb9ae4adbed55, type: 3}
   m_PrefabInstance: {fileID: 1786493235}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1795953319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1795953320}
+  m_Layer: 0
+  m_Name: Hinge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1795953320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795953319}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.37970006, y: 0.95299983, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1267303737}
+  m_Father: {fileID: 261544251235190995}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796117666
 GameObject:
   m_ObjectHideFlags: 0
@@ -25957,7 +26086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1267303737}
+  - {fileID: 1795953320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &334744067587756974
@@ -26559,6 +26688,8 @@ GameObject:
   - component: {fileID: 261544251235190995}
   - component: {fileID: 3751193414279120758}
   - component: {fileID: 1434992145901859772}
+  - component: {fileID: 3751193414279120759}
+  - component: {fileID: 3751193414279120760}
   m_Layer: 0
   m_Name: SlotMachine
   m_TagString: Untagged
@@ -28187,6 +28318,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642574046128181865}
   m_Mesh: {fileID: -384257164455873005, guid: 36adfb5bf65b42d8a08d568bba2c28b6, type: 3}
+--- !u!114 &3751193414279120759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642574046128181865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
+  betAmount: 10
+  loseWeight: 79
+  winTiers:
+  - label: Small Win
+    weight: 15
+    payoutMultiplier: 3
+  - label: Big Win
+    weight: 5
+    payoutMultiplier: 8
+  - label: Jackpot
+    weight: 1
+    payoutMultiplier: 20
+--- !u!65 &3751193414279120760
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642574046128181865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
+  m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
 --- !u!1 &3861258559143363627
 GameObject:
   m_ObjectHideFlags: 0
