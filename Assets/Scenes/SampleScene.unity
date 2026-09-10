@@ -1003,6 +1003,156 @@ Transform:
   - {fileID: 586010451}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &127189099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127189100}
+  - component: {fileID: 127189103}
+  - component: {fileID: 127189102}
+  - component: {fileID: 127189101}
+  m_Layer: 0
+  m_Name: BalanceText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &127189100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127189099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1568671290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -20}
+  m_SizeDelta: {x: 300, y: 60}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &127189101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127189099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f7da23c0e882e4b91c325a978ea9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHUDBalanceDisplay
+--- !u!114 &127189102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127189099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Balance: $1,000'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656bu
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &127189103
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127189099}
+  m_CullTransparentMesh: 1
 --- !u!1 &140837573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,7 +1900,6 @@ GameObject:
   - component: {fileID: 228906040}
   - component: {fileID: 228906039}
   - component: {fileID: 228906038}
-  - component: {fileID: 228906037}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -1775,22 +1924,6 @@ Transform:
   - {fileID: 1746582878}
   m_Father: {fileID: 845594236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &228906037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228906035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &228906038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,7 +2306,6 @@ GameObject:
   - component: {fileID: 280363412}
   - component: {fileID: 280363411}
   - component: {fileID: 280363410}
-  - component: {fileID: 280363409}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -2198,22 +2330,6 @@ Transform:
   - {fileID: 1018126967}
   m_Father: {fileID: 1569251173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &280363409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280363407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &280363410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,7 +2987,6 @@ GameObject:
   - component: {fileID: 368756791}
   - component: {fileID: 368756790}
   - component: {fileID: 368756789}
-  - component: {fileID: 368756788}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -2879,22 +2994,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &368756788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368756787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &368756789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,7 +3227,6 @@ GameObject:
   - component: {fileID: 377774475}
   - component: {fileID: 377774474}
   - component: {fileID: 377774473}
-  - component: {fileID: 377774472}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -3136,22 +3234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &377774472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377774471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &377774473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3426,7 +3508,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568671290}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
 --- !u!1 &410087039
@@ -4087,7 +4172,6 @@ GameObject:
   - component: {fileID: 455042862}
   - component: {fileID: 455042861}
   - component: {fileID: 455042860}
-  - component: {fileID: 455042859}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -4112,22 +4196,6 @@ Transform:
   - {fileID: 1267427209}
   m_Father: {fileID: 845594236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &455042859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455042857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &455042860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4434,7 +4502,6 @@ GameObject:
   - component: {fileID: 467154209}
   - component: {fileID: 467154208}
   - component: {fileID: 467154207}
-  - component: {fileID: 467154206}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -4459,22 +4526,6 @@ Transform:
   - {fileID: 86599390}
   m_Father: {fileID: 928526690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &467154206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 467154204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &467154207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5456,7 +5507,6 @@ GameObject:
   - component: {fileID: 560781022}
   - component: {fileID: 560781021}
   - component: {fileID: 560781020}
-  - component: {fileID: 560781019}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -5464,22 +5514,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &560781019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560781018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &560781020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5893,7 +5927,6 @@ GameObject:
   - component: {fileID: 582075314}
   - component: {fileID: 582075313}
   - component: {fileID: 582075312}
-  - component: {fileID: 582075311}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -5918,22 +5951,6 @@ Transform:
   - {fileID: 1652090543}
   m_Father: {fileID: 928526690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &582075311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582075309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &582075312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7999,7 +8016,6 @@ GameObject:
   - component: {fileID: 746369574}
   - component: {fileID: 746369573}
   - component: {fileID: 746369572}
-  - component: {fileID: 746369571}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -8007,22 +8023,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &746369571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746369570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &746369572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10501,6 +10501,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1767880020610294462, guid: 87901355faa94af491178ea1358f13c9, type: 3}
   m_PrefabInstance: {fileID: 985423416}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &988117686 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 391387958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1014985720
 GameObject:
   m_ObjectHideFlags: 0
@@ -10874,7 +10879,6 @@ GameObject:
   - component: {fileID: 1036041143}
   - component: {fileID: 1036041142}
   - component: {fileID: 1036041141}
-  - component: {fileID: 1036041140}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -10899,22 +10903,6 @@ Transform:
   - {fileID: 491511190}
   m_Father: {fileID: 845594236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1036041140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036041138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1036041141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11243,7 +11231,6 @@ GameObject:
   - component: {fileID: 1042644998}
   - component: {fileID: 1042644997}
   - component: {fileID: 1042644996}
-  - component: {fileID: 1042644995}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -11268,22 +11255,6 @@ Transform:
   - {fileID: 1473155877}
   m_Father: {fileID: 804567190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1042644995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042644993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1042644996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11500,7 +11471,6 @@ GameObject:
   - component: {fileID: 1085267403}
   - component: {fileID: 1085267402}
   - component: {fileID: 1085267401}
-  - component: {fileID: 1085267400}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -11525,22 +11495,6 @@ Transform:
   - {fileID: 2058714062}
   m_Father: {fileID: 1569251173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1085267400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085267398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1085267401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11757,7 +11711,6 @@ GameObject:
   - component: {fileID: 1086098393}
   - component: {fileID: 1086098392}
   - component: {fileID: 1086098391}
-  - component: {fileID: 1086098390}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -11782,22 +11735,6 @@ Transform:
   - {fileID: 1109539490}
   m_Father: {fileID: 1569251173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1086098390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086098388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1086098391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13043,7 +12980,6 @@ GameObject:
   - component: {fileID: 1161515394}
   - component: {fileID: 1161515393}
   - component: {fileID: 1161515392}
-  - component: {fileID: 1161515391}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -13068,22 +13004,6 @@ Transform:
   - {fileID: 896663576}
   m_Father: {fileID: 953503360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1161515391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161515389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1161515392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14398,7 +14318,6 @@ GameObject:
   - component: {fileID: 1282151073}
   - component: {fileID: 1282151072}
   - component: {fileID: 1282151071}
-  - component: {fileID: 1282151070}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -14423,22 +14342,6 @@ Transform:
   - {fileID: 576633528}
   m_Father: {fileID: 953503360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1282151070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282151068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1282151071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15062,7 +14965,6 @@ GameObject:
   - component: {fileID: 1334616747}
   - component: {fileID: 1334616746}
   - component: {fileID: 1334616745}
-  - component: {fileID: 1334616744}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -15087,22 +14989,6 @@ Transform:
   - {fileID: 961027190}
   m_Father: {fileID: 804567190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1334616744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334616742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1334616745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15409,7 +15295,6 @@ GameObject:
   - component: {fileID: 1354731992}
   - component: {fileID: 1354731991}
   - component: {fileID: 1354731990}
-  - component: {fileID: 1354731989}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -15434,22 +15319,6 @@ Transform:
   - {fileID: 678968470}
   m_Father: {fileID: 845594236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1354731989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354731987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1354731990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15778,7 +15647,6 @@ GameObject:
   - component: {fileID: 1386261806}
   - component: {fileID: 1386261805}
   - component: {fileID: 1386261804}
-  - component: {fileID: 1386261803}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -15803,22 +15671,6 @@ Transform:
   - {fileID: 1390705796}
   m_Father: {fileID: 845594236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1386261803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386261801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1386261804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16821,7 +16673,6 @@ GameObject:
   - component: {fileID: 1485061231}
   - component: {fileID: 1485061230}
   - component: {fileID: 1485061229}
-  - component: {fileID: 1485061228}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -16846,22 +16697,6 @@ Transform:
   - {fileID: 154492832}
   m_Father: {fileID: 953503360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1485061228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485061226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1485061229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17140,7 +16975,6 @@ GameObject:
   - component: {fileID: 1501726914}
   - component: {fileID: 1501726913}
   - component: {fileID: 1501726912}
-  - component: {fileID: 1501726911}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -17165,22 +16999,6 @@ Transform:
   - {fileID: 690938555}
   m_Father: {fileID: 804567190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1501726911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501726909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1501726912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17713,7 +17531,6 @@ GameObject:
   - component: {fileID: 1526215751}
   - component: {fileID: 1526215750}
   - component: {fileID: 1526215749}
-  - component: {fileID: 1526215748}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -17738,22 +17555,6 @@ Transform:
   - {fileID: 1768903605}
   m_Father: {fileID: 953503360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1526215748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526215746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1526215749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17970,7 +17771,6 @@ GameObject:
   - component: {fileID: 1554748006}
   - component: {fileID: 1554748005}
   - component: {fileID: 1554748004}
-  - component: {fileID: 1554748003}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -17995,22 +17795,6 @@ Transform:
   - {fileID: 1116410443}
   m_Father: {fileID: 928526690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1554748003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554748001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1554748004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18318,6 +18102,109 @@ LODGroup:
     - renderer: {fileID: 1014985722}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!1 &1568671289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568671290}
+  - component: {fileID: 1568671293}
+  - component: {fileID: 1568671292}
+  - component: {fileID: 1568671291}
+  m_Layer: 0
+  m_Name: PlayerHUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1568671290
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568671289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 127189100}
+  m_Father: {fileID: 988117686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.469, y: -0.516}
+  m_SizeDelta: {x: 800, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1568671291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568671289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1568671292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568671289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1568671293
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568671289}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1569251172
 GameObject:
   m_ObjectHideFlags: 0
@@ -18492,7 +18379,6 @@ GameObject:
   - component: {fileID: 1574340760}
   - component: {fileID: 1574340759}
   - component: {fileID: 1574340758}
-  - component: {fileID: 1574340757}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -18517,22 +18403,6 @@ Transform:
   - {fileID: 933784917}
   m_Father: {fileID: 928526690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1574340757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574340755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1574340758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18749,7 +18619,6 @@ GameObject:
   - component: {fileID: 1582509522}
   - component: {fileID: 1582509521}
   - component: {fileID: 1582509520}
-  - component: {fileID: 1582509519}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -18774,22 +18643,6 @@ Transform:
   - {fileID: 1164344643}
   m_Father: {fileID: 953503360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1582509519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582509517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1582509520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19006,7 +18859,6 @@ GameObject:
   - component: {fileID: 1588005109}
   - component: {fileID: 1588005108}
   - component: {fileID: 1588005107}
-  - component: {fileID: 1588005106}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -19031,22 +18883,6 @@ Transform:
   - {fileID: 1171732186}
   m_Father: {fileID: 953503360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1588005106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1588005104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1588005107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19443,7 +19279,6 @@ GameObject:
   - component: {fileID: 1621439208}
   - component: {fileID: 1621439207}
   - component: {fileID: 1621439206}
-  - component: {fileID: 1621439205}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -19468,22 +19303,6 @@ Transform:
   - {fileID: 565833054}
   m_Father: {fileID: 845594236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1621439205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621439203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1621439206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20811,22 +20630,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746582877}
   m_Mesh: {fileID: -4981589712135874037, guid: 9c1a1919840736d41a3b1a56b73629aa, type: 3}
---- !u!114 &1768777348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7085839117683071351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1768777349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21656,7 +21459,6 @@ GameObject:
   - component: {fileID: 1897682877}
   - component: {fileID: 1897682876}
   - component: {fileID: 1897682875}
-  - component: {fileID: 1897682874}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -21681,22 +21483,6 @@ Transform:
   - {fileID: 902830968}
   m_Father: {fileID: 928526690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1897682874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897682872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1897682875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22003,7 +21789,6 @@ GameObject:
   - component: {fileID: 1900727981}
   - component: {fileID: 1900727980}
   - component: {fileID: 1900727979}
-  - component: {fileID: 1900727978}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -22028,22 +21813,6 @@ Transform:
   - {fileID: 1898249057}
   m_Father: {fileID: 928526690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1900727978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900727976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1900727979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22454,7 +22223,6 @@ GameObject:
   - component: {fileID: 1958913333}
   - component: {fileID: 1958913332}
   - component: {fileID: 1958913331}
-  - component: {fileID: 1958913330}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -22479,22 +22247,6 @@ Transform:
   - {fileID: 458053405}
   m_Father: {fileID: 804567190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1958913330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958913328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1958913331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23050,7 +22802,6 @@ GameObject:
   - component: {fileID: 1998825818}
   - component: {fileID: 1998825817}
   - component: {fileID: 1998825816}
-  - component: {fileID: 1998825815}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -23075,22 +22826,6 @@ Transform:
   - {fileID: 140837574}
   m_Father: {fileID: 1569251173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1998825815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998825813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &1998825816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23690,7 +23425,6 @@ GameObject:
   - component: {fileID: 2043546023}
   - component: {fileID: 2043546022}
   - component: {fileID: 2043546021}
-  - component: {fileID: 2043546020}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -23715,22 +23449,6 @@ Transform:
   - {fileID: 1345947588}
   m_Father: {fileID: 1569251173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2043546020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043546018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &2043546021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24313,6 +24031,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071390224}
   m_Mesh: {fileID: -4355686008444477446, guid: 3b1683d1a64d444b9cc5db66c2641004, type: 3}
+--- !u!1 &2071935231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071935233}
+  - component: {fileID: 2071935232}
+  m_Layer: 0
+  m_Name: PlayerBalance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2071935232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071935231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767a47876fa4aab438d6b68bc6d91b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBalance
+  startingBalance: 1000
+--- !u!4 &2071935233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071935231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077373913
 GameObject:
   m_ObjectHideFlags: 0
@@ -24704,7 +24467,6 @@ GameObject:
   - component: {fileID: 2094897430}
   - component: {fileID: 2094897429}
   - component: {fileID: 2094897428}
-  - component: {fileID: 2094897427}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -24729,22 +24491,6 @@ Transform:
   - {fileID: 1614087718}
   m_Father: {fileID: 1569251173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2094897427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094897425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &2094897428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25074,7 +24820,6 @@ GameObject:
   - component: {fileID: 2113767348}
   - component: {fileID: 2113767347}
   - component: {fileID: 2113767346}
-  - component: {fileID: 2113767345}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -25099,22 +24844,6 @@ Transform:
   - {fileID: 780563779}
   m_Father: {fileID: 804567190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2113767345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113767343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &2113767346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25455,7 +25184,6 @@ GameObject:
   - component: {fileID: 2124551468}
   - component: {fileID: 2124551467}
   - component: {fileID: 2124551466}
-  - component: {fileID: 2124551465}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -25463,22 +25191,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2124551465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124551464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &2124551466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25712,7 +25424,6 @@ GameObject:
   - component: {fileID: 2127010125}
   - component: {fileID: 2127010124}
   - component: {fileID: 2127010123}
-  - component: {fileID: 2127010122}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -25737,22 +25448,6 @@ Transform:
   - {fileID: 2041387639}
   m_Father: {fileID: 804567190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2127010122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127010120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9d3985687bd2c740a3ddd12f2ec1363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickupLabel
-  itemName: Casino Chip
-  heightAboveObject: 0.16
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  fontSize: 0.6
 --- !u!114 &2127010123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29468,7 +29163,6 @@ GameObject:
   - component: {fileID: 7968166210315232292}
   - component: {fileID: 4948777156093964770}
   - component: {fileID: 1768777349}
-  - component: {fileID: 1768777348}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -30399,3 +30093,4 @@ SceneRoots:
   - {fileID: 1482978653}
   - {fileID: 391387958}
   - {fileID: 116873868}
+  - {fileID: 2071935233}
