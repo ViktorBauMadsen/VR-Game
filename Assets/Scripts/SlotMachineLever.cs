@@ -22,6 +22,8 @@ public class SlotMachineLever : MonoBehaviour
     [SerializeField] float pullThreshold = 0.95f;   // fraction of maxPullAngle that counts as "fully pulled"
     [SerializeField] float returnSpeed = 180f;      // degrees/sec spring-back speed after release
     [SerializeField] SlotMachine slotMachine;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip pullClip; // plays once the lever has been pulled far enough to trigger a spin
 
     XRSimpleInteractable _interactable;
     IXRSelectInteractor _grabbingInteractor;
@@ -71,6 +73,7 @@ public class SlotMachineLever : MonoBehaviour
             if (!_hasTriggeredThisPull && _currentAngle >= maxPullAngle * pullThreshold)
             {
                 _hasTriggeredThisPull = true;
+                if (audioSource != null && pullClip != null) audioSource.PlayOneShot(pullClip);
                 if (slotMachine != null) slotMachine.Spin();
             }
         }

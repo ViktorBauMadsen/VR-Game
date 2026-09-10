@@ -11,6 +11,8 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] float payoutDelay = 0.5f;
     [SerializeField] float loseWeight = 60f; // relative chance of no win at all - 40% chance of winning something
     [SerializeField] SlotMachineReels reels;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip spinStartClip; // plays right as the reels start spinning
     [SerializeField] PayoutTier[] winTiers =
     {
         new PayoutTier { label = "Cherry", weight = 15f, payoutMultiplier = 0.5f },
@@ -52,6 +54,7 @@ public class SlotMachine : MonoBehaviour
         // Roll the outcome up front so the reel animation can be timed to
         // settle on the real result exactly when the payout delay ends.
         var tier = RollOutcome();
+        if (audioSource != null && spinStartClip != null) audioSource.PlayOneShot(spinStartClip);
         float extraDelay = 0f;
         if (reels != null)
         {
