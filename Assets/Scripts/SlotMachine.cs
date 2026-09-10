@@ -1,11 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 // Handles the betting/payout logic for a slot machine. Call Spin() to play
-// one round (deducts betAmount from PlayerBalance, then rolls a weighted
-// random outcome against winTiers and pays out if one hits).
+// one round: the bet is deducted immediately, then after payoutDelay
+// (simulating the reels spinning, even without spin visuals yet) a weighted
+// random outcome is rolled against winTiers and paid out if one hits.
 public class SlotMachine : MonoBehaviour
 {
     [SerializeField] int betAmount = 10;
+    [SerializeField] float payoutDelay = 0.5f;
     [SerializeField] float loseWeight = 79f; // relative chance of no win at all
     [SerializeField] PayoutTier[] winTiers =
     {
@@ -27,6 +30,13 @@ public class SlotMachine : MonoBehaviour
             Debug.Log("SlotMachine: not enough balance to spin.");
             return;
         }
+
+        StartCoroutine(ResolveSpin());
+    }
+
+    IEnumerator ResolveSpin()
+    {
+        yield return new WaitForSeconds(payoutDelay);
 
         var tier = RollOutcome();
         if (tier != null)
