@@ -21,9 +21,9 @@ public class SlotMachine : MonoBehaviour
     void Start()
     {
         if (reels == null) return;
-        var symbols = new Sprite[winTiers.Length];
-        for (int i = 0; i < winTiers.Length; i++) symbols[i] = winTiers[i].symbol;
-        reels.SetSymbolPool(symbols);
+        var sprites = new Sprite[winTiers.Length];
+        for (int i = 0; i < winTiers.Length; i++) sprites[i] = winTiers[i].symbol;
+        reels.SetSymbolPool(sprites);
     }
 
     public void Spin()
@@ -48,9 +48,14 @@ public class SlotMachine : MonoBehaviour
         // Roll the outcome up front so the reel animation can be timed to
         // settle on the real result exactly when the payout delay ends.
         var tier = RollOutcome();
-        if (reels != null) reels.PlaySpin(tier, payoutDelay);
+        float extraDelay = 0f;
+        if (reels != null)
+        {
+            reels.PlaySpin(tier, payoutDelay);
+            extraDelay = reels.ExtraSettleDelay; // account for the left-to-right landing cascade
+        }
 
-        yield return new WaitForSeconds(payoutDelay);
+        yield return new WaitForSeconds(payoutDelay + extraDelay);
 
         if (tier != null)
         {
@@ -86,5 +91,5 @@ public class PayoutTier
     public string label = "Win";
     public float weight = 10f;
     public int payoutMultiplier = 2;
-    public Sprite symbol;
+    public Sprite symbol; // the symbol image shown on the reel for this tier
 }

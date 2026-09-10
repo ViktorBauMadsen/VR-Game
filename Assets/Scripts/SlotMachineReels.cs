@@ -1,81 +1,148 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
-// Attach to the slot machine's screen canvas, with 3 Image slots assigned
-// (the visible row). Call PlaySpin to animate a quick symbol flicker and
-// settle on a predetermined outcome: a winning tier shows 3 matching
-// symbols, a loss (tier == null) shows 3 non-matching symbols.
-//
-// The canvas renders via a dedicated off-screen camera into a Render Texture
-// that's applied directly to the slot machine's screen material (see
-// Tools > Setup Slot Machine Screen Render Texture), so there's no separate
-// plane to visually misalign with the mesh. The render camera is only kept
-// enabled while spinning/settling - the Render Texture holds the last
-// rendered frame in between, so the screen keeps showing the result at no
-// ongoing render cost, which matters on standalone VR hardware.
+// Simulates a spinning slot reel using 4 planes that scroll within the
+// vertical bounds of a reference "screen" object (assign screenBounds to
+// that marker object - its Renderer bounds define the top/bottom of the
+// travel range, in world space). While spinning, each plane slides
+// continuously from the top of the screen down to the bottom, briefly
+// hiding to jump back to the top when it reaches the bottom (so the loop
+// doesn't visibly teleport). Planes land in a left-to-right cascade (like a
+// real machine) - each one stops landStagger seconds after the one to its
+// left - sliding smoothly back to its own home position and settling there
+// with the real result color.
 public class SlotMachineReels : MonoBehaviour
 {
-    [SerializeField] Image[] reelSlots = new Image[3];
-    [SerializeField] float spinFlickerInterval = 0.08f;
-    [SerializeField] Camera reelCamera;
+    [SerializeField] Transform[] planes = new Transform[4];
+    [SerializeField] Renderer screenBounds; // defines the top/bottom of the travel range
+    [SerializeField] float scrollSpeed = 0.3f; // units/sec while spinning
+    [SerializeField] float settleSpeed = 1f;   // units/sec when sliding back home at the end
+    [SerializeField] float wrapHideDuration = 0.05f; // brief hide when jumping from bottom back to top
+    [SerializeField] float landStagger = 0.1f; // extra seconds each plane waits, left to right
+
+    Renderer[] _renderers;
+    Vector3[] _homePositions; // world space
+    float[] _hiddenTimer;
+    int[] _leftToRightOrder;
+    float _topY, _bottomY; // world space
 
     Sprite[] _symbolPool;
+    Sprite[] _pendingResults; // one per plane
 
-    public void SetSymbolPool(Sprite[] symbols)
+    // How much longer the last (rightmost) plane takes to settle, beyond
+    // the base spin duration - SlotMachine can add this to its own payout
+    // wait so the money updates in sync with the last reel landing.
+    public float ExtraSettleDelay => Mathf.Max(0, planes.Length - 1) * landStagger;
+
+    void Awake()
     {
-        _symbolPool = symbols;
+        _renderers = new Renderer[planes.Length];
+        _homePositions = new Vector3[planes.Length];
+        _hiddenTimer = new float[planes.Length];
 
-        // Show something on the screen before the first pull, rather than
-        // leaving the Render Texture blank/black.
-        foreach (var slot in reelSlots)
-            if (slot != null) slot.sprite = RandomSymbol();
-        StartCoroutine(RenderOneFrame());
+        for (int i = 0; i < planes.Length; i++)
+        {
+            if (planes[i] == null) continue;
+            _renderers[i] = planes[i].GetComponent<Renderer>();
+            _homePositions[i] = planes[i].position; // world space, avoids any local/parent-rotation conversion
+        }
+
+        // Use the order the planes were assigned in the Inspector directly
+        // (Slot1 = index 0 lands first, etc.) rather than guessing which
+        // world axis is "left" - much more reliable than inferring it.
+        _leftToRightOrder = new int[planes.Length];
+        for (int i = 0; i < planes.Length; i++) _leftToRightOrder[i] = i;
+
+        if (screenBounds != null)
+        {
+            var b = screenBounds.bounds; // already world space
+            _topY = b.max.y;
+            _bottomY = b.min.y;
+        }
+        else
+        {
+            Debug.LogWarning("[SlotMachineReels] screenBounds not assigned - falling back to a small default travel range.");
+            float homeY = _homePositions.Length > 0 ? _homePositions[0].y : 0f;
+            _topY = homeY + 0.1f;
+            _bottomY = homeY - 0.1f;
+        }
     }
 
-    IEnumerator RenderOneFrame()
+    public void SetSymbolPool(Sprite[] sprites)
     {
-        if (reelCamera == null) yield break;
-        reelCamera.enabled = true;
-        // Give the Canvas a few frames to finish its first layout/rebuild
-        // pass before capturing - a freshly-enabled Canvas isn't always
-        // guaranteed to have valid renderable geometry on the very first frame.
-        for (int i = 0; i < 5; i++) yield return null;
-        reelCamera.enabled = false;
+        _symbolPool = sprites;
+        for (int i = 0; i < planes.Length; i++)
+            SetSymbol(i, RandomSymbol());
     }
 
     public void PlaySpin(PayoutTier winningTier, float duration)
     {
         StopAllCoroutines();
-        StartCoroutine(SpinRoutine(winningTier, duration));
+        _pendingResults = winningTier != null ? WinningResults(winningTier) : LosingResults();
+
+        for (int rank = 0; rank < _leftToRightOrder.Length; rank++)
+        {
+            int planeIndex = _leftToRightOrder[rank];
+            float thisDuration = duration + rank * landStagger;
+            StartCoroutine(PlaneSpinRoutine(planeIndex, thisDuration));
+        }
     }
 
-    IEnumerator SpinRoutine(PayoutTier winningTier, float duration)
+    IEnumerator PlaneSpinRoutine(int i, float duration)
     {
-        if (reelCamera != null) reelCamera.enabled = true;
-
         float elapsed = 0f;
         while (elapsed < duration)
         {
-            foreach (var slot in reelSlots)
-                if (slot != null) slot.sprite = RandomSymbol();
-
-            yield return new WaitForSeconds(spinFlickerInterval);
-            elapsed += spinFlickerInterval;
+            ScrollStep(i, Time.deltaTime);
+            elapsed += Time.deltaTime;
+            yield return null;
         }
 
-        Sprite[] finalSymbols = winningTier != null
-            ? new[] { winningTier.symbol, winningTier.symbol, winningTier.symbol }
-            : RandomNonMatchingSymbols();
+        // Slide cleanly back home and settle.
+        if (_renderers[i] != null) _renderers[i].enabled = true;
+        while (planes[i] != null && planes[i].position != _homePositions[i])
+        {
+            planes[i].position = Vector3.MoveTowards(planes[i].position, _homePositions[i], settleSpeed * Time.deltaTime);
+            yield return null;
+        }
+        SetSymbol(i, i < _pendingResults.Length ? _pendingResults[i] : null);
+    }
 
-        for (int i = 0; i < reelSlots.Length && i < finalSymbols.Length; i++)
-            if (reelSlots[i] != null) reelSlots[i].sprite = finalSymbols[i];
+    void ScrollStep(int i, float deltaTime)
+    {
+        if (planes[i] == null) return;
 
-        // Let the camera render a few more frames with the final symbols
-        // before switching it off, so the Render Texture reliably captures
-        // the settled result rather than freezing on a mid-flicker frame.
-        for (int i = 0; i < 5; i++) yield return null;
-        if (reelCamera != null) reelCamera.enabled = false;
+        if (_hiddenTimer[i] > 0f)
+        {
+            _hiddenTimer[i] -= deltaTime;
+            if (_hiddenTimer[i] <= 0f && _renderers[i] != null)
+                _renderers[i].enabled = true;
+            return;
+        }
+
+        var pos = planes[i].position;
+        pos.y -= scrollSpeed * deltaTime;
+
+        if (pos.y < _bottomY)
+        {
+            pos.y = _topY;
+            if (_renderers[i] != null) _renderers[i].enabled = false;
+            _hiddenTimer[i] = wrapHideDuration;
+            SetSymbol(i, RandomSymbol());
+        }
+
+        planes[i].position = pos;
+    }
+
+    void SetSymbol(int index, Sprite sprite)
+    {
+        if (index < 0 || index >= _renderers.Length || _renderers[index] == null || sprite == null) return;
+
+        var mat = _renderers[index].material;
+        var tex = sprite.texture;
+        if (mat.HasProperty("_BaseMap")) mat.SetTexture("_BaseMap", tex);
+        if (mat.HasProperty("_MainTex")) mat.SetTexture("_MainTex", tex);
+        mat.color = Color.white; // let the texture show through undistorted
     }
 
     Sprite RandomSymbol()
@@ -84,15 +151,28 @@ public class SlotMachineReels : MonoBehaviour
         return _symbolPool[Random.Range(0, _symbolPool.Length)];
     }
 
-    Sprite[] RandomNonMatchingSymbols()
+    Sprite[] WinningResults(PayoutTier tier)
     {
-        var result = new Sprite[3];
+        var result = new Sprite[planes.Length];
+        for (int i = 0; i < result.Length; i++) result[i] = tier.symbol;
+        return result;
+    }
+
+    // Independent random symbol per plane, rerolled if they'd accidentally
+    // all match (which would misleadingly look like a win).
+    Sprite[] LosingResults()
+    {
+        var result = new Sprite[planes.Length];
         int guard = 0;
+        bool allMatch;
         do
         {
-            for (int i = 0; i < 3; i++) result[i] = RandomSymbol();
+            for (int i = 0; i < result.Length; i++) result[i] = RandomSymbol();
+            allMatch = true;
+            for (int i = 1; i < result.Length; i++)
+                if (result[i] != result[0]) { allMatch = false; break; }
             guard++;
-        } while (result[0] == result[1] && result[1] == result[2] && guard < 20);
+        } while (allMatch && guard < 20);
         return result;
     }
 }
