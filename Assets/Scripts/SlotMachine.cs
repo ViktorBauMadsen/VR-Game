@@ -9,13 +9,17 @@ public class SlotMachine : MonoBehaviour
 {
     [SerializeField] int betAmount = 10;
     [SerializeField] float payoutDelay = 0.5f;
-    [SerializeField] float loseWeight = 79f; // relative chance of no win at all
+    [SerializeField] float loseWeight = 60f; // relative chance of no win at all - 40% chance of winning something
     [SerializeField] SlotMachineReels reels;
     [SerializeField] PayoutTier[] winTiers =
     {
-        new PayoutTier { label = "Small Win", weight = 15f, payoutMultiplier = 3 },
-        new PayoutTier { label = "Big Win", weight = 5f, payoutMultiplier = 8 },
-        new PayoutTier { label = "Jackpot", weight = 1f, payoutMultiplier = 20 },
+        new PayoutTier { label = "Cherry", weight = 15f, payoutMultiplier = 0.5f },
+        new PayoutTier { label = "Lemon", weight = 10f, payoutMultiplier = 1f },
+        new PayoutTier { label = "Blackberry", weight = 7f, payoutMultiplier = 2f },
+        new PayoutTier { label = "Watermelon", weight = 4f, payoutMultiplier = 4f },
+        new PayoutTier { label = "Bell", weight = 2f, payoutMultiplier = 8f },
+        new PayoutTier { label = "BAR", weight = 1.5f, payoutMultiplier = 15f },
+        new PayoutTier { label = "Seven", weight = 0.5f, payoutMultiplier = 50f },
     };
 
     void Start()
@@ -59,7 +63,7 @@ public class SlotMachine : MonoBehaviour
 
         if (tier != null)
         {
-            int payout = betAmount * tier.payoutMultiplier;
+            int payout = Mathf.RoundToInt(betAmount * tier.payoutMultiplier);
             PlayerBalance.Instance.AddBalance(payout);
             Debug.Log($"SlotMachine: {tier.label}! Won {payout}.");
         }
@@ -90,6 +94,6 @@ public class PayoutTier
 {
     public string label = "Win";
     public float weight = 10f;
-    public int payoutMultiplier = 2;
+    public float payoutMultiplier = 2f;
     public Sprite symbol; // the symbol image shown on the reel for this tier
 }
