@@ -16,7 +16,7 @@ public static class SetupRouletteWheel
     const float OuterRadius = 0.4f;
     const float RotorRadius = 0.28f;
     const int WallSegments = 48;
-    const float WallHeight = 0.06f;
+    const float WallHeight = 0.18f; // tall enough to actually contain a bouncy ball, not just a slow orbiting one
     const float WallThickness = 0.015f;
     const float FloorThickness = 0.02f;
     const int PocketCount = 37;
@@ -26,6 +26,9 @@ public static class SetupRouletteWheel
     const float RotorDiscThickness = 0.03f;
     const float RecessDepth = 0.03f; // how far below the bowl floor the rotor's pocket ring sits
     const float HubHeight = 0.05f;
+    const float PocketRingRadius = 0.24f; // where the walled pocket compartments end - smaller than RotorRadius, leaving a flat unwalled apron the ball crosses first
+    const float RimWallHeight = 0.05f;
+    const float LidHeight = WallHeight + 0.06f; // just above the wall top, not far above it - a lid placed high above a short wall leaves a wide-open gap a bouncy ball can sail sideways through before ever reaching the lid's height
     const float BallRadius = 0.02f;
     const float StandHeight = 0.9f;
     const float StandRadius = 0.2f;
@@ -55,6 +58,7 @@ public static class SetupRouletteWheel
         BuildStand(root.transform, woodMat);
         var rotor = BuildRotor(root.transform, darkMat, darkMat, physMat);
         BuildBowl(root.transform, woodMat, physMat);
+        BuildLid(root.transform, physMat);
         var ballObj = BuildBall(root.transform, ballMat, physMat);
         var buttonObj = BuildSpinButton(root.transform, darkMat, physMat);
 
@@ -157,9 +161,19 @@ public static class SetupRouletteWheel
             fretMaterial, physMat);
         UseConvexMeshCollider(hub);
 
+        // Rim wall - this is what actually contains a bouncy ball; the
+        // height drop alone (RecessDepth) only stops a slow, non-bouncy one.
+        // Sits at PocketRingRadius rather than the full RotorRadius, leaving
+        // a flat, unwalled apron between the two: the ball crosses that
+        // after dropping off the bowl floor, shedding a bit more speed
+        // before it ever reaches a wall, so entry isn't a hard collision.
+        var rimWall = CreateChild("RimWall", rotor.transform);
+        BuildRing(rimWall.transform, "Segment_", WallSegments, PocketRingRadius - WallThickness * 0.5f,
+            WallThickness, RimWallHeight, RimWallHeight * 0.5f, fretMaterial, physMat);
+
         float pocketSize = 360f / PocketCount;
-        float fretMidRadius = (FretInnerRadius + RotorRadius) * 0.5f;
-        float fretLength = RotorRadius - FretInnerRadius;
+        float fretMidRadius = (FretInnerRadius + PocketRingRadius) * 0.5f;
+        float fretLength = PocketRingRadius - FretInnerRadius;
         for (int i = 0; i < PocketCount; i++)
         {
             float angle = (i + 0.5f) * pocketSize;
@@ -172,6 +186,18 @@ public static class SetupRouletteWheel
         }
 
         return rotor;
+    }
+
+    // An invisible flat collider well above the bowl wall, as a backstop in
+    // case a bounce ever gets enough vertical energy to threaten clearing
+    // the wall - no renderer, so it never shows up in-game.
+    static void BuildLid(Transform parent, PhysicsMaterial physMat)
+    {
+        var lid = CreateChild("Lid", parent);
+        lid.transform.localPosition = new Vector3(0f, LidHeight, 0f);
+        var collider = lid.AddComponent<BoxCollider>();
+        collider.size = new Vector3(OuterRadius * 2.2f, 0.02f, OuterRadius * 2.2f);
+        collider.sharedMaterial = physMat;
     }
 
     static GameObject BuildBall(Transform parent, Material ballMaterial, PhysicsMaterial physMat)
@@ -269,22 +295,27 @@ public static class SetupRouletteWheel
         return mat;
     }
 
+    // Always re-applies the tuning values, even if the asset already exists
+    // from an earlier run - these numbers are expected to need iterating on,
+    // and re-running Setup shouldn't require deleting the asset by hand
+    // every time just to pick up a constant change.
     static PhysicsMaterial CreateOrLoadBallPhysicsMaterial()
     {
         var mat = AssetDatabase.LoadAssetAtPath<PhysicsMaterial>(BallPhysMaterialPath);
-        if (mat != null) return mat;
-
-        if (!Directory.Exists(PhysicsFolder)) Directory.CreateDirectory(PhysicsFolder);
-
-        mat = new PhysicsMaterial("RouletteBallSurface")
+        if (mat == null)
         {
-            dynamicFriction = 0.15f,
-            staticFriction = 0.2f,
-            bounciness = 0.3f,
-            frictionCombine = PhysicsMaterialCombine.Average,
-            bounceCombine = PhysicsMaterialCombine.Average
-        };
-        AssetDatabase.CreateAsset(mat, BallPhysMaterialPath);
+            if (!Directory.Exists(PhysicsFolder)) Directory.CreateDirectory(PhysicsFolder);
+            mat = new PhysicsMaterial("RouletteBallSurface");
+            AssetDatabase.CreateAsset(mat, BallPhysMaterialPath);
+        }
+
+        mat.dynamicFriction = 0.15f;
+        mat.staticFriction = 0.2f;
+        mat.bounciness = 0.75f;
+        mat.frictionCombine = PhysicsMaterialCombine.Average;
+        mat.bounceCombine = PhysicsMaterialCombine.Maximum;
+        EditorUtility.SetDirty(mat);
+
         return mat;
     }
 }

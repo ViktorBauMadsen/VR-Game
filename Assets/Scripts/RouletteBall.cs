@@ -21,7 +21,7 @@ public class RouletteBall : MonoBehaviour
     [SerializeField] float settleLinearThreshold = 0.05f;
     [SerializeField] float settleAngularThreshold = 20f; // deg/sec
     [SerializeField] float settleConfirmTime = 1f;
-    [SerializeField] float settlingDamping = 0.85f; // extra velocity decay per FixedUpdate once dropped onto the rotor - real pockets are cushioned and kill momentum fast, unlike bare low-friction plastic
+    [SerializeField] float settlingDamping = 0.995f; // gentle extra decay per FixedUpdate, just a safety net so a degenerate near-frictionless equilibrium can't stall forever - the actual "settles after bouncing around" look now comes from real bounce/friction losses against the pocket walls, so this should stay close to 1
 
     Rigidbody _rb;
     bool _orbiting;
