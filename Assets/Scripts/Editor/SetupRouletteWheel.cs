@@ -293,7 +293,11 @@ public static class SetupRouletteWheel
         Undo.RegisterCreatedObjectUndo(labelObj, "Create Pocket Label");
         labelObj.transform.SetParent(parent, false);
         labelObj.transform.localPosition = dir * radius + Vector3.up * (PocketPlateHeight + 0.001f);
-        labelObj.transform.localRotation = Quaternion.LookRotation(Vector3.up, dir);
+        // TextMeshPro's readable face is its local -Z, not +Z, so "forward"
+        // has to aim down for the text to actually face up toward a
+        // top-down viewer - aiming it up instead (the naive choice) shows
+        // the back of the glyphs, which renders mirrored.
+        labelObj.transform.localRotation = Quaternion.LookRotation(Vector3.down, dir);
 
         var text = labelObj.AddComponent<TextMeshPro>();
         text.alignment = TextAlignmentOptions.Center;
