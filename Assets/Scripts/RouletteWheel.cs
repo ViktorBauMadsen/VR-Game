@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Orchestrates a full roulette spin: the wheel itself never turns - only
-// the ball moves, launched at a random speed/angle to orbit and settle via
-// RouletteBall's physics, then this reads off which pocket it landed in
-// once it's at rest. No betting logic here - Spin() just produces a
-// result, the same way SlotMachine owns bet/payout while SlotMachineReels
-// only handles the visual mechanism.
+// the ball moves. Spin() currently just gives RouletteBall a small push from
+// wherever it's sitting (positioned by hand in the scene) and waits for it
+// to settle, then reads off which pocket it landed in. No betting logic
+// here - Spin() just produces a result, the same way SlotMachine owns
+// bet/payout while SlotMachineReels only handles the visual mechanism.
 public class RouletteWheel : MonoBehaviour
 {
     // Standard European (single-zero) wheel pocket order, clockwise from 0.
@@ -31,8 +31,6 @@ public class RouletteWheel : MonoBehaviour
     // it, so a spin result always matches what's visually under the ball
     // instead of trusting a separate formula to stay in sync with the art.
     [SerializeField] RoulettePocket[] pockets;
-    [SerializeField] Vector2 ballSpeedRange = new Vector2(3.5f, 5.5f);  // m/s
-    [SerializeField] float ballStartRadius = 0.75f;   // orbit radius to launch from - out near the wheel's outer wall
 
     bool _isSpinning;
 
@@ -58,10 +56,7 @@ public class RouletteWheel : MonoBehaviour
     {
         if (_isSpinning || ball == null) return;
         _isSpinning = true;
-
-        float ballSpeed = UnityEngine.Random.Range(ballSpeedRange.x, ballSpeedRange.y);
-        float startAngle = UnityEngine.Random.Range(0f, 360f);
-        ball.Launch(ballStartRadius, ballSpeed, startAngle);
+        ball.Push();
     }
 
     void HandleBallSettled()

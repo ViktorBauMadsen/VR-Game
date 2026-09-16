@@ -97,24 +97,11 @@ public static class SetupRouletteWheel
         var ballObj = BuildBall(root.transform, ballMat, physMat);
         var buttonObj = BuildSpinButton(root.transform, darkMat, physMat);
 
-        float pocketRingRadius = AveragePocketRadius(pockets, root.transform.position);
-
         var wheel = root.AddComponent<RouletteWheel>();
         var wheelSo = new SerializedObject(wheel);
         wheelSo.FindProperty("ball").objectReferenceValue = ballObj.GetComponent<RouletteBall>();
-        wheelSo.FindProperty("ballStartRadius").floatValue = OuterRadius - WallThickness - BallRadius - 0.01f;
         AssignPockets(wheelSo, pockets);
         wheelSo.ApplyModifiedProperties();
-
-        var ballComp = ballObj.GetComponent<RouletteBall>();
-        var ballSo = new SerializedObject(ballComp);
-        ballSo.FindProperty("wheelCenter").objectReferenceValue = root.transform;
-        ballSo.FindProperty("pocketRingRadius").floatValue = pocketRingRadius;
-        // Stay below the Lid this same Setup() builds (at LidHeight) so
-        // Launch()'s downward probe passes through to the real bowl/rotor
-        // surface instead of hitting the lid's underside.
-        ballSo.FindProperty("raycastStartHeight").floatValue = WallHeight + 0.03f;
-        ballSo.ApplyModifiedProperties();
 
         var buttonSo = new SerializedObject(buttonObj.GetComponent<RouletteSpinButton>());
         buttonSo.FindProperty("wheel").objectReferenceValue = wheel;
@@ -126,18 +113,6 @@ public static class SetupRouletteWheel
         Selection.activeGameObject = root;
 
         Debug.Log("Roulette wheel (re)created - if one already existed its scene placement was preserved, otherwise it was created at the world origin. Save the scene, then Play and press the SpinButton (or right-click the RouletteWheel component and choose 'Debug Spin') to test. Note: this rebuilds from scratch, so any manual Inspector tweaks on a previous wheel (spin speed, etc.) were reset to script defaults.");
-    }
-
-    static float AveragePocketRadius(RoulettePocket[] pockets, Vector3 center)
-    {
-        float sum = 0f;
-        foreach (var pocket in pockets)
-        {
-            Vector3 flat = pocket.WorldCenter - center;
-            flat.y = 0f;
-            sum += flat.magnitude;
-        }
-        return sum / pockets.Length;
     }
 
     static void AssignPockets(SerializedObject wheelSo, RoulettePocket[] pockets)
@@ -346,7 +321,7 @@ public static class SetupRouletteWheel
         // with other dynamic bodies, so plain Continuous (not
         // ContinuousDynamic) is enough to catch that against the
         // static/kinematic geometry.
-        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
         ball.AddComponent<RouletteBall>();
         return ball;
