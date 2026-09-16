@@ -17,7 +17,8 @@ using UnityEngine;
 public class RouletteBall : MonoBehaviour
 {
     [SerializeField] Vector3 pushDirection = Vector3.right;
-    [SerializeField] float pushForce = 0.3f; // small on purpose - nudge it into a slow roll first, then increase once that looks right
+    [SerializeField] Vector2 pushForceRange = new Vector2(0.18f, 0.22f); // randomized each spin - a fixed force from a fixed spot is a fixed outcome every time
+    [SerializeField] float pushDirectionJitterDegrees = 15f; // random rotation applied to pushDirection each spin, for the same reason
     [SerializeField] float settleLinearThreshold = 0.05f;
     [SerializeField] float settleAngularThreshold = 20f; // deg/sec
     [SerializeField] float settleConfirmTime = 1f;
@@ -47,7 +48,11 @@ public class RouletteBall : MonoBehaviour
         _rb.isKinematic = false;
         _waitingToSettle = true;
         _restTimer = 0f;
-        _rb.AddForce(pushDirection.normalized * pushForce, ForceMode.Impulse);
+
+        float force = UnityEngine.Random.Range(pushForceRange.x, pushForceRange.y);
+        float jitter = UnityEngine.Random.Range(-pushDirectionJitterDegrees, pushDirectionJitterDegrees);
+        Vector3 dir = Quaternion.Euler(0f, jitter, 0f) * pushDirection.normalized;
+        _rb.AddForce(dir * force, ForceMode.Impulse);
     }
 
     [ContextMenu("Push")]
