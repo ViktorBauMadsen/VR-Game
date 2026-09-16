@@ -18563,7 +18563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RouletteBall
   pushDirection: {x: 1, y: 0, z: 0}
-  pushForceRange: {x: 0.18, y: 0.22}
+  pushForceRange: {x: 0.14, y: 0.2}
   pushDirectionJitterDegrees: 15
   settleLinearThreshold: 0.05
   settleAngularThreshold: 20
