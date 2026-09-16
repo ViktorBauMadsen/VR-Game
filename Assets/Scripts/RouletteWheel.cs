@@ -26,17 +26,14 @@ public class RouletteWheel : MonoBehaviour
 
     public static bool IsRed(int number) => RedNumbers.Contains(number);
 
-    [SerializeField] Transform rotor;
     [SerializeField] RouletteBall ball;
-    // Physical pocket order (index i sits at angle i * 360/37 in the
-    // rotor's local space, same convention SetupRouletteWheel builds the
-    // frets with) - each one is tagged with the number painted on it, so a
-    // spin result always matches what's visually under the ball instead of
-    // trusting a separate formula to stay in sync with the art.
+    // One entry per physical pocket, each tagged with the number painted on
+    // it, so a spin result always matches what's visually under the ball
+    // instead of trusting a separate formula to stay in sync with the art.
     [SerializeField] RoulettePocket[] pockets;
     [SerializeField] Vector2 ballSpeedRange = new Vector2(3.5f, 5.5f);  // m/s
-    [SerializeField] float ballStartRadius = 0.35f;
-    [SerializeField] float ballTrackHeight = 0.02f;
+    [SerializeField] float ballStartRadius = 0.75f;   // orbit radius to launch from - out near the wheel's outer wall
+    [SerializeField] float ballSpawnHeight = 0.35f;   // height above wheelCenter to drop the ball from, clearing the wheelhead's tallest point
 
     bool _isSpinning;
 
@@ -45,9 +42,9 @@ public class RouletteWheel : MonoBehaviour
 
     void Awake()
     {
-        if (rotor == null || ball == null)
+        if (ball == null)
         {
-            Debug.LogWarning("RouletteWheel: rotor or ball not assigned.");
+            Debug.LogWarning("RouletteWheel: ball not assigned.");
             return;
         }
         ball.Settled += HandleBallSettled;
@@ -60,12 +57,12 @@ public class RouletteWheel : MonoBehaviour
 
     public void Spin()
     {
-        if (_isSpinning || rotor == null || ball == null) return;
+        if (_isSpinning || ball == null) return;
         _isSpinning = true;
 
         float ballSpeed = UnityEngine.Random.Range(ballSpeedRange.x, ballSpeedRange.y);
         float startAngle = UnityEngine.Random.Range(0f, 360f);
-        ball.Launch(ballStartRadius, ballSpeed, startAngle, ballTrackHeight);
+        ball.Launch(ballStartRadius, ballSpeed, startAngle, ballSpawnHeight);
     }
 
     void HandleBallSettled()
@@ -78,42 +75,31 @@ public class RouletteWheel : MonoBehaviour
 
     int ReadPocketNumber()
     {
-        if (pockets != null && pockets.Length > 0)
-        {
-            RoulettePocket closest = FindClosestPocket();
-            if (closest != null) return closest.Number;
-        }
+        RoulettePocket closest = FindClosestPocket();
+        if (closest != null) return closest.Number;
 
-        // Fallback for a wheel with no pockets wired up - assumes the
-        // standard evenly-spaced layout SetupRouletteWheel builds.
-        Vector3 local = rotor.InverseTransformPoint(ball.transform.position);
-        float angle = Mathf.Atan2(local.z, local.x) * Mathf.Rad2Deg;
-        if (angle < 0f) angle += 360f;
-        float pocketSize = 360f / WheelOrder.Length;
-        int index = Mathf.RoundToInt(angle / pocketSize) % WheelOrder.Length;
-        return WheelOrder[index];
+        Debug.LogError("RouletteWheel: no pockets wired up - can't read a result.");
+        return 0;
     }
 
-    // Whichever pocket's own position is angularly nearest the ball, rather
-    // than assuming pockets sit on an exact i * (360/37) grid starting at
-    // angle 0 - that only holds for the primitive-built wheel. A hand-built
-    // model can have its pockets at whatever angles they actually are.
+    // Whichever pocket's real (bounds-derived) position is nearest the
+    // ball's, by straight-line distance - simplest thing that works once
+    // the ball is only ever colliding with the wheelhead's own real pocket
+    // walls, and it needs no assumption about pocket spacing/angles at all.
     RoulettePocket FindClosestPocket()
     {
-        Vector3 ballLocal = rotor.InverseTransformPoint(ball.transform.position);
-        float ballAngle = Mathf.Atan2(ballLocal.z, ballLocal.x) * Mathf.Rad2Deg;
+        if (pockets == null || pockets.Length == 0) return null;
 
+        Vector3 ballPos = ball.transform.position;
         RoulettePocket closest = null;
-        float bestDiff = float.MaxValue;
+        float bestDist = float.MaxValue;
         foreach (var pocket in pockets)
         {
             if (pocket == null) continue;
-            Vector3 pocketLocal = rotor.InverseTransformPoint(pocket.WorldCenter);
-            float pocketAngle = Mathf.Atan2(pocketLocal.z, pocketLocal.x) * Mathf.Rad2Deg;
-            float diff = Mathf.Abs(Mathf.DeltaAngle(ballAngle, pocketAngle));
-            if (diff < bestDiff)
+            float dist = Vector3.Distance(ballPos, pocket.WorldCenter);
+            if (dist < bestDist)
             {
-                bestDiff = diff;
+                bestDist = dist;
                 closest = pocket;
             }
         }

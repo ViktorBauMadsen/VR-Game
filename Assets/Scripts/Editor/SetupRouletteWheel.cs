@@ -97,19 +97,20 @@ public static class SetupRouletteWheel
         var ballObj = BuildBall(root.transform, ballMat, physMat);
         var buttonObj = BuildSpinButton(root.transform, darkMat, physMat);
 
+        float pocketRingRadius = AveragePocketRadius(pockets, root.transform.position);
+
         var wheel = root.AddComponent<RouletteWheel>();
         var wheelSo = new SerializedObject(wheel);
-        wheelSo.FindProperty("rotor").objectReferenceValue = rotor.transform;
         wheelSo.FindProperty("ball").objectReferenceValue = ballObj.GetComponent<RouletteBall>();
         wheelSo.FindProperty("ballStartRadius").floatValue = OuterRadius - WallThickness - BallRadius - 0.01f;
-        wheelSo.FindProperty("ballTrackHeight").floatValue = BallRadius;
+        wheelSo.FindProperty("ballSpawnHeight").floatValue = BallRadius;
         AssignPockets(wheelSo, pockets);
         wheelSo.ApplyModifiedProperties();
 
         var ballComp = ballObj.GetComponent<RouletteBall>();
         var ballSo = new SerializedObject(ballComp);
         ballSo.FindProperty("wheelCenter").objectReferenceValue = root.transform;
-        ballSo.FindProperty("rotorRadius").floatValue = RotorRadius;
+        ballSo.FindProperty("pocketRingRadius").floatValue = pocketRingRadius;
         ballSo.ApplyModifiedProperties();
 
         var buttonSo = new SerializedObject(buttonObj.GetComponent<RouletteSpinButton>());
@@ -122,6 +123,18 @@ public static class SetupRouletteWheel
         Selection.activeGameObject = root;
 
         Debug.Log("Roulette wheel (re)created - if one already existed its scene placement was preserved, otherwise it was created at the world origin. Save the scene, then Play and press the SpinButton (or right-click the RouletteWheel component and choose 'Debug Spin') to test. Note: this rebuilds from scratch, so any manual Inspector tweaks on a previous wheel (spin speed, etc.) were reset to script defaults.");
+    }
+
+    static float AveragePocketRadius(RoulettePocket[] pockets, Vector3 center)
+    {
+        float sum = 0f;
+        foreach (var pocket in pockets)
+        {
+            Vector3 flat = pocket.WorldCenter - center;
+            flat.y = 0f;
+            sum += flat.magnitude;
+        }
+        return sum / pockets.Length;
     }
 
     static void AssignPockets(SerializedObject wheelSo, RoulettePocket[] pockets)
