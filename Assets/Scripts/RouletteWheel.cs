@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Orchestrates a full roulette spin: spins the rotor down from a random
-// speed, launches the ball to orbit and settle via RouletteBall's physics,
-// then reads off which pocket it landed in once it's at rest. No betting
-// logic here - Spin() just produces a result, the same way SlotMachine owns
-// bet/payout while SlotMachineReels only handles the visual mechanism.
+// Orchestrates a full roulette spin: the wheel itself never turns - only
+// the ball moves, launched at a random speed/angle to orbit and settle via
+// RouletteBall's physics, then this reads off which pocket it landed in
+// once it's at rest. No betting logic here - Spin() just produces a
+// result, the same way SlotMachine owns bet/payout while SlotMachineReels
+// only handles the visual mechanism.
 public class RouletteWheel : MonoBehaviour
 {
     // Standard European (single-zero) wheel pocket order, clockwise from 0.
@@ -33,15 +34,10 @@ public class RouletteWheel : MonoBehaviour
     // spin result always matches what's visually under the ball instead of
     // trusting a separate formula to stay in sync with the art.
     [SerializeField] RoulettePocket[] pockets;
-    [SerializeField] float rotorSpinDuration = 8f;                      // seconds to coast to a stop
-    [SerializeField] Vector2 rotorSpeedRange = new Vector2(180f, 320f); // deg/sec
     [SerializeField] Vector2 ballSpeedRange = new Vector2(3.5f, 5.5f);  // m/s
     [SerializeField] float ballStartRadius = 0.35f;
     [SerializeField] float ballTrackHeight = 0.02f;
 
-    Rigidbody _rotorRb;
-    float _rotorAngularSpeed;
-    float _rotorDecelRate;
     bool _isSpinning;
 
     public bool IsSpinning => _isSpinning;
@@ -54,7 +50,6 @@ public class RouletteWheel : MonoBehaviour
             Debug.LogWarning("RouletteWheel: rotor or ball not assigned.");
             return;
         }
-        _rotorRb = rotor.GetComponent<Rigidbody>();
         ball.Settled += HandleBallSettled;
     }
 
@@ -68,21 +63,9 @@ public class RouletteWheel : MonoBehaviour
         if (_isSpinning || rotor == null || ball == null) return;
         _isSpinning = true;
 
-        _rotorAngularSpeed = UnityEngine.Random.Range(rotorSpeedRange.x, rotorSpeedRange.y);
-        _rotorDecelRate = _rotorAngularSpeed / rotorSpinDuration;
-
         float ballSpeed = UnityEngine.Random.Range(ballSpeedRange.x, ballSpeedRange.y);
         float startAngle = UnityEngine.Random.Range(0f, 360f);
         ball.Launch(ballStartRadius, ballSpeed, startAngle, ballTrackHeight);
-    }
-
-    void FixedUpdate()
-    {
-        if (_rotorAngularSpeed <= 0f || _rotorRb == null) return;
-
-        _rotorAngularSpeed = Mathf.MoveTowards(_rotorAngularSpeed, 0f, _rotorDecelRate * Time.fixedDeltaTime);
-        Quaternion delta = Quaternion.Euler(0f, _rotorAngularSpeed * Time.fixedDeltaTime, 0f);
-        _rotorRb.MoveRotation(_rotorRb.rotation * delta);
     }
 
     void HandleBallSettled()
@@ -125,7 +108,7 @@ public class RouletteWheel : MonoBehaviour
         foreach (var pocket in pockets)
         {
             if (pocket == null) continue;
-            Vector3 pocketLocal = rotor.InverseTransformPoint(pocket.transform.position);
+            Vector3 pocketLocal = rotor.InverseTransformPoint(pocket.WorldCenter);
             float pocketAngle = Mathf.Atan2(pocketLocal.z, pocketLocal.x) * Mathf.Rad2Deg;
             float diff = Mathf.Abs(Mathf.DeltaAngle(ballAngle, pocketAngle));
             if (diff < bestDiff)
