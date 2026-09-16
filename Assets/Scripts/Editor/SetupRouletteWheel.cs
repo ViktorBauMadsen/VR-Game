@@ -14,8 +14,12 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // exists to avoid hand-placing 37 pockets.
 public static class SetupRouletteWheel
 {
-    const float OuterRadius = 0.4f;
-    const float RotorRadius = 0.28f;
+    // Sized so a single pocket (chord ~5.3cm at PocketChordFactor) is
+    // comfortably wider than the ball (4cm) - at the original 0.4/0.28/0.24
+    // scale a pocket was only ~2.3cm, so the ball straddled several
+    // sections at once instead of visibly settling into one.
+    const float OuterRadius = 0.73f;
+    const float RotorRadius = 0.65f; // close to OuterRadius so the wood floor ring reads as a thin rim, not a dominant band
     const int WallSegments = 48;
     const float WallHeight = 0.18f; // tall enough to actually contain a bouncy ball, not just a slow orbiting one
     const float WallThickness = 0.015f;
@@ -23,16 +27,16 @@ public static class SetupRouletteWheel
     const int PocketCount = 37;
     const float FretHeight = 0.035f;
     const float FretThickness = 0.006f;
-    const float FretInnerRadius = 0.05f;
+    const float FretInnerRadius = 0.06f; // small hub, so most of the radius goes to the pockets themselves
     const float RotorDiscThickness = 0.03f;
     const float RecessDepth = 0.03f; // how far below the bowl floor the rotor's pocket ring sits
     const float HubHeight = 0.05f;
-    const float PocketRingRadius = 0.24f; // where the walled pocket compartments end - smaller than RotorRadius, leaving a flat unwalled apron the ball crosses first
+    const float PocketRingRadius = 0.62f; // where the walled pocket compartments end - smaller than RotorRadius, leaving a flat unwalled apron the ball crosses first
     const float RimWallHeight = 0.05f;
     const float LidHeight = WallHeight + 0.06f; // just above the wall top, not far above it - a lid placed high above a short wall leaves a wide-open gap a bouncy ball can sail sideways through before ever reaching the lid's height
     const float BallRadius = 0.02f;
     const float StandHeight = 0.9f;
-    const float StandRadius = 0.2f;
+    const float StandRadius = 0.37f; // scaled up with OuterRadius so the pedestal still looks like it's actually holding the (now much bigger) wheel up
 
     // Pocket number/color decals sitting on top of the rotor disc, between
     // the frets - purely visual, so the ball never touches them.
@@ -51,11 +55,24 @@ public static class SetupRouletteWheel
     [MenuItem("Tools/Setup Roulette Wheel")]
     static void Setup()
     {
+        // Every dimension (bowl, rotor, frets, stand...) is derived from the
+        // constants above, so short of hand-patching dozens of child
+        // transforms the only reliable way to pick up a constant change is
+        // to rebuild the whole thing - preserving wherever the old one was
+        // placed in the scene so a re-run doesn't punt it back to the origin.
+        Transform existingParent = null;
+        Vector3 localPos = new Vector3(0f, StandHeight, 0f);
+        Quaternion localRot = Quaternion.identity;
+        Vector3 localScale = Vector3.one;
+
         var existingRoot = GameObject.Find("RouletteWheel");
         if (existingRoot != null)
         {
-            UpgradePockets(existingRoot);
-            return;
+            existingParent = existingRoot.transform.parent;
+            localPos = existingRoot.transform.localPosition;
+            localRot = existingRoot.transform.localRotation;
+            localScale = existingRoot.transform.localScale;
+            Undo.DestroyObjectImmediate(existingRoot);
         }
 
         var woodMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Table.mat");
@@ -67,7 +84,10 @@ public static class SetupRouletteWheel
 
         var root = new GameObject("RouletteWheel");
         Undo.RegisterCreatedObjectUndo(root, "Create Roulette Wheel");
-        root.transform.position = new Vector3(0f, StandHeight, 0f);
+        root.transform.SetParent(existingParent, false);
+        root.transform.localPosition = localPos;
+        root.transform.localRotation = localRot;
+        root.transform.localScale = localScale;
 
         BuildStand(root.transform, woodMat);
         var rotor = BuildRotor(root.transform, darkMat, darkMat, physMat);
@@ -101,35 +121,7 @@ public static class SetupRouletteWheel
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         Selection.activeGameObject = root;
 
-        Debug.Log("Roulette wheel created at the world origin - reposition it into the casino layout, save the scene, then Play and press the SpinButton (or right-click the RouletteWheel component and choose 'Debug Spin') to test.");
-    }
-
-    // Re-running the menu item on a scene that already has a RouletteWheel
-    // (e.g. one built before pockets existed) adds/refreshes the 37
-    // numbered, colored pocket sections on it in place rather than erroring
-    // out - existing tuning on the rest of the wheel is left untouched.
-    static void UpgradePockets(GameObject root)
-    {
-        var wheel = root.GetComponent<RouletteWheel>();
-        var rotorTransform = root.transform.Find("Rotor");
-        if (wheel == null || rotorTransform == null)
-        {
-            Debug.LogError("SetupRouletteWheel: found a 'RouletteWheel' object but it's missing the RouletteWheel component or a 'Rotor' child - can't add pockets to it.");
-            return;
-        }
-
-        var darkMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Black.mat");
-        var redMat = CreateOrLoadColorMaterial(RedMaterialPath, "RouletteRed", RedColor);
-        var greenMat = CreateOrLoadColorMaterial(GreenMaterialPath, "RouletteGreen", GreenColor);
-
-        var pockets = BuildPockets(rotorTransform, darkMat, redMat, greenMat);
-
-        var wheelSo = new SerializedObject(wheel);
-        AssignPockets(wheelSo, pockets);
-        wheelSo.ApplyModifiedProperties();
-
-        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-        Debug.Log("SetupRouletteWheel: added/updated 37 numbered, colored pockets on the existing RouletteWheel.");
+        Debug.Log("Roulette wheel (re)created - if one already existed its scene placement was preserved, otherwise it was created at the world origin. Save the scene, then Play and press the SpinButton (or right-click the RouletteWheel component and choose 'Debug Spin') to test. Note: this rebuilds from scratch, so any manual Inspector tweaks on a previous wheel (spin speed, etc.) were reset to script defaults.");
     }
 
     static void AssignPockets(SerializedObject wheelSo, RoulettePocket[] pockets)

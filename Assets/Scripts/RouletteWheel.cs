@@ -95,17 +95,46 @@ public class RouletteWheel : MonoBehaviour
 
     int ReadPocketNumber()
     {
+        if (pockets != null && pockets.Length > 0)
+        {
+            RoulettePocket closest = FindClosestPocket();
+            if (closest != null) return closest.Number;
+        }
+
+        // Fallback for a wheel with no pockets wired up - assumes the
+        // standard evenly-spaced layout SetupRouletteWheel builds.
         Vector3 local = rotor.InverseTransformPoint(ball.transform.position);
         float angle = Mathf.Atan2(local.z, local.x) * Mathf.Rad2Deg;
         if (angle < 0f) angle += 360f;
-
         float pocketSize = 360f / WheelOrder.Length;
         int index = Mathf.RoundToInt(angle / pocketSize) % WheelOrder.Length;
-
-        if (pockets != null && pockets.Length == WheelOrder.Length && pockets[index] != null)
-            return pockets[index].Number;
-
         return WheelOrder[index];
+    }
+
+    // Whichever pocket's own position is angularly nearest the ball, rather
+    // than assuming pockets sit on an exact i * (360/37) grid starting at
+    // angle 0 - that only holds for the primitive-built wheel. A hand-built
+    // model can have its pockets at whatever angles they actually are.
+    RoulettePocket FindClosestPocket()
+    {
+        Vector3 ballLocal = rotor.InverseTransformPoint(ball.transform.position);
+        float ballAngle = Mathf.Atan2(ballLocal.z, ballLocal.x) * Mathf.Rad2Deg;
+
+        RoulettePocket closest = null;
+        float bestDiff = float.MaxValue;
+        foreach (var pocket in pockets)
+        {
+            if (pocket == null) continue;
+            Vector3 pocketLocal = rotor.InverseTransformPoint(pocket.transform.position);
+            float pocketAngle = Mathf.Atan2(pocketLocal.z, pocketLocal.x) * Mathf.Rad2Deg;
+            float diff = Mathf.Abs(Mathf.DeltaAngle(ballAngle, pocketAngle));
+            if (diff < bestDiff)
+            {
+                bestDiff = diff;
+                closest = pocket;
+            }
+        }
+        return closest;
     }
 
     [ContextMenu("Debug Spin")]
