@@ -1,4 +1,5 @@
 using System.IO;
+using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -33,16 +34,27 @@ public static class SetupRouletteWheel
     const float StandHeight = 0.9f;
     const float StandRadius = 0.2f;
 
+    // Pocket number/color decals sitting on top of the rotor disc, between
+    // the frets - purely visual, so the ball never touches them.
+    const float PocketPlateHeight = 0.002f;
+    const float PocketChordFactor = 0.92f; // shrink below the full pocket width so a sliver of the fret divider still shows
+    const float PocketFontSizeMax = 6f;
+
     const string PhysicsFolder = "Assets/Physics";
     const string BallMaterialPath = "Assets/Materials/RouletteBall.mat";
     const string BallPhysMaterialPath = "Assets/Physics/RouletteBallSurface.physicMaterial";
+    const string RedMaterialPath = "Assets/Materials/RouletteRed.mat";
+    const string GreenMaterialPath = "Assets/Materials/RouletteGreen.mat";
+    static readonly Color RedColor = new Color(0.72f, 0.04f, 0.04f);
+    static readonly Color GreenColor = new Color(0.02f, 0.42f, 0.16f);
 
     [MenuItem("Tools/Setup Roulette Wheel")]
     static void Setup()
     {
-        if (GameObject.Find("RouletteWheel") != null)
+        var existingRoot = GameObject.Find("RouletteWheel");
+        if (existingRoot != null)
         {
-            Debug.LogError("SetupRouletteWheel: a 'RouletteWheel' already exists in the open scene.");
+            UpgradePockets(existingRoot);
             return;
         }
 
@@ -50,6 +62,8 @@ public static class SetupRouletteWheel
         var darkMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Black.mat");
         var ballMat = CreateOrLoadWhiteMaterial();
         var physMat = CreateOrLoadBallPhysicsMaterial();
+        var redMat = CreateOrLoadColorMaterial(RedMaterialPath, "RouletteRed", RedColor);
+        var greenMat = CreateOrLoadColorMaterial(GreenMaterialPath, "RouletteGreen", GreenColor);
 
         var root = new GameObject("RouletteWheel");
         Undo.RegisterCreatedObjectUndo(root, "Create Roulette Wheel");
@@ -57,6 +71,7 @@ public static class SetupRouletteWheel
 
         BuildStand(root.transform, woodMat);
         var rotor = BuildRotor(root.transform, darkMat, darkMat, physMat);
+        var pockets = BuildPockets(rotor.transform, darkMat, redMat, greenMat);
         BuildBowl(root.transform, woodMat, physMat);
         BuildLid(root.transform, physMat);
         var ballObj = BuildBall(root.transform, ballMat, physMat);
@@ -68,6 +83,7 @@ public static class SetupRouletteWheel
         wheelSo.FindProperty("ball").objectReferenceValue = ballObj.GetComponent<RouletteBall>();
         wheelSo.FindProperty("ballStartRadius").floatValue = OuterRadius - WallThickness - BallRadius - 0.01f;
         wheelSo.FindProperty("ballTrackHeight").floatValue = BallRadius;
+        AssignPockets(wheelSo, pockets);
         wheelSo.ApplyModifiedProperties();
 
         var ballComp = ballObj.GetComponent<RouletteBall>();
@@ -86,6 +102,42 @@ public static class SetupRouletteWheel
         Selection.activeGameObject = root;
 
         Debug.Log("Roulette wheel created at the world origin - reposition it into the casino layout, save the scene, then Play and press the SpinButton (or right-click the RouletteWheel component and choose 'Debug Spin') to test.");
+    }
+
+    // Re-running the menu item on a scene that already has a RouletteWheel
+    // (e.g. one built before pockets existed) adds/refreshes the 37
+    // numbered, colored pocket sections on it in place rather than erroring
+    // out - existing tuning on the rest of the wheel is left untouched.
+    static void UpgradePockets(GameObject root)
+    {
+        var wheel = root.GetComponent<RouletteWheel>();
+        var rotorTransform = root.transform.Find("Rotor");
+        if (wheel == null || rotorTransform == null)
+        {
+            Debug.LogError("SetupRouletteWheel: found a 'RouletteWheel' object but it's missing the RouletteWheel component or a 'Rotor' child - can't add pockets to it.");
+            return;
+        }
+
+        var darkMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Black.mat");
+        var redMat = CreateOrLoadColorMaterial(RedMaterialPath, "RouletteRed", RedColor);
+        var greenMat = CreateOrLoadColorMaterial(GreenMaterialPath, "RouletteGreen", GreenColor);
+
+        var pockets = BuildPockets(rotorTransform, darkMat, redMat, greenMat);
+
+        var wheelSo = new SerializedObject(wheel);
+        AssignPockets(wheelSo, pockets);
+        wheelSo.ApplyModifiedProperties();
+
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        Debug.Log("SetupRouletteWheel: added/updated 37 numbered, colored pockets on the existing RouletteWheel.");
+    }
+
+    static void AssignPockets(SerializedObject wheelSo, RoulettePocket[] pockets)
+    {
+        var prop = wheelSo.FindProperty("pockets");
+        prop.arraySize = pockets.Length;
+        for (int i = 0; i < pockets.Length; i++)
+            prop.GetArrayElementAtIndex(i).objectReferenceValue = pockets[i];
     }
 
     static void BuildStand(Transform parent, Material material)
@@ -188,6 +240,72 @@ public static class SetupRouletteWheel
         return rotor;
     }
 
+    // One colored plate + number label per pocket, positioned in the exact
+    // same angle*index layout the frets use (angle = i * pocketSize, so
+    // pocket i sits centered between the dividers at (i-0.5) and
+    // (i+0.5) * pocketSize). Each plate carries a RoulettePocket so
+    // RouletteWheel can read the number straight off the section the ball
+    // lands in instead of recomputing it from a parallel formula.
+    static RoulettePocket[] BuildPockets(Transform rotor, Material blackMaterial, Material redMaterial, Material greenMaterial)
+    {
+        var existing = rotor.Find("Pockets");
+        if (existing != null) Undo.DestroyObjectImmediate(existing.gameObject);
+
+        var pocketsRoot = CreateChild("Pockets", rotor);
+
+        var order = RouletteWheel.WheelOrder;
+        float pocketSize = 360f / order.Length;
+        float midRadius = (FretInnerRadius + PocketRingRadius) * 0.5f;
+        float radialLength = PocketRingRadius - FretInnerRadius;
+        float chord = 2f * midRadius * Mathf.Sin(pocketSize * Mathf.Deg2Rad * 0.5f) * PocketChordFactor;
+
+        var pockets = new RoulettePocket[order.Length];
+        for (int i = 0; i < order.Length; i++)
+        {
+            int number = order[i];
+            Material plateMat = number == 0 ? greenMaterial : (RouletteWheel.IsRed(number) ? redMaterial : blackMaterial);
+
+            float angle = i * pocketSize;
+            Vector3 dir = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), 0f, Mathf.Sin(angle * Mathf.Deg2Rad));
+            Vector3 platePos = dir * midRadius + Vector3.up * (PocketPlateHeight * 0.5f);
+            Quaternion plateRot = Quaternion.FromToRotation(Vector3.right, dir);
+
+            var plate = CreatePrimitiveChild(PrimitiveType.Cube, $"Pocket_{i}_{number}", pocketsRoot.transform,
+                platePos, plateRot, new Vector3(radialLength, PocketPlateHeight, chord), plateMat, null);
+            Object.DestroyImmediate(plate.GetComponent<Collider>()); // decal only - the ball must never touch it
+
+            var pocket = plate.AddComponent<RoulettePocket>();
+            pocket.Number = number;
+            pockets[i] = pocket;
+
+            BuildPocketLabel(pocketsRoot.transform, i, number, dir, midRadius, chord);
+        }
+
+        return pockets;
+    }
+
+    // Lies the number flat on top of its pocket, facing up, with the top of
+    // the digit pointing radially outward (the way numbers read on a real
+    // wheel when standing at the table looking in).
+    static void BuildPocketLabel(Transform parent, int index, int number, Vector3 dir, float radius, float boxSize)
+    {
+        var labelObj = new GameObject($"Label_{index}_{number}");
+        Undo.RegisterCreatedObjectUndo(labelObj, "Create Pocket Label");
+        labelObj.transform.SetParent(parent, false);
+        labelObj.transform.localPosition = dir * radius + Vector3.up * (PocketPlateHeight + 0.001f);
+        labelObj.transform.localRotation = Quaternion.LookRotation(Vector3.up, dir);
+
+        var text = labelObj.AddComponent<TextMeshPro>();
+        text.alignment = TextAlignmentOptions.Center;
+        text.text = number.ToString();
+        text.color = Color.white;
+        text.enableAutoSizing = true;
+        text.fontSizeMin = 0.5f;
+        text.fontSizeMax = PocketFontSizeMax;
+        text.rectTransform.sizeDelta = new Vector2(boxSize * 0.9f, boxSize * 0.9f);
+        text.ForceMeshUpdate();
+    }
+
     // An invisible flat collider well above the bowl wall, as a backstop in
     // case a bounce ever gets enough vertical energy to threaten clearing
     // the wall - no renderer, so it never shows up in-game.
@@ -285,13 +403,18 @@ public static class SetupRouletteWheel
 
     static Material CreateOrLoadWhiteMaterial()
     {
-        var mat = AssetDatabase.LoadAssetAtPath<Material>(BallMaterialPath);
+        return CreateOrLoadColorMaterial(BallMaterialPath, "RouletteBall", Color.white);
+    }
+
+    static Material CreateOrLoadColorMaterial(string path, string name, Color color)
+    {
+        var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
         if (mat != null) return mat;
 
         var shader = Shader.Find("Universal Render Pipeline/Lit");
-        mat = new Material(shader) { name = "RouletteBall" };
-        mat.SetColor("_BaseColor", Color.white);
-        AssetDatabase.CreateAsset(mat, BallMaterialPath);
+        mat = new Material(shader) { name = name };
+        mat.SetColor("_BaseColor", color);
+        AssetDatabase.CreateAsset(mat, path);
         return mat;
     }
 
