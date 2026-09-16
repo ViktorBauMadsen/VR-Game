@@ -103,7 +103,6 @@ public static class SetupRouletteWheel
         var wheelSo = new SerializedObject(wheel);
         wheelSo.FindProperty("ball").objectReferenceValue = ballObj.GetComponent<RouletteBall>();
         wheelSo.FindProperty("ballStartRadius").floatValue = OuterRadius - WallThickness - BallRadius - 0.01f;
-        wheelSo.FindProperty("ballSpawnHeight").floatValue = BallRadius;
         AssignPockets(wheelSo, pockets);
         wheelSo.ApplyModifiedProperties();
 
@@ -111,6 +110,10 @@ public static class SetupRouletteWheel
         var ballSo = new SerializedObject(ballComp);
         ballSo.FindProperty("wheelCenter").objectReferenceValue = root.transform;
         ballSo.FindProperty("pocketRingRadius").floatValue = pocketRingRadius;
+        // Stay below the Lid this same Setup() builds (at LidHeight) so
+        // Launch()'s downward probe passes through to the real bowl/rotor
+        // surface instead of hitting the lid's underside.
+        ballSo.FindProperty("raycastStartHeight").floatValue = WallHeight + 0.03f;
         ballSo.ApplyModifiedProperties();
 
         var buttonSo = new SerializedObject(buttonObj.GetComponent<RouletteSpinButton>());

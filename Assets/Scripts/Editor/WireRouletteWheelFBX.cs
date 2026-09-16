@@ -145,7 +145,12 @@ public static class WireRouletteWheelFBX
         }
 
         float ballStartRadius = Mathf.Max(pocketRingRadius, outerRadius - StartRadiusInset);
-        float ballSpawnHeight = (maxY - center.y) + SpawnClearance;
+        // Above the wheelhead's real tallest point, but left with a margin
+        // (rather than hugging maxY) so it stays below a hand-placed
+        // containment lid that might sit close above the wall - Launch()
+        // then raycasts down from this height to find the real surface
+        // under wherever it's actually launching, instead of assuming one.
+        float raycastStartHeight = (maxY - center.y) + SpawnClearance;
 
         foreach (var name in new[] { "Ball", "SpinButton", "ResultLabel" })
         {
@@ -157,7 +162,10 @@ public static class WireRouletteWheelFBX
         var darkMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/Black.mat");
 
         var ballObj = BuildBall(root.transform, ballMat, ballPhysMat);
-        ballObj.transform.position = center + new Vector3(0f, ballSpawnHeight, ballStartRadius);
+        // Rest it on the known-good pocket ring for now, purely so it looks
+        // reasonable in the Scene view before Play - Launch() repositions it
+        // for real once a spin actually starts.
+        ballObj.transform.position = new Vector3(center.x, center.y + (pocketBounds.center.y - center.y) + BallRadius, center.z) + Vector3.forward * pocketRingRadius;
         var buttonObj = BuildSpinButton(root.transform, outerRadius, darkMat, ballPhysMat);
 
         for (int i = 0; i < pocketTransforms.Count; i++)
@@ -169,7 +177,6 @@ public static class WireRouletteWheelFBX
         var wheelSo = new SerializedObject(wheel);
         wheelSo.FindProperty("ball").objectReferenceValue = ballObj.GetComponent<RouletteBall>();
         wheelSo.FindProperty("ballStartRadius").floatValue = ballStartRadius;
-        wheelSo.FindProperty("ballSpawnHeight").floatValue = ballSpawnHeight;
         var pocketsProp = wheelSo.FindProperty("pockets");
         pocketsProp.arraySize = pockets.Length;
         for (int i = 0; i < pockets.Length; i++)
@@ -180,6 +187,7 @@ public static class WireRouletteWheelFBX
         var ballSo = new SerializedObject(ballComp);
         ballSo.FindProperty("wheelCenter").objectReferenceValue = root.transform;
         ballSo.FindProperty("pocketRingRadius").floatValue = pocketRingRadius;
+        ballSo.FindProperty("raycastStartHeight").floatValue = raycastStartHeight;
         ballSo.ApplyModifiedProperties();
 
         var buttonSo = new SerializedObject(buttonObj.GetComponent<RouletteSpinButton>());
@@ -191,7 +199,7 @@ public static class WireRouletteWheelFBX
         Undo.CollapseUndoOperations(undoGroup);
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
 
-        Debug.Log($"WireRouletteWheelFBX: wired up '{root.name}' - pocket ring radius {pocketRingRadius:F3}m, outer radius {outerRadius:F3}m, ball start radius {ballStartRadius:F3}m, spawn height {ballSpawnHeight:F3}m above center. No new colliders/walls were built - the ball only ever collides with the wheelhead's own existing mesh. Save the scene, then Play and press the SpinButton to test.");
+        Debug.Log($"WireRouletteWheelFBX: wired up '{root.name}' - pocket ring radius {pocketRingRadius:F3}m, outer radius {outerRadius:F3}m, ball start radius {ballStartRadius:F3}m, raycast probe height {raycastStartHeight:F3}m above center. No new colliders/walls were built - the ball only ever collides with the wheelhead's own existing mesh (plus whatever you've added by hand, like a lid). Save the scene, then Play and press the SpinButton to test.");
     }
 
     static GameObject BuildBall(Transform parent, Material ballMaterial, PhysicsMaterial physMat)

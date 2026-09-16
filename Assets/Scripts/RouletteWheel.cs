@@ -33,7 +33,6 @@ public class RouletteWheel : MonoBehaviour
     [SerializeField] RoulettePocket[] pockets;
     [SerializeField] Vector2 ballSpeedRange = new Vector2(3.5f, 5.5f);  // m/s
     [SerializeField] float ballStartRadius = 0.75f;   // orbit radius to launch from - out near the wheel's outer wall
-    [SerializeField] float ballSpawnHeight = 0.35f;   // height above wheelCenter to drop the ball from, clearing the wheelhead's tallest point
 
     bool _isSpinning;
 
@@ -62,7 +61,7 @@ public class RouletteWheel : MonoBehaviour
 
         float ballSpeed = UnityEngine.Random.Range(ballSpeedRange.x, ballSpeedRange.y);
         float startAngle = UnityEngine.Random.Range(0f, 360f);
-        ball.Launch(ballStartRadius, ballSpeed, startAngle, ballSpawnHeight);
+        ball.Launch(ballStartRadius, ballSpeed, startAngle);
     }
 
     void HandleBallSettled()

@@ -24,6 +24,8 @@ public class RouletteBall : MonoBehaviour
     [SerializeField] float settleAngularThreshold = 20f; // deg/sec
     [SerializeField] float settleConfirmTime = 1f;
     [SerializeField] float settlingDamping = 0.995f; // gentle extra decay per FixedUpdate, just a safety net so a degenerate near-frictionless equilibrium can't stall forever - the actual "settles after bouncing around" look comes from real bounce/friction losses against the wheelhead's own pocket walls, so this should stay close to 1
+    [SerializeField] float raycastStartHeight = 0.4f; // above wheelCenter.y - must clear the wheelhead's own real geometry but stay below any containing lid, so the downward probe below hits the real track and not the lid's underside
+    [SerializeField] float spawnClearance = 0.04f;    // how far above whatever the probe hits to actually spawn the ball
 
     Rigidbody _rb;
     bool _orbiting;
@@ -37,11 +39,13 @@ public class RouletteBall : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    // spawnHeightAboveCenter should clear the tallest point of the wheelhead
-    // mesh - the ball free-falls the small remaining distance onto the real
-    // track surface rather than assuming a single flat height, since that
-    // height genuinely varies by radius on a sculpted model.
-    public void Launch(float startRadius, float speed, float startAngleDeg, float spawnHeightAboveCenter)
+    // Finds the real track surface under the launch point via a downward
+    // raycast rather than assuming a height, since that surface genuinely
+    // varies by radius on a sculpted model - and a guessed/teleported height
+    // that happens to land inside another collider (a containment lid, a
+    // wall) is exactly what causes PhysX to shove the ball out violently on
+    // the next physics step.
+    public void Launch(float startRadius, float speed, float startAngleDeg)
     {
         _orbiting = true;
         _settling = false;
@@ -50,7 +54,12 @@ public class RouletteBall : MonoBehaviour
         float rad = startAngleDeg * Mathf.Deg2Rad;
         Vector3 dir = new Vector3(Mathf.Cos(rad), 0f, Mathf.Sin(rad));
         Vector3 pos = wheelCenter.position + dir * startRadius;
-        pos.y = wheelCenter.position.y + spawnHeightAboveCenter;
+
+        Vector3 rayStart = pos;
+        rayStart.y = wheelCenter.position.y + raycastStartHeight;
+        pos.y = Physics.Raycast(rayStart, Vector3.down, out RaycastHit hit, raycastStartHeight + 1f)
+            ? hit.point.y + spawnClearance
+            : rayStart.y;
 
         _rb.position = pos;
         _rb.rotation = Quaternion.identity;

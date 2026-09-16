@@ -4398,6 +4398,173 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212844961}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &216466117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216466123}
+  - component: {fileID: 216466122}
+  - component: {fileID: 216466121}
+  - component: {fileID: 216466120}
+  - component: {fileID: 216466119}
+  - component: {fileID: 216466118}
+  m_Layer: 0
+  m_Name: Ball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &216466118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216466117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4001dcafef5dbfe4eb65f490a583d52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteBall
+  wheelCenter: {fileID: 1996958511392687748}
+  orbitFriction: 0.6
+  radialAssistForce: 2.5
+  assistStartSpeed: 3
+  assistFullSpeed: 1
+  pocketRingRadius: 0.4064855
+  ringRadiusTolerance: 0.06
+  dropSpeedThreshold: 1.2
+  settleLinearThreshold: 0.05
+  settleAngularThreshold: 20
+  settleConfirmTime: 1
+  settlingDamping: 0.995
+  raycastStartHeight: 0.32516485
+  spawnClearance: 0.04
+--- !u!54 &216466119
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216466117}
+  serializedVersion: 5
+  m_Mass: 0.02
+  m_LinearDamping: 0
+  m_AngularDamping: 0.2
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!23 &216466120
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216466117}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 67f0f547bf0e5e6499940e19c167cbbd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &216466121
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216466117}
+  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &216466122
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216466117}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &216466123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216466117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.059, y: 0.236, z: 0.881}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1996958511392687748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219980134
 GameObject:
   m_ObjectHideFlags: 0
@@ -14334,6 +14501,212 @@ Transform:
   - {fileID: 275159410}
   m_Father: {fileID: 116873868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &710252212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710252213}
+  - component: {fileID: 710252218}
+  - component: {fileID: 710252217}
+  - component: {fileID: 710252216}
+  - component: {fileID: 710252215}
+  - component: {fileID: 710252214}
+  m_Layer: 0
+  m_Name: SpinButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &710252213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710252212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0483238, y: 0.05, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.01, z: 0.08}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1996958511392687748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710252214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710252212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf79d2da38ae214c90a4a365e7edc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteSpinButton
+  cap: {fileID: 0}
+  pressDepth: 0.01
+  pressSpeed: 10
+  wheel: {fileID: 0}
+--- !u!114 &710252215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710252212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+--- !u!23 &710252216
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710252212}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d4ad162d4c9dab141a878e290d7f5192, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &710252217
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710252212}
+  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &710252218
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710252212}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &712743446
 GameObject:
   m_ObjectHideFlags: 0
@@ -24242,6 +24615,119 @@ LODGroup:
     - renderer: {fileID: 1134025938}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!1 &1238963268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238963269}
+  - component: {fileID: 1238963272}
+  - component: {fileID: 1238963271}
+  - component: {fileID: 1238963273}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238963269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238963268}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.341, z: 0}
+  m_LocalScale: {x: 2.156, y: 0.01, z: 2.156}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1996958511392687748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1238963271
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238963268}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1238963272
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238963268}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &1238963273
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238963268}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1240484068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36098,7 +36584,7 @@ Transform:
   m_GameObject: {fileID: 1729078792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.219, y: 1.2151, z: 6.6355}
+  m_LocalPosition: {x: -1.219, y: 1.229, z: 6.445}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37101,6 +37587,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796117666}
   m_Mesh: {fileID: 7708408010751029562, guid: f8a6c1663ac545a589a4032fd59e645e, type: 3}
+--- !u!1 &1804753334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804753335}
+  - component: {fileID: 1804753336}
+  m_Layer: 0
+  m_Name: ResultLabel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804753335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804753334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0, y: 0.35, z: -0.99832374}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1996958511392687748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804753336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804753334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6045a0abb5ea5444e8e363b97b80758e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteResultDisplay
+  wheel: {fileID: 0}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  fontSize: 3
 --- !u!1 &1805228182
 GameObject:
   m_ObjectHideFlags: 0
@@ -44911,6 +45444,7 @@ GameObject:
   - component: {fileID: 470811040969135883}
   - component: {fileID: 6649079257875205488}
   - component: {fileID: 86536758638832285}
+  - component: {fileID: 6649079257875205489}
   - component: {fileID: 6649079257875205490}
   m_Layer: 0
   m_Name: Pocket14
@@ -44966,6 +45500,7 @@ GameObject:
   - component: {fileID: 8496603848761515535}
   - component: {fileID: 1296982990532143461}
   - component: {fileID: 3351146693580009833}
+  - component: {fileID: 8496603848761515536}
   - component: {fileID: 8496603848761515537}
   m_Layer: 0
   m_Name: Pocket34
@@ -45652,6 +46187,7 @@ GameObject:
   - component: {fileID: 1061097498756306287}
   - component: {fileID: 3963620935741198961}
   - component: {fileID: 1562771083744926756}
+  - component: {fileID: 3963620935741198962}
   - component: {fileID: 3963620935741198963}
   m_Layer: 0
   m_Name: Pocket36
@@ -45671,6 +46207,7 @@ GameObject:
   - component: {fileID: 6054357865206953482}
   - component: {fileID: 5307663390916889169}
   - component: {fileID: 7478771713360513066}
+  - component: {fileID: 7478771713360513067}
   - component: {fileID: 7478771713360513068}
   m_Layer: 0
   m_Name: Pocket29
@@ -45761,6 +46298,7 @@ GameObject:
   - component: {fileID: 5915967200439325765}
   - component: {fileID: 3513347669447711281}
   - component: {fileID: 2566621748522922473}
+  - component: {fileID: 5915967200439325766}
   - component: {fileID: 5915967200439325767}
   m_Layer: 0
   m_Name: Pocket28
@@ -45780,6 +46318,7 @@ GameObject:
   - component: {fileID: 5596660892564382863}
   - component: {fileID: 3757859652790590293}
   - component: {fileID: 6802040462482544282}
+  - component: {fileID: 6802040462482544283}
   - component: {fileID: 6802040462482544284}
   m_Layer: 0
   m_Name: Pocket22
@@ -45799,6 +46338,7 @@ GameObject:
   - component: {fileID: 8920124012836814754}
   - component: {fileID: 3548032874337651806}
   - component: {fileID: 6069667661890664712}
+  - component: {fileID: 8920124012836814755}
   - component: {fileID: 8920124012836814756}
   m_Layer: 0
   m_Name: Pocket33
@@ -46166,6 +46706,7 @@ GameObject:
   - component: {fileID: 2087252924687468937}
   - component: {fileID: 8349325572202501770}
   - component: {fileID: 2103743540517320878}
+  - component: {fileID: 8349325572202501771}
   - component: {fileID: 8349325572202501772}
   m_Layer: 0
   m_Name: Pocket30
@@ -46186,6 +46727,7 @@ GameObject:
   - component: {fileID: 3177646581110147361}
   - component: {fileID: 864044560368467435}
   - component: {fileID: 3177646581110147362}
+  - component: {fileID: 3177646581110147363}
   m_Layer: 0
   m_Name: 'RouletteWheel '
   m_TagString: Untagged
@@ -46789,6 +47331,7 @@ GameObject:
   - component: {fileID: 1275086400863637464}
   - component: {fileID: 172292617866745329}
   - component: {fileID: 6691106415958057781}
+  - component: {fileID: 6691106415958057782}
   - component: {fileID: 6691106415958057783}
   m_Layer: 0
   m_Name: Pocket2
@@ -46899,6 +47442,7 @@ GameObject:
   - component: {fileID: 7153586373039569991}
   - component: {fileID: 7562533144916151968}
   - component: {fileID: 2357481032223630799}
+  - component: {fileID: 7562533144916151969}
   - component: {fileID: 7562533144916151970}
   m_Layer: 0
   m_Name: Pocket5
@@ -47015,6 +47559,10 @@ Transform:
   - {fileID: 8622798758645059769}
   - {fileID: 8920124012836814754}
   - {fileID: 5735249003666425317}
+  - {fileID: 1238963269}
+  - {fileID: 216466123}
+  - {fileID: 710252213}
+  - {fileID: 1804753335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2020238750515216861
@@ -47304,6 +47852,7 @@ GameObject:
   - component: {fileID: 8486845917526075415}
   - component: {fileID: 2757762125372232556}
   - component: {fileID: 3684618918170459988}
+  - component: {fileID: 8486845917526075416}
   - component: {fileID: 8486845917526075417}
   m_Layer: 0
   m_Name: Pocket18
@@ -47361,6 +47910,7 @@ GameObject:
   - component: {fileID: 367246841052340885}
   - component: {fileID: 7824839729675770537}
   - component: {fileID: 5580558619323438334}
+  - component: {fileID: 7824839729675770538}
   - component: {fileID: 7824839729675770539}
   m_Layer: 0
   m_Name: Pocket12
@@ -47418,6 +47968,7 @@ GameObject:
   - component: {fileID: 3283100353273878534}
   - component: {fileID: 6515327465493822525}
   - component: {fileID: 2500453771556807389}
+  - component: {fileID: 6515327465493822526}
   - component: {fileID: 6515327465493822527}
   m_Layer: 0
   m_Name: Pocket31
@@ -47793,6 +48344,7 @@ GameObject:
   - component: {fileID: 2785803633705718490}
   - component: {fileID: 5689423079618749017}
   - component: {fileID: 414707357214606479}
+  - component: {fileID: 5689423079618749018}
   - component: {fileID: 5689423079618749019}
   m_Layer: 0
   m_Name: Pocket8
@@ -47876,6 +48428,7 @@ GameObject:
   - component: {fileID: 7047780360375182177}
   - component: {fileID: 1356040176989074488}
   - component: {fileID: 8853156504043709152}
+  - component: {fileID: 8853156504043709153}
   - component: {fileID: 8853156504043709154}
   m_Layer: 0
   m_Name: Pocket20
@@ -47955,6 +48508,7 @@ GameObject:
   - component: {fileID: 5884283181087529817}
   - component: {fileID: 6162914448100195967}
   - component: {fileID: 2384727288322372105}
+  - component: {fileID: 6162914448100195968}
   - component: {fileID: 6162914448100195969}
   m_Layer: 0
   m_Name: Pocket7
@@ -48069,6 +48623,7 @@ GameObject:
   - component: {fileID: 6491800726784531824}
   - component: {fileID: 794646858345715073}
   - component: {fileID: 8306289403489420119}
+  - component: {fileID: 8306289403489420120}
   - component: {fileID: 8306289403489420121}
   m_Layer: 0
   m_Name: Pocket3
@@ -48175,6 +48730,7 @@ GameObject:
   - component: {fileID: 9035912301482580204}
   - component: {fileID: 3813279946336603735}
   - component: {fileID: 2814364700395150138}
+  - component: {fileID: 9035912301482580205}
   - component: {fileID: 9035912301482580206}
   m_Layer: 0
   m_Name: Pocket21
@@ -48296,6 +48852,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3209584142621682047, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &3177646581110147363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224222098116926526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e433f36a1442994fa316c5f337af967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteWheel
+  ball: {fileID: 216466118}
+  pockets: []
+  ballSpeedRange: {x: 3.5, y: 5.5}
+  ballStartRadius: 0.75
 --- !u!4 &3216326506083454148
 Transform:
   m_ObjectHideFlags: 0
@@ -48827,6 +49399,7 @@ GameObject:
   - component: {fileID: 7944714273203972121}
   - component: {fileID: 2880183843090037461}
   - component: {fileID: 4286138731995201000}
+  - component: {fileID: 7944714273203972122}
   - component: {fileID: 7944714273203972123}
   m_Layer: 0
   m_Name: Pocket4
@@ -49146,6 +49719,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617753948965720351}
   m_Mesh: {fileID: -3940230495733813076, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &3963620935741198962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617753948965720351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 36
 --- !u!64 &3963620935741198963
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49153,7 +49739,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617753948965720351}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -49420,6 +50006,7 @@ GameObject:
   - component: {fileID: 8622798758645059769}
   - component: {fileID: 2312097440087937992}
   - component: {fileID: 7630916098450741350}
+  - component: {fileID: 8622798758645059770}
   - component: {fileID: 8622798758645059771}
   m_Layer: 0
   m_Name: Pocket16
@@ -49722,6 +50309,7 @@ GameObject:
   - component: {fileID: 8613860261956753829}
   - component: {fileID: 2650027832387381965}
   - component: {fileID: 1855850021995265556}
+  - component: {fileID: 8613860261956753830}
   - component: {fileID: 8613860261956753831}
   m_Layer: 0
   m_Name: Pocket27
@@ -49879,6 +50467,7 @@ GameObject:
   - component: {fileID: 1082513365284914230}
   - component: {fileID: 4016743974615980143}
   - component: {fileID: 4067150692419223351}
+  - component: {fileID: 5011794451053666934}
   - component: {fileID: 5011794451053666935}
   m_Layer: 0
   m_Name: Pocket32
@@ -49887,6 +50476,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5011794451053666934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5011794451053666933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 32
 --- !u!64 &5011794451053666935
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49894,7 +50496,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5011794451053666933}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -50091,6 +50693,7 @@ GameObject:
   - component: {fileID: 5405009236649938679}
   - component: {fileID: 1637460627345493415}
   - component: {fileID: 2923499285331521943}
+  - component: {fileID: 5405009236649938680}
   - component: {fileID: 5405009236649938681}
   m_Layer: 0
   m_Name: Pocket13
@@ -50122,6 +50725,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5405009236649938680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294296246594994877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 13
 --- !u!64 &5405009236649938681
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50129,7 +50745,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5294296246594994877}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -50226,6 +50842,7 @@ GameObject:
   - component: {fileID: 6892713101834749638}
   - component: {fileID: 5014609207216792237}
   - component: {fileID: 5275784013265181327}
+  - component: {fileID: 6892713101834749639}
   - component: {fileID: 6892713101834749640}
   m_Layer: 0
   m_Name: Pocket24
@@ -50423,6 +51040,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2548533271291737289}
   m_Mesh: {fileID: 2207916879090534856, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &5689423079618749018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548533271291737289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 8
 --- !u!64 &5689423079618749019
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50430,7 +51060,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2548533271291737289}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -50558,6 +51188,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5915967200439325766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697362606122917718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 28
 --- !u!64 &5915967200439325767
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50565,7 +51208,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697362606122917718}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -50787,6 +51430,7 @@ GameObject:
   - component: {fileID: 786300095763385682}
   - component: {fileID: 1905044528552384180}
   - component: {fileID: 7559364365982689324}
+  - component: {fileID: 7559364365982689325}
   - component: {fileID: 7559364365982689326}
   m_Layer: 0
   m_Name: Pocket19
@@ -50803,6 +51447,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2780869137447556810}
   m_Mesh: {fileID: -8804035316033517843, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &6162914448100195968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780869137447556810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 7
 --- !u!64 &6162914448100195969
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50810,7 +51467,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2780869137447556810}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -50852,6 +51509,7 @@ GameObject:
   - component: {fileID: 7567483111993302074}
   - component: {fileID: 6382375349934492341}
   - component: {fileID: 1209647842911279811}
+  - component: {fileID: 7567483111993302075}
   - component: {fileID: 7567483111993302076}
   m_Layer: 0
   m_Name: Pocket23
@@ -50956,6 +51614,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2306900870033928374}
   m_Mesh: {fileID: 257832932387360429, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &6515327465493822526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2306900870033928374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 31
 --- !u!64 &6515327465493822527
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50963,7 +51634,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2306900870033928374}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51128,6 +51799,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224178110104657848}
   m_Mesh: {fileID: 7858345391005298157, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &6649079257875205489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224178110104657848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 14
 --- !u!64 &6649079257875205490
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51135,7 +51819,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224178110104657848}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51229,6 +51913,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6691106415958057782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647294802688730477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 2
 --- !u!64 &6691106415958057783
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51236,7 +51933,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647294802688730477}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51311,6 +52008,7 @@ GameObject:
   - component: {fileID: 2556712364225836282}
   - component: {fileID: 3233162418539661408}
   - component: {fileID: 7093337256579483695}
+  - component: {fileID: 7093337256579483696}
   - component: {fileID: 7093337256579483697}
   m_Layer: 0
   m_Name: Pocket9
@@ -51466,6 +52164,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6802040462482544283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752778629603971362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 22
 --- !u!64 &6802040462482544284
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51473,7 +52184,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752778629603971362}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51518,6 +52229,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6892713101834749639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538102406147480166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 24
 --- !u!64 &6892713101834749640
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51525,7 +52249,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5538102406147480166}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51588,6 +52312,7 @@ GameObject:
   - component: {fileID: 77161791562021571}
   - component: {fileID: 3976404961732676588}
   - component: {fileID: 1467208565816628821}
+  - component: {fileID: 7063758310513014447}
   - component: {fileID: 7063758310513014448}
   m_Layer: 0
   m_Name: Pocket0
@@ -51596,6 +52321,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7063758310513014447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063758310513014446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 0
 --- !u!64 &7063758310513014448
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51603,7 +52341,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7063758310513014446}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51687,6 +52425,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7093337256579483696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725612587636459635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 9
 --- !u!64 &7093337256579483697
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51694,7 +52445,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6725612587636459635}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51765,6 +52516,7 @@ GameObject:
   - component: {fileID: 5735249003666425317}
   - component: {fileID: 3309093057211047387}
   - component: {fileID: 1252334614123970313}
+  - component: {fileID: 7219117570226732457}
   - component: {fileID: 7219117570226732458}
   m_Layer: 0
   m_Name: Pocket1
@@ -51773,6 +52525,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7219117570226732457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7219117570226732456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 1
 --- !u!64 &7219117570226732458
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51780,7 +52545,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7219117570226732456}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -51973,6 +52738,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7478771713360513067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638123535301285760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 29
 --- !u!64 &7478771713360513068
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51980,7 +52758,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638123535301285760}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52088,6 +52866,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7559364365982689325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147847855143271539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 19
 --- !u!64 &7559364365982689326
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52095,7 +52886,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6147847855143271539}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52118,6 +52909,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782593359869040188}
   m_Mesh: {fileID: 6399428835351468407, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &7562533144916151969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782593359869040188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 5
 --- !u!64 &7562533144916151970
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52125,7 +52929,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782593359869040188}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52155,6 +52959,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7567483111993302075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6247363938198293237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 23
 --- !u!64 &7567483111993302076
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52162,7 +52979,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247363938198293237}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52371,6 +53188,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223339239707281428}
   m_Mesh: {fileID: 6027137810293923636, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &7824839729675770538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2223339239707281428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 12
 --- !u!64 &7824839729675770539
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52378,7 +53208,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223339239707281428}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52426,6 +53256,7 @@ GameObject:
   - component: {fileID: 8825008647224997720}
   - component: {fileID: 4889429603781210517}
   - component: {fileID: 5518414410331447165}
+  - component: {fileID: 8825008647224997721}
   - component: {fileID: 8825008647224997722}
   m_Layer: 0
   m_Name: Pocket26
@@ -52445,6 +53276,7 @@ GameObject:
   - component: {fileID: 7910459760807318447}
   - component: {fileID: 2889367025237760656}
   - component: {fileID: 6723823436128403790}
+  - component: {fileID: 7910459760807318448}
   - component: {fileID: 7910459760807318449}
   m_Layer: 0
   m_Name: Pocket35
@@ -52468,6 +53300,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7910459760807318448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906013505188374676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 35
 --- !u!64 &7910459760807318449
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52475,7 +53320,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7906013505188374676}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52520,6 +53365,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7944714273203972122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3737871434159131175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 4
 --- !u!64 &7944714273203972123
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52527,7 +53385,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3737871434159131175}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52666,6 +53524,7 @@ GameObject:
   - component: {fileID: 6674971422664598209}
   - component: {fileID: 4676252014451779683}
   - component: {fileID: 3074599661436006457}
+  - component: {fileID: 8091708017026684474}
   - component: {fileID: 8091708017026684475}
   m_Layer: 0
   m_Name: Pocket10
@@ -52674,6 +53533,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8091708017026684474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091708017026684473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 10
 --- !u!64 &8091708017026684475
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52681,7 +53553,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8091708017026684473}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52707,6 +53579,7 @@ GameObject:
   - component: {fileID: 2533072980165897468}
   - component: {fileID: 1768819622424588259}
   - component: {fileID: 5254187646864188145}
+  - component: {fileID: 8218457699283280237}
   - component: {fileID: 8218457699283280238}
   m_Layer: 0
   m_Name: Pocket25
@@ -52715,6 +53588,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8218457699283280237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218457699283280236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 25
 --- !u!64 &8218457699283280238
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52722,7 +53608,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8218457699283280236}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52886,6 +53772,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8306289403489420120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912293475989401783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 3
 --- !u!64 &8306289403489420121
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52893,7 +53792,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2912293475989401783}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52919,6 +53818,7 @@ GameObject:
   - component: {fileID: 3216326506083454148}
   - component: {fileID: 1537522244107777676}
   - component: {fileID: 4786028025944225428}
+  - component: {fileID: 8332229784702227072}
   - component: {fileID: 8332229784702227073}
   m_Layer: 0
   m_Name: Pocket17
@@ -52927,6 +53827,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8332229784702227072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332229784702227071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 17
 --- !u!64 &8332229784702227073
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52934,7 +53847,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8332229784702227071}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -52957,6 +53870,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211774211661916671}
   m_Mesh: {fileID: -6482205428691282711, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &8349325572202501771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211774211661916671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 30
 --- !u!64 &8349325572202501772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -52964,7 +53890,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211774211661916671}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53005,6 +53931,7 @@ GameObject:
   - component: {fileID: 6673568928002384662}
   - component: {fileID: 7633161852995408241}
   - component: {fileID: 6349327914168078497}
+  - component: {fileID: 8362810811071977337}
   - component: {fileID: 8362810811071977338}
   m_Layer: 0
   m_Name: Pocket11
@@ -53013,6 +53940,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8362810811071977337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362810811071977336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 11
 --- !u!64 &8362810811071977338
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53020,7 +53960,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8362810811071977336}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53085,6 +54025,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8486845917526075416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127479671850658918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 18
 --- !u!64 &8486845917526075417
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53092,7 +54045,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127479671850658918}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53122,6 +54075,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8496603848761515536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329805067046641277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 34
 --- !u!64 &8496603848761515537
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53129,7 +54095,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329805067046641277}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53204,6 +54170,7 @@ GameObject:
   - component: {fileID: 1651379386462371423}
   - component: {fileID: 8975753984575247298}
   - component: {fileID: 2090505074296508015}
+  - component: {fileID: 8975753984575247299}
   - component: {fileID: 8975753984575247300}
   m_Layer: 0
   m_Name: Pocket15
@@ -53223,6 +54190,7 @@ GameObject:
   - component: {fileID: 8356390443917926514}
   - component: {fileID: 3698262886178862158}
   - component: {fileID: 8523078811993697804}
+  - component: {fileID: 8608212889125247918}
   - component: {fileID: 8608212889125247919}
   m_Layer: 0
   m_Name: Pocket6
@@ -53231,6 +54199,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8608212889125247918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608212889125247917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 6
 --- !u!64 &8608212889125247919
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53238,7 +54219,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8608212889125247917}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53268,6 +54249,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8613860261956753830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4747055295303655310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 27
 --- !u!64 &8613860261956753831
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53275,7 +54269,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4747055295303655310}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53305,6 +54299,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8622798758645059770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379344671490729817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 16
 --- !u!64 &8622798758645059771
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53312,7 +54319,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4379344671490729817}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53394,6 +54401,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8825008647224997721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879728280035944311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 26
 --- !u!64 &8825008647224997722
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53401,7 +54421,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7879728280035944311}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53465,6 +54485,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8853156504043709153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600581573373216272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 20
 --- !u!64 &8853156504043709154
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53472,7 +54505,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2600581573373216272}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53502,6 +54535,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8920124012836814755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775108032114821090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 33
 --- !u!64 &8920124012836814756
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53509,7 +54555,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775108032114821090}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53576,6 +54622,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8569744454704832024}
   m_Mesh: {fileID: 1109979094649754363, guid: 288e47280a09aa049a768dc116eeee83, type: 3}
+--- !u!114 &8975753984575247299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569744454704832024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 15
 --- !u!64 &8975753984575247300
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53583,7 +54642,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8569744454704832024}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -53613,6 +54672,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996958511392687748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9035912301482580205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038007762275360962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752ef3daf7147404b91b80c55b9b9d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoulettePocket
+  Number: 21
 --- !u!64 &9035912301482580206
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53620,7 +54692,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3038007762275360962}
-  m_Material: {fileID: 13400000, guid: 02fd4cdb75554ff46adab9f71dfa7471, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
