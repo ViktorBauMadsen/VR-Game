@@ -543,6 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 13972369}
   - component: {fileID: 13972370}
+  - component: {fileID: 13972371}
   m_Layer: 0
   m_Name: 0
   m_TagString: Untagged
@@ -580,12 +581,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.8293882, y: 2.7500248, z: 0.03887751}
   m_Center: {x: 0.13283853, y: -0.22313339, z: 0.48056206}
+--- !u!114 &13972371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13972368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 0
+  evenMoneyKind: 0
 --- !u!1 &20234436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 110139195}
   - component: {fileID: 110139196}
+  - component: {fileID: 110139197}
   m_Layer: 0
   m_Name: Black
   m_TagString: Untagged
@@ -1904,12 +1921,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.142858, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.833609, y: -1.192415, z: 0.48056206}
+--- !u!114 &110139197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110139194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 2
+  number: 0
+  evenMoneyKind: 5
 --- !u!1 &110488569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,6 +2526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 139924740}
   - component: {fileID: 139924741}
+  - component: {fileID: 139924742}
   m_Layer: 0
   m_Name: 12
   m_TagString: Untagged
@@ -2531,12 +2564,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &139924742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139924739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 12
+  evenMoneyKind: 0
 --- !u!1 &140373675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,6 +2880,210 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142082647}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &146359568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146359569}
+  - component: {fileID: 146359574}
+  - component: {fileID: 146359573}
+  - component: {fileID: 146359572}
+  - component: {fileID: 146359571}
+  - component: {fileID: 146359570}
+  m_Layer: 0
+  m_Name: Pocket_Blue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146359569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146359568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0.15}
+  m_LocalScale: {x: 0.08, y: 0.0075, z: 0.08}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484247959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146359570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146359568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc1b539069f4b84e9056e2f75e525f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChipDispenser
+  chipPrefab: {fileID: 675969431394884223, guid: e1ae2fe72c606dd4c952e57d1a4a9508, type: 3}
+  spawnPoint: {fileID: 0}
+--- !u!114 &146359571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146359568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+--- !u!23 &146359572
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146359568}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a65e6227ec9f5c647b25d8c80cc88d41, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &146359573
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146359568}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &146359574
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146359568}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &147280298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,6 +3762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181096377}
   - component: {fileID: 181096378}
+  - component: {fileID: 181096379}
   m_Layer: 0
   m_Name: 26
   m_TagString: Untagged
@@ -3547,12 +3800,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &181096379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181096376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 26
+  evenMoneyKind: 0
 --- !u!1 &181663989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,6 +4057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 189413073}
   - component: {fileID: 189413074}
+  - component: {fileID: 189413075}
   m_Layer: 0
   m_Name: 20
   m_TagString: Untagged
@@ -3826,12 +4095,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &189413075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189413072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 20
+  evenMoneyKind: 0
 --- !u!1 &191988775
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,6 +5176,8 @@ GameObject:
   - component: {fileID: 228906040}
   - component: {fileID: 228906039}
   - component: {fileID: 228906038}
+  - component: {fileID: 228906043}
+  - component: {fileID: 228906042}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -5016,7 +5302,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -5119,6 +5405,36 @@ LODGroup:
     - renderer: {fileID: 1746582879}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &228906042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228906035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &228906043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228906035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &230188980
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,6 +5662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245803081}
   - component: {fileID: 245803082}
+  - component: {fileID: 245803083}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -5383,12 +5700,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &245803083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245803080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 1
+  evenMoneyKind: 0
 --- !u!1 &272711440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5621,6 +5953,8 @@ GameObject:
   - component: {fileID: 280363412}
   - component: {fileID: 280363411}
   - component: {fileID: 280363410}
+  - component: {fileID: 280363415}
+  - component: {fileID: 280363414}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -5745,7 +6079,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -5848,6 +6182,36 @@ LODGroup:
     - renderer: {fileID: 1018126968}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &280363414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280363407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &280363415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280363407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &307743721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6084,6 +6448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311914821}
   - component: {fileID: 311914822}
+  - component: {fileID: 311914823}
   m_Layer: 0
   m_Name: 23
   m_TagString: Untagged
@@ -6121,12 +6486,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &311914823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311914820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 23
+  evenMoneyKind: 0
 --- !u!1 &321988651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6449,6 +6829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 323908862}
   - component: {fileID: 323908863}
+  - component: {fileID: 323908864}
   m_Layer: 0
   m_Name: 2nd 12
   m_TagString: Untagged
@@ -6486,12 +6867,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2.3859541, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.21205972, y: -1.192415, z: 0.48056206}
+--- !u!114 &323908864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323908861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 1
+  number: 2
+  evenMoneyKind: 0
 --- !u!1 &331458574
 GameObject:
   m_ObjectHideFlags: 0
@@ -7187,6 +7583,8 @@ GameObject:
   - component: {fileID: 368756791}
   - component: {fileID: 368756790}
   - component: {fileID: 368756789}
+  - component: {fileID: 368756795}
+  - component: {fileID: 368756794}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -7294,7 +7692,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -7414,6 +7812,36 @@ Transform:
   - {fileID: 541526869}
   m_Father: {fileID: 1953563468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368756794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368756787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &368756795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368756787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &370728914
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,6 +7968,8 @@ GameObject:
   - component: {fileID: 377774475}
   - component: {fileID: 377774474}
   - component: {fileID: 377774473}
+  - component: {fileID: 377774479}
+  - component: {fileID: 377774478}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -7647,7 +8077,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -7767,6 +8197,36 @@ Transform:
   - {fileID: 1604332762}
   m_Father: {fileID: 1953563468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &377774478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377774471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &377774479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377774471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &388999026
 GameObject:
   m_ObjectHideFlags: 0
@@ -7935,6 +8395,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 484247959}
     - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1568671290}
@@ -7982,6 +8445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404851980}
   - component: {fileID: 404851981}
+  - component: {fileID: 404851982}
   m_Layer: 0
   m_Name: 5
   m_TagString: Untagged
@@ -8019,12 +8483,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &404851982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404851979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 5
+  evenMoneyKind: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,6 +9106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422877985}
   - component: {fileID: 422877986}
+  - component: {fileID: 422877987}
   m_Layer: 0
   m_Name: 33
   m_TagString: Untagged
@@ -8664,12 +9144,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &422877987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422877984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 33
+  evenMoneyKind: 0
 --- !u!1 &423311212
 GameObject:
   m_ObjectHideFlags: 0
@@ -9180,6 +9675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444278746}
   - component: {fileID: 444278747}
+  - component: {fileID: 444278748}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -9217,12 +9713,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &444278748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444278745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 2
+  evenMoneyKind: 0
 --- !u!1 &447189152
 GameObject:
   m_ObjectHideFlags: 0
@@ -9350,6 +9861,8 @@ GameObject:
   - component: {fileID: 455042862}
   - component: {fileID: 455042861}
   - component: {fileID: 455042860}
+  - component: {fileID: 455042865}
+  - component: {fileID: 455042864}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -9474,7 +9987,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -9577,6 +10090,36 @@ LODGroup:
     - renderer: {fileID: 1267427210}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &455042864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455042857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &455042865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455042857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &458053404
 GameObject:
   m_ObjectHideFlags: 0
@@ -9793,6 +10336,8 @@ GameObject:
   - component: {fileID: 467154209}
   - component: {fileID: 467154208}
   - component: {fileID: 467154207}
+  - component: {fileID: 467154212}
+  - component: {fileID: 467154211}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -9917,7 +10462,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -10020,6 +10565,36 @@ LODGroup:
     - renderer: {fileID: 86599391}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &467154211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467154204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &467154212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467154204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &477903884
 GameObject:
   m_ObjectHideFlags: 0
@@ -10223,6 +10798,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483185616}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &484247958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484247959}
+  - component: {fileID: 484247960}
+  m_Layer: 0
+  m_Name: PlayerTorsoAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484247959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484247958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1794610971}
+  - {fileID: 146359569}
+  - {fileID: 876939090}
+  - {fileID: 1407497998}
+  m_Father: {fileID: 2135860195}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484247960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484247958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd9fcabe9fdd9844a02974e53add919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerTorsoAnchor
+  head: {fileID: 988117686}
+  waistDrop: 0.5
+  positionSmoothTime: 0.2
+  maxYawDegreesPerSecond: 270
 --- !u!1 &485772386
 GameObject:
   m_ObjectHideFlags: 0
@@ -10950,6 +11577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515424076}
   - component: {fileID: 515424077}
+  - component: {fileID: 515424078}
   m_Layer: 0
   m_Name: 21
   m_TagString: Untagged
@@ -10987,12 +11615,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &515424078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515424075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 21
+  evenMoneyKind: 0
 --- !u!1 &515556004
 GameObject:
   m_ObjectHideFlags: 0
@@ -11502,6 +12145,8 @@ GameObject:
   - component: {fileID: 560781022}
   - component: {fileID: 560781021}
   - component: {fileID: 560781020}
+  - component: {fileID: 560781026}
+  - component: {fileID: 560781025}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -11609,7 +12254,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -11729,6 +12374,36 @@ Transform:
   - {fileID: 1326025869}
   m_Father: {fileID: 1953563468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &560781025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560781018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &560781026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560781018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &565833053
 GameObject:
   m_ObjectHideFlags: 0
@@ -12035,6 +12710,8 @@ GameObject:
   - component: {fileID: 582075314}
   - component: {fileID: 582075313}
   - component: {fileID: 582075312}
+  - component: {fileID: 582075317}
+  - component: {fileID: 582075316}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -12159,7 +12836,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -12262,6 +12939,36 @@ LODGroup:
     - renderer: {fileID: 1652090544}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &582075316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582075309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &582075317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582075309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1001 &586010450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12346,6 +13053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 587099053}
   - component: {fileID: 587099054}
+  - component: {fileID: 587099055}
   m_Layer: 0
   m_Name: 19
   m_TagString: Untagged
@@ -12383,12 +13091,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &587099055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587099052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 19
+  evenMoneyKind: 0
 --- !u!1 &589328770
 GameObject:
   m_ObjectHideFlags: 0
@@ -13425,6 +14148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643829490}
   - component: {fileID: 643829491}
+  - component: {fileID: 643829492}
   m_Layer: 0
   m_Name: 35
   m_TagString: Untagged
@@ -13462,12 +14186,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &643829492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643829489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 35
+  evenMoneyKind: 0
 --- !u!1 &647246581
 GameObject:
   m_ObjectHideFlags: 0
@@ -15855,6 +16594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739463578}
   - component: {fileID: 739463579}
+  - component: {fileID: 739463580}
   m_Layer: 0
   m_Name: 13
   m_TagString: Untagged
@@ -15892,12 +16632,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &739463580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739463577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 13
+  evenMoneyKind: 0
 --- !u!1 &744423203
 GameObject:
   m_ObjectHideFlags: 0
@@ -16138,6 +16893,8 @@ GameObject:
   - component: {fileID: 746369574}
   - component: {fileID: 746369573}
   - component: {fileID: 746369572}
+  - component: {fileID: 746369578}
+  - component: {fileID: 746369577}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -16245,7 +17002,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -16365,6 +17122,36 @@ Transform:
   - {fileID: 1523551434}
   m_Father: {fileID: 1953563468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746369577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746369570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &746369578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746369570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &753111279
 GameObject:
   m_ObjectHideFlags: 0
@@ -18148,6 +18935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823113087}
   - component: {fileID: 823113088}
+  - component: {fileID: 823113089}
   m_Layer: 0
   m_Name: 17
   m_TagString: Untagged
@@ -18185,12 +18973,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &823113089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823113086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 17
+  evenMoneyKind: 0
 --- !u!1 &827144793
 GameObject:
   m_ObjectHideFlags: 0
@@ -18986,6 +19789,210 @@ Transform:
   - {fileID: 321988652}
   m_Father: {fileID: 706368467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &876939089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 876939090}
+  - component: {fileID: 876939095}
+  - component: {fileID: 876939094}
+  - component: {fileID: 876939093}
+  - component: {fileID: 876939092}
+  - component: {fileID: 876939091}
+  m_Layer: 0
+  m_Name: Pocket_Green
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &876939090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876939089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0.15}
+  m_LocalScale: {x: 0.08, y: 0.0075, z: 0.08}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484247959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &876939091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876939089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc1b539069f4b84e9056e2f75e525f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChipDispenser
+  chipPrefab: {fileID: 6080074307902291384, guid: 30ee43d4b6ecf08409a363c115eff133, type: 3}
+  spawnPoint: {fileID: 0}
+--- !u!114 &876939092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876939089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+--- !u!23 &876939093
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876939089}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a65e6227ec9f5c647b25d8c80cc88d41, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &876939094
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876939089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &876939095
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876939089}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &877526495
 GameObject:
   m_ObjectHideFlags: 0
@@ -18996,6 +20003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877526496}
   - component: {fileID: 877526497}
+  - component: {fileID: 877526498}
   m_Layer: 0
   m_Name: 36
   m_TagString: Untagged
@@ -19033,12 +20041,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &877526498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877526495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 36
+  evenMoneyKind: 0
 --- !u!1 &882666741
 GameObject:
   m_ObjectHideFlags: 0
@@ -20184,6 +21207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935773763}
   - component: {fileID: 935773764}
+  - component: {fileID: 935773765}
   m_Layer: 0
   m_Name: 19to36
   m_TagString: Untagged
@@ -20221,12 +21245,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.142858, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.833609, y: -1.192415, z: 0.48056206}
+--- !u!114 &935773765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935773762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 2
+  number: 0
+  evenMoneyKind: 1
 --- !u!1 &936197487
 GameObject:
   m_ObjectHideFlags: 0
@@ -21203,6 +22242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979062012}
   - component: {fileID: 979062013}
+  - component: {fileID: 979062014}
   m_Layer: 0
   m_Name: 15
   m_TagString: Untagged
@@ -21240,12 +22280,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &979062014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979062011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 15
+  evenMoneyKind: 0
 --- !u!1 &979122864
 GameObject:
   m_ObjectHideFlags: 0
@@ -22086,6 +23141,8 @@ GameObject:
   - component: {fileID: 1036041143}
   - component: {fileID: 1036041142}
   - component: {fileID: 1036041141}
+  - component: {fileID: 1036041146}
+  - component: {fileID: 1036041145}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -22210,7 +23267,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -22313,6 +23370,36 @@ LODGroup:
     - renderer: {fileID: 491511191}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1036041145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036041138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1036041146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036041138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1039512840
 GameObject:
   m_ObjectHideFlags: 0
@@ -22551,6 +23638,8 @@ GameObject:
   - component: {fileID: 1042644998}
   - component: {fileID: 1042644997}
   - component: {fileID: 1042644996}
+  - component: {fileID: 1042645001}
+  - component: {fileID: 1042645000}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -22675,7 +23764,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -22778,6 +23867,36 @@ LODGroup:
     - renderer: {fileID: 1473155878}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1042645000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042644993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1042645001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042644993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1057374059
 GameObject:
   m_ObjectHideFlags: 0
@@ -22788,6 +23907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1057374060}
   - component: {fileID: 1057374061}
+  - component: {fileID: 1057374062}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -22825,12 +23945,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1057374062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057374059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 4
+  evenMoneyKind: 0
 --- !u!1 &1078487461
 GameObject:
   m_ObjectHideFlags: 0
@@ -23082,6 +24217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079216333}
   - component: {fileID: 1079216334}
+  - component: {fileID: 1079216335}
   m_Layer: 0
   m_Name: 25
   m_TagString: Untagged
@@ -23119,12 +24255,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1079216335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079216332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 25
+  evenMoneyKind: 0
 --- !u!1 &1081197499
 GameObject:
   m_ObjectHideFlags: 0
@@ -23251,6 +24402,8 @@ GameObject:
   - component: {fileID: 1085267403}
   - component: {fileID: 1085267402}
   - component: {fileID: 1085267401}
+  - component: {fileID: 1085267406}
+  - component: {fileID: 1085267405}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -23375,7 +24528,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -23478,6 +24631,36 @@ LODGroup:
     - renderer: {fileID: 2058714063}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1085267405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085267398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1085267406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085267398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1086098388
 GameObject:
   m_ObjectHideFlags: 0
@@ -23491,6 +24674,8 @@ GameObject:
   - component: {fileID: 1086098393}
   - component: {fileID: 1086098392}
   - component: {fileID: 1086098391}
+  - component: {fileID: 1086098396}
+  - component: {fileID: 1086098395}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -23615,7 +24800,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -23718,6 +24903,36 @@ LODGroup:
     - renderer: {fileID: 1109539491}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1086098395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086098388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1086098396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086098388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1096536880
 GameObject:
   m_ObjectHideFlags: 0
@@ -24079,6 +25294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1112293085}
   - component: {fileID: 1112293086}
+  - component: {fileID: 1112293087}
   m_Layer: 0
   m_Name: 32
   m_TagString: Untagged
@@ -24116,12 +25332,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1112293087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112293084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 32
+  evenMoneyKind: 0
 --- !u!1 &1112377583
 GameObject:
   m_ObjectHideFlags: 0
@@ -24245,6 +25476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114720802}
   - component: {fileID: 1114720803}
+  - component: {fileID: 1114720804}
   m_Layer: 0
   m_Name: 22
   m_TagString: Untagged
@@ -24282,12 +25514,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1114720804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114720801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 22
+  evenMoneyKind: 0
 --- !u!1 &1116410442
 GameObject:
   m_ObjectHideFlags: 0
@@ -25318,6 +26565,8 @@ GameObject:
   - component: {fileID: 1161515394}
   - component: {fileID: 1161515393}
   - component: {fileID: 1161515392}
+  - component: {fileID: 1161515397}
+  - component: {fileID: 1161515396}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -25442,7 +26691,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -25545,6 +26794,36 @@ LODGroup:
     - renderer: {fileID: 896663577}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1161515396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161515389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1161515397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161515389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1163433910
 GameObject:
   m_ObjectHideFlags: 0
@@ -25555,6 +26834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1163433911}
   - component: {fileID: 1163433912}
+  - component: {fileID: 1163433913}
   m_Layer: 0
   m_Name: Odd
   m_TagString: Untagged
@@ -25592,12 +26872,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.142858, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.833609, y: -1.192415, z: 0.48056206}
+--- !u!114 &1163433913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163433910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 2
+  number: 0
+  evenMoneyKind: 3
 --- !u!1 &1164344642
 GameObject:
   m_ObjectHideFlags: 0
@@ -26112,6 +27407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1180063259}
   - component: {fileID: 1180063260}
+  - component: {fileID: 1180063261}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -26149,12 +27445,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1180063261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180063258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 3
+  evenMoneyKind: 0
 --- !u!1 &1181319004
 GameObject:
   m_ObjectHideFlags: 0
@@ -26165,6 +27476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181319005}
   - component: {fileID: 1181319006}
+  - component: {fileID: 1181319007}
   m_Layer: 0
   m_Name: 34
   m_TagString: Untagged
@@ -26202,12 +27514,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1181319007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181319004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 34
+  evenMoneyKind: 0
 --- !u!1 &1208644704
 GameObject:
   m_ObjectHideFlags: 0
@@ -28185,6 +29512,8 @@ GameObject:
   - component: {fileID: 1282151073}
   - component: {fileID: 1282151072}
   - component: {fileID: 1282151071}
+  - component: {fileID: 1282151076}
+  - component: {fileID: 1282151075}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -28309,7 +29638,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -28412,6 +29741,36 @@ LODGroup:
     - renderer: {fileID: 576633529}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1282151075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282151068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1282151076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282151068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1312163734
 GameObject:
   m_ObjectHideFlags: 0
@@ -29058,6 +30417,8 @@ GameObject:
   - component: {fileID: 1334616747}
   - component: {fileID: 1334616746}
   - component: {fileID: 1334616745}
+  - component: {fileID: 1334616750}
+  - component: {fileID: 1334616749}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -29182,7 +30543,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -29285,6 +30646,36 @@ LODGroup:
     - renderer: {fileID: 961027191}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1334616749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334616742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1334616750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334616742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1345947587
 GameObject:
   m_ObjectHideFlags: 0
@@ -29388,6 +30779,8 @@ GameObject:
   - component: {fileID: 1354731992}
   - component: {fileID: 1354731991}
   - component: {fileID: 1354731990}
+  - component: {fileID: 1354731995}
+  - component: {fileID: 1354731994}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -29512,7 +30905,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -29615,6 +31008,36 @@ LODGroup:
     - renderer: {fileID: 678968471}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1354731994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354731987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1354731995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354731987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1360092901
 GameObject:
   m_ObjectHideFlags: 0
@@ -29885,6 +31308,8 @@ GameObject:
   - component: {fileID: 1386261806}
   - component: {fileID: 1386261805}
   - component: {fileID: 1386261804}
+  - component: {fileID: 1386261809}
+  - component: {fileID: 1386261808}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -30009,7 +31434,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -30112,6 +31537,36 @@ LODGroup:
     - renderer: {fileID: 1390705797}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1386261808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386261801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1386261809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386261801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1386322105
 GameObject:
   m_ObjectHideFlags: 0
@@ -30468,6 +31923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1397656006}
   - component: {fileID: 1397656007}
+  - component: {fileID: 1397656008}
   m_Layer: 0
   m_Name: 8
   m_TagString: Untagged
@@ -30505,12 +31961,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1397656008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397656005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 8
+  evenMoneyKind: 0
 --- !u!1 &1400164312
 GameObject:
   m_ObjectHideFlags: 0
@@ -30803,6 +32274,210 @@ Transform:
   - {fileID: 1828852295}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1407497997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407497998}
+  - component: {fileID: 1407498003}
+  - component: {fileID: 1407498002}
+  - component: {fileID: 1407498001}
+  - component: {fileID: 1407498000}
+  - component: {fileID: 1407497999}
+  m_Layer: 0
+  m_Name: Pocket_Black
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1407497998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407497997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0.15}
+  m_LocalScale: {x: 0.08, y: 0.0075, z: 0.08}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484247959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1407497999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407497997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc1b539069f4b84e9056e2f75e525f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChipDispenser
+  chipPrefab: {fileID: 5404631025067228557, guid: b601630c0d218a641b6705996525e2dd, type: 3}
+  spawnPoint: {fileID: 0}
+--- !u!114 &1407498000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407497997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+--- !u!23 &1407498001
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407497997}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a65e6227ec9f5c647b25d8c80cc88d41, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &1407498002
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407497997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1407498003
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407497997}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1411278178
 GameObject:
   m_ObjectHideFlags: 0
@@ -31125,6 +32800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412684858}
   - component: {fileID: 1412684859}
+  - component: {fileID: 1412684860}
   m_Layer: 0
   m_Name: 29
   m_TagString: Untagged
@@ -31162,12 +32838,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1412684860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412684857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 29
+  evenMoneyKind: 0
 --- !u!1 &1418673925
 GameObject:
   m_ObjectHideFlags: 0
@@ -31268,6 +32959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424432686}
   - component: {fileID: 1424432687}
+  - component: {fileID: 1424432688}
   m_Layer: 0
   m_Name: Even
   m_TagString: Untagged
@@ -31305,12 +32997,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.142858, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.833609, y: -1.192415, z: 0.48056206}
+--- !u!114 &1424432688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424432685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 2
+  number: 0
+  evenMoneyKind: 2
 --- !u!1 &1426310688
 GameObject:
   m_ObjectHideFlags: 0
@@ -31321,6 +33028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426310689}
   - component: {fileID: 1426310690}
+  - component: {fileID: 1426310691}
   m_Layer: 0
   m_Name: 1to18
   m_TagString: Untagged
@@ -31358,12 +33066,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.142858, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.833609, y: -1.192415, z: 0.48056206}
+--- !u!114 &1426310691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426310688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 2
+  number: 0
+  evenMoneyKind: 0
 --- !u!1 &1427252763
 GameObject:
   m_ObjectHideFlags: 0
@@ -31374,6 +33097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427252764}
   - component: {fileID: 1427252765}
+  - component: {fileID: 1427252766}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -31411,12 +33135,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.142858, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.833609, y: -1.192415, z: 0.48056206}
+--- !u!114 &1427252766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427252763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 2
+  number: 0
+  evenMoneyKind: 4
 --- !u!1 &1428712206
 GameObject:
   m_ObjectHideFlags: 0
@@ -31427,6 +33166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428712207}
   - component: {fileID: 1428712208}
+  - component: {fileID: 1428712209}
   m_Layer: 0
   m_Name: 10
   m_TagString: Untagged
@@ -31464,12 +33204,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1428712209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428712206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 10
+  evenMoneyKind: 0
 --- !u!1 &1443516975
 GameObject:
   m_ObjectHideFlags: 0
@@ -31882,6 +33637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462285054}
   - component: {fileID: 1462285055}
+  - component: {fileID: 1462285056}
   m_Layer: 0
   m_Name: 3rd 12
   m_TagString: Untagged
@@ -31919,12 +33675,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2.3859541, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.21205972, y: -1.192415, z: 0.48056206}
+--- !u!114 &1462285056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462285053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 1
+  number: 3
+  evenMoneyKind: 0
 --- !u!1 &1473155876
 GameObject:
   m_ObjectHideFlags: 0
@@ -32343,6 +34114,8 @@ GameObject:
   - component: {fileID: 1485061231}
   - component: {fileID: 1485061230}
   - component: {fileID: 1485061229}
+  - component: {fileID: 1485061234}
+  - component: {fileID: 1485061233}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -32467,7 +34240,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -32570,6 +34343,36 @@ LODGroup:
     - renderer: {fileID: 154492833}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1485061233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485061226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1485061234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485061226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1001 &1488098052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33050,6 +34853,8 @@ GameObject:
   - component: {fileID: 1501726914}
   - component: {fileID: 1501726913}
   - component: {fileID: 1501726912}
+  - component: {fileID: 1501726917}
+  - component: {fileID: 1501726916}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -33174,7 +34979,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -33277,6 +35082,36 @@ LODGroup:
     - renderer: {fileID: 690938556}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1501726916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501726909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1501726917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501726909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1508193611
 GameObject:
   m_ObjectHideFlags: 0
@@ -33816,6 +35651,8 @@ GameObject:
   - component: {fileID: 1526215751}
   - component: {fileID: 1526215750}
   - component: {fileID: 1526215749}
+  - component: {fileID: 1526215754}
+  - component: {fileID: 1526215753}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -33940,7 +35777,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -34043,6 +35880,36 @@ LODGroup:
     - renderer: {fileID: 1768903606}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1526215753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526215746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1526215754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526215746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1554748001
 GameObject:
   m_ObjectHideFlags: 0
@@ -34056,6 +35923,8 @@ GameObject:
   - component: {fileID: 1554748006}
   - component: {fileID: 1554748005}
   - component: {fileID: 1554748004}
+  - component: {fileID: 1554748009}
+  - component: {fileID: 1554748008}
   m_Layer: 0
   m_Name: PokerChip_Red (2)
   m_TagString: Untagged
@@ -34180,7 +36049,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -34283,6 +36152,36 @@ LODGroup:
     - renderer: {fileID: 1116410444}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1554748008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554748001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1554748009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554748001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1561069565
 GameObject:
   m_ObjectHideFlags: 0
@@ -34891,6 +36790,8 @@ GameObject:
   - component: {fileID: 1574340760}
   - component: {fileID: 1574340759}
   - component: {fileID: 1574340758}
+  - component: {fileID: 1574340763}
+  - component: {fileID: 1574340762}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -35015,7 +36916,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -35118,6 +37019,36 @@ LODGroup:
     - renderer: {fileID: 933784918}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1574340762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574340755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1574340763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574340755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1581267095
 GameObject:
   m_ObjectHideFlags: 0
@@ -35454,6 +37385,8 @@ GameObject:
   - component: {fileID: 1582509522}
   - component: {fileID: 1582509521}
   - component: {fileID: 1582509520}
+  - component: {fileID: 1582509525}
+  - component: {fileID: 1582509524}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -35578,7 +37511,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -35681,6 +37614,36 @@ LODGroup:
     - renderer: {fileID: 1164344644}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1582509524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582509517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1582509525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582509517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1588005104
 GameObject:
   m_ObjectHideFlags: 0
@@ -35694,6 +37657,8 @@ GameObject:
   - component: {fileID: 1588005109}
   - component: {fileID: 1588005108}
   - component: {fileID: 1588005107}
+  - component: {fileID: 1588005112}
+  - component: {fileID: 1588005111}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -35818,7 +37783,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -35921,6 +37886,36 @@ LODGroup:
     - renderer: {fileID: 1171732187}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1588005111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588005104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1588005112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588005104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1595108836
 GameObject:
   m_ObjectHideFlags: 0
@@ -36607,6 +38602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1618717870}
   - component: {fileID: 1618717871}
+  - component: {fileID: 1618717872}
   m_Layer: 0
   m_Name: 14
   m_TagString: Untagged
@@ -36644,12 +38640,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1618717872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618717869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 14
+  evenMoneyKind: 0
 --- !u!1 &1621439203
 GameObject:
   m_ObjectHideFlags: 0
@@ -36663,6 +38674,8 @@ GameObject:
   - component: {fileID: 1621439208}
   - component: {fileID: 1621439207}
   - component: {fileID: 1621439206}
+  - component: {fileID: 1621439211}
+  - component: {fileID: 1621439210}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -36787,7 +38800,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -36890,6 +38903,36 @@ LODGroup:
     - renderer: {fileID: 565833055}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1621439210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621439203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1621439211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621439203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1630882507
 GameObject:
   m_ObjectHideFlags: 0
@@ -37653,6 +39696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1649341746}
   - component: {fileID: 1649341747}
+  - component: {fileID: 1649341748}
   m_Layer: 0
   m_Name: 24
   m_TagString: Untagged
@@ -37690,12 +39734,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1649341748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649341745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 24
+  evenMoneyKind: 0
 --- !u!1 &1652090542
 GameObject:
   m_ObjectHideFlags: 0
@@ -38000,6 +40059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661036460}
   - component: {fileID: 1661036461}
+  - component: {fileID: 1661036462}
   m_Layer: 0
   m_Name: 9
   m_TagString: Untagged
@@ -38037,12 +40097,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1661036462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661036459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 9
+  evenMoneyKind: 0
 --- !u!1 &1675505689
 GameObject:
   m_ObjectHideFlags: 0
@@ -38504,6 +40579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685960675}
   - component: {fileID: 1685960676}
+  - component: {fileID: 1685960677}
   m_Layer: 0
   m_Name: 31
   m_TagString: Untagged
@@ -38541,12 +40617,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1685960677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685960674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 31
+  evenMoneyKind: 0
 --- !u!1 &1707374365
 GameObject:
   m_ObjectHideFlags: 0
@@ -38783,6 +40874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720969031}
   - component: {fileID: 1720969032}
+  - component: {fileID: 1720969033}
   m_Layer: 0
   m_Name: 7
   m_TagString: Untagged
@@ -38820,12 +40912,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1720969033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720969030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 7
+  evenMoneyKind: 0
 --- !u!1 &1722454565
 GameObject:
   m_ObjectHideFlags: 0
@@ -39476,6 +41583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1745599591}
   - component: {fileID: 1745599592}
+  - component: {fileID: 1745599593}
   m_Layer: 0
   m_Name: 11
   m_TagString: Untagged
@@ -39513,12 +41621,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1745599593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745599590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 11
+  evenMoneyKind: 0
 --- !u!1 &1746582877
 GameObject:
   m_ObjectHideFlags: 0
@@ -39619,6 +41742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768138671}
   - component: {fileID: 1768138672}
+  - component: {fileID: 1768138673}
   m_Layer: 0
   m_Name: 30
   m_TagString: Untagged
@@ -39656,12 +41780,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1768138673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768138670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 30
+  evenMoneyKind: 0
 --- !u!114 &1768777349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39762,7 +41901,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -39892,6 +42031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779830161}
   - component: {fileID: 1779830162}
+  - component: {fileID: 1779830163}
   m_Layer: 0
   m_Name: 18
   m_TagString: Untagged
@@ -39929,12 +42069,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1779830163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779830160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 18
+  evenMoneyKind: 0
 --- !u!1001 &1786493235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39997,6 +42152,210 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1274422953327334844, guid: 865f3ad33d794954a10fb9ae4adbed55, type: 3}
   m_PrefabInstance: {fileID: 1786493235}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794610970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794610971}
+  - component: {fileID: 1794610976}
+  - component: {fileID: 1794610975}
+  - component: {fileID: 1794610974}
+  - component: {fileID: 1794610973}
+  - component: {fileID: 1794610972}
+  m_Layer: 0
+  m_Name: Pocket_Red
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794610971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794610970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0.15}
+  m_LocalScale: {x: 0.08, y: 0.0075, z: 0.08}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 484247959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794610972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794610970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc1b539069f4b84e9056e2f75e525f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChipDispenser
+  chipPrefab: {fileID: 2491886036858882450, guid: e1d6ca519cda25b47be1c9c392076934, type: 3}
+  spawnPoint: {fileID: 0}
+--- !u!114 &1794610973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794610970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+--- !u!23 &1794610974
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794610970}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a65e6227ec9f5c647b25d8c80cc88d41, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &1794610975
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794610970}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1794610976
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794610970}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1795953319
 GameObject:
   m_ObjectHideFlags: 0
@@ -40152,6 +42511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797908794}
   - component: {fileID: 1797908795}
+  - component: {fileID: 1797908796}
   m_Layer: 0
   m_Name: 16
   m_TagString: Untagged
@@ -40189,12 +42549,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1797908796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797908793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 16
+  evenMoneyKind: 0
 --- !u!1 &1805228182
 GameObject:
   m_ObjectHideFlags: 0
@@ -41019,6 +43394,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1938859876}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1860858226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860858228}
+  - component: {fileID: 1860858227}
+  m_Layer: 0
+  m_Name: RouletteBettingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1860858227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860858226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0049c9d5981db044a9c7c67640da8510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteBettingManager
+  wheel: {fileID: 3177646581110147363}
+--- !u!4 &1860858228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860858226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.92847, y: 1.3598, z: 6.53685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1872675680
 GameObject:
   m_ObjectHideFlags: 0
@@ -41171,6 +43591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895137410}
   - component: {fileID: 1895137411}
+  - component: {fileID: 1895137412}
   m_Layer: 0
   m_Name: 6
   m_TagString: Untagged
@@ -41208,12 +43629,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1895137412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895137409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 6
+  evenMoneyKind: 0
 --- !u!1 &1897682872
 GameObject:
   m_ObjectHideFlags: 0
@@ -41227,6 +43663,8 @@ GameObject:
   - component: {fileID: 1897682877}
   - component: {fileID: 1897682876}
   - component: {fileID: 1897682875}
+  - component: {fileID: 1897682880}
+  - component: {fileID: 1897682879}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -41351,7 +43789,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -41454,6 +43892,36 @@ LODGroup:
     - renderer: {fileID: 902830969}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1897682879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897682872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1897682880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897682872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1898249056
 GameObject:
   m_ObjectHideFlags: 0
@@ -41557,6 +44025,8 @@ GameObject:
   - component: {fileID: 1900727981}
   - component: {fileID: 1900727980}
   - component: {fileID: 1900727979}
+  - component: {fileID: 1900727984}
+  - component: {fileID: 1900727983}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -41681,7 +44151,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -41784,6 +44254,36 @@ LODGroup:
     - renderer: {fileID: 1898249058}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1900727983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900727976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1900727984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900727976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1901286358
 GameObject:
   m_ObjectHideFlags: 0
@@ -42442,6 +44942,8 @@ GameObject:
   - component: {fileID: 1958913333}
   - component: {fileID: 1958913332}
   - component: {fileID: 1958913331}
+  - component: {fileID: 1958913336}
+  - component: {fileID: 1958913335}
   m_Layer: 0
   m_Name: PokerChip_Red (5)
   m_TagString: Untagged
@@ -42566,7 +45068,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -42669,6 +45171,36 @@ LODGroup:
     - renderer: {fileID: 458053406}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1958913335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958913328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1958913336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958913328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1959215894
 GameObject:
   m_ObjectHideFlags: 0
@@ -43562,6 +46094,8 @@ GameObject:
   - component: {fileID: 1998825818}
   - component: {fileID: 1998825817}
   - component: {fileID: 1998825816}
+  - component: {fileID: 1998825821}
+  - component: {fileID: 1998825820}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -43686,7 +46220,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -43789,6 +46323,36 @@ LODGroup:
     - renderer: {fileID: 140837575}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &1998825820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998825813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &1998825821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998825813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &1999282877
 GameObject:
   m_ObjectHideFlags: 0
@@ -43799,6 +46363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999282878}
   - component: {fileID: 1999282879}
+  - component: {fileID: 1999282880}
   m_Layer: 0
   m_Name: 28
   m_TagString: Untagged
@@ -43836,12 +46401,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &1999282880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999282877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 28
+  evenMoneyKind: 0
 --- !u!1 &2013293505
 GameObject:
   m_ObjectHideFlags: 0
@@ -44714,6 +47294,8 @@ GameObject:
   - component: {fileID: 2043546023}
   - component: {fileID: 2043546022}
   - component: {fileID: 2043546021}
+  - component: {fileID: 2043546026}
+  - component: {fileID: 2043546025}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -44838,7 +47420,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -44941,6 +47523,36 @@ LODGroup:
     - renderer: {fileID: 1345947589}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &2043546025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043546018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &2043546026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043546018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &2049452936
 GameObject:
   m_ObjectHideFlags: 0
@@ -46904,6 +49516,8 @@ GameObject:
   - component: {fileID: 2094897430}
   - component: {fileID: 2094897429}
   - component: {fileID: 2094897428}
+  - component: {fileID: 2094897433}
+  - component: {fileID: 2094897432}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -47028,7 +49642,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -47131,6 +49745,36 @@ LODGroup:
     - renderer: {fileID: 1614087719}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &2094897432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094897425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &2094897433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094897425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &2105106949
 GameObject:
   m_ObjectHideFlags: 0
@@ -47483,6 +50127,8 @@ GameObject:
   - component: {fileID: 2113767348}
   - component: {fileID: 2113767347}
   - component: {fileID: 2113767346}
+  - component: {fileID: 2113767351}
+  - component: {fileID: 2113767350}
   m_Layer: 0
   m_Name: PokerChip_Red (3)
   m_TagString: Untagged
@@ -47607,7 +50253,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -47710,6 +50356,36 @@ LODGroup:
     - renderer: {fileID: 780563780}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &2113767350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113767343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &2113767351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113767343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &2118123409
 GameObject:
   m_ObjectHideFlags: 0
@@ -48012,6 +50688,8 @@ GameObject:
   - component: {fileID: 2124551468}
   - component: {fileID: 2124551467}
   - component: {fileID: 2124551466}
+  - component: {fileID: 2124551472}
+  - component: {fileID: 2124551471}
   m_Layer: 0
   m_Name: PokerChip_Red (4)
   m_TagString: Untagged
@@ -48119,7 +50797,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -48239,6 +50917,36 @@ Transform:
   - {fileID: 1029370274}
   m_Father: {fileID: 1953563468}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124551471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124551464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &2124551472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124551464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &2127010120
 GameObject:
   m_ObjectHideFlags: 0
@@ -48252,6 +50960,8 @@ GameObject:
   - component: {fileID: 2127010125}
   - component: {fileID: 2127010124}
   - component: {fileID: 2127010123}
+  - component: {fileID: 2127010128}
+  - component: {fileID: 2127010127}
   m_Layer: 0
   m_Name: PokerChip_Red (1)
   m_TagString: Untagged
@@ -48376,7 +51086,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -48479,6 +51189,36 @@ LODGroup:
     - renderer: {fileID: 2041387640}
   m_Enabled: 1
   m_GlobalIlluminationLOD: 0
+--- !u!114 &2127010127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127010120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &2127010128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127010120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!1 &2128726301
 GameObject:
   m_ObjectHideFlags: 0
@@ -48489,6 +51229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128726302}
   - component: {fileID: 2128726303}
+  - component: {fileID: 2128726304}
   m_Layer: 0
   m_Name: 27
   m_TagString: Untagged
@@ -48526,12 +51267,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.5399233, y: 0.9122006, z: 0.03887751}
   m_Center: {x: 0.04580824, y: -1.1420515, z: 0.48056206}
+--- !u!114 &2128726304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128726301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 0
+  number: 27
+  evenMoneyKind: 0
 --- !u!1 &2133648071
 GameObject:
   m_ObjectHideFlags: 0
@@ -48645,6 +51401,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133648071}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2135860195 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 391387958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2142504655
 GameObject:
   m_ObjectHideFlags: 0
@@ -48655,6 +51416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142504656}
   - component: {fileID: 2142504657}
+  - component: {fileID: 2142504658}
   m_Layer: 0
   m_Name: 1st 12
   m_TagString: Untagged
@@ -48692,12 +51454,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2.3859541, y: 0.62629515, z: 0.03887751}
   m_Center: {x: -0.21205972, y: -1.192415, z: 0.48056206}
+--- !u!114 &2142504658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142504655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55772cbf4ac8db44a34fd47c3c77d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BettingSpot
+  spotType: 1
+  number: 1
+  evenMoneyKind: 0
 --- !u!4 &77161791562021571
 Transform:
   m_ObjectHideFlags: 0
@@ -55792,6 +58569,8 @@ GameObject:
   - component: {fileID: 7968166210315232292}
   - component: {fileID: 4948777156093964770}
   - component: {fileID: 1768777349}
+  - component: {fileID: 7968166210315232294}
+  - component: {fileID: 7968166210315232293}
   m_Layer: 0
   m_Name: PokerChip_Red
   m_TagString: Untagged
@@ -56845,6 +59624,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4260240713356760478, guid: 3968227f43f3d4f408e6d8d4d52481da, type: 3}
+--- !u!114 &7968166210315232293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085839117683071351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555b03d8facd60f459dd42d540d84d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupIndicator
+  dotColor: {r: 1, g: 1, b: 1, a: 1}
+  dotSize: 0.04
+  heightAboveObject: 0.08
+  hideWhileHeld: 1
+--- !u!114 &7968166210315232294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085839117683071351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4741722f5daca545943f2d6b42e4a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CasinoChip
+  value: 5
+  snapRayDistance: 0.4
 --- !u!4 &8000460229529855852
 Transform:
   m_ObjectHideFlags: 0
@@ -58343,3 +61152,4 @@ SceneRoots:
   - {fileID: 2071935233}
   - {fileID: 1996958511392687748}
   - {fileID: 2023057541}
+  - {fileID: 1860858228}
