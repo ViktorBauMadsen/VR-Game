@@ -7,10 +7,11 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // in the scene) into actual grabbable bets: adds an XRGrabInteractable
 // tuned for a responsive snap (see CasinoChip's header for why) plus
 // CasinoChip itself and PickupIndicator, the same generic pickup-affordance
-// dot every other pickupable already uses. Get-or-add throughout - the
-// loose PokerChip_Red already has a hand-added XRGrabInteractable in
-// SampleScene, and AddComponent would throw on its
-// DisallowMultipleComponent attribute if run blindly.
+// dot every other pickupable already uses. Also repoints the prefabs at the
+// correct material (see FixMaterial below - they shipped wired to the
+// wrong one). Get-or-add throughout - the loose PokerChip_Red already has
+// a hand-added XRGrabInteractable in SampleScene, and AddComponent would
+// throw on its DisallowMultipleComponent attribute if run blindly.
 //
 // Deliberately skips InteractableHighlight: it requires a Renderer on the
 // *same* GameObject it's attached to, but these chips have no renderer on
@@ -19,25 +20,31 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // restructuring where XRGrabInteractable/CasinoChip live.
 public static class SetupCasinoChips
 {
-    static readonly (string path, int value)[] ChipPrefabs =
+    // materialGuid: the prefabs shipped with every LOD renderer pointed at
+    // the pack's generic GamePieces.mat, which isn't textured for this
+    // mesh's UVs - the pack also ships a material actually made for these
+    // chips (a shared PokerChip.mat for Red/Blue/Green, a separate
+    // color-specific CasinoChip.mat for Black), so point every renderer at
+    // that instead.
+    static readonly (string path, int value, string materialGuid)[] ChipPrefabs =
     {
-        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Red.prefab", 5),
-        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Blue.prefab", 10),
-        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Green.prefab", 25),
-        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Black.prefab", 100),
+        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Red.prefab", 5, "883908feb6514fd43a48e313a747e32c"),
+        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Blue.prefab", 10, "883908feb6514fd43a48e313a747e32c"),
+        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Green.prefab", 25, "883908feb6514fd43a48e313a747e32c"),
+        ("Assets/SubstanceAssets/LittleGamesPack/Prefabs/Individual Pieces/PokerChips/PokerChip_Black.prefab", 100, "3ef1291d21a0d2b48bb1a04187b717ee"),
     };
 
     [MenuItem("Tools/Roulette/Setup Casino Chips")]
     static void Setup()
     {
-        foreach (var (path, value) in ChipPrefabs)
-            SetupPrefab(path, value);
+        foreach (var (path, value, materialGuid) in ChipPrefabs)
+            SetupPrefab(path, value, materialGuid);
 
         int sceneCount = SetupLooseSceneChips();
         Debug.Log($"SetupCasinoChips: configured {ChipPrefabs.Length} prefab(s) and {sceneCount} loose scene chip(s).");
     }
 
-    static void SetupPrefab(string path, int value)
+    static void SetupPrefab(string path, int value, string materialGuid)
     {
         var root = PrefabUtility.LoadPrefabContents(path);
         if (root == null)
@@ -47,8 +54,22 @@ public static class SetupCasinoChips
         }
 
         ConfigureChip(root, value);
+        FixMaterial(root, materialGuid);
         PrefabUtility.SaveAsPrefabAsset(root, path);
         PrefabUtility.UnloadPrefabContents(root);
+    }
+
+    static void FixMaterial(GameObject root, string materialGuid)
+    {
+        var material = AssetDatabase.LoadAssetAtPath<Material>(AssetDatabase.GUIDToAssetPath(materialGuid));
+        if (material == null)
+        {
+            Debug.LogWarning($"SetupCasinoChips: couldn't resolve material guid '{materialGuid}'.");
+            return;
+        }
+
+        foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
+            renderer.sharedMaterial = material;
     }
 
     static int SetupLooseSceneChips()
