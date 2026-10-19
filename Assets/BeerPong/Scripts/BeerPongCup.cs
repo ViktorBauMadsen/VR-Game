@@ -14,8 +14,15 @@ public class BeerPongCup : MonoBehaviour
 
     public int Side => side;
     public bool IsStanding => gameObject.activeSelf;
+    // Where this cup sits in the full rack - a re-rack moves cups away from
+    // it, a new game puts them back.
+    public Vector3 HomeLocalPosition { get; private set; }
 
-    void Awake() => _table = GetComponentInParent<BeerPongTable>();
+    void Awake()
+    {
+        _table = GetComponentInParent<BeerPongTable>();
+        HomeLocalPosition = transform.localPosition;
+    }
 
     public void Hit()
     {
@@ -24,5 +31,10 @@ public class BeerPongCup : MonoBehaviour
     }
 
     public void Remove() => gameObject.SetActive(false);
-    public void Restore() => gameObject.SetActive(true);
+
+    public void Restore()
+    {
+        transform.localPosition = HomeLocalPosition;
+        gameObject.SetActive(true);
+    }
 }

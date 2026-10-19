@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -14,7 +13,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // so frame the spot you want first (F on an object, or just orbit there),
 // then move/rotate the root freely afterwards - everything is relative to it.
 // Only builds if "Beer Pong Table" doesn't already exist, so tweaks aren't
-// stomped; delete it and re-run to rebuild. The cup mesh, materials and
+// stomped (re-running on an existing table just re-lays its scoreboards);
+// delete it and re-run to rebuild. The cup mesh, materials and
 // ball physics material are saved under Assets/BeerPong.
 public static class SetupBeerPong
 {
@@ -48,7 +48,9 @@ public static class SetupBeerPong
         if (existing != null)
         {
             Selection.activeGameObject = existing;
-            Debug.Log($"SetupBeerPong: '{RootName}' already exists - delete it and re-run to rebuild.");
+            BuildScoreboards(existing);
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            Debug.Log($"SetupBeerPong: '{RootName}' already exists - only rebuilt its scoreboards. Delete it and re-run to fully rebuild.");
             return;
         }
 
@@ -81,16 +83,7 @@ public static class SetupBeerPong
         for (int side = 0; side < 2; side++)
             BuildBall(root.transform, side, ballMat, ballPhysics);
 
-        var boards = new List<TextMeshPro>();
-        for (int side = 0; side < 2; side++)
-            boards.Add(BuildScoreboard(root.transform, side));
-
-        var tableSo = new SerializedObject(table);
-        var boardsProp = tableSo.FindProperty("scoreboards");
-        boardsProp.arraySize = boards.Count;
-        for (int i = 0; i < boards.Count; i++)
-            boardsProp.GetArrayElementAtIndex(i).objectReferenceValue = boards[i];
-        tableSo.ApplyModifiedPropertiesWithoutUndo();
+        BuildScoreboards(root);
 
         AssetDatabase.SaveAssets();
         Selection.activeGameObject = root;
@@ -225,26 +218,66 @@ public static class SetupBeerPong
         ball.AddComponent<InteractableHighlight>();
     }
 
-    static TextMeshPro BuildScoreboard(Transform root, int side)
-    {
-        string team = side == 0 ? "Red" : "Blue";
-        var go = new GameObject($"Scoreboard ({team} view)");
-        go.transform.SetParent(root, false);
-        go.transform.localPosition = new Vector3(0f, TableHeight + 0.75f, 0f);
-        // TextMeshPro's readable face is its local -Z, so its forward points
-        // the way the reader looks: Red stands at -Z looking toward +Z.
-        go.transform.localRotation = Quaternion.LookRotation(side == 0 ? Vector3.forward : Vector3.back);
+    static string ScoreboardName(int side) => $"Scoreboard ({(side == 0 ? "Red" : "Blue")} view)";
 
-        var tmp = go.AddComponent<TextMeshPro>();
-        tmp.text = "RED 0  -  BLUE 0";
-        tmp.alignment = TextAlignmentOptions.Center;
-        tmp.enableAutoSizing = true;
-        tmp.fontSizeMin = 0.2f;
-        tmp.fontSizeMax = 2f;
-        tmp.fontStyle = FontStyles.Bold;
-        tmp.rectTransform.sizeDelta = new Vector2(0.9f, 0.3f);
-        tmp.ForceMeshUpdate();
-        return tmp;
+    // (Re)creates both score displays and wires them into BeerPongTable,
+    // replacing any earlier ones (older versions were 3D TextMeshPro or
+    // world-space canvases, both of which rendered away from their real
+    // position in this project). The displays are just opaque quads; the
+    // table renders the score text into a texture at runtime and puts it on
+    // them - see BeerPongTable.
+    static void BuildScoreboards(GameObject root)
+    {
+        var table = root.GetComponent<BeerPongTable>();
+        var mat = CreateOrLoadUnlitMaterial("Scoreboard Screen");
+        var displays = new List<Renderer>();
+        for (int side = 0; side < 2; side++)
+        {
+            var old = root.transform.Find(ScoreboardName(side));
+            if (old != null) Undo.DestroyObjectImmediate(old.gameObject);
+            displays.Add(BuildScoreDisplay(root.transform, side, mat));
+        }
+
+        var tableSo = new SerializedObject(table);
+        var prop = tableSo.FindProperty("scoreDisplays");
+        prop.arraySize = displays.Count;
+        for (int i = 0; i < displays.Count; i++)
+            prop.GetArrayElementAtIndex(i).objectReferenceValue = displays[i];
+        tableSo.ApplyModifiedProperties();
+    }
+
+    // Lies flat on the table, on the half nearest the player who reads it,
+    // between the centre line and their own cups. A Quad's visible face is
+    // its local -Z with the texture's top along local +Y, so: forward = down
+    // into the table (face looks up), up = away from the reader. Red stands
+    // at -Z, so for Red "away" is +Z. 1024x384 texture -> 0.55 x 0.206 m.
+    static Renderer BuildScoreDisplay(Transform root, int side, Material mat)
+    {
+        float sign = side == 0 ? -1f : 1f;
+        float width = TableWidth - 0.06f;
+
+        var quad = CreatePrimitive(ScoreboardName(side), PrimitiveType.Quad, root, mat, collider: false);
+        Undo.RegisterCreatedObjectUndo(quad, "Build Beer Pong Scoreboard");
+        quad.transform.localPosition = new Vector3(0f, TableHeight + 0.002f, sign * 0.4f);
+        quad.transform.localRotation = Quaternion.LookRotation(Vector3.down, side == 0 ? Vector3.forward : Vector3.back);
+        quad.transform.localScale = new Vector3(width, width * 384f / 1024f, 1f);
+        var renderer = quad.GetComponent<Renderer>();
+        renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        return renderer;
+    }
+
+    static Material CreateOrLoadUnlitMaterial(string name)
+    {
+        string path = $"{MaterialsFolder}/{name}.mat";
+        var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+        if (mat != null) return mat;
+
+        EnsureFolder(Folder);
+        EnsureFolder(MaterialsFolder);
+        mat = new Material(Shader.Find("Universal Render Pipeline/Unlit")) { name = name };
+        mat.SetColor("_BaseColor", Color.white);
+        AssetDatabase.CreateAsset(mat, path);
+        return mat;
     }
 
     // Lathes a cup profile around Y: a solid-walled, open-topped truncated

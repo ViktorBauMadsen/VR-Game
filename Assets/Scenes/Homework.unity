@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTorsoAnchor
   head: {fileID: 988117686}
-  waistDrop: 0.5
+  waistDrop: 0.75
   positionSmoothTime: 0.2
   maxYawDegreesPerSecond: 270
 --- !u!1 &596906685

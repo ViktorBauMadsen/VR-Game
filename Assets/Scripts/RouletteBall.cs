@@ -89,9 +89,14 @@ public class RouletteBall : MonoBehaviour
 
     void ResetToStart()
     {
+        // Zero velocities before going kinematic - Unity errors on setting
+        // them on a kinematic body.
+        if (!_rb.isKinematic)
+        {
+            _rb.linearVelocity = Vector3.zero;
+            _rb.angularVelocity = Vector3.zero;
+        }
         _rb.isKinematic = true;
-        _rb.linearVelocity = Vector3.zero;
-        _rb.angularVelocity = Vector3.zero;
         transform.position = _startPosition;
         transform.rotation = _startRotation;
     }

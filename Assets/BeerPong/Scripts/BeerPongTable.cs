@@ -13,12 +13,32 @@ using UnityEngine.Events;
 // team's colour; a win plays a short fanfare. Both sounds are synthesised at
 // runtime so the table has no audio asset dependencies. onCupHit/onGameWon
 // are exposed for hooking up anything extra in the Inspector.
+//
+// Re-rack: once per team per game, the moment a team is down to 3 cups
+// they slide into a tight 2-1 triangle at the front of the rack (the
+// original middle pair + front cup spots, pointing at the opponent).
+//
+// Scoreboard: world-space text (3D TextMeshPro and world-space canvases
+// alike) renders away from where it actually is in this project, so - same
+// fix as the slot machine screen - the score is drawn by a small offscreen
+// camera into a RenderTexture, which is shown on plain opaque quads lying on
+// the table (scoreDisplays). The camera only renders for a couple of frames
+// whenever the text changes.
 public class BeerPongTable : MonoBehaviour
 {
     [SerializeField] string[] teamNames = { "RED", "BLUE" };
     [SerializeField] Color[] teamColors = { new Color(0.9f, 0.15f, 0.15f), new Color(0.2f, 0.45f, 1f) };
-    [SerializeField] TextMeshPro[] scoreboards;
     [SerializeField] float resetDelay = 4f;
+
+    [Header("Re-rack")]
+    [SerializeField] bool autoReRack = true;
+    [SerializeField] int reRackAtCupsLeft = 3;
+    [SerializeField] float reRackSlideSeconds = 0.5f;
+
+    [Header("Scoreboard")]
+    [SerializeField] Renderer[] scoreDisplays;
+    [SerializeField] Color scoreBackground = new Color(0.02f, 0.05f, 0.035f);
+    [SerializeField] Vector2Int scoreTextureSize = new Vector2Int(1024, 384);
 
     [Tooltip("Invoked with the index of the team that scored (0 = Red, 1 = Blue).")]
     public UnityEvent<int> onCupHit;
@@ -31,6 +51,17 @@ public class BeerPongTable : MonoBehaviour
     AudioClip _popClip;
     AudioClip _winClip;
     bool _gameOver;
+    readonly bool[] _reRacked = new bool[2];
+
+    // Rack slots in build order (see SetupBeerPong.BuildCupTriangle): back
+    // row 0,1,2 (3 cups), middle row 3,4, front cup 5. A re-rack always
+    // goes to the front of the rack: the middle pair + the front cup.
+    static readonly int[] ReRackSlots = { 3, 4, 5 };
+
+    RenderTexture _scoreTexture;
+    Camera _scoreCamera;
+    TextMeshProUGUI _scoreText;
+    int _scoreRenderFramesLeft;
 
     void Awake()
     {
@@ -43,9 +74,97 @@ public class BeerPongTable : MonoBehaviour
         _audio.maxDistance = 15f;
         _popClip = CreatePopClip();
         _winClip = CreateWinClip();
+
+        BuildScoreRenderer();
     }
 
     void Start() => UpdateScoreboards();
+
+    void OnDestroy()
+    {
+        if (_scoreTexture != null) _scoreTexture.Release();
+    }
+
+    // The camera sits 5 km below the table with a 2 m far plane, so the only
+    // thing it can see is its own canvas - no layer setup needed - and the
+    // canvas is beyond the player camera's far clip plane, so it never shows
+    // up in the headset itself.
+    void BuildScoreRenderer()
+    {
+        _scoreTexture = new RenderTexture(scoreTextureSize.x, scoreTextureSize.y, 16, RenderTextureFormat.ARGB32)
+        {
+            name = "Beer Pong Score",
+            antiAliasing = 4,
+        };
+
+        var camGo = new GameObject("Scoreboard Camera");
+        camGo.transform.SetParent(transform, false);
+        camGo.transform.localPosition = new Vector3(0f, -5000f, 0f);
+        _scoreCamera = camGo.AddComponent<Camera>();
+        _scoreCamera.clearFlags = CameraClearFlags.SolidColor;
+        _scoreCamera.backgroundColor = scoreBackground;
+        _scoreCamera.orthographic = true;
+        _scoreCamera.orthographicSize = 1f;
+        _scoreCamera.nearClipPlane = 0.1f;
+        _scoreCamera.farClipPlane = 2f;
+        _scoreCamera.stereoTargetEye = StereoTargetEyeMask.None; // mono into the texture, not the headset
+        _scoreCamera.targetTexture = _scoreTexture;
+        _scoreCamera.aspect = (float)scoreTextureSize.x / scoreTextureSize.y; // don't inherit the Game view's aspect
+        _scoreCamera.enabled = false;
+
+        var canvasGo = new GameObject("Scoreboard Canvas", typeof(RectTransform));
+        canvasGo.transform.SetParent(camGo.transform, false);
+        canvasGo.layer = camGo.layer;
+        var canvas = canvasGo.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        canvas.worldCamera = _scoreCamera;
+        canvas.planeDistance = 1f;
+        _scoreCamera.cullingMask = 1 << canvasGo.layer;
+
+        var textGo = new GameObject("Score Text", typeof(RectTransform));
+        textGo.layer = canvasGo.layer;
+        var rect = (RectTransform)textGo.transform;
+        rect.SetParent(canvasGo.transform, false);
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.offsetMin = new Vector2(24f, 16f);
+        rect.offsetMax = new Vector2(-24f, -16f);
+
+        _scoreText = textGo.AddComponent<TextMeshProUGUI>();
+        _scoreText.alignment = TextAlignmentOptions.Center;
+        _scoreText.fontStyle = FontStyles.Bold;
+        // No wrapping: with it on, auto-size prefers breaking "RED 0 - 0 BLUE"
+        // across two lines over shrinking it. The win message has its own \n.
+        _scoreText.textWrappingMode = TextWrappingModes.NoWrap;
+        _scoreText.enableAutoSizing = true;
+        _scoreText.fontSizeMin = 20f;
+        _scoreText.fontSizeMax = 170f;
+        _scoreText.raycastTarget = false;
+
+        // A runtime material copy rather than a MaterialPropertyBlock - this
+        // project uses the GPU Resident Drawer, which doesn't honour those.
+        Material screenMat = null;
+        foreach (var display in scoreDisplays)
+        {
+            if (display == null) continue;
+            if (screenMat == null)
+            {
+                screenMat = new Material(display.sharedMaterial) { name = "Beer Pong Score (runtime)" };
+                screenMat.SetTexture("_BaseMap", _scoreTexture);
+                if (screenMat.HasProperty("_MainTex")) screenMat.SetTexture("_MainTex", _scoreTexture);
+            }
+            display.sharedMaterial = screenMat;
+        }
+    }
+
+    // Render the score camera only while the text has just changed - a
+    // couple of frames covers TMP rebuilding its mesh before the draw.
+    void LateUpdate()
+    {
+        if (_scoreCamera == null) return;
+        _scoreCamera.enabled = _scoreRenderFramesLeft > 0;
+        if (_scoreRenderFramesLeft > 0) _scoreRenderFramesLeft--;
+    }
 
     public void OnCupHit(BeerPongCup cup)
     {
@@ -59,10 +178,65 @@ public class BeerPongTable : MonoBehaviour
         SpawnBurst(position + Vector3.up * 0.1f, teamColors[scoringTeam]);
         onCupHit.Invoke(scoringTeam);
 
-        if (CupsStanding(cup.Side) == 0)
+        int left = CupsStanding(cup.Side);
+        if (left == 0)
+        {
             Win(scoringTeam);
-        else
-            UpdateScoreboards();
+            return;
+        }
+
+        UpdateScoreboards();
+        if (autoReRack && !_reRacked[cup.Side] && left == reRackAtCupsLeft)
+            ReRack(cup.Side);
+    }
+
+    void ReRack(int side)
+    {
+        var rack = new System.Collections.Generic.List<BeerPongCup>();
+        foreach (var c in _cups)
+            if (c.Side == side) rack.Add(c); // hierarchy order = slot order
+        if (rack.Count != 6) return; // only know the formations for a full 3-2-1 rack
+
+        var standing = rack.FindAll(c => c.IsStanding);
+        if (standing.Count != 3) return;
+        _reRacked[side] = true;
+
+        // Try every way of assigning the 3 cups to the 3 front slots and keep
+        // whichever moves the cups least in total (so a cup already in one
+        // of those slots stays put).
+        int[][] orders = { new[] { 0, 1, 2 }, new[] { 0, 2, 1 }, new[] { 1, 0, 2 }, new[] { 1, 2, 0 }, new[] { 2, 0, 1 }, new[] { 2, 1, 0 } };
+        Vector3[] best = null;
+        float bestCost = float.MaxValue;
+        foreach (var order in orders)
+        {
+            float cost = 0f;
+            for (int i = 0; i < 3; i++)
+                cost += Vector3.Distance(standing[i].transform.localPosition, rack[ReRackSlots[order[i]]].HomeLocalPosition);
+            if (cost >= bestCost) continue;
+            bestCost = cost;
+            best = new Vector3[3];
+            for (int i = 0; i < 3; i++)
+                best[i] = rack[ReRackSlots[order[i]]].HomeLocalPosition;
+        }
+
+        if (bestCost < 0.001f) return; // already a tight triangle
+        StartCoroutine(SlideCups(standing, best));
+    }
+
+    IEnumerator SlideCups(System.Collections.Generic.List<BeerPongCup> cups, Vector3[] targets)
+    {
+        var starts = new Vector3[cups.Count];
+        for (int i = 0; i < cups.Count; i++) starts[i] = cups[i].transform.localPosition;
+
+        for (float t = 0f; t < 1f; t += Time.deltaTime / reRackSlideSeconds)
+        {
+            float eased = Mathf.SmoothStep(0f, 1f, t);
+            for (int i = 0; i < cups.Count; i++)
+                cups[i].transform.localPosition = Vector3.Lerp(starts[i], targets[i], eased);
+            yield return null;
+        }
+        for (int i = 0; i < cups.Count; i++)
+            cups[i].transform.localPosition = targets[i];
     }
 
     void Win(int team)
@@ -85,6 +259,7 @@ public class BeerPongTable : MonoBehaviour
         StopAllCoroutines();
         foreach (var cup in _cups) cup.Restore();
         foreach (var ball in _balls) ball.Respawn();
+        _reRacked[0] = _reRacked[1] = false;
         _gameOver = false;
         UpdateScoreboards();
     }
@@ -110,14 +285,15 @@ public class BeerPongTable : MonoBehaviour
 
     void UpdateScoreboards()
     {
-        string Team(int t) => $"<color=#{ColorUtility.ToHtmlStringRGB(teamColors[t])}>{teamNames[t]} {Score(t)}</color>";
-        SetScoreboards($"{Team(0)}  -  {Team(1)}");
+        string Colored(int t, string s) => $"<color=#{ColorUtility.ToHtmlStringRGB(teamColors[t])}>{s}</color>";
+        SetScoreboards($"{Colored(0, $"{teamNames[0]} {Score(0)}")} <color=#FFFFFF>-</color> {Colored(1, $"{Score(1)} {teamNames[1]}")}");
     }
 
     void SetScoreboards(string text)
     {
-        foreach (var board in scoreboards)
-            if (board != null) board.text = text;
+        if (_scoreText == null) return;
+        _scoreText.text = text;
+        _scoreRenderFramesLeft = 2;
     }
 
     static void SpawnBurst(Vector3 position, Color color)
