@@ -3404,8 +3404,13 @@ MonoBehaviour:
   - top: {fileID: 1595108837}
     middle: {fileID: 1489275496}
     bottom: {fileID: 1007257520}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 2.5
+  reelStopGap: 0.7
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!65 &191988778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3445,6 +3450,12 @@ MonoBehaviour:
   reels: {fileID: 191988777}
   audioSource: {fileID: 191988776}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -11309,8 +11320,13 @@ MonoBehaviour:
   - top: {fileID: 649672493}
     middle: {fileID: 1581619996}
     bottom: {fileID: 622047001}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 2.5
+  reelStopGap: 0.7
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!65 &706368463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11350,6 +11366,12 @@ MonoBehaviour:
   reels: {fileID: 706368462}
   audioSource: {fileID: 706368461}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -20061,8 +20083,13 @@ MonoBehaviour:
   - top: {fileID: 882666742}
     middle: {fileID: 1985553854}
     bottom: {fileID: 181993798}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 2.5
+  reelStopGap: 0.7
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!65 &1279379670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20102,6 +20129,12 @@ MonoBehaviour:
   reels: {fileID: 1279379669}
   audioSource: {fileID: 1279379668}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -21492,8 +21525,13 @@ MonoBehaviour:
   - top: {fileID: 181663990}
     middle: {fileID: 2133648072}
     bottom: {fileID: 370728915}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 2.5
+  reelStopGap: 0.7
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!65 &1400164315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21533,6 +21571,12 @@ MonoBehaviour:
   reels: {fileID: 1400164314}
   audioSource: {fileID: 1400164313}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -23555,8 +23599,13 @@ MonoBehaviour:
   - top: {fileID: 483185617}
     middle: {fileID: 555162269}
     bottom: {fileID: 139685216}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 2.5
+  reelStopGap: 0.7
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!65 &1501336408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23596,6 +23645,12 @@ MonoBehaviour:
   reels: {fileID: 1501336407}
   audioSource: {fileID: 1501336406}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -32256,8 +32311,13 @@ MonoBehaviour:
   - top: {fileID: 5799816}
     middle: {fileID: 1271231163}
     bottom: {fileID: 422598983}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 2.5
+  reelStopGap: 0.7
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!65 &2080827930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32297,6 +32357,12 @@ MonoBehaviour:
   reels: {fileID: 2080827929}
   audioSource: {fileID: 2080827928}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -37080,6 +37146,12 @@ MonoBehaviour:
   reels: {fileID: 3751193414279120761}
   audioSource: {fileID: 3751193414279120762}
   spinStartClip: {fileID: 8300000, guid: 36374cff9e18cea4eb062fe115436d1f, type: 3}
+  reelTickClip: {fileID: 0}
+  reelStopClip: {fileID: 0}
+  reelTickVolume: 0.25
+  minTickGap: 0.05
+  reelStopVolume: 0.9
+  reelStopPitchStep: 0.06
   winTiers:
   - label: Cherry
     weight: 15
@@ -37155,8 +37227,13 @@ MonoBehaviour:
   - top: {fileID: 1683217489}
     middle: {fileID: 1112377584}
     bottom: {fileID: 1683190843}
-  tickInterval: 0.15
-  landStagger: 0.1
+  spinTime: 1.5
+  reelStopGap: 0.5
+  fastTickInterval: 0.04
+  slowTickInterval: 0.12
+  slowDownTime: 0.45
+  stopBounce: 0.12
+  stopBounceTime: 0.18
 --- !u!82 &3751193414279120762
 AudioSource:
   m_ObjectHideFlags: 0
