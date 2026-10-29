@@ -358,16 +358,28 @@ UnityEngine.AudioClip::CreateUserSound_Injected
 UnityEngine.AudioClip::GetName_Injected
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
+UnityEngine.AudioSource::get_isPlaying_Injected
 UnityEngine.AudioSource::get_generatorObject_Injected
+UnityEngine.AudioSource::get_outputAudioMixerGroup_Injected
+UnityEngine.AudioSource::get_maxDistance_Injected
+UnityEngine.AudioSource::get_minDistance_Injected
+UnityEngine.AudioSource::get_spatialBlend_Injected
+UnityEngine.AudioSource::get_volume_Injected
 UnityEngine.AudioSource::PlayHelper_Injected
 UnityEngine.AudioSource::PlayOneShotHelper_Injected
+UnityEngine.AudioSource::SetPitch_Injected
 UnityEngine.AudioSource::Stop_Injected
+UnityEngine.AudioSource::set_dopplerLevel_Injected
 UnityEngine.AudioSource::set_generatorObject_Injected
 UnityEngine.AudioSource::set_loop_Injected
 UnityEngine.AudioSource::set_maxDistance_Injected
+UnityEngine.AudioSource::set_minDistance_Injected
+UnityEngine.AudioSource::set_outputAudioMixerGroup_Injected
 UnityEngine.AudioSource::set_playOnAwake_Injected
+UnityEngine.AudioSource::set_rolloffMode_Injected
 UnityEngine.AudioSource::set_spatialBlend_Injected
 UnityEngine.AudioSource::set_volume_Injected
+UnityEngine.AudioSource::get_rolloffMode_Injected
 UnityEngine.Awaitable::IsNativeAwaitableCompleted
 UnityEngine.Awaitable::ReleaseNativeAwaitable
 UnityEngine.Behaviour::get_enabled_Injected
@@ -522,6 +534,7 @@ UnityEngine.Collider::get_enabled_Injected
 UnityEngine.Collider::get_isTrigger_Injected
 UnityEngine.Collider::get_attachedRigidbody_Injected
 UnityEngine.Collider::ClosestPoint_Injected
+UnityEngine.Collider::Raycast_Injected
 UnityEngine.Collider::get_bounds_Injected
 UnityEngine.Collider::set_enabled_Injected
 UnityEngine.Collider::set_isTrigger_Injected
@@ -678,6 +691,7 @@ UnityEngine.GeometryUtility::Internal_ExtractPlanes_Injected
 UnityEngine.Gizmos::DrawIcon_Injected
 UnityEngine.Gizmos::DrawLine_Injected
 UnityEngine.Gizmos::DrawSphere_Injected
+UnityEngine.Gizmos::DrawWireCube_Injected
 UnityEngine.Gizmos::DrawWireSphere_Injected
 UnityEngine.Gizmos::set_color_Injected
 UnityEngine.Gizmos::set_matrix_Injected
@@ -1223,6 +1237,7 @@ UnityEngine.ReflectionProbe::get_defaultTextureHDRDecodeValues_Injected
 UnityEngine.ReflectionProbe::get_mode_Injected
 UnityEngine.ReflectionProbe::get_refreshMode_Injected
 UnityEngine.Renderer::get_enabled_Injected
+UnityEngine.Renderer::get_receiveShadows_Injected
 UnityEngine.Renderer::GetMaterialCount_Injected
 UnityEngine.Renderer::get_sortingGroupID_Injected
 UnityEngine.Renderer::get_sortingGroupOrder_Injected
@@ -1248,6 +1263,7 @@ UnityEngine.Renderer::set_smallMeshCulling_Injected
 UnityEngine.Renderer::set_sortingLayerID_Injected
 UnityEngine.Renderer::set_sortingOrder_Injected
 UnityEngine.Renderer::GetSharedMaterialArray_Injected
+UnityEngine.Renderer::get_shadowCastingMode_Injected
 UnityEngine.Rendering.AsyncGPUReadback::Request_Internal_GraphicsBuffer_1_Injected
 UnityEngine.Rendering.AsyncGPUReadback::Request_Internal_GraphicsBuffer_2_Injected
 UnityEngine.Rendering.AsyncGPUReadback::WaitAllRequests
@@ -1585,7 +1601,6 @@ UnityEngine.Rigidbody::get_angularDamping_Injected
 UnityEngine.Rigidbody::get_linearDamping_Injected
 UnityEngine.Rigidbody::get_maxAngularVelocity_Injected
 UnityEngine.Rigidbody::get_maxLinearVelocity_Injected
-UnityEngine.Rigidbody::AddForce_Injected
 UnityEngine.Rigidbody::MovePosition_Injected
 UnityEngine.Rigidbody::MoveRotation_Injected
 UnityEngine.Rigidbody::get_angularVelocity_Injected
@@ -1947,6 +1962,7 @@ UnityEngine.Texture3D::ApplyImpl_Injected
 UnityEngine.Texture3D::SetPixelImpl_Injected
 UnityEngine.Texture3D::SetPixels_Injected
 UnityEngine.Time::get_realtimeSinceStartupAsDouble
+UnityEngine.Time::get_timeAsDouble
 UnityEngine.Time::get_frameCount
 UnityEngine.Time::get_renderedFrameCount
 UnityEngine.Time::get_deltaTime

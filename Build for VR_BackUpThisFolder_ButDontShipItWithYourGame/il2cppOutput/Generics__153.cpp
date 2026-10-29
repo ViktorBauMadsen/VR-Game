@@ -2942,9 +2942,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_mE871810BC163EE4EF88
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 17160
 // Method Definition Index: 17161
 // Method Definition Index: 17162
+// Method Definition Index: 17163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Il2CppSharedGenericObject* ValueProperty_GetValue_m51E248F82F7053270099F87945832C81F127A770_gshared (ValueProperty_t4B4A65618B00A0A4B19D251C94B7B82A3FFDC2EC* __this, StyleUIAnimationClip_t086DB226C1ACBC1C18CBA748C1BEA3A07E820DE5* ___0_container, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2955,7 +2955,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Il2CppSharedGenericObject* ValueProperty_GetV
 		return (Il2CppSharedGenericObject*)L_1;
 	}
 }
-// Method Definition Index: 17163
+// Method Definition Index: 17164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty_SetValue_mCEF4F58BC4C12F94E6721721A93D4EA3F4644025_gshared (ValueProperty_t4B4A65618B00A0A4B19D251C94B7B82A3FFDC2EC* __this, StyleUIAnimationClip_t086DB226C1ACBC1C18CBA748C1BEA3A07E820DE5* ___0_container, Il2CppSharedGenericObject* ___1_value, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -2966,7 +2966,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty_SetValue_mCEF4F58BC4C12F94
 		return;
 	}
 }
-// Method Definition Index: 17164
+// Method Definition Index: 17165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty__ctor_mE6040F9E53EB4C338B916D4A2CCE7FDD50698DF6_gshared (ValueProperty_t4B4A65618B00A0A4B19D251C94B7B82A3FFDC2EC* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -2991,7 +2991,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty__ctor_mE6040F9E53EB4C338B9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 17160
+// Method Definition Index: 17161
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueProperty_get_Name_mEE4543917989B189DBE0B37F2B2D318DDC659C06_fshared (ValueProperty_t4D9BB595BCCF981819A498C3E15E14DF3EC7B633* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3000,7 +3000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueProperty_get_Name_mEE454391798
 		return L_0;
 	}
 }
-// Method Definition Index: 17161
+// Method Definition Index: 17162
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueProperty_get_IsReadOnly_m89A5C7ECCEF289CFD867DA302BB30478D4EB49FA_fshared (ValueProperty_t4D9BB595BCCF981819A498C3E15E14DF3EC7B633* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3009,7 +3009,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueProperty_get_IsReadOnly_m89A5C7ECCE
 		return L_0;
 	}
 }
-// Method Definition Index: 17162
+// Method Definition Index: 17163
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty_GetValue_m832A396A16CFB367B33AE9BF37B2DD582AE2D85D_fshared (ValueProperty_t4D9BB595BCCF981819A498C3E15E14DF3EC7B633* __this, Il2CppFullySharedGenericAny* ___0_container, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	void* L_1 = alloca(Il2CppFakeBoxBuffer::SizeNeededFor(il2cpp_rgctx_data(il2cpp_codegen_method_rgctx(method), 2)));
@@ -3025,7 +3025,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty_GetValue_m832A396A16CFB367
 		return;
 	}
 }
-// Method Definition Index: 17163
+// Method Definition Index: 17164
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty_SetValue_m38F027F0F44418852F03AAAC9FD9A393E4F76883_fshared (ValueProperty_t4D9BB595BCCF981819A498C3E15E14DF3EC7B633* __this, Il2CppFullySharedGenericAny* ___0_container, Il2CppFullySharedGenericAny ___1_value, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TValue_t3E6D7FA594FC1EB08E16B873D7EE967923E4E0EA = il2cpp_codegen_sizeof(il2cpp_rgctx_data(il2cpp_codegen_method_rgctx(method), 3));
@@ -3041,7 +3041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty_SetValue_m38F027F0F4441885
 		return;
 	}
 }
-// Method Definition Index: 17164
+// Method Definition Index: 17165
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty__ctor_m468F22F1578564692A2E5570085DAC4D7AD2B69F_fshared (ValueProperty_t4D9BB595BCCF981819A498C3E15E14DF3EC7B633* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3082,7 +3082,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueProperty__ctor_m468F22F1578564692A2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m156BDB7AEA4D8116BB93481D0BB65155BD5E9F2F (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, NativeList_1_t9823396F5F6C10E21D3D7F9029C9EB52F74F7F53 ___0_item1, NativeList_1_t9823396F5F6C10E21D3D7F9029C9EB52F74F7F53 ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3094,7 +3094,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m156BDB7AEA4D8116BB93
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m6E35D7C9D4F3B35198377EB70F34A7C864C447DC (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3126,7 +3126,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m6E35D7C9D4F3B35198377EB70F34A7C864C44
 	_returnValue = ValueTuple_2_Equals_m6E35D7C9D4F3B35198377EB70F34A7C864C447DC(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mF9CD052CD8AB92BA139A1AAEC76E4AC1D1C87D27 (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3170,7 +3170,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mF9CD052CD8AB92BA139A1AAEC76E4AC1D1C87
 	_returnValue = ValueTuple_2_Equals_mF9CD052CD8AB92BA139A1AAEC76E4AC1D1C87D27(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mAB21F372C898973C7EEE6391F68A01DDE5789E0E (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3251,7 +3251,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mAB21F372C898973C7EEE6391F68A01DDE5789E0E(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m760083AFF6A00BF3CD0A877934EFBAF2D1A59D97 (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3307,7 +3307,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m760083AFF6A0
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m760083AFF6A00BF3CD0A877934EFBAF2D1A59D97(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mA3BBB6C3CF58AB6C07E4B01F4A271897A69957C9 (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3355,7 +3355,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mA3BBB6C3CF58AB6C07E4B01F4A27189
 	_returnValue = ValueTuple_2_CompareTo_mA3BBB6C3CF58AB6C07E4B01F4A271897A69957C9(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m0034BE875C4F60C6B151AE70D031DACD845F74BF (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3455,7 +3455,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m0034BE875C4F60C6B151AE70D031DACD845F74BF(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m3A4ED7628BBA54BFA6F56F0535021E9F428675F7 (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3518,7 +3518,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m3A4ED7628BBA54BFA6F56F0535021
 	_returnValue = ValueTuple_2_GetHashCode_m3A4ED7628BBA54BFA6F56F0535021E9F428675F7(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m597992DF8F6C9EA16F5EB45284211D61B7F3334C (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3538,7 +3538,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m597992DF8F6C9EA16F5EB45284211D61B7F3334C(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m766CF5F5D6AAE5A15AC2D869C8CA13CABE898CC2 (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3569,7 +3569,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m766CF5F
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mCA1652AFCA2EA58AC58F233D7D3F4A222581DDFF (ValueTuple_2_t0E5B97C54B420B9FB99BA3419C70BE06A7E35003* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3685,7 +3685,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mCA1652AFCA2EA58AC58F233D7D3F4A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m6EDC1E276840D6B633B4CFB917DC3568EFEBB014 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, bool ___0_item1, bool ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -3697,7 +3697,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m6EDC1E276840D6B633B4
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m5911BE31D2024221A0D308903C8CFDF2B6E59653 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3729,7 +3729,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m5911BE31D2024221A0D308903C8CFDF2B6E59
 	_returnValue = ValueTuple_2_Equals_m5911BE31D2024221A0D308903C8CFDF2B6E59653(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m7B7E3169A778C92ACD465FC0C7CB37B87000D5EA (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3773,7 +3773,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m7B7E3169A778C92ACD465FC0C7CB37B87000D
 	_returnValue = ValueTuple_2_Equals_m7B7E3169A778C92ACD465FC0C7CB37B87000D5EA(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mE31F0194B41A30B96AAE152DAD8F80E631303961 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3854,7 +3854,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mE31F0194B41A30B96AAE152DAD8F80E631303961(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m5C8FC4850783D4AD31AC83723017C2DC7B4EB6E6 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3910,7 +3910,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m5C8FC4850783
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m5C8FC4850783D4AD31AC83723017C2DC7B4EB6E6(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m8236E4860E3635034A524B8A71C55652175F07B0 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -3958,7 +3958,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m8236E4860E3635034A524B8A71C5565
 	_returnValue = ValueTuple_2_CompareTo_m8236E4860E3635034A524B8A71C55652175F07B0(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m11BE0623EFB06E4E474D725C2C55A4DDE5D1DDF0 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4058,7 +4058,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m11BE0623EFB06E4E474D725C2C55A4DDE5D1DDF0(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mB374BD78643FF7589567489D9A526AC822B111A6 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticInit);
@@ -4119,7 +4119,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mB374BD78643FF7589567489D9A526
 	_returnValue = ValueTuple_2_GetHashCode_mB374BD78643FF7589567489D9A526AC822B111A6(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m8A95BE3F425498DD6466AF8C4D853C8BD11A69E7 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4139,7 +4139,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m8A95BE3F425498DD6466AF8C4D853C8BD11A69E7(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m27241B70A13F7A91CF183D9774621EC80992DF57 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4170,7 +4170,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m27241B7
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m054CE92EF348C115D7C10122CF32A89A9E8FB925 (ValueTuple_2_tAC09A94984283F831036E5D9BFBAECBCBACE53AA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4284,7 +4284,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m054CE92EF348C115D7C10122CF32A8
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m5C1965594C3AC744352BDE8F45FA0A18491EAF5F (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, bool ___0_item1, int64_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4296,7 +4296,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m5C1965594C3AC744352B
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mD54A99013DE8085BB19D14499B30809242BBCA68 (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4328,7 +4328,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mD54A99013DE8085BB19D14499B30809242BBC
 	_returnValue = ValueTuple_2_Equals_mD54A99013DE8085BB19D14499B30809242BBCA68(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m011839CB781153E9BDF354404C545E99865BE5FA (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4372,7 +4372,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m011839CB781153E9BDF354404C545E99865BE
 	_returnValue = ValueTuple_2_Equals_m011839CB781153E9BDF354404C545E99865BE5FA(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m95EA992E03E2BC6EE0356D254740762581959C92 (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4453,7 +4453,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m95EA992E03E2BC6EE0356D254740762581959C92(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mE313E6934FAF6A0AD19459AD493E43B3CF6BC98B (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4509,7 +4509,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mE313E6934FAF
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mE313E6934FAF6A0AD19459AD493E43B3CF6BC98B(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mAE06DFF75301B6442B0DAFE3EA5C23536681704A (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4557,7 +4557,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mAE06DFF75301B6442B0DAFE3EA5C235
 	_returnValue = ValueTuple_2_CompareTo_mAE06DFF75301B6442B0DAFE3EA5C23536681704A(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m19358E8128F959B80710099F576B97F11DADF2B1 (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4657,7 +4657,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m19358E8128F959B80710099F576B97F11DADF2B1(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mB3D19A93B20270BE4A1B4FBC26F753B88A18CA3B (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticInit);
@@ -4717,7 +4717,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mB3D19A93B20270BE4A1B4FBC26F75
 	_returnValue = ValueTuple_2_GetHashCode_mB3D19A93B20270BE4A1B4FBC26F753B88A18CA3B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m2AE1488823AD679E0442923B1EF741FB54E0DE58 (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4737,7 +4737,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m2AE1488823AD679E0442923B1EF741FB54E0DE58(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m34EFEC336F893C6E89F7A8C7F7CE551B4C40B4D7 (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4768,7 +4768,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m34EFEC3
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m62309E564B72DB35C6C32A4840CFCA77F0CB95E7 (ValueTuple_2_tC8CCAE1DDAC0B3D7328B4402277A92A81F4D9242* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4881,7 +4881,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m62309E564B72DB35C6C32A4840CFCA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m337391F31467DB8EABD64D1E031C0CC5F537BDC6 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___0_item1, EntityId_t982FBD037EAC5CA077B1602A7EA40E3523AA0FC8 ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -4893,7 +4893,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m337391F31467DB8EABD6
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m1C741FFB911C68A4D14F263F5B834552CFB2F8AD (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4925,7 +4925,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m1C741FFB911C68A4D14F263F5B834552CFB2F
 	_returnValue = ValueTuple_2_Equals_m1C741FFB911C68A4D14F263F5B834552CFB2F8AD(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mB7BF9EB9D7097E8537AF413CB2AEFDBCD59D66B6 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -4969,7 +4969,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mB7BF9EB9D7097E8537AF413CB2AEFDBCD59D6
 	_returnValue = ValueTuple_2_Equals_mB7BF9EB9D7097E8537AF413CB2AEFDBCD59D66B6(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mB718E50D86603866D1CFD2A8FCED2B1C442DE28A (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5050,7 +5050,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mB718E50D86603866D1CFD2A8FCED2B1C442DE28A(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mF76241894DA25365BD4E6F7F6BE2BE8EB1489CDB (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5106,7 +5106,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mF76241894DA2
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mF76241894DA25365BD4E6F7F6BE2BE8EB1489CDB(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m7FF9D44BE2437C0A73DD54FB07B05F000BF9E1E2 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5154,7 +5154,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m7FF9D44BE2437C0A73DD54FB07B05F0
 	_returnValue = ValueTuple_2_CompareTo_m7FF9D44BE2437C0A73DD54FB07B05F000BF9E1E2(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m7B6B29CC8634EB1FDE73A6981F1C5BF32709DC69 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5254,7 +5254,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m7B6B29CC8634EB1FDE73A6981F1C5BF32709DC69(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m870BB6A23DC03D0BA7345FB0C4406B72A599D59C (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5314,7 +5314,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m870BB6A23DC03D0BA7345FB0C4406
 	_returnValue = ValueTuple_2_GetHashCode_m870BB6A23DC03D0BA7345FB0C4406B72A599D59C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mD43E59DEFEA4B833EF2D75E62600F5B2424D2946 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5334,7 +5334,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mD43E59DEFEA4B833EF2D75E62600F5B2424D2946(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mA2B32A6440A20219AFFE6DFA544D4E1FD077C646 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5365,7 +5365,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mA2B32A6
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mF3E1DE59D25626F06B9F07E285A973516B30E318 (ValueTuple_2_t2213E297C2566AA4A7DCFBBE72C1DD9A274C79F7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5478,7 +5478,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mF3E1DE59D25626F06B9F07E285A973
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m15CD528E7C00280A0D3F92FB71D6BBABAB47BC4A (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, GPUArchetypeHandle_t4B8DB32EBCD8FFA94BCD4FD28FEC39E4A42054EB ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -5490,7 +5490,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m15CD528E7C00280A0D3F
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mC50DF61BC7D906A303069A4753DFB16DF182422D (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5522,7 +5522,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mC50DF61BC7D906A303069A4753DFB16DF1824
 	_returnValue = ValueTuple_2_Equals_mC50DF61BC7D906A303069A4753DFB16DF182422D(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m77BA10215857A2EA458BD1904D894978FD1C8A20 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5566,7 +5566,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m77BA10215857A2EA458BD1904D894978FD1C8
 	_returnValue = ValueTuple_2_Equals_m77BA10215857A2EA458BD1904D894978FD1C8A20(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m0BA518890FE727BFD351F7C74696E49533AADDB7 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5647,7 +5647,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m0BA518890FE727BFD351F7C74696E49533AADDB7(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m11D0B19FF81710AC05AC95D813605301467B65D4 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5703,7 +5703,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m11D0B19FF817
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m11D0B19FF81710AC05AC95D813605301467B65D4(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m02F435A26B23E6D456DEAB74EB42839995A3F6C0 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5751,7 +5751,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m02F435A26B23E6D456DEAB74EB42839
 	_returnValue = ValueTuple_2_CompareTo_m02F435A26B23E6D456DEAB74EB42839995A3F6C0(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m99AFD32DDBECC84FAB2775D898C996BFD1033A58 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5851,7 +5851,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m99AFD32DDBECC84FAB2775D898C996BFD1033A58(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m33222D74B82722002677F0476C551591E527A443 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5918,7 +5918,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m33222D74B82722002677F0476C551
 	_returnValue = ValueTuple_2_GetHashCode_m33222D74B82722002677F0476C551591E527A443(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m88A45FABFB709A0311134D9F2FEEE4724A40740D (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -5938,7 +5938,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m88A45FABFB709A0311134D9F2FEEE4724A40740D(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m0471074F1419049118EC8208DD9BA5732F862D87 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5969,7 +5969,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m0471074
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mAF58F40570A7EEEB86BCA70F144B4F9D020AF442 (ValueTuple_2_tF0041945FE1FEEB3770B95F69A09EAC0A6D2CEAD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6083,7 +6083,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mAF58F40570A7EEEB86BCA70F144B4F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879F8E8E12D8FB8FCDB5477 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, int32_t ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6095,7 +6095,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mF5D8FB18DBF2C4B2F879
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m0A7616CA0C5F8B2A1372CAD6967AC4F127243618 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6127,7 +6127,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m0A7616CA0C5F8B2A1372CAD6967AC4F127243
 	_returnValue = ValueTuple_2_Equals_m0A7616CA0C5F8B2A1372CAD6967AC4F127243618(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mEAB75D7A1B4280805E1966B1997CF0916FA2DCBF (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6171,7 +6171,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mEAB75D7A1B4280805E1966B1997CF0916FA2D
 	_returnValue = ValueTuple_2_Equals_mEAB75D7A1B4280805E1966B1997CF0916FA2DCBF(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m74F1901BAE48B9C068373B587B6183436E40A4D4 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6252,7 +6252,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m74F1901BAE48B9C068373B587B6183436E40A4D4(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mE2C6497D8A95DCFD68062BA977030846E9424271 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6308,7 +6308,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mE2C6497D8A95
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mE2C6497D8A95DCFD68062BA977030846E9424271(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m177994D2B6C4391A47021A4C263145F2998CD678 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6356,7 +6356,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m177994D2B6C4391A47021A4C263145F
 	_returnValue = ValueTuple_2_CompareTo_m177994D2B6C4391A47021A4C263145F2998CD678(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m3066403B3C2646F9D50688C4CC667FFF308916D4 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6456,7 +6456,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m3066403B3C2646F9D50688C4CC667FFF308916D4(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m9D4E10761077AC6288F37B5F730ED598FF1A4361 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6514,7 +6514,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m9D4E10761077AC6288F37B5F730ED
 	_returnValue = ValueTuple_2_GetHashCode_m9D4E10761077AC6288F37B5F730ED598FF1A4361(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m35342A6650FAB414E9DE7E5AD2E29DBCD1F4EF45 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6534,7 +6534,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m35342A6650FAB414E9DE7E5AD2E29DBCD1F4EF45(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m69CB90458039D4AF8EA66DC1973DD9A523F06005 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6565,7 +6565,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m69CB904
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mCE5BCFBD7B973DC76FC684E5DE77F470EB4007C2 (ValueTuple_2_t973F7AB0EF5DD3619E518A966941F10D8098F52D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6676,7 +6676,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mCE5BCFBD7B973DC76FC684E5DE77F4
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m0F1D8E168ACAE65DD09FBE7DEF637D427D55A5BF_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, int32_t ___0_item1, Il2CppSharedGenericObject* ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -6689,7 +6689,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m0F1D8E168ACAE65DD09F
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m5796DC8B0F9CECBEB46972A2F4B135C7B14261E3_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6721,7 +6721,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m5796DC8B0F9CECBEB46972A2F4B135C7B1426
 	_returnValue = ValueTuple_2_Equals_m5796DC8B0F9CECBEB46972A2F4B135C7B14261E3(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m031D58E4AFA9773F64ABBB72FD65E9741A7E919A_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6765,7 +6765,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m031D58E4AFA9773F64ABBB72FD65E9741A7E9
 	_returnValue = ValueTuple_2_Equals_m031D58E4AFA9773F64ABBB72FD65E9741A7E919A(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m0A216692686C7FCD8DC2FA8EC594D8BF003DC45B_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6842,7 +6842,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m0A216692686C7FCD8DC2FA8EC594D8BF003DC45B(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mDE9D9DDD16AA43C981B11D05ED0B4E15DBC4D820_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6898,7 +6898,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mDE9D9DDD16AA
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mDE9D9DDD16AA43C981B11D05ED0B4E15DBC4D820(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m37DDBF8A2CD8032079367DD7F15551ACA8CB9708_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -6946,7 +6946,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m37DDBF8A2CD8032079367DD7F15551A
 	_returnValue = ValueTuple_2_CompareTo_m37DDBF8A2CD8032079367DD7F15551ACA8CB9708(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m6AC5CC5F7CC62F10F1E0E8A178B151F712A1A9C8_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7042,7 +7042,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m6AC5CC5F7CC62F10F1E0E8A178B151F712A1A9C8(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mBBD7DE907D4FE36DD7A8D9BC873F701C437CF40E_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7129,7 +7129,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mBBD7DE907D4FE36DD7A8D9BC873F7
 	_returnValue = ValueTuple_2_GetHashCode_mBBD7DE907D4FE36DD7A8D9BC873F701C437CF40E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mE0EC39D6464BCE6AAC252775C7C4C709F12CF87B_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7149,7 +7149,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mE0EC39D6464BCE6AAC252775C7C4C709F12CF87B(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m4F93B7E295E809FD28D91A8918F50DE3BD3EDE6C_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7178,7 +7178,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m4F93B7E
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m8F000DD5CB37EDA9CA5C6719B1508FEB3107544B_gshared (ValueTuple_2_tE3CBF4947E2EEAEB4DC6C2F7877FFDA4AFCF3FAD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7330,7 +7330,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m8F000DD5CB37EDA9CA5C6719B1508F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCE6B92E5159F75F076165A8F5DAC71329C708C36 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, NativeTextInfo_t374114235115CC53DD8E337DD2ECB1EE4504FE19 ___0_item1, bool ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7342,7 +7342,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCE6B92E5159F75F07616
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m5286922DD802C912FA39353179ADA7D546D7C8FA (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7374,7 +7374,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m5286922DD802C912FA39353179ADA7D546D7C
 	_returnValue = ValueTuple_2_Equals_m5286922DD802C912FA39353179ADA7D546D7C8FA(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mFB9964512E8A8F7A96D27814FDB94CDA43B550D5 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7418,7 +7418,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mFB9964512E8A8F7A96D27814FDB94CDA43B55
 	_returnValue = ValueTuple_2_Equals_mFB9964512E8A8F7A96D27814FDB94CDA43B550D5(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mA167929B8C83318265DD1285C3C49FB87A820004 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7499,7 +7499,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mA167929B8C83318265DD1285C3C49FB87A820004(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mD6D88BFD5C87EF0908057732ECAC7426CAA3BA97 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7555,7 +7555,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mD6D88BFD5C87
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mD6D88BFD5C87EF0908057732ECAC7426CAA3BA97(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mC57ACFA157D0BB1F0341F543ED3ACAB4BC2FC653 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7603,7 +7603,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mC57ACFA157D0BB1F0341F543ED3ACAB
 	_returnValue = ValueTuple_2_CompareTo_mC57ACFA157D0BB1F0341F543ED3ACAB4BC2FC653(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m87E647E025D77541317A70D86409B54055571F40 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7703,7 +7703,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m87E647E025D77541317A70D86409B54055571F40(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mDFB09FA17DD025D2B62B3316C08CE96FDF599924 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7766,7 +7766,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mDFB09FA17DD025D2B62B3316C08CE
 	_returnValue = ValueTuple_2_GetHashCode_mDFB09FA17DD025D2B62B3316C08CE96FDF599924(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m5A94D80F428F42695A797DE5C6B879D1A86FFB33 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7786,7 +7786,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m5A94D80F428F42695A797DE5C6B879D1A86FFB33(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mB7B344D7607BFF4A922019AD5987C3D8DAACE5B6 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7817,7 +7817,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mB7B344D
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mE9C0531E79E8AA54BD5C5ECF9EBAB27115BC1539 (ValueTuple_2_t574B6BCEAD8D42DD3951CB8E7AE7E3687B044600* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7933,7 +7933,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mE9C0531E79E8AA54BD5C5ECF9EBAB2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m9CB17F5565570C680891C139762E92CE6023CA88 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_item1, float ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -7945,7 +7945,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m9CB17F5565570C680891
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m72CB5C8A38CAE29683AA497806526AF2772DF5DE (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7977,7 +7977,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m72CB5C8A38CAE29683AA497806526AF2772DF
 	_returnValue = ValueTuple_2_Equals_m72CB5C8A38CAE29683AA497806526AF2772DF5DE(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mA7C2DB4104FA02A656593CA9CA45CE65CDEEECE6 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8021,7 +8021,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mA7C2DB4104FA02A656593CA9CA45CE65CDEEE
 	_returnValue = ValueTuple_2_Equals_mA7C2DB4104FA02A656593CA9CA45CE65CDEEECE6(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m6FADD0DC0C31386781E5BDBBEC2F8C1B407E2F67 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8102,7 +8102,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m6FADD0DC0C31386781E5BDBBEC2F8C1B407E2F67(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mE365B0D6D3DECB50A968B1D2A0D26764D5FF3AA2 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8158,7 +8158,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mE365B0D6D3DE
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mE365B0D6D3DECB50A968B1D2A0D26764D5FF3AA2(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mCBE153283AD58A024BB912BC25E815EB4D5BC1BC (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8206,7 +8206,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mCBE153283AD58A024BB912BC25E815E
 	_returnValue = ValueTuple_2_CompareTo_mCBE153283AD58A024BB912BC25E815EB4D5BC1BC(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m9B2817A3DA2E8F876DF541070121296884B4D095 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8306,7 +8306,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m9B2817A3DA2E8F876DF541070121296884B4D095(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mE508B5D51A7AD443ECE5371F782AD740864C17AA (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8365,7 +8365,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mE508B5D51A7AD443ECE5371F782AD
 	_returnValue = ValueTuple_2_GetHashCode_mE508B5D51A7AD443ECE5371F782AD740864C17AA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m03FE546AABF928E5598696926714491B31DC9E70 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8385,7 +8385,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m03FE546AABF928E5598696926714491B31DC9E70(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m5A497FE0F208C0805982338FFE984B5C5B0D3949 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8416,7 +8416,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m5A497FE
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mB9E24B464ED386A94A2B7943AD27EC701DDE0D67 (ValueTuple_2_t1EC60CC2EB62FDB39465388BB0107FF081C1D8F4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8528,7 +8528,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mB9E24B464ED386A94A2B7943AD27EC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mACBF4457CCF5AF2E2D9B785ACD5C15341B39098E (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, float ___0_item1, float ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8540,7 +8540,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mACBF4457CCF5AF2E2D9B
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m8C9BFB72D6AE0E06372A5937A8F10FEF3A5B1599 (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8572,7 +8572,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m8C9BFB72D6AE0E06372A5937A8F10FEF3A5B1
 	_returnValue = ValueTuple_2_Equals_m8C9BFB72D6AE0E06372A5937A8F10FEF3A5B1599(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m9E749D479E70DD0B71BF89681A0BC53C6B954CBC (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8616,7 +8616,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m9E749D479E70DD0B71BF89681A0BC53C6B954
 	_returnValue = ValueTuple_2_Equals_m9E749D479E70DD0B71BF89681A0BC53C6B954CBC(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m91F231C5E02D0523AA03469CE01EDC283C1DF150 (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8697,7 +8697,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m91F231C5E02D0523AA03469CE01EDC283C1DF150(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mD00093A0608E630252A15327A43CE99350D590AD (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8753,7 +8753,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mD00093A0608E
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mD00093A0608E630252A15327A43CE99350D590AD(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m83CEBA82F076832A029B6879E889551AFCDF4ADF (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8801,7 +8801,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m83CEBA82F076832A029B6879E889551
 	_returnValue = ValueTuple_2_CompareTo_m83CEBA82F076832A029B6879E889551AFCDF4ADF(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m41742B7F6A6A77DD15D64D2145F1CF4AE3941731 (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8901,7 +8901,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m41742B7F6A6A77DD15D64D2145F1CF4AE3941731(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m88BFAB65C316B572F28C7A57C51BBF7289739179 (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -8959,7 +8959,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m88BFAB65C316B572F28C7A57C51BB
 	_returnValue = ValueTuple_2_GetHashCode_m88BFAB65C316B572F28C7A57C51BBF7289739179(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m6575F9F4511C7DE40C4095D992D2AE73C749B4C9 (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8979,7 +8979,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m6575F9F4511C7DE40C4095D992D2AE73C749B4C9(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m0E4B16C32D707DE015596204F032851F750B760E (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9010,7 +9010,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m0E4B16C
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m41EDD3FEF3808BD322ABC2BDE4915DF9A1F30DB8 (ValueTuple_2_t9700044DDBCB472B3F3F6E8691934C35DCD8E798* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9121,7 +9121,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m41EDD3FEF3808BD322ABC2BDE4915D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCA67E7B8B07E0AF78433CD82C119856F7439318B (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, TextureHandle_t680ABA3F8B50859351BA5DD66220084F87F37388 ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9133,7 +9133,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCA67E7B8B07E0AF78433
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m98E93A6C11EAAA6BC1AB1AD735EFB91F4FFACE8A (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9165,7 +9165,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m98E93A6C11EAAA6BC1AB1AD735EFB91F4FFAC
 	_returnValue = ValueTuple_2_Equals_m98E93A6C11EAAA6BC1AB1AD735EFB91F4FFACE8A(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m806DC410EEBB04DDAB14ECFFA568571634BDE5B1 (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9209,7 +9209,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m806DC410EEBB04DDAB14ECFFA568571634BDE
 	_returnValue = ValueTuple_2_Equals_m806DC410EEBB04DDAB14ECFFA568571634BDE5B1(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m33E712F8456957CB2A6E7B228B9B8CAE0C133F02 (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9290,7 +9290,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m33E712F8456957CB2A6E7B228B9B8CAE0C133F02(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mEE831A891053F470152556F5FD08B1DBD81AF7A1 (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9346,7 +9346,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mEE831A891053
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mEE831A891053F470152556F5FD08B1DBD81AF7A1(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mE8A7EC871BF4CDD3132D5EC337B48844301F5F12 (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9394,7 +9394,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mE8A7EC871BF4CDD3132D5EC337B4884
 	_returnValue = ValueTuple_2_CompareTo_mE8A7EC871BF4CDD3132D5EC337B48844301F5F12(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m5F45FAF7B33ACA3375F3AEECAD8BFE9909910079 (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9494,7 +9494,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m5F45FAF7B33ACA3375F3AEECAD8BFE9909910079(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m81FECDEC75F2F136939E96A2BF6F7B833E0E12ED (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9561,7 +9561,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m81FECDEC75F2F136939E96A2BF6F7
 	_returnValue = ValueTuple_2_GetHashCode_m81FECDEC75F2F136939E96A2BF6F7B833E0E12ED(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m36E8B21A738F4A79F3DC687021D5F981C0A17A7F (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9581,7 +9581,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m36E8B21A738F4A79F3DC687021D5F981C0A17A7F(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m51F6FCF8C70BC2C46C44E7F31FDD0BA874F4524A (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9612,7 +9612,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m51F6FCF
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m4EC5B153F67BF481431A0AA2F33E78EF37867791 (ValueTuple_2_t441643900DE75EDC780AF50BC751CFA37BAA7C67* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9726,7 +9726,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m4EC5B153F67BF481431A0AA2F33E78
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m5F4A44F5994320C2DEF6F42F894CC55D0C901DD6 (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, uint32_t ___0_item1, uint32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -9738,7 +9738,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m5F4A44F5994320C2DEF6
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m5639F7CE46E362833254E0DE9958B903EA6BDE20 (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9770,7 +9770,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m5639F7CE46E362833254E0DE9958B903EA6BD
 	_returnValue = ValueTuple_2_Equals_m5639F7CE46E362833254E0DE9958B903EA6BDE20(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mAAACF5E45EB35EAC5E49A2296654B408699066D4 (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9814,7 +9814,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mAAACF5E45EB35EAC5E49A2296654B40869906
 	_returnValue = ValueTuple_2_Equals_mAAACF5E45EB35EAC5E49A2296654B408699066D4(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mF85DC8F3EA67856B3791947CE0B50FE0F8AC689E (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9895,7 +9895,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mF85DC8F3EA67856B3791947CE0B50FE0F8AC689E(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mE26D9F99171F4987E38C4B72996CA6D72C8C8B1A (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9951,7 +9951,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mE26D9F99171F
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mE26D9F99171F4987E38C4B72996CA6D72C8C8B1A(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mD6788CFFF1EADCC0D5841E29FDA618E3C89149CC (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9999,7 +9999,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mD6788CFFF1EADCC0D5841E29FDA618E
 	_returnValue = ValueTuple_2_CompareTo_mD6788CFFF1EADCC0D5841E29FDA618E3C89149CC(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mD1387868FDAC9764FE6DBB73ADC6CC33BE176723 (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10099,7 +10099,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mD1387868FDAC9764FE6DBB73ADC6CC33BE176723(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mF3B537BA555CF519DF00D747C94A3706513C669C (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -10157,7 +10157,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mF3B537BA555CF519DF00D747C94A3
 	_returnValue = ValueTuple_2_GetHashCode_mF3B537BA555CF519DF00D747C94A3706513C669C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m2391DC8A3CB4F194AC282AA1571D53463F728ABA (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10177,7 +10177,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m2391DC8A3CB4F194AC282AA1571D53463F728ABA(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m02C670C2E4C17D1329301091D6DEDEBEA13456E5 (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10208,7 +10208,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m02C670C
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mF6205032C98ED74043069AADCF810A2B86431C61 (ValueTuple_2_t0249A48D0DEF819E523EFDD9D28D581BCAC50EA8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10319,7 +10319,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mF6205032C98ED74043069AADCF810A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCBAC921D80D3923BE5208C2DE5FC97CDE4ED85EF (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_item1, bool ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -10331,7 +10331,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCBAC921D80D3923BE520
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m8640F42CDE80F877E6F5F1D308DB6F260D3AA32C (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10363,7 +10363,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m8640F42CDE80F877E6F5F1D308DB6F260D3AA
 	_returnValue = ValueTuple_2_Equals_m8640F42CDE80F877E6F5F1D308DB6F260D3AA32C(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mB37414B0F103E3CF42CA5EB83F4428AF3CF59C19 (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10407,7 +10407,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mB37414B0F103E3CF42CA5EB83F4428AF3CF59
 	_returnValue = ValueTuple_2_Equals_mB37414B0F103E3CF42CA5EB83F4428AF3CF59C19(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mF8686449B6B727A9AF09E81201F593B0DBE09A5D (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10488,7 +10488,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mF8686449B6B727A9AF09E81201F593B0DBE09A5D(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m087EA88969EED0C29A8753AA36C40CBD30E22256 (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10544,7 +10544,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m087EA88969EE
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m087EA88969EED0C29A8753AA36C40CBD30E22256(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m25FAA30AE5ADE4ACCB7F0088FBF3E38901F7667F (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10592,7 +10592,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m25FAA30AE5ADE4ACCB7F0088FBF3E38
 	_returnValue = ValueTuple_2_CompareTo_m25FAA30AE5ADE4ACCB7F0088FBF3E38901F7667F(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m636C7B7A41D66A80F906DD352F6035755E49D29D (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10692,7 +10692,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m636C7B7A41D66A80F906DD352F6035755E49D29D(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mA915054F5751B331CDC4DB0A8B0FC4A89A9C5DA9 (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticInit);
@@ -10753,7 +10753,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mA915054F5751B331CDC4DB0A8B0FC
 	_returnValue = ValueTuple_2_GetHashCode_mA915054F5751B331CDC4DB0A8B0FC4A89A9C5DA9(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mCBC3B37AF3101F5A3B3D1604BFD5080B7C14D34F (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10773,7 +10773,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mCBC3B37AF3101F5A3B3D1604BFD5080B7C14D34F(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mBB00788E20E043514785A54A4473CD35BAF266EB (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10804,7 +10804,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mBB00788
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mD027182C01EFBD9877AD874DFD141D5D7BEEF84A (ValueTuple_2_tDBCAC88C96635D7EB29EBE0C3BEA340F68D6DE4E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10918,7 +10918,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mD027182C01EFBD9877AD874DFD141D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m5229EE6E1CB1ECA6735491820B22CE4A3BFF3572 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_item1, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -10930,7 +10930,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m5229EE6E1CB1ECA67354
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m9679B1259BF681EE93F8BD043465BD706459EDD6 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10962,7 +10962,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m9679B1259BF681EE93F8BD043465BD706459E
 	_returnValue = ValueTuple_2_Equals_m9679B1259BF681EE93F8BD043465BD706459EDD6(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m44B7896E6C1A74C354388134CC9306D186CB1DD6 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11006,7 +11006,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m44B7896E6C1A74C354388134CC9306D186CB1
 	_returnValue = ValueTuple_2_Equals_m44B7896E6C1A74C354388134CC9306D186CB1DD6(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m45C45841249EA4E9042741234AB7076F2317DA06 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11087,7 +11087,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m45C45841249EA4E9042741234AB7076F2317DA06(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m1DC52FCE59C63135A2F322D463CCDC97B958DD61 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11143,7 +11143,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m1DC52FCE59C6
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m1DC52FCE59C63135A2F322D463CCDC97B958DD61(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m421B360A52D5E5443014B88F804266B452B90278 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11191,7 +11191,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m421B360A52D5E5443014B88F804266B
 	_returnValue = ValueTuple_2_CompareTo_m421B360A52D5E5443014B88F804266B452B90278(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m240843414C640B0B6E8EBB5AF852BC719B82DC9F (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11291,7 +11291,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m240843414C640B0B6E8EBB5AF852BC719B82DC9F(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m477F5559BFF0FFF37CBAC6A9033E569A71F0193A (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -11351,7 +11351,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m477F5559BFF0FFF37CBAC6A9033E5
 	_returnValue = ValueTuple_2_GetHashCode_m477F5559BFF0FFF37CBAC6A9033E569A71F0193A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mBB8A686412F3A9EEA816E02024B7708F1EA4991C (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11371,7 +11371,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mBB8A686412F3A9EEA816E02024B7708F1EA4991C(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mAA510482CC034F7D7FDC46C743EE56B2C747DC7D (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11402,7 +11402,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mAA51048
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m3734D96EF3CAF3B55D24799F0D68DD1473EB4017 (ValueTuple_2_t5B4B622CEA9C2B7D10F4CA817196A3E23C6C27FF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11515,7 +11515,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m3734D96EF3CAF3B55D24799F0D68DD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m42119FA45691442242A68FCC5045768CD8968A00 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_item1, float ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -11527,7 +11527,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m42119FA45691442242A6
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mCB488B89E15D470DB3F672264F4C8D0D93829AE6 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11559,7 +11559,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mCB488B89E15D470DB3F672264F4C8D0D93829
 	_returnValue = ValueTuple_2_Equals_mCB488B89E15D470DB3F672264F4C8D0D93829AE6(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m0144AB59FC0D15E898837C7F759FB32DEE7EA426 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11603,7 +11603,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m0144AB59FC0D15E898837C7F759FB32DEE7EA
 	_returnValue = ValueTuple_2_Equals_m0144AB59FC0D15E898837C7F759FB32DEE7EA426(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mEA6DE8073106798635F75FE465BD739502FBE4F8 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11684,7 +11684,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mEA6DE8073106798635F75FE465BD739502FBE4F8(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mECDA5882A56287A4B40EA219460C521284523213 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11740,7 +11740,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mECDA5882A562
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mECDA5882A56287A4B40EA219460C521284523213(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m7D65F3249CCEA5E2B4B12D9ABA507BD7EA98D88D (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11788,7 +11788,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m7D65F3249CCEA5E2B4B12D9ABA507BD
 	_returnValue = ValueTuple_2_CompareTo_m7D65F3249CCEA5E2B4B12D9ABA507BD7EA98D88D(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mF7F76C2448266E21379D02E873996F7CC7084C6E (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11888,7 +11888,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mF7F76C2448266E21379D02E873996F7CC7084C6E(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m3FBD828C8C907B382F555C232B4509D9E111DB18 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -11947,7 +11947,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m3FBD828C8C907B382F555C232B450
 	_returnValue = ValueTuple_2_GetHashCode_m3FBD828C8C907B382F555C232B4509D9E111DB18(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m8CD3F313777E76E393A3DCACCF57C23EBFC4CB17 (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11967,7 +11967,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m8CD3F313777E76E393A3DCACCF57C23EBFC4CB17(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE13B413CE45FF91BAB7F3613E7B06284AFDFC52B (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11998,7 +11998,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE13B413
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m8565642FF06FF4C088C3A175A73343E179DAEAFD (ValueTuple_2_t15236AB405971CB22ABA94CB4004863FA49100B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12110,7 +12110,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m8565642FF06FF4C088C3A175A73343
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m41CE20E70142B82CEDBBCAD27D3921746FCA615F (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_item1, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -12122,7 +12122,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m41CE20E70142B82CEDBB
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m8776160B46CE7876004EB3207D2190E7E9A753D7 (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12154,7 +12154,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m8776160B46CE7876004EB3207D2190E7E9A75
 	_returnValue = ValueTuple_2_Equals_m8776160B46CE7876004EB3207D2190E7E9A753D7(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m8C2F9CD210D6E212AAAC022FFB057777BB1DD13B (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12198,7 +12198,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m8C2F9CD210D6E212AAAC022FFB057777BB1DD
 	_returnValue = ValueTuple_2_Equals_m8C2F9CD210D6E212AAAC022FFB057777BB1DD13B(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m17B657E47FB65FEC497E5A74994F31871AD4FFF1 (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12279,7 +12279,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m17B657E47FB65FEC497E5A74994F31871AD4FFF1(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mEDB7C4CC622A034B9F486536F1B236839EB7349E (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12335,7 +12335,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mEDB7C4CC622A
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mEDB7C4CC622A034B9F486536F1B236839EB7349E(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m95F71EE900AACF26D24D794D2D3B10713ECF5F12 (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12383,7 +12383,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m95F71EE900AACF26D24D794D2D3B107
 	_returnValue = ValueTuple_2_CompareTo_m95F71EE900AACF26D24D794D2D3B10713ECF5F12(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mA83BD28EC383469E738F6C580C2AED3CF1DB14CB (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12483,7 +12483,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mA83BD28EC383469E738F6C580C2AED3CF1DB14CB(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m5B91F4F3AD4A1B16260874602F1349A8334B32BA (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -12543,7 +12543,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m5B91F4F3AD4A1B16260874602F134
 	_returnValue = ValueTuple_2_GetHashCode_m5B91F4F3AD4A1B16260874602F1349A8334B32BA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m46EC51ECF0D46F0AA46696A245E6E4B523B8C375 (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12563,7 +12563,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m46EC51ECF0D46F0AA46696A245E6E4B523B8C375(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m9122E63103B966934E5BDC6A2A5DD8F5C8E02884 (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12594,7 +12594,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m9122E63
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mA7321AEAD18C1E021FA926BBF90A0F60B0EC351C (ValueTuple_2_t4BC958336F5E31F49459112BAB22FC776AFF71C3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12707,7 +12707,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mA7321AEAD18C1E021FA926BBF90A0F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mBC854B906321EBCBD5B8B90F1075808CD316F9C6 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_item1, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -12719,7 +12719,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mBC854B906321EBCBD5B8
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mDEE85DA2DEF499730C22924D59C7CA95A0530CFB (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12751,7 +12751,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mDEE85DA2DEF499730C22924D59C7CA95A0530
 	_returnValue = ValueTuple_2_Equals_mDEE85DA2DEF499730C22924D59C7CA95A0530CFB(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m082FC03AD2AACC391824446EA169BAF818E5D95A (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12795,7 +12795,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m082FC03AD2AACC391824446EA169BAF818E5D
 	_returnValue = ValueTuple_2_Equals_m082FC03AD2AACC391824446EA169BAF818E5D95A(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mC21D5244E1F84AE6F08CCFBB6108522DDCC7BF7D (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12876,7 +12876,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mC21D5244E1F84AE6F08CCFBB6108522DDCC7BF7D(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m3BA6E2FD10E6F8BADCC428B9FF7EF0AA93CEE7B6 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12932,7 +12932,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m3BA6E2FD10E6
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m3BA6E2FD10E6F8BADCC428B9FF7EF0AA93CEE7B6(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m0753B2F37EB1C71FBDF8C29037168C0B3406D0B1 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12980,7 +12980,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m0753B2F37EB1C71FBDF8C29037168C0
 	_returnValue = ValueTuple_2_CompareTo_m0753B2F37EB1C71FBDF8C29037168C0B3406D0B1(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mE76AADDF96403C6EF7C52F69BA4EB1C193912E39 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13080,7 +13080,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mE76AADDF96403C6EF7C52F69BA4EB1C193912E39(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m650000B4FE714A9F8E0199213FB8452DCF9346C0 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -13140,7 +13140,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m650000B4FE714A9F8E0199213FB84
 	_returnValue = ValueTuple_2_GetHashCode_m650000B4FE714A9F8E0199213FB8452DCF9346C0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mF4616513B38D9E30AA5B44D4554B8484DD89A1C3 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13160,7 +13160,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mF4616513B38D9E30AA5B44D4554B8484DD89A1C3(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m2BA9364837E238A41D16468CE6516CFEA8C8A077 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13191,7 +13191,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m2BA9364
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mA61709A4C8BCADD232473ABA16B22D278503EFB9 (ValueTuple_2_t05010CA1EDA09F02C7ADFC1E8C90141D6388EF26* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13304,7 +13304,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mA61709A4C8BCADD232473ABA16B22D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m3D68E60AC2D47CD3F5EB996903480CCC7D2B72BF (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_item1, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -13316,7 +13316,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m3D68E60AC2D47CD3F5EB
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m385A5D84DD4A52A6821FF767CFA4860EFF713922 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13348,7 +13348,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m385A5D84DD4A52A6821FF767CFA4860EFF713
 	_returnValue = ValueTuple_2_Equals_m385A5D84DD4A52A6821FF767CFA4860EFF713922(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mBAB08A215779A530240AB76A004EA98B07F15813 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13392,7 +13392,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mBAB08A215779A530240AB76A004EA98B07F15
 	_returnValue = ValueTuple_2_Equals_mBAB08A215779A530240AB76A004EA98B07F15813(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m773193BFDC80ED4112B75E416F31C8AD2F34EE76 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13473,7 +13473,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m773193BFDC80ED4112B75E416F31C8AD2F34EE76(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mFA1AE38AAE5A718FE0EF42EC913D3D5847666797 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13529,7 +13529,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mFA1AE38AAE5A
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mFA1AE38AAE5A718FE0EF42EC913D3D5847666797(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mB47D577A52036F91BA68CE2EAA56DAE5BDFAE56C (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13577,7 +13577,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mB47D577A52036F91BA68CE2EAA56DAE
 	_returnValue = ValueTuple_2_CompareTo_mB47D577A52036F91BA68CE2EAA56DAE5BDFAE56C(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m493430A1EDD7EB36B794289E7618597A4CF12F56 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13677,7 +13677,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m493430A1EDD7EB36B794289E7618597A4CF12F56(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mFCEA2034D33AD94A969EDE8E4A90BFBDC7A2EE63 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -13737,7 +13737,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mFCEA2034D33AD94A969EDE8E4A90B
 	_returnValue = ValueTuple_2_GetHashCode_mFCEA2034D33AD94A969EDE8E4A90BFBDC7A2EE63(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m5351F6BBA2767E843CEAAE0E3B1B7737F610629D (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13757,7 +13757,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m5351F6BBA2767E843CEAAE0E3B1B7737F610629D(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE968BC56B5292B50563E6FB79A65F70EF4FC9812 (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13788,7 +13788,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE968BC5
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m8A9C0C255C9F71C6E1C8CA46C3F8F0327203782A (ValueTuple_2_t17C52585DB4A62738FC66EFB364F711F8FD236F6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13901,7 +13901,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m8A9C0C255C9F71C6E1C8CA46C3F8F0
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mFF40A8D1160E3A78F1C2D4780A40ECA985CE5D3A_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, Il2CppSharedGenericObject* ___0_item1, ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254 ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -13915,7 +13915,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mFF40A8D1160E3A78F1C2
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m2772E9196DDAEAFB1FEE6217EA87123455497613_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13947,7 +13947,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m2772E9196DDAEAFB1FEE6217EA87123455497
 	_returnValue = ValueTuple_2_Equals_m2772E9196DDAEAFB1FEE6217EA87123455497613(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mB2A2122A6C25CD258E8BC1FDC419ADD166EE43E2_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13991,7 +13991,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mB2A2122A6C25CD258E8BC1FDC419ADD166EE4
 	_returnValue = ValueTuple_2_Equals_mB2A2122A6C25CD258E8BC1FDC419ADD166EE43E2(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m3D5821A4891D515B56D6C53190535D28224A0275_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14068,7 +14068,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m3D5821A4891D515B56D6C53190535D28224A0275(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mE2500BB0A4388171D29BFED4D461C22EE436A783_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14124,7 +14124,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mE2500BB0A438
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mE2500BB0A4388171D29BFED4D461C22EE436A783(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mD5D38BD403B879032CD2207E832050AE274EF84C_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14172,7 +14172,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mD5D38BD403B879032CD2207E832050A
 	_returnValue = ValueTuple_2_CompareTo_mD5D38BD403B879032CD2207E832050AE274EF84C(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m384A8F5EFA1401B5CBA65DD0D58700B4A91BB117_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14268,7 +14268,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m384A8F5EFA1401B5CBA65DD0D58700B4A91BB117(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m8A2139B8C28126446CBBC7D0BF6C00CE7FEF1501_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14351,7 +14351,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m8A2139B8C28126446CBBC7D0BF6C0
 	_returnValue = ValueTuple_2_GetHashCode_m8A2139B8C28126446CBBC7D0BF6C00CE7FEF1501(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mCD062F17FB7B1CDC28AA35AB848BF9D9245B7C42_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14371,7 +14371,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mCD062F17FB7B1CDC28AA35AB848BF9D9245B7C42(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m2DEFE7A4BF90A9A631B0F029D5D17AF16C00FE96_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14400,7 +14400,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m2DEFE7A
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m007CB9622DE24B8B155EC16044000241849817E5_gshared (ValueTuple_2_t0F8FDE8D64168388D40D48A8E5CD6AD3003B43E3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14554,7 +14554,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m007CB9622DE24B8B155EC160440002
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m529DA416D3D6181ABF581A53EA3028BA99E09A34_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, Il2CppSharedGenericObject* ___0_item1, AuthoringIdPath_t0F382E1C54088C760032BC63CC2B5DC9EFCB29FF ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -14568,7 +14568,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m529DA416D3D6181ABF58
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mA4B5F69F625ED08E8CB76303C3B593AD96401A32_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14600,7 +14600,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mA4B5F69F625ED08E8CB76303C3B593AD96401
 	_returnValue = ValueTuple_2_Equals_mA4B5F69F625ED08E8CB76303C3B593AD96401A32(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m1A0669867F78C8B861219B8C20E5A547B9CC5401_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14644,7 +14644,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m1A0669867F78C8B861219B8C20E5A547B9CC5
 	_returnValue = ValueTuple_2_Equals_m1A0669867F78C8B861219B8C20E5A547B9CC5401(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m574A5C3709319D0DA5AF8F62AA63AC6630967D31_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14721,7 +14721,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m574A5C3709319D0DA5AF8F62AA63AC6630967D31(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m0C98E492E722F0BA82CD9D16F7833B2320A9A93F_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14777,7 +14777,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m0C98E492E722
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m0C98E492E722F0BA82CD9D16F7833B2320A9A93F(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m1DF2B0FE52FC2A1E00DB8D08DBD3FC79FA29DBCB_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14825,7 +14825,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m1DF2B0FE52FC2A1E00DB8D08DBD3FC7
 	_returnValue = ValueTuple_2_CompareTo_m1DF2B0FE52FC2A1E00DB8D08DBD3FC79FA29DBCB(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mFB43E2CB665248E6A45205A3CCB31019158DCDC7_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14921,7 +14921,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mFB43E2CB665248E6A45205A3CCB31019158DCDC7(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m645AABAB5D66A8556D866FC312DF4D4B5F0A769E_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -15003,7 +15003,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m645AABAB5D66A8556D866FC312DF4
 	_returnValue = ValueTuple_2_GetHashCode_m645AABAB5D66A8556D866FC312DF4D4B5F0A769E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m0BA75421B1ACB0A6BF267D76BB48E8A080BB3D0D_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15023,7 +15023,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m0BA75421B1ACB0A6BF267D76BB48E8A080BB3D0D(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m9160561E448958C6690DA47B597A2D8DC06BD145_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15052,7 +15052,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m9160561
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m267604E53840769A125072A49DD4E93FF6D4B1FD_gshared (ValueTuple_2_t3D83F06DAFCDEAE1BE46C5BB5C91215033CE4F92* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15205,7 +15205,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m267604E53840769A125072A49DD4E9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m4811A3666CFAB3B590EEECB682A439354A86CEC0_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, Il2CppSharedGenericObject* ___0_item1, bool ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -15218,7 +15218,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m4811A3666CFAB3B590EE
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m7B4E0D6F8EB41FD5C8D0BCF1E16A00E9CF9DF957_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15250,7 +15250,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m7B4E0D6F8EB41FD5C8D0BCF1E16A00E9CF9DF
 	_returnValue = ValueTuple_2_Equals_m7B4E0D6F8EB41FD5C8D0BCF1E16A00E9CF9DF957(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m9FB70FD6FD0C002759790BBD58B4C384FB09BE23_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15294,7 +15294,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m9FB70FD6FD0C002759790BBD58B4C384FB09B
 	_returnValue = ValueTuple_2_Equals_m9FB70FD6FD0C002759790BBD58B4C384FB09BE23(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mC7F189BAA32BE1C3D06877919DE0DFF649EB5111_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15371,7 +15371,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mC7F189BAA32BE1C3D06877919DE0DFF649EB5111(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mA4A4A8B909D147E8E6A7F3DD1F2E70D808C09AFF_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15427,7 +15427,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mA4A4A8B909D1
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mA4A4A8B909D147E8E6A7F3DD1F2E70D808C09AFF(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m2572D2270E5C23CA6C0947F65AA9A996BC91BA07_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15475,7 +15475,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m2572D2270E5C23CA6C0947F65AA9A99
 	_returnValue = ValueTuple_2_CompareTo_m2572D2270E5C23CA6C0947F65AA9A996BC91BA07(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m618CB7360C09BBDC6F031CDFFF79E1126B4FB0DD_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15571,7 +15571,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m618CB7360C09BBDC6F031CDFFF79E1126B4FB0DD(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mB0621AF4B38AA6CD50B4785510C1D2A28454D45D_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticInit);
@@ -15654,7 +15654,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mB0621AF4B38AA6CD50B4785510C1D
 	_returnValue = ValueTuple_2_GetHashCode_mB0621AF4B38AA6CD50B4785510C1D2A28454D45D(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m06F979474B5250787918AB06CDC5ACF7094C02DB_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15674,7 +15674,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m06F979474B5250787918AB06CDC5ACF7094C02DB(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m8382A672BF3D1E66C51C617CBF2A568EC5AD40CE_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15703,7 +15703,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m8382A67
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m21D7C2F8B1C173B8FF742ED5FF918F3A6112A1C6_gshared (ValueTuple_2_t39D3C47C367E6E15C2069C4BABB75D0079755C43* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15857,7 +15857,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m21D7C2F8B1C173B8FF742ED5FF918F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m34C9688B8013F2982218571BC3F4E2CCD99C9EF9_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, Il2CppSharedGenericObject* ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -15870,7 +15870,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m34C9688B8013F2982218
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m20EF8C42A9BB9E2DE2F68170A643229C296D07AD_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15902,7 +15902,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m20EF8C42A9BB9E2DE2F68170A643229C296D0
 	_returnValue = ValueTuple_2_Equals_m20EF8C42A9BB9E2DE2F68170A643229C296D07AD(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mD83B7AB1765494E12067F69C21D7C731B7BB59FE_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15946,7 +15946,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mD83B7AB1765494E12067F69C21D7C731B7BB5
 	_returnValue = ValueTuple_2_Equals_mD83B7AB1765494E12067F69C21D7C731B7BB59FE(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m4F97B492166362013B797F41DD869067C5C5560F_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16023,7 +16023,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m4F97B492166362013B797F41DD869067C5C5560F(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m156853937FDBF39CF6C79CBD98355735D1F08F3C_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16079,7 +16079,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m156853937FDB
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m156853937FDBF39CF6C79CBD98355735D1F08F3C(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mE0C14877F445089AD9FEB93D87A4D58F1C4A57E1_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16127,7 +16127,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mE0C14877F445089AD9FEB93D87A4D58
 	_returnValue = ValueTuple_2_CompareTo_mE0C14877F445089AD9FEB93D87A4D58F1C4A57E1(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m3B29D2887A8A1F069C02966FAB00399EF32567EF_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16223,7 +16223,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m3B29D2887A8A1F069C02966FAB00399EF32567EF(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mBF3881E8FEBC8B655A715ADED848B59B50787E50_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16304,7 +16304,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mBF3881E8FEBC8B655A715ADED848B
 	_returnValue = ValueTuple_2_GetHashCode_mBF3881E8FEBC8B655A715ADED848B59B50787E50(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m508560F980C4FA5ED9E5C9228FA3508CB825A2FA_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16324,7 +16324,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m508560F980C4FA5ED9E5C9228FA3508CB825A2FA(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m1984447A55A9277F1AC3C487101E67E73B59A2D2_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16353,7 +16353,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m1984447
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mEA85753A43C34637E74DD288C836CE995CB75AF7_gshared (ValueTuple_2_tFEE748B3D02F0FB25BD73A22DD90DF98F3894254* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16505,7 +16505,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mEA85753A43C34637E74DD288C836CE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m848013944EE9BC4D2198EFDC0207138F700F3A08_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, Il2CppSharedGenericObject* ___0_item1, float ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16518,7 +16518,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m848013944EE9BC4D2198
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mEBBEB2499D0EFA20C1A2A8BA3912EAE990EB3169_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16550,7 +16550,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mEBBEB2499D0EFA20C1A2A8BA3912EAE990EB3
 	_returnValue = ValueTuple_2_Equals_mEBBEB2499D0EFA20C1A2A8BA3912EAE990EB3169(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mB1FD11172CF65C13E66569C641F6C19ED555F761_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16594,7 +16594,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mB1FD11172CF65C13E66569C641F6C19ED555F
 	_returnValue = ValueTuple_2_Equals_mB1FD11172CF65C13E66569C641F6C19ED555F761(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m3D850FFC63EFA7B007ABDD3F2FF3FE9B6B67F275_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16671,7 +16671,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m3D850FFC63EFA7B007ABDD3F2FF3FE9B6B67F275(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mFDC0CFC23E30A5D61ACD26B9C4189CEDA0652784_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16727,7 +16727,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mFDC0CFC23E30
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mFDC0CFC23E30A5D61ACD26B9C4189CEDA0652784(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m728EBBE25115336F2E90C9AC846EA7699A489641_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16775,7 +16775,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m728EBBE25115336F2E90C9AC846EA76
 	_returnValue = ValueTuple_2_CompareTo_m728EBBE25115336F2E90C9AC846EA7699A489641(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mF447F0CDA1EC1A49E84E02B0C20D934C237CED88_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16871,7 +16871,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mF447F0CDA1EC1A49E84E02B0C20D934C237CED88(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m8E1179CA6B7E5B1E34861B77ABA7662EB5623DC4_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -16952,7 +16952,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m8E1179CA6B7E5B1E34861B77ABA76
 	_returnValue = ValueTuple_2_GetHashCode_m8E1179CA6B7E5B1E34861B77ABA7662EB5623DC4(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mE389FFB985778A81667AF518E787FEFC6F5333FA_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16972,7 +16972,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mE389FFB985778A81667AF518E787FEFC6F5333FA(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m270F2E36C5B33582614389DF931AD0C44EB818B6_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17001,7 +17001,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m270F2E3
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m49712D4B90A0D0142E0A046F8E82EDEC7548AC0F_gshared (ValueTuple_2_t608D7FAF3B041070486F5AD5D28444C28295C8D8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17153,7 +17153,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m49712D4B90A0D0142E0A046F8E82ED
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m52D8BFB63F925A672B9356006BCB9ABB604B6170_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, Il2CppSharedGenericObject* ___0_item1, Il2CppSharedGenericObject* ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -17167,7 +17167,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m52D8BFB63F925A672B93
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m25F48FF034850BFFB55FF0966A89773833827C13_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17199,7 +17199,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m25F48FF034850BFFB55FF0966A89773833827
 	_returnValue = ValueTuple_2_Equals_m25F48FF034850BFFB55FF0966A89773833827C13(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m129363AD62AF04EA0988D6B06689ACF1A6521AEA_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17243,7 +17243,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m129363AD62AF04EA0988D6B06689ACF1A6521
 	_returnValue = ValueTuple_2_Equals_m129363AD62AF04EA0988D6B06689ACF1A6521AEA(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m29899BE37082D09F8EF9D8C77BA7EA42DD8E3579_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17316,7 +17316,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m29899BE37082D09F8EF9D8C77BA7EA42DD8E3579(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m727E4F92660C3599373E96B2277F2579D7053E7D_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17372,7 +17372,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m727E4F92660C
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m727E4F92660C3599373E96B2277F2579D7053E7D(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m72B418D5FBACB299D4F3CD1C1CAE6F121E36EEB6_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17420,7 +17420,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m72B418D5FBACB299D4F3CD1C1CAE6F1
 	_returnValue = ValueTuple_2_CompareTo_m72B418D5FBACB299D4F3CD1C1CAE6F121E36EEB6(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mA7DA35373A0D1DA0F0F52AB5F5124EBF80123B34_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17512,7 +17512,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mA7DA35373A0D1DA0F0F52AB5F5124EBF80123B34(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m99568F302DE6AD3E15E0EA2EC480BD67D049F1D7_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -17622,7 +17622,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m99568F302DE6AD3E15E0EA2EC480B
 	_returnValue = ValueTuple_2_GetHashCode_m99568F302DE6AD3E15E0EA2EC480BD67D049F1D7(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m8A7AD10C0F27B65A7F6B01B3E082165E04034AE2_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -17641,7 +17641,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m8A7AD10C0F27B65A7F6B01B3E082165E04034AE2(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m4A5116FBF0F17298B1A8ADD2D9A92487FA5BD0F3_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17667,7 +17667,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m4A5116F
 		return L_6;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m45F0B64B4FBA04D76955E21916B7C8225E35DDCB_gshared (ValueTuple_2_tCDFD7D7B4290217F286D3AC91BDF7C2A74C8636A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17860,7 +17860,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m45F0B64B4FBA04D76955E21916B7C8
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m6C8D74CA02AE9C0951282D3F562D1698FEDEDA69_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, Il2CppSharedGenericObject* ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -17873,7 +17873,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m6C8D74CA02AE9C095128
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m3A7596754C146B010097071A2A4D564A7AD8769D_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17905,7 +17905,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m3A7596754C146B010097071A2A4D564A7AD87
 	_returnValue = ValueTuple_2_Equals_m3A7596754C146B010097071A2A4D564A7AD8769D(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mBBF2B5083ACB07D20DE576A46B465D322B5F32EF_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17949,7 +17949,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mBBF2B5083ACB07D20DE576A46B465D322B5F3
 	_returnValue = ValueTuple_2_Equals_mBBF2B5083ACB07D20DE576A46B465D322B5F32EF(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mD5D1040856F67C45DD846B9353639C2B5F7F6065_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18026,7 +18026,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mD5D1040856F67C45DD846B9353639C2B5F7F6065(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m8E20C14BD31E60D6D409CA3E672F24CEE4B53522_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18082,7 +18082,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m8E20C14BD31E
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m8E20C14BD31E60D6D409CA3E672F24CEE4B53522(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m1AD5FE9CB82D596684BC4BDF2B7E9085B4462C0E_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18130,7 +18130,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m1AD5FE9CB82D596684BC4BDF2B7E908
 	_returnValue = ValueTuple_2_CompareTo_m1AD5FE9CB82D596684BC4BDF2B7E9085B4462C0E(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m62E822809CABB508DCB391EAAE453564AAAE8361_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18226,7 +18226,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m62E822809CABB508DCB391EAAE453564AAAE8361(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mF359FEBDF1FA01E57B2160C5F106BFC25DAC0404_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -18307,7 +18307,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mF359FEBDF1FA01E57B2160C5F106B
 	_returnValue = ValueTuple_2_GetHashCode_mF359FEBDF1FA01E57B2160C5F106BFC25DAC0404(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m2586ABE5C78BB4C3266B34D88F15E89E2883D45D_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18327,7 +18327,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m2586ABE5C78BB4C3266B34D88F15E89E2883D45D(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE45ABAA383FB25865A282E94D18F6F6BBD35F1B9_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18356,7 +18356,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE45ABAA
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m594ECCFB16F8174A976DF57E669380F67A8468D3_gshared (ValueTuple_2_t24B04C868EB44FD9AE1FE6B403964C5697775C8A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18510,7 +18510,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m594ECCFB16F8174A976DF57E669380
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mEECA312889F58499F8A8F68C619FE24E1D6376C9_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, uint8_t ___0_item1, Il2CppSharedGenericObject* ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -18523,7 +18523,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mEECA312889F58499F8A8
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m4DE6E097C5EF9A5C00489E2F15E49DD83164C5EE_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18555,7 +18555,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m4DE6E097C5EF9A5C00489E2F15E49DD83164C
 	_returnValue = ValueTuple_2_Equals_m4DE6E097C5EF9A5C00489E2F15E49DD83164C5EE(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m193AF6F7A773FADD9CA0D888A3E4AED2AE27086B_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18599,7 +18599,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m193AF6F7A773FADD9CA0D888A3E4AED2AE270
 	_returnValue = ValueTuple_2_Equals_m193AF6F7A773FADD9CA0D888A3E4AED2AE27086B(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mCD00C5460330FC77D4CD9DE20C295419B8C81EEA_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18676,7 +18676,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mCD00C5460330FC77D4CD9DE20C295419B8C81EEA(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mF013449978E5FC87B28B358B63D95D4475FE08E8_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18732,7 +18732,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mF013449978E5
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mF013449978E5FC87B28B358B63D95D4475FE08E8(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m4411DC9EB70DF9A1BEFA82C655CD0D5899EFC961_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18780,7 +18780,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m4411DC9EB70DF9A1BEFA82C655CD0D5
 	_returnValue = ValueTuple_2_CompareTo_m4411DC9EB70DF9A1BEFA82C655CD0D5899EFC961(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m634291CDA6055890440CA4C2C1665CD86EF448B0_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18876,7 +18876,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m634291CDA6055890440CA4C2C1665CD86EF448B0(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m192C013E70C495D5BCF5A2B32F62B43AC7915876_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -18963,7 +18963,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m192C013E70C495D5BCF5A2B32F62B
 	_returnValue = ValueTuple_2_GetHashCode_m192C013E70C495D5BCF5A2B32F62B43AC7915876(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m79A311139BC0FA614AF62C37615FAD8F33C5C5A5_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18983,7 +18983,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m79A311139BC0FA614AF62C37615FAD8F33C5C5A5(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m88530D183117E6652710BC4091F24A7C3CD2260F_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19012,7 +19012,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m88530D1
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m81164B9823C57C7B83F8F6223EA4866A5FC3CD39_gshared (ValueTuple_2_t3EA8EF7D2150DFA9CFE7F036CACD29CEABF57554* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19166,7 +19166,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m81164B9823C57C7B83F8F6223EA486
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCAE8E725F680FA6BE2C23B9686C9F6056BB7E5CD_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, Il2CppFullySharedGenericAny ___0_item1, Il2CppFullySharedGenericAny ___1_item2, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19183,7 +19183,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mCAE8E725F680FA6BE2C2
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m691065991CED657BB7925B16C9C654A09F3292DA_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19215,7 +19215,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m691065991CED657BB7925B16C9C654A09F329
 	_returnValue = ValueTuple_2_Equals_m691065991CED657BB7925B16C9C654A09F3292DA(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mD903BBEBB3EDB6897C67C462F1A958D28E156085_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19268,7 +19268,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mD903BBEBB3EDB6897C67C462F1A958D28E156
 	_returnValue = ValueTuple_2_Equals_mD903BBEBB3EDB6897C67C462F1A958D28E156085(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m4FC09D4CA21099E02F8DA2E9E2DAC07DADDE7596_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19354,7 +19354,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m4FC09D4CA21099E02F8DA2E9E2DAC07DADDE7596(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mF8C76C36693FDDA83BE43D8D76A91386E69A9959_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19411,7 +19411,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mF8C76C36693F
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mF8C76C36693FDDA83BE43D8D76A91386E69A9959(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mD4B10342200C73FAA0E7553433244862FFF316D7_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19468,7 +19468,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mD4B10342200C73FAA0E755343324486
 	_returnValue = ValueTuple_2_CompareTo_mD4B10342200C73FAA0E7553433244862FFF316D7(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mBE4DB6C73A3970373B450757CC80C03D318C4269_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19573,7 +19573,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mBE4DB6C73A3970373B450757CC80C03D318C4269(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m4BA7B2997C6450C829DC80A188E4DD22AE712A75_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19702,7 +19702,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m4BA7B2997C6450C829DC80A188E4D
 	_returnValue = ValueTuple_2_GetHashCode_m4BA7B2997C6450C829DC80A188E4DD22AE712A75(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mFF86F83A0C3ECE4DBC8519A067043F2670CBAF0C_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19722,7 +19722,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mFF86F83A0C3ECE4DBC8519A067043F2670CBAF0C(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m67662E6D7F40D4FD382E0E75F15CEC0B7FDDB429_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19755,7 +19755,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_m67662E6
 		return L_8;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m3A385F535CA53166311E733E7699676231CFD10F_fshared (ValueTuple_2_tBAA1E1D7D97D80E0EBA7FE8773B1FF409AEA3829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19967,7 +19967,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m3A385F535CA53166311E733E769967
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m652D153FF9ED3BA088BE5C536E31BF6E1951A9E2_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, int32_t ___0_item1, Il2CppChar ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -19979,7 +19979,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m652D153FF9ED3BA088BE
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m6731F1FF6E8E85345A3015AE2D6B82A95DCE18D6_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20011,7 +20011,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m6731F1FF6E8E85345A3015AE2D6B82A95DCE1
 	_returnValue = ValueTuple_2_Equals_m6731F1FF6E8E85345A3015AE2D6B82A95DCE18D6(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mB11B2A32AC66C80862E586BBC7CFF406B8D47501_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20055,7 +20055,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mB11B2A32AC66C80862E586BBC7CFF406B8D47
 	_returnValue = ValueTuple_2_Equals_mB11B2A32AC66C80862E586BBC7CFF406B8D47501(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m4D4081D378198FD2A5D8A9E6A01279FEE8673881_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20136,7 +20136,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m4D4081D378198FD2A5D8A9E6A01279FEE8673881(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m0EEC614628E5DA10C7DAC2588878BE8686A3249D_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20192,7 +20192,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m0EEC614628E5
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m0EEC614628E5DA10C7DAC2588878BE8686A3249D(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m925F3903B8B7E19C8460925FF8252F62B7B253AE_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20240,7 +20240,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m925F3903B8B7E19C8460925FF8252F6
 	_returnValue = ValueTuple_2_CompareTo_m925F3903B8B7E19C8460925FF8252F62B7B253AE(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m0C2989463CE74E0B572ACF5348ADE6B5B420AE85_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20340,7 +20340,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m0C2989463CE74E0B572ACF5348ADE6B5B420AE85(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mAD64FC6723235D2B4963B39C329B412418BC62F5_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticInit);
@@ -20400,7 +20400,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mAD64FC6723235D2B4963B39C329B4
 	_returnValue = ValueTuple_2_GetHashCode_mAD64FC6723235D2B4963B39C329B412418BC62F5(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m5A78B1E4BDD1A9774275B846A19E53BE36B32804_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20420,7 +20420,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m5A78B1E4BDD1A9774275B846A19E53BE36B32804(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mDA9A1DA53DCD7033D75EA24FC671F147D4D315FC_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20451,7 +20451,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mDA9A1DA
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m8E032E3746CF344B87DE738CFC822F48DF42F947_gshared (ValueTuple_2_tFDE11C0699A1153E4950FD16F50D1802C3A289BB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20566,7 +20566,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m8E032E3746CF344B87DE738CFC822F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m39966ABAA49A539C9A563CE4BC1C3AB07645D609_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, int32_t ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -20578,7 +20578,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m39966ABAA49A539C9A56
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m33EF63F26A7641340AA92D39BE21529269F6251F_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20610,7 +20610,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m33EF63F26A7641340AA92D39BE21529269F62
 	_returnValue = ValueTuple_2_Equals_m33EF63F26A7641340AA92D39BE21529269F6251F(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mB0BA10B27BCFBA6E223734C905450C2A60A1ED75_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20654,7 +20654,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mB0BA10B27BCFBA6E223734C905450C2A60A1E
 	_returnValue = ValueTuple_2_Equals_mB0BA10B27BCFBA6E223734C905450C2A60A1ED75(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m78BD31F45E160213DCCC71E2CCED29762A691CBA_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20735,7 +20735,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m78BD31F45E160213DCCC71E2CCED29762A691CBA(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mED628202BB7EF1E7CE851161ACEF6575582FAAFF_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20791,7 +20791,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mED628202BB7E
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mED628202BB7EF1E7CE851161ACEF6575582FAAFF(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m6A20727E65E5B50E4F5846D3050412D51B956EE9_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20839,7 +20839,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m6A20727E65E5B50E4F5846D3050412D
 	_returnValue = ValueTuple_2_CompareTo_m6A20727E65E5B50E4F5846D3050412D51B956EE9(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m632D2052A56B5E0CB4A593B815774F8F59851D8A_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20939,7 +20939,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m632D2052A56B5E0CB4A593B815774F8F59851D8A(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m8036F0A6FC60E75C293CAEED700C0B358250C3BA_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -20997,7 +20997,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m8036F0A6FC60E75C293CAEED700C0
 	_returnValue = ValueTuple_2_GetHashCode_m8036F0A6FC60E75C293CAEED700C0B358250C3BA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m00B61BC99E20E323F7D9C43E70003492C6681942_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21017,7 +21017,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m00B61BC99E20E323F7D9C43E70003492C6681942(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mDED6EB9E8B8832735F2CE4D77C425CB65A29C4C6_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21048,7 +21048,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mDED6EB9
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m905B912B9B3C0395267F16CF96B007DC7AE27E02_gshared (ValueTuple_2_tEB67ADA48C3900E430F322F8E60BF5D7ECA7E5BD* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21161,7 +21161,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m905B912B9B3C0395267F16CF96B007
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m188EEA86FE930D6CA426E476665A7DBE9CC52318_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, int32_t ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -21173,7 +21173,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m188EEA86FE930D6CA426
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m6F0BA5A04D2F694ACA9D9B139253B31764CD2FB0_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21205,7 +21205,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m6F0BA5A04D2F694ACA9D9B139253B31764CD2
 	_returnValue = ValueTuple_2_Equals_m6F0BA5A04D2F694ACA9D9B139253B31764CD2FB0(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mAF064172AF226DA38032B314A01B1485D6383EA1_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21249,7 +21249,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mAF064172AF226DA38032B314A01B1485D6383
 	_returnValue = ValueTuple_2_Equals_mAF064172AF226DA38032B314A01B1485D6383EA1(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mBEBDB01DF5F491E7D1634423F1A0D918192FC24D_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21330,7 +21330,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mBEBDB01DF5F491E7D1634423F1A0D918192FC24D(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_mBB1331F6878413EBE516C804F4DB0D9F215FDB11_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21386,7 +21386,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_mBB1331F68784
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_mBB1331F6878413EBE516C804F4DB0D9F215FDB11(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m6AE53FBA34B6D77762B81A5B81A4F5D76089E657_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21434,7 +21434,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m6AE53FBA34B6D77762B81A5B81A4F5D
 	_returnValue = ValueTuple_2_CompareTo_m6AE53FBA34B6D77762B81A5B81A4F5D76089E657(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mC1EBD2AA65CD4D629EB180D4CB319D9973980A30_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21534,7 +21534,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mC1EBD2AA65CD4D629EB180D4CB319D9973980A30(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mFB75358B895E28F45A9738DBE8C6D4ACD6D2781D_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -21592,7 +21592,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mFB75358B895E28F45A9738DBE8C6D
 	_returnValue = ValueTuple_2_GetHashCode_mFB75358B895E28F45A9738DBE8C6D4ACD6D2781D(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mCBF4A0D2CAF686FA878E56BFA8F4CB725FABBF6B_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21612,7 +21612,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mCBF4A0D2CAF686FA878E56BFA8F4CB725FABBF6B(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mCD009945C27522A55A27AF347CF15DF02622C79C_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21643,7 +21643,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mCD00994
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_mF5E3091C1E4E3ECC85E40634E700BA3799280CCE_gshared (ValueTuple_2_tB2B4A6F7BA47410A81C1F437664576C6CD86D4C8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21757,7 +21757,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_mF5E3091C1E4E3ECC85E40634E700BA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mBAD1829A86D99E04FBCE92146DD6BC74D821F1AE_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, KeyEvent_tCBB9830C9FA6B909A5A6BD122FF4B532126E7674 ___0_item1, int32_t ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -21769,7 +21769,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_mBAD1829A86D99E04FBCE
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m17EB11707D3325E8A34A19CF61FC4714943846DB_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21801,7 +21801,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m17EB11707D3325E8A34A19CF61FC471494384
 	_returnValue = ValueTuple_2_Equals_m17EB11707D3325E8A34A19CF61FC4714943846DB(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m29AFA6292BD363090BF866F720F6CE566B210243_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21845,7 +21845,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m29AFA6292BD363090BF866F720F6CE566B210
 	_returnValue = ValueTuple_2_Equals_m29AFA6292BD363090BF866F720F6CE566B210243(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m66606AC166168D1328B5DE4157D5B44C41AD1C6B_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21926,7 +21926,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_m66606AC166168D1328B5DE4157D5B44C41AD1C6B(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m4DB4D709E507AF137C8B45A8B702223359257CCC_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -21982,7 +21982,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m4DB4D709E507
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m4DB4D709E507AF137C8B45A8B702223359257CCC(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_mCAB34603DC4F42BC11E27F00AB65D22A1C461FD2_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22030,7 +22030,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_mCAB34603DC4F42BC11E27F00AB65D22
 	_returnValue = ValueTuple_2_CompareTo_mCAB34603DC4F42BC11E27F00AB65D22A1C461FD2(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m3F93074FF6402315F4D65A807FED2428B149A5E3_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22130,7 +22130,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_m3F93074FF6402315F4D65A807FED2428B149A5E3(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_m03DAC3002510F4F718AAD160E3DB4A3FEE47C697_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -22189,7 +22189,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_m03DAC3002510F4F718AAD160E3DB4
 	_returnValue = ValueTuple_2_GetHashCode_m03DAC3002510F4F718AAD160E3DB4A3FEE47C697(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mB27739EFCE0512EE04657312351929C7A7269890_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22209,7 +22209,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_mB27739EFCE0512EE04657312351929C7A7269890(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE5B4D1E394EB70D832EDECF1C9D281A7338AE927_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22240,7 +22240,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mE5B4D1E
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m3CA178132908A6ADFF288681041F38985EA75DE0_gshared (ValueTuple_2_t0A96E043A7E5674155FA717C6511EDFFDF318BFE* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22354,7 +22354,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m3CA178132908A6ADFF288681041F38
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2360
+// Method Definition Index: 2361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m65CAB1EA227969F70F3BB5F29FBF8215CD9D73BB (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, TextureIdentifier_tA1CDC255400F534A6496877CC86C07B80C45A199 ___0_item1, Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A ___1_item2, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -22366,7 +22366,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_2__ctor_m65CAB1EA227969F70F3B
 		return;
 	}
 }
-// Method Definition Index: 2361
+// Method Definition Index: 2362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_m3D5EC2CE8331FD7614E7915B7CDB83248A3C2F2C (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22398,7 +22398,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_m3D5EC2CE8331FD7614E7915B7CDB83248A3C2
 	_returnValue = ValueTuple_2_Equals_m3D5EC2CE8331FD7614E7915B7CDB83248A3C2F2C(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2362
+// Method Definition Index: 2363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_Equals_mA72283A0F022AF85F2096A0CBD930F44818634D3 (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22442,7 +22442,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_Equals_mA72283A0F022AF85F2096A0CBD930F4481863
 	_returnValue = ValueTuple_2_Equals_mA72283A0F022AF85F2096A0CBD930F44818634D3(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2363
+// Method Definition Index: 2364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mFBB5D81B9706B8EBF799BB8FA46FEA0FB6041F53 (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22523,7 +22523,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_2_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_Equals_mFBB5D81B9706B8EBF799BB8FA46FEA0FB6041F53(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2364
+// Method Definition Index: 2365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_IComparable_CompareTo_m94C0929B09340C74092601F9A3A32433A6D0B3F2 (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22579,7 +22579,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_IComparable_CompareTo_m94C0929B0934
 	_returnValue = ValueTuple_2_System_IComparable_CompareTo_m94C0929B09340C74092601F9A3A32433A6D0B3F2(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2365
+// Method Definition Index: 2366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_CompareTo_m3496F30E333C27B06A8B0656CC08817CFADD74DE (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22627,7 +22627,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_CompareTo_m3496F30E333C27B06A8B0656CC08817
 	_returnValue = ValueTuple_2_CompareTo_m3496F30E333C27B06A8B0656CC08817CFADD74DE(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2366
+// Method Definition Index: 2367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mB7C9D4BA4B020CE8EF8AA8A5D2B990C549697FBA (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22727,7 +22727,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_2_System_Collections_IStructuralComparable_CompareTo_mB7C9D4BA4B020CE8EF8AA8A5D2B990C549697FBA(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2367
+// Method Definition Index: 2368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCode_mB4FFACA8F5FAA9133ED0A2237C411660E331744A (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -22787,7 +22787,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_GetHashCode_mB4FFACA8F5FAA9133ED0A2237C411
 	_returnValue = ValueTuple_2_GetHashCode_mB4FFACA8F5FAA9133ED0A2237C411660E331744A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2368
+// Method Definition Index: 2369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m03CF50F20FE07C105CEE92B6F0DFE916EB429EDE (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -22807,7 +22807,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_2_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_2_System_Collections_IStructuralEquatable_GetHashCode_m03CF50F20FE07C105CEE92B6F0DFE916EB429EDE(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2369
+// Method Definition Index: 2370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mA973D097D7E52F2DC9A632A1F1846A3FC6860E54 (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22838,7 +22838,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_2_GetHashCodeCore_mA973D09
 		return L_10;
 	}
 }
-// Method Definition Index: 2370
+// Method Definition Index: 2371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_2_ToString_m2AA3A3CA31045B4CF04FE971B4146A7D5D5D2369 (ValueTuple_2_t66C82960295DE11A5326D3FF7142662DC4C8C68A* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22961,7 +22961,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_2_ToString_m2AA3A3CA31045B4CF04FE971B4146A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2371
+// Method Definition Index: 2372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_3__ctor_mAB6BFB07BE3E4976B7E07E7A8D13240DA5C2EFCB_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, bool ___0_item1, int32_t ___1_item2, BindingResult_t8B7B654A3357F5E8F5B0E4CB4AB9076B5FE0A4FB ___2_item3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -22976,7 +22976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_3__ctor_mAB6BFB07BE3E4976B7E0
 		return;
 	}
 }
-// Method Definition Index: 2372
+// Method Definition Index: 2373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_Equals_m0920310028FEC976D7C3D80D96099701AE47319A_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23008,7 +23008,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_Equals_m0920310028FEC976D7C3D80D96099701AE473
 	_returnValue = ValueTuple_3_Equals_m0920310028FEC976D7C3D80D96099701AE47319A(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2373
+// Method Definition Index: 2374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_Equals_mBDAE6ADE415F0577A70191B1797B75B8E43DD978_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23066,7 +23066,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_Equals_mBDAE6ADE415F0577A70191B1797B75B8E43DD
 	_returnValue = ValueTuple_3_Equals_mBDAE6ADE415F0577A70191B1797B75B8E43DD978(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2374
+// Method Definition Index: 2375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_System_Collections_IStructuralEquatable_Equals_mD6E2D44D8D0E605D389302CDF9031D07654DC9AB_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23164,7 +23164,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_3_System_Collections_IStructuralEquatable_Equals_mD6E2D44D8D0E605D389302CDF9031D07654DC9AB(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2375
+// Method Definition Index: 2376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_IComparable_CompareTo_mD8F8D1F6E6F0A3210E93EEE992FBE575D39BC59B_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23220,7 +23220,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_IComparable_CompareTo_mD8F8D1F6E6F0
 	_returnValue = ValueTuple_3_System_IComparable_CompareTo_mD8F8D1F6E6F0A3210E93EEE992FBE575D39BC59B(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2376
+// Method Definition Index: 2377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_CompareTo_mFB5B87C9EC2931F74886DF2733E910AF90687CBB_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23290,7 +23290,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_CompareTo_mFB5B87C9EC2931F74886DF2733E910A
 	_returnValue = ValueTuple_3_CompareTo_mFB5B87C9EC2931F74886DF2733E910AF90687CBB(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2377
+// Method Definition Index: 2378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_Collections_IStructuralComparable_CompareTo_mFABEE791CA597E18A537026BE8E3D645A5BA5583_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23415,7 +23415,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_3_System_Collections_IStructuralComparable_CompareTo_mFABEE791CA597E18A537026BE8E3D645A5BA5583(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2378
+// Method Definition Index: 2379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCode_m43343FCE5EC05CD17D86AA030F9B08F32DD5C2F8_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticInit);
@@ -23504,7 +23504,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_GetHashCode_m43343FCE5EC05CD17D86AA030F9B0
 	_returnValue = ValueTuple_3_GetHashCode_m43343FCE5EC05CD17D86AA030F9B08F32DD5C2F8(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2379
+// Method Definition Index: 2380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_Collections_IStructuralEquatable_GetHashCode_mD0F0A283B6D9A69F1F0C26ED813D056FDB9FA6F2_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23524,7 +23524,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_3_System_Collections_IStructuralEquatable_GetHashCode_mD0F0A283B6D9A69F1F0C26ED813D056FDB9FA6F2(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2380
+// Method Definition Index: 2381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCodeCore_mB41CB27B710A6087CA61A1B3DF2A04B67D3433AF_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23562,7 +23562,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCodeCore_mB41CB27
 		return L_15;
 	}
 }
-// Method Definition Index: 2381
+// Method Definition Index: 2382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_3_ToString_mD0284895E3EF4AC74A707C2B4C81747EF3528748_gshared (ValueTuple_3_tB23B45F9E9227572F9FF734386CB10327FCACBCF* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23715,7 +23715,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_3_ToString_mD0284895E3EF4AC74A707C2B4C8174
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2371
+// Method Definition Index: 2372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_3__ctor_m5B9055A21772197DFED71591A93A754706CBB4D4 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, PointerEvent_tC25A522EBDFCAF2CDEEE1D70428C281F78C1FA05 ___0_item1, int32_t ___1_item2, float ___2_item3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -23729,7 +23729,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_3__ctor_m5B9055A21772197DFED7
 		return;
 	}
 }
-// Method Definition Index: 2372
+// Method Definition Index: 2373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_Equals_mC7878270E01B8AE440BC8B5D8085F72416A8AD97 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23761,7 +23761,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_Equals_mC7878270E01B8AE440BC8B5D8085F72416A8A
 	_returnValue = ValueTuple_3_Equals_mC7878270E01B8AE440BC8B5D8085F72416A8AD97(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2373
+// Method Definition Index: 2374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_Equals_mE50F7899EF2E5149DC90A56C307A0FB371FAC353 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23819,7 +23819,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_Equals_mE50F7899EF2E5149DC90A56C307A0FB371FAC
 	_returnValue = ValueTuple_3_Equals_mE50F7899EF2E5149DC90A56C307A0FB371FAC353(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2374
+// Method Definition Index: 2375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_System_Collections_IStructuralEquatable_Equals_m982661CA0C15343372C367DEB73864F7A8A0055E (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23917,7 +23917,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_3_System_Collections_IStructuralEquatable_Equals_m982661CA0C15343372C367DEB73864F7A8A0055E(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2375
+// Method Definition Index: 2376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_IComparable_CompareTo_mC27A41C35575D5A09ACAC36A71A40C05EA33A35F (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -23973,7 +23973,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_IComparable_CompareTo_mC27A41C35575
 	_returnValue = ValueTuple_3_System_IComparable_CompareTo_mC27A41C35575D5A09ACAC36A71A40C05EA33A35F(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2376
+// Method Definition Index: 2377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_CompareTo_mD753610BAED4F09CCF2FB34DAA58E26806E90F93 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24043,7 +24043,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_CompareTo_mD753610BAED4F09CCF2FB34DAA58E26
 	_returnValue = ValueTuple_3_CompareTo_mD753610BAED4F09CCF2FB34DAA58E26806E90F93(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2377
+// Method Definition Index: 2378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_Collections_IStructuralComparable_CompareTo_m04973BB1A4626CFC24C91EFB7F799A98C4976E4F (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24168,7 +24168,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_3_System_Collections_IStructuralComparable_CompareTo_m04973BB1A4626CFC24C91EFB7F799A98C4976E4F(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2378
+// Method Definition Index: 2379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCode_mDBD9C117CB2A9D136D4342CDBD290E1CAE407FD5 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24255,7 +24255,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_GetHashCode_mDBD9C117CB2A9D136D4342CDBD290
 	_returnValue = ValueTuple_3_GetHashCode_mDBD9C117CB2A9D136D4342CDBD290E1CAE407FD5(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2379
+// Method Definition Index: 2380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_Collections_IStructuralEquatable_GetHashCode_m177564200679EA8033621DDFBA42996D8C6DB950 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24275,7 +24275,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_3_System_Collections_IStructuralEquatable_GetHashCode_m177564200679EA8033621DDFBA42996D8C6DB950(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2380
+// Method Definition Index: 2381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCodeCore_mE39BDFB3F60AF6B8B4AD92A8D20C8B59531E680E (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24313,7 +24313,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCodeCore_mE39BDFB
 		return L_15;
 	}
 }
-// Method Definition Index: 2381
+// Method Definition Index: 2382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_3_ToString_mA2B30AFDFE51439C5E8B5ED2DA1D41706F1DB784 (ValueTuple_3_t7710F86A623C8F578E76B4EAC47B05AA6EFE7B64* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24461,7 +24461,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_3_ToString_mA2B30AFDFE51439C5E8B5ED2DA1D41
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2371
+// Method Definition Index: 2372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_3__ctor_m8EB1592E9C3EA681B07C49F978637E12BA4271F2_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00 ___0_item1, Il2CppSharedGenericObject* ___1_item2, bool ___2_item3, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -24476,7 +24476,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ValueTuple_3__ctor_m8EB1592E9C3EA681B07C
 		return;
 	}
 }
-// Method Definition Index: 2372
+// Method Definition Index: 2373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_Equals_mA9EB1B06C6D752EA185B9D0041AFC72EF84D5179_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24508,7 +24508,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_Equals_mA9EB1B06C6D752EA185B9D0041AFC72EF84D5
 	_returnValue = ValueTuple_3_Equals_mA9EB1B06C6D752EA185B9D0041AFC72EF84D5179(_thisAdjusted, ___0_obj, method);
 	return _returnValue;
 }
-// Method Definition Index: 2373
+// Method Definition Index: 2374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_Equals_m2C911A10D7912897CFBA668C385482CEFBE07C7E_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24566,7 +24566,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_Equals_m2C911A10D7912897CFBA668C385482CEFBE07
 	_returnValue = ValueTuple_3_Equals_m2C911A10D7912897CFBA668C385482CEFBE07C7E(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2374
+// Method Definition Index: 2375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ValueTuple_3_System_Collections_IStructuralEquatable_Equals_m548EEF50F9E83DFB6DD7A3D5817EF5655839858F_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24660,7 +24660,7 @@ IL2CPP_EXTERN_C  bool ValueTuple_3_System_Collections_IStructuralEquatable_Equal
 	_returnValue = ValueTuple_3_System_Collections_IStructuralEquatable_Equals_m548EEF50F9E83DFB6DD7A3D5817EF5655839858F(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2375
+// Method Definition Index: 2376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_IComparable_CompareTo_mEE7C241B005A11E1BCBCE1E870FD61A3BC51D152_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, RuntimeObject* ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24716,7 +24716,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_IComparable_CompareTo_mEE7C241B005A
 	_returnValue = ValueTuple_3_System_IComparable_CompareTo_mEE7C241B005A11E1BCBCE1E870FD61A3BC51D152(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2376
+// Method Definition Index: 2377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_CompareTo_mCEB7E44202C6B2019228675925C2403174122440_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826 ___0_other, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -24786,7 +24786,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_CompareTo_mCEB7E44202C6B2019228675925C2403
 	_returnValue = ValueTuple_3_CompareTo_mCEB7E44202C6B2019228675925C2403174122440(_thisAdjusted, ___0_other, method);
 	return _returnValue;
 }
-// Method Definition Index: 2377
+// Method Definition Index: 2378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_Collections_IStructuralComparable_CompareTo_m4B2ED5F31AFEE4D9EBF97954422F4EE227D27C6A_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, RuntimeObject* ___0_other, RuntimeObject* ___1_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24907,7 +24907,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_Collections_IStructuralComparable_C
 	_returnValue = ValueTuple_3_System_Collections_IStructuralComparable_CompareTo_m4B2ED5F31AFEE4D9EBF97954422F4EE227D27C6A(_thisAdjusted, ___0_other, ___1_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2378
+// Method Definition Index: 2379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCode_m1110D3B374C9E607DBB5AE2C5651B528AACC3D36_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25025,7 +25025,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_GetHashCode_m1110D3B374C9E607DBB5AE2C5651B
 	_returnValue = ValueTuple_3_GetHashCode_m1110D3B374C9E607DBB5AE2C5651B528AACC3D36(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2379
+// Method Definition Index: 2380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_System_Collections_IStructuralEquatable_GetHashCode_mF424B84DAE18F2DF1328252BD5C0940F15C80686_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25045,7 +25045,7 @@ IL2CPP_EXTERN_C  int32_t ValueTuple_3_System_Collections_IStructuralEquatable_Ge
 	_returnValue = ValueTuple_3_System_Collections_IStructuralEquatable_GetHashCode_mF424B84DAE18F2DF1328252BD5C0940F15C80686(_thisAdjusted, ___0_comparer, method);
 	return _returnValue;
 }
-// Method Definition Index: 2380
+// Method Definition Index: 2381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCodeCore_m758F09FA2647969863201C3769504F65146F169B_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, RuntimeObject* ___0_comparer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25081,7 +25081,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ValueTuple_3_GetHashCodeCore_m758F09F
 		return L_13;
 	}
 }
-// Method Definition Index: 2381
+// Method Definition Index: 2382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ValueTuple_3_ToString_m8290234BC5637EAC951DFD4613EBB7656A43145C_gshared (ValueTuple_3_t160BACC4E61B46EAF2A04171E8D78D2B7B18A826* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25267,7 +25267,7 @@ IL2CPP_EXTERN_C  String_t* ValueTuple_3_ToString_m8290234BC5637EAC951DFD4613EBB7
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 41574
+// Method Definition Index: 41582
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Quaternion_GetHashCode_m5F55C34C98E437376595E722BE4EB8A70434F049_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25287,7 +25287,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Quaternion_GetHashCode_m5
 		return ((int32_t)(((int32_t)(((int32_t)(L_1^((int32_t)(L_3<<2))))^((int32_t)(L_5>>2))))^((int32_t)(L_7>>1))));
 	}
 }
-// Method Definition Index: 41578
+// Method Definition Index: 41586
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Quaternion_ToString_mC5BD5DEF60FCA4A38924462A5C4440ECFCF934C4_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25297,7 +25297,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Quaternion_ToString_mC5
 		return L_0;
 	}
 }
-// Method Definition Index: 41654
+// Method Definition Index: 41662
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector2_GetHashCode_mED8670C0E122B7ED0DAB4C3381ADFF04B75E0B03_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25311,7 +25311,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector2_GetHashCode_mED86
 		return ((int32_t)(L_1^((int32_t)(L_3<<2))));
 	}
 }
-// Method Definition Index: 41652
+// Method Definition Index: 41660
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector2_ToString_mB47B29ECB21FA3A4ACEABEFA18077A5A6BBCCB27_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25321,7 +25321,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector2_ToString_mB47B2
 		return L_0;
 	}
 }
-// Method Definition Index: 41490
+// Method Definition Index: 41498
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector3_GetHashCode_mB08429DC931A85BD29CE11B9ABC77DE7E0E46327_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25338,7 +25338,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector3_GetHashCode_mB084
 		return ((int32_t)(((int32_t)(L_1^((int32_t)(L_3<<2))))^((int32_t)(L_5>>2))));
 	}
 }
-// Method Definition Index: 41530
+// Method Definition Index: 41538
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector3_ToString_m6C24B9F0382D25D75B05C606E127CD14660574EE_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25348,7 +25348,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector3_ToString_m6C24B
 		return L_0;
 	}
 }
-// Method Definition Index: 41742
+// Method Definition Index: 41750
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector4_GetHashCode_m53F6FCA56A0051C9D1AB41AA3EAA2C86CDAA8B92_inline (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25368,7 +25368,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector4_GetHashCode_m53F6
 		return ((int32_t)(((int32_t)(((int32_t)(L_1^((int32_t)(L_3<<2))))^((int32_t)(L_5>>2))))^((int32_t)(L_7>>1))));
 	}
 }
-// Method Definition Index: 41704
+// Method Definition Index: 41712
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector2Int_GetHashCode_mA3B6135FA770AF0C171319B50D9B913657230EB7_inline (Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25378,7 +25378,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector2Int_GetHashCode_mA
 		return ((int32_t)(((int32_t)il2cpp_codegen_multiply(L_0, ((int32_t)73856093)))^((int32_t)il2cpp_codegen_multiply(L_1, ((int32_t)83492791)))));
 	}
 }
-// Method Definition Index: 41765
+// Method Definition Index: 41773
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector4_ToString_mFA0DDF34C1E394F75EF65E06764A1BE750E7F388_inline (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25388,7 +25388,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector4_ToString_mFA0DD
 		return L_0;
 	}
 }
-// Method Definition Index: 41705
+// Method Definition Index: 41713
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector2Int_ToString_m6F7E9B9B45A473FED501EB8B8B25BA1FE26DD5D4_inline (Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25398,7 +25398,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector2Int_ToString_m6F
 		return L_0;
 	}
 }
-// Method Definition Index: 39893
+// Method Definition Index: 39894
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Ray_ToString_m06274331D92120539B4C6E0D3747EE620DB468E5_inline (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* __this, const RuntimeMethod* method) 
 {
 	//<source_info:<no-source>:1>
@@ -25408,7 +25408,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Ray_ToString_m06274331D
 		return L_0;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tBFD2403A655A88B1FF852EA5E28E5FDA452FC92B* EqualityComparer_1_get_Default_m3EC48AFA0E122917440DB737A4C708A4C9558E87_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25440,7 +25440,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t97160852989689D9543E2E1EA7D7196DBEA5AEE4* EqualityComparer_1_get_Default_mBB75BC0723DFD7850F43E72E34026DD070CF5932_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25472,7 +25472,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tE05A9BF0932DEB0653A3BD392318FAA5123C3504* EqualityComparer_1_get_Default_m76691DC579907239261E159E4DFDD8B1C3C9E5FE_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25504,7 +25504,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t63A37CBBA150A456A5494B585BAAD61AEC84FCC3* EqualityComparer_1_get_Default_m16781A8E4EDB2114168E318B51C5081028E57F3D_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25536,7 +25536,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t655FD4629C1F2E5D2BDADDD03712B21627387790* EqualityComparer_1_get_Default_m865B4EA3E6DF59B824F18DFD23119637A250153E_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25568,7 +25568,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t8576A23859AAB111A218EAE239E10E5E9E2D66FC* EqualityComparer_1_get_Default_mF70F6C11A35B420DFA4628EE316B087F2DCB280C_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25600,7 +25600,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t483FA2A5A974208961219D26E3DCCEBF150EF081* EqualityComparer_1_get_Default_mB451453B7B5B4B570A9347E090AB0FAC75C0C628_gshared_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25632,7 +25632,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t3339D51654E0195EE11407FE923838FDC0EC40FD* EqualityComparer_1_get_Default_m7E5B1D8DA2F14FDBA14B24D9AD25CF15FF30C88C_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25664,7 +25664,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tFD9BE69DDFA749C57A6F303414A8489B0D9ED7F1* EqualityComparer_1_get_Default_m0469F95E7D316EA870046BE8397F9E063F854731_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25696,7 +25696,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t346CEF653847623862FC6F88D66F7933B0039499* EqualityComparer_1_get_Default_m20A1B9861324559044977270E1FAFB09BBE14234_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25728,7 +25728,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t5A114FFA3F6F2C41AB2F673F2AA47382EDF2C88F* EqualityComparer_1_get_Default_m06A13E59DDDC6E67ABECBCA4C8B3FC9EBDD55784_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25760,7 +25760,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tBE7039362398A2C9BD71FAAAB935B7FF9F6EA862* EqualityComparer_1_get_Default_mF554877B669658FD6449F84AE369214855D0BC40_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25792,7 +25792,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tF5B9124CEB160EFC53E943AA29271854DB5D5E8E* EqualityComparer_1_get_Default_mB416E612CF5DF00141878F67290CCF47A257028B_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25824,7 +25824,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t1F3F605A9175C681B32670E6F821ED336C3693F6* EqualityComparer_1_get_Default_m1366122B2D69C2D467D898811414E10F4DF12E4C_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25856,7 +25856,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tBD6B7C36607558DF82D5B7841A00BF6FE6954F49* EqualityComparer_1_get_Default_m90A2DF3D4BA23B0DCCB322B1DEF2E808102952A2_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25888,7 +25888,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t3584A3B82B794F38A122BE591C2DA6F983EDA6ED* EqualityComparer_1_get_Default_mD7C9FC8D7002D2D643279B5C3DE32AF412C5CF43_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25920,7 +25920,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tDE24F621C95E8D4A4822EEBFA74D88320406E784* EqualityComparer_1_get_Default_m11B72C9625647814F669DBE2BA735A3A164BA65A_gshared_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25952,7 +25952,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t94C00BDA45C6B1C210F1A814ADD9213E63B8050B* EqualityComparer_1_get_Default_mE2C78220C095E3E9BB8A1A728F89FA729BCBF4D5_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -25984,7 +25984,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t7A1FD25973851CA8703B3D65A407E44535B20581* EqualityComparer_1_get_Default_mC0B29FC6AFED03D8A30BE41AC4BEC15DCF6AA9F8_gshared_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26016,7 +26016,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tCD8191A4B14092297422B02D55BC8F105D035EC1* EqualityComparer_1_get_Default_m8268ACDC028C137E4F9209E494CA9FCBE4DC9E7E_gshared_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26048,7 +26048,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tCAA8B21BC7E1029BB1288DEAE6D8ACB730BC5D4B* EqualityComparer_1_get_Default_m1D7CFB300C5D4CDC1A3E2D90C684F5AD4C98B8CB_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26080,7 +26080,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tC0FF2B3FD5C04787C1E74C1D3EAF2DCCAF1C91F0* EqualityComparer_1_get_Default_m96799E2B99BE65E1AB30536CF1870515ACD05D7A_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26112,7 +26112,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t5B934DDB261351B14064EF14B1410AF6032541AE* EqualityComparer_1_get_Default_m14F6CD483E4C3BFF735BCB762450F27D466F34B4_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26144,7 +26144,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_tAC7BE3E0C69B27938539C6820A4FCE2710975C21* EqualityComparer_1_get_Default_m397122BAB51EC8A6EB9563544704F6F32FE0A928_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26176,7 +26176,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t0FD8FCEBE833923956832361CDBB1E01468EE268* EqualityComparer_1_get_Default_m1163AA468BE2757E66A9C8E39396032F8D8E6338_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26208,7 +26208,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 9215
+// Method Definition Index: 9216
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR EqualityComparer_1_t7C12A9C4314E84BCE03FD5EF6B301C7525A67A5D* EqualityComparer_1_get_Default_mEBE4A6C65D68F522D9D69DB4940EEC96FA613300_inline (const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -26240,7 +26240,7 @@ IL_0019:
 		return L_4;
 	}
 }
-// Method Definition Index: 41580
+// Method Definition Index: 41588
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Quaternion_ToString_m9B592D577B3FDB892CA53ABF3457BC2EDE45DF8C_inline (Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974* __this, String_t* ___0_format, RuntimeObject* ___1_formatProvider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26328,7 +26328,7 @@ IL_001e:
 		return L_26;
 	}
 }
-// Method Definition Index: 41653
+// Method Definition Index: 41661
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector2_ToString_mC10F098442E56919947154402A77EDE28DC9B7BE_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* __this, String_t* ___0_format, RuntimeObject* ___1_formatProvider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26388,7 +26388,7 @@ IL_001e:
 		return L_13;
 	}
 }
-// Method Definition Index: 41532
+// Method Definition Index: 41540
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector3_ToString_mA8DA39B6324392BB93203A4D4CB85AF87231CB62_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, String_t* ___0_format, RuntimeObject* ___1_formatProvider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26453,7 +26453,7 @@ IL_001e:
 		return L_17;
 	}
 }
-// Method Definition Index: 41766
+// Method Definition Index: 41774
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector4_ToString_m2BE67BEBBD3059C9CEE29BF34AD30E1D7057E914_inline (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* __this, String_t* ___0_format, RuntimeObject* ___1_formatProvider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26541,7 +26541,7 @@ IL_001e:
 		return L_26;
 	}
 }
-// Method Definition Index: 41706
+// Method Definition Index: 41714
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Vector2Int_ToString_m44BA6941AEF41076A39848B95DDEFEA88A094B5E_inline (Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A* __this, String_t* ___0_format, RuntimeObject* ___1_formatProvider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26586,7 +26586,7 @@ IL_000f:
 		return L_11;
 	}
 }
-// Method Definition Index: 39894
+// Method Definition Index: 39895
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* Ray_ToString_mA76F7B86876505F674F3E20C18C8258103622C10_inline (Ray_t2B1742D7958DC05BDC3EFC7461D3593E1430DC00* __this, String_t* ___0_format, RuntimeObject* ___1_formatProvider, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

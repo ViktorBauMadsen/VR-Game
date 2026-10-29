@@ -24,7 +24,10 @@ public class SlotMachine : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip spinStartClip; // plays right as the reels start spinning
+    // Plays right as the reels start spinning. Empty by default: the old
+    // "Slot Machine sound.mp3" was timed for the previous short spin.
+    // (Renamed from spinStartClip so every machine dropped that old clip.)
+    [SerializeField] AudioClip spinStartSound;
     [Tooltip("Short tick played as the reels shift symbols. Empty = uses the generated default.")]
     [SerializeField] AudioClip reelTickClip;
     [Tooltip("Clunk played each time a reel stops. Empty = uses the generated default.")]
@@ -183,7 +186,7 @@ public class SlotMachine : MonoBehaviour
 
         // Roll the outcome up front; the reels then animate onto it.
         var tier = RollOutcome();
-        if (audioSource != null && spinStartClip != null) audioSource.PlayOneShot(spinStartClip);
+        if (audioSource != null && spinStartSound != null) audioSource.PlayOneShot(spinStartSound);
 
         if (reels != null)
         {

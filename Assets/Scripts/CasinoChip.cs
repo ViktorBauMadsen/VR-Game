@@ -76,10 +76,20 @@ public class CasinoChip : MonoBehaviour
             spot = candidate;
         }
 
-        if (spot != null && PlayerBalance.Instance != null && PlayerBalance.Instance.TrySpend(value))
-            Place(spot);
-        else
-            _rb.isKinematic = false;
+        if (spot != null)
+        {
+            if (PlayerBalance.Instance != null && PlayerBalance.Instance.TrySpend(value))
+            {
+                Place(spot);
+                return;
+            }
+            // Can't afford it (e.g. grabbed several chips, then ran out):
+            // TrySpend already triggered the "Not enough balance" message.
+            // Remove the chip so it can't sit on the spot looking like a bet.
+            Destroy(gameObject);
+            return;
+        }
+        _rb.isKinematic = false;
     }
 
     void Place(BettingSpot spot)

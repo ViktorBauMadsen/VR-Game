@@ -15,6 +15,13 @@ public class PlayerBalance : MonoBehaviour
     public int Balance { get; private set; }
     public event Action<int> BalanceChanged;
     public event Action<int> BalanceDelta;
+    // Something was refused because the player can't afford it (argument =
+    // the amount needed). The HUD shows "Not enough balance" on this.
+    public event Action<int> InsufficientFunds;
+
+    public bool CanAfford(int amount) => Balance >= amount;
+
+    public void ReportInsufficientFunds(int amountNeeded) => InsufficientFunds?.Invoke(amountNeeded);
 
     void Awake()
     {
@@ -40,7 +47,11 @@ public class PlayerBalance : MonoBehaviour
     public bool TrySpend(int amount)
     {
         if (amount < 0) throw new ArgumentOutOfRangeException(nameof(amount));
-        if (Balance < amount) return false;
+        if (Balance < amount)
+        {
+            ReportInsufficientFunds(amount);
+            return false;
+        }
         Balance -= amount;
         BalanceChanged?.Invoke(Balance);
         BalanceDelta?.Invoke(-amount);

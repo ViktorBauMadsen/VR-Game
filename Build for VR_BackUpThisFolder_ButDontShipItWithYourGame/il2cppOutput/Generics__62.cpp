@@ -7754,10 +7754,10 @@ inline RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Cu
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t5DA42CAF95F196F03BDD802C9D4F704954B556AB InternalEnumerator_1_get_Current_m7B17441EE225E8061EC502B5A9CE397F4E25E746 (InternalEnumerator_1_tBC9F5EB5F13977F2A2B2AAFC7986EFE41F94D837* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7811,8 +7811,8 @@ IL2CPP_EXTERN_C  Entry_t5DA42CAF95F196F03BDD802C9D4F704954B556AB InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m7B17441EE225E8061EC502B5A9CE397F4E25E746(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF94E123C6A4734F1DDCE177D145A79D1CD7E22B7 (InternalEnumerator_1_tBC9F5EB5F13977F2A2B2AAFC7986EFE41F94D837* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7841,10 +7841,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t5536CC094AFB005C6BD131FC8186E873ED50E19E InternalEnumerator_1_get_Current_m0171622ECEE1ED1B1FA8A222677254EAF58F81BD_gshared (InternalEnumerator_1_t3B82E02182050956BC902482FAD3B2854328B6DD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7898,8 +7898,8 @@ IL2CPP_EXTERN_C  Entry_t5536CC094AFB005C6BD131FC8186E873ED50E19E InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m0171622ECEE1ED1B1FA8A222677254EAF58F81BD(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4254D519BD0C83A6E1877EAF66284170455706A0_gshared (InternalEnumerator_1_t3B82E02182050956BC902482FAD3B2854328B6DD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7928,10 +7928,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t23427BBC8CA174E223D4307671412E208FF6204C InternalEnumerator_1_get_Current_mBA309B85DCDE616445DFACEDE849DF74A0C03667_gshared (InternalEnumerator_1_t3E916BCEA92DA44A0F8F3E7D882EBFE25EAB6620* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -7985,8 +7985,8 @@ IL2CPP_EXTERN_C  Entry_t23427BBC8CA174E223D4307671412E208FF6204C InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mBA309B85DCDE616445DFACEDE849DF74A0C03667(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mA88909E5E2B6F3B365D6D9F78D0BD00D3552B875_gshared (InternalEnumerator_1_t3E916BCEA92DA44A0F8F3E7D882EBFE25EAB6620* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8015,10 +8015,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t4603205C33221F16AC10A86CE4AEA11F0DFC41E5 InternalEnumerator_1_get_Current_mE608943A9C62526ED7F9C9CD5DA0D85001006132_gshared (InternalEnumerator_1_t4987948AA45B9F8FE05C0F5E3324E5E78DFDB0BD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8072,8 +8072,8 @@ IL2CPP_EXTERN_C  Entry_t4603205C33221F16AC10A86CE4AEA11F0DFC41E5 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mE608943A9C62526ED7F9C9CD5DA0D85001006132(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mE64393E9A9549ED9357F743384956BE4959C006E_gshared (InternalEnumerator_1_t4987948AA45B9F8FE05C0F5E3324E5E78DFDB0BD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8102,10 +8102,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t7F90B7561F60FCDA9E0C2D5F7BEE326CF33B1C50 InternalEnumerator_1_get_Current_mEF4C81286EBD4B769FF9708E423DC3437037A1E3 (InternalEnumerator_1_tB90ACDBE87E1AEFE1D4EBC28EA9E049871D6AD44* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8159,8 +8159,8 @@ IL2CPP_EXTERN_C  Entry_t7F90B7561F60FCDA9E0C2D5F7BEE326CF33B1C50 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mEF4C81286EBD4B769FF9708E423DC3437037A1E3(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mAE59E009F1322F54107CF251D4CA3F17DF891AF8 (InternalEnumerator_1_tB90ACDBE87E1AEFE1D4EBC28EA9E049871D6AD44* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8189,10 +8189,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t58E99ABABD435BCC040760EDD6D161FA4AFAD578 InternalEnumerator_1_get_Current_m6D43E4F4CDBEB8BA045AB7303998EA9484B4AF46 (InternalEnumerator_1_t9E75FD37BD501D91D49F275689F409DB15FEC1C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8246,8 +8246,8 @@ IL2CPP_EXTERN_C  Entry_t58E99ABABD435BCC040760EDD6D161FA4AFAD578 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m6D43E4F4CDBEB8BA045AB7303998EA9484B4AF46(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD59AC9751240B9934D8AE7511DDC28D5E4282945 (InternalEnumerator_1_t9E75FD37BD501D91D49F275689F409DB15FEC1C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8276,10 +8276,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t2679F25F22E3E7DB5F988C82C064BA4BE59F5677 InternalEnumerator_1_get_Current_m513466403A24DCB270466D3E6B40D92A26FD5653 (InternalEnumerator_1_tFAA98DC569F09634203B006584FFE0DE4EEA5E89* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8333,8 +8333,8 @@ IL2CPP_EXTERN_C  Entry_t2679F25F22E3E7DB5F988C82C064BA4BE59F5677 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m513466403A24DCB270466D3E6B40D92A26FD5653(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m63BC9618732020AF04BF2FB0B009CE7F2124F885 (InternalEnumerator_1_tFAA98DC569F09634203B006584FFE0DE4EEA5E89* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8363,10 +8363,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tE9F630515B2639FC32421D8BCA4A3FDA5DA81F57 InternalEnumerator_1_get_Current_mC9CB86C529374EF3604CD68A2DFD51848561E396 (InternalEnumerator_1_tDC32D585F5E3DA148B94B67CBEF63DD07CE32482* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8420,8 +8420,8 @@ IL2CPP_EXTERN_C  Entry_tE9F630515B2639FC32421D8BCA4A3FDA5DA81F57 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mC9CB86C529374EF3604CD68A2DFD51848561E396(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mCBCC6236652459279DF8E48AD69704B5C94DFABF (InternalEnumerator_1_tDC32D585F5E3DA148B94B67CBEF63DD07CE32482* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8450,10 +8450,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tEC1A94D2B396350073237678CBE5013D9C23336F InternalEnumerator_1_get_Current_m59F2B284F2FFE25AD76BE5A7E1C4F4693A410C42 (InternalEnumerator_1_t71C0513C9189E3A05068ED4CD67CFDA93550C8E3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8507,8 +8507,8 @@ IL2CPP_EXTERN_C  Entry_tEC1A94D2B396350073237678CBE5013D9C23336F InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m59F2B284F2FFE25AD76BE5A7E1C4F4693A410C42(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m1C3AE97E18C32B8DD3FF11DD42099BE3EEAE0291 (InternalEnumerator_1_t71C0513C9189E3A05068ED4CD67CFDA93550C8E3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8537,10 +8537,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t6AE26C6078FCDA8F86904D21F25FCFF5D726FAC8 InternalEnumerator_1_get_Current_m6BEC6392A3267F663599AF0DAF92E519EC165ED2 (InternalEnumerator_1_t68AAE4830A5B871DBF3DBD9A14D1210B907576A0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8594,8 +8594,8 @@ IL2CPP_EXTERN_C  Entry_t6AE26C6078FCDA8F86904D21F25FCFF5D726FAC8 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m6BEC6392A3267F663599AF0DAF92E519EC165ED2(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mDC1B40AA83BBDB10E68B897C94AB9053B5808460 (InternalEnumerator_1_t68AAE4830A5B871DBF3DBD9A14D1210B907576A0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8624,10 +8624,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tEFAC589ECF730F050787AF6E5CF97CF8C3529F88 InternalEnumerator_1_get_Current_mA83D286C1794C6CBEBF7E6B1377FC37DCE44585B (InternalEnumerator_1_t5FBF4266CD71F3F992E55B8FFB294408BB1A84B0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8681,8 +8681,8 @@ IL2CPP_EXTERN_C  Entry_tEFAC589ECF730F050787AF6E5CF97CF8C3529F88 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mA83D286C1794C6CBEBF7E6B1377FC37DCE44585B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m464444BF7F23A740BE8A182BB023612CACFF3AC0 (InternalEnumerator_1_t5FBF4266CD71F3F992E55B8FFB294408BB1A84B0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8711,10 +8711,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tEB233057181680A880C2E6B88D09F275A71A2546 InternalEnumerator_1_get_Current_m4A637002BF7AF8F39DDC67083B4E603DA1C103C0 (InternalEnumerator_1_tB200A8F7B40EE4A5BA7657698F55FE80A25346D6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8768,8 +8768,8 @@ IL2CPP_EXTERN_C  Entry_tEB233057181680A880C2E6B88D09F275A71A2546 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m4A637002BF7AF8F39DDC67083B4E603DA1C103C0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m7B60B2A88EF8CF438E340CF21E5E9577924DA0ED (InternalEnumerator_1_tB200A8F7B40EE4A5BA7657698F55FE80A25346D6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8798,10 +8798,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t8DBA43D6278FB62ADE0F36B5405862F425F5D218 InternalEnumerator_1_get_Current_m86F1DA30DEC149F5B7AB24F8A360F00F6C336C7C (InternalEnumerator_1_t08DEFF9B9F52BA7297CE7B8896B0429A7592AE14* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8855,8 +8855,8 @@ IL2CPP_EXTERN_C  Entry_t8DBA43D6278FB62ADE0F36B5405862F425F5D218 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m86F1DA30DEC149F5B7AB24F8A360F00F6C336C7C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m971CA6825617D09AB78BADA12CE29A9A8B3C9CB9 (InternalEnumerator_1_t08DEFF9B9F52BA7297CE7B8896B0429A7592AE14* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8885,10 +8885,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tB00AD2CD04F10BBE8D1509A2B176CA92D693542D InternalEnumerator_1_get_Current_m996430BC5ECF4DCF26681D2D8B5A6A58FFD07CE8 (InternalEnumerator_1_tD83013F5B6528E47FE028E591E5A9BE9261790C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8942,8 +8942,8 @@ IL2CPP_EXTERN_C  Entry_tB00AD2CD04F10BBE8D1509A2B176CA92D693542D InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m996430BC5ECF4DCF26681D2D8B5A6A58FFD07CE8(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD8FE7D728DB32FD0512EDA109529506CB1F357B7 (InternalEnumerator_1_tD83013F5B6528E47FE028E591E5A9BE9261790C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -8972,10 +8972,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tEB46DBF39E6F936D9793B0EE07CA4AFCE97193AB InternalEnumerator_1_get_Current_mD9222292D6FCB0186F73DDF62B57E5F3EBF13557_gshared (InternalEnumerator_1_tD7C9E05E596C2A308EEB877C300635EF0154DDC9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9029,8 +9029,8 @@ IL2CPP_EXTERN_C  Entry_tEB46DBF39E6F936D9793B0EE07CA4AFCE97193AB InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mD9222292D6FCB0186F73DDF62B57E5F3EBF13557(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m16630B6797D7B573E14455205F73E0259F1ABDBF_gshared (InternalEnumerator_1_tD7C9E05E596C2A308EEB877C300635EF0154DDC9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9059,10 +9059,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tE39EFE8390317589FD9BFA3B38B542860BFE0172 InternalEnumerator_1_get_Current_m8AFFFFCF0D9703F2D54CB16048D99FC71AF7166E_gshared (InternalEnumerator_1_tD18A74028EB0F4DE9225E807766E476DCDD7DA1B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9116,8 +9116,8 @@ IL2CPP_EXTERN_C  Entry_tE39EFE8390317589FD9BFA3B38B542860BFE0172 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m8AFFFFCF0D9703F2D54CB16048D99FC71AF7166E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mA7AEE67DB90C92C50E8F4117E589D29B048ABA6D_gshared (InternalEnumerator_1_tD18A74028EB0F4DE9225E807766E476DCDD7DA1B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9146,10 +9146,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t2E250B408B427F59AC040E70F276F93D5353DCA1 InternalEnumerator_1_get_Current_mD132886A8374AFC3B02D60D7465A7D608E31C2A7 (InternalEnumerator_1_t0731E02001D2C3F72A15F7A2269EEFB2272BAB94* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9203,8 +9203,8 @@ IL2CPP_EXTERN_C  Entry_t2E250B408B427F59AC040E70F276F93D5353DCA1 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mD132886A8374AFC3B02D60D7465A7D608E31C2A7(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m3FEA8E2BC62C35C846056488F9C8B78E7060C5B8 (InternalEnumerator_1_t0731E02001D2C3F72A15F7A2269EEFB2272BAB94* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9233,10 +9233,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tFA80A0E5C486507679B91EED262F276050345D8A InternalEnumerator_1_get_Current_mA39F1AA8DA3FA5BD7D37A01B290BAAD932A5DAD3 (InternalEnumerator_1_t909D6A1F253375C448201ED365815E229D6B6F86* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9290,8 +9290,8 @@ IL2CPP_EXTERN_C  Entry_tFA80A0E5C486507679B91EED262F276050345D8A InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mA39F1AA8DA3FA5BD7D37A01B290BAAD932A5DAD3(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD052C7469785C3ADC4F38345F57A9C1323B7D2AC (InternalEnumerator_1_t909D6A1F253375C448201ED365815E229D6B6F86* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9320,10 +9320,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tA288B4A43484DC97591FF93309F6E9C9821BB2AF InternalEnumerator_1_get_Current_m8D8D15047836CD7A0FE8B570F5C9AD1AC7C5DA6B_gshared (InternalEnumerator_1_t153D92D3A1DD09CDB7003835A008488DD3BDAB75* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9377,8 +9377,8 @@ IL2CPP_EXTERN_C  Entry_tA288B4A43484DC97591FF93309F6E9C9821BB2AF InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m8D8D15047836CD7A0FE8B570F5C9AD1AC7C5DA6B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m7B4B84AC8C0A6E5E4332B20587EDE21DE47CF729_gshared (InternalEnumerator_1_t153D92D3A1DD09CDB7003835A008488DD3BDAB75* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9407,10 +9407,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t13026F279971F806ADC4987D646B0A47CF6CBAC9 InternalEnumerator_1_get_Current_mA78B04AACA3CAD6E845106C99023FDC68209C697 (InternalEnumerator_1_t16E321EF5277513D9C7F5694367ADF02B6B1E959* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9464,8 +9464,8 @@ IL2CPP_EXTERN_C  Entry_t13026F279971F806ADC4987D646B0A47CF6CBAC9 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mA78B04AACA3CAD6E845106C99023FDC68209C697(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6ADEFDA59C1EAD393E8759BEDEB36D10C9F6AD2E (InternalEnumerator_1_t16E321EF5277513D9C7F5694367ADF02B6B1E959* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9494,10 +9494,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tA82131DA33EF2466C31F2B755C9AB0C2DCED6C85 InternalEnumerator_1_get_Current_mE91DE2F14A7DE4A186DD7C8F331ABD21B19BE984_gshared (InternalEnumerator_1_tCF5FC69BE0BE4C71E14DED47E56FB164817FFBB5* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9551,8 +9551,8 @@ IL2CPP_EXTERN_C  Entry_tA82131DA33EF2466C31F2B755C9AB0C2DCED6C85 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mE91DE2F14A7DE4A186DD7C8F331ABD21B19BE984(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m9BB646048E5419CF4CB2A29A4FF7C9AA8602BF84_gshared (InternalEnumerator_1_tCF5FC69BE0BE4C71E14DED47E56FB164817FFBB5* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9581,10 +9581,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t75704D6D235026787383C7E26F0766BB1B370352 InternalEnumerator_1_get_Current_m0AD5247858F717C8928451E5DDA90A1A5EBC9662_gshared (InternalEnumerator_1_t0110CAEF74F6E681A3FA38052DC7BF011CD0A945* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9638,8 +9638,8 @@ IL2CPP_EXTERN_C  Entry_t75704D6D235026787383C7E26F0766BB1B370352 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m0AD5247858F717C8928451E5DDA90A1A5EBC9662(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m20D05A28CCC09DF02D4FACC6B7DD224177B6DF03_gshared (InternalEnumerator_1_t0110CAEF74F6E681A3FA38052DC7BF011CD0A945* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9668,10 +9668,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t19B2F8A1CF7E1A15073E01401D14A3A408335254 InternalEnumerator_1_get_Current_mD199B8492CD0CBFF5799C64EE0FEA28468B429A8_gshared (InternalEnumerator_1_tCAC36FEBEDDDBEB63ADCEDAB574776AC79F1FB04* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9725,8 +9725,8 @@ IL2CPP_EXTERN_C  Entry_t19B2F8A1CF7E1A15073E01401D14A3A408335254 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mD199B8492CD0CBFF5799C64EE0FEA28468B429A8(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m542F1819990756C7B0EB0BF3BACDA5FC8B525D60_gshared (InternalEnumerator_1_tCAC36FEBEDDDBEB63ADCEDAB574776AC79F1FB04* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9755,10 +9755,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tD8A0BA2A6A98F9FEEA52029DF711BD043FC3B7E5 InternalEnumerator_1_get_Current_m663EF2EC6772D718F3F5D53C15072B790AD426FA_gshared (InternalEnumerator_1_t02A314F580C45405C4C1A7F364D2288BAFE4D4C2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9812,8 +9812,8 @@ IL2CPP_EXTERN_C  Entry_tD8A0BA2A6A98F9FEEA52029DF711BD043FC3B7E5 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m663EF2EC6772D718F3F5D53C15072B790AD426FA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF657FB57D00574926F0B5B20B008E6168BD32765_gshared (InternalEnumerator_1_t02A314F580C45405C4C1A7F364D2288BAFE4D4C2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9842,10 +9842,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tCD3200903BF79B8B05DE204657DAE70BC42C1A66 InternalEnumerator_1_get_Current_m17453003831480DF937F185A1849818EBC5948D2_gshared (InternalEnumerator_1_tE592100BD9E133D13EA504A3E9C535665E13C8D0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9899,8 +9899,8 @@ IL2CPP_EXTERN_C  Entry_tCD3200903BF79B8B05DE204657DAE70BC42C1A66 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m17453003831480DF937F185A1849818EBC5948D2(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m3B9E8A7460339370002D1B7BCAA7248E0AE3F3C8_gshared (InternalEnumerator_1_tE592100BD9E133D13EA504A3E9C535665E13C8D0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9929,10 +9929,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t618775377C1D4182E53DD947AD803DF6B9A2CD0C InternalEnumerator_1_get_Current_mDD030975DF43F371B0F4E1889363B797592E553C_gshared (InternalEnumerator_1_t5965626F0A28EDABF22BBCD3ED72D8F0457A5A68* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -9986,8 +9986,8 @@ IL2CPP_EXTERN_C  Entry_t618775377C1D4182E53DD947AD803DF6B9A2CD0C InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mDD030975DF43F371B0F4E1889363B797592E553C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m1ACFC43A2BB6106E26417D4C19D89557598CE73F_gshared (InternalEnumerator_1_t5965626F0A28EDABF22BBCD3ED72D8F0457A5A68* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10016,10 +10016,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t165731625324FE4CF47ACE17F17ECE773907C8C0 InternalEnumerator_1_get_Current_mACDF03F52AC5E75CF75D36901EBBD066E4B6FCE0_gshared (InternalEnumerator_1_t0D82DDAC3F9983E5C7E154EE7A98733FCFE6357E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10073,8 +10073,8 @@ IL2CPP_EXTERN_C  Entry_t165731625324FE4CF47ACE17F17ECE773907C8C0 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mACDF03F52AC5E75CF75D36901EBBD066E4B6FCE0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC5645161A73CEC57999567B757B541FD42E60F15_gshared (InternalEnumerator_1_t0D82DDAC3F9983E5C7E154EE7A98733FCFE6357E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10103,10 +10103,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t39D41AC1F2D21DE1B4EF5885508D9D849236E568 InternalEnumerator_1_get_Current_mFDF0CE1A6FAB7375412A87AA1FC93F4CAA16FE70_gshared (InternalEnumerator_1_tEF683D6762836E8B1B0601B60A7A385F97E2CDB3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10160,8 +10160,8 @@ IL2CPP_EXTERN_C  Entry_t39D41AC1F2D21DE1B4EF5885508D9D849236E568 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mFDF0CE1A6FAB7375412A87AA1FC93F4CAA16FE70(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m259CFECE945C6F15E4E3884CFF1E40D1A672AB58_gshared (InternalEnumerator_1_tEF683D6762836E8B1B0601B60A7A385F97E2CDB3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10190,10 +10190,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t8C1937710280858A181231A632D87827074EA3C8 InternalEnumerator_1_get_Current_mF491963174A397E4FC7D22CC8BFC36974BB47174_gshared (InternalEnumerator_1_tA3C237450EA518C1815C79557E37C7BAC864D965* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10247,8 +10247,8 @@ IL2CPP_EXTERN_C  Entry_t8C1937710280858A181231A632D87827074EA3C8 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mF491963174A397E4FC7D22CC8BFC36974BB47174(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mA511C971B73A1F2064D19D2FB865F66F680E8268_gshared (InternalEnumerator_1_tA3C237450EA518C1815C79557E37C7BAC864D965* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10277,10 +10277,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tBCB2426D89579F1E315F5C79440576665BBE166A InternalEnumerator_1_get_Current_m0BA7C9DA00FDE67A504358E24AEE4EB2D866AB7B_gshared (InternalEnumerator_1_t6CE964B9454ECC74C99A8198A88397C96CFF0714* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10334,8 +10334,8 @@ IL2CPP_EXTERN_C  Entry_tBCB2426D89579F1E315F5C79440576665BBE166A InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m0BA7C9DA00FDE67A504358E24AEE4EB2D866AB7B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m559E6EF5ADFB159EDC8CFE31C3168EE7EC5ED3CF_gshared (InternalEnumerator_1_t6CE964B9454ECC74C99A8198A88397C96CFF0714* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10364,10 +10364,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tC7B3D6AAE90AC7C5C200DE5E027B9638CBCC9132 InternalEnumerator_1_get_Current_mDACAF3BF1C7037BB1CFD7C7F523698F07811D66A_gshared (InternalEnumerator_1_tCADCD5102A77E4A838F80C286D1C0CBBA74630B1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10421,8 +10421,8 @@ IL2CPP_EXTERN_C  Entry_tC7B3D6AAE90AC7C5C200DE5E027B9638CBCC9132 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mDACAF3BF1C7037BB1CFD7C7F523698F07811D66A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mB06C91B662C8BA69E389307008444D09454030F2_gshared (InternalEnumerator_1_tCADCD5102A77E4A838F80C286D1C0CBBA74630B1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10451,10 +10451,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t8F53A2B833A3A17821859B3A15D858EC2D5FBFFF InternalEnumerator_1_get_Current_m6149D1BBDCA9FCEC2A64C2A86667668DCC4AFFF3_gshared (InternalEnumerator_1_t780D620480DA2E83F7FA71660E0E217A1521F306* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10508,8 +10508,8 @@ IL2CPP_EXTERN_C  Entry_t8F53A2B833A3A17821859B3A15D858EC2D5FBFFF InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m6149D1BBDCA9FCEC2A64C2A86667668DCC4AFFF3(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF0F1B547290EB6397A96ED1CC94971E2C1397360_gshared (InternalEnumerator_1_t780D620480DA2E83F7FA71660E0E217A1521F306* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10538,10 +10538,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tE6A60066C763A545BEF1002A7E4C27DDF1CECFF6 InternalEnumerator_1_get_Current_m9E97045ACE4B700C610D712013BC415D33A30390_gshared (InternalEnumerator_1_t252CF05CC9AEA719342EE219827F6EBA3B887461* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10595,8 +10595,8 @@ IL2CPP_EXTERN_C  Entry_tE6A60066C763A545BEF1002A7E4C27DDF1CECFF6 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m9E97045ACE4B700C610D712013BC415D33A30390(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC242F3BD6835176DD518A3C2FC8D299815558D32_gshared (InternalEnumerator_1_t252CF05CC9AEA719342EE219827F6EBA3B887461* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10625,10 +10625,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t5AB4E98B4DDCE6EE72DF020364942700F5D66419 InternalEnumerator_1_get_Current_mCD14AF192152289E3483FE657747B663BF6CDD19_gshared (InternalEnumerator_1_t0B3A493F5B863BF9176EE72A0709DB4BD797B361* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10682,8 +10682,8 @@ IL2CPP_EXTERN_C  Entry_t5AB4E98B4DDCE6EE72DF020364942700F5D66419 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mCD14AF192152289E3483FE657747B663BF6CDD19(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m2616FC71D64712B37E95B6EDA48B38D288912A55_gshared (InternalEnumerator_1_t0B3A493F5B863BF9176EE72A0709DB4BD797B361* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10712,10 +10712,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tFF17A6F07B0D00BCC51069B4AC81E81912858E52 InternalEnumerator_1_get_Current_mBE62E90F598ED4170CFE2DBC1BCB5644452E5999_gshared (InternalEnumerator_1_t74EAF6AF95ADBFDACAE4FEDC6DD3F3FAA6EFDA98* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10769,8 +10769,8 @@ IL2CPP_EXTERN_C  Entry_tFF17A6F07B0D00BCC51069B4AC81E81912858E52 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mBE62E90F598ED4170CFE2DBC1BCB5644452E5999(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m3681BEE91D5825DFF65CC9AA88B7B0E81C5143A3_gshared (InternalEnumerator_1_t74EAF6AF95ADBFDACAE4FEDC6DD3F3FAA6EFDA98* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10799,10 +10799,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t643316D9FBC27B27A76D248A2815E973EA3B1204 InternalEnumerator_1_get_Current_m4BB9B3F4144960E2E9E825F1D03265630E653CCA_gshared (InternalEnumerator_1_tED297FE1479C8D4D515718896DD5CC3AB87BA57E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10856,8 +10856,8 @@ IL2CPP_EXTERN_C  Entry_t643316D9FBC27B27A76D248A2815E973EA3B1204 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m4BB9B3F4144960E2E9E825F1D03265630E653CCA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mB7D33410E2343714D81D07C586B829E091E15886_gshared (InternalEnumerator_1_tED297FE1479C8D4D515718896DD5CC3AB87BA57E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10886,10 +10886,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t6F764E2A3576D7640E9BAEBCB2FD538D166EA7A7 InternalEnumerator_1_get_Current_mAF36CFCB06AFD992FF5F53E4B63D5F032FCDB03D_gshared (InternalEnumerator_1_t7C60D09D797D7C0E1A54D6CCAE69F342BA22E8BD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10943,8 +10943,8 @@ IL2CPP_EXTERN_C  Entry_t6F764E2A3576D7640E9BAEBCB2FD538D166EA7A7 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mAF36CFCB06AFD992FF5F53E4B63D5F032FCDB03D(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mCEC4DDEC551F2D16FF1CAD7A74C9BE5B2C2EF573_gshared (InternalEnumerator_1_t7C60D09D797D7C0E1A54D6CCAE69F342BA22E8BD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -10973,10 +10973,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t64AE1952877D9856E8819A1C485DAC1C53BBC162 InternalEnumerator_1_get_Current_m1A6BECC586D656625806FCBE479E75AF3597AAAC_gshared (InternalEnumerator_1_t0B31DCAA2A4F0ED978E6D73A335DBE3CDF9F8359* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11030,8 +11030,8 @@ IL2CPP_EXTERN_C  Entry_t64AE1952877D9856E8819A1C485DAC1C53BBC162 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m1A6BECC586D656625806FCBE479E75AF3597AAAC(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6E52C46AA26F4B9523E91D137C0AFC06A5963035_gshared (InternalEnumerator_1_t0B31DCAA2A4F0ED978E6D73A335DBE3CDF9F8359* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11060,10 +11060,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t524444E844E733B52A4AC9B7E4F70A9EE94B8D84 InternalEnumerator_1_get_Current_mAC179EC79A749CF07AC3C5FDF73D904F70D0E19B_gshared (InternalEnumerator_1_t3E578983A4B7C18EDAA069545A69FA64AF5BF604* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11117,8 +11117,8 @@ IL2CPP_EXTERN_C  Entry_t524444E844E733B52A4AC9B7E4F70A9EE94B8D84 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mAC179EC79A749CF07AC3C5FDF73D904F70D0E19B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m71C585BC9688D572B34CCA2E3254AFC0A733F165_gshared (InternalEnumerator_1_t3E578983A4B7C18EDAA069545A69FA64AF5BF604* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11147,10 +11147,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t17903E870AEAB25A4D0D20C08DAA3FAD8D82FD05 InternalEnumerator_1_get_Current_mB09D0F7329558C6FD34982A01B770788BF522F80_gshared (InternalEnumerator_1_tCF3307963B4094E6F657D7C315D4269D9081D5E8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11204,8 +11204,8 @@ IL2CPP_EXTERN_C  Entry_t17903E870AEAB25A4D0D20C08DAA3FAD8D82FD05 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mB09D0F7329558C6FD34982A01B770788BF522F80(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m454274893EEB2F2462909765C3B5257CA1A500DA_gshared (InternalEnumerator_1_tCF3307963B4094E6F657D7C315D4269D9081D5E8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11234,10 +11234,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t278222AD9AFDE491C206890B19B79468274C8AB5 InternalEnumerator_1_get_Current_mE74E20EE99F7D1C5BD0C3C4F50FBAFFE6D134B3C_gshared (InternalEnumerator_1_t78B03FCAE61E73C8DC8C87DFFF76026B360814F7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11291,8 +11291,8 @@ IL2CPP_EXTERN_C  Entry_t278222AD9AFDE491C206890B19B79468274C8AB5 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mE74E20EE99F7D1C5BD0C3C4F50FBAFFE6D134B3C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mBC180AFBD8834AF81CA0B45F2A79F50615778524_gshared (InternalEnumerator_1_t78B03FCAE61E73C8DC8C87DFFF76026B360814F7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11321,10 +11321,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t6C6762881D44DF9875A9FB79559B7BD17438ABD5 InternalEnumerator_1_get_Current_mAC50CC30701207604898107C31BBBCE665312B56_gshared (InternalEnumerator_1_t9B2821E653583EAF246502A99773C9D3F0E5F60A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11378,8 +11378,8 @@ IL2CPP_EXTERN_C  Entry_t6C6762881D44DF9875A9FB79559B7BD17438ABD5 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mAC50CC30701207604898107C31BBBCE665312B56(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m2E4F3CEF46BB699BCD8E5DFB418C3909804D246E_gshared (InternalEnumerator_1_t9B2821E653583EAF246502A99773C9D3F0E5F60A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11408,10 +11408,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tAD0FF92A2B56B0F960AF3B0BFB8BF31CE5637536 InternalEnumerator_1_get_Current_mF97DFB67A82A56B4F9FA3CE7ACC422978EFCDA22_gshared (InternalEnumerator_1_t7F2E213412A083789DD941653AF379BFEA19D6AD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11465,8 +11465,8 @@ IL2CPP_EXTERN_C  Entry_tAD0FF92A2B56B0F960AF3B0BFB8BF31CE5637536 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mF97DFB67A82A56B4F9FA3CE7ACC422978EFCDA22(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mABD8D800694FAADD124C74748CC770FCBA411C39_gshared (InternalEnumerator_1_t7F2E213412A083789DD941653AF379BFEA19D6AD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11495,10 +11495,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tD4B501EBB0CA93A18C0F1698B9B2F0ED15056C7B InternalEnumerator_1_get_Current_m2FBB6009214691A3B7E9E81224A0575F3472A9A8_gshared (InternalEnumerator_1_tAE103E0532C100E205F387E9E923CDDB6DFEE3E2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11552,8 +11552,8 @@ IL2CPP_EXTERN_C  Entry_tD4B501EBB0CA93A18C0F1698B9B2F0ED15056C7B InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m2FBB6009214691A3B7E9E81224A0575F3472A9A8(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m14F65B165AFFA29D05E9BE100AFD7693A0429E4B_gshared (InternalEnumerator_1_tAE103E0532C100E205F387E9E923CDDB6DFEE3E2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11582,10 +11582,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t614B564AA4C598513CB9285E06C11A527DFB081D InternalEnumerator_1_get_Current_m9E57E9770DBC940A7C37B3465055C16425B49BDD_gshared (InternalEnumerator_1_tC41D3D0F954644E69E9AF9A5FA97A5D8B31B64F2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11639,8 +11639,8 @@ IL2CPP_EXTERN_C  Entry_t614B564AA4C598513CB9285E06C11A527DFB081D InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m9E57E9770DBC940A7C37B3465055C16425B49BDD(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mCB763B6D00E1226F29BE01E05754D0A9B0A17E3D_gshared (InternalEnumerator_1_tC41D3D0F954644E69E9AF9A5FA97A5D8B31B64F2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11669,10 +11669,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t2CECF4E3242D16471BE1F021F75BED23704D2289 InternalEnumerator_1_get_Current_m9610C89353BCD4787FF8CA0388C3AF7078DE1B57_gshared (InternalEnumerator_1_t6435801691A97A42E97CF13A6069129B8FF01D6C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11726,8 +11726,8 @@ IL2CPP_EXTERN_C  Entry_t2CECF4E3242D16471BE1F021F75BED23704D2289 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m9610C89353BCD4787FF8CA0388C3AF7078DE1B57(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m808A1972E2F3020915BD6DE36BEEAF07227F8A1F_gshared (InternalEnumerator_1_t6435801691A97A42E97CF13A6069129B8FF01D6C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11756,10 +11756,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t9CE25DB9BE2E9F5E5CE9972BF78D148592868E8B InternalEnumerator_1_get_Current_mB558BB63745892E28441F970588FA3BA5C08C38E_gshared (InternalEnumerator_1_tAED06361EAB97C47B40F446B1A7ACBF5117D68D0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11813,8 +11813,8 @@ IL2CPP_EXTERN_C  Entry_t9CE25DB9BE2E9F5E5CE9972BF78D148592868E8B InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mB558BB63745892E28441F970588FA3BA5C08C38E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m5B68626869D701222BAD2E27AAAF9F72E7AF1D81_gshared (InternalEnumerator_1_tAED06361EAB97C47B40F446B1A7ACBF5117D68D0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11843,10 +11843,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tEB819850DD63101B800FDD50569E97F962833ADE InternalEnumerator_1_get_Current_m63B7C2587255756ACAE92472733F8D54C9E6F07E_gshared (InternalEnumerator_1_t2E5B0A87E06E722CE8F8D05737B50464120B895B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11900,8 +11900,8 @@ IL2CPP_EXTERN_C  Entry_tEB819850DD63101B800FDD50569E97F962833ADE InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m63B7C2587255756ACAE92472733F8D54C9E6F07E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m2150F96C6B36690144322B3A43C440B0A807741D_gshared (InternalEnumerator_1_t2E5B0A87E06E722CE8F8D05737B50464120B895B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11930,10 +11930,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t1E80F6C09645E5C40641EFBC255D65CF1F5406BC InternalEnumerator_1_get_Current_mECFAB2D8E308940A91B2ABEA7F9DA7BF873FF03B_gshared (InternalEnumerator_1_t5D2AAA9A9569182FDAE04E114DF69032D66CC55F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -11987,8 +11987,8 @@ IL2CPP_EXTERN_C  Entry_t1E80F6C09645E5C40641EFBC255D65CF1F5406BC InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mECFAB2D8E308940A91B2ABEA7F9DA7BF873FF03B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mFB4933EEF1B6A9306530C992D824FDC7548DFBDD_gshared (InternalEnumerator_1_t5D2AAA9A9569182FDAE04E114DF69032D66CC55F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12017,10 +12017,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t5D9330C04BFE9CB230B2D2AB3B1808BAC459BBA4 InternalEnumerator_1_get_Current_m829F048E5B11907CCDE9745E49EBAC7B02025754_gshared (InternalEnumerator_1_t258CC5B6563D914F570415D271C3946658F638F1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12074,8 +12074,8 @@ IL2CPP_EXTERN_C  Entry_t5D9330C04BFE9CB230B2D2AB3B1808BAC459BBA4 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m829F048E5B11907CCDE9745E49EBAC7B02025754(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m0BF69BBE0BB527F745EEA28592012F9721EE5006_gshared (InternalEnumerator_1_t258CC5B6563D914F570415D271C3946658F638F1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12104,10 +12104,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t19C1ECCA3DB799A03B47FEC8349A3C86E26B0CA9 InternalEnumerator_1_get_Current_mB5288DC5BB7430835382603DE11E0315CE58A2E2_gshared (InternalEnumerator_1_t7880FA188B14F7C501C2087DDD51EBE72273DB9D* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12161,8 +12161,8 @@ IL2CPP_EXTERN_C  Entry_t19C1ECCA3DB799A03B47FEC8349A3C86E26B0CA9 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mB5288DC5BB7430835382603DE11E0315CE58A2E2(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m23D6E99317BBD6FF651484FCC247EAEDF94B8DCB_gshared (InternalEnumerator_1_t7880FA188B14F7C501C2087DDD51EBE72273DB9D* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12191,10 +12191,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t4ECE00B101FEFB36542C39F648C15E4DCACE3009 InternalEnumerator_1_get_Current_m8C216D4EFC54889BAA1F723089B234D2B0FAA97F_gshared (InternalEnumerator_1_t46CE17C2CCF07065113FF1D4452B4C8F9A43ACFC* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12248,8 +12248,8 @@ IL2CPP_EXTERN_C  Entry_t4ECE00B101FEFB36542C39F648C15E4DCACE3009 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m8C216D4EFC54889BAA1F723089B234D2B0FAA97F(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m545C5649C88CBAAE4CCBC290168B3792DA6BCED5_gshared (InternalEnumerator_1_t46CE17C2CCF07065113FF1D4452B4C8F9A43ACFC* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12278,10 +12278,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tAA21979E7388C9F7C14FCD56C7187FA764C96C25 InternalEnumerator_1_get_Current_m9E3209ADF1D0872898E9B1150B504E78727DB117_gshared (InternalEnumerator_1_t47F5843855C142A8E136C55DBEBB2EAF4514F519* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12335,8 +12335,8 @@ IL2CPP_EXTERN_C  Entry_tAA21979E7388C9F7C14FCD56C7187FA764C96C25 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m9E3209ADF1D0872898E9B1150B504E78727DB117(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mEF51ADE3EAD883840FD8F3639EF63134828F7FAB_gshared (InternalEnumerator_1_t47F5843855C142A8E136C55DBEBB2EAF4514F519* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12365,10 +12365,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t91A90BEA272432B5A4D69E154A9C2173C090FFB5 InternalEnumerator_1_get_Current_m236D44C55235AF44F4D50BE0C0636B0F4DAF780F_gshared (InternalEnumerator_1_tB5E26B8A123470681F112AADA0842C44016AF1DD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12422,8 +12422,8 @@ IL2CPP_EXTERN_C  Entry_t91A90BEA272432B5A4D69E154A9C2173C090FFB5 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m236D44C55235AF44F4D50BE0C0636B0F4DAF780F(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m792479D2C307A85CAA0F390D36D7323B469CFE24_gshared (InternalEnumerator_1_tB5E26B8A123470681F112AADA0842C44016AF1DD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12452,10 +12452,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t74037CC28986A9F2AF8C6617DECF766B9432B297 InternalEnumerator_1_get_Current_mDE2C5EE6979F1118E03CB04EB53ECB1AF58E74E6_gshared (InternalEnumerator_1_tD4CCE0F30C7E1928FA5EEC09AF2B128559125C79* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12509,8 +12509,8 @@ IL2CPP_EXTERN_C  Entry_t74037CC28986A9F2AF8C6617DECF766B9432B297 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mDE2C5EE6979F1118E03CB04EB53ECB1AF58E74E6(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m8033C4628F9CF955E2561FC587C5E08F9AB3A446_gshared (InternalEnumerator_1_tD4CCE0F30C7E1928FA5EEC09AF2B128559125C79* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12539,10 +12539,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t50EA0C1E8A8EE9E0CC561055CA772A2BF21F8A5E InternalEnumerator_1_get_Current_mCFC2F4D5F1FF6971BDCFF34D2C02C971D93FB5DD (InternalEnumerator_1_tF5D4BEA0714C3EDADC141C53722856E73370EBD1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12596,8 +12596,8 @@ IL2CPP_EXTERN_C  Entry_t50EA0C1E8A8EE9E0CC561055CA772A2BF21F8A5E InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mCFC2F4D5F1FF6971BDCFF34D2C02C971D93FB5DD(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m26578155389FFB4A735BEE1F55F5D4206A1DE1AA (InternalEnumerator_1_tF5D4BEA0714C3EDADC141C53722856E73370EBD1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12626,10 +12626,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tD90A55DE831CF66B44C9A4D653EC19B199F4682C InternalEnumerator_1_get_Current_mE75CCD25BE06312E88EF1C9917DBE52AC4187B90_gshared (InternalEnumerator_1_tB1397B014689C17EF8CCE6199A51D650471D3428* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12683,8 +12683,8 @@ IL2CPP_EXTERN_C  Entry_tD90A55DE831CF66B44C9A4D653EC19B199F4682C InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mE75CCD25BE06312E88EF1C9917DBE52AC4187B90(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mCDFAA504A7BAD2EE77AD59391BB9964FBFFD61E2_gshared (InternalEnumerator_1_tB1397B014689C17EF8CCE6199A51D650471D3428* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12713,10 +12713,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t02A996EC2F7B100D1F85D95C43DA4C011424A8A5 InternalEnumerator_1_get_Current_m8B9F28BF88B72DD04D3D2AD6C353E7E9E4A3463C_gshared (InternalEnumerator_1_t8656089CDB7ED81EECFF285B6284352089768D41* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12770,8 +12770,8 @@ IL2CPP_EXTERN_C  Entry_t02A996EC2F7B100D1F85D95C43DA4C011424A8A5 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m8B9F28BF88B72DD04D3D2AD6C353E7E9E4A3463C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC9B8146414465BBAC5C4A6E548A5AEF34EEE0ED3_gshared (InternalEnumerator_1_t8656089CDB7ED81EECFF285B6284352089768D41* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12800,10 +12800,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t16F74EB0359B3E60F3D999A34E7F3D625AA25F58 InternalEnumerator_1_get_Current_mF784880B5E4F1C2F7113592E2EFF9B19649E6FF4 (InternalEnumerator_1_tF3C1738E7077FACF58791A1AD4D72A84B8E4A807* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12857,8 +12857,8 @@ IL2CPP_EXTERN_C  Entry_t16F74EB0359B3E60F3D999A34E7F3D625AA25F58 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mF784880B5E4F1C2F7113592E2EFF9B19649E6FF4(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m2D50BCF8AB340169B87539E9B20ED8F5B033ED93 (InternalEnumerator_1_tF3C1738E7077FACF58791A1AD4D72A84B8E4A807* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12887,10 +12887,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t69530894C624B831E7A45488FB8CD9F621F5E27C InternalEnumerator_1_get_Current_mDAE6D1A6EF162C344C6B2F4C359E692D8754F9E6 (InternalEnumerator_1_t8C5218B816CC63F77929C1EC5A5C6258EA4CEE6D* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12944,8 +12944,8 @@ IL2CPP_EXTERN_C  Entry_t69530894C624B831E7A45488FB8CD9F621F5E27C InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_mDAE6D1A6EF162C344C6B2F4C359E692D8754F9E6(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mAB525C40BBCDE55B97EBB31C16E83888B5F9A405 (InternalEnumerator_1_t8C5218B816CC63F77929C1EC5A5C6258EA4CEE6D* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -12974,10 +12974,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_tB45D550DAB1047205165A44FD5A8A2ACC33C725A InternalEnumerator_1_get_Current_m780309B7D6BD263046A3B12949DD2574555D7C5F (InternalEnumerator_1_tFB4FBC21084079A98A4C47E242EC13B64AE123F5* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13031,8 +13031,8 @@ IL2CPP_EXTERN_C  Entry_tB45D550DAB1047205165A44FD5A8A2ACC33C725A InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m780309B7D6BD263046A3B12949DD2574555D7C5F(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mAEA842F12238CD67000E3A92D1A1C8072401F692 (InternalEnumerator_1_tFB4FBC21084079A98A4C47E242EC13B64AE123F5* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13061,10 +13061,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Entry_t2C87092EB3A8EA0C81C636FCB8CC7FD773A7D0C7 InternalEnumerator_1_get_Current_m47269ED15717EC78F11DBB8F2F317D41063E85FD (InternalEnumerator_1_t2066DB47260F4C4A72B2B5867F9D0B8D48ABC420* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13118,8 +13118,8 @@ IL2CPP_EXTERN_C  Entry_t2C87092EB3A8EA0C81C636FCB8CC7FD773A7D0C7 InternalEnumera
 	_returnValue = InternalEnumerator_1_get_Current_m47269ED15717EC78F11DBB8F2F317D41063E85FD(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mE41ED7177F34AD94B17467EA0907662A28BD7955 (InternalEnumerator_1_t2066DB47260F4C4A72B2B5867F9D0B8D48ABC420* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13148,10 +13148,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EventCallbackDefinition_1_tFC182A926EA003AAA240E89EB94C58D5C1FBC2EF InternalEnumerator_1_get_Current_m427E9BD7CA36BB64BBA31906B8376FFC555B4814_gshared (InternalEnumerator_1_t635DC3C6E0735EBB1545A14953F4BB639447E96F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13205,8 +13205,8 @@ IL2CPP_EXTERN_C  EventCallbackDefinition_1_tFC182A926EA003AAA240E89EB94C58D5C1FB
 	_returnValue = InternalEnumerator_1_get_Current_m427E9BD7CA36BB64BBA31906B8376FFC555B4814(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m9425F55EE55F383545C2D4BDA2C9A5C57B132CBE_gshared (InternalEnumerator_1_t635DC3C6E0735EBB1545A14953F4BB639447E96F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13235,10 +13235,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Handle_1_t6C3D9B4D43DA857F59545C824E9F9E60727C70EC InternalEnumerator_1_get_Current_mA7B5790FFBC06087C96E7F781F65F7E6406346D0 (InternalEnumerator_1_t8D1C7D74097435261FBF0FE30F4289C6E3204F1A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13292,8 +13292,8 @@ IL2CPP_EXTERN_C  Handle_1_t6C3D9B4D43DA857F59545C824E9F9E60727C70EC InternalEnum
 	_returnValue = InternalEnumerator_1_get_Current_mA7B5790FFBC06087C96E7F781F65F7E6406346D0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mCB6F501424B062C74C380CD4529DEA0D89CC89EA (InternalEnumerator_1_t8D1C7D74097435261FBF0FE30F4289C6E3204F1A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13322,10 +13322,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Handle_1_t78EA27F15D89081CB224A7229220EED408650D50 InternalEnumerator_1_get_Current_m0B2DFDFCC054C38D7E23C9AB529AD4AFDB49B284 (InternalEnumerator_1_t5BA632A25DC5625CA9DCB0B77615F6D011E71AA0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13379,8 +13379,8 @@ IL2CPP_EXTERN_C  Handle_1_t78EA27F15D89081CB224A7229220EED408650D50 InternalEnum
 	_returnValue = InternalEnumerator_1_get_Current_m0B2DFDFCC054C38D7E23C9AB529AD4AFDB49B284(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mB0197FEE06FE2C0AD6E8BDA8B4B414E2AD18B008 (InternalEnumerator_1_t5BA632A25DC5625CA9DCB0B77615F6D011E71AA0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13409,10 +13409,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Handle_1_tE2D3875A6BB5B9878CCD9582982E7BDA7D42F4CF InternalEnumerator_1_get_Current_mE9EF6FC117CB564FDAC8FB5CC7B96BF1C7579168 (InternalEnumerator_1_tF595F3A150E8E24F38BCF6CB97EFB9E556DE87E7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13466,8 +13466,8 @@ IL2CPP_EXTERN_C  Handle_1_tE2D3875A6BB5B9878CCD9582982E7BDA7D42F4CF InternalEnum
 	_returnValue = InternalEnumerator_1_get_Current_mE9EF6FC117CB564FDAC8FB5CC7B96BF1C7579168(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m7D91AE33EC88A66C998653B8A2D96438FF5D5E3B (InternalEnumerator_1_tF595F3A150E8E24F38BCF6CB97EFB9E556DE87E7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13496,10 +13496,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HashEntry_1_t0CF7FFD9BDEAB90BD66EEB375F4933A8AAFA09A5 InternalEnumerator_1_get_Current_m3A4F6B6A4487D9DC71B7A7551275E98C19D59753_gshared (InternalEnumerator_1_t3C12A502FDA082B02C571AA1F750974D7F19A415* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13553,8 +13553,8 @@ IL2CPP_EXTERN_C  HashEntry_1_t0CF7FFD9BDEAB90BD66EEB375F4933A8AAFA09A5 InternalE
 	_returnValue = InternalEnumerator_1_get_Current_m3A4F6B6A4487D9DC71B7A7551275E98C19D59753(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mB2A6AF853F1DB78E5D6C34ED16F921B0A2D39D92_gshared (InternalEnumerator_1_t3C12A502FDA082B02C571AA1F750974D7F19A415* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13583,10 +13583,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR InputFeatureUsage_1_tEB160A05BCDCCA4F96072CBA0866498D06B9A27C InternalEnumerator_1_get_Current_m55705CD0A1054DCD6308C9F4B9BA2A2EB05791EA (InternalEnumerator_1_t9903677CB121147FA21EC257EBAB67503ACAC4D1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13640,8 +13640,8 @@ IL2CPP_EXTERN_C  InputFeatureUsage_1_tEB160A05BCDCCA4F96072CBA0866498D06B9A27C I
 	_returnValue = InternalEnumerator_1_get_Current_m55705CD0A1054DCD6308C9F4B9BA2A2EB05791EA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mEE479E8A610A7F1F0B4E277DCEA9381C3A437EF0 (InternalEnumerator_1_t9903677CB121147FA21EC257EBAB67503ACAC4D1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13670,10 +13670,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Item_t7E1C074BAD45111B502C4559B0ECF73B3F52774E InternalEnumerator_1_get_Current_mE8BBFD46041F0E16DBCFF7BB03BD5195A1F35BBA_gshared (InternalEnumerator_1_t143F156BC981961C91FDE5FC770ACD7BE6A5DC68* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13727,8 +13727,8 @@ IL2CPP_EXTERN_C  Item_t7E1C074BAD45111B502C4559B0ECF73B3F52774E InternalEnumerat
 	_returnValue = InternalEnumerator_1_get_Current_mE8BBFD46041F0E16DBCFF7BB03BD5195A1F35BBA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mFD33175369EEA43FE39DA96CA5531B792C821977_gshared (InternalEnumerator_1_t143F156BC981961C91FDE5FC770ACD7BE6A5DC68* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13757,10 +13757,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KVPair_2_t5CA67CB9C56043B7D18789CF3EC8F3BFC7A6F2FE InternalEnumerator_1_get_Current_m39A15521E1D1C3581A4AE79C430704512EAD047F (InternalEnumerator_1_tAF32411C268D516A667D2EA2FDE53A718E6C37B0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13814,8 +13814,8 @@ IL2CPP_EXTERN_C  KVPair_2_t5CA67CB9C56043B7D18789CF3EC8F3BFC7A6F2FE InternalEnum
 	_returnValue = InternalEnumerator_1_get_Current_m39A15521E1D1C3581A4AE79C430704512EAD047F(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m9D364DB9703084E5B1B358AC8B903FCCBACAF766 (InternalEnumerator_1_tAF32411C268D516A667D2EA2FDE53A718E6C37B0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13844,10 +13844,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KVPair_2_t289A62AF6AB4F1FD80F1977C4D6C802052A8BADC InternalEnumerator_1_get_Current_mA170F822F6E20E1502F691C97340493425DE9149 (InternalEnumerator_1_tDA169F2191D048FE3FBC38BE9AC15EE5074FC77C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13901,8 +13901,8 @@ IL2CPP_EXTERN_C  KVPair_2_t289A62AF6AB4F1FD80F1977C4D6C802052A8BADC InternalEnum
 	_returnValue = InternalEnumerator_1_get_Current_mA170F822F6E20E1502F691C97340493425DE9149(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mE71275577C7CC0B63FC3E42AC802A5640FE3FDE0 (InternalEnumerator_1_tDA169F2191D048FE3FBC38BE9AC15EE5074FC77C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13931,10 +13931,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t74BCF28B05B6BD4827E473D765BDCBDB831DC347 InternalEnumerator_1_get_Current_m818054D9C088DB7EF134056A38498E3D8C2702B6_gshared (InternalEnumerator_1_t45038B4B8CB87A21351FFBFB1E061C83FBED52E9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -13988,8 +13988,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t74BCF28B05B6BD4827E473D765BDCBDB831DC347 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m818054D9C088DB7EF134056A38498E3D8C2702B6(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m131C79EF50392F50512040FD612982C4E6059513_gshared (InternalEnumerator_1_t45038B4B8CB87A21351FFBFB1E061C83FBED52E9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14018,10 +14018,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t5983FF105A14D8704CA46C2C96E4BE6EFA82F2C5 InternalEnumerator_1_get_Current_mB9C29842540CE99D7AFE814DCF30A742DEB4EF1D (InternalEnumerator_1_tECD784DB0EE7331CDFBFD0C556A9D54984DAC58C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14075,8 +14075,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t5983FF105A14D8704CA46C2C96E4BE6EFA82F2C5 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mB9C29842540CE99D7AFE814DCF30A742DEB4EF1D(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mA7D1D49446165DA063C89A76EBF4E825938C0348 (InternalEnumerator_1_tECD784DB0EE7331CDFBFD0C556A9D54984DAC58C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14105,10 +14105,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t4A53BA87D4CB781413DDB7297458542DABE77EB0 InternalEnumerator_1_get_Current_mA3B6A44572458C34091CEF52FF772D75E00F403B (InternalEnumerator_1_tEADCE34487E82B9B90F714AC1EE870F115F2D8A6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14162,8 +14162,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t4A53BA87D4CB781413DDB7297458542DABE77EB0 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mA3B6A44572458C34091CEF52FF772D75E00F403B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m5F3D79087E697022E717F47C42F4688957EB67E4 (InternalEnumerator_1_tEADCE34487E82B9B90F714AC1EE870F115F2D8A6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14192,10 +14192,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t27DDA7B4A407DE711BDF77A39C29CAB68FD94FA3 InternalEnumerator_1_get_Current_m5A11E37D5B5E225750573D544460A950712EDEEC_gshared (InternalEnumerator_1_t4B1155FD3D33EA6CED4D9A78E91BE40BCA454923* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14249,8 +14249,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t27DDA7B4A407DE711BDF77A39C29CAB68FD94FA3 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m5A11E37D5B5E225750573D544460A950712EDEEC(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m1A5949FDCF67E88775E21C684F512AA3D5AB3C88_gshared (InternalEnumerator_1_t4B1155FD3D33EA6CED4D9A78E91BE40BCA454923* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14279,10 +14279,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t70CE8D45AF7A17BBCC44CA12D8E4B3B1BD90101C InternalEnumerator_1_get_Current_mD7C94E303B1BB06AFB41CA71C36AD2DB535B1AB0_gshared (InternalEnumerator_1_t3066A997D4FB7D365C9665B9E3D0CA75D8CBE247* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14336,8 +14336,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t70CE8D45AF7A17BBCC44CA12D8E4B3B1BD90101C Intern
 	_returnValue = InternalEnumerator_1_get_Current_mD7C94E303B1BB06AFB41CA71C36AD2DB535B1AB0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m42E66231415F2E65E816AC495A22240CB02EB6FF_gshared (InternalEnumerator_1_t3066A997D4FB7D365C9665B9E3D0CA75D8CBE247* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14366,10 +14366,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t367B869B5B9E3AC484B7F3A6A22B30D27181B421 InternalEnumerator_1_get_Current_m314103493CECE2D1A48718725856A6D1661713D3 (InternalEnumerator_1_t986EF3E09EAB02A871CD7531EA9C3087C331B7E8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14423,8 +14423,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t367B869B5B9E3AC484B7F3A6A22B30D27181B421 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m314103493CECE2D1A48718725856A6D1661713D3(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m7BA40903E5791B1D2A7D351741DB47D1C6D9F620 (InternalEnumerator_1_t986EF3E09EAB02A871CD7531EA9C3087C331B7E8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14453,10 +14453,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tBDF9FE5FE4D4A243FCB0479F4EE7C2CED937298B InternalEnumerator_1_get_Current_m0C4A9BABC0E5224751F93CA01AC7991FB169BC2C_gshared (InternalEnumerator_1_t168EDABC7BCBD0E4F4D797490CFBC1189A72DCAE* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14510,8 +14510,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tBDF9FE5FE4D4A243FCB0479F4EE7C2CED937298B Intern
 	_returnValue = InternalEnumerator_1_get_Current_m0C4A9BABC0E5224751F93CA01AC7991FB169BC2C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m3FC34B02FEEDD461E4ADF74807568DA9D3719CF8_gshared (InternalEnumerator_1_t168EDABC7BCBD0E4F4D797490CFBC1189A72DCAE* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14540,10 +14540,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t6DCE258B1EFB9FF11AF3B93E2F7791ED737D9ACB InternalEnumerator_1_get_Current_mF205A756A949805751E245E67F9B033E68B2F6F7_gshared (InternalEnumerator_1_tBE8A32422E70D20434BA599278979CE831F7FC40* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14597,8 +14597,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t6DCE258B1EFB9FF11AF3B93E2F7791ED737D9ACB Intern
 	_returnValue = InternalEnumerator_1_get_Current_mF205A756A949805751E245E67F9B033E68B2F6F7(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m006843B828DAEBCE30F7ED85CEFDF5386FC18D06_gshared (InternalEnumerator_1_tBE8A32422E70D20434BA599278979CE831F7FC40* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14627,10 +14627,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tA18DA0C0E7B0709B9741404F85570AF6334E7295 InternalEnumerator_1_get_Current_mA79B42EE73C3EE250FFB3B1348B832C1D981F879_gshared (InternalEnumerator_1_t8395592199FEE49D53394A1C6C66A26B3E9D4F07* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14684,8 +14684,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tA18DA0C0E7B0709B9741404F85570AF6334E7295 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mA79B42EE73C3EE250FFB3B1348B832C1D981F879(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m382A9657D89232BF92A26C06AD6B7401EEE08D14_gshared (InternalEnumerator_1_t8395592199FEE49D53394A1C6C66A26B3E9D4F07* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14714,10 +14714,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t64E764570967C9CF8DB9472130C0647F11D963A2 InternalEnumerator_1_get_Current_m5768881F5E72FD2845C998F330FCF79FF4503BDF_gshared (InternalEnumerator_1_tC00233CC303953BA2E26A53A023DD34AF4CEE81B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14771,8 +14771,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t64E764570967C9CF8DB9472130C0647F11D963A2 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m5768881F5E72FD2845C998F330FCF79FF4503BDF(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6A8D413CAFF817A0724FCF55F6E6FAF29BC47CDC_gshared (InternalEnumerator_1_tC00233CC303953BA2E26A53A023DD34AF4CEE81B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14801,10 +14801,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tA3A093A17DD67C5CD7BFBEAAAA0B91BE8DFEF083 InternalEnumerator_1_get_Current_mFEDBF408720D37684BAD44D27A19555D79DB5B76_gshared (InternalEnumerator_1_t10B4D00E923BF86454DCF5DACDF2BEA7EC997A3C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14858,8 +14858,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tA3A093A17DD67C5CD7BFBEAAAA0B91BE8DFEF083 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mFEDBF408720D37684BAD44D27A19555D79DB5B76(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mEC5EC185C0F02895B56163638A342025049D1BAC_gshared (InternalEnumerator_1_t10B4D00E923BF86454DCF5DACDF2BEA7EC997A3C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14888,10 +14888,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t5B02E9781791F9AAAD1915FEF414B44ACF5DB7CF InternalEnumerator_1_get_Current_mDAE3864C373D15E3C37C009129BE1DA774B8D15B (InternalEnumerator_1_t1E7A4A1845665D8B8F7BDDB293230EDAE19F33DF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14945,8 +14945,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t5B02E9781791F9AAAD1915FEF414B44ACF5DB7CF Intern
 	_returnValue = InternalEnumerator_1_get_Current_mDAE3864C373D15E3C37C009129BE1DA774B8D15B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6889E30CA3A5418B2DD0D9057066AAF9F8A03F2C (InternalEnumerator_1_t1E7A4A1845665D8B8F7BDDB293230EDAE19F33DF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -14975,10 +14975,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tF350F48014DC9F01ABD2401DF9CDD3F24E6DC7E6 InternalEnumerator_1_get_Current_m82D33722B73EB289FD715FD90A74647C78155E1A_gshared (InternalEnumerator_1_t9857F44E4E41C0F49FCFDF31881CA1391368E9E4* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15032,8 +15032,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tF350F48014DC9F01ABD2401DF9CDD3F24E6DC7E6 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m82D33722B73EB289FD715FD90A74647C78155E1A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m0F4DFD3ED1614A84FD9E526BCC36689CD6184E60_gshared (InternalEnumerator_1_t9857F44E4E41C0F49FCFDF31881CA1391368E9E4* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15062,10 +15062,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t47A2D497000270D3389B4C819C16922CA09AEFF3 InternalEnumerator_1_get_Current_m52C0CAC4DB6A801EB59713875E14AB95802604F8_gshared (InternalEnumerator_1_t20E915F10B4BDB18FC48B68E5E3B15105AC39FC8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15119,8 +15119,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t47A2D497000270D3389B4C819C16922CA09AEFF3 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m52C0CAC4DB6A801EB59713875E14AB95802604F8(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m77A7614109C31231FC28CBF09A2EAA34AA238F72_gshared (InternalEnumerator_1_t20E915F10B4BDB18FC48B68E5E3B15105AC39FC8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15149,10 +15149,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tFB7709E4B93579D8E9FCB5BDE33BE5182A66E8D6 InternalEnumerator_1_get_Current_m1B83E560AB12BD88615B5E8B4797C48936791C12_gshared (InternalEnumerator_1_t33FA3A4A5895F1E6416CF2F6C4AD9CA902AF2CB5* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15206,8 +15206,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tFB7709E4B93579D8E9FCB5BDE33BE5182A66E8D6 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m1B83E560AB12BD88615B5E8B4797C48936791C12(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mCFF53177370F82374975029D504F416D14CFA8FF_gshared (InternalEnumerator_1_t33FA3A4A5895F1E6416CF2F6C4AD9CA902AF2CB5* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15236,10 +15236,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t33E8AC222E2ABBB0196238540124FB9FBAB7E4DF InternalEnumerator_1_get_Current_mB2D6E5100FF6B9B8E39BFB4A0B9505C397F38C3F_gshared (InternalEnumerator_1_t1902CC110BF899F7C4898D7A0E9D8CB09AA24211* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15293,8 +15293,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t33E8AC222E2ABBB0196238540124FB9FBAB7E4DF Intern
 	_returnValue = InternalEnumerator_1_get_Current_mB2D6E5100FF6B9B8E39BFB4A0B9505C397F38C3F(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4C0F589E8EA26C449C5CFF195E38CDBC583EF550_gshared (InternalEnumerator_1_t1902CC110BF899F7C4898D7A0E9D8CB09AA24211* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15323,10 +15323,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t807D75011EB0AAD305451FC87E5B35B95DC0A14D InternalEnumerator_1_get_Current_m31DF9FA92D78FCE08952AC1D4A7C012C48D17C0C_gshared (InternalEnumerator_1_t0792EDEC97C3DE448D00C6D832B6C67398B026C8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15380,8 +15380,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t807D75011EB0AAD305451FC87E5B35B95DC0A14D Intern
 	_returnValue = InternalEnumerator_1_get_Current_m31DF9FA92D78FCE08952AC1D4A7C012C48D17C0C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mB303B417669F43AD6D32BFF30FBA931FC5EE0CDE_gshared (InternalEnumerator_1_t0792EDEC97C3DE448D00C6D832B6C67398B026C8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15410,10 +15410,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tAA0BC79A9BB4D3140AC43D1E73565594DE54BD25 InternalEnumerator_1_get_Current_mE6369402411B3F3EB8841675C1C7D659B9E8E954 (InternalEnumerator_1_tE297976027786A36249572BB4FD9A6AEB431DD9B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15467,8 +15467,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tAA0BC79A9BB4D3140AC43D1E73565594DE54BD25 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mE6369402411B3F3EB8841675C1C7D659B9E8E954(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC31E55394083737BB222D4574A6D2DD6FAA19A4D (InternalEnumerator_1_tE297976027786A36249572BB4FD9A6AEB431DD9B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15497,10 +15497,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tE65ACEEC8D3C4BDE89F7B1759356493CFCCDA3F7 InternalEnumerator_1_get_Current_m4D3F7D7D42060F1195BEDC6393E0C44C3170E245 (InternalEnumerator_1_tDEA45B1E7BB47CB0FF50562EFC93BA11AD6F9892* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15554,8 +15554,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tE65ACEEC8D3C4BDE89F7B1759356493CFCCDA3F7 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m4D3F7D7D42060F1195BEDC6393E0C44C3170E245(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m87CE5E663E919A92D490234FBF09D8044F67C082 (InternalEnumerator_1_tDEA45B1E7BB47CB0FF50562EFC93BA11AD6F9892* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15584,10 +15584,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tC6146C9BF4CD212D195DD92BE1F1F1E46166855D InternalEnumerator_1_get_Current_m7622116EA2DE03AB90B6991570223C370BD3C886 (InternalEnumerator_1_t5107280CCDED9340D10E195D8FC18578D87BF9E1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15641,8 +15641,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tC6146C9BF4CD212D195DD92BE1F1F1E46166855D Intern
 	_returnValue = InternalEnumerator_1_get_Current_m7622116EA2DE03AB90B6991570223C370BD3C886(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m8C6EE5707DCCD12EDF0E4F9F915613423CFE4F38 (InternalEnumerator_1_t5107280CCDED9340D10E195D8FC18578D87BF9E1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15671,10 +15671,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tCD64FBFD0349B053A7915EB43CFE2E4C123110E3 InternalEnumerator_1_get_Current_m6B8514DEF19C3F4B9E86A811024A31CB3A8AD1C0_gshared (InternalEnumerator_1_t15B181427269FCA7B67D5BD3CA88E8249BFF5F38* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15728,8 +15728,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tCD64FBFD0349B053A7915EB43CFE2E4C123110E3 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m6B8514DEF19C3F4B9E86A811024A31CB3A8AD1C0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m49D43445DE385689772408EAAA48686A08A06AA8_gshared (InternalEnumerator_1_t15B181427269FCA7B67D5BD3CA88E8249BFF5F38* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15758,10 +15758,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tC92F8DECC3214A67BE6B5B1F5009EC798AF16939 InternalEnumerator_1_get_Current_m8FF1D9F3FB1FB20862EFA1C3AF10452EC05C441C_gshared (InternalEnumerator_1_t1D3BE9BD900C9C27D5F49DF988AC1981F6FDE904* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15815,8 +15815,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tC92F8DECC3214A67BE6B5B1F5009EC798AF16939 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m8FF1D9F3FB1FB20862EFA1C3AF10452EC05C441C(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m8E18746FB154222F2C4FD607B951900BBEB6150C_gshared (InternalEnumerator_1_t1D3BE9BD900C9C27D5F49DF988AC1981F6FDE904* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15845,10 +15845,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t9D8CF60E7E9BD93FDE29CFFD2F2253DABC9B7295 InternalEnumerator_1_get_Current_m5B7D66F824DF1449D3A254A5A319176C1978550A (InternalEnumerator_1_t017561489EF7BF703EEBDBF485DC2B7CF9BAF566* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15902,8 +15902,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t9D8CF60E7E9BD93FDE29CFFD2F2253DABC9B7295 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m5B7D66F824DF1449D3A254A5A319176C1978550A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6BFF7DCD0E07A8C21966316817D5010D2D3D1F73 (InternalEnumerator_1_t017561489EF7BF703EEBDBF485DC2B7CF9BAF566* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15932,10 +15932,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t83658D19D8CA968CD7FD5B513EF19CE62BF79340 InternalEnumerator_1_get_Current_m7A814F5D82D7CE4D552405FC6D6430C98F8796B9 (InternalEnumerator_1_t2FAA02EF05CA995E7BAFC81CA30172D084BA3A06* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -15989,8 +15989,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t83658D19D8CA968CD7FD5B513EF19CE62BF79340 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m7A814F5D82D7CE4D552405FC6D6430C98F8796B9(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF8618281B8C28AC1162C7DBA0B64CB3ED417FF01 (InternalEnumerator_1_t2FAA02EF05CA995E7BAFC81CA30172D084BA3A06* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16019,10 +16019,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t0BE50338B196BFD79E02288350CE100D1C15D165 InternalEnumerator_1_get_Current_m7B06CE9FA667D97FA933B1258F43FBDD404260E1 (InternalEnumerator_1_t3B4F312848BAFE45ED9127CE80784C7BD01EAAF7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16076,8 +16076,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t0BE50338B196BFD79E02288350CE100D1C15D165 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m7B06CE9FA667D97FA933B1258F43FBDD404260E1(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m53C72091BC73527F46625CF05DB691EC174DBFE7 (InternalEnumerator_1_t3B4F312848BAFE45ED9127CE80784C7BD01EAAF7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16106,10 +16106,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t33B859F0514253F5DB6552A6B2C5730871612D1B InternalEnumerator_1_get_Current_mD39C990DFA9F99AF3FAC818608D81DC9FAAC5AF1_gshared (InternalEnumerator_1_tCFAC38EB0B731C9BBB03BB75CC7E13CEF9833D2F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16163,8 +16163,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t33B859F0514253F5DB6552A6B2C5730871612D1B Intern
 	_returnValue = InternalEnumerator_1_get_Current_mD39C990DFA9F99AF3FAC818608D81DC9FAAC5AF1(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m7AAAF806235C80C664913F0064FDFBB90D11A489_gshared (InternalEnumerator_1_tCFAC38EB0B731C9BBB03BB75CC7E13CEF9833D2F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16193,10 +16193,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t0EAC8DA2D95957AFA60DD198D013622384C0D213 InternalEnumerator_1_get_Current_mBC84B130047FFA293B44386AFD39A35BA1942233 (InternalEnumerator_1_t21C8C84270E2B9E72B9F88CB9A8D8D0203EBB59A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16250,8 +16250,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t0EAC8DA2D95957AFA60DD198D013622384C0D213 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mBC84B130047FFA293B44386AFD39A35BA1942233(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mEE5E48DDD2E9AD4D536AF230B505B820C6CAB168 (InternalEnumerator_1_t21C8C84270E2B9E72B9F88CB9A8D8D0203EBB59A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16280,10 +16280,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t222ACFEC71C9E9120E062F6A2993B4170D205E24 InternalEnumerator_1_get_Current_m72F41FEA590CBF94BCD2F92FF560906711D893C4 (InternalEnumerator_1_t6FB44C749E6A49CAE8A38F425BD671CB3662EAE8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16337,8 +16337,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t222ACFEC71C9E9120E062F6A2993B4170D205E24 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m72F41FEA590CBF94BCD2F92FF560906711D893C4(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4D374BE117752440A00FFB4122CB5D042E33E526 (InternalEnumerator_1_t6FB44C749E6A49CAE8A38F425BD671CB3662EAE8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16367,10 +16367,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t6072DB27D2EA2946956C283915DB65E059D45940 InternalEnumerator_1_get_Current_m0222642CAB692347A512F51490C69F316CE09370 (InternalEnumerator_1_t4B3B6E1D3D0AB142FD07358F2A99322E20F0192C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16424,8 +16424,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t6072DB27D2EA2946956C283915DB65E059D45940 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m0222642CAB692347A512F51490C69F316CE09370(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m7ED15A82BCB22B71F9672A55CCBEFCD3281DE880 (InternalEnumerator_1_t4B3B6E1D3D0AB142FD07358F2A99322E20F0192C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16454,10 +16454,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tA6BE5EEAC56CB97CB7383FCC3CC6C84FAF129189 InternalEnumerator_1_get_Current_m126AFF04D4210A63462C1B7C6DCF1C37247A6F6A (InternalEnumerator_1_tA4E9FDAADA8CF7A0F3FC3B8512B8345F647BE319* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16511,8 +16511,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tA6BE5EEAC56CB97CB7383FCC3CC6C84FAF129189 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m126AFF04D4210A63462C1B7C6DCF1C37247A6F6A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4727F430EB01D4DB538BCA6ADA3D4567622E24A9 (InternalEnumerator_1_tA4E9FDAADA8CF7A0F3FC3B8512B8345F647BE319* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16541,10 +16541,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tC3F888EEED334B1047E7634B9B9440158BAFA362 InternalEnumerator_1_get_Current_mA63AD0ED9884DED81E2F973C6333FFB0C4611366 (InternalEnumerator_1_tF97866F45342E5C66F3E0A96C60169B58443BD83* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16598,8 +16598,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tC3F888EEED334B1047E7634B9B9440158BAFA362 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mA63AD0ED9884DED81E2F973C6333FFB0C4611366(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m9D20164D9443213DA90426710B4D4C7466AD5AD0 (InternalEnumerator_1_tF97866F45342E5C66F3E0A96C60169B58443BD83* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16628,10 +16628,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tC14E174BAC02D8E0854E0862257B3BD5E1FA4EA0 InternalEnumerator_1_get_Current_mDE3390BD1D6C17855B5EAF7453CFFADBD9607019 (InternalEnumerator_1_t51F1457227F2A766F96F511DADA51050889D2C5B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16685,8 +16685,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tC14E174BAC02D8E0854E0862257B3BD5E1FA4EA0 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mDE3390BD1D6C17855B5EAF7453CFFADBD9607019(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m629238D57D82AB18563C606412A105A24168941B (InternalEnumerator_1_t51F1457227F2A766F96F511DADA51050889D2C5B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16715,10 +16715,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tB121246E130D8B10E5EAAE733E6F683AE0FA90DD InternalEnumerator_1_get_Current_m473C4B92A9C0A92D042EBD77A75E1C2671D84589 (InternalEnumerator_1_t3CABC3038C1CDEB69F5C03B4BE67CF2C925C2869* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16772,8 +16772,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tB121246E130D8B10E5EAAE733E6F683AE0FA90DD Intern
 	_returnValue = InternalEnumerator_1_get_Current_m473C4B92A9C0A92D042EBD77A75E1C2671D84589(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m555220603CC64290B806DEC8D975AF9AFD38F742 (InternalEnumerator_1_t3CABC3038C1CDEB69F5C03B4BE67CF2C925C2869* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16802,10 +16802,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t8DD90747CDDF611F54621809E9416F69113FF8B4 InternalEnumerator_1_get_Current_m04398F5DC2211C671EE73AF6E2006C3FADB27FC0 (InternalEnumerator_1_tFFF2B3B55E11171B23671CCD84C5940583CF0B80* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16859,8 +16859,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t8DD90747CDDF611F54621809E9416F69113FF8B4 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m04398F5DC2211C671EE73AF6E2006C3FADB27FC0(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m50812355041FC2C3FB4C7A9A870909C9EEE98FC7 (InternalEnumerator_1_tFFF2B3B55E11171B23671CCD84C5940583CF0B80* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16889,10 +16889,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tB80CFCE1FE63EA90A1922B957B5C34F1F5C3C606 InternalEnumerator_1_get_Current_mE898D82A3F29AAB16A09E969739F11E8E963B526 (InternalEnumerator_1_t146242961F1FB71BFE62C9DDF092D7A91837521A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16946,8 +16946,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tB80CFCE1FE63EA90A1922B957B5C34F1F5C3C606 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mE898D82A3F29AAB16A09E969739F11E8E963B526(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC3EFFEA16A4DBCC04A79AED590C36D6A01E9EB3A (InternalEnumerator_1_t146242961F1FB71BFE62C9DDF092D7A91837521A* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -16976,10 +16976,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t4454A395593798308537E86AEE2BC94179CFFF55 InternalEnumerator_1_get_Current_mA875B72B7B5F6F60D232B650F07D3C89CA9A090D_gshared (InternalEnumerator_1_t5B2BE4CBAE3BCF62A8C63C44B921FA993CAE2F5E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17033,8 +17033,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t4454A395593798308537E86AEE2BC94179CFFF55 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mA875B72B7B5F6F60D232B650F07D3C89CA9A090D(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m17D04C5F43D956A64881D865F78724E3A7B29D37_gshared (InternalEnumerator_1_t5B2BE4CBAE3BCF62A8C63C44B921FA993CAE2F5E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17063,10 +17063,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t52A07580EAD838EA5B953EBA04EA6432B9CA4DAC InternalEnumerator_1_get_Current_mDA4E4798801B3CC61C41329673F44BC789317EDF (InternalEnumerator_1_t9C15F6D90511139DFA7A799782E3CCB5505CD788* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17120,8 +17120,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t52A07580EAD838EA5B953EBA04EA6432B9CA4DAC Intern
 	_returnValue = InternalEnumerator_1_get_Current_mDA4E4798801B3CC61C41329673F44BC789317EDF(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m51F32731EFF64201772DAB9966EADA3437A29351 (InternalEnumerator_1_t9C15F6D90511139DFA7A799782E3CCB5505CD788* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17150,10 +17150,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tDEBC563E5C12F27FFAE83443E53D915B13B50B7F InternalEnumerator_1_get_Current_mE83621E8ABD05D9BB64821768DEBBA355F129F01 (InternalEnumerator_1_t780AFCFA266591F8D5F095F6E1E5396BE1FC910E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17207,8 +17207,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tDEBC563E5C12F27FFAE83443E53D915B13B50B7F Intern
 	_returnValue = InternalEnumerator_1_get_Current_mE83621E8ABD05D9BB64821768DEBBA355F129F01(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m1D4F9E39888A5B64D1DE5B9E0CC38C3797D09220 (InternalEnumerator_1_t780AFCFA266591F8D5F095F6E1E5396BE1FC910E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17237,10 +17237,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tC4BA30916BF230EEC3C651E83DA9F4EAA32AFD13 InternalEnumerator_1_get_Current_mFF9B4C3BDAB1F98C6EAA300F8728EFC2C077895E (InternalEnumerator_1_tDFC389278DD6AB6C1C67CFAE406381C0764886C9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17294,8 +17294,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tC4BA30916BF230EEC3C651E83DA9F4EAA32AFD13 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mFF9B4C3BDAB1F98C6EAA300F8728EFC2C077895E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD886631B090197B337597A6651DC4BB55A861275 (InternalEnumerator_1_tDFC389278DD6AB6C1C67CFAE406381C0764886C9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17324,10 +17324,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t7616DF3AFBD691862E103D736E4382E092597B82 InternalEnumerator_1_get_Current_mF12196E2E833CBEDFDD4157E9BB4A39F3C0B05C7 (InternalEnumerator_1_t9CE4AEC0E230FEB500233A2F88576E3AF6169439* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17381,8 +17381,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t7616DF3AFBD691862E103D736E4382E092597B82 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mF12196E2E833CBEDFDD4157E9BB4A39F3C0B05C7(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD69C9849C3FCDB8F4F2101A3AB60060F02DDC0E9 (InternalEnumerator_1_t9CE4AEC0E230FEB500233A2F88576E3AF6169439* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17411,10 +17411,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tA1F840CB30C9D8AC1E1F1BC4347D21B598D5F0D5 InternalEnumerator_1_get_Current_m6DB9A9ADBA14AC07757440C8C8A96712E476A2AF (InternalEnumerator_1_t5E1DF8765E9B3A753C272D22E95A43F7C290DE12* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17468,8 +17468,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tA1F840CB30C9D8AC1E1F1BC4347D21B598D5F0D5 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m6DB9A9ADBA14AC07757440C8C8A96712E476A2AF(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m8E3E52F536A4AA6396F23FA0CC3B7E9CB2EF0D87 (InternalEnumerator_1_t5E1DF8765E9B3A753C272D22E95A43F7C290DE12* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17498,10 +17498,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t597E844D002BDB50436BB62259A99BDDDB7810C0 InternalEnumerator_1_get_Current_m3D2C1FB883C2F2F993E656426C65E28191CDC397_gshared (InternalEnumerator_1_t3828847E9BF3C211944213DB940AA107ED1E12C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17555,8 +17555,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t597E844D002BDB50436BB62259A99BDDDB7810C0 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m3D2C1FB883C2F2F993E656426C65E28191CDC397(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mEF5399FBCE62398599BEF147834BC48E36DBE276_gshared (InternalEnumerator_1_t3828847E9BF3C211944213DB940AA107ED1E12C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17585,10 +17585,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tE48FEF54701661F0E884F51FD75CBB53D546CBBE InternalEnumerator_1_get_Current_m2645C6A088449CE44DB5614B8368FC5A58A87932 (InternalEnumerator_1_t14DF596CFB53D4C3C096806ADE2B63ECA3DD63BB* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17642,8 +17642,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tE48FEF54701661F0E884F51FD75CBB53D546CBBE Intern
 	_returnValue = InternalEnumerator_1_get_Current_m2645C6A088449CE44DB5614B8368FC5A58A87932(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m351108CCA0610E881CB6C68BB2AFF2FE49F243D4 (InternalEnumerator_1_t14DF596CFB53D4C3C096806ADE2B63ECA3DD63BB* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17672,10 +17672,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t91EA25BC5C63ED04F5E7DDC2D2E48D53C13A8B16 InternalEnumerator_1_get_Current_mED7E3D39F617B39FB06F895BF7F97245696BCB42 (InternalEnumerator_1_tE484461D17726EFA78CFC0D3B4F664EA8D23FA11* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17729,8 +17729,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t91EA25BC5C63ED04F5E7DDC2D2E48D53C13A8B16 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mED7E3D39F617B39FB06F895BF7F97245696BCB42(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC6866E0049227423C4DF02838BC0C2CCB4A97115 (InternalEnumerator_1_tE484461D17726EFA78CFC0D3B4F664EA8D23FA11* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17759,10 +17759,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tCFF84235BBE039DB505C77D55DC7E24D7345E171 InternalEnumerator_1_get_Current_m7A97E17412C60A37C2B7D899F820D3F9E4EE5E6B_gshared (InternalEnumerator_1_tEBEC5612DAA226ECA32AF9825B97BB013DCC0BB7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17816,8 +17816,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tCFF84235BBE039DB505C77D55DC7E24D7345E171 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m7A97E17412C60A37C2B7D899F820D3F9E4EE5E6B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m129466AAA4DA50E57A6894395F174631FA241415_gshared (InternalEnumerator_1_tEBEC5612DAA226ECA32AF9825B97BB013DCC0BB7* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17846,10 +17846,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tE49DF4AB63A71F3F1079BB2829B680B3F8A3BE16 InternalEnumerator_1_get_Current_m7D4EE36D520A99A21D5523C55067A29E1D39CD51 (InternalEnumerator_1_t7315A7E0107FE162E146C8862DDA4FA0C4D07B89* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17903,8 +17903,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tE49DF4AB63A71F3F1079BB2829B680B3F8A3BE16 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m7D4EE36D520A99A21D5523C55067A29E1D39CD51(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4BCC03BCE88064FC20DC6222A7652300A60AA5BB (InternalEnumerator_1_t7315A7E0107FE162E146C8862DDA4FA0C4D07B89* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17933,10 +17933,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tCE7171DB32002B487E575F4AD167DF3446BCB80C InternalEnumerator_1_get_Current_mD5ADA1BD664B13DF2088A46FCAC80D4146F4E84D_gshared (InternalEnumerator_1_t56E39A229694D7BA79E1724ED53ED3E1D2CA9016* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -17990,8 +17990,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tCE7171DB32002B487E575F4AD167DF3446BCB80C Intern
 	_returnValue = InternalEnumerator_1_get_Current_mD5ADA1BD664B13DF2088A46FCAC80D4146F4E84D(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mB49A9DFE7B604B178F1C9ADB86BED9494953096B_gshared (InternalEnumerator_1_t56E39A229694D7BA79E1724ED53ED3E1D2CA9016* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18020,10 +18020,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t8F83C4DD82C25CFA598F698D45DA5876BE19388C InternalEnumerator_1_get_Current_m65F64FC5FDAD765C21E28BD8C4CED73DA6431D50_gshared (InternalEnumerator_1_tE1E351046074A1E07DB9C17D187BEF286BCA7EA8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18077,8 +18077,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t8F83C4DD82C25CFA598F698D45DA5876BE19388C Intern
 	_returnValue = InternalEnumerator_1_get_Current_m65F64FC5FDAD765C21E28BD8C4CED73DA6431D50(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD3A2102D6E351747469EEAB348CF12BEEDEFE0D4_gshared (InternalEnumerator_1_tE1E351046074A1E07DB9C17D187BEF286BCA7EA8* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18107,10 +18107,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t93C7C04D75120E76660BD014A3A5202866E7C748 InternalEnumerator_1_get_Current_m9C5457D23C246FB25D59D4EF1DBC54778C46448A_gshared (InternalEnumerator_1_tC46D974A7850BD983F36C0963EA4310700ED5E04* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18164,8 +18164,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t93C7C04D75120E76660BD014A3A5202866E7C748 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m9C5457D23C246FB25D59D4EF1DBC54778C46448A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mA1EFCB46CA7121530C54D39D99D1224D12EDE093_gshared (InternalEnumerator_1_tC46D974A7850BD983F36C0963EA4310700ED5E04* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18194,10 +18194,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tA79E2DC9408AF83B719314455EA5C915F2F3F172 InternalEnumerator_1_get_Current_m409B027ACD418F36949C3FBCA96B614A366CB9A8 (InternalEnumerator_1_tB1420577DD6155FC873168CEBFBABCD4D41BB7C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18251,8 +18251,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tA79E2DC9408AF83B719314455EA5C915F2F3F172 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m409B027ACD418F36949C3FBCA96B614A366CB9A8(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m45CBFF1E78DCF65B910F11E4304DE1FF99A43E21 (InternalEnumerator_1_tB1420577DD6155FC873168CEBFBABCD4D41BB7C6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18281,10 +18281,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t757A11D5E61E20A1FA1D66746C464E68C7970041 InternalEnumerator_1_get_Current_m540D36B7A468815596D142EE819DCEDEDE5E996E (InternalEnumerator_1_t3715A6D0FFEA9295FF5D0464B519E4B5644813FF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18338,8 +18338,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t757A11D5E61E20A1FA1D66746C464E68C7970041 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m540D36B7A468815596D142EE819DCEDEDE5E996E(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4A5AA42751A34729FBC46D4CC039A27A7EA1B721 (InternalEnumerator_1_t3715A6D0FFEA9295FF5D0464B519E4B5644813FF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18368,10 +18368,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t5A3FDAC04D913E59FF60D58CAFA8264F5F43A655 InternalEnumerator_1_get_Current_mA7E3970EC42E5DEAB17FE7F00B74A3B41D73B3C9 (InternalEnumerator_1_tC9F15A02B3D65AE8CCC1436494C44647612D7686* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18425,8 +18425,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t5A3FDAC04D913E59FF60D58CAFA8264F5F43A655 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mA7E3970EC42E5DEAB17FE7F00B74A3B41D73B3C9(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mFD845FCFFAA1BFADD08C43588E150A88B9B6D1C8 (InternalEnumerator_1_tC9F15A02B3D65AE8CCC1436494C44647612D7686* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18455,10 +18455,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t95FCF0F1774F81148A73A8F9AE877826AEEE49A5 InternalEnumerator_1_get_Current_m681C498C205014BD1936F77764DA39EC78EA6267 (InternalEnumerator_1_tDAB453831513ECCB4582632D4D1C1A9EA01064BF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18512,8 +18512,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t95FCF0F1774F81148A73A8F9AE877826AEEE49A5 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m681C498C205014BD1936F77764DA39EC78EA6267(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mC2F722318EE3C6835250980836918A9BEF215727 (InternalEnumerator_1_tDAB453831513ECCB4582632D4D1C1A9EA01064BF* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18542,10 +18542,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t0E8812AC4D80B043BFD698E2819090063F0B82C8 InternalEnumerator_1_get_Current_m9B13A98A5523A1758A52359A7DC023C2FDF4A4F2 (InternalEnumerator_1_tCD1B8B7486D874F81FDF1448C23D0019956D4741* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18599,8 +18599,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t0E8812AC4D80B043BFD698E2819090063F0B82C8 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m9B13A98A5523A1758A52359A7DC023C2FDF4A4F2(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4EAACA1FE6C56ABABBCA6BF75FFE901863EF3903 (InternalEnumerator_1_tCD1B8B7486D874F81FDF1448C23D0019956D4741* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18629,10 +18629,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tBDA3D222F7D9463C9A5391FA2127629A81A1BB0E InternalEnumerator_1_get_Current_mAABA95B0EF167A103CCC86BBDF46E157AD044F40 (InternalEnumerator_1_t09664758C8B99247C3043CFFDA11742E12B289D6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18686,8 +18686,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tBDA3D222F7D9463C9A5391FA2127629A81A1BB0E Intern
 	_returnValue = InternalEnumerator_1_get_Current_mAABA95B0EF167A103CCC86BBDF46E157AD044F40(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD2943EC40260CE8B39CBC531543715838B86B979 (InternalEnumerator_1_t09664758C8B99247C3043CFFDA11742E12B289D6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18716,10 +18716,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t0B919637EB4D5BC74B591B6C4C2C30BF1FE6D201 InternalEnumerator_1_get_Current_mB6CB55446E34B4400EF27C7FBF09874BFFFFC2CB (InternalEnumerator_1_t8A66BDC85C7C1D77239DFD9F3289C31556E974FE* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18773,8 +18773,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t0B919637EB4D5BC74B591B6C4C2C30BF1FE6D201 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mB6CB55446E34B4400EF27C7FBF09874BFFFFC2CB(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m99F5322C086A2BD0E7EFC97C00A8BA4B80C06084 (InternalEnumerator_1_t8A66BDC85C7C1D77239DFD9F3289C31556E974FE* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18803,10 +18803,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t8183021A542DFEB877605D2D2E9311E954F663FF InternalEnumerator_1_get_Current_m01905A60FEC47D14469EEFC2FC165C5E0B07EC74 (InternalEnumerator_1_tC61F683EB2A8091F5535CB50AA2BEE7FC3172AB2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18860,8 +18860,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t8183021A542DFEB877605D2D2E9311E954F663FF Intern
 	_returnValue = InternalEnumerator_1_get_Current_m01905A60FEC47D14469EEFC2FC165C5E0B07EC74(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m4AA57B0206E8BB74D6CA5908AA23CCCC9254DF9B (InternalEnumerator_1_tC61F683EB2A8091F5535CB50AA2BEE7FC3172AB2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18890,10 +18890,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t5EE249ADC2FC7C38972080E5425B78D0667C19AE InternalEnumerator_1_get_Current_mAE4E5A2D0A41C23656A51D5CC1EDAAA30567AC01 (InternalEnumerator_1_t6370FE01A1D903445F18AF04BD38F4F2CC05AC10* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18947,8 +18947,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t5EE249ADC2FC7C38972080E5425B78D0667C19AE Intern
 	_returnValue = InternalEnumerator_1_get_Current_mAE4E5A2D0A41C23656A51D5CC1EDAAA30567AC01(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m0898B3095C51C0FF7611511CA8DA4C1C91F52C08 (InternalEnumerator_1_t6370FE01A1D903445F18AF04BD38F4F2CC05AC10* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -18977,10 +18977,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t2B3ABBB380AD956791CD5AEB5D326751BE869B27 InternalEnumerator_1_get_Current_m44AC6C3457811699F7E0DCC18C9C5AE291932761 (InternalEnumerator_1_tF4439E72FAC22C835E86C0D8F15E4643DC5CEF34* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19034,8 +19034,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t2B3ABBB380AD956791CD5AEB5D326751BE869B27 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m44AC6C3457811699F7E0DCC18C9C5AE291932761(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m79F29C8E2063BAB71262F1AFD3D2FCF245EC5746 (InternalEnumerator_1_tF4439E72FAC22C835E86C0D8F15E4643DC5CEF34* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19064,10 +19064,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t239104CF2B27EFDD5976947EB437104430DCA96F InternalEnumerator_1_get_Current_m628BA6B505128AE796DB05A3C0B97276F92BFEA6_gshared (InternalEnumerator_1_t375CE7A73DBED49C75CD4C0C00F3923A8D92AB82* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19121,8 +19121,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t239104CF2B27EFDD5976947EB437104430DCA96F Intern
 	_returnValue = InternalEnumerator_1_get_Current_m628BA6B505128AE796DB05A3C0B97276F92BFEA6(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mA946E15AD00713C57694214326E57282AC2EC1FF_gshared (InternalEnumerator_1_t375CE7A73DBED49C75CD4C0C00F3923A8D92AB82* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19151,10 +19151,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tF098633281079E283E992963AFD17FA66397FDC1 InternalEnumerator_1_get_Current_mB133567A2DB7E73382E39C329559F978E3F607B9_gshared (InternalEnumerator_1_tDEB18B5B5691D4C749D640078B41F4E82F8B7DD1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19208,8 +19208,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tF098633281079E283E992963AFD17FA66397FDC1 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mB133567A2DB7E73382E39C329559F978E3F607B9(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD1E6EA9BEBAFF5D58BD15FD6126EF6AA6BC5AA17_gshared (InternalEnumerator_1_tDEB18B5B5691D4C749D640078B41F4E82F8B7DD1* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19238,10 +19238,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t2EFD432E5C93F23D2C6F02054E19FC6E68C5C161 InternalEnumerator_1_get_Current_mD475ABDE0D28A778A75EDE0A953FD3BE039AD253_gshared (InternalEnumerator_1_tD67A0D9068022E2E4C95D6C505D572BFC9904665* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19295,8 +19295,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t2EFD432E5C93F23D2C6F02054E19FC6E68C5C161 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mD475ABDE0D28A778A75EDE0A953FD3BE039AD253(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m0FB722B5B014E3DA05DFD7799B399FD3154A1360_gshared (InternalEnumerator_1_tD67A0D9068022E2E4C95D6C505D572BFC9904665* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19325,10 +19325,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t0E16548A76523B85F59F8C6EF5154600F0AED411 InternalEnumerator_1_get_Current_m24B29D1DC41633EED7064505B29362CC5C4F0620_gshared (InternalEnumerator_1_t0182CBBC24F3A9F1724F742E454B472474E797A2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19382,8 +19382,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t0E16548A76523B85F59F8C6EF5154600F0AED411 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m24B29D1DC41633EED7064505B29362CC5C4F0620(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6675111A6FF963C02A0183E25E2A263207E9EAB1_gshared (InternalEnumerator_1_t0182CBBC24F3A9F1724F742E454B472474E797A2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19412,10 +19412,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t5E4128F333848776A94D809936814187379CBA22 InternalEnumerator_1_get_Current_m4ADDC7FC9CA8151AA53B2AEF73613079E07749CD (InternalEnumerator_1_tFF4B12728453BCD8FE65120512A5350C876F5AB0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19469,8 +19469,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t5E4128F333848776A94D809936814187379CBA22 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m4ADDC7FC9CA8151AA53B2AEF73613079E07749CD(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m9670A09FC794A2761AEC0060724840C3C1C7EA63 (InternalEnumerator_1_tFF4B12728453BCD8FE65120512A5350C876F5AB0* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19499,10 +19499,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t0B948AB4FDBC271C139673D27CD3DE3C54088027 InternalEnumerator_1_get_Current_mF2041C226BEBA2DBDC59B6C978F93B210797B5B7 (InternalEnumerator_1_t3B5D3A42E94DF52B2CD7672A8A79B420108D41D6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19556,8 +19556,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t0B948AB4FDBC271C139673D27CD3DE3C54088027 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mF2041C226BEBA2DBDC59B6C978F93B210797B5B7(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mD5B23BF03865C9BD56D4C787ED1B131AE79EE807 (InternalEnumerator_1_t3B5D3A42E94DF52B2CD7672A8A79B420108D41D6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19586,10 +19586,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tD3D797E3C5F421E3A2F6749CCACEA1D3865DD074 InternalEnumerator_1_get_Current_mFC749960E5D6C951F54090E300DB9DADD02BB95B_gshared (InternalEnumerator_1_t3F8D796CFD5C9D95AC17B66DBBE801209A048551* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19643,8 +19643,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tD3D797E3C5F421E3A2F6749CCACEA1D3865DD074 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mFC749960E5D6C951F54090E300DB9DADD02BB95B(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m0C31C34EC9F34A9014C4F36B2D7ED36253BCB184_gshared (InternalEnumerator_1_t3F8D796CFD5C9D95AC17B66DBBE801209A048551* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19673,10 +19673,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t90552771DA7319F2203C3D11ACAC9E55E493D55C InternalEnumerator_1_get_Current_m87A7974D8D32A0B18ED18377AE028D8A37C92482 (InternalEnumerator_1_t631139C52AF21B0C653282450D933C966ACBF8D9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19730,8 +19730,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t90552771DA7319F2203C3D11ACAC9E55E493D55C Intern
 	_returnValue = InternalEnumerator_1_get_Current_m87A7974D8D32A0B18ED18377AE028D8A37C92482(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF62943721C262FD2E1076CA6131674D00592969D (InternalEnumerator_1_t631139C52AF21B0C653282450D933C966ACBF8D9* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19760,10 +19760,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tD6E7138F0D29DE5DF96FCE4AF6F71A670421812C InternalEnumerator_1_get_Current_mEABA12FCCA8891EF4FAED57242E49A1165B46FC5_gshared (InternalEnumerator_1_tD50CB9719F8AEA94C69865CAF5B46C5CA3FD85A2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19817,8 +19817,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tD6E7138F0D29DE5DF96FCE4AF6F71A670421812C Intern
 	_returnValue = InternalEnumerator_1_get_Current_mEABA12FCCA8891EF4FAED57242E49A1165B46FC5(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m550D202A27BB8943676BC638E4B3F2B1064E060D_gshared (InternalEnumerator_1_tD50CB9719F8AEA94C69865CAF5B46C5CA3FD85A2* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19847,10 +19847,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t69CD47690E0865123AE83CBCF76FBF5613F8F453 InternalEnumerator_1_get_Current_m7EF3BF96700D77064E52187B9F490F27DE010675_gshared (InternalEnumerator_1_t853EC7FBA0A80AF4A3199EFD1717570EED1E1136* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19904,8 +19904,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t69CD47690E0865123AE83CBCF76FBF5613F8F453 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m7EF3BF96700D77064E52187B9F490F27DE010675(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m6DE966E65D28C43345A789800BA1193A499D8A41_gshared (InternalEnumerator_1_t853EC7FBA0A80AF4A3199EFD1717570EED1E1136* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19934,10 +19934,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tF0A45C6016346A2C3F28C29798BDF4922DC1EF4B InternalEnumerator_1_get_Current_mE550656114114138F9A4D8FD5ADF8FD01B13C7A2_gshared (InternalEnumerator_1_t64B216BCCE4E4E54878A11CD4DB6975960191E21* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -19991,8 +19991,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tF0A45C6016346A2C3F28C29798BDF4922DC1EF4B Intern
 	_returnValue = InternalEnumerator_1_get_Current_mE550656114114138F9A4D8FD5ADF8FD01B13C7A2(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF6498FAD1AA724258CAA92CD99CEBA19E963EF18_gshared (InternalEnumerator_1_t64B216BCCE4E4E54878A11CD4DB6975960191E21* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20021,10 +20021,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tE44411EFBAE9E3B703B63255CA116F2AB79A541F InternalEnumerator_1_get_Current_m3A056B7DB67EFDBD8AE53819C9D6C1B2060F5E15_gshared (InternalEnumerator_1_t22227F85F060251993649FF26672FE0722A50B9C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20078,8 +20078,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tE44411EFBAE9E3B703B63255CA116F2AB79A541F Intern
 	_returnValue = InternalEnumerator_1_get_Current_m3A056B7DB67EFDBD8AE53819C9D6C1B2060F5E15(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m798237B92E1576ED8D445A301029099FD69826F9_gshared (InternalEnumerator_1_t22227F85F060251993649FF26672FE0722A50B9C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20108,10 +20108,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t4ECC665BD4A00F73FA6800F454F0E8BC4F2D1A89 InternalEnumerator_1_get_Current_m25CEBF737D2DA1E942385FB2F97BA333BD24C4AA_gshared (InternalEnumerator_1_tA04ECA08DCCACDF6D9AFE9E924933EA5698938A3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20165,8 +20165,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t4ECC665BD4A00F73FA6800F454F0E8BC4F2D1A89 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m25CEBF737D2DA1E942385FB2F97BA333BD24C4AA(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m96F982F3EEA0604FC0D490FA7EADBD337FDDE236_gshared (InternalEnumerator_1_tA04ECA08DCCACDF6D9AFE9E924933EA5698938A3* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20195,10 +20195,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tC204C7251A9AA0A2ECAE3B05EB7D84010AFC50A8 InternalEnumerator_1_get_Current_mD4CBB403BB376EF832F24359E6262A367C733A58_gshared (InternalEnumerator_1_tE50F9993A34DA3AE93E27D29A5CB9838BA173DA6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20252,8 +20252,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tC204C7251A9AA0A2ECAE3B05EB7D84010AFC50A8 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mD4CBB403BB376EF832F24359E6262A367C733A58(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF90CA9B216BF2BAF38CDBDC2A9E07F576F0D4D35_gshared (InternalEnumerator_1_tE50F9993A34DA3AE93E27D29A5CB9838BA173DA6* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20282,10 +20282,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tFA0C2FA96A5B4273F871D6C34920E67189078586 InternalEnumerator_1_get_Current_m82E3A74638C443C15744BF544D524C5A1B7909D3_gshared (InternalEnumerator_1_tD8F09E2026337C89641355478CCDD2AD477E7278* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20339,8 +20339,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tFA0C2FA96A5B4273F871D6C34920E67189078586 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m82E3A74638C443C15744BF544D524C5A1B7909D3(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m590377E74FC943ABE0A90DDDEA9C7214F1A32648_gshared (InternalEnumerator_1_tD8F09E2026337C89641355478CCDD2AD477E7278* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20369,10 +20369,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t71EC9E17E4D6B46825AA317711A779B392406E91 InternalEnumerator_1_get_Current_m159D3DEE12C5B483A75C7D6E63083EA014984E43_gshared (InternalEnumerator_1_tAB01209AEDD4E0CC5F3A3E2F98BED87A02D5CC5F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20426,8 +20426,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t71EC9E17E4D6B46825AA317711A779B392406E91 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m159D3DEE12C5B483A75C7D6E63083EA014984E43(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m322E91D771B940C05F7C0A53A734F47789712AA9_gshared (InternalEnumerator_1_tAB01209AEDD4E0CC5F3A3E2F98BED87A02D5CC5F* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20456,10 +20456,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t9793869CFB1DE15270365B00665F7EA7D69B5D63 InternalEnumerator_1_get_Current_mAF950E578507C42BE83CBBB1153EDEBD09398178_gshared (InternalEnumerator_1_t09A89075A51DF1743F81E66D6AA74D29E1C66CDD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20513,8 +20513,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t9793869CFB1DE15270365B00665F7EA7D69B5D63 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mAF950E578507C42BE83CBBB1153EDEBD09398178(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mF4E23E7A472E73CBEC6BD59C82855B676DE3CCA4_gshared (InternalEnumerator_1_t09A89075A51DF1743F81E66D6AA74D29E1C66CDD* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20543,10 +20543,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tB1533AF096DF1AC3EC823EE67BC6B3E1D06D0349 InternalEnumerator_1_get_Current_m2F4769019102C0CB5CC0CD517F363AEFDB9E19AF_gshared (InternalEnumerator_1_tD634C03E694D74C36E3772B89CF334428398E48B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20600,8 +20600,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tB1533AF096DF1AC3EC823EE67BC6B3E1D06D0349 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m2F4769019102C0CB5CC0CD517F363AEFDB9E19AF(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mDDC9AF5EFBAAF04D207050F8BBFD8B9565504467_gshared (InternalEnumerator_1_tD634C03E694D74C36E3772B89CF334428398E48B* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20630,10 +20630,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t02FA6B94D9CA8C1D39FC7AD62136275026CB0995 InternalEnumerator_1_get_Current_mCF5A5C1288E4D3F25017D7A6B593333A2ED683BC_gshared (InternalEnumerator_1_t769CD9318114FC23A2A96F928F2E570A4AC5F071* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20687,8 +20687,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t02FA6B94D9CA8C1D39FC7AD62136275026CB0995 Intern
 	_returnValue = InternalEnumerator_1_get_Current_mCF5A5C1288E4D3F25017D7A6B593333A2ED683BC(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_mBA229A744E652E64F35E1098F9EA74DCB174813C_gshared (InternalEnumerator_1_t769CD9318114FC23A2A96F928F2E570A4AC5F071* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20717,10 +20717,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_t9DE7B1D90C4011D358FFCD3E560678DB0AF8D5AC InternalEnumerator_1_get_Current_mAF3F322A5EC6C5AAFDF900C8BF45C94A52F7864A_gshared (InternalEnumerator_1_t4D5C0C1CE967D4641FFA9A5D791D57D3FC83183C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20774,8 +20774,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_t9DE7B1D90C4011D358FFCD3E560678DB0AF8D5AC Intern
 	_returnValue = InternalEnumerator_1_get_Current_mAF3F322A5EC6C5AAFDF900C8BF45C94A52F7864A(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m1F029D4D6C43CE6CB79AB8CD9A7B1D96A020D553_gshared (InternalEnumerator_1_t4D5C0C1CE967D4641FFA9A5D791D57D3FC83183C* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20804,10 +20804,10 @@ IL2CPP_EXTERN_C  RuntimeObject* InternalEnumerator_1_System_Collections_IEnumera
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 2671
 // Method Definition Index: 2672
 // Method Definition Index: 2673
 // Method Definition Index: 2674
+// Method Definition Index: 2675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyValuePair_2_tB03078EF77BAE5FAFB74985305E444721A42FA98 InternalEnumerator_1_get_Current_m8AB8568D0251E877148013378514321BA833D1CD_gshared (InternalEnumerator_1_tA84D525B316485796B8697805909E16E3ECB246E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);
@@ -20861,8 +20861,8 @@ IL2CPP_EXTERN_C  KeyValuePair_2_tB03078EF77BAE5FAFB74985305E444721A42FA98 Intern
 	_returnValue = InternalEnumerator_1_get_Current_m8AB8568D0251E877148013378514321BA833D1CD(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 2675
 // Method Definition Index: 2676
+// Method Definition Index: 2677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* InternalEnumerator_1_System_Collections_IEnumerator_get_Current_m388235D4D05D5AD8DEC4D74151C8B50828CF3090_gshared (InternalEnumerator_1_tA84D525B316485796B8697805909E16E3ECB246E* __this, const RuntimeMethod* method) 
 {
 	CHECKED_LOCAL(classRgctxInit);

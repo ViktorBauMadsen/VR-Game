@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 // Sits at a fixed pocket point (a child of PlayerTorsoAnchor). Chips are
 // infinite, so this never runs out - on grab it hands the interactor's grip
@@ -47,6 +48,16 @@ public class ChipDispenser : MonoBehaviour
 
         var interactor = args.interactorObject;
         _manager.SelectExit(interactor, _interactable);
+
+        // Can't afford even one chip: hand out nothing, buzz the controller
+        // and let the HUD say "Not enough balance".
+        var balance = PlayerBalance.Instance;
+        if (balance == null || !balance.CanAfford(chipPrefab.Value))
+        {
+            balance?.ReportInsufficientFunds(chipPrefab.Value);
+            if (interactor is XRBaseInputInteractor input) input.SendHapticImpulse(0.6f, 0.15f);
+            return;
+        }
 
         var chip = Instantiate(chipPrefab, spawnPoint.position, spawnPoint.rotation);
         // Unconditional: a just-Instantiated interactable isn't in the

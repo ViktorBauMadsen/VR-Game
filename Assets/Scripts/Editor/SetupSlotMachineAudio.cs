@@ -5,7 +5,6 @@ using UnityEngine;
 public static class SetupSlotMachineAudio
 {
     const string LeverPullClipPath = "Assets/Audio/Sound Effects/Lever Pull.mp3";
-    const string SpinStartClipPath = "Assets/Audio/Sound Effects/Slot Sound.mp3";
 
     [MenuItem("Tools/Setup Slot Machine Audio")]
     static void Setup()
@@ -42,12 +41,9 @@ public static class SetupSlotMachineAudio
             Debug.LogError($"SetupSlotMachineAudio: couldn't load clip at '{LeverPullClipPath}'.");
             return;
         }
-        var spinStartClip = AssetDatabase.LoadAssetAtPath<AudioClip>(SpinStartClipPath);
-        if (spinStartClip == null)
-        {
-            Debug.LogError($"SetupSlotMachineAudio: couldn't load clip at '{SpinStartClipPath}'.");
-            return;
-        }
+        // The old spin-start sound is no longer wired here - it was timed
+        // for the previous short spin. Reel ticks/stops/wins are handled by
+        // SlotMachine itself.
 
         var leverAudioSource = GetOrAddAudioSource(handleObj);
         var machineAudioSource = GetOrAddAudioSource(slotMachineObj);
@@ -59,12 +55,11 @@ public static class SetupSlotMachineAudio
 
         var slotMachineSo = new SerializedObject(slotMachine);
         slotMachineSo.FindProperty("audioSource").objectReferenceValue = machineAudioSource;
-        slotMachineSo.FindProperty("spinStartClip").objectReferenceValue = spinStartClip;
         slotMachineSo.ApplyModifiedProperties();
 
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
 
-        Debug.Log("SlotMachine audio set up: 'Lever Pull' wired to the Handle's AudioSource, 'Slot Sound' wired to the SlotMachine's AudioSource. Save the scene to keep it.");
+        Debug.Log("SlotMachine audio set up: 'Lever Pull' wired to the Handle's AudioSource, and the SlotMachine's AudioSource assigned. Save the scene to keep it.");
     }
 
     static AudioSource GetOrAddAudioSource(GameObject obj)
