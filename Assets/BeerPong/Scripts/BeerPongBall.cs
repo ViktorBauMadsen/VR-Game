@@ -44,7 +44,24 @@ public class BeerPongBall : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] float cupImpactSpeedKeep = 0.3f;
 
+    [Header("Sound")]
+    [Tooltip("Played when the ball bounces off anything except a cup (table, floor, walls). One is picked at random. Empty = generated defaults.")]
+    [SerializeField] AudioClip[] bounceClips;
+    [Tooltip("Played when the ball hits a cup. Empty = generated defaults.")]
+    [SerializeField] AudioClip[] cupHitClips;
+    [SerializeField, Range(0f, 1f)] float bounceVolume = 0.8f;
+    [Tooltip("Impact speed (m/s) that plays at full volume; softer hits are quieter.")]
+    [SerializeField] float fullVolumeImpactSpeed = 3f;
+    [Tooltip("Hits slower than this (m/s) make no sound, so a rolling ball doesn't buzz.")]
+    [SerializeField] float minImpactSpeed = 0.25f;
+    [Tooltip("Testing without a headset the listener can be far away; play 2D then. 3D with the headset on.")]
+    [SerializeField] bool use2DWhenNoHeadset = true;
+
     const int SampleCount = 16;
+    const float MinSoundGap = 0.04f;
+
+    AudioSource _audio;
+    float _lastSoundTime = -1f;
 
     Rigidbody _rb;
     XRGrabInteractable _interactable;
@@ -62,6 +79,48 @@ public class BeerPongBall : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _interactable = GetComponent<XRGrabInteractable>();
         _interactable.throwOnDetach = false; // we set the release velocity ourselves, see header
+
+        if (bounceClips == null || bounceClips.Length == 0)
+            bounceClips = LoadDefaults("PingPongBounce_", 3);
+        if (cupHitClips == null || cupHitClips.Length == 0)
+            cupHitClips = LoadDefaults("PingPongCupHit_", 2);
+
+        _audio = gameObject.AddComponent<AudioSource>();
+        _audio.playOnAwake = false;
+        _audio.spatialBlend = 1f;
+        _audio.rolloffMode = AudioRolloffMode.Logarithmic;
+        _audio.minDistance = 0.3f;
+        _audio.maxDistance = 15f;
+        _audio.dopplerLevel = 0f;
+    }
+
+    // Generated defaults live in Assets/BeerPong/Audio/Resources/BeerPongSounds.
+    static AudioClip[] LoadDefaults(string prefix, int count)
+    {
+        var clips = new System.Collections.Generic.List<AudioClip>();
+        for (int i = 1; i <= count; i++)
+        {
+            var c = Resources.Load<AudioClip>("BeerPongSounds/" + prefix + i);
+            if (c != null) clips.Add(c);
+        }
+        return clips.ToArray();
+    }
+
+    void PlayImpact(Collision collision, bool isCup)
+    {
+        float speed = collision.relativeVelocity.magnitude;
+        if (speed < minImpactSpeed || Time.time - _lastSoundTime < MinSoundGap) return;
+
+        var clips = isCup ? cupHitClips : bounceClips;
+        if (clips == null || clips.Length == 0) return;
+        var clip = clips[Random.Range(0, clips.Length)];
+        if (clip == null) return;
+
+        _lastSoundTime = Time.time;
+        _audio.spatialBlend = use2DWhenNoHeadset && !UnityEngine.XR.XRSettings.isDeviceActive ? 0f : 1f;
+        _audio.pitch = Random.Range(0.95f, 1.05f);
+        float loudness = Mathf.Clamp01(speed / Mathf.Max(0.01f, fullVolumeImpactSpeed));
+        _audio.PlayOneShot(clip, bounceVolume * loudness);
     }
 
     void Start() => Respawn();
@@ -147,7 +206,9 @@ public class BeerPongBall : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (_rb.isKinematic) return;
-        if (collision.collider.GetComponentInParent<BeerPongCup>() == null) return;
+        bool isCup = collision.collider.GetComponentInParent<BeerPongCup>() != null;
+        PlayImpact(collision, isCup);
+        if (!isCup) return;
 
         _rb.linearVelocity *= cupImpactSpeedKeep;
         _rb.angularVelocity *= cupImpactSpeedKeep;

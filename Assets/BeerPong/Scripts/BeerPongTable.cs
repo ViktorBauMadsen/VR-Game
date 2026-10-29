@@ -10,8 +10,8 @@ using UnityEngine.Events;
 // both balls return to their spawn points.
 //
 // Feedback on a hit is a pop sound + a burst of particles in the scoring
-// team's colour; a win plays a short fanfare. Both sounds are synthesised at
-// runtime so the table has no audio asset dependencies. onCupHit/onGameWon
+// team's colour; a win plays a short fanfare. Both are synthesised at
+// runtime unless a clip is dropped into the Sound slots. onCupHit/onGameWon
 // are exposed for hooking up anything extra in the Inspector.
 //
 // Re-rack: once per team per game, the moment a team is down to 3 cups
@@ -39,6 +39,15 @@ public class BeerPongTable : MonoBehaviour
     [SerializeField] Renderer[] scoreDisplays;
     [SerializeField] Color scoreBackground = new Color(0.02f, 0.05f, 0.035f);
     [SerializeField] Vector2Int scoreTextureSize = new Vector2Int(1024, 384);
+
+    [Header("Sound")]
+    [Tooltip("Played when a cup is hit. Empty = the built-in synthesised pop.")]
+    [SerializeField] AudioClip cupPopClip;
+    [Tooltip("Played when a team wins. Empty = the built-in synthesised fanfare.")]
+    [SerializeField] AudioClip gameWinClip;
+    [SerializeField, Range(0f, 1f)] float soundVolume = 1f;
+    [Tooltip("Testing without a headset the listener can be far away; play 2D then. 3D with the headset on.")]
+    [SerializeField] bool use2DWhenNoHeadset = true;
 
     [Tooltip("Invoked with the index of the team that scored (0 = Red, 1 = Blue).")]
     public UnityEvent<int> onCupHit;
@@ -72,8 +81,8 @@ public class BeerPongTable : MonoBehaviour
         _audio.playOnAwake = false;
         _audio.spatialBlend = 1f;
         _audio.maxDistance = 15f;
-        _popClip = CreatePopClip();
-        _winClip = CreateWinClip();
+        _popClip = cupPopClip != null ? cupPopClip : CreatePopClip();
+        _winClip = gameWinClip != null ? gameWinClip : CreateWinClip();
 
         BuildScoreRenderer();
     }
@@ -174,7 +183,7 @@ public class BeerPongTable : MonoBehaviour
         Vector3 position = cup.transform.position;
         cup.Remove();
 
-        AudioSource.PlayClipAtPoint(_popClip, position);
+        PlaySound(_popClip, position);
         SpawnBurst(position + Vector3.up * 0.1f, teamColors[scoringTeam]);
         onCupHit.Invoke(scoringTeam);
 
@@ -243,7 +252,7 @@ public class BeerPongTable : MonoBehaviour
     {
         _gameOver = true;
         SetScoreboards($"<color=#{ColorUtility.ToHtmlStringRGB(teamColors[team])}>{teamNames[team]} WINS!</color>\n<size=60%>New game in {resetDelay:0} s</size>");
-        _audio.PlayOneShot(_winClip);
+        PlaySound(_winClip, null);
         onGameWon.Invoke(team);
         StartCoroutine(ResetAfterDelay());
     }
@@ -327,6 +336,21 @@ public class BeerPongTable : MonoBehaviour
             go.GetComponent<ParticleSystemRenderer>().material = new Material(shader);
 
         go.SetActive(true);
+    }
+
+    // At a point in 3D (the cup) or from the table. Without a headset, 2D
+    // from the table so it's audible however far away the camera is.
+    void PlaySound(AudioClip clip, Vector3? at)
+    {
+        if (clip == null) return;
+        bool flat = use2DWhenNoHeadset && !UnityEngine.XR.XRSettings.isDeviceActive;
+        if (at.HasValue && !flat)
+        {
+            AudioSource.PlayClipAtPoint(clip, at.Value, soundVolume);
+            return;
+        }
+        _audio.spatialBlend = flat ? 0f : 1f;
+        _audio.PlayOneShot(clip, soundVolume);
     }
 
     // A short descending "plop".
