@@ -12,8 +12,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // Deliberately minimal right now: tags each pocket with its number (leaving
 // its existing collider alone entirely - not this script's business), and
 // makes sure a Ball exists with the right components. It never repositions
-// an existing Ball - that's placed and tuned by hand in the scene, and
-// RouletteBall.Push() just nudges it from wherever it's sitting.
+// an existing Ball - its scene position defines the outer track the
+// scripted RouletteBall animation orbits on.
 //
 // Run this once, with the FBX's root object selected in the Hierarchy.
 public static class WireRouletteWheelFBX
@@ -119,7 +119,7 @@ public static class WireRouletteWheelFBX
         Undo.CollapseUndoOperations(undoGroup);
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
 
-        Debug.Log($"WireRouletteWheelFBX: wired up '{root.name}' - tagged {pockets.Length} pockets (colliders untouched). Ball {(existingBall != null ? "left exactly where you placed it" : "created at the wheel's center - move it wherever you want it to start")}. Save the scene, then Play and press the SpinButton (or the RouletteBall's 'Push' context menu) to test.");
+        Debug.Log($"WireRouletteWheelFBX: wired up '{root.name}' - tagged {pockets.Length} pockets (colliders untouched). Ball {(existingBall != null ? "left exactly where you placed it" : "created at the wheel's center - move it onto the outer track")}. Save the scene, then Play and press the SpinButton (or RouletteWheel's 'Debug Spin' context menu) to test.");
     }
 
     // Just for placing the SpinButton/ResultLabel sensibly - not used for

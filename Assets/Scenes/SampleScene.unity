@@ -14588,13 +14588,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4001dcafef5dbfe4eb65f490a583d52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RouletteBall
-  pushDirection: {x: 1, y: 0, z: 0}
-  pushForceRange: {x: 0.08, y: 0.12}
-  pushDirectionJitterDegrees: 15
-  settleLinearThreshold: 0.05
-  settleAngularThreshold: 20
+  durationRange: {x: 8.5, y: 10}
+  relativeLapsRange: {x: 7, y: 9}
+  speedFalloffPower: 2
+  dropStart: 0.55
+  landTime: 0.78
+  launchBlendTime: 0.4
   settleConfirmTime: 1
-  resetDelayAfterSettle: 6
+  overrideTrack: 0
+  trackRadius: 0.93
+  trackHeight: 0.25
+  restHeightOffset: 0
+  pocketRingHalfWidth: 0.08
+  deflectorHopHeight: 0.02
+  pocketBounceHeight: 0.035
+  pocketBounceCountRange: {x: 3, y: 5}
+  pocketRadialWobble: 0.01
+  surfaceColliders: []
 --- !u!54 &903536918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34698,6 +34708,7 @@ GameObject:
   - component: {fileID: 864044560368467435}
   - component: {fileID: 3177646581110147362}
   - component: {fileID: 3177646581110147363}
+  - component: {fileID: 3177646581110147364}
   m_Layer: 0
   m_Name: 'RouletteWheel '
   m_TagString: Untagged
@@ -36639,6 +36650,45 @@ MonoBehaviour:
   - {fileID: 8622798758645059770}
   - {fileID: 8920124012836814755}
   - {fileID: 7219117570226732457}
+  rotor: {fileID: 0}
+  clockwise: 1
+  wheelSpinSpeed: 90
+  wheelSpinUpTime: 0.6
+--- !u!114 &3177646581110147364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224222098116926526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4538fafb366ae5249b722611791e1e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouletteAudio
+  wheel: {fileID: 3177646581110147363}
+  rollLoop: {fileID: 8300000, guid: 8f096d3b91bf2d84fb3b312db0ecdc0d, type: 3}
+  wheelLoop: {fileID: 8300000, guid: a5941366d1357ca4797261caaad305ef, type: 3}
+  bounceClips:
+  - {fileID: 8300000, guid: 446aba05fa362d241be78e3bfb6e62fc, type: 3}
+  - {fileID: 8300000, guid: 203d154ab8a6faa40b7ada4d7b5c7b34, type: 3}
+  - {fileID: 8300000, guid: f26c471f149c0634abf75d940a388e2d, type: 3}
+  - {fileID: 8300000, guid: 4c6e5d16be757e8499e1634d4530e584, type: 3}
+  landClip: {fileID: 8300000, guid: 3bbf68532983fb2479a16b6edff4cb29, type: 3}
+  rollVolume: 1
+  rollSlowdownVolumeDrop: 0.3
+  rollFadeOutTime: 0.8
+  rollPitchFollowsSpeed: 0
+  rollPitchRange: {x: 0.75, y: 1.2}
+  wheelVolume: 0.2
+  wheelPitchRange: {x: 0.6, y: 1}
+  bounceVolume: 0.8
+  bouncePitchJitter: 0.08
+  landVolume: 0.7
+  fadeSpeed: 6
+  minDistance: 0.3
+  maxDistance: 10
+  use2DWhenNoHeadset: 1
 --- !u!4 &3216326506083454148
 Transform:
   m_ObjectHideFlags: 0
