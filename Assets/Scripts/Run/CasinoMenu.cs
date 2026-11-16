@@ -236,7 +236,7 @@ public sealed class CasinoMenu : MonoBehaviour
                 if (run.Authority)
                 {
                     surface.Button("TRY AGAIN", Left, Top + 460f, Full, 130f, Green, run.StartRun, true, 48f);
-                    surface.Button("FREE PLAY", Left, Top + 615f, Full, 90f, Grey, run.Abandon);
+                    surface.Button("BACK TO THE HUB", Left, Top + 615f, Full, 90f, Grey, run.Abandon);
                 }
                 else surface.Text("Waiting for the host to start again...", Left, Top + 470f, Full, 80f, 36f, Dim);
                 break;
@@ -244,9 +244,10 @@ public sealed class CasinoMenu : MonoBehaviour
             default:
             {
                 surface.Box(Left, Top, Full, 560f, Card);
-                surface.Text("FREE PLAY", Left, Top + 30f, Full, 100f, 80f, Gold, TextAlignmentOptions.Center, true);
+                surface.Text("THE HUB", Left, Top + 30f, Full, 100f, 80f, Gold, TextAlignmentOptions.Center, true);
                 int quota = run.QuotaFor(1, run.Players);
-                surface.Text("Ready for the real thing? You owe the family.\n\n"
+                surface.Text("This is play money - gamble all you like while your friends join (FRIENDS tab). "
+                    + "Starting a game swaps it for real debt.\n\n"
                     + $"Every day you must end with the quota in cash - ${quota:N0} on day 1, more each day. "
                     + "Make it and the collector takes his cut. Miss it and you get shot.\n\n"
                     + "Friends share one quota and one pool of cash.",
@@ -254,7 +255,7 @@ public sealed class CasinoMenu : MonoBehaviour
                 Live(surface.Text("", Left, Top + 490f, Full, 50f, 30f, Dim),
                     () => run.BestDay > 0 ? "Best run: " + run.BestDay + " day" + (run.BestDay == 1 ? "" : "s") : "");
                 if (run.Authority)
-                    surface.Button(run.Players > 1 ? "START RUN  (" + run.Players + " PLAYERS)" : "START RUN", Left, Top + 600f, Full, 140f, Green, run.StartRun, true, 50f);
+                    surface.Button(run.Players > 1 ? "START GAME  (" + run.Players + " PLAYERS)" : "START GAME", Left, Top + 600f, Full, 140f, Green, run.StartRun, true, 50f);
                 else surface.Text("Waiting for the host to start the run...", Left, Top + 620f, Full, 80f, 36f, Dim);
                 break;
             }

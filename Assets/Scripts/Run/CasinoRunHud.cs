@@ -157,7 +157,7 @@ public sealed class CasinoRunHud : MonoBehaviour
                 line.text = "";
                 break;
             default:
-                line.text = "FREE PLAY\n<size=75%>Y (left hand): menu</size>";
+                line.text = "HUB - FREE PLAY\n<size=75%>Y (left hand): menu / start a game</size>";
                 line.color = new Color(1f, 1f, 1f, 0.6f);
                 break;
         }
@@ -189,7 +189,7 @@ public sealed class CasinoRunHud : MonoBehaviour
                 Show(Death(Mathf.Max(0, run.DiedOnDay - 1)));
                 break;
             case RunEvent.Abandoned:
-                Show(Announce("FREE PLAY\n<size=60%>No quota, no collector.</size>", Color.white, 3f));
+                Show(Announce("BACK IN THE HUB\n<size=60%>No quota, no collector.</size>", Color.white, 3f));
                 break;
         }
     }

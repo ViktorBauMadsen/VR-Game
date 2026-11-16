@@ -40,6 +40,10 @@ public sealed class CasinoRun : MonoBehaviour
 
     public static CasinoRun Instance { get; private set; }
 
+    [Header("Hub")]
+    [Tooltip("Play money everyone has in the hub (outside a run). Restored whenever a run ends.")]
+    [SerializeField] int hubCash = 100000;
+
     [Header("Run")]
     [Tooltip("Cash every player starts a run with.")]
     [SerializeField] int startingCash = 500;
@@ -84,6 +88,7 @@ public sealed class CasinoRun : MonoBehaviour
     CasinoMultiplayer multiplayer;
     readonly Dictionary<ulong, int> guestBalances = new Dictionary<ulong, int>();
     float nextSync;
+    bool hubCashGiven;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Bootstrap()
@@ -127,6 +132,11 @@ public sealed class CasinoRun : MonoBehaviour
         Hook();
         var balance = PlayerBalance.Instance;
         if (balance == null) return;
+        if (!hubCashGiven)
+        {
+            hubCashGiven = true;
+            if (Phase != RunPhase.Running) balance.SetBalance(hubCash);
+        }
 
         if (Authority)
         {
@@ -207,7 +217,6 @@ public sealed class CasinoRun : MonoBehaviour
         {
             DiedOnDay = Day;
             Phase = RunPhase.Dead;
-            foreach (ulong guest in new List<ulong>(guestBalances.Keys)) guestBalances[guest] = startingCash;
             SendStateToAll(RunEvent.Dead, null);
             Apply(RunEvent.Dead, 0);
             return;
@@ -255,10 +264,11 @@ public sealed class CasinoRun : MonoBehaviour
             case RunEvent.Dead:
                 CharmCharges = 0;
                 RememberBest(DiedOnDay - 1);
-                if (balance != null) balance.SetBalance(startingCash);
+                if (balance != null) balance.SetBalance(hubCash);
                 break;
             case RunEvent.Abandoned:
                 CharmCharges = 0;
+                if (balance != null) balance.SetBalance(hubCash);
                 break;
         }
         if (what != RunEvent.None) Happened?.Invoke(what, pay);
@@ -476,6 +486,13 @@ public sealed class CasinoRun : MonoBehaviour
         reader.ReadValueSafe(out byte what);
         reader.ReadValueSafe(out int pay);
         if (phase > (byte)RunPhase.Dead || what > (byte)RunEvent.Abandoned || float.IsNaN(timeLeft) || float.IsInfinity(timeLeft)) return;
+
+        // Joined a lobby whose run is already going (or already over): swap
+        // hub money for run money, or back, so the pooled cash stays honest.
+        var wallet = PlayerBalance.Instance;
+        bool wasRunning = Phase == RunPhase.Running, nowRunning = phase == (byte)RunPhase.Running;
+        if (what == (byte)RunEvent.None && wasRunning != nowRunning && wallet != null)
+            wallet.SetBalance(nowRunning ? Mathf.Clamp(hostStartingCash, 0, 1000000) : hubCash);
 
         Phase = (RunPhase)phase;
         Day = Mathf.Max(0, day);
