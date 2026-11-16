@@ -115,9 +115,29 @@ public class TokenStall : MonoBehaviour
         else if (blocked.StartsWith("NEED")) Say("Not enough tokens, friend. Go and be luckier.");
         else if (blocked.StartsWith("CLOSED")) Say("Closed! Come back between days.");
         else if (blocked.StartsWith("START")) Say("Start a game first - I only trade with the desperate.");
+        else if (blocked.StartsWith("NOT IN")) Say("Not on the shelf today. Try a reroll?");
         else Say("No more of those for now. Galactic law.");
 
         if (who is XRBaseInputInteractor input) input.SendHapticImpulse(bought ? 0.4f : 0.6f, bought ? 0.08f : 0.15f);
+    }
+
+    // The reroll button was pressed.
+    public void Reroll(IXRSelectInteractor who)
+    {
+        var run = CasinoRun.Instance;
+        string blocked = run == null ? "START A RUN" : run.WhyNotReroll();
+        bool done = blocked == null && run.Reroll();
+
+        if (done)
+        {
+            _wave = 1f;
+            Say("Shuffling the shelves... behold! New junk. I mean, treasures.");
+        }
+        else if (blocked != null && blocked.StartsWith("NEED")) Say("Rerolls get pricier every time, friend. Come back richer.");
+        else if (blocked != null && blocked.StartsWith("CLOSED")) Say("Closed! Come back between days.");
+        else Say("Start a game first - I only trade with the desperate.");
+
+        if (who is XRBaseInputInteractor input) input.SendHapticImpulse(done ? 0.4f : 0.6f, done ? 0.08f : 0.15f);
     }
 
     public void Say(string line, float seconds = 4f)

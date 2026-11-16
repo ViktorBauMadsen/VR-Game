@@ -138,7 +138,8 @@ public sealed class CasinoMenu : MonoBehaviour
                 builder.Append(run.Phase == RunPhase.Running && run.TeamCash >= run.Quota).Append(run.Players);
                 break;
             case Tab.Shop:
-                for (int i = 0; i < 4; i++) builder.Append(run.WhyNot((Powerup)i)).Append(run.Price((Powerup)i)).Append('|');
+                foreach (var offered in run.Offer) builder.Append(offered).Append(run.WhyNot(offered)).Append('|');
+                builder.Append(run.WhyNotReroll()).Append(run.RerollPrice).Append(TokenStall.Instance != null);
                 break;
             default:
                 if (mp == null) break;
@@ -285,10 +286,21 @@ public sealed class CasinoMenu : MonoBehaviour
 
     void ShopPage()
     {
-        for (int i = 0; i < 4; i++)
+        // Today's stock: three random powerups, the same for the whole team.
+        bool atStall = TokenStall.Instance != null;
+        surface.Text("TODAY'S STOCK", Left, Top - 8f, Full, 44f, 30f, Gold, TextAlignmentOptions.Left, true);
+        string rerollBlocked = run.WhyNotReroll();
+        string rerollCost = run.RerollPrice + (run.RerollPrice == 1 ? " TOKEN" : " TOKENS");
+        if (atStall)
+            surface.Text("Buy and reroll (" + rerollCost + ") at the Token Stall outside the door.", Left, Top + 760f, Full, 60f, 28f, Dim);
+        else
+            surface.Button(rerollBlocked ?? "REROLL THE STOCK  -  " + rerollCost, Left, Top + 760f, Full, 100f, Blue,
+                () => run.Reroll(), rerollBlocked == null, 34f);
+
+        for (int i = 0; i < run.Offer.Length; i++)
         {
-            var powerup = (Powerup)i;
-            float y = Top + i * 238f;
+            var powerup = run.Offer[i];
+            float y = Top + 44f + i * 238f;
             surface.Box(Left, y, Full, 222f, Card);
             surface.Text(CasinoRun.Title(powerup), Left + 30f, y + 16f, 620f, 56f, 40f, Gold, TextAlignmentOptions.Left, true);
             surface.Text(run.Describe(powerup), Left + 30f, y + 74f, 600f, 100f, 27f, Dim, TextAlignmentOptions.TopLeft);
@@ -298,7 +310,7 @@ public sealed class CasinoMenu : MonoBehaviour
             int price = run.Price(powerup);
             string cost = price + (price == 1 ? " TOKEN" : " TOKENS");
             // With a Token Stall in the casino this page is only a price list.
-            if (TokenStall.Instance != null)
+            if (atStall)
             {
                 surface.Text(cost, Left + 660f, y + 50f, Full - 690f, 60f, 38f, Gold, TextAlignmentOptions.Center, true);
                 surface.Text("AT THE TOKEN STALL\nOUTSIDE THE DOOR", Left + 660f, y + 112f, Full - 690f, 70f, 22f, Dim);

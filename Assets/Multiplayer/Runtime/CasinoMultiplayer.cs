@@ -411,6 +411,7 @@ namespace Casino.Multiplayer
                 avatar = CreateAvatar("Other player " + who, ColorFor(who), false);
                 remotes[who] = avatar;
             }
+            avatar.FloorY = rig.transform.position.y;
             avatar.Apply(pose, false);
         }
 

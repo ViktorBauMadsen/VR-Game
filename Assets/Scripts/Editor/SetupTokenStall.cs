@@ -96,11 +96,13 @@ public static class SetupTokenStall
         var buttons = SetupAvatar.Group("Buttons", r);
         Color[] colours =
         {
-            new Color(0.2f, 0.4f, 0.9f), new Color(0.95f, 0.7f, 0.15f), new Color(0.15f, 0.7f, 0.25f), new Color(0.8f, 0.15f, 0.12f)
+            new Color(0.15f, 0.7f, 0.25f), new Color(0.15f, 0.7f, 0.25f), new Color(0.15f, 0.7f, 0.25f), new Color(0.95f, 0.7f, 0.15f)
         };
-        Powerup[] order = { Powerup.Stall, Powerup.LuckyCharm, Powerup.Bribe, Powerup.Vest };
+        // Three shelf slots (today's random stock) and the reroll button.
+        string[] order = { "Slot 1", "Slot 2", "Slot 3", "Reroll" };
         for (int i = 0; i < order.Length; i++)
         {
+            bool isReroll = i == order.Length - 1;
             float x = 0.72f - i * 0.48f;
             var station = SetupAvatar.Group($"{order[i]} Button", buttons);
             station.localPosition = new Vector3(x, Top + 0.02f, 0.1f);
@@ -114,7 +116,7 @@ public static class SetupTokenStall
             var cap = SetupAvatar.Part("Cap", PrimitiveType.Cylinder, button.transform,
                 SetupAvatar.Lit($"Stall Button {order[i]}", colours[i], 0.7f), new Vector3(0f, 0.024f, 0f), new Vector3(0.1f, 0.012f, 0.1f));
 
-            var card = SetupAvatar.TextQuad("Card", station, CasinoRun.Title(order[i]), Color.white, dark, new Vector2Int(640, 800), 90f);
+            var card = SetupAvatar.TextQuad("Card", station, isReroll ? "REROLL THE SHOP" : "TODAY'S STOCK", Color.white, dark, new Vector2Int(640, 800), 90f);
             card.transform.localPosition = new Vector3(0f, -0.5f, Depth * 0.5f - 0.1f + 0.006f);
             card.transform.localRotation = facing;
             card.transform.localScale = new Vector3(0.44f, 0.55f, 1f);
@@ -122,7 +124,8 @@ public static class SetupTokenStall
             button.AddComponent<XRSimpleInteractable>();
             var bso = new SerializedObject(button.AddComponent<TokenStallButton>());
             bso.FindProperty("stall").objectReferenceValue = stall;
-            bso.FindProperty("powerup").enumValueIndex = (int)order[i];
+            bso.FindProperty("slot").intValue = isReroll ? -1 : i;
+            bso.FindProperty("reroll").boolValue = isReroll;
             bso.FindProperty("cap").objectReferenceValue = cap;
             bso.FindProperty("card").objectReferenceValue = card;
             bso.ApplyModifiedPropertiesWithoutUndo();

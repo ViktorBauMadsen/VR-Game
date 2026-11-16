@@ -148,7 +148,8 @@ public sealed class CasinoRunHud : MonoBehaviour
                 string cashColour = ColorUtility.ToHtmlStringRGB(made ? Good : Gold);
                 string clockColour = ColorUtility.ToHtmlStringRGB(run.TimeLeft < 30f ? Bad : Color.white);
                 string who = run.Players > 1 ? "TEAM " : "";
-                string extras = "   TOKENS " + run.Tokens + (run.Vests > 0 ? "   VEST" : "") + (run.CharmCharges > 0 ? "   CHARM x" + run.CharmCharges : "");
+                string extras = "   TOKENS " + run.Tokens + (run.Vests > 0 ? "   VEST" : "")
+                    + (run.GreedToday ? "   x2 TOKENS" : "") + (run.HotCharges > 0 ? "   HOT x" + run.HotCharges : "") + (run.CharmCharges > 0 ? "   CHARM x" + run.CharmCharges : "");
                 line.text = $"DAY {run.Day}   <color=#{clockColour}>{Clock(run.TimeLeft)}</color>{extras}\n"
                     + $"<color=#{cashColour}>{who}${run.TeamCash:N0}</color> / ${run.Quota:N0} QUOTA";
                 line.color = Color.white;
@@ -214,6 +215,7 @@ public sealed class CasinoRunHud : MonoBehaviour
     void Show(IEnumerator routine)
     {
         if (showing != null) StopCoroutine(showing);
+        MafiaHit.Dismiss(); // in case a death scene was cut short
         fade.enabled = false;
         showing = StartCoroutine(routine);
     }
@@ -278,9 +280,20 @@ public sealed class CasinoRunHud : MonoBehaviour
     {
         banner.text = "<size=70%>THE COLLECTOR HAS RUN OUT OF PATIENCE...</size>";
         banner.color = Bad;
-        yield return new WaitForSecondsRealtime(1.6f);
+
+        // The hitman walks up to you and raises his gun (see MafiaHit).
+        var player = Camera.main != null ? Camera.main.transform : null;
+        if (player != null)
+        {
+            var origin = FindAnyObjectByType<Unity.XR.CoreUtils.XROrigin>();
+            float floor = origin != null ? origin.transform.position.y : player.position.y - 1.6f;
+            yield return MafiaHit.WalkUp(player, floor, line => banner.text = $"<size=55%>{line}</size>");
+            MafiaHit.Fire();
+        }
+        else yield return new WaitForSecondsRealtime(1.6f);
 
         audioSource.PlayOneShot(gunshot, 1f);
+        yield return new WaitForSecondsRealtime(0.07f); // the muzzle flash, for a moment
         fade.enabled = true;
         banner.text = "";
         for (float t = 0f; t < 0.5f; t += Time.unscaledDeltaTime)
@@ -291,6 +304,7 @@ public sealed class CasinoRunHud : MonoBehaviour
             yield return null;
         }
         fade.color = Color.black;
+        MafiaHit.Dismiss();
 
         string days = daysSurvived == 1 ? "1 DAY" : daysSurvived + " DAYS";
         banner.text = $"THE FAMILY SENDS ITS REGARDS\n<size=60%>YOU LASTED {days}.\nOpen the menu (Y) to try again.</size>";

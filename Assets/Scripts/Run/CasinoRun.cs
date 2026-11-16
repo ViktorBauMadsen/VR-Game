@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 // Gathering = "Start game" was pressed: everyone is outside the casino door
 // with run money, the clock is not ticking yet, waiting for all to press the door.
 public enum RunPhase : byte { FreePlay, Running, Dead, Gathering }
-public enum Powerup : byte { LuckyCharm, Bribe, Stall, Vest }
+public enum Powerup : byte { LuckyCharm, Bribe, Stall, Vest, Greed, PocketMoney, TaxDodge, HotStreak }
 public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandoned, Gathering }
 
 // The game loop on top of the casino: you owe the family money.
@@ -36,8 +36,12 @@ public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandone
 [DefaultExecutionOrder(10010)]
 public sealed class CasinoRun : MonoBehaviour
 {
-    const string StateMessage = "Casino.Run.v3", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
-    const int StateBytes = 51;
+    const string StateMessage = "Casino.Run.v4", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
+    const string RerollMessage = "Casino.Reroll.v1";
+    const int StateBytes = 55;
+    public const int PowerupCount = 8;
+    // How many different powerups the shop stocks each day.
+    public const int OfferSize = 3;
     const string BestDayKey = "Casino.BestDay";
 
     public static CasinoRun Instance { get; private set; }
@@ -67,8 +71,17 @@ public sealed class CasinoRun : MonoBehaviour
     [SerializeField] int charmPrice = 2;
     [SerializeField] int bribePrice = 3;
     [SerializeField] int vestPrice = 6;
+    [SerializeField] int greedPrice = 2;
+    [SerializeField] int pocketMoneyPrice = 1;
+    [SerializeField] int taxDodgePrice = 3;
+    [SerializeField] int hotStreakPrice = 2;
 
     [Header("Powerups")]
+    [Tooltip("Double Down: today's quota is multiplied by this, and today's tokens are doubled.")]
+    [SerializeField] float greedQuotaMultiplier = 1.5f;
+    [Tooltip("Pocket Money: cash handed over, as a part of today's quota per player.")]
+    [SerializeField, Range(0f, 1f)] float pocketMoneyShare = 0.25f;
+    [SerializeField] int hotStreakUses = 2;
     [SerializeField] int charmUses = 5;
     [SerializeField, Range(0f, 2f)] float charmBonus = 0.5f;
     [SerializeField, Range(0f, 0.9f)] float bribeDiscount = 0.2f;
@@ -98,7 +111,15 @@ public sealed class CasinoRun : MonoBehaviour
     public bool LocalReady { get; private set; }
     // This player's place in the session (host 0) - picks a spawn spot.
     public int LocalSlot => multiplayer != null ? (int)(multiplayer.LocalId % 8) : 0;
-    public int CollectorTake => Mathf.RoundToInt(Quota * collectorCut);
+    public bool GreedToday { get; private set; }
+    public bool TaxDodgeToday { get; private set; }
+    public int HotCharges { get; private set; }
+    // The three powerups the shop sells today (the same for the whole team),
+    // and how often it has been rerolled today - each reroll costs double.
+    public Powerup[] Offer { get; } = { Powerup.LuckyCharm, Powerup.Bribe, Powerup.Stall };
+    public int RerollCount { get; private set; }
+    public int RerollPrice => 1 << Mathf.Min(RerollCount, 10);
+    public int CollectorTake => TaxDodgeToday ? 0 : Mathf.RoundToInt(Quota * collectorCut);
     public float DayLength => dayLengthSeconds;
 
     // True when this machine decides what happens (solo, or the host).
@@ -111,7 +132,7 @@ public sealed class CasinoRun : MonoBehaviour
     readonly Dictionary<ulong, int> guestBalances = new Dictionary<ulong, int>();
     readonly HashSet<ulong> ready = new HashSet<ulong>();
     float nextSync;
-    bool hubCashGiven, gathered;
+    bool hubCashGiven, gathered, pocketMoneyToday;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Bootstrap()
@@ -256,6 +277,79 @@ public sealed class CasinoRun : MonoBehaviour
         TimeLeft = dayLengthSeconds;
         BribedToday = false;
         StallsToday = 0;
+        GreedToday = false;
+        TaxDodgeToday = false;
+        RerollCount = 0;
+        RollOffer();
+    }
+
+    // Picks today's stock: OfferSize different powerups, not the same set as before.
+    void RollOffer()
+    {
+        var previous = (Powerup[])Offer.Clone();
+        for (int attempt = 0; attempt < 6; attempt++)
+        {
+            var pool = new List<int>();
+            for (int i = 0; i < PowerupCount; i++) pool.Add(i);
+            for (int i = 0; i < OfferSize; i++)
+            {
+                int pick = UnityEngine.Random.Range(0, pool.Count);
+                Offer[i] = (Powerup)pool[pick];
+                pool.RemoveAt(pick);
+            }
+            int same = 0;
+            foreach (var powerup in Offer)
+                if (Array.IndexOf(previous, powerup) >= 0) same++;
+            if (same < OfferSize) break;
+        }
+    }
+
+    // Null when the shop is selling right now, otherwise a short reason.
+    string ShopClosed()
+    {
+        if (Phase != RunPhase.Running && Phase != RunPhase.Gathering) return "START A RUN";
+        // With a Token Stall at the door, it only sells while everyone is
+        // gathered there - decide before the day starts.
+        if (Phase == RunPhase.Running && TokenStall.Instance != null && RunEntrance.Instance != null) return "CLOSED UNTIL TOMORROW";
+        return null;
+    }
+
+    public string WhyNotReroll()
+    {
+        string closed = ShopClosed();
+        if (closed != null) return closed;
+        return Tokens < RerollPrice ? "NEED " + RerollPrice + " TOKENS" : null;
+    }
+
+    // New random stock for the whole team. Whoever presses pays; every
+    // reroll on the same day costs twice as much as the one before.
+    public bool Reroll()
+    {
+        if (WhyNotReroll() != null) return false;
+        Tokens -= RerollPrice;
+        RerollCount++;
+        if (Authority)
+        {
+            RollOffer();
+            SendStateToAll(RunEvent.None, null);
+        }
+        else
+        {
+            var messaging = multiplayer.Network.CustomMessagingManager;
+            if (messaging == null) return true;
+            using var writer = new FastBufferWriter(4, Allocator.Temp);
+            writer.WriteValueSafe((byte)1);
+            messaging.SendNamedMessage(RerollMessage, NetworkManager.ServerClientId, writer, NetworkDelivery.ReliableSequenced);
+        }
+        return true;
+    }
+
+    void ReceiveReroll(ulong sender, FastBufferReader reader)
+    {
+        if (multiplayer == null || !multiplayer.IsHost || !multiplayer.IsGuestId(sender) || ShopClosed() != null) return;
+        RerollCount++;
+        RollOffer();
+        SendStateToAll(RunEvent.None, null);
     }
 
     // Pay before the clock runs out - skips the rest of the day.
@@ -286,7 +380,7 @@ public sealed class CasinoRun : MonoBehaviour
         }
 
         if (!paid) Vests--;
-        LastAward = TokensFor(total, Quota); // 0 when the vest had to save you
+        LastAward = TokensFor(total, Quota) * (GreedToday ? 2 : 1); // 0 when the vest had to save you
         int take = Mathf.Min(total, CollectorTake);
         var shares = new Dictionary<ulong, int>();
         foreach (var pair in guestBalances)
@@ -329,6 +423,10 @@ public sealed class CasinoRun : MonoBehaviour
     void Apply(RunEvent what, int pay)
     {
         var balance = PlayerBalance.Instance;
+        // A new day (or no run at all): personal once-a-day buys are available again.
+        if (what != RunEvent.None && !(what == RunEvent.Started && gathered)) pocketMoneyToday = false;
+        if (what == RunEvent.Gathering || what == RunEvent.Dead || what == RunEvent.Abandoned
+            || (what == RunEvent.Started && !gathered)) HotCharges = 0;
         switch (what)
         {
             case RunEvent.Gathering:
@@ -399,7 +497,28 @@ public sealed class CasinoRun : MonoBehaviour
             case Powerup.LuckyCharm: return "LUCKY CHARM";
             case Powerup.Bribe: return "BRIBE THE COLLECTOR";
             case Powerup.Stall: return "STALL FOR TIME";
-            default: return "BULLETPROOF VEST";
+            case Powerup.Vest: return "BULLETPROOF VEST";
+            case Powerup.Greed: return "DOUBLE DOWN";
+            case Powerup.PocketMoney: return "POCKET MONEY";
+            case Powerup.TaxDodge: return "TAX DODGE";
+            default: return "HOT STREAK";
+        }
+    }
+
+    // Team powerups change the shared run (the host applies them); the
+    // others only affect the player who bought them.
+    public static bool IsTeam(Powerup powerup)
+    {
+        switch (powerup)
+        {
+            case Powerup.Bribe:
+            case Powerup.Stall:
+            case Powerup.Vest:
+            case Powerup.Greed:
+            case Powerup.TaxDodge:
+                return true;
+            default:
+                return false;
         }
     }
 
@@ -413,8 +532,16 @@ public sealed class CasinoRun : MonoBehaviour
                 return $"Knocks {Mathf.RoundToInt(bribeDiscount * 100f)}% off today's quota. Once per day.";
             case Powerup.Stall:
                 return $"Adds {Mathf.RoundToInt(stallSeconds)} seconds to today's clock. {maxStallsPerDay} per day.";
-            default:
+            case Powerup.Vest:
                 return "Miss a quota and the whole team survives anyway - once. The collector still takes what he can.";
+            case Powerup.Greed:
+                return $"Today's quota goes up {Mathf.RoundToInt((greedQuotaMultiplier - 1f) * 100f)}%, but everyone earns double tokens for making it.";
+            case Powerup.PocketMoney:
+                return $"Cash in hand right now: {Mathf.RoundToInt(pocketMoneyShare * 100f)}% of today's quota per player. Once per day, only for you.";
+            case Powerup.TaxDodge:
+                return "The collector takes nothing today - you keep all your cash for tomorrow. Once per day.";
+            default:
+                return $"Your next {hotStreakUses} wins pay double profit. Only works for you.";
         }
     }
 
@@ -425,7 +552,11 @@ public sealed class CasinoRun : MonoBehaviour
             case Powerup.LuckyCharm: return CharmCharges > 0 ? CharmCharges + " wins left" : "";
             case Powerup.Bribe: return BribedToday ? "used today" : "";
             case Powerup.Stall: return StallsToday > 0 ? StallsToday + "/" + maxStallsPerDay + " today" : "";
-            default: return Vests > 0 ? "wearing it" : "";
+            case Powerup.Vest: return Vests > 0 ? "wearing it" : "";
+            case Powerup.Greed: return GreedToday ? "active today" : "";
+            case Powerup.PocketMoney: return pocketMoneyToday ? "used today" : "";
+            case Powerup.TaxDodge: return TaxDodgeToday ? "active today" : "";
+            default: return HotCharges > 0 ? HotCharges + " wins left" : "";
         }
     }
 
@@ -438,7 +569,11 @@ public sealed class CasinoRun : MonoBehaviour
             case Powerup.LuckyCharm: return charmPrice;
             case Powerup.Bribe: return bribePrice;
             case Powerup.Stall: return stallPrice;
-            default: return vestPrice;
+            case Powerup.Vest: return vestPrice;
+            case Powerup.Greed: return greedPrice;
+            case Powerup.PocketMoney: return pocketMoneyPrice;
+            case Powerup.TaxDodge: return taxDodgePrice;
+            default: return hotStreakPrice;
         }
     }
 
@@ -456,10 +591,9 @@ public sealed class CasinoRun : MonoBehaviour
     // Null when it can be bought right now, otherwise a short reason.
     public string WhyNot(Powerup powerup)
     {
-        if (Phase != RunPhase.Running && Phase != RunPhase.Gathering) return "START A RUN";
-        // With a Token Stall at the door, it only sells while everyone is
-        // gathered there - decide before the day starts.
-        if (Phase == RunPhase.Running && TokenStall.Instance != null && RunEntrance.Instance != null) return "CLOSED UNTIL TOMORROW";
+        string closed = ShopClosed();
+        if (closed != null) return closed;
+        if (Array.IndexOf(Offer, powerup) < 0) return "NOT IN STOCK";
         if (!TeamAllows(powerup)) return powerup == Powerup.Vest ? "OWNED" : "USED UP";
         return Tokens < Price(powerup) ? "NEED " + Price(powerup) + " TOKENS" : null;
     }
@@ -471,6 +605,9 @@ public sealed class CasinoRun : MonoBehaviour
             case Powerup.Bribe: return !BribedToday;
             case Powerup.Stall: return StallsToday < maxStallsPerDay;
             case Powerup.Vest: return Vests < 1;
+            case Powerup.Greed: return !GreedToday;
+            case Powerup.TaxDodge: return !TaxDodgeToday;
+            case Powerup.PocketMoney: return !pocketMoneyToday;
             default: return true;
         }
     }
@@ -481,6 +618,13 @@ public sealed class CasinoRun : MonoBehaviour
         Tokens -= Price(powerup);
 
         if (powerup == Powerup.LuckyCharm) CharmCharges += charmUses;
+        else if (powerup == Powerup.HotStreak) HotCharges += hotStreakUses;
+        else if (powerup == Powerup.PocketMoney)
+        {
+            pocketMoneyToday = true;
+            float perPlayer = Quota / (float)Mathf.Max(1, Players);
+            if (PlayerBalance.Instance != null) PlayerBalance.Instance.AddBalance(RoundTo(perPlayer * pocketMoneyShare, 10));
+        }
         else
         {
             ApplyTeamPowerup(powerup); // guests: shown right away, the host's next update confirms it
@@ -505,12 +649,26 @@ public sealed class CasinoRun : MonoBehaviour
             case Powerup.Vest:
                 Vests++;
                 break;
+            case Powerup.Greed:
+                Quota = RoundTo(Quota * greedQuotaMultiplier, 50);
+                GreedToday = true;
+                break;
+            case Powerup.TaxDodge:
+                TaxDodgeToday = true;
+                break;
         }
     }
 
+    // Hot Streak is used up first (it is the bigger bonus), then the charm.
     int BoostWinnings(int profit)
     {
-        if (CharmCharges <= 0 || Phase != RunPhase.Running) return profit;
+        if (Phase != RunPhase.Running) return profit;
+        if (HotCharges > 0)
+        {
+            HotCharges--;
+            return profit * 2;
+        }
+        if (CharmCharges <= 0) return profit;
         CharmCharges--;
         return profit + Mathf.RoundToInt(profit * charmBonus);
     }
@@ -547,6 +705,7 @@ public sealed class CasinoRun : MonoBehaviour
         messaging.RegisterNamedMessageHandler(BalanceMessage, ReceiveBalance);
         messaging.RegisterNamedMessageHandler(BuyMessage, ReceiveBuy);
         messaging.RegisterNamedMessageHandler(ReadyMessage, ReceiveReady);
+        messaging.RegisterNamedMessageHandler(RerollMessage, ReceiveReroll);
     }
 
     void OnSessionEnded()
@@ -582,7 +741,11 @@ public sealed class CasinoRun : MonoBehaviour
             writer.WriteValueSafe(TeamCash);
             writer.WriteValueSafe(Players);
             writer.WriteValueSafe(Vests);
-            writer.WriteValueSafe(BribedToday);
+            writer.WriteValueSafe((byte)((BribedToday ? 1 : 0) | (GreedToday ? 2 : 0) | (TaxDodgeToday ? 4 : 0)));
+            writer.WriteValueSafe((byte)Offer[0]);
+            writer.WriteValueSafe((byte)Offer[1]);
+            writer.WriteValueSafe((byte)Offer[2]);
+            writer.WriteValueSafe((byte)Mathf.Min(RerollCount, 255));
             writer.WriteValueSafe(StallsToday);
             writer.WriteValueSafe(DiedOnDay);
             writer.WriteValueSafe(startingCash);
@@ -605,7 +768,11 @@ public sealed class CasinoRun : MonoBehaviour
         reader.ReadValueSafe(out int teamCash);
         reader.ReadValueSafe(out int players);
         reader.ReadValueSafe(out int vests);
-        reader.ReadValueSafe(out bool bribed);
+        reader.ReadValueSafe(out byte flags);
+        reader.ReadValueSafe(out byte offer0);
+        reader.ReadValueSafe(out byte offer1);
+        reader.ReadValueSafe(out byte offer2);
+        reader.ReadValueSafe(out byte rerolls);
         reader.ReadValueSafe(out int stalls);
         reader.ReadValueSafe(out int diedOnDay);
         reader.ReadValueSafe(out int hostStartingCash);
@@ -635,7 +802,16 @@ public sealed class CasinoRun : MonoBehaviour
         TeamCash = Mathf.Max(0, teamCash);
         Players = Mathf.Clamp(players, 1, CasinoMultiplayer.MaxPlayers);
         Vests = Mathf.Clamp(vests, 0, 9);
-        BribedToday = bribed;
+        BribedToday = (flags & 1) != 0;
+        GreedToday = (flags & 2) != 0;
+        TaxDodgeToday = (flags & 4) != 0;
+        if (offer0 < PowerupCount && offer1 < PowerupCount && offer2 < PowerupCount)
+        {
+            Offer[0] = (Powerup)offer0;
+            Offer[1] = (Powerup)offer1;
+            Offer[2] = (Powerup)offer2;
+        }
+        RerollCount = rerolls;
         StallsToday = Mathf.Clamp(stalls, 0, 99);
         DiedOnDay = Mathf.Max(0, diedOnDay);
         startingCash = Mathf.Clamp(hostStartingCash, 0, 1000000);
@@ -673,7 +849,7 @@ public sealed class CasinoRun : MonoBehaviour
         if (multiplayer == null || !multiplayer.IsHost || !multiplayer.IsGuestId(sender)) return;
         if (reader.Length - reader.Position != 1) return;
         reader.ReadValueSafe(out byte id);
-        if (id == (byte)Powerup.LuckyCharm || id > (byte)Powerup.Vest) return;
+        if (id >= PowerupCount || !IsTeam((Powerup)id)) return;
         var powerup = (Powerup)id;
         if ((Phase != RunPhase.Running && Phase != RunPhase.Gathering) || !TeamAllows(powerup)) return;
         ApplyTeamPowerup(powerup);
