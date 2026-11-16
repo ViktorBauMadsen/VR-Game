@@ -39,7 +39,7 @@ public static class SetupTutorialWall
         + "You owe the family. Every day has a <b>quota</b> and a <b>clock</b>. "
         + "Have the quota in cash when time runs out and the collector takes his cut - then a bigger quota tomorrow.\n\n"
         + "<color=#FF6A5C><b>Come up short and everyone gets shot.</b></color>\n\n"
-        + "Friends share one quota and one pool of cash. Buy powerups in <b>SHOP</b>.</size>";
+        + "Friends share one quota and one pool of cash. Beat the quota to earn <b>tokens</b> - the further over, the more. Spend them on powerups in <b>SHOP</b>.</size>";
 
     const string Tables =
         "<align=left><color=#FFD24A><b>THE TABLES</b></color>\n"

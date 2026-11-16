@@ -156,7 +156,8 @@ public sealed class CasinoMenu : MonoBehaviour
 
         surface.Text("CASINO", Left, 30f, 420f, 80f, 60f, Gold, TextAlignmentOptions.Left, true);
         Live(surface.Text("", 440f, 38f, 400f, 64f, 46f, Color.white, TextAlignmentOptions.Right, true),
-            () => PlayerBalance.Instance != null ? "$" + PlayerBalance.Instance.Balance.ToString("N0") : "");
+            () => (run.Phase == RunPhase.Running || run.Phase == RunPhase.Gathering ? "<size=70%><color=#FFD24A>" + run.Tokens + " TOKENS</color></size>   " : "")
+                + (PlayerBalance.Instance != null ? "$" + PlayerBalance.Instance.Balance.ToString("N0") : ""));
         surface.Button("X", MenuSurface.Width - 130f, 28f, 90f, 84f, Grey, () => surface.gameObject.SetActive(false));
 
         TabButton("RUN", Tab.Run, 0);
@@ -213,10 +214,11 @@ public sealed class CasinoMenu : MonoBehaviour
                 });
                 Live(surface.Text("", Left, Top + 390f, Full, 50f, 30f, Dim), () =>
                     (run.Players > 1 ? run.Players + " players   " : "")
+                    + (run.TeamCash >= run.Quota ? "Pay now: +" + run.TokensFor(run.TeamCash, run.Quota) + " tokens   " : "")
                     + (run.Vests > 0 ? "Vest on   " : "") + (run.CharmCharges > 0 ? "Lucky charm x" + run.CharmCharges : ""));
 
                 surface.Text($"When the clock hits zero the collector checks your cash. Make the quota and he takes ${run.CollectorTake:N0} - "
-                    + "you keep the rest for tomorrow's bigger quota. Come up short and it's lights out.",
+                    + "and the further over the quota you are, the more tokens you earn for the SHOP. Come up short and it's lights out.",
                     Left + 20f, Top + 495f, Full - 40f, 170f, 30f, Dim);
 
                 bool made = run.TeamCash >= run.Quota;
@@ -289,10 +291,11 @@ public sealed class CasinoMenu : MonoBehaviour
 
             string blocked = run.WhyNot(powerup);
             int price = run.Price(powerup);
-            surface.Button(blocked ?? "BUY  $" + price.ToString("N0"), Left + 660f, y + 46f, Full - 690f, 130f, Green,
-                () => run.Buy(powerup), blocked == null, blocked == null ? 36f : 30f);
-            if (blocked != null && run.Phase == RunPhase.Running)
-                surface.Text("$" + price.ToString("N0"), Left + 660f, y + 10f, Full - 690f, 36f, 26f, Dim);
+            string cost = price + (price == 1 ? " TOKEN" : " TOKENS");
+            surface.Button(blocked ?? "BUY\n<size=70%>" + cost + "</size>", Left + 660f, y + 46f, Full - 690f, 130f, Green,
+                () => run.Buy(powerup), blocked == null, blocked == null ? 36f : 26f);
+            if (blocked != null && !blocked.StartsWith("NEED"))
+                surface.Text(cost, Left + 660f, y + 10f, Full - 690f, 36f, 26f, Dim);
         }
     }
 

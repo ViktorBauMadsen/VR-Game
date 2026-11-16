@@ -148,7 +148,7 @@ public sealed class CasinoRunHud : MonoBehaviour
                 string cashColour = ColorUtility.ToHtmlStringRGB(made ? Good : Gold);
                 string clockColour = ColorUtility.ToHtmlStringRGB(run.TimeLeft < 30f ? Bad : Color.white);
                 string who = run.Players > 1 ? "TEAM " : "";
-                string extras = (run.Vests > 0 ? "   VEST" : "") + (run.CharmCharges > 0 ? "   CHARM x" + run.CharmCharges : "");
+                string extras = "   TOKENS " + run.Tokens + (run.Vests > 0 ? "   VEST" : "") + (run.CharmCharges > 0 ? "   CHARM x" + run.CharmCharges : "");
                 line.text = $"DAY {run.Day}   <color=#{clockColour}>{Clock(run.TimeLeft)}</color>{extras}\n"
                     + $"<color=#{cashColour}>{who}${run.TeamCash:N0}</color> / ${run.Quota:N0} QUOTA";
                 line.color = Color.white;
@@ -189,7 +189,7 @@ public sealed class CasinoRunHud : MonoBehaviour
                 break;
             case RunEvent.Survived:
                 audioSource.PlayOneShot(cash, 0.5f);
-                Show(Announce($"<size=60%>PAID UP. THE COLLECTOR TOOK ${pay:N0}.</size>\n" + next, Good, 6f));
+                Show(Announce($"<size=60%>PAID UP. THE COLLECTOR TOOK ${pay:N0}.\nYOU EARNED {run.LastAward} TOKEN{(run.LastAward == 1 ? "" : "S")}.</size>\n" + next, Good, 7f));
                 break;
             case RunEvent.VestSaved:
                 Show(VestHit($"<size=60%>YOU CAME UP SHORT.\nTHE VEST TOOK THE BULLET.</size>\n" + next));

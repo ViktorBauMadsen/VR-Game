@@ -36,8 +36,8 @@ public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandone
 [DefaultExecutionOrder(10010)]
 public sealed class CasinoRun : MonoBehaviour
 {
-    const string StateMessage = "Casino.Run.v2", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
-    const int StateBytes = 47;
+    const string StateMessage = "Casino.Run.v3", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
+    const int StateBytes = 51;
     const string BestDayKey = "Casino.BestDay";
 
     public static CasinoRun Instance { get; private set; }
@@ -56,6 +56,17 @@ public sealed class CasinoRun : MonoBehaviour
     [Tooltip("Part of the quota the collector actually takes when you make it.")]
     [SerializeField, Range(0f, 1f)] float collectorCut = 0.25f;
     [SerializeField] float dayLengthSeconds = 300f;
+
+    [Header("Tokens (the shop's currency)")]
+    [Tooltip("Tokens each player gets for making the quota at all.")]
+    [SerializeField] int tokensForQuota = 2;
+    [Tooltip("One extra token for every this-many percent the team is over the quota.")]
+    [SerializeField] float percentOverPerBonusToken = 10f;
+    [SerializeField] int maxBonusTokens = 10;
+    [SerializeField] int stallPrice = 1;
+    [SerializeField] int charmPrice = 2;
+    [SerializeField] int bribePrice = 3;
+    [SerializeField] int vestPrice = 6;
 
     [Header("Powerups")]
     [SerializeField] int charmUses = 5;
@@ -78,6 +89,10 @@ public sealed class CasinoRun : MonoBehaviour
     public int CharmCharges { get; private set; }
     public int DiedOnDay { get; private set; }
     public int BestDay { get; private set; }
+    // This player's shop currency, earned by beating quotas. Gone when the run ends.
+    public int Tokens { get; private set; }
+    // Tokens handed out at the last collection (for the announcement).
+    public int LastAward { get; private set; }
     // At the door: how many players have pressed it, and whether this one has.
     public int ReadyCount { get; private set; }
     public bool LocalReady { get; private set; }
@@ -275,6 +290,7 @@ public sealed class CasinoRun : MonoBehaviour
         }
 
         if (!paid) Vests--;
+        LastAward = TokensFor(total, Quota); // 0 when the vest had to save you
         int take = Mathf.Min(total, CollectorTake);
         var shares = new Dictionary<ulong, int>();
         foreach (var pair in guestBalances)
@@ -299,6 +315,7 @@ public sealed class CasinoRun : MonoBehaviour
         {
             case RunEvent.Gathering:
                 CharmCharges = 0;
+                Tokens = 0;
                 LocalReady = false;
                 gathered = true;
                 if (balance != null) balance.SetBalance(startingCash);
@@ -308,12 +325,14 @@ public sealed class CasinoRun : MonoBehaviour
                 if (!gathered)
                 {
                     CharmCharges = 0;
+                    Tokens = 0;
                     if (balance != null) balance.SetBalance(startingCash);
                 }
                 gathered = false;
                 LocalReady = false;
                 break;
             case RunEvent.Survived:
+                Tokens += LastAward;
                 if (balance != null) balance.ForceSpend(pay);
                 RememberBest(Day - 1);
                 break;
@@ -327,11 +346,13 @@ public sealed class CasinoRun : MonoBehaviour
                 break;
             case RunEvent.Dead:
                 CharmCharges = 0;
+                Tokens = 0;
                 RememberBest(DiedOnDay - 1);
                 if (balance != null) balance.SetBalance(hubCash);
                 break;
             case RunEvent.Abandoned:
                 CharmCharges = 0;
+                Tokens = 0;
                 gathered = false;
                 LocalReady = false;
                 if (balance != null) balance.SetBalance(hubCash);
@@ -386,17 +407,28 @@ public sealed class CasinoRun : MonoBehaviour
         }
     }
 
+    // Price in TOKENS (not cash). Rough worth: a day that just scrapes the
+    // quota earns tokensForQuota, so the vest is several good days of saving.
     public int Price(Powerup powerup)
     {
-        int quota = Phase == RunPhase.Running ? Quota : QuotaFor(1, Players);
-        float perPlayer = quota / (float)Mathf.Max(1, Players);
         switch (powerup)
         {
-            case Powerup.LuckyCharm: return Mathf.Max(10, RoundTo(perPlayer * 0.15f, 10));
-            case Powerup.Bribe: return Mathf.Max(10, RoundTo(quota * 0.10f, 10));
-            case Powerup.Stall: return Mathf.Max(10, RoundTo(quota * 0.06f, 10));
-            default: return Mathf.Max(10, RoundTo(quota * 0.5f, 10));
+            case Powerup.LuckyCharm: return charmPrice;
+            case Powerup.Bribe: return bribePrice;
+            case Powerup.Stall: return stallPrice;
+            default: return vestPrice;
         }
+    }
+
+    // Tokens every player earns when the team ends a day with this much cash:
+    // a flat amount for making the quota, plus more for every step over it
+    // (percentage of the quota, so it means the same on day 1 and day 10).
+    public int TokensFor(int teamCash, int quota)
+    {
+        if (quota <= 0 || teamCash < quota) return 0;
+        float overPercent = (teamCash - quota) * 100f / quota;
+        int bonus = Mathf.FloorToInt(overPercent / Mathf.Max(1f, percentOverPerBonusToken));
+        return tokensForQuota + Mathf.Clamp(bonus, 0, maxBonusTokens);
     }
 
     // Null when it can be bought right now, otherwise a short reason.
@@ -404,9 +436,7 @@ public sealed class CasinoRun : MonoBehaviour
     {
         if (Phase != RunPhase.Running) return "START A RUN";
         if (!TeamAllows(powerup)) return powerup == Powerup.Vest ? "OWNED" : "USED UP";
-        var balance = PlayerBalance.Instance;
-        if (balance == null || balance.Balance < Price(powerup)) return "TOO POOR";
-        return null;
+        return Tokens < Price(powerup) ? "NEED " + Price(powerup) + " TOKENS" : null;
     }
 
     bool TeamAllows(Powerup powerup)
@@ -422,8 +452,8 @@ public sealed class CasinoRun : MonoBehaviour
 
     public bool Buy(Powerup powerup)
     {
-        var balance = PlayerBalance.Instance;
-        if (WhyNot(powerup) != null || balance == null || !balance.TrySpend(Price(powerup))) return false;
+        if (WhyNot(powerup) != null) return false;
+        Tokens -= Price(powerup);
 
         if (powerup == Powerup.LuckyCharm) CharmCharges += charmUses;
         else
@@ -532,6 +562,7 @@ public sealed class CasinoRun : MonoBehaviour
             writer.WriteValueSafe(DiedOnDay);
             writer.WriteValueSafe(startingCash);
             writer.WriteValueSafe(ReadyCount);
+            writer.WriteValueSafe(what == RunEvent.Survived ? LastAward : 0);
             writer.WriteValueSafe((byte)what);
             writer.WriteValueSafe(pay);
             messaging.SendNamedMessage(StateMessage, guest, writer, NetworkDelivery.ReliableSequenced);
@@ -554,10 +585,12 @@ public sealed class CasinoRun : MonoBehaviour
         reader.ReadValueSafe(out int diedOnDay);
         reader.ReadValueSafe(out int hostStartingCash);
         reader.ReadValueSafe(out int readyCount);
+        reader.ReadValueSafe(out int award);
         reader.ReadValueSafe(out byte what);
         reader.ReadValueSafe(out int pay);
         if (phase > (byte)RunPhase.Gathering || what > (byte)RunEvent.Gathering || float.IsNaN(timeLeft) || float.IsInfinity(timeLeft)) return;
         ReadyCount = Mathf.Clamp(readyCount, 0, CasinoMultiplayer.MaxPlayers);
+        if (what == (byte)RunEvent.Survived) LastAward = Mathf.Clamp(award, 0, 1000);
 
         // Joined a lobby whose run is already going (or already over): swap
         // hub money for run money, or back, so the pooled cash stays honest.
