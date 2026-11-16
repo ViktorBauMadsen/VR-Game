@@ -23,6 +23,20 @@ public class BettingSpot : MonoBehaviour
 
     public int ChipCount => _chips.Count;
 
+    // The betting manager of the table this spot belongs to (so a second
+    // table's wheel never resolves this table's chips).
+    RouletteBettingManager _manager;
+    public RouletteBettingManager Manager
+    {
+        get
+        {
+            if (_manager != null) return _manager;
+            var table = GetComponentInParent<RouletteTable>();
+            _manager = table != null ? table.Betting : RouletteBettingManager.Instance;
+            return _manager;
+        }
+    }
+
     public int PayoutMultiplier
     {
         get

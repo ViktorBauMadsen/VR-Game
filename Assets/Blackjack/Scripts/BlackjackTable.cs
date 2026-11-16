@@ -220,7 +220,7 @@ public class BlackjackTable : MonoBehaviour
     // payout includes the stake (0 = lost it, wager = push).
     void Finish(int payout, string headline, string dealerLine)
     {
-        if (payout > 0 && PlayerBalance.Instance != null) PlayerBalance.Instance.AddBalance(payout);
+        if (payout > 0 && PlayerBalance.Instance != null) payout = PlayerBalance.Instance.Payout(payout, _wager);
         int net = payout - _wager;
         if (net > 0) BarSounds.Play(BarSounds.Ding, transform.position + Vector3.up, 0.6f);
         if (payout == 0) ShowChips(0);

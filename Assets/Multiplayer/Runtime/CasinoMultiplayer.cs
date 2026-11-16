@@ -13,26 +13,69 @@ using UnityEngine.SceneManagement;
 
 namespace Casino.Multiplayer
 {
+    // Same-Wi-Fi multiplayer for up to four players. One player hosts, the
+    // others join (found automatically through LanDiscovery, or by IP). Every
+    // player's head and hands are sent to the host, which relays them to the
+    // other guests. Game state on top of that (the daily quota run) uses the
+    // same connection through Network.CustomMessagingManager - see CasinoRun.
+    //
+    // This object has no UI of its own; the Friends tab of CasinoMenu drives it.
     [DefaultExecutionOrder(10000)]
     public sealed class CasinoMultiplayer : MonoBehaviour
     {
-        const string PoseMessage = "Casino.Pose.v1";
+        public const int MaxPlayers = 4;
+        const string PoseMessage = "Casino.Pose.v2";
+        const string Handshake = "Casino.v2:";
         const ushort Port = 7777;
+        const int PoseBytes = 84;         // three Vector3/Quaternion pairs
+        const int TaggedPoseBytes = 92;   // + the ulong id of whose pose it is
+
+        static readonly Color[] RemoteColors =
+        {
+            new Color(1f, .65f, .2f), new Color(.45f, .9f, .4f), new Color(.9f, .4f, .85f), new Color(.95f, .9f, .3f)
+        };
+
+        public static CasinoMultiplayer Instance { get; private set; }
+
         NetworkManager network;
         UnityTransport transport;
         XROrigin rig;
         Transform head, left, right;
-        SimpleAvatar localAvatar, remoteAvatar;
+        SimpleAvatar localAvatar;
         Material avatarMaterial;
+        LanDiscovery discovery;
         float nextSend, joinStarted;
         bool joining, stopping;
-        ulong? guest;
         Vector3 originalRigPosition;
+        readonly HashSet<ulong> guests = new HashSet<ulong>();
+        readonly Dictionary<ulong, SimpleAvatar> remotes = new Dictionary<ulong, SimpleAvatar>();
+        readonly Dictionary<ulong, AvatarPose> relayPoses = new Dictionary<ulong, AvatarPose>();
+        readonly Dictionary<ulong, float> relayTimes = new Dictionary<ulong, float>();
         readonly List<Renderer> hiddenControllerRenderers = new List<Renderer>();
-        public string Status { get; private set; } = "Offline — choose Host or enter the host IP and Join.";
-        public bool Busy => joining || stopping || network.IsListening || network.ShutdownInProgress;
-        public string LocalAddresses { get; private set; }
+
+        public string Status { get; private set; } = "Offline.";
+        public string LocalAddresses { get; private set; } = "";
+        // False if the scene has no usable XR rig - nothing else here works then.
+        public bool Ready { get; private set; }
+        public bool Joining => joining;
+        public bool InSession => Ready && network.IsListening && !stopping;
+        public bool Busy => !Ready || joining || stopping || network.IsListening || network.ShutdownInProgress;
+        public bool IsHost => InSession && network.IsServer;
+        public bool IsGuest => InSession && !network.IsServer && network.IsConnectedClient;
+        public int PlayerCount => IsHost ? 1 + guests.Count : IsGuest ? Mathf.Max(2, 1 + remotes.Count) : 1;
+        public IReadOnlyCollection<ulong> GuestIds => guests;
+        public NetworkManager Network => network;
+        public LanDiscovery Discovery => discovery;
         public Transform Head => head;
+
+        // Raised right after hosting/joining starts - the moment to register
+        // named message handlers on Network.CustomMessagingManager.
+        public event Action SessionStarted;
+        public event Action SessionEnded;
+        public event Action<ulong> GuestJoined;
+        public event Action<ulong> GuestLeft;
+
+        public bool IsGuestId(ulong id) => guests.Contains(id);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Bootstrap()
@@ -49,6 +92,11 @@ namespace Casino.Multiplayer
             new GameObject("Casino Multiplayer").AddComponent<CasinoMultiplayer>();
         }
 
+        void Awake()
+        {
+            if (Instance == null) Instance = this;
+        }
+
         void Start()
         {
             rig = FindAnyObjectByType<XROrigin>();
@@ -62,6 +110,7 @@ namespace Casino.Multiplayer
             if (head == null || left == null || right == null)
             {
                 Debug.LogError("Casino multiplayer requires an XR Origin with a camera, Left Controller and Right Controller.");
+                Status = "Multiplayer unavailable: no XR rig found.";
                 enabled = false;
                 return;
             }
@@ -69,13 +118,19 @@ namespace Casino.Multiplayer
             if (avatarMaterial == null)
             {
                 Debug.LogError("Missing avatar material. Run Tools > Multiplayer > Prepare and Validate.");
+                Status = "Multiplayer unavailable: run Tools > Multiplayer > Prepare and Validate.";
                 enabled = false;
                 return;
             }
-            localAvatar = CreateAvatar(true);
+
+            // The rigged hand models (HandPoser) are the local player's hands
+            // when the scene has them; only fall back to the blocky ones if not.
+            if (FindAnyObjectByType<HandPoser>(FindObjectsInactive.Include) == null)
+                localAvatar = CreateAvatar("Your hands", new Color(.2f, .75f, 1f), true);
             foreach (var visual in rig.GetComponentsInChildren<Transform>(true).Where(t => t.name == "UniversalController"))
                 foreach (var renderer in visual.GetComponentsInChildren<Renderer>(true))
                     if (renderer.enabled) { hiddenControllerRenderers.Add(renderer); renderer.enabled = false; }
+
             // A separate root lets Netcode own its lifecycle without persisting the local rig/UI.
             var networkObject = new GameObject("Casino Network Manager");
             transport = networkObject.AddComponent<UnityTransport>();
@@ -83,35 +138,39 @@ namespace Casino.Multiplayer
             network.NetworkConfig = new NetworkConfig
             {
                 NetworkTransport = transport, EnableSceneManagement = false,
-                ConnectionApproval = true, TickRate = 30, ProtocolVersion = 1
+                ConnectionApproval = true, TickRate = 30, ProtocolVersion = 2
             };
             network.ConnectionApprovalCallback = Approve;
             network.OnClientConnectedCallback += Connected;
             network.OnClientDisconnectCallback += Disconnected;
             network.OnTransportFailure += TransportFailed;
+
+            var addresses = new List<string>();
             try
             {
-                LocalAddresses = string.Join(" / ", Dns.GetHostAddresses(Dns.GetHostName())
+                addresses.AddRange(Dns.GetHostAddresses(Dns.GetHostName())
                     .Where(a => a.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(a))
                     .Select(a => a.ToString()));
             }
-            catch (SocketException) { LocalAddresses = "Check headset Wi-Fi details for its IPv4 address"; }
-            if (string.IsNullOrEmpty(LocalAddresses)) LocalAddresses = "Check headset Wi-Fi details for its IPv4 address";
-            gameObject.AddComponent<LobbyPanel>().Initialize(this);
+            catch (SocketException) { }
+            LocalAddresses = string.Join(" / ", addresses);
+            discovery = new LanDiscovery(addresses);
+            Status = "Offline. Host a game or join a friend's.";
+            Ready = true;
         }
 
-        SimpleAvatar CreateAvatar(bool local)
+        SimpleAvatar CreateAvatar(string label, Color color, bool local)
         {
-            var avatar = new GameObject(local ? "Your hands" : "Other player").AddComponent<SimpleAvatar>();
+            var avatar = new GameObject(label).AddComponent<SimpleAvatar>();
             avatar.transform.SetParent(transform, false);
-            avatar.Initialize(avatarMaterial, local ? new Color(.2f, .75f, 1f) : new Color(1f, .65f, .2f), local);
+            avatar.Initialize(avatarMaterial, color, local);
             return avatar;
         }
 
         public void Host()
         {
             if (Busy) return;
-            guest = null;
+            guests.Clear();
             transport.SetConnectionData("127.0.0.1", Port, "0.0.0.0");
             StartSession(true);
         }
@@ -119,17 +178,17 @@ namespace Casino.Multiplayer
         public void Join(string address)
         {
             if (Busy) return;
-            if (!IPAddress.TryParse(address.Trim(), out var ip) || ip.AddressFamily != AddressFamily.InterNetwork
-                || ip.Equals(IPAddress.Any) || ip.Equals(IPAddress.Broadcast))
+            if (address == null || !IPAddress.TryParse(address.Trim(), out var ip) || ip.AddressFamily != AddressFamily.InterNetwork
+                || ip.Equals(IPAddress.Any) || ip.Equals(IPAddress.Broadcast) || address.Trim().Split('.').Length != 4)
             {
-                Status = "Enter the host's IPv4 address, for example 192.168.1.20.";
+                Status = "That is not a valid IP. It looks like 192.168.1.20.";
                 return;
             }
             transport.SetConnectionData(ip.ToString(), Port);
-            network.NetworkConfig.ConnectionData = Encoding.UTF8.GetBytes("Casino.v1:" + SceneManager.GetActiveScene().name);
+            network.NetworkConfig.ConnectionData = Encoding.UTF8.GetBytes(Handshake + SceneManager.GetActiveScene().name);
             joining = true;
             joinStarted = Time.unscaledTime;
-            Status = "Connecting to " + ip + "…";
+            Status = "Connecting to " + ip + "...";
             StartSession(false);
         }
 
@@ -138,9 +197,10 @@ namespace Casino.Multiplayer
             try
             {
                 bool started = host ? network.StartHost() : network.StartClient();
-                if (!started) { Leave(); Status = "Could not start networking. Check the log and port 7777."; return; }
+                if (!started) { Leave(); Status = "Could not start networking. Is port 7777 already in use?"; return; }
                 network.CustomMessagingManager.RegisterNamedMessageHandler(PoseMessage, ReceivePose);
-                if (host) Status = "Hosting — 1/2 players. Share your IP below.";
+                if (host) Status = HostStatus();
+                SessionStarted?.Invoke();
             }
             catch (Exception ex)
             {
@@ -150,115 +210,193 @@ namespace Casino.Multiplayer
             }
         }
 
+        string HostStatus() => "Hosting - " + (1 + guests.Count) + "/" + MaxPlayers + " players.";
+
         void Approve(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
         {
             bool isHost = request.ClientNetworkId == NetworkManager.ServerClientId;
-            bool compatible = isHost || Encoding.UTF8.GetString(request.Payload) == "Casino.v1:" + SceneManager.GetActiveScene().name;
-            response.Approved = compatible && (isHost || !guest.HasValue);
+            bool compatible = isHost || (request.Payload != null
+                && Encoding.UTF8.GetString(request.Payload) == Handshake + SceneManager.GetActiveScene().name);
+            bool room = isHost || guests.Count < MaxPlayers - 1;
+            response.Approved = compatible && room;
             response.CreatePlayerObject = false;
             response.Pending = false;
-            response.Reason = compatible ? "Lobby full (2 players maximum)." : "Game version or scene mismatch.";
-            if (response.Approved && !isHost) guest = request.ClientNetworkId;
+            response.Reason = !compatible ? "Game version mismatch - both players need the same build."
+                : "Lobby full (" + MaxPlayers + " players maximum).";
+            if (response.Approved && !isHost) guests.Add(request.ClientNetworkId);
         }
 
         void Connected(ulong id)
         {
+            if (network.IsServer)
+            {
+                Status = HostStatus();
+                if (id != NetworkManager.ServerClientId && guests.Contains(id)) GuestJoined?.Invoke(id);
+                return;
+            }
+            if (id != network.LocalClientId) return;
             joining = false;
-            if (!network.IsServer && id == network.LocalClientId)
-                rig.transform.position = originalRigPosition + rig.transform.right * 1.2f;
-            Status = network.IsHost && network.ConnectedClientsIds.Count < 2
-                ? "Hosting — 1/2 players." : "Connected — 2/2 players.";
+            // Everyone spawns on the same spot; step aside only if we are still standing on it.
+            Vector3 offset = rig.transform.position - originalRigPosition;
+            offset.y = 0f;
+            if (offset.magnitude < 1f) rig.transform.position += rig.transform.right * 1.2f;
+            Status = "Connected.";
         }
 
         void Disconnected(ulong id)
         {
-            // A rejected third player must not remove the connected guest's avatar/status.
-            if (network.IsServer && id != network.LocalClientId && id != guest) return;
-            if (guest == id) guest = null;
-            ClearRemote();
-            if (stopping) return;
             if (network.IsServer && id != network.LocalClientId)
-                Status = "Guest left — hosting, 1/2 players.";
-            else
             {
-                joining = false;
-                Status = string.IsNullOrEmpty(network.DisconnectReason)
-                    ? "Disconnected. Check Wi-Fi and the host IP, then retry."
-                    : "Disconnected: " + network.DisconnectReason;
+                // A rejected player never made it into the guest list.
+                if (!guests.Remove(id)) return;
+                RemoveRemote(id);
+                relayPoses.Remove(id);
+                relayTimes.Remove(id);
+                if (!stopping) Status = "A player left. " + HostStatus();
+                GuestLeft?.Invoke(id);
+                return;
             }
+            if (!network.IsServer && id != network.LocalClientId) { RemoveRemote(id); return; }
+
+            ClearRemotes();
+            bool wasStopping = stopping;
+            joining = false;
+            if (!wasStopping)
+                Status = string.IsNullOrEmpty(network.DisconnectReason)
+                    ? "Disconnected. Check that you are on the same Wi-Fi as the host."
+                    : "Disconnected: " + network.DisconnectReason;
+            SessionEnded?.Invoke();
         }
 
-        void TransportFailed() { Leave(); Status = "Network transport failed. Check Wi-Fi, then retry."; }
+        void TransportFailed() { Leave(); Status = "Network connection failed. Check Wi-Fi, then retry."; }
 
         public void Leave()
         {
+            if (!Ready) return;
+            bool wasInSession = network.IsListening;
             joining = false;
-            guest = null;
-            ClearRemote();
-            if (network != null && (network.IsListening || network.ShutdownInProgress))
+            guests.Clear();
+            relayPoses.Clear();
+            relayTimes.Clear();
+            ClearRemotes();
+            if (network.IsListening || network.ShutdownInProgress)
             {
                 stopping = true;
                 network.Shutdown();
             }
-            Status = "Offline — you can host or join again.";
+            Status = "Offline. Host a game or join a friend's.";
+            if (wasInSession) SessionEnded?.Invoke();
         }
 
-        void ClearRemote()
+        void RemoveRemote(ulong id)
         {
-            if (remoteAvatar != null) Destroy(remoteAvatar.gameObject);
-            remoteAvatar = null;
+            if (remotes.TryGetValue(id, out var avatar) && avatar != null) Destroy(avatar.gameObject);
+            remotes.Remove(id);
+        }
+
+        void ClearRemotes()
+        {
+            foreach (var avatar in remotes.Values)
+                if (avatar != null) Destroy(avatar.gameObject);
+            remotes.Clear();
         }
 
         void Update()
         {
+            if (!Ready) return;
             if (stopping && !network.IsListening && !network.ShutdownInProgress) stopping = false;
-            if (joining && Time.unscaledTime - joinStarted > 15f)
+            if (joining && Time.unscaledTime - joinStarted > 12f)
             {
                 Leave();
-                Status = "Timed out. Use the same private Wi-Fi/hotspot; campus Wi-Fi may block peers.";
+                Status = "Could not reach the host. Same Wi-Fi? School/guest networks often block this - try a phone hotspot.";
             }
+            discovery.Tick(IsHost, PlayerCount, network.IsListening || stopping);
         }
 
         void LateUpdate()
         {
+            if (!Ready) return;
             var pose = new AvatarPose
             {
                 HeadPosition = head.position, HeadRotation = head.rotation,
                 LeftPosition = left.position, LeftRotation = left.rotation,
                 RightPosition = right.position, RightRotation = right.rotation
             };
-            localAvatar.Apply(pose, true);
-            if (!network.IsConnectedClient || stopping || Time.unscaledTime < nextSend) return;
+            if (localAvatar != null) localAvatar.Apply(pose, true);
+            if (!network.IsListening || !network.IsConnectedClient || stopping || Time.unscaledTime < nextSend) return;
+            var messaging = network.CustomMessagingManager;
+            if (messaging == null) return;
             nextSend = Time.unscaledTime + .05f;
-            using var writer = new FastBufferWriter(128, Allocator.Temp);
-            writer.WriteNetworkSerializable(pose);
-            if (network.IsServer)
+
+            if (!network.IsServer)
             {
-                foreach (var id in network.ConnectedClientsIds)
-                    if (id != NetworkManager.ServerClientId)
-                        network.CustomMessagingManager.SendNamedMessage(PoseMessage, id, writer, NetworkDelivery.UnreliableSequenced);
+                using var writer = new FastBufferWriter(128, Allocator.Temp);
+                writer.WriteNetworkSerializable(pose);
+                messaging.SendNamedMessage(PoseMessage, NetworkManager.ServerClientId, writer, NetworkDelivery.UnreliableSequenced);
+                return;
             }
-            else network.CustomMessagingManager.SendNamedMessage(PoseMessage, NetworkManager.ServerClientId, writer, NetworkDelivery.UnreliableSequenced);
+
+            // Host: everyone gets the host's pose plus every other guest's latest one.
+            foreach (ulong guest in guests)
+            {
+                if (!network.ConnectedClients.ContainsKey(guest)) continue;
+                SendTagged(messaging, guest, NetworkManager.ServerClientId, pose);
+                foreach (var other in relayPoses)
+                    if (other.Key != guest && Time.unscaledTime - relayTimes[other.Key] < 1f)
+                        SendTagged(messaging, guest, other.Key, other.Value);
+            }
+        }
+
+        static void SendTagged(CustomMessagingManager messaging, ulong to, ulong who, AvatarPose pose)
+        {
+            using var writer = new FastBufferWriter(128, Allocator.Temp);
+            writer.WriteValueSafe(who);
+            writer.WriteNetworkSerializable(pose);
+            messaging.SendNamedMessage(PoseMessage, to, writer, NetworkDelivery.UnreliableSequenced);
         }
 
         void ReceivePose(ulong sender, FastBufferReader reader)
         {
-            if (stopping || (network.IsServer ? sender != guest : sender != NetworkManager.ServerClientId)) return;
-            // Exactly three Vector3/Quaternion pairs; reject truncated or unexpected payloads.
-            if (reader.Length - reader.Position != 84) return;
-            reader.ReadNetworkSerializable(out AvatarPose pose);
-            if (!pose.IsValid) return;
-            if (remoteAvatar == null) remoteAvatar = CreateAvatar(false);
-            remoteAvatar.Apply(pose, false);
+            if (stopping) return;
+            int remaining = reader.Length - reader.Position;
+            ulong who;
+            AvatarPose pose;
+            if (network.IsServer)
+            {
+                // Guests only ever speak for themselves.
+                if (!guests.Contains(sender) || remaining != PoseBytes) return;
+                reader.ReadNetworkSerializable(out pose);
+                if (!pose.IsValid) return;
+                who = sender;
+                relayPoses[who] = pose;
+                relayTimes[who] = Time.unscaledTime;
+            }
+            else
+            {
+                if (sender != NetworkManager.ServerClientId || remaining != TaggedPoseBytes) return;
+                reader.ReadValueSafe(out who);
+                reader.ReadNetworkSerializable(out pose);
+                if (!pose.IsValid || who == network.LocalClientId) return;
+            }
+
+            if (!remotes.TryGetValue(who, out var avatar) || avatar == null)
+            {
+                if (remotes.Count >= MaxPlayers) return;
+                avatar = CreateAvatar("Other player " + who, RemoteColors[(int)(who % (ulong)RemoteColors.Length)], false);
+                remotes[who] = avatar;
+            }
+            avatar.Apply(pose, false);
         }
 
         void OnApplicationPause(bool paused)
         {
-            if (paused && network != null) { Leave(); Status = "Headset paused — host or join again to reconnect."; }
+            if (paused && Ready && network.IsListening) { Leave(); Status = "Headset went to sleep - host or join again to reconnect."; }
         }
 
         void OnDestroy()
         {
+            if (Instance == this) Instance = null;
+            discovery?.Dispose();
             foreach (var renderer in hiddenControllerRenderers)
                 if (renderer != null) renderer.enabled = true;
             if (network == null) return;

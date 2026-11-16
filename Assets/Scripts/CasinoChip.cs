@@ -101,14 +101,16 @@ public class CasinoChip : MonoBehaviour
         _rb.angularVelocity = Vector3.zero;
         _rb.isKinematic = true;
         spot.RegisterChip(this);
-        RouletteBettingManager.Instance?.RegisterPlacedChip(this);
+        var manager = spot.Manager;
+        if (manager != null) manager.RegisterPlacedChip(this);
     }
 
     void Unplace(bool refund)
     {
         if (CurrentSpot == null) return;
         CurrentSpot.UnregisterChip(this);
-        RouletteBettingManager.Instance?.UnregisterPlacedChip(this);
+        var manager = CurrentSpot.Manager;
+        if (manager != null) manager.UnregisterPlacedChip(this);
         CurrentSpot = null;
         if (refund) PlayerBalance.Instance?.AddBalance(value);
     }

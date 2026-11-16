@@ -201,7 +201,7 @@ public class SlotMachine : MonoBehaviour
         if (tier != null)
         {
             int payout = Mathf.RoundToInt(bet * tier.payoutMultiplier);
-            PlayerBalance.Instance.AddBalance(payout);
+            payout = PlayerBalance.Instance.Payout(payout, bet);
             PlayWinSound(tier);
             Debug.Log($"SlotMachine: {tier.label}! Won {payout}.");
         }

@@ -60,7 +60,11 @@ public class Croupier : MonoBehaviour
 
     void Start()
     {
-        if (wheel == null) wheel = FindAnyObjectByType<RouletteWheel>();
+        if (wheel == null)
+        {
+            var table = GetComponentInParent<RouletteTable>();
+            wheel = table != null ? table.Wheel : FindAnyObjectByType<RouletteWheel>();
+        }
         if (wheel != null) wheel.OnResult += OnResult;
         if (speechBubble != null) speechBubble.Visible = false;
     }

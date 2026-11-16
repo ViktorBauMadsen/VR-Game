@@ -1,13 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Central bookkeeping for chips placed as bets: chips don't know about each
-// other, so this is what RouletteWheel.OnResult actually talks to. Payout
-// already includes the stake back (CasinoChip.Place spent it up front via
-// PlayerBalance.TrySpend, same convention SlotMachine uses), and every
-// placed chip - winner or loser - is destroyed once a result comes in
-// (chips are an infinite, on-demand resource from ChipDispenser, so
+// Bookkeeping for the chips placed as bets on ONE roulette table: chips don't
+// know about each other, so this is what that table's RouletteWheel.OnResult
+// actually talks to. Payout already includes the stake back (CasinoChip.Place
+// spent it up front via PlayerBalance.TrySpend, same convention SlotMachine
+// uses), and every placed chip - winner or loser - is destroyed once a result
+// comes in (chips are an infinite, on-demand resource from ChipDispenser, so
 // there's nothing to return them to - PlayerBalance is the only ledger).
+//
+// There is one of these per table. BettingSpot.Manager finds the one that
+// belongs to its own table (through the RouletteTable root); Instance is only
+// a fallback for a loose, un-combined table in the scene.
 public class RouletteBettingManager : MonoBehaviour
 {
     public static RouletteBettingManager Instance { get; private set; }
@@ -16,25 +20,47 @@ public class RouletteBettingManager : MonoBehaviour
 
     readonly HashSet<CasinoChip> _placedChips = new HashSet<CasinoChip>();
     readonly List<CasinoChip> _resolveBuffer = new List<CasinoChip>();
+    RouletteWheel _subscribed;
+
+    public RouletteWheel Wheel
+    {
+        get => wheel;
+        set
+        {
+            wheel = value;
+            if (isActiveAndEnabled) Subscribe();
+        }
+    }
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null) Instance = this;
+        if (wheel == null)
         {
-            Destroy(gameObject);
-            return;
+            var table = GetComponentInParent<RouletteTable>();
+            if (table != null) wheel = table.GetComponentInChildren<RouletteWheel>(true);
         }
-        Instance = this;
     }
 
-    void OnEnable()
+    void OnDestroy()
     {
-        if (wheel != null) wheel.OnResult += HandleResult;
+        if (Instance == this) Instance = null;
     }
+
+    void OnEnable() => Subscribe();
 
     void OnDisable()
     {
-        if (wheel != null) wheel.OnResult -= HandleResult;
+        if (_subscribed != null) _subscribed.OnResult -= HandleResult;
+        _subscribed = null;
+    }
+
+    void Subscribe()
+    {
+        if (_subscribed == wheel) return;
+        if (_subscribed != null) _subscribed.OnResult -= HandleResult;
+        _subscribed = wheel;
+        if (_subscribed != null) _subscribed.OnResult += HandleResult;
     }
 
     public void RegisterPlacedChip(CasinoChip chip) => _placedChips.Add(chip);
@@ -53,7 +79,7 @@ public class RouletteBettingManager : MonoBehaviour
             if (chip == null) continue;
 
             if (chip.CurrentSpot != null && chip.CurrentSpot.Wins(number) && PlayerBalance.Instance != null)
-                PlayerBalance.Instance.AddBalance(chip.Value * chip.CurrentSpot.PayoutMultiplier);
+                PlayerBalance.Instance.Payout(chip.Value * chip.CurrentSpot.PayoutMultiplier, chip.Value);
 
             chip.ResolveAndDestroy();
         }
