@@ -225,6 +225,9 @@ namespace Casino.Multiplayer
                 bool started = host ? network.StartHost() : network.StartClient();
                 if (!started) { Leave(); Status = "Could not start networking. Is port 7777 already in use?"; return; }
                 network.CustomMessagingManager.RegisterNamedMessageHandler(PoseMessage, ReceivePose);
+                network.CustomMessagingManager.RegisterNamedMessageHandler(LookMessage, ReceiveLook);
+                looks.Clear();
+                nextLook = 0f;
                 if (host) Status = HostStatus();
                 SessionStarted?.Invoke();
             }
@@ -318,6 +321,7 @@ namespace Casino.Multiplayer
         {
             if (remotes.TryGetValue(id, out var avatar) && avatar != null) Destroy(avatar.gameObject);
             remotes.Remove(id);
+            looks.Remove(id);
         }
 
         void ClearRemotes()
@@ -353,6 +357,7 @@ namespace Casino.Multiplayer
             var messaging = network.CustomMessagingManager;
             if (messaging == null) return;
             nextSend = Time.unscaledTime + .05f;
+            SendLooks(messaging);
 
             if (!network.IsServer)
             {
@@ -371,6 +376,76 @@ namespace Casino.Multiplayer
                     if (other.Key != guest && Time.unscaledTime - relayTimes[other.Key] < 1f)
                         SendTagged(messaging, guest, other.Key, other.Value);
             }
+        }
+
+        // ------------------------------------------------------- wardrobe
+        // What each player chose at the mirror (AvatarCustomizer) is sent
+        // along every couple of seconds, so everyone sees everyone else's
+        // real character. It is a handful of bytes: one number per category.
+
+        const string LookMessage = "Casino.Look.v1";
+        const int MaxLookBytes = 16;
+        readonly Dictionary<ulong, byte[]> looks = new Dictionary<ulong, byte[]>();
+        AvatarCustomizer localLook;
+        float nextLook;
+
+        void SendLooks(CustomMessagingManager messaging)
+        {
+            if (Time.unscaledTime < nextLook) return;
+            nextLook = Time.unscaledTime + 2f;
+            if (localLook == null)
+                foreach (var candidate in FindObjectsByType<AvatarCustomizer>())
+                    if (!candidate.Remote) { localLook = candidate; break; }
+            byte[] mine = localLook != null ? localLook.GetSelections() : null;
+
+            if (!network.IsServer)
+            {
+                if (mine != null) SendLook(messaging, NetworkManager.ServerClientId, null, mine);
+                return;
+            }
+            foreach (ulong guest in guests)
+            {
+                if (!network.ConnectedClients.ContainsKey(guest)) continue;
+                if (mine != null) SendLook(messaging, guest, NetworkManager.ServerClientId, mine);
+                foreach (var other in looks)
+                    if (other.Key != guest) SendLook(messaging, guest, other.Key, other.Value);
+            }
+        }
+
+        // who = null when a guest reports its own look to the host.
+        static void SendLook(CustomMessagingManager messaging, ulong to, ulong? who, byte[] look)
+        {
+            if (look.Length == 0 || look.Length > MaxLookBytes) return;
+            using var writer = new FastBufferWriter(64, Allocator.Temp);
+            if (who.HasValue) writer.WriteValueSafe(who.Value);
+            writer.WriteValueSafe((byte)look.Length);
+            foreach (byte choice in look) writer.WriteValueSafe(choice);
+            messaging.SendNamedMessage(LookMessage, to, writer, NetworkDelivery.ReliableSequenced);
+        }
+
+        void ReceiveLook(ulong sender, FastBufferReader reader)
+        {
+            if (stopping) return;
+            ulong who = sender;
+            if (network.IsServer)
+            {
+                if (!guests.Contains(sender)) return;
+            }
+            else
+            {
+                if (sender != NetworkManager.ServerClientId || reader.Length - reader.Position < 9) return;
+                reader.ReadValueSafe(out who);
+                if (who == network.LocalClientId) return;
+            }
+            if (reader.Length - reader.Position < 1) return;
+            reader.ReadValueSafe(out byte count);
+            if (count == 0 || count > MaxLookBytes || reader.Length - reader.Position != count) return;
+            var look = new byte[count];
+            for (int i = 0; i < count; i++) reader.ReadValueSafe(out look[i]);
+
+            if (!looks.ContainsKey(who) && looks.Count >= MaxPlayers) return;
+            looks[who] = look;
+            if (remotes.TryGetValue(who, out var avatar) && avatar != null) avatar.SetLook(look);
         }
 
         static void SendTagged(CustomMessagingManager messaging, ulong to, ulong who, AvatarPose pose)
@@ -413,6 +488,7 @@ namespace Casino.Multiplayer
             }
             avatar.FloorY = rig.transform.position.y;
             avatar.Apply(pose, false);
+            if (looks.TryGetValue(who, out var look)) avatar.SetLook(look);
         }
 
         void OnApplicationPause(bool paused)

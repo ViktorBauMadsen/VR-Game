@@ -125,8 +125,102 @@ namespace Casino.Multiplayer
             if (hasBody) PoseBody();
         }
 
+        // ------------------------------------------------ the player's own look
+
+        PlayerAvatarBody.Rig rig;
+        AvatarCustomizer customizer;
+        GameObject custom;
+        byte[] lastLook;
+
+        // The other player's wardrobe choices arrived. The first time, the
+        // blocky stand-in body is swapped for a copy of the real character
+        // model (the same one you see of yourself in the mirror); after
+        // that only its hat, hair, colours etc. are changed.
+        public void SetLook(byte[] look)
+        {
+            if (!hasBody || look == null) return;
+            if (lastLook != null && lastLook.Length == look.Length)
+            {
+                bool same = true;
+                for (int i = 0; i < look.Length; i++) same &= lastLook[i] == look[i];
+                if (same) return;
+            }
+            if (customizer == null && !BuildCustomBody()) return; // no character model in this scene
+            lastLook = (byte[])look.Clone();
+            customizer.SetSelections(look);
+            skin.color = customizer.SkinColour; // the hands match
+        }
+
+        bool BuildCustomBody()
+        {
+            PlayerAvatarBody source = null;
+            foreach (var candidate in FindObjectsByType<PlayerAvatarBody>())
+            {
+                var theirs = candidate.GetComponent<AvatarCustomizer>();
+                if (theirs != null && !theirs.Remote && candidate.gameObject.activeInHierarchy) { source = candidate; break; }
+            }
+            if (source == null) return false;
+
+            // Copied while switched off, so the copy's scripts don't start
+            // up as "the local player" before they are told otherwise.
+            source.gameObject.SetActive(false);
+            custom = Instantiate(source.gameObject, transform);
+            source.gameObject.SetActive(true);
+            custom.name = "Character";
+
+            var body = custom.GetComponent<PlayerAvatarBody>();
+            customizer = custom.GetComponent<AvatarCustomizer>();
+            if (body == null || customizer == null)
+            {
+                DestroyImmediate(custom);
+                custom = null;
+                customizer = null;
+                return false;
+            }
+            rig = body.GetRig();
+            DestroyImmediate(body); // this copy follows the network, not the headset
+            customizer.PrepareRemote();
+            // The original hides on a layer the player's own camera skips.
+            foreach (var t in custom.GetComponentsInChildren<Transform>(true)) t.gameObject.layer = 0;
+            custom.SetActive(true);
+
+            // The stand-in body is no longer needed (the hands stay).
+            foreach (var part in new[] { torso, hipsBlock, head })
+                foreach (var r in part.GetComponentsInChildren<Renderer>(true)) r.enabled = false;
+            foreach (var group in new[] { upperArms, forearms, legs, feet })
+                foreach (var part in group) part.gameObject.SetActive(false);
+            return true;
+        }
+
+        void PoseCustomBody()
+        {
+            if (customizer != null) skin.color = customizer.SkinColour; // hands follow the skin tone
+            Quaternion headRotation = head.rotation;
+            rig.Head.SetPositionAndRotation(head.position - headRotation * rig.EyeOffset, headRotation);
+
+            yaw = Mathf.MoveTowardsAngle(yaw, head.eulerAngles.y, 300f * Time.unscaledDeltaTime);
+            Quaternion bodyRotation = Quaternion.Euler(0f, yaw, 0f);
+            rig.Body.SetPositionAndRotation(rig.Head.position - Vector3.up * rig.NeckHeight, bodyRotation);
+
+            for (int i = 0; i < 2; i++)
+            {
+                float side = i == 0 ? 1f : -1f;
+                Transform hand = i == 0 ? right : left;
+                if (rig.Shoulders[i] != null)
+                    CharacterLimbs.PoseArm(rig.UpperArms[i], rig.Forearms[i], rig.Shoulders[i].position, hand.position, bodyRotation, side, rig.ArmThickness);
+
+                if (rig.Hips[i] == null) continue;
+                Vector3 hip = rig.Hips[i].position;
+                Vector3 foot = new Vector3(hip.x, Mathf.Min(FloorY + 0.06f, hip.y - 0.1f), hip.z);
+                CharacterLimbs.Stretch(rig.Legs[i], hip, foot, rig.LegThickness);
+                if (rig.Feet[i] != null)
+                    rig.Feet[i].SetPositionAndRotation(foot + bodyRotation * new Vector3(0f, -0.02f, 0.05f), bodyRotation);
+            }
+        }
+
         void PoseBody()
         {
+            if (rig != null) { PoseCustomBody(); return; }
             // Turn toward where the head faces, but not instantly.
             yaw = Mathf.MoveTowardsAngle(yaw, head.eulerAngles.y, 300f * Time.unscaledDeltaTime);
             Quaternion bodyRotation = Quaternion.Euler(0f, yaw, 0f);

@@ -28,6 +28,57 @@ public class AvatarCustomizer : MonoBehaviour
     bool _handsTinted;
     float _nextHandSearch;
 
+    // True on the copies of the avatar that show OTHER players in
+    // multiplayer: their choices arrive over the network (SetSelections)
+    // instead of from this machine's saved preferences, and they never
+    // touch the local player's hands.
+    [NonSerialized] public bool Remote;
+
+    // Names of the option groups built at runtime (hats, beards, ties...).
+    static readonly HashSet<string> BuiltNames = new HashSet<string>();
+    byte[] _pendingLook;
+
+    public Color SkinColour => _skin != null ? _skin.color : new Color(0.9f, 0.68f, 0.55f);
+
+    // One number per category - everything needed to rebuild this look elsewhere.
+    public byte[] GetSelections()
+    {
+        var look = new byte[_categories.Count];
+        for (int i = 0; i < look.Length; i++) look[i] = (byte)_categories[i].Selected;
+        return look;
+    }
+
+    public void SetSelections(byte[] look)
+    {
+        if (look == null) return;
+        if (_categories.Count == 0) { _pendingLook = look; return; } // not built yet - applied at the end of Awake
+        for (int i = 0; i < _categories.Count && i < look.Length; i++)
+        {
+            var c = _categories[i];
+            c.Selected = Mathf.Clamp(look[i], 0, c.Options.Length - 1);
+            c.Apply(c.Selected);
+        }
+    }
+
+    // Call on a freshly cloned, still inactive copy of a Player Avatar,
+    // before it is activated: throws away the option groups copied along
+    // with it (Awake builds its own set) and marks it as a remote avatar.
+    public void PrepareRemote()
+    {
+        Remote = true;
+        foreach (string parentName in new[] { "Head", "Body" })
+        {
+            var parent = transform.Find(parentName);
+            if (parent == null) continue;
+            for (int i = parent.childCount - 1; i >= 0; i--)
+            {
+                var child = parent.GetChild(i);
+                if (BuiltNames.Contains(child.name)) DestroyImmediate(child.gameObject);
+                else if (child.name == "Hair") child.gameObject.SetActive(true);
+            }
+        }
+    }
+
     public event Action Changed;
     public int CategoryCount => _categories.Count;
     public string CategoryName(int i) => _categories[i].Name;
@@ -80,15 +131,17 @@ public class AvatarCustomizer : MonoBehaviour
         BuildCategories();
         foreach (var c in _categories)
         {
-            c.Selected = Mathf.Clamp(PlayerPrefs.GetInt("Avatar." + c.Name, c.Selected), 0, c.Options.Length - 1);
+            if (!Remote) c.Selected = Mathf.Clamp(PlayerPrefs.GetInt("Avatar." + c.Name, c.Selected), 0, c.Options.Length - 1);
             c.Apply(c.Selected);
         }
+        if (_pendingLook != null) SetSelections(_pendingLook);
+        _pendingLook = null;
     }
 
     // The hands are separate objects (so you can see them), tinted to match.
     void Update()
     {
-        if (_handsTinted || Time.unscaledTime < _nextHandSearch) return;
+        if (Remote || _handsTinted || Time.unscaledTime < _nextHandSearch) return;
         _nextHandSearch = Time.unscaledTime + 0.5f;
         var hands = FindObjectsByType<HandPoser>();
         if (hands.Length < 2) return;
@@ -317,6 +370,7 @@ public class AvatarCustomizer : MonoBehaviour
 
     Transform Group(string groupName, Transform parent, Vector3 localPosition)
     {
+        BuiltNames.Add(groupName);
         var go = new GameObject(groupName) { layer = _layer };
         go.transform.SetParent(parent, false);
         go.transform.localPosition = localPosition;

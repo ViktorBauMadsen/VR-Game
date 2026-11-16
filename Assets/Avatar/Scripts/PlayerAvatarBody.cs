@@ -32,6 +32,24 @@ public class PlayerAvatarBody : MonoBehaviour
     [SerializeField] float legThickness = 0.14f;
     [SerializeField] float maxYawDegreesPerSecond = 300f;
 
+    // The pieces of this character, for something else to pose them: a copy
+    // of the avatar is what other players see of you in multiplayer
+    // (SimpleAvatar), driven by the head and hands sent over the network.
+    public class Rig
+    {
+        public Transform Head, Body;
+        public Transform[] Shoulders, UpperArms, Forearms, Hips, Legs, Feet;
+        public float NeckHeight, ArmThickness, LegThickness;
+        public Vector3 EyeOffset;
+    }
+
+    public Rig GetRig() => new Rig
+    {
+        Head = head, Body = body, Shoulders = shoulders, UpperArms = upperArms, Forearms = forearms,
+        Hips = hips, Legs = legs, Feet = feet,
+        NeckHeight = neckHeight, ArmThickness = armThickness, LegThickness = legThickness, EyeOffset = eyeOffset,
+    };
+
     Transform _camera;
     Transform _rig;
     readonly Transform[] _wrists = new Transform[2];
