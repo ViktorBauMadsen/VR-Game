@@ -25,6 +25,8 @@ public sealed class CasinoTables : MonoBehaviour
     CasinoMultiplayer multiplayer;
     readonly List<RouletteRound> roulette = new List<RouletteRound>();
     readonly List<BlackjackTable> blackjack = new List<BlackjackTable>();
+    readonly List<SlotMachine> slots = new List<SlotMachine>();
+    const string SlotMessage = "Casino.Slot.v1";
 
     bool Connected => multiplayer != null && multiplayer.InSession;
     bool Authority => multiplayer == null || !multiplayer.IsGuest;
@@ -37,6 +39,7 @@ public sealed class CasinoTables : MonoBehaviour
         RouletteRound.Send = SendRoulette;
         BlackjackTable.Send = SendBlackjack;
         RouletteBettingManager.LocalBetChanged += SendChip;
+        SlotMachine.LocalSpinStarted += SendSlot;
     }
 
     void OnDisable()
@@ -47,6 +50,7 @@ public sealed class CasinoTables : MonoBehaviour
         RouletteRound.Send = null;
         BlackjackTable.Send = null;
         RouletteBettingManager.LocalBetChanged -= SendChip;
+        SlotMachine.LocalSpinStarted -= SendSlot;
         if (multiplayer == null) return;
         multiplayer.SessionStarted -= OnSessionStarted;
         multiplayer.GuestLeft -= OnPlayerLeft;
@@ -70,6 +74,38 @@ public sealed class CasinoTables : MonoBehaviour
         multiplayer.Register(RouletteMessage, ReceiveRoulette);
         multiplayer.Register(ChipMessage, ReceiveChip);
         multiplayer.Register(BlackjackMessage, ReceiveBlackjack);
+        multiplayer.Register(SlotMessage, ReceiveSlot);
+    }
+
+    // --------------------------------------------------------------- slots
+    // Whoever pulls a lever plays for their own money; everyone else just
+    // sees (and hears) that machine spin and land on the same result.
+
+    void SendSlot(SlotMachine machine, int tier)
+    {
+        if (!Connected) return;
+        int index = slots.IndexOf(machine);
+        if (index < 0) return;
+        using var writer = new FastBufferWriter(4, Allocator.Temp);
+        writer.WriteValueSafe((byte)index);
+        writer.WriteValueSafe((byte)(tier + 1)); // 0 = no win
+        if (multiplayer.IsHost) multiplayer.SendToGuests(SlotMessage, writer);
+        else multiplayer.SendToHost(SlotMessage, writer);
+    }
+
+    void ReceiveSlot(ulong sender, FastBufferReader reader)
+    {
+        if (!FromPeer(sender) || reader.Length - reader.Position != 2) return;
+        reader.ReadValueSafe(out byte index);
+        reader.ReadValueSafe(out byte tier);
+        if (index >= slots.Count || slots[index] == null) return;
+        slots[index].PlayRemoteSpin(tier - 1);
+
+        if (!multiplayer.IsHost) return;
+        using var writer = new FastBufferWriter(4, Allocator.Temp);
+        writer.WriteValueSafe(index);
+        writer.WriteValueSafe(tier);
+        multiplayer.SendToGuests(SlotMessage, writer, sender);
     }
 
     void OnPlayerLeft(ulong player)
@@ -93,6 +129,9 @@ public sealed class CasinoTables : MonoBehaviour
         blackjack.Clear();
         blackjack.AddRange(FindObjectsByType<BlackjackTable>());
         blackjack.Sort((a, b) => Compare(a.transform, b.transform));
+        slots.Clear();
+        slots.AddRange(FindObjectsByType<SlotMachine>());
+        slots.Sort((a, b) => Compare(a.transform, b.transform));
     }
 
     static int Compare(Transform a, Transform b)

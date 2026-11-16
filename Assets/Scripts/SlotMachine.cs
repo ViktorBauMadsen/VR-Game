@@ -9,9 +9,9 @@ public class SlotMachine : MonoBehaviour
 {
     [Header("Bet")]
     [SerializeField] int betAmount = 10; // starting bet; the player changes it with the bet panel
-    [SerializeField] int minBet = 10;
-    [SerializeField] int maxBet = 100;
-    [SerializeField] int betStep = 10;
+    // The bets the -/+ buttons step through, lowest to highest. (This
+    // replaced the old min/max/step fields, so every machine uses it.)
+    [SerializeField] int[] betLadder = { 1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000 };
     [Tooltip("Build the -/+ bet panel under the reels at runtime.")]
     [SerializeField] bool buildBetPanel = true;
     [Tooltip("Nudge the bet panel, in meters: x = right, y = up, z = toward the player.")]
@@ -70,8 +70,8 @@ public class SlotMachine : MonoBehaviour
 
     public bool IsSpinning => _isSpinning;
     public int BetAmount => betAmount;
-    public bool CanBetDown => !_isSpinning && betAmount > minBet;
-    public bool CanBetUp => !_isSpinning && betAmount < maxBet;
+    public bool CanBetDown => !_isSpinning && betAmount > betLadder[0];
+    public bool CanBetUp => !_isSpinning && betAmount < betLadder[betLadder.Length - 1];
 
     public event System.Action<int> BetChanged;      // new bet amount
     public event System.Action SpinStateChanged;     // started or finished spinning
@@ -81,7 +81,8 @@ public class SlotMachine : MonoBehaviour
     public void ChangeBet(int steps)
     {
         if (_isSpinning) return;
-        int newBet = ClampBet(betAmount + steps * betStep);
+        int rung = Mathf.Clamp(System.Array.IndexOf(betLadder, ClampBet(betAmount)) + steps, 0, betLadder.Length - 1);
+        int newBet = betLadder[rung];
         if (newBet == betAmount) return;
         betAmount = newBet;
         BetChanged?.Invoke(betAmount);
@@ -95,9 +96,12 @@ public class SlotMachine : MonoBehaviour
 
     int ClampBet(int bet)
     {
-        bet = Mathf.Clamp(bet, minBet, maxBet);
-        if (betStep > 0) bet = minBet + Mathf.RoundToInt((bet - minBet) / (float)betStep) * betStep;
-        return Mathf.Clamp(bet, minBet, maxBet);
+        // The nearest rung of the ladder.
+        if (betLadder == null || betLadder.Length == 0) betLadder = new[] { 10 };
+        int best = betLadder[0];
+        foreach (int rung in betLadder)
+            if (Mathf.Abs(rung - bet) < Mathf.Abs(best - bet)) best = rung;
+        return best;
     }
 
     void Awake()
@@ -186,6 +190,7 @@ public class SlotMachine : MonoBehaviour
 
         // Roll the outcome up front; the reels then animate onto it.
         var tier = RollOutcome();
+        LocalSpinStarted?.Invoke(this, System.Array.IndexOf(winTiers, tier));
         if (audioSource != null && spinStartSound != null) audioSource.PlayOneShot(spinStartSound);
 
         if (reels != null)
@@ -210,6 +215,38 @@ public class SlotMachine : MonoBehaviour
             Debug.Log("SlotMachine: no win this spin.");
         }
 
+        _isSpinning = false;
+        SpinStateChanged?.Invoke();
+    }
+
+    // Multiplayer: the local player pulled this machine's lever and the
+    // outcome was rolled (index into winTiers, -1 = no win). CasinoTables
+    // sends it on so the others see the same spin.
+    public static event System.Action<SlotMachine, int> LocalSpinStarted;
+
+    // Another player is spinning this machine: play the same spin and its
+    // sounds here, without touching this player's money. The machine is
+    // busy until it finishes, so two players can't pull it at once.
+    public void PlayRemoteSpin(int tierIndex)
+    {
+        if (_isSpinning) return;
+        StartCoroutine(RemoteSpin(tierIndex >= 0 && tierIndex < winTiers.Length ? winTiers[tierIndex] : null));
+    }
+
+    IEnumerator RemoteSpin(PayoutTier tier)
+    {
+        _isSpinning = true;
+        SpinStateChanged?.Invoke();
+        if (audioSource != null && spinStartSound != null) audioSource.PlayOneShot(spinStartSound);
+
+        if (reels != null)
+        {
+            reels.PlaySpin(tier);
+            yield return new WaitUntil(() => !reels.IsSpinning);
+        }
+        else yield return new WaitForSeconds(payoutDelay);
+
+        if (tier != null) PlayWinSound(tier);
         _isSpinning = false;
         SpinStateChanged?.Invoke();
     }

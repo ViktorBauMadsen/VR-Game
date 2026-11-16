@@ -151,7 +151,7 @@ public sealed class CasinoRunHud : MonoBehaviour
                 string extras = "   TOKENS " + run.Tokens + (run.Vests > 0 ? "   VEST" : "")
                     + (run.GreedToday ? "   x2 TOKENS" : "") + (run.HotCharges > 0 ? "   HOT x" + run.HotCharges : "") + (run.CharmCharges > 0 ? "   CHARM x" + run.CharmCharges : "");
                 line.text = $"DAY {run.Day}   <color=#{clockColour}>{Clock(run.TimeLeft)}</color>{extras}\n"
-                    + $"<color=#{cashColour}>{who}${run.TeamCash:N0}</color> / ${run.Quota:N0} QUOTA";
+                    + $"<color=#{cashColour}>{who}${run.TeamCash:N0}</color> / ${run.Quota:N0} QUOTA" + EventLine();
                 line.color = Color.white;
                 break;
             case RunPhase.Gathering:
@@ -168,6 +168,15 @@ public sealed class CasinoRunHud : MonoBehaviour
                 line.color = new Color(1f, 1f, 1f, 0.6f);
                 break;
         }
+    }
+
+    // "\nHAPPY HOUR" in green or red, or nothing on a quiet day.
+    string EventLine(bool withText = false)
+    {
+        if (run.TodayEvent == DayEvent.None) return "";
+        string colour = ColorUtility.ToHtmlStringRGB(CasinoRun.EventIsGood(run.TodayEvent) ? Good : Bad);
+        return $"\n<size=80%><color=#{colour}>{CasinoRun.EventTitle(run.TodayEvent)}</color>"
+            + (withText ? " - " + CasinoRun.EventText(run.TodayEvent) : "") + "</size>";
     }
 
     public static string Clock(float seconds)
@@ -260,7 +269,8 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         fade.enabled = false;
         yield return Announce("PRESS THE DOOR WHEN YOU'RE READY\n"
-            + $"<size=60%>DAY {run.Day} QUOTA ${run.Quota:N0}  -  THE CLOCK STARTS WHEN EVERYONE IS IN</size>", Gold, 6f);
+            + $"<size=60%>DAY {run.Day} QUOTA ${run.Quota:N0}  -  THE CLOCK STARTS WHEN EVERYONE IS IN</size>"
+            + (run.TodayEvent != DayEvent.None ? $"<size=75%>{EventLine(true)}</size>" : ""), Gold, run.TodayEvent != DayEvent.None ? 9f : 6f);
     }
 
     IEnumerator VestHit(string text)
@@ -307,9 +317,16 @@ public sealed class CasinoRunHud : MonoBehaviour
         MafiaHit.Dismiss();
 
         string days = daysSurvived == 1 ? "1 DAY" : daysSurvived + " DAYS";
-        banner.text = $"THE FAMILY SENDS ITS REGARDS\n<size=60%>YOU LASTED {days}.\nOpen the menu (Y) to try again.</size>";
+        // The end screen: how the run went, on the black.
+        string top = run.Players > 1 ? $"\nTOP EARNER: {(run.TopEarnerIsMe ? "YOU" : "PLAYER " + (run.TopEarner + 1))}" : "";
+        banner.text = $"THE FAMILY SENDS ITS REGARDS\n<size=60%>YOU LASTED {days}</size>\n"
+            + $"<size=45%><color=#FFFFFF>BIGGEST WIN  ${run.StatBiggestWin:N0}\n"
+            + $"TOTAL WINNINGS  ${run.StatWinnings:N0}  ({run.StatWins} WINS)\n"
+            + $"MOST CASH HELD  ${run.StatPeakCash:N0}\n"
+            + $"TOKENS EARNED  {run.StatTokensEarned}    POWERUPS BOUGHT  {run.StatPowerupsBought}{top}</color>\n"
+            + "Open the menu (Y) to try again.</size>";
         banner.color = Bad;
-        yield return new WaitForSecondsRealtime(5f);
+        yield return new WaitForSecondsRealtime(9f);
 
         for (float t = 0f; t < 1.5f; t += Time.unscaledDeltaTime)
         {

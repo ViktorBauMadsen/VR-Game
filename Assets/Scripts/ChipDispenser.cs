@@ -17,6 +17,11 @@ public class ChipDispenser : MonoBehaviour
     [SerializeField] CasinoChip chipPrefab;
     [SerializeField] Transform spawnPoint; // defaults to this transform
 
+    public CasinoChip ChipPrefab => chipPrefab;
+
+    // Point this pocket at a different chip (used for pockets made in code).
+    public void Configure(CasinoChip prefab) => chipPrefab = prefab;
+
     XRSimpleInteractable _interactable;
     XRInteractionManager _manager;
 
@@ -60,6 +65,7 @@ public class ChipDispenser : MonoBehaviour
         }
 
         var chip = Instantiate(chipPrefab, spawnPoint.position, spawnPoint.rotation);
+        chip.gameObject.SetActive(true); // a chip made in code is kept switched off as a template
         // Unconditional: a just-Instantiated interactable isn't in the
         // interactor's per-frame computed valid-targets list yet, so the
         // plain (checked) SelectEnter would be silently ignored.

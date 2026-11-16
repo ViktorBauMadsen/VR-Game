@@ -75,6 +75,8 @@ public class RunEntrance : MonoBehaviour
                 + $"\n<size=50%>{run.ReadyCount} / {run.Players} READY   -   DAY {run.Day} QUOTA ${run.Quota:N0}</size>";
         else
             text = $"<color=#FFD24A>DAY {run.Day}</color>\n<size=50%>QUOTA ${run.Quota:N0}</size>";
+        if (run != null && run.TodayEvent != DayEvent.None && (run.Phase == RunPhase.Gathering || run.Phase == RunPhase.Running))
+            text += $"\n<size=42%><color={(CasinoRun.EventIsGood(run.TodayEvent) ? "#5CFF7A" : "#FF6A5C")}>TODAY: {CasinoRun.EventTitle(run.TodayEvent)}</color></size>";
         if (text == _shown) return;
         _shown = text;
         sign.SetText(text);

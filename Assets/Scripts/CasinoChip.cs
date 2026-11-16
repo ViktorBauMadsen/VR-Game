@@ -23,6 +23,9 @@ public class CasinoChip : MonoBehaviour
     readonly RaycastHit[] _hitBuffer = new RaycastHit[8];
 
     public int Value => value;
+
+    // For chips made in code (the 5K chip is a recoloured copy of the 100).
+    public void SetValue(int newValue) => value = Mathf.Max(1, newValue);
     public BettingSpot CurrentSpot { get; private set; }
 
     void Awake()

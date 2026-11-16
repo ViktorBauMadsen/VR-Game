@@ -58,7 +58,7 @@ public class PlayerBalance : MonoBehaviour
         if (payout <= 0) return 0;
         int profit = payout - stake;
         if (profit > 0 && WinningsModifier != null)
-            payout = stake + Mathf.Max(profit, WinningsModifier(profit));
+            payout = stake + Mathf.Max(0, WinningsModifier(profit)); // may be more or less, never a loss
         AddBalance(payout);
         return payout;
     }

@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 public enum RunPhase : byte { FreePlay, Running, Dead, Gathering }
 public enum Powerup : byte { LuckyCharm, Bribe, Stall, Vest, Greed, PocketMoney, TaxDodge, HotStreak }
 public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandoned, Gathering }
+// The twist of the day - picked at random by the host, good or bad.
+public enum DayEvent : byte { None, HappyHour, EarlyCollector, LongDay, GenerousBoss, Shakedown, TokenRain, TightTables, TaxDay }
 
 // The game loop on top of the casino: you owe the family money.
 //
@@ -36,9 +38,10 @@ public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandone
 [DefaultExecutionOrder(10010)]
 public sealed class CasinoRun : MonoBehaviour
 {
-    const string StateMessage = "Casino.Run.v4", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
+    const int DayEventCount = 9;
+    const string StateMessage = "Casino.Run.v5", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
     const string RerollMessage = "Casino.Reroll.v1";
-    const int StateBytes = 55;
+    const int StateBytes = 57;
     public const int PowerupCount = 8;
     // How many different powerups the shop stocks each day.
     public const int OfferSize = 3;
@@ -119,7 +122,56 @@ public sealed class CasinoRun : MonoBehaviour
     public Powerup[] Offer { get; } = { Powerup.LuckyCharm, Powerup.Bribe, Powerup.Stall };
     public int RerollCount { get; private set; }
     public int RerollPrice => 1 << Mathf.Min(RerollCount, 10);
-    public int CollectorTake => TaxDodgeToday ? 0 : Mathf.RoundToInt(Quota * collectorCut);
+    public int CollectorTake => TaxDodgeToday ? 0 : Mathf.RoundToInt(Quota * collectorCut * (TodayEvent == DayEvent.TaxDay ? 2f : 1f));
+
+    // Today's random twist (none on day 1).
+    public DayEvent TodayEvent { get; private set; }
+
+    // This player's numbers for the run, for the end screen.
+    public int StatBiggestWin { get; private set; }
+    public int StatWinnings { get; private set; }
+    public int StatWins { get; private set; }
+    public int StatTokensEarned { get; private set; }
+    public int StatPowerupsBought { get; private set; }
+    public int StatPeakCash { get; private set; }
+    // Who was holding the most cash across the run's collections (host = 0).
+    public ulong TopEarner { get; private set; }
+    public bool TopEarnerIsMe => multiplayer == null || TopEarner == multiplayer.LocalId;
+
+    public static string EventTitle(DayEvent e)
+    {
+        switch (e)
+        {
+            case DayEvent.HappyHour: return "HAPPY HOUR";
+            case DayEvent.EarlyCollector: return "THE COLLECTOR IS EARLY";
+            case DayEvent.LongDay: return "SLOW DAY";
+            case DayEvent.GenerousBoss: return "THE BOSS IS IN A GOOD MOOD";
+            case DayEvent.Shakedown: return "SHAKEDOWN";
+            case DayEvent.TokenRain: return "TOKEN BONUS";
+            case DayEvent.TightTables: return "TIGHT TABLES";
+            case DayEvent.TaxDay: return "TAX DAY";
+            default: return "";
+        }
+    }
+
+    public static string EventText(DayEvent e)
+    {
+        switch (e)
+        {
+            case DayEvent.HappyHour: return "Every win pays 25% extra profit today.";
+            case DayEvent.EarlyCollector: return "You only get 60% of the usual time today.";
+            case DayEvent.LongDay: return "You get 50% more time today.";
+            case DayEvent.GenerousBoss: return "Today's quota is 15% lower.";
+            case DayEvent.Shakedown: return "Today's quota is 20% higher.";
+            case DayEvent.TokenRain: return "Make the quota today for 2 extra tokens each.";
+            case DayEvent.TightTables: return "Every win pays 20% less profit today.";
+            case DayEvent.TaxDay: return "The collector takes a double cut today.";
+            default: return "";
+        }
+    }
+
+    public static bool EventIsGood(DayEvent e) =>
+        e == DayEvent.HappyHour || e == DayEvent.LongDay || e == DayEvent.GenerousBoss || e == DayEvent.TokenRain;
     public float DayLength => dayLengthSeconds;
 
     // True when this machine decides what happens (solo, or the host).
@@ -131,6 +183,7 @@ public sealed class CasinoRun : MonoBehaviour
     CasinoMultiplayer multiplayer;
     readonly Dictionary<ulong, int> guestBalances = new Dictionary<ulong, int>();
     readonly HashSet<ulong> ready = new HashSet<ulong>();
+    readonly Dictionary<ulong, int> carried = new Dictionary<ulong, int>();
     float nextSync;
     bool hubCashGiven, gathered, pocketMoneyToday;
 
@@ -182,6 +235,8 @@ public sealed class CasinoRun : MonoBehaviour
             hubCashGiven = true;
             if (Phase != RunPhase.Running) balance.SetBalance(hubCash);
         }
+
+        if (Phase == RunPhase.Running) StatPeakCash = Mathf.Max(StatPeakCash, balance.Balance);
 
         if (Authority)
         {
@@ -275,6 +330,17 @@ public sealed class CasinoRun : MonoBehaviour
         Players = 1 + (multiplayer != null && multiplayer.IsHost ? multiplayer.GuestIds.Count : 0);
         Quota = QuotaFor(Day, Players);
         TimeLeft = dayLengthSeconds;
+
+        // Today's twist: nothing on day 1, and one day in four stays quiet.
+        TodayEvent = Day <= 1 || UnityEngine.Random.value < 0.25f
+            ? DayEvent.None : (DayEvent)UnityEngine.Random.Range(1, DayEventCount);
+        switch (TodayEvent)
+        {
+            case DayEvent.EarlyCollector: TimeLeft *= 0.6f; break;
+            case DayEvent.LongDay: TimeLeft *= 1.5f; break;
+            case DayEvent.GenerousBoss: Quota = RoundTo(Quota * 0.85f, 50); break;
+            case DayEvent.Shakedown: Quota = RoundTo(Quota * 1.2f, 50); break;
+        }
         BribedToday = false;
         StallsToday = 0;
         GreedToday = false;
@@ -380,7 +446,16 @@ public sealed class CasinoRun : MonoBehaviour
         }
 
         if (!paid) Vests--;
-        LastAward = TokensFor(total, Quota) * (GreedToday ? 2 : 1); // 0 when the vest had to save you
+        // 0 when the vest had to save you.
+        LastAward = (TokensFor(total, Quota) + (paid && TodayEvent == DayEvent.TokenRain ? 2 : 0)) * (GreedToday ? 2 : 1);
+        // For the end screen: who was carrying the team's money.
+        carried.TryGetValue(0UL, out int hostCarried);
+        carried[0UL] = hostCarried + mine;
+        foreach (var pair in guestBalances)
+        {
+            carried.TryGetValue(pair.Key, out int guestCarried);
+            carried[pair.Key] = guestCarried + pair.Value;
+        }
         int take = Mathf.Min(total, CollectorTake);
         var shares = new Dictionary<ulong, int>();
         foreach (var pair in guestBalances)
@@ -404,6 +479,20 @@ public sealed class CasinoRun : MonoBehaviour
 
     void Die()
     {
+        // Count the final day's cash too, then name whoever carried the most.
+        var wallet = PlayerBalance.Instance;
+        carried.TryGetValue(0UL, out int hostCarried);
+        carried[0UL] = hostCarried + (wallet != null ? wallet.Balance : 0);
+        foreach (var pair in guestBalances)
+        {
+            carried.TryGetValue(pair.Key, out int guestCarried);
+            carried[pair.Key] = guestCarried + pair.Value;
+        }
+        int most = -1;
+        foreach (var pair in carried)
+            if (pair.Value > most) { most = pair.Value; TopEarner = pair.Key; }
+        carried.Clear();
+
         DiedOnDay = Day;
         Phase = RunPhase.Dead;
         SendStateToAll(RunEvent.Dead, null);
@@ -427,6 +516,8 @@ public sealed class CasinoRun : MonoBehaviour
         if (what != RunEvent.None && !(what == RunEvent.Started && gathered)) pocketMoneyToday = false;
         if (what == RunEvent.Gathering || what == RunEvent.Dead || what == RunEvent.Abandoned
             || (what == RunEvent.Started && !gathered)) HotCharges = 0;
+        if (what == RunEvent.Gathering || (what == RunEvent.Started && !gathered)) ResetStats();
+        if (what == RunEvent.Survived) StatTokensEarned += LastAward;
         switch (what)
         {
             case RunEvent.Gathering:
@@ -616,6 +707,7 @@ public sealed class CasinoRun : MonoBehaviour
     {
         if (WhyNot(powerup) != null) return false;
         Tokens -= Price(powerup);
+        StatPowerupsBought++;
 
         if (powerup == Powerup.LuckyCharm) CharmCharges += charmUses;
         else if (powerup == Powerup.HotStreak) HotCharges += hotStreakUses;
@@ -660,17 +752,33 @@ public sealed class CasinoRun : MonoBehaviour
     }
 
     // Hot Streak is used up first (it is the bigger bonus), then the charm.
+    // Then today's event has its say, and the win goes into the run's stats.
     int BoostWinnings(int profit)
     {
         if (Phase != RunPhase.Running) return profit;
         if (HotCharges > 0)
         {
             HotCharges--;
-            return profit * 2;
+            profit *= 2;
         }
-        if (CharmCharges <= 0) return profit;
-        CharmCharges--;
-        return profit + Mathf.RoundToInt(profit * charmBonus);
+        else if (CharmCharges > 0)
+        {
+            CharmCharges--;
+            profit += Mathf.RoundToInt(profit * charmBonus);
+        }
+        if (TodayEvent == DayEvent.HappyHour) profit += Mathf.RoundToInt(profit * 0.25f);
+        else if (TodayEvent == DayEvent.TightTables) profit -= Mathf.RoundToInt(profit * 0.2f);
+
+        StatWins++;
+        StatWinnings += profit;
+        StatBiggestWin = Mathf.Max(StatBiggestWin, profit);
+        return profit;
+    }
+
+    void ResetStats()
+    {
+        StatBiggestWin = StatWinnings = StatWins = StatTokensEarned = StatPowerupsBought = StatPeakCash = 0;
+        carried.Clear();
     }
 
     static int RoundTo(float value, int step) => Mathf.Max(step, Mathf.RoundToInt(value / step) * step);
@@ -746,6 +854,8 @@ public sealed class CasinoRun : MonoBehaviour
             writer.WriteValueSafe((byte)Offer[1]);
             writer.WriteValueSafe((byte)Offer[2]);
             writer.WriteValueSafe((byte)Mathf.Min(RerollCount, 255));
+            writer.WriteValueSafe((byte)TodayEvent);
+            writer.WriteValueSafe((byte)Mathf.Min(TopEarner, 255UL));
             writer.WriteValueSafe(StallsToday);
             writer.WriteValueSafe(DiedOnDay);
             writer.WriteValueSafe(startingCash);
@@ -773,6 +883,8 @@ public sealed class CasinoRun : MonoBehaviour
         reader.ReadValueSafe(out byte offer1);
         reader.ReadValueSafe(out byte offer2);
         reader.ReadValueSafe(out byte rerolls);
+        reader.ReadValueSafe(out byte dayEvent);
+        reader.ReadValueSafe(out byte topEarner);
         reader.ReadValueSafe(out int stalls);
         reader.ReadValueSafe(out int diedOnDay);
         reader.ReadValueSafe(out int hostStartingCash);
@@ -812,6 +924,8 @@ public sealed class CasinoRun : MonoBehaviour
             Offer[2] = (Powerup)offer2;
         }
         RerollCount = rerolls;
+        TodayEvent = dayEvent < DayEventCount ? (DayEvent)dayEvent : DayEvent.None;
+        TopEarner = topEarner;
         StallsToday = Mathf.Clamp(stalls, 0, 99);
         DiedOnDay = Mathf.Max(0, diedOnDay);
         startingCash = Mathf.Clamp(hostStartingCash, 0, 1000000);

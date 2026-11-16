@@ -55,7 +55,9 @@ public class BlackjackTable : MonoBehaviour
     [SerializeField] Material cardMaterial;
     [SerializeField] Material chipMaterial;
 
-    [SerializeField] int[] bets = { 10, 20, 50, 100, 200, 500 };
+    // (Renamed from "bets" so every table picked up the new, higher ladder.)
+    [SerializeField] int[] betLadder = { 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000 };
+    int[] bets => betLadder;
     [SerializeField] int startingBetIndex = 2;
     [SerializeField] float cardSpacing = 0.095f;
     [SerializeField] float dealSeconds = 0.3f;

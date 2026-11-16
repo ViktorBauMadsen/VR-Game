@@ -131,7 +131,7 @@ public sealed class CasinoMenu : MonoBehaviour
     {
         var mp = Multiplayer;
         builder.Clear();
-        builder.Append(tab).Append(keypad).Append(run.Phase).Append(run.Authority).Append(run.Day);
+        builder.Append(tab).Append(keypad).Append(run.Phase).Append(run.Authority).Append(run.Day).Append(run.TodayEvent);
         switch (tab)
         {
             case Tab.Run:
@@ -220,7 +220,8 @@ public sealed class CasinoMenu : MonoBehaviour
                     + (run.TeamCash >= run.Quota ? "Pay now: +" + run.TokensFor(run.TeamCash, run.Quota) + " tokens   " : "")
                     + (run.Vests > 0 ? "Vest on   " : "") + (run.CharmCharges > 0 ? "Lucky charm x" + run.CharmCharges : ""));
 
-                surface.Text($"When the clock hits zero the collector checks your cash. Make the quota and he takes ${run.CollectorTake:N0} - "
+                surface.Text((run.TodayEvent != DayEvent.None ? EventNote().TrimStart('\n') + "\n" : "")
+                    + $"When the clock hits zero the collector checks your cash. Make the quota and he takes ${run.CollectorTake:N0} - "
                     + "and the further over the quota you are, the more tokens you earn for the SHOP. Come up short and it's lights out.",
                     Left + 20f, Top + 495f, Full - 40f, 170f, 30f, Dim);
 
@@ -239,7 +240,7 @@ public sealed class CasinoMenu : MonoBehaviour
                 surface.Text("AT THE DOOR", Left, Top + 30f, Full, 100f, 80f, Gold, TextAlignmentOptions.Center, true);
                 Live(surface.Text("", Left, Top + 150f, Full, 80f, 56f, Color.white, TextAlignmentOptions.Center, true),
                     () => run.ReadyCount + " / " + run.Players + " READY");
-                surface.Text($"Day {run.Day} quota: ${run.Quota:N0}\n\nSpend your tokens at the Token Stall, then everyone presses the casino door "
+                surface.Text($"Day {run.Day} quota: ${run.Quota:N0}{EventNote()}\n\nSpend your tokens at the Token Stall, then everyone presses the casino door "
                     + "(point at it and squeeze grip). When all of you have, the doors open and the clock starts.",
                     Left + 30f, Top + 250f, Full - 60f, 200f, 30f, Dim);
                 if (run.Authority && run.Day <= 1)
@@ -255,12 +256,30 @@ public sealed class CasinoMenu : MonoBehaviour
                 surface.Text("YOU GOT WHACKED", Left, Top + 50f, Full, 110f, 84f, BadText, TextAlignmentOptions.Center, true);
                 surface.Text($"The quota on day {run.DiedOnDay} was too much.\nYou lasted {days} day{(days == 1 ? "" : "s")}.   Best: {run.BestDay}",
                     Left, Top + 190f, Full, 160f, 40f, Color.white);
+
+                // How the run went.
+                surface.Box(Left, Top + 440f, Full, 330f, Card);
+                string[] names = { "Biggest win", "Total winnings", "Most cash held", "Tokens earned", "Powerups bought" };
+                string[] values =
+                {
+                    "$" + run.StatBiggestWin.ToString("N0"), "$" + run.StatWinnings.ToString("N0") + "  (" + run.StatWins + " wins)",
+                    "$" + run.StatPeakCash.ToString("N0"), run.StatTokensEarned.ToString(), run.StatPowerupsBought.ToString(),
+                };
+                for (int i = 0; i < names.Length; i++)
+                {
+                    surface.Text(names[i], Left + 40f, Top + 458f + i * 50f, 400f, 46f, 32f, Dim, TextAlignmentOptions.Left);
+                    surface.Text(values[i], Left + 440f, Top + 458f + i * 50f, Full - 480f, 46f, 32f, Color.white, TextAlignmentOptions.Right, true);
+                }
+                if (run.Players > 1)
+                    surface.Text("Top earner: " + (run.TopEarnerIsMe ? "YOU" : "Player " + (run.TopEarner + 1)),
+                        Left + 40f, Top + 712f, Full - 80f, 46f, 34f, Gold, TextAlignmentOptions.Center, true);
+
                 if (run.Authority)
                 {
-                    surface.Button("TRY AGAIN", Left, Top + 460f, Full, 130f, Green, run.StartRun, true, 48f);
-                    surface.Button("BACK TO THE HUB", Left, Top + 615f, Full, 90f, Grey, run.Abandon);
+                    surface.Button("TRY AGAIN", Left, Top + 795f, Full * 0.6f, 120f, Green, run.StartRun, true, 44f);
+                    surface.Button("HUB", Left + Full * 0.6f + 20f, Top + 795f, Full * 0.4f - 20f, 120f, Grey, run.Abandon);
                 }
-                else surface.Text("Waiting for the host to start again...", Left, Top + 470f, Full, 80f, 36f, Dim);
+                else surface.Text("Waiting for the host to start again...", Left, Top + 800f, Full, 80f, 36f, Dim);
                 break;
             }
             default:
@@ -399,6 +418,14 @@ public sealed class CasinoMenu : MonoBehaviour
             keypad = false;
         }, mp != null && mp.Ready && !mp.Busy, 46f);
         surface.Button("BACK", Left + Full * 0.62f + 20f, Top + 700f, Full * 0.38f - 20f, 120f, Grey, () => keypad = false);
+    }
+
+    // Today's event as a coloured line ("\nHAPPY HOUR: ..."), or nothing.
+    string EventNote()
+    {
+        if (run.TodayEvent == DayEvent.None) return "";
+        string colour = CasinoRun.EventIsGood(run.TodayEvent) ? "#5CFF7A" : "#FF6A5C";
+        return $"\n<color={colour}>{CasinoRun.EventTitle(run.TodayEvent)}:</color> {CasinoRun.EventText(run.TodayEvent)}";
     }
 
     // "192.168.1.20 / 10.0.0.5" -> "192.168.1." so only the last number needs typing.
