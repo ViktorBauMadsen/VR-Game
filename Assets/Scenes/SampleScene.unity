@@ -8656,9 +8656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
@@ -15321,7 +15319,7 @@ MonoBehaviour:
   betStack: {fileID: 1596671747}
   cardMaterial: {fileID: 2100000, guid: 79e9913775c2a654495c51ce1e0c5c64, type: 2}
   chipMaterial: {fileID: 2100000, guid: 4901d6cbad3e9f945acdeab6206662bf, type: 2}
-  bets: 0a000000140000003200000064000000c8000000f4010000i
+  betLadder: 0a000000190000003200000064000000fa000000f4010000e8030000c40900008813000010270000i
   startingBetIndex: 2
   cardSpacing: 0.095
   dealSeconds: 0.3
@@ -30394,9 +30392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
@@ -36118,7 +36114,7 @@ MonoBehaviour:
   betStack: {fileID: 2057341559}
   cardMaterial: {fileID: 2100000, guid: 79e9913775c2a654495c51ce1e0c5c64, type: 2}
   chipMaterial: {fileID: 2100000, guid: 4901d6cbad3e9f945acdeab6206662bf, type: 2}
-  bets: 0a000000140000003200000064000000c8000000f4010000i
+  betLadder: 0a000000190000003200000064000000fa000000f4010000e8030000c40900008813000010270000i
   startingBetIndex: 2
   cardSpacing: 0.095
   dealSeconds: 0.3
@@ -47364,7 +47360,7 @@ Transform:
   m_GameObject: {fileID: 1100793122}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5595795, y: -4.3928623, z: 5.8747907}
+  m_LocalPosition: {x: -0.5595795, y: -4.3928623, z: 6.076}
   m_LocalScale: {x: 0.75608647, y: 0.75608647, z: 0.75608647}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54786,9 +54782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
@@ -59394,9 +59388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
@@ -64414,9 +64406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
@@ -75049,7 +75039,7 @@ MonoBehaviour:
   betStack: {fileID: 337180230}
   cardMaterial: {fileID: 2100000, guid: 79e9913775c2a654495c51ce1e0c5c64, type: 2}
   chipMaterial: {fileID: 2100000, guid: 4901d6cbad3e9f945acdeab6206662bf, type: 2}
-  bets: 0a000000140000003200000064000000c8000000f4010000i
+  betLadder: 0a000000190000003200000064000000fa000000f4010000e8030000c40900008813000010270000i
   startingBetIndex: 2
   cardSpacing: 0.095
   dealSeconds: 0.3
@@ -87009,9 +86999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
@@ -91264,9 +91252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
   betAmount: 50
-  minBet: 10
-  maxBet: 100
-  betStep: 10
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
   buildBetPanel: 1
   betPanelOffset: {x: 0, y: 0, z: 0}
   payoutDelay: 0.5
