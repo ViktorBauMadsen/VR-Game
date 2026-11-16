@@ -64,45 +64,60 @@ public static class SetupDarts
         boardCollider.center = new Vector3(0f, 0f, -0.02f);
         boardCollider.size = new Vector3(0.68f, 0.68f, 0.04f);
 
-        // ----- Scoreboard above
+        // ----- The menu, to the player's right of the board (-X): the 301
+        // scoreboard, the dart holder under it, and a row of buttons.
+        const float menuX = -1.0f;
         var dark = new Color(0.03f, 0.05f, 0.04f);
-        var score = SetupAvatar.TextQuad("Scoreboard", r, "DARTS", Color.white, dark, new Vector2Int(1024, 512));
-        score.transform.localPosition = new Vector3(0f, BullHeight + 0.82f, 0.05f);
-        score.transform.localRotation = Quaternion.LookRotation(Vector3.back, Vector3.up); // a Quad shows on its -Z side
-        score.transform.localScale = new Vector3(0.9f, 0.45f, 1f);
-        SetupAvatar.Box("Scoreboard Frame", r, gold, new Vector3(0f, BullHeight + 0.82f, 0.025f), new Vector3(0.98f, 0.53f, 0.04f), false);
+        var facing = Quaternion.LookRotation(Vector3.back, Vector3.up); // a Quad shows on its -Z side
+        var score = SetupAvatar.TextQuad("Scoreboard", r, "301", Color.white, dark, new Vector2Int(768, 896));
+        score.transform.localPosition = new Vector3(menuX, BullHeight + 0.05f, 0.05f);
+        score.transform.localRotation = facing;
+        score.transform.localScale = new Vector3(0.66f, 0.77f, 1f);
+        SetupAvatar.Box("Scoreboard Frame", r, gold, new Vector3(menuX, BullHeight + 0.05f, 0.025f), new Vector3(0.74f, 0.85f, 0.04f), false);
 
-        // ----- Holder with three darts, to the player's right of the board (-X), points down
-        var holder = SetupAvatar.Box("Dart Holder", r, wood, new Vector3(-0.8f, 1.15f, 0.12f), new Vector3(0.3f, 0.08f, 0.2f), true);
+        // Holder with three darts, points down.
+        const float holderY = 1.15f;
+        SetupAvatar.Box("Dart Holder", r, wood, new Vector3(menuX, holderY, 0.12f), new Vector3(0.3f, 0.08f, 0.2f), true);
         Color[] flights = { new Color(0.8f, 0.1f, 0.12f), new Color(0.1f, 0.35f, 0.85f), new Color(0.95f, 0.75f, 0.1f) };
         var darts = new Dart[flights.Length];
         for (int i = 0; i < darts.Length; i++)
-            darts[i] = BuildDart(r, i, new Vector3(-0.8f + (i - 1) * 0.09f, 1.15f + 0.04f + 0.085f, 0.12f), steel, black,
+            darts[i] = BuildDart(r, i, new Vector3(menuX + (i - 1) * 0.09f, holderY + 0.04f + 0.085f, 0.12f), steel, black,
                 SetupAvatar.Lit("Dart Flight " + (i + 1), flights[i], 0.4f));
 
-        // ----- "Bring the darts back" button under the holder
-        var station = SetupAvatar.Group("Return Button", r);
-        station.localPosition = new Vector3(-0.8f, 0.95f, 0.1f);
-        SetupAvatar.Box("Plate", station, wood, Vector3.zero, new Vector3(0.22f, 0.22f, 0.04f), false);
-        var button = new GameObject("Button");
-        button.transform.SetParent(station, false);
-        button.transform.localPosition = new Vector3(0f, 0f, 0.03f);
-        var box = button.AddComponent<BoxCollider>();
-        box.size = new Vector3(0.14f, 0.14f, 0.06f);
-        var cap = SetupAvatar.Part("Cap", PrimitiveType.Cylinder, button.transform, SetupAvatar.Lit("Dart Button", new Color(0.8f, 0.15f, 0.12f), 0.7f),
-            Vector3.zero, new Vector3(0.12f, 0.015f, 0.12f));
-        cap.localRotation = Quaternion.Euler(90f, 0f, 0f);
-        var label = SetupAvatar.TextQuad("Label", station, "DARTS BACK", Color.white, dark, new Vector2Int(384, 96));
-        label.transform.localPosition = new Vector3(0f, -0.16f, 0.022f);
-        label.transform.localRotation = Quaternion.LookRotation(Vector3.back, Vector3.up);
-        label.transform.localScale = new Vector3(0.24f, 0.06f, 1f);
+        // Buttons, left to right as the player sees them (+X to -X). The
+        // board tells them apart by the station's name.
+        (string station, string label, Color colour)[] buttons =
+        {
+            ("Add Player Button", "+ PLAYER", new Color(0.15f, 0.7f, 0.25f)),
+            ("Remove Player Button", "- PLAYER", new Color(0.5f, 0.5f, 0.55f)),
+            ("New Game Button", "NEW GAME", new Color(0.95f, 0.7f, 0.15f)),
+            ("Return Button", "DARTS BACK", new Color(0.8f, 0.15f, 0.12f)),
+        };
+        SetupAvatar.Box("Button Board", r, wood, new Vector3(menuX, 0.95f, 0.02f), new Vector3(0.78f, 0.3f, 0.04f), false);
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            var station = SetupAvatar.Group(buttons[i].station, r);
+            station.localPosition = new Vector3(menuX + 0.27f - i * 0.18f, 0.98f, 0.04f);
+            var button = new GameObject("Button");
+            button.transform.SetParent(station, false);
+            button.transform.localPosition = new Vector3(0f, 0f, 0.03f);
+            var box = button.AddComponent<BoxCollider>();
+            box.size = new Vector3(0.13f, 0.13f, 0.06f);
+            var cap = SetupAvatar.Part("Cap", PrimitiveType.Cylinder, button.transform,
+                SetupAvatar.Lit("Dart Button " + (i + 1), buttons[i].colour, 0.7f), Vector3.zero, new Vector3(0.11f, 0.015f, 0.11f));
+            cap.localRotation = Quaternion.Euler(90f, 0f, 0f);
+            var label = SetupAvatar.TextQuad("Label", station, buttons[i].label, Color.white, dark, new Vector2Int(320, 96));
+            label.transform.localPosition = new Vector3(0f, -0.11f, 0.004f);
+            label.transform.localRotation = facing;
+            label.transform.localScale = new Vector3(0.165f, 0.05f, 1f);
+
+            // Under the board object, so the board finds its buttons.
+            station.SetParent(boardObject.transform, true);
+            button.AddComponent<XRSimpleInteractable>();
+        }
 
         // ----- Throw line on the floor
         SetupAvatar.Box("Throw Line", r, white, new Vector3(0f, 0.006f, Oche), new Vector3(1.2f, 0.012f, 0.05f), false);
-
-        // The button goes under the board object so the board finds it.
-        station.SetParent(boardObject.transform, true);
-        button.AddComponent<XRSimpleInteractable>();
 
         var board = boardObject.AddComponent<Dartboard>();
         var so = new SerializedObject(board);

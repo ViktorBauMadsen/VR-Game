@@ -2,14 +2,13 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-// A dartboard, just for fun - no money involved.
+// A dartboard, just for fun - no money involved. The game is 301 for one
+// to four players (see "The game" below).
 //
 // Scoring is the real thing: the twenty numbered wedges in their proper
 // order, the thin outer ring counts double, the thin inner ring treble, the
-// outer bull is 25 and the bullseye 50. A round is three darts; the
-// scoreboard shows the last dart, the round so far and your best round.
-// After the third dart the darts fly back to the holder by themselves, and
-// the button next to the board brings them back at any time.
+// outer bull is 25 and the bullseye 50. After a player's third dart the
+// darts fly back to the holder by themselves and the next player is up.
 //
 // The face of the board (the coloured wedges and the numbers) is painted
 // into a texture when the game starts, so it always matches the scoring.
@@ -33,16 +32,31 @@ public class Dartboard : MonoBehaviour
     [Tooltip("A dart slower than this (m/s) bounces off instead of sticking.")]
     [SerializeField] float minimumStickSpeed = 1.5f;
 
-    int _thrown, _round, _best;
-    string _last = "";
+    // ----- The game: 301, for one to four players taking turns.
+    // Everyone starts on 301 and each dart counts down from it. A turn is
+    // three darts. Land exactly on zero to win; go past zero and the turn is
+    // a bust - its darts don't count. The buttons beside the board add and
+    // remove players, start a new game and bring the darts back.
+    const int StartScore = 301, MaxPlayers = 4;
+
+    int _players = 1, _current, _thrown, _turnTotal, _turnStartScore = StartScore, _winner = -1;
+    readonly int[] _scores = { StartScore, StartScore, StartScore, StartScore };
+    string _last = "", _note = "";
     float _returnAt = -1f;
     static AudioClip _thud;
 
     void Awake()
     {
         BuildFace();
+        // Which button is which goes by the name of its station (see SetupDarts).
         foreach (var button in GetComponentsInChildren<XRSimpleInteractable>(true))
-            button.selectEntered.AddListener(OnResetPressed);
+        {
+            string station = button.transform.parent != null ? button.transform.parent.name : button.name;
+            if (station.Contains("Add")) button.selectEntered.AddListener(_ => SetPlayers(_players + 1));
+            else if (station.Contains("Remove")) button.selectEntered.AddListener(_ => SetPlayers(_players - 1));
+            else if (station.Contains("New")) button.selectEntered.AddListener(_ => NewGame());
+            else button.selectEntered.AddListener(_ => ReturnDarts());
+        }
     }
 
     void Start()
@@ -63,22 +77,53 @@ public class Dartboard : MonoBehaviour
         Show();
     }
 
-    void OnResetPressed(SelectEnterEventArgs args) => NewRound();
-
     void Update()
     {
-        if (_returnAt > 0f && Time.time >= _returnAt) NewRound();
+        if (_returnAt > 0f && Time.time >= _returnAt) NextTurn();
     }
 
-    public void NewRound()
+    public void ReturnDarts()
+    {
+        foreach (var dart in darts)
+            if (dart != null) dart.ReturnHome();
+    }
+
+    // Changing who is playing starts a fresh game.
+    public void SetPlayers(int count)
+    {
+        count = Mathf.Clamp(count, 1, MaxPlayers);
+        if (count == _players) return;
+        _players = count;
+        NewGame();
+    }
+
+    public void NewGame()
+    {
+        for (int i = 0; i < MaxPlayers; i++) _scores[i] = StartScore;
+        _current = 0;
+        _winner = -1;
+        _last = "";
+        _note = "";
+        BeginTurn();
+    }
+
+    void BeginTurn()
     {
         _returnAt = -1f;
         _thrown = 0;
-        _round = 0;
-        _last = "";
-        foreach (var dart in darts)
-            if (dart != null) dart.ReturnHome();
+        _turnTotal = 0;
+        _turnStartScore = _scores[_current];
+        ReturnDarts();
         Show();
+    }
+
+    // The turn's darts are back in the holder; the next player is up.
+    void NextTurn()
+    {
+        if (_winner >= 0) { _returnAt = -1f; ReturnDarts(); Show(); return; }
+        _current = (_current + 1) % _players;
+        _note = "";
+        BeginTurn();
     }
 
     // ------------------------------------------------------------ scoring
@@ -126,14 +171,30 @@ public class Dartboard : MonoBehaviour
 
     void Register(int value, string label)
     {
-        if (_returnAt > 0f) return; // round already over, darts on their way back
+        if (_returnAt > 0f || _winner >= 0) return; // turn already over, darts on their way back
         _thrown++;
-        _round += value;
         _last = value > 0 && label != value.ToString() ? $"{label} = {value}" : label;
-        if (_thrown >= Mathf.Max(1, darts.Length))
+
+        int left = _scores[_current] - value;
+        if (left < 0)
         {
-            _best = Mathf.Max(_best, _round);
-            _returnAt = Time.time + 3.5f;
+            // Bust: the whole turn is wiped out.
+            _scores[_current] = _turnStartScore;
+            _note = "<color=#FF6A5C>BUST! TOO MANY.</color>";
+            _returnAt = Time.time + 3f;
+        }
+        else
+        {
+            _scores[_current] = left;
+            _turnTotal += value;
+            if (left == 0)
+            {
+                _winner = _current;
+                _note = "";
+                _returnAt = Time.time + 4f;
+                BarSounds.Play(BarSounds.Ding, transform.position, 0.8f);
+            }
+            else if (_thrown >= Mathf.Max(1, darts.Length)) _returnAt = Time.time + 3f;
         }
         Show();
     }
@@ -141,10 +202,25 @@ public class Dartboard : MonoBehaviour
     void Show()
     {
         if (scoreboard == null) return;
-        int total = Mathf.Max(1, darts.Length);
-        string last = _last.Length > 0 ? _last : "-";
-        string round = _returnAt > 0f ? $"<color=#5CFF7A>ROUND: {_round}</color>" : $"ROUND: <color=#FFD24A>{_round}</color>   <size=70%>({_thrown}/{total} darts)</size>";
-        scoreboard.SetText($"<color=#FFD24A>DARTS</color>\n<size=60%>LAST: {last}\n{round}\nBEST ROUND: {_best}</size>");
+        var text = new System.Text.StringBuilder("<color=#FFD24A>301</color>\n<size=58%>");
+        for (int i = 0; i < _players; i++)
+        {
+            bool turn = i == _current && _winner < 0;
+            string line = $"PLAYER {i + 1}    {_scores[i]}";
+            if (i == _winner) text.Append($"<color=#5CFF7A><b>{line}  WINS!</b></color>\n");
+            else if (turn) text.Append($"<color=#FFD24A><b>> {line} <</b></color>\n");
+            else text.Append($"<color=#B8BFD0>{line}</color>\n");
+        }
+        text.Append("</size><size=42%>");
+        if (_winner >= 0) text.Append("\nNEW GAME TO PLAY AGAIN");
+        else
+        {
+            int total = Mathf.Max(1, darts.Length);
+            text.Append($"\nLAST DART: {(_last.Length > 0 ? _last : "-")}\nTHIS TURN: {_turnTotal}   ({_thrown}/{total} darts)");
+            if (_note.Length > 0) text.Append("\n" + _note);
+        }
+        text.Append("</size>");
+        scoreboard.SetText(text.ToString());
     }
 
     // --------------------------------------------------------------- face
