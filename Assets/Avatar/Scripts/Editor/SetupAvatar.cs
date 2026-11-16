@@ -22,9 +22,9 @@ using Unity.XR.CoreUtils;
 public static class SetupAvatar
 {
     const string Folder = "Assets/Avatar";
-    const string MaterialsFolder = Folder + "/Materials";
+    internal const string MaterialsFolder = Folder + "/Materials";
     const string CasinoScene = "SampleScene";
-    const float ArmThickness = 0.085f;
+    internal const float ArmThickness = 0.085f;
 
     static string AutoBuildKey => "SetupAvatar.AutoBuilt." + Application.dataPath;
 
@@ -331,14 +331,15 @@ public static class SetupAvatar
 
     // ---------------------------------------------------- character build
 
-    class Look
+    internal class Look
     {
         public Material Jacket, Shirt, Trousers, Skin, Hair, Accent, Dark, Mouth, Visor;
         public bool Vest;         // sleeveless: shirt-coloured arms. Otherwise a jacket with matching sleeves.
-        public bool BowTie, NeckTie, Fedora, DealerVisor, Goatee, Sideburns, PocketSquare;
+        public bool BowTie, NeckTie, Fedora, DealerVisor, Goatee, Sideburns, PocketSquare, HairBun, Earrings;
+        public Vector3 HandRest = new Vector3(0.06f, 0.98f, 0.2f); // right hand; the left mirrors it
     }
 
-    class Parts
+    internal class Parts
     {
         public Transform Head, Body;
         public Transform[] Shoulders = new Transform[2], Hands = new Transform[2];
@@ -348,7 +349,7 @@ public static class SetupAvatar
 
     // Same smooth, all-spheres-and-capsules style as the bartender, facing
     // +Z, origin on the floor. Index 0 is the right side, 1 the left.
-    static Parts BuildCharacter(Transform root, Look look, bool hands, bool separateLegs)
+    internal static Parts BuildCharacter(Transform root, Look look, bool hands, bool separateLegs)
     {
         var parts = new Parts();
 
@@ -424,6 +425,16 @@ public static class SetupAvatar
             Part("Sideburn L", PrimitiveType.Sphere, head, look.Hair, new Vector3(-0.118f, 0.12f, 0.04f), new Vector3(0.03f, 0.09f, 0.045f));
             Part("Sideburn R", PrimitiveType.Sphere, head, look.Hair, new Vector3(0.118f, 0.12f, 0.04f), new Vector3(0.03f, 0.09f, 0.045f));
         }
+        if (look.HairBun)
+        {
+            Part("Bun", PrimitiveType.Sphere, head, look.Hair, new Vector3(0f, 0.29f, -0.085f), Vector3.one * 0.11f);
+            Part("Fringe", PrimitiveType.Sphere, head, look.Hair, new Vector3(0.04f, 0.235f, 0.075f), new Vector3(0.2f, 0.08f, 0.12f));
+        }
+        if (look.Earrings)
+        {
+            Part("Earring L", PrimitiveType.Sphere, head, look.Accent, new Vector3(-0.133f, 0.095f, 0f), Vector3.one * 0.03f);
+            Part("Earring R", PrimitiveType.Sphere, head, look.Accent, new Vector3(0.133f, 0.095f, 0f), Vector3.one * 0.03f);
+        }
         if (look.Fedora)
         {
             var hat = Group("Fedora", head);
@@ -457,7 +468,7 @@ public static class SetupAvatar
 
             // Clasped in front of the waist.
             parts.Hands[i] = Group($"{n} Hand", root);
-            parts.Hands[i].localPosition = new Vector3(side * 0.06f, 0.98f, 0.2f);
+            parts.Hands[i].localPosition = new Vector3(side * look.HandRest.x, look.HandRest.y, look.HandRest.z);
             Part("Palm", PrimitiveType.Sphere, parts.Hands[i], look.Skin, Vector3.zero, new Vector3(0.1f, 0.085f, 0.1f));
             Part("Cuff", PrimitiveType.Sphere, parts.Hands[i], look.Shirt, new Vector3(side * 0.03f, 0.03f, -0.035f), new Vector3(0.09f, 0.075f, 0.07f));
         }
@@ -466,7 +477,35 @@ public static class SetupAvatar
 
     // ------------------------------------------------------------ helpers
 
-    static void PlaceAtSceneFocus(Transform root)
+    internal static Material TextMaterial()
+    {
+        string path = MaterialsFolder + "/Text Screen.mat";
+        var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
+        if (mat != null) return mat;
+        mat = new Material(Shader.Find("Universal Render Pipeline/Unlit")) { name = "Text Screen" };
+        mat.SetColor("_BaseColor", Color.white);
+        AssetDatabase.CreateAsset(mat, path);
+        return mat;
+    }
+
+    // A quad showing text (see WorldTextPanel). Its visible face is its -Z.
+    internal static WorldTextPanel TextQuad(string name, Transform parent, string text, Color textColor, Color background,
+        Vector2Int textureSize, float maxFontSize = 150f)
+    {
+        var quad = Prim(name, PrimitiveType.Quad, parent, TextMaterial());
+        quad.GetComponent<Renderer>().shadowCastingMode = ShadowCastingMode.Off;
+        var panel = quad.gameObject.AddComponent<WorldTextPanel>();
+        var so = new SerializedObject(panel);
+        so.FindProperty("text").stringValue = text;
+        so.FindProperty("textColor").colorValue = textColor;
+        so.FindProperty("background").colorValue = background;
+        so.FindProperty("textureSize").vector2IntValue = textureSize;
+        so.FindProperty("maxFontSize").floatValue = maxFontSize;
+        so.ApplyModifiedPropertiesWithoutUndo();
+        return panel;
+    }
+
+    internal static void PlaceAtSceneFocus(Transform root)
     {
         var view = SceneView.lastActiveSceneView;
         Vector3 pivot = view != null ? view.pivot : Vector3.zero;
@@ -483,7 +522,7 @@ public static class SetupAvatar
         }
     }
 
-    static void SetArray(SerializedObject so, string property, Transform[] values)
+    internal static void SetArray(SerializedObject so, string property, Transform[] values)
     {
         var prop = so.FindProperty(property);
         prop.arraySize = values.Length;
@@ -491,14 +530,14 @@ public static class SetupAvatar
             prop.GetArrayElementAtIndex(i).objectReferenceValue = values[i];
     }
 
-    static Transform Group(string name, Transform parent)
+    internal static Transform Group(string name, Transform parent)
     {
         var go = new GameObject(name);
         go.transform.SetParent(parent, false);
         return go.transform;
     }
 
-    static Transform Prim(string name, PrimitiveType type, Transform parent, Material mat, bool collider = false)
+    internal static Transform Prim(string name, PrimitiveType type, Transform parent, Material mat, bool collider = false)
     {
         var go = GameObject.CreatePrimitive(type);
         go.name = name;
@@ -508,7 +547,7 @@ public static class SetupAvatar
         return go.transform;
     }
 
-    static Transform Part(string name, PrimitiveType type, Transform parent, Material mat, Vector3 pos, Vector3 scale)
+    internal static Transform Part(string name, PrimitiveType type, Transform parent, Material mat, Vector3 pos, Vector3 scale)
     {
         var t = Prim(name, type, parent, mat);
         t.localPosition = pos;
@@ -516,7 +555,7 @@ public static class SetupAvatar
         return t;
     }
 
-    static Transform Box(string name, Transform parent, Material mat, Vector3 pos, Vector3 size, bool collider)
+    internal static Transform Box(string name, Transform parent, Material mat, Vector3 pos, Vector3 size, bool collider)
     {
         var t = Prim(name, PrimitiveType.Cube, parent, mat, collider);
         t.localPosition = pos;
@@ -524,7 +563,7 @@ public static class SetupAvatar
         return t;
     }
 
-    static Material Lit(string name, Color color, float smoothness, float metallic = 0f)
+    internal static Material Lit(string name, Color color, float smoothness, float metallic = 0f)
     {
         string path = $"{MaterialsFolder}/{name}.mat";
         var mat = AssetDatabase.LoadAssetAtPath<Material>(path);
@@ -537,7 +576,7 @@ public static class SetupAvatar
         return mat;
     }
 
-    static void EnsureFolder(string path)
+    internal static void EnsureFolder(string path)
     {
         if (AssetDatabase.IsValidFolder(path)) return;
         int slash = path.LastIndexOf('/');

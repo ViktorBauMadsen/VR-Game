@@ -32,6 +32,32 @@ public class WorldTextPanel : MonoBehaviour
 
     void Awake() => EnsureBuilt();
 
+    // Creates a text quad from code. parent's local -Z is the side the text
+    // is read from (a Quad's visible face is its -Z).
+    public static WorldTextPanel Create(string name, Transform parent, Vector3 localPosition, Vector2 size,
+        Vector2Int textureSize, Color textColor, Color background, float maxFontSize = 150f)
+    {
+        var go = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        go.SetActive(false); // so Awake waits until the settings below are in
+        go.name = name;
+        Destroy(go.GetComponent<Collider>());
+        go.transform.SetParent(parent, false);
+        go.transform.localPosition = localPosition;
+        go.transform.localScale = new Vector3(size.x, size.y, 1f);
+
+        var renderer = go.GetComponent<Renderer>();
+        renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        renderer.sharedMaterial = new Material(Shader.Find("Universal Render Pipeline/Unlit"));
+
+        var panel = go.AddComponent<WorldTextPanel>();
+        panel.textColor = textColor;
+        panel.background = background;
+        panel.textureSize = textureSize;
+        panel.maxFontSize = maxFontSize;
+        go.SetActive(true);
+        return panel;
+    }
+
     void OnDestroy()
     {
         if (_camera != null) Destroy(_camera.gameObject);

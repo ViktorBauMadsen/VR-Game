@@ -23,6 +23,8 @@ public class Mirror : MonoBehaviour
     [SerializeField] float maxDistance = 7f;
     [SerializeField] float farClip = 30f;
     [SerializeField] LayerMask reflectLayers = ~0;
+    [Tooltip("Show the arrows panel for customising the player's character.")]
+    [SerializeField] bool wardrobe = true;
     [SerializeField] float eyeSeparation = 0.064f; // used when the headset doesn't report eye positions
 
     static readonly List<XRNodeState> NodeStates = new List<XRNodeState>();
@@ -63,6 +65,10 @@ public class Mirror : MonoBehaviour
         _material.SetTexture("_LeftTex", _textures[0]);
         _material.SetTexture("_RightTex", _textures[1]);
         if (_material.HasProperty("_BaseMap")) _material.SetTexture("_BaseMap", _textures[0]);
+
+        // The character-customisation panel beside the glass.
+        if (wardrobe && GetComponentInChildren<MirrorWardrobe>() == null)
+            gameObject.AddComponent<MirrorWardrobe>();
     }
 
     void OnEnable() => Application.onBeforeRender += UpdateCameras;

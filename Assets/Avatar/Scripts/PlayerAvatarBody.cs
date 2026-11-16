@@ -51,6 +51,7 @@ public class PlayerAvatarBody : MonoBehaviour
         }
         foreach (var t in GetComponentsInChildren<Transform>(true)) t.gameObject.layer = _layer;
         transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        if (GetComponent<AvatarCustomizer>() == null) gameObject.AddComponent<AvatarCustomizer>();
     }
 
     void FindRig()
