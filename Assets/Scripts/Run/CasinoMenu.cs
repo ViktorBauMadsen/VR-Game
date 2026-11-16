@@ -95,7 +95,9 @@ public sealed class CasinoMenu : MonoBehaviour
     {
         if (what == RunEvent.Dead || what == RunEvent.Started || what == RunEvent.Gathering) { tab = Tab.Run; keypad = false; }
         // You are about to be moved to the door - the menu would be left behind.
-        if (what == RunEvent.Gathering && surface != null) surface.gameObject.SetActive(false);
+        bool moved = what == RunEvent.Gathering
+            || ((what == RunEvent.Survived || what == RunEvent.VestSaved) && run.Phase == RunPhase.Gathering);
+        if (moved && surface != null) surface.gameObject.SetActive(false);
     }
 
     void Update()
@@ -225,7 +227,7 @@ public sealed class CasinoMenu : MonoBehaviour
                 if (run.Authority)
                 {
                     surface.Button(made ? "PAY UP NOW  -  SKIP TO TOMORROW" : "NOT ENOUGH TO PAY UP YET", Left, Top + 690f, Full, 120f, Green, run.PayUpNow, made);
-                    surface.Button("ABANDON RUN", Left, Top + 835f, Full, 84f, Red, run.Abandon, true, 32f);
+                    surface.Button("GIVE UP  -  GET SHOT", Left, Top + 835f, Full, 84f, Red, run.GiveUp, true, 32f);
                 }
                 else surface.Text("The host decides when to pay up.", Left, Top + 700f, Full, 80f, 34f, Dim);
                 break;
@@ -236,10 +238,13 @@ public sealed class CasinoMenu : MonoBehaviour
                 surface.Text("AT THE DOOR", Left, Top + 30f, Full, 100f, 80f, Gold, TextAlignmentOptions.Center, true);
                 Live(surface.Text("", Left, Top + 150f, Full, 80f, 56f, Color.white, TextAlignmentOptions.Center, true),
                     () => run.ReadyCount + " / " + run.Players + " READY");
-                surface.Text($"Day 1 quota: ${run.Quota:N0}\n\nEveryone presses the casino door (point at it and squeeze grip). "
-                    + "When all of you have, the doors open and the clock starts.",
-                    Left + 30f, Top + 250f, Full - 60f, 200f, 32f, Dim);
-                if (run.Authority) surface.Button("CANCEL - BACK TO THE HUB", Left, Top + 510f, Full, 96f, Red, run.Abandon, true, 34f);
+                surface.Text($"Day {run.Day} quota: ${run.Quota:N0}\n\nSpend your tokens at the Token Stall, then everyone presses the casino door "
+                    + "(point at it and squeeze grip). When all of you have, the doors open and the clock starts.",
+                    Left + 30f, Top + 250f, Full - 60f, 200f, 30f, Dim);
+                if (run.Authority && run.Day <= 1)
+                    surface.Button("CANCEL - BACK TO THE HUB", Left, Top + 510f, Full, 96f, Grey, run.Abandon, true, 34f);
+                if (run.Authority)
+                    surface.Button("GIVE UP  -  GET SHOT", Left, Top + 630f, Full, 96f, Red, run.GiveUp, true, 34f);
                 break;
             }
             case RunPhase.Dead:
@@ -292,6 +297,13 @@ public sealed class CasinoMenu : MonoBehaviour
             string blocked = run.WhyNot(powerup);
             int price = run.Price(powerup);
             string cost = price + (price == 1 ? " TOKEN" : " TOKENS");
+            // With a Token Stall in the casino this page is only a price list.
+            if (TokenStall.Instance != null)
+            {
+                surface.Text(cost, Left + 660f, y + 50f, Full - 690f, 60f, 38f, Gold, TextAlignmentOptions.Center, true);
+                surface.Text("AT THE TOKEN STALL\nOUTSIDE THE DOOR", Left + 660f, y + 112f, Full - 690f, 70f, 22f, Dim);
+                continue;
+            }
             surface.Button(blocked ?? "BUY\n<size=70%>" + cost + "</size>", Left + 660f, y + 46f, Full - 690f, 130f, Green,
                 () => run.Buy(powerup), blocked == null, blocked == null ? 36f : 26f);
             if (blocked != null && !blocked.StartsWith("NEED"))

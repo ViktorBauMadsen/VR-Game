@@ -52,7 +52,7 @@ public sealed class CasinoRun : MonoBehaviour
     [Tooltip("Day 1 quota per player.")]
     [SerializeField] int firstQuota = 600;
     [Tooltip("The quota is multiplied by this every day.")]
-    [SerializeField] float quotaGrowth = 1.4f;
+    [SerializeField] float quotaGrowth = 1.8f;
     [Tooltip("Part of the quota the collector actually takes when you make it.")]
     [SerializeField, Range(0f, 1f)] float collectorCut = 0.25f;
     [SerializeField] float dayLengthSeconds = 300f;
@@ -223,7 +223,6 @@ public sealed class CasinoRun : MonoBehaviour
 
     void OpenDoor()
     {
-        BeginDay(); // the quota counts whoever is actually here now
         Phase = RunPhase.Running;
         SendStateToAll(RunEvent.Started, null);
         Apply(RunEvent.Started, 0);
@@ -282,10 +281,7 @@ public sealed class CasinoRun : MonoBehaviour
         bool paid = total >= Quota;
         if (!paid && Vests <= 0)
         {
-            DiedOnDay = Day;
-            Phase = RunPhase.Dead;
-            SendStateToAll(RunEvent.Dead, null);
-            Apply(RunEvent.Dead, 0);
+            Die();
             return;
         }
 
@@ -299,9 +295,31 @@ public sealed class CasinoRun : MonoBehaviour
 
         Day++;
         BeginDay();
+        // Back outside the door between days: time to talk it over and spend
+        // tokens before everyone presses the door again.
+        if (RunEntrance.Instance != null)
+        {
+            Phase = RunPhase.Gathering;
+            ready.Clear();
+            ReadyCount = 0;
+        }
         var what = paid ? RunEvent.Survived : RunEvent.VestSaved;
         SendStateToAll(what, shares);
         Apply(what, Share(take, mine, total));
+    }
+
+    void Die()
+    {
+        DiedOnDay = Day;
+        Phase = RunPhase.Dead;
+        SendStateToAll(RunEvent.Dead, null);
+        Apply(RunEvent.Dead, 0);
+    }
+
+    // No point going on: the mafia shoots everyone right now and the run is lost.
+    public void GiveUp()
+    {
+        if (Authority && (Phase == RunPhase.Running || Phase == RunPhase.Gathering)) Die();
     }
 
     // Everyone chips in proportionally to what they are holding.
@@ -333,10 +351,14 @@ public sealed class CasinoRun : MonoBehaviour
                 break;
             case RunEvent.Survived:
                 Tokens += LastAward;
+                gathered = Phase == RunPhase.Gathering;
+                LocalReady = false;
                 if (balance != null) balance.ForceSpend(pay);
                 RememberBest(Day - 1);
                 break;
             case RunEvent.VestSaved:
+                gathered = Phase == RunPhase.Gathering;
+                LocalReady = false;
                 if (balance != null)
                 {
                     balance.ForceSpend(pay);
@@ -434,7 +456,10 @@ public sealed class CasinoRun : MonoBehaviour
     // Null when it can be bought right now, otherwise a short reason.
     public string WhyNot(Powerup powerup)
     {
-        if (Phase != RunPhase.Running) return "START A RUN";
+        if (Phase != RunPhase.Running && Phase != RunPhase.Gathering) return "START A RUN";
+        // With a Token Stall at the door, it only sells while everyone is
+        // gathered there - decide before the day starts.
+        if (Phase == RunPhase.Running && TokenStall.Instance != null && RunEntrance.Instance != null) return "CLOSED UNTIL TOMORROW";
         if (!TeamAllows(powerup)) return powerup == Powerup.Vest ? "OWNED" : "USED UP";
         return Tokens < Price(powerup) ? "NEED " + Price(powerup) + " TOKENS" : null;
     }
@@ -650,7 +675,7 @@ public sealed class CasinoRun : MonoBehaviour
         reader.ReadValueSafe(out byte id);
         if (id == (byte)Powerup.LuckyCharm || id > (byte)Powerup.Vest) return;
         var powerup = (Powerup)id;
-        if (Phase != RunPhase.Running || !TeamAllows(powerup)) return;
+        if ((Phase != RunPhase.Running && Phase != RunPhase.Gathering) || !TeamAllows(powerup)) return;
         ApplyTeamPowerup(powerup);
         SendStateToAll(RunEvent.None, null);
     }

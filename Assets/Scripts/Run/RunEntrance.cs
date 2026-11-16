@@ -72,7 +72,7 @@ public class RunEntrance : MonoBehaviour
             text = "<color=#FFD24A>THE CASINO</color>\n<size=50%>START A GAME FROM THE MENU (Y)</size>";
         else if (run.Phase == RunPhase.Gathering)
             text = (run.LocalReady ? "<color=#5CFF7A>YOU'RE READY</color>" : "<color=#FFD24A>PRESS THE DOOR TO START</color>")
-                + $"\n<size=50%>{run.ReadyCount} / {run.Players} READY   -   DAY 1 QUOTA ${run.Quota:N0}</size>";
+                + $"\n<size=50%>{run.ReadyCount} / {run.Players} READY   -   DAY {run.Day} QUOTA ${run.Quota:N0}</size>";
         else
             text = $"<color=#FFD24A>DAY {run.Day}</color>\n<size=50%>QUOTA ${run.Quota:N0}</size>";
         if (text == _shown) return;

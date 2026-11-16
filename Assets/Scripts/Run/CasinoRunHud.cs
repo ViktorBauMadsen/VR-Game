@@ -189,10 +189,18 @@ public sealed class CasinoRunHud : MonoBehaviour
                 break;
             case RunEvent.Survived:
                 audioSource.PlayOneShot(cash, 0.5f);
-                Show(Announce($"<size=60%>PAID UP. THE COLLECTOR TOOK ${pay:N0}.\nYOU EARNED {run.LastAward} TOKEN{(run.LastAward == 1 ? "" : "S")}.</size>\n" + next, Good, 7f));
+                string paid = $"PAID UP. THE COLLECTOR TOOK ${pay:N0}.\nYOU EARNED {run.LastAward} TOKEN{(run.LastAward == 1 ? "" : "S")}.";
+                // With a casino door, every new day starts back outside it.
+                if (run.Phase == RunPhase.Gathering) Show(Loading(paid));
+                else Show(Announce($"<size=60%>{paid}</size>\n" + next, Good, 7f));
                 break;
             case RunEvent.VestSaved:
-                Show(VestHit($"<size=60%>YOU CAME UP SHORT.\nTHE VEST TOOK THE BULLET.</size>\n" + next));
+                if (run.Phase == RunPhase.Gathering)
+                {
+                    audioSource.PlayOneShot(gunshot, 0.9f);
+                    Show(Loading("YOU CAME UP SHORT.\nTHE VEST TOOK THE BULLET."));
+                }
+                else Show(VestHit($"<size=60%>YOU CAME UP SHORT.\nTHE VEST TOOK THE BULLET.</size>\n" + next));
                 break;
             case RunEvent.Dead:
                 Show(Death(Mathf.Max(0, run.DiedOnDay - 1)));
@@ -224,7 +232,7 @@ public sealed class CasinoRunHud : MonoBehaviour
     }
 
     // "Start game": black out, move to the casino door behind the black, fade back in.
-    IEnumerator Loading()
+    IEnumerator Loading(string headline = "LOADING...")
     {
         fade.enabled = true;
         banner.text = "";
@@ -235,11 +243,11 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         fade.color = Color.black;
         banner.color = Gold;
-        banner.text = "LOADING...\n<size=60%>Meet your crew at the casino door.</size>";
+        banner.text = $"<size=75%>{headline}</size>\n<size=55%>Meet your crew at the casino door.</size>";
 
         var entrance = RunEntrance.Instance;
         if (entrance != null) entrance.MovePlayerToSpawn(run.LocalSlot);
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(headline == "LOADING..." ? 2f : 3.5f);
 
         for (float t = 0f; t < 0.8f; t += Time.unscaledDeltaTime)
         {
@@ -250,7 +258,7 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         fade.enabled = false;
         yield return Announce("PRESS THE DOOR WHEN YOU'RE READY\n"
-            + $"<size=60%>DAY 1 QUOTA ${run.Quota:N0}  -  THE CLOCK STARTS WHEN EVERYONE IS IN</size>", Gold, 6f);
+            + $"<size=60%>DAY {run.Day} QUOTA ${run.Quota:N0}  -  THE CLOCK STARTS WHEN EVERYONE IS IN</size>", Gold, 6f);
     }
 
     IEnumerator VestHit(string text)
@@ -268,7 +276,7 @@ public sealed class CasinoRunHud : MonoBehaviour
 
     IEnumerator Death(int daysSurvived)
     {
-        banner.text = "<size=70%>YOU DIDN'T MAKE THE QUOTA...</size>";
+        banner.text = "<size=70%>THE COLLECTOR HAS RUN OUT OF PATIENCE...</size>";
         banner.color = Bad;
         yield return new WaitForSecondsRealtime(1.6f);
 
