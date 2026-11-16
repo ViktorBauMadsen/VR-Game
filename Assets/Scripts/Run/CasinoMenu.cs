@@ -95,6 +95,8 @@ public sealed class CasinoMenu : MonoBehaviour
     {
         if (what == RunEvent.Dead || what == RunEvent.Started || what == RunEvent.Gathering) { tab = Tab.Run; keypad = false; }
         // You are about to be moved to the door - the menu would be left behind.
+        // Nothing may stand between you and the hitman.
+        if (what == RunEvent.Dead && surface != null) surface.gameObject.SetActive(false);
         bool moved = what == RunEvent.Gathering
             || ((what == RunEvent.Survived || what == RunEvent.VestSaved) && run.Phase == RunPhase.Gathering);
         if (moved && surface != null) surface.gameObject.SetActive(false);

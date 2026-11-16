@@ -15,6 +15,7 @@ using UnityEngine;
 // scene that has chip pockets.
 public static class HighRollerChip
 {
+    const int RemovedValue = 5;
     const int OldBlueValue = 10, NewBlueValue = 100, OldBlackValue = 100, NewBlackValue = 1000, GoldValue = 5000;
     const float PocketSpacing = 0.2f; // the pockets sit this far apart
     static readonly Color Gold = new Color(1f, 0.78f, 0.2f);
@@ -40,7 +41,7 @@ public static class HighRollerChip
         }
         if (pockets.Count == 0) return;
 
-        // The places the pockets sit in, left to right, plus one more on the right.
+        // The places the pockets sit in, left to right.
         var slots = new List<float>();
         ChipDispenser best = pockets[0];
         foreach (var pocket in pockets)
@@ -49,7 +50,17 @@ public static class HighRollerChip
             if (pocket.ChipPrefab.Value > best.ChipPrefab.Value) best = pocket;
         }
         slots.Sort();
-        slots.Add(slots[slots.Count - 1] + PocketSpacing);
+
+        // There is no $5 chip any more: its pocket is taken away (at
+        // runtime only - the scene object is untouched) and the gold chip's
+        // pocket takes over the freed place.
+        for (int i = pockets.Count - 1; i >= 0; i--)
+        {
+            if (pockets[i].ChipPrefab.Value != RemovedValue || pockets[i] == best) continue;
+            Object.Destroy(pockets[i].gameObject);
+            pockets.RemoveAt(i);
+        }
+        while (slots.Count < pockets.Count + 1) slots.Add(slots[slots.Count - 1] + PocketSpacing);
 
         // Gold $5,000: a recoloured copy of the most valuable chip, in a new pocket.
         var goldChip = Template(best.ChipPrefab, "PokerChip_Gold", GoldValue);

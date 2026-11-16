@@ -44,6 +44,8 @@ public class PlayerTorsoAnchor : MonoBehaviour
     void OnDisable() => _toggleAction.Disable();
     void OnDestroy() => _toggleAction.Dispose();
 
+    public bool PocketsVisible => _visible;
+
     public void SetPocketsVisible(bool visible)
     {
         _visible = visible;

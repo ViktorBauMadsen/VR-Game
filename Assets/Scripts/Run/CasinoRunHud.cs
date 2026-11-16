@@ -17,8 +17,75 @@ public sealed class CasinoRunHud : MonoBehaviour
     static readonly Color Bad = new Color(1f, 0.35f, 0.3f);
 
     CasinoRun run;
-    TextMeshProUGUI line, banner;
+    TextMeshProUGUI line;
+    Banner banner;
+    GameObject balanceObject;
+    bool pocketsWereVisible, hudHidden;
     Image fade;
+
+    // The big announcements in the middle of your view. The PlayerHUD
+    // canvas is drawn off toward the lower right of where it really is
+    // (the balance was placed by eye to make up for that), so anything put
+    // at "the centre" of it ends up out of sight. This is a text quad fixed
+    // in front of the camera instead - the same kind of sign as the tables',
+    // which is drawn exactly where it is. It sits just nearer than the
+    // black-out, so it also reads on the black screen.
+    class Banner
+    {
+        readonly WorldTextPanel panel;
+        string value = "", shown;
+        Color tint = Color.white;
+        bool lowered;
+
+        public Banner(Transform camera)
+        {
+            panel = WorldTextPanel.Create("Run Banner", camera, Vector3.zero, Vector2.one, new Vector2Int(1280, 640),
+                Color.white, new Color(0.02f, 0.02f, 0.03f), 120f);
+            Place();
+            panel.Visible = false;
+        }
+
+        public string text { get => value; set { this.value = value ?? ""; Apply(); } }
+        public Color color { get => tint; set { tint = value; Apply(); } }
+
+        // A thin strip low in the view (subtitles) instead of the big card.
+        public bool low { get => lowered; set { lowered = value; Place(); } }
+
+        void Place()
+        {
+            // (Same 2:1 shape both ways - the text is drawn for that shape.)
+            panel.transform.localPosition = lowered ? new Vector3(0f, -0.34f, 0.9f) : new Vector3(0f, 0.06f, 0.9f);
+            panel.transform.localScale = lowered ? new Vector3(0.4f, 0.2f, 1f) : new Vector3(0.8f, 0.4f, 1f);
+        }
+
+        void Apply()
+        {
+            bool visible = value.Length > 0 && tint.a > 0.05f;
+            panel.Visible = visible;
+            if (!visible) return;
+            string rich = $"<color=#{ColorUtility.ToHtmlStringRGB(tint)}>{value}</color>";
+            if (rich == shown) return;
+            shown = rich;
+            panel.SetText(rich);
+        }
+    }
+
+    // Everything on screen that isn't the scene: balance, status line, chip pockets.
+    void SetHudVisible(bool visible)
+    {
+        if (visible == !hudHidden) return;
+        hudHidden = !visible;
+        if (balanceObject != null) balanceObject.SetActive(visible);
+        if (line != null) line.gameObject.SetActive(visible);
+        var pockets = FindAnyObjectByType<PlayerTorsoAnchor>();
+        if (pockets == null) return;
+        if (!visible)
+        {
+            pocketsWereVisible = pockets.PocketsVisible;
+            pockets.SetPocketsVisible(false);
+        }
+        else if (pocketsWereVisible) pockets.SetPocketsVisible(true);
+    }
     AudioSource audioSource;
     AudioClip gunshot, beep, cash;
     Coroutine showing;
@@ -93,15 +160,9 @@ public sealed class CasinoRunHud : MonoBehaviour
         line.alignment = TextAlignmentOptions.TopLeft;
         line.textWrappingMode = TextWrappingModes.NoWrap;
 
-        banner = Text("Run Banner", root, template);
-        banner.rectTransform.anchorMin = banner.rectTransform.anchorMax = banner.rectTransform.pivot = new Vector2(0.5f, 0.5f);
-        banner.rectTransform.anchoredPosition = new Vector2(0f, 40f);
-        banner.rectTransform.sizeDelta = new Vector2(760f, 320f);
-        banner.fontSize = 46f;
-        banner.fontStyle = FontStyles.Bold;
-        banner.alignment = TextAlignmentOptions.Center;
-        banner.textWrappingMode = TextWrappingModes.Normal;
-        banner.text = "";
+        if (template != null) balanceObject = template.gameObject;
+        var view = Camera.main != null ? Camera.main.transform : canvas.transform.parent;
+        banner = new Banner(view != null ? view : canvas.transform);
     }
 
     static TextMeshProUGUI Text(string name, RectTransform parent, TextMeshProUGUI template)
@@ -225,6 +286,8 @@ public sealed class CasinoRunHud : MonoBehaviour
     {
         if (showing != null) StopCoroutine(showing);
         MafiaHit.Dismiss(); // in case a death scene was cut short
+        SetHudVisible(true);
+        banner.low = false;
         fade.enabled = false;
         showing = StartCoroutine(routine);
     }
@@ -288,8 +351,13 @@ public sealed class CasinoRunHud : MonoBehaviour
 
     IEnumerator Death(int daysSurvived)
     {
-        banner.text = "<size=70%>THE COLLECTOR HAS RUN OUT OF PATIENCE...</size>";
+        // Nothing between you and the hitman: balance, status line and chip
+        // pockets are put away (the menu closes itself), and what he says
+        // is a thin subtitle low in the view rather than a card in the middle.
+        SetHudVisible(false);
+        banner.low = true;
         banner.color = Bad;
+        banner.text = "THE COLLECTOR HAS RUN OUT OF PATIENCE...";
 
         // The hitman walks up to you and raises his gun (see MafiaHit).
         var player = Camera.main != null ? Camera.main.transform : null;
@@ -297,7 +365,7 @@ public sealed class CasinoRunHud : MonoBehaviour
         {
             var origin = FindAnyObjectByType<Unity.XR.CoreUtils.XROrigin>();
             float floor = origin != null ? origin.transform.position.y : player.position.y - 1.6f;
-            yield return MafiaHit.WalkUp(player, floor, line => banner.text = $"<size=55%>{line}</size>");
+            yield return MafiaHit.WalkUp(player, floor, said => banner.text = said);
             MafiaHit.Fire();
         }
         else yield return new WaitForSecondsRealtime(1.6f);
@@ -306,6 +374,7 @@ public sealed class CasinoRunHud : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.07f); // the muzzle flash, for a moment
         fade.enabled = true;
         banner.text = "";
+        banner.low = false;
         for (float t = 0f; t < 0.5f; t += Time.unscaledDeltaTime)
         {
             // Muzzle flash, straight to red, then black.
@@ -337,6 +406,7 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         fade.enabled = false;
         banner.text = "";
+        SetHudVisible(true);
         showing = null;
     }
 
