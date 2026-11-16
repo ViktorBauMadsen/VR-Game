@@ -93,7 +93,9 @@ public sealed class CasinoMenu : MonoBehaviour
     // Dying or a new day is worth seeing on the RUN tab next time it opens.
     void OnHappened(RunEvent what, int pay)
     {
-        if (what == RunEvent.Dead || what == RunEvent.Started) { tab = Tab.Run; keypad = false; }
+        if (what == RunEvent.Dead || what == RunEvent.Started || what == RunEvent.Gathering) { tab = Tab.Run; keypad = false; }
+        // You are about to be moved to the door - the menu would be left behind.
+        if (what == RunEvent.Gathering && surface != null) surface.gameObject.SetActive(false);
     }
 
     void Update()
@@ -224,6 +226,18 @@ public sealed class CasinoMenu : MonoBehaviour
                     surface.Button("ABANDON RUN", Left, Top + 835f, Full, 84f, Red, run.Abandon, true, 32f);
                 }
                 else surface.Text("The host decides when to pay up.", Left, Top + 700f, Full, 80f, 34f, Dim);
+                break;
+            }
+            case RunPhase.Gathering:
+            {
+                surface.Box(Left, Top, Full, 470f, Card);
+                surface.Text("AT THE DOOR", Left, Top + 30f, Full, 100f, 80f, Gold, TextAlignmentOptions.Center, true);
+                Live(surface.Text("", Left, Top + 150f, Full, 80f, 56f, Color.white, TextAlignmentOptions.Center, true),
+                    () => run.ReadyCount + " / " + run.Players + " READY");
+                surface.Text($"Day 1 quota: ${run.Quota:N0}\n\nEveryone presses the casino door (point at it and squeeze grip). "
+                    + "When all of you have, the doors open and the clock starts.",
+                    Left + 30f, Top + 250f, Full - 60f, 200f, 32f, Dim);
+                if (run.Authority) surface.Button("CANCEL - BACK TO THE HUB", Left, Top + 510f, Full, 96f, Red, run.Abandon, true, 34f);
                 break;
             }
             case RunPhase.Dead:

@@ -153,6 +153,12 @@ public sealed class CasinoRunHud : MonoBehaviour
                     + $"<color=#{cashColour}>{who}${run.TeamCash:N0}</color> / ${run.Quota:N0} QUOTA";
                 line.color = Color.white;
                 break;
+            case RunPhase.Gathering:
+                line.text = $"DAY {run.Day}   {Clock(run.TimeLeft)}   QUOTA ${run.Quota:N0}\n"
+                    + (run.LocalReady ? $"<color=#{ColorUtility.ToHtmlStringRGB(Good)}>READY</color>" : $"<color=#{ColorUtility.ToHtmlStringRGB(Gold)}>PRESS THE DOOR</color>")
+                    + $"   {run.ReadyCount}/{run.Players} READY";
+                line.color = Color.white;
+                break;
             case RunPhase.Dead:
                 line.text = "";
                 break;
@@ -175,6 +181,9 @@ public sealed class CasinoRunHud : MonoBehaviour
         string next = $"DAY {run.Day}\n<size=70%>QUOTA ${run.Quota:N0}  -  {Clock(run.TimeLeft)} ON THE CLOCK</size>";
         switch (what)
         {
+            case RunEvent.Gathering:
+                Show(Loading());
+                break;
             case RunEvent.Started:
                 Show(Announce("<size=60%>THE FAMILY WANTS ITS MONEY</size>\n" + next, Gold, 5f));
                 break;
@@ -212,6 +221,36 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         banner.text = "";
         showing = null;
+    }
+
+    // "Start game": black out, move to the casino door behind the black, fade back in.
+    IEnumerator Loading()
+    {
+        fade.enabled = true;
+        banner.text = "";
+        for (float t = 0f; t < 0.35f; t += Time.unscaledDeltaTime)
+        {
+            fade.color = new Color(0f, 0f, 0f, t / 0.35f);
+            yield return null;
+        }
+        fade.color = Color.black;
+        banner.color = Gold;
+        banner.text = "LOADING...\n<size=60%>Meet your crew at the casino door.</size>";
+
+        var entrance = RunEntrance.Instance;
+        if (entrance != null) entrance.MovePlayerToSpawn(run.LocalSlot);
+        yield return new WaitForSecondsRealtime(2f);
+
+        for (float t = 0f; t < 0.8f; t += Time.unscaledDeltaTime)
+        {
+            float alpha = 1f - t / 0.8f;
+            fade.color = new Color(0f, 0f, 0f, alpha);
+            banner.color = new Color(Gold.r, Gold.g, Gold.b, alpha);
+            yield return null;
+        }
+        fade.enabled = false;
+        yield return Announce("PRESS THE DOOR WHEN YOU'RE READY\n"
+            + $"<size=60%>DAY 1 QUOTA ${run.Quota:N0}  -  THE CLOCK STARTS WHEN EVERYONE IS IN</size>", Gold, 6f);
     }
 
     IEnumerator VestHit(string text)

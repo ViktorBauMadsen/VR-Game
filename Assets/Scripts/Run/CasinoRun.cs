@@ -6,9 +6,11 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum RunPhase : byte { FreePlay, Running, Dead }
+// Gathering = "Start game" was pressed: everyone is outside the casino door
+// with run money, the clock is not ticking yet, waiting for all to press the door.
+public enum RunPhase : byte { FreePlay, Running, Dead, Gathering }
 public enum Powerup : byte { LuckyCharm, Bribe, Stall, Vest }
-public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandoned }
+public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandoned, Gathering }
 
 // The game loop on top of the casino: you owe the family money.
 //
@@ -34,8 +36,8 @@ public enum RunEvent : byte { None, Started, Survived, VestSaved, Dead, Abandone
 [DefaultExecutionOrder(10010)]
 public sealed class CasinoRun : MonoBehaviour
 {
-    const string StateMessage = "Casino.Run.v1", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1";
-    const int StateBytes = 43;
+    const string StateMessage = "Casino.Run.v2", BalanceMessage = "Casino.Bal.v1", BuyMessage = "Casino.Buy.v1", ReadyMessage = "Casino.Ready.v1";
+    const int StateBytes = 47;
     const string BestDayKey = "Casino.BestDay";
 
     public static CasinoRun Instance { get; private set; }
@@ -76,6 +78,11 @@ public sealed class CasinoRun : MonoBehaviour
     public int CharmCharges { get; private set; }
     public int DiedOnDay { get; private set; }
     public int BestDay { get; private set; }
+    // At the door: how many players have pressed it, and whether this one has.
+    public int ReadyCount { get; private set; }
+    public bool LocalReady { get; private set; }
+    // This player's place in the session (host 0) - picks a spawn spot.
+    public int LocalSlot => multiplayer != null ? (int)(multiplayer.LocalId % 8) : 0;
     public int CollectorTake => Mathf.RoundToInt(Quota * collectorCut);
     public float DayLength => dayLengthSeconds;
 
@@ -87,8 +94,9 @@ public sealed class CasinoRun : MonoBehaviour
 
     CasinoMultiplayer multiplayer;
     readonly Dictionary<ulong, int> guestBalances = new Dictionary<ulong, int>();
+    readonly HashSet<ulong> ready = new HashSet<ulong>();
     float nextSync;
-    bool hubCashGiven;
+    bool hubCashGiven, gathered;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Bootstrap()
@@ -155,6 +163,13 @@ public sealed class CasinoRun : MonoBehaviour
                 TimeLeft -= Time.deltaTime;
                 if (TimeLeft <= 0f) Collect();
             }
+            else if (Phase == RunPhase.Gathering)
+            {
+                // Everyone who is still here has pressed the door: day 1 begins.
+                if (multiplayer != null) ready.RemoveWhere(id => id != 0UL && !multiplayer.IsGuestId(id));
+                ReadyCount = ready.Count;
+                if (ReadyCount >= Players) OpenDoor();
+            }
         }
         else if (Phase == RunPhase.Running)
         {
@@ -172,16 +187,52 @@ public sealed class CasinoRun : MonoBehaviour
     public int QuotaFor(int day, int players) =>
         RoundTo(firstQuota * Mathf.Pow(quotaGrowth, Mathf.Max(0, day - 1)), 50) * Mathf.Max(1, players);
 
+    // "Start game": everyone is sent to the casino door with run money. The
+    // clock only starts once all players have pressed the door (PressDoor).
+    // In a scene without a RunEntrance the run simply starts on the spot.
     public void StartRun()
     {
-        if (!Authority || Phase == RunPhase.Running) return;
+        if (!Authority || Phase == RunPhase.Running || Phase == RunPhase.Gathering) return;
         Day = 1;
         Vests = 0;
         BeginDay();
-        Phase = RunPhase.Running;
         foreach (ulong guest in new List<ulong>(guestBalances.Keys)) guestBalances[guest] = startingCash;
+        if (RunEntrance.Instance == null) { OpenDoor(); return; }
+
+        ready.Clear();
+        ReadyCount = 0;
+        Phase = RunPhase.Gathering;
+        SendStateToAll(RunEvent.Gathering, null);
+        Apply(RunEvent.Gathering, 0);
+    }
+
+    void OpenDoor()
+    {
+        BeginDay(); // the quota counts whoever is actually here now
+        Phase = RunPhase.Running;
         SendStateToAll(RunEvent.Started, null);
         Apply(RunEvent.Started, 0);
+    }
+
+    // This player pressed the casino door.
+    public void PressDoor()
+    {
+        if (Phase != RunPhase.Gathering || LocalReady) return;
+        LocalReady = true;
+        if (Authority) { ready.Add(0UL); return; }
+
+        ReadyCount++; // shown at once; the host's next update confirms it
+        var messaging = multiplayer.Network.CustomMessagingManager;
+        if (messaging == null) return;
+        using var writer = new FastBufferWriter(4, Allocator.Temp);
+        writer.WriteValueSafe((byte)1);
+        messaging.SendNamedMessage(ReadyMessage, NetworkManager.ServerClientId, writer, NetworkDelivery.ReliableSequenced);
+    }
+
+    void ReceiveReady(ulong sender, FastBufferReader reader)
+    {
+        if (multiplayer == null || !multiplayer.IsHost || !multiplayer.IsGuestId(sender)) return;
+        if (Phase == RunPhase.Gathering) ready.Add(sender);
     }
 
     void BeginDay()
@@ -246,9 +297,21 @@ public sealed class CasinoRun : MonoBehaviour
         var balance = PlayerBalance.Instance;
         switch (what)
         {
-            case RunEvent.Started:
+            case RunEvent.Gathering:
                 CharmCharges = 0;
+                LocalReady = false;
+                gathered = true;
                 if (balance != null) balance.SetBalance(startingCash);
+                break;
+            case RunEvent.Started:
+                // Already handed out at the door, unless there was no door.
+                if (!gathered)
+                {
+                    CharmCharges = 0;
+                    if (balance != null) balance.SetBalance(startingCash);
+                }
+                gathered = false;
+                LocalReady = false;
                 break;
             case RunEvent.Survived:
                 if (balance != null) balance.ForceSpend(pay);
@@ -269,6 +332,8 @@ public sealed class CasinoRun : MonoBehaviour
                 break;
             case RunEvent.Abandoned:
                 CharmCharges = 0;
+                gathered = false;
+                LocalReady = false;
                 if (balance != null) balance.SetBalance(hubCash);
                 break;
         }
@@ -426,11 +491,14 @@ public sealed class CasinoRun : MonoBehaviour
         messaging.RegisterNamedMessageHandler(StateMessage, ReceiveState);
         messaging.RegisterNamedMessageHandler(BalanceMessage, ReceiveBalance);
         messaging.RegisterNamedMessageHandler(BuyMessage, ReceiveBuy);
+        messaging.RegisterNamedMessageHandler(ReadyMessage, ReceiveReady);
     }
 
     void OnSessionEnded()
     {
         guestBalances.Clear();
+        ready.Clear();
+        if (LocalReady) ready.Add(0UL);
         // A guest who drops out mid-run carries on alone with a solo-sized quota.
         if (Phase == RunPhase.Running && Players > 1)
         {
@@ -463,6 +531,7 @@ public sealed class CasinoRun : MonoBehaviour
             writer.WriteValueSafe(StallsToday);
             writer.WriteValueSafe(DiedOnDay);
             writer.WriteValueSafe(startingCash);
+            writer.WriteValueSafe(ReadyCount);
             writer.WriteValueSafe((byte)what);
             writer.WriteValueSafe(pay);
             messaging.SendNamedMessage(StateMessage, guest, writer, NetworkDelivery.ReliableSequenced);
@@ -484,15 +553,21 @@ public sealed class CasinoRun : MonoBehaviour
         reader.ReadValueSafe(out int stalls);
         reader.ReadValueSafe(out int diedOnDay);
         reader.ReadValueSafe(out int hostStartingCash);
+        reader.ReadValueSafe(out int readyCount);
         reader.ReadValueSafe(out byte what);
         reader.ReadValueSafe(out int pay);
-        if (phase > (byte)RunPhase.Dead || what > (byte)RunEvent.Abandoned || float.IsNaN(timeLeft) || float.IsInfinity(timeLeft)) return;
+        if (phase > (byte)RunPhase.Gathering || what > (byte)RunEvent.Gathering || float.IsNaN(timeLeft) || float.IsInfinity(timeLeft)) return;
+        ReadyCount = Mathf.Clamp(readyCount, 0, CasinoMultiplayer.MaxPlayers);
 
         // Joined a lobby whose run is already going (or already over): swap
         // hub money for run money, or back, so the pooled cash stays honest.
         var wallet = PlayerBalance.Instance;
-        bool wasRunning = Phase == RunPhase.Running, nowRunning = phase == (byte)RunPhase.Running;
-        if (what == (byte)RunEvent.None && wasRunning != nowRunning && wallet != null)
+        bool wasRunning = Phase == RunPhase.Running || Phase == RunPhase.Gathering;
+        bool nowRunning = phase == (byte)RunPhase.Running || phase == (byte)RunPhase.Gathering;
+        // Joined while the others are waiting at the door: go and join them.
+        if (what == (byte)RunEvent.None && phase == (byte)RunPhase.Gathering && Phase != RunPhase.Gathering)
+            what = (byte)RunEvent.Gathering;
+        else if (what == (byte)RunEvent.None && wasRunning != nowRunning && wallet != null)
             wallet.SetBalance(nowRunning ? Mathf.Clamp(hostStartingCash, 0, 1000000) : hubCash);
 
         Phase = (RunPhase)phase;
