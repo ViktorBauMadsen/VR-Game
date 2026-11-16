@@ -77,6 +77,32 @@ namespace Casino.Multiplayer
 
         public bool IsGuestId(ulong id) => guests.Contains(id);
 
+        // This player's id in the session (the host is always 0).
+        public ulong LocalId => InSession ? network.LocalClientId : 0UL;
+
+        public static Color ColorFor(ulong id) => RemoteColors[(int)(id % (ulong)RemoteColors.Length)];
+
+        // Small helpers for game messages. Call Register from SessionStarted.
+        public void Register(string message, CustomMessagingManager.HandleNamedMessageDelegate handler)
+        {
+            if (Ready && network.CustomMessagingManager != null)
+                network.CustomMessagingManager.RegisterNamedMessageHandler(message, handler);
+        }
+
+        public void SendToHost(string message, FastBufferWriter writer)
+        {
+            if (!IsGuest || network.CustomMessagingManager == null) return;
+            network.CustomMessagingManager.SendNamedMessage(message, NetworkManager.ServerClientId, writer, NetworkDelivery.ReliableSequenced);
+        }
+
+        public void SendToGuests(string message, FastBufferWriter writer, ulong except = ulong.MaxValue)
+        {
+            if (!IsHost || network.CustomMessagingManager == null) return;
+            foreach (ulong guest in guests)
+                if (guest != except && network.ConnectedClients.ContainsKey(guest))
+                    network.CustomMessagingManager.SendNamedMessage(message, guest, writer, NetworkDelivery.ReliableSequenced);
+        }
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Bootstrap()
         {
@@ -382,7 +408,7 @@ namespace Casino.Multiplayer
             if (!remotes.TryGetValue(who, out var avatar) || avatar == null)
             {
                 if (remotes.Count >= MaxPlayers) return;
-                avatar = CreateAvatar("Other player " + who, RemoteColors[(int)(who % (ulong)RemoteColors.Length)], false);
+                avatar = CreateAvatar("Other player " + who, ColorFor(who), false);
                 remotes[who] = avatar;
             }
             avatar.Apply(pose, false);

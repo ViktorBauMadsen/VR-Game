@@ -48,12 +48,37 @@ public class CasinoChip : MonoBehaviour
 
     // Picking a placed chip back up cancels its bet - the same value it
     // spent to get snapped down is handed back.
+    // ...except once the wheel is spinning: the bet is locked in, so the
+    // grab is refused and the chip stays exactly where it was.
     void OnSelectEntered(SelectEnterEventArgs args)
     {
-        if (CurrentSpot != null) Unplace(refund: true);
+        if (CurrentSpot == null) return;
+        if (!CurrentSpot.BetsOpen && _interactable.interactionManager != null)
+        {
+            _locked = true;
+            _lockedPosition = transform.position;
+            _lockedRotation = transform.rotation;
+            _interactable.interactionManager.SelectExit(args.interactorObject, _interactable);
+            return;
+        }
+        Unplace(refund: true);
     }
 
-    void OnSelectExited(SelectExitEventArgs args) => TrySnapToSpot();
+    void OnSelectExited(SelectExitEventArgs args)
+    {
+        if (_locked)
+        {
+            _locked = false;
+            _rb.isKinematic = true;
+            transform.SetPositionAndRotation(_lockedPosition, _lockedRotation);
+            return;
+        }
+        TrySnapToSpot();
+    }
+
+    bool _locked;
+    Vector3 _lockedPosition;
+    Quaternion _lockedRotation;
 
     // XRGrabInteractable restores Rigidbody.isKinematic to its pre-grab
     // value inside Drop(), synchronously and *before* selectExited fires -
@@ -75,6 +100,9 @@ public class CasinoChip : MonoBehaviour
             bestDistance = _hitBuffer[i].distance;
             spot = candidate;
         }
+
+        // No more bets once the wheel is spinning - the chip just drops.
+        if (spot != null && !spot.BetsOpen) spot = null;
 
         if (spot != null)
         {

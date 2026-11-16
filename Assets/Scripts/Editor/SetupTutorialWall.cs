@@ -43,8 +43,8 @@ public static class SetupTutorialWall
 
     const string Tables =
         "<align=left><color=#FFD24A><b>THE TABLES</b></color>\n"
-        + "<size=72%><b>ROULETTE</b>  drop chips on numbers or colours, press the spin button. Pick a chip back up to cancel the bet.\n\n"
-        + "<b>BLACKJACK</b>  - / + sets the bet, then DEAL. HIT, STAND or DOUBLE. Blackjack pays 3 to 2.\n\n"
+        + "<size=72%><b>ROULETTE</b>  drop chips on numbers or colours before the countdown ends - everyone bets on the same spin. Alone, the spin button skips the wait.\n\n"
+        + "<b>BLACKJACK</b>  - / + sets the bet, then DEAL. With friends, everyone who presses DEAL shares one hand: HIT, STAND or DOUBLE together.\n\n"
         + "<b>SLOTS</b>  set the bet, grab the lever and pull.\n\n"
         + "<b>BAR</b>  order at the counter. Drinks cost money - and aim.\n\n"
         + "Point at a dealer and squeeze grip for tips.</size>";

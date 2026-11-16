@@ -1,25 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-// One-player blackjack against the dealer, played with the buttons on the
-// table (BlackjackButton): - / + pick the bet, DEAL starts a hand, then
-// HIT, STAND or DOUBLE.
+// What can happen at a blackjack table. Every player's table plays these same
+// events in the same order, which is what keeps the tables identical.
+public enum BlackjackEvent : byte { BetDown, BetUp, Join, StartDeal, Hit, Stand, Double }
+
+// Blackjack against the dealer, played with the buttons on the table
+// (BlackjackButton): - / + pick the bet, DEAL starts a hand, then HIT, STAND
+// or DOUBLE.
 //
-// Rules: six-deck shoe, reshuffled when it runs low. Dealer draws to 16
-// and stands on all 17s. Blackjack pays 3:2. Double is allowed on the
-// first two cards (one more card, then you stand). No splitting or
-// insurance. The dealer checks for blackjack before you play.
+// Rules: six decks, shuffled fresh for every hand. Dealer draws to 16 and
+// stands on all 17s. Blackjack pays 3:2. Double is allowed on the first two
+// cards (one more card, then you stand). No splitting or insurance. The
+// dealer checks for blackjack before you play.
+//
+// WITH FRIENDS the table is one shared hand that you play together:
+//   - The first DEAL press opens a short "who's in?" countdown. Everyone who
+//     presses DEAL before it ends is in the hand, each with their own money
+//     on it (the bet shown on the table). Anyone else just watches.
+//   - Everybody sees the same cards. Anyone who is in can press HIT, STAND or
+//     DOUBLE - you win or lose together, so talk it over.
+//   - DOUBLE doubles the bet of every player who can afford it.
+// Alone there is no countdown: DEAL deals.
+//
+// How it stays in sync: a button press is not acted on directly. It becomes
+// a BlackjackEvent that the host approves and sends to everyone (through the
+// hooks below, wired up by CasinoTables); each table then plays the events
+// in order, waiting for its own card animations where needed. The shuffle
+// uses a seed the host sends with the deal, so all shoes are identical.
 //
 // Money follows the same convention as the other games: the bet is taken
-// with PlayerBalance.TrySpend when the hand is dealt, and a win pays back
-// stake + winnings with AddBalance.
-//
-// Cards come from CardAtlas and are dealt out of the shoe with a short
-// flight; they lie in two rows running from the player's left to right.
+// with PlayerBalance.TrySpend when you join the hand, and a win pays back
+// stake + winnings. Each player's money stays on their own machine.
 public class BlackjackTable : MonoBehaviour
 {
+    // Set by CasinoTables. Shared = other players are in the casino.
+    public static Func<bool> Shared = () => false;
+    public static Func<bool> IsAuthority = () => true;
+    public static Func<ulong> LocalId = () => 0UL;
+    // Authority: announce an approved event to the guests. Guest: ask the host for it.
+    public static Action<BlackjackTable, BlackjackEvent, ulong, int> Send;
+
     [SerializeField] BlackjackDealer dealer;
     [SerializeField] WorldTextPanel infoPanel;
     [Tooltip("Where cards fly out from.")]
@@ -37,8 +61,10 @@ public class BlackjackTable : MonoBehaviour
     [SerializeField] float dealSeconds = 0.3f;
     [SerializeField] float pauseSeconds = 0.25f;
     [SerializeField] int decks = 6;
+    [Tooltip("With friends: how long others have to press DEAL and join the hand.")]
+    [SerializeField] float joinSeconds = 6f;
 
-    enum State { Betting, Busy, PlayerTurn, RoundOver }
+    enum State { Betting, Joining, Busy, PlayerTurn, RoundOver }
 
     class Hand
     {
@@ -62,13 +88,25 @@ public class BlackjackTable : MonoBehaviour
         public bool IsBlackjack => Cards.Count == 2 && Total() == 21;
     }
 
+    struct Pending
+    {
+        public BlackjackEvent What;
+        public ulong Player;
+        public int Arg;
+    }
+
     readonly Hand _player = new Hand(), _dealer = new Hand();
     readonly List<int> _shoe = new List<int>();
     readonly List<GameObject> _chips = new List<GameObject>();
+    readonly Queue<Pending> _queue = new Queue<Pending>();
+    readonly HashSet<ulong> _joined = new HashSet<ulong>();
     State _state = State.Betting;
     int _betIndex;
-    int _wager;
+    int _wager;          // this player's own money on the hand (0 = watching)
+    bool _inHand;
     bool _holeHidden;
+    float _joinDeadline, _waitingSince;
+    int _shownSeconds = -1;
     AudioClip _flick;
 
     int Bet => bets[_betIndex];
@@ -77,7 +115,7 @@ public class BlackjackTable : MonoBehaviour
     {
         _betIndex = Mathf.Clamp(startingBetIndex, 0, bets.Length - 1);
         _flick = CreateFlick();
-        Shuffle();
+        Shuffle(Environment.TickCount);
         ShowChips(Bet);
         ShowBetting();
     }
@@ -86,64 +124,245 @@ public class BlackjackTable : MonoBehaviour
 
     public void Press(BlackjackAction action, IXRSelectInteractor who)
     {
-        bool ok = false;
+        BlackjackEvent what;
         switch (action)
         {
-            case BlackjackAction.BetDown:
-            case BlackjackAction.BetUp:
-                if (_state != State.Betting && _state != State.RoundOver) break;
-                _betIndex = Mathf.Clamp(_betIndex + (action == BlackjackAction.BetUp ? 1 : -1), 0, bets.Length - 1);
+            case BlackjackAction.BetDown: what = BlackjackEvent.BetDown; break;
+            case BlackjackAction.BetUp: what = BlackjackEvent.BetUp; break;
+            case BlackjackAction.Deal: what = BlackjackEvent.Join; break;
+            case BlackjackAction.Hit: what = BlackjackEvent.Hit; break;
+            case BlackjackAction.Stand: what = BlackjackEvent.Stand; break;
+            default: what = BlackjackEvent.Double; break;
+        }
+
+        bool ok = LocalCheck(what);
+        if (ok)
+        {
+            if (IsAuthority()) ok = Request(what, LocalId());
+            else Send?.Invoke(this, what, LocalId(), 0); // the host answers
+        }
+        if (who is XRBaseInputInteractor input) input.SendHapticImpulse(ok ? 0.3f : 0.6f, ok ? 0.06f : 0.15f);
+    }
+
+    // Things only this player can know: can they afford it, are they in the hand.
+    bool LocalCheck(BlackjackEvent what)
+    {
+        var balance = PlayerBalance.Instance;
+        switch (what)
+        {
+            case BlackjackEvent.Join:
+                if (_state == State.Joining && _inHand) return false; // already in
+                if (_state != State.Betting && _state != State.RoundOver && _state != State.Joining) return false;
+                if (balance == null || !balance.CanAfford(Bet))
+                {
+                    if (balance != null) balance.ReportInsufficientFunds(Bet);
+                    if (dealer != null) dealer.Say($"The bet is ${Bet}. You're a little short.");
+                    return false;
+                }
+                return true;
+
+            case BlackjackEvent.Hit:
+            case BlackjackEvent.Stand:
+            case BlackjackEvent.Double:
+                if (_state != State.PlayerTurn) return false;
+                if (!_inHand)
+                {
+                    if (dealer != null) dealer.Say("You're not in this hand - press DEAL on the next one.");
+                    return false;
+                }
+                if (what == BlackjackEvent.Double && _player.Cards.Count != 2)
+                {
+                    if (dealer != null) dealer.Say("You can only double on your first two cards.");
+                    return false;
+                }
+                return true;
+
+            default:
+                return _state == State.Betting || _state == State.RoundOver;
+        }
+    }
+
+    // Authority only: approve an event (a local press, or a guest asking),
+    // tell everyone, and play it here.
+    public bool Request(BlackjackEvent what, ulong player)
+    {
+        if (!IsAuthority()) return false;
+        int arg = 0;
+        switch (what)
+        {
+            case BlackjackEvent.BetDown:
+            case BlackjackEvent.BetUp:
+                if (_state != State.Betting && _state != State.RoundOver) return false;
+                break;
+            case BlackjackEvent.Join:
+                if (_state == State.Joining) { if (_joined.Contains(player)) return false; }
+                else if (_state != State.Betting && _state != State.RoundOver) return false;
+                arg = _betIndex; // so a late joiner's table shows the same bet
+                break;
+            case BlackjackEvent.Hit:
+            case BlackjackEvent.Stand:
+            case BlackjackEvent.Double:
+                if (_state != State.PlayerTurn) return false;
+                if (Shared() && !_joined.Contains(player)) return false;
+                if (what == BlackjackEvent.Double && _player.Cards.Count != 2) return false;
+                break;
+            default:
+                return false; // StartDeal only comes from the countdown below
+        }
+        Announce(what, player, arg);
+        return true;
+    }
+
+    void Announce(BlackjackEvent what, ulong player, int arg)
+    {
+        Send?.Invoke(this, what, player, arg);
+        Enqueue(what, player, arg);
+    }
+
+    // An approved event, from the host or from this table itself.
+    public void Enqueue(BlackjackEvent what, ulong player, int arg)
+    {
+        if (_queue.Count == 0) _waitingSince = Time.unscaledTime;
+        _queue.Enqueue(new Pending { What = what, Player = player, Arg = arg });
+        Drain();
+    }
+
+    // -------------------------------------------------------------- events
+
+    void Update()
+    {
+        Drain();
+
+        if (_state == State.Joining)
+        {
+            float left = _joinDeadline - Time.unscaledTime;
+            if (left <= 0f && IsAuthority() && _queue.Count == 0)
+                Announce(BlackjackEvent.StartDeal, 0UL, UnityEngine.Random.Range(1, int.MaxValue));
+            else
+            {
+                int seconds = Mathf.Max(0, Mathf.CeilToInt(left));
+                if (seconds != _shownSeconds) { _shownSeconds = seconds; ShowJoining(seconds); }
+            }
+        }
+
+        // Something that should have played by now never could (a dropped
+        // connection mid-hand, say): start over rather than hang forever.
+        if (_queue.Count > 0 && Time.unscaledTime - _waitingSince > 20f) ResetTable();
+    }
+
+    void Drain()
+    {
+        while (_queue.Count > 0)
+        {
+            var next = _queue.Peek();
+            bool idle = _state == State.Betting || _state == State.RoundOver;
+            bool ready;
+            switch (next.What)
+            {
+                case BlackjackEvent.BetDown:
+                case BlackjackEvent.BetUp:
+                    ready = idle;
+                    break;
+                case BlackjackEvent.Join:
+                    ready = idle || _state == State.Joining;
+                    break;
+                case BlackjackEvent.StartDeal:
+                    if (idle) { _queue.Dequeue(); continue; } // a hand we never saw the start of
+                    ready = _state == State.Joining;
+                    break;
+                default:
+                    if (idle || _state == State.Joining) { _queue.Dequeue(); continue; }
+                    ready = _state == State.PlayerTurn;
+                    break;
+            }
+            if (!ready) return; // cards are still moving - try again next frame
+            _queue.Dequeue();
+            _waitingSince = Time.unscaledTime;
+            Play(next);
+        }
+    }
+
+    void Play(Pending e)
+    {
+        bool mine = e.Player == LocalId();
+        var balance = PlayerBalance.Instance;
+        switch (e.What)
+        {
+            case BlackjackEvent.BetDown:
+            case BlackjackEvent.BetUp:
+                _betIndex = Mathf.Clamp(_betIndex + (e.What == BlackjackEvent.BetUp ? 1 : -1), 0, bets.Length - 1);
                 if (_state == State.RoundOver) ClearCards();
                 _state = State.Betting;
                 ShowChips(Bet);
                 ShowBetting();
-                ok = true;
                 break;
 
-            case BlackjackAction.Deal:
-                if (_state != State.Betting && _state != State.RoundOver) break;
-                if (PlayerBalance.Instance == null || !PlayerBalance.Instance.TrySpend(Bet))
+            case BlackjackEvent.Join:
+                if (_state != State.Joining)
                 {
-                    if (dealer != null) dealer.Say($"The bet is ${Bet}. You're a little short.");
-                    break;
+                    // First one in: a new hand begins.
+                    ClearCards();
+                    _joined.Clear();
+                    _inHand = false;
+                    _wager = 0;
+                    _betIndex = Mathf.Clamp(e.Arg, 0, bets.Length - 1);
+                    _state = State.Joining;
+                    _joinDeadline = Time.unscaledTime + (Shared() ? joinSeconds : 0f);
+                    _shownSeconds = -1;
+                    ShowChips(Bet);
                 }
-                _wager = Bet;
+                _joined.Add(e.Player);
+                if (mine && !_inHand && balance != null && balance.TrySpend(Bet))
+                {
+                    _inHand = true;
+                    _wager = Bet;
+                }
+                _shownSeconds = -1; // redraw the count of players
+                break;
+
+            case BlackjackEvent.StartDeal:
+                Shuffle(e.Arg);
                 StartCoroutine(DealRound());
-                ok = true;
                 break;
 
-            case BlackjackAction.Hit:
-                if (_state != State.PlayerTurn) break;
+            case BlackjackEvent.Hit:
                 StartCoroutine(Hit(false));
-                ok = true;
                 break;
 
-            case BlackjackAction.Double:
-                if (_state != State.PlayerTurn) break;
-                if (_player.Cards.Count != 2)
+            case BlackjackEvent.Double:
+                if (_inHand)
                 {
-                    if (dealer != null) dealer.Say("You can only double on your first two cards.");
-                    break;
+                    if (balance != null && balance.CanAfford(_wager) && balance.TrySpend(_wager)) _wager *= 2;
+                    else if (dealer != null) dealer.Say("You can't cover the double - your bet stays as it is.");
                 }
-                if (PlayerBalance.Instance == null || !PlayerBalance.Instance.TrySpend(_wager))
-                {
-                    if (dealer != null) dealer.Say("Not enough to double, I'm afraid.");
-                    break;
-                }
-                _wager *= 2;
-                ShowChips(_wager);
+                ShowChips(Stake * (_inHand ? 1 : 2));
                 StartCoroutine(Hit(true));
-                ok = true;
                 break;
 
-            case BlackjackAction.Stand:
-                if (_state != State.PlayerTurn) break;
+            case BlackjackEvent.Stand:
                 StartCoroutine(DealerPlays());
-                ok = true;
                 break;
         }
+    }
 
-        if (who is XRBaseInputInteractor input) input.SendHapticImpulse(ok ? 0.3f : 0.6f, ok ? 0.06f : 0.15f);
+    // What the chip stack on the table should show.
+    int Stake => _inHand ? _wager : Bet;
+
+    void ResetTable()
+    {
+        StopAllCoroutines();
+        _queue.Clear();
+        // A hand that never finished: the stake goes back.
+        if (_inHand && _wager > 0 && _state != State.RoundOver && _state != State.Betting && PlayerBalance.Instance != null)
+            PlayerBalance.Instance.AddBalance(_wager);
+        _inHand = false;
+        _wager = 0;
+        _joined.Clear();
+        ClearCards();
+        _state = State.Betting;
+        if (dealer != null) dealer.Busy = false;
+        ShowChips(Bet);
+        ShowBetting();
     }
 
     // -------------------------------------------------------------- round
@@ -153,13 +372,7 @@ public class BlackjackTable : MonoBehaviour
         _state = State.Busy;
         if (dealer != null) dealer.Busy = true;
         ClearCards();
-        ShowChips(_wager);
-        if (_shoe.Count < 52)
-        {
-            Shuffle();
-            if (dealer != null) dealer.Say("Shuffling up.");
-            yield return new WaitForSeconds(0.8f);
-        }
+        ShowChips(Stake);
         ShowPlaying();
 
         yield return Deal(_player, true);
@@ -217,7 +430,8 @@ public class BlackjackTable : MonoBehaviour
         else Finish(0, "DEALER WINS", $"Dealer has {house}. House wins.");
     }
 
-    // payout includes the stake (0 = lost it, wager = push).
+    // payout includes the stake (0 = lost it, wager = push). For someone
+    // who is only watching, the wager and so the payout are 0.
     void Finish(int payout, string headline, string dealerLine)
     {
         if (payout > 0 && PlayerBalance.Instance != null) payout = PlayerBalance.Instance.Payout(payout, _wager);
@@ -225,28 +439,33 @@ public class BlackjackTable : MonoBehaviour
         if (net > 0) BarSounds.Play(BarSounds.Ding, transform.position + Vector3.up, 0.6f);
         if (payout == 0) ShowChips(0);
 
+        if (!_inHand && headline == "YOU WIN") headline = "PLAYERS WIN";
         string colour = net > 0 ? "#5CFF7A" : net < 0 ? "#FF6A5C" : "#FFD24A";
         string amount = net > 0 ? $" +${net}" : net < 0 ? $" -${-net}" : "";
-        SetInfo($"<color={colour}>{headline}{amount}</color>\n<size=45%>YOU {_player.Total()}   DEALER {_dealer.Total()}   -   DEAL TO PLAY AGAIN</size>");
+        SetInfo($"<color={colour}>{headline}{amount}</color>\n<size=45%>{(Shared() ? "HAND" : "YOU")} {_player.Total()}   DEALER {_dealer.Total()}   -   DEAL TO PLAY AGAIN</size>");
 
         if (dealer != null)
         {
             dealer.Say(dealerLine, 4.5f);
             dealer.Busy = false;
         }
+        _inHand = false;
+        _wager = 0;
         _state = State.RoundOver;
     }
 
     // -------------------------------------------------------------- cards
 
-    void Shuffle()
+    // Seeded, so every player's shoe is in the same order.
+    void Shuffle(int seed)
     {
+        var random = new System.Random(seed);
         _shoe.Clear();
         for (int d = 0; d < Mathf.Max(1, decks); d++)
             for (int card = 0; card < 52; card++) _shoe.Add(card);
         for (int i = _shoe.Count - 1; i > 0; i--)
         {
-            int j = Random.Range(0, i + 1);
+            int j = random.Next(i + 1);
             (_shoe[i], _shoe[j]) = (_shoe[j], _shoe[i]);
         }
     }
@@ -321,6 +540,13 @@ public class BlackjackTable : MonoBehaviour
     void ShowBetting() =>
         SetInfo($"BET <color=#FFD24A>${Bet}</color>\n<size=45%>- / + CHANGES THE BET   -   DEAL TO PLAY</size>");
 
+    void ShowJoining(int seconds)
+    {
+        if (!Shared()) return; // alone it deals at once - nothing to wait for
+        string you = _inHand ? "<color=#5CFF7A>YOU'RE IN</color>" : "PRESS DEAL TO JOIN";
+        SetInfo($"DEALING IN <color=#FFD24A>{seconds}</color>\n<size=45%>BET ${Bet}   -   {_joined.Count} IN   -   {you}</size>");
+    }
+
     void ShowPlaying()
     {
         int player = _player.Total(out bool soft);
@@ -330,7 +556,8 @@ public class BlackjackTable : MonoBehaviour
         if (_dealer.Cards.Count > 0)
             house = _holeHidden ? CardAtlas.Value(_dealer.Cards[0]).ToString() : _dealer.Total().ToString();
 
-        SetInfo($"YOU <color=#FFD24A>{yours}</color>     DEALER <color=#FFD24A>{house}</color>\n<size=45%>BET ${_wager}</size>");
+        string stake = _inHand ? $"YOUR BET ${_wager}" : "WATCHING";
+        SetInfo($"{(Shared() ? "HAND" : "YOU")} <color=#FFD24A>{yours}</color>     DEALER <color=#FFD24A>{house}</color>\n<size=45%>{stake}</size>");
     }
 
     void SetInfo(string text)

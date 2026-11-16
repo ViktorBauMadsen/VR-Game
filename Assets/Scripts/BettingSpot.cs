@@ -23,6 +23,16 @@ public class BettingSpot : MonoBehaviour
 
     public int ChipCount => _chips.Count;
 
+    // False while this table's wheel is spinning: no new chips, no taking chips back.
+    public bool BetsOpen
+    {
+        get
+        {
+            var manager = Manager;
+            return manager == null || manager.Wheel == null || !manager.Wheel.IsSpinning;
+        }
+    }
+
     // The betting manager of the table this spot belongs to (so a second
     // table's wheel never resolves this table's chips).
     RouletteBettingManager _manager;

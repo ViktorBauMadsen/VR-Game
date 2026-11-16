@@ -27,7 +27,7 @@ public static class CombineRouletteTable
     static void Combine()
     {
         RouletteWheel wheel = null;
-        foreach (var w in Object.FindObjectsByType<RouletteWheel>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (var w in Object.FindObjectsByType<RouletteWheel>(FindObjectsInactive.Include))
             if (w.GetComponentInParent<RouletteTable>(true) == null) { wheel = w; break; }
         if (wheel == null)
         {
@@ -42,18 +42,18 @@ public static class CombineRouletteTable
         // Everything that belongs to the table.
         var pieces = new List<Transform> { wheel.transform };
         RouletteBettingManager manager = null;
-        foreach (var m in Object.FindObjectsByType<RouletteBettingManager>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (var m in Object.FindObjectsByType<RouletteBettingManager>(FindObjectsInactive.Include))
         {
             if (m.GetComponentInParent<RouletteTable>(true) != null) continue;
             if (manager == null) manager = m;
             pieces.Add(m.transform);
         }
-        foreach (var spot in Object.FindObjectsByType<BettingSpot>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (var spot in Object.FindObjectsByType<BettingSpot>(FindObjectsInactive.Include))
         {
             if (spot.GetComponentInParent<RouletteTable>(true) != null) continue;
             pieces.Add(spot.transform.parent != null ? spot.transform.parent : spot.transform);
         }
-        foreach (var croupier in Object.FindObjectsByType<Croupier>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        foreach (var croupier in Object.FindObjectsByType<Croupier>(FindObjectsInactive.Include))
             if (croupier.GetComponentInParent<RouletteTable>(true) == null) pieces.Add(croupier.transform);
         foreach (var extra in Selection.transforms)
         {

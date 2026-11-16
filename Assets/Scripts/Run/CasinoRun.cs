@@ -107,6 +107,7 @@ public sealed class CasinoRun : MonoBehaviour
         if (run == null) run = new GameObject("Casino Run").AddComponent<CasinoRun>();
         if (run.GetComponent<CasinoRunHud>() == null) run.gameObject.AddComponent<CasinoRunHud>();
         if (run.GetComponent<CasinoMenu>() == null) run.gameObject.AddComponent<CasinoMenu>();
+        if (run.GetComponent<CasinoTables>() == null) run.gameObject.AddComponent<CasinoTables>();
     }
 
     void Awake()

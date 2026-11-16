@@ -39,7 +39,12 @@ public class RouletteSpinButton : MonoBehaviour
     void OnSelectEntered(SelectEnterEventArgs args)
     {
         _pressed = true;
-        if (wheel != null) wheel.Spin();
+        if (wheel == null) return;
+        // The round decides: alone it spins right away, with friends it only
+        // starts the betting countdown so everyone gets their chips down.
+        var round = wheel.GetComponent<RouletteRound>();
+        if (round != null) round.PressSpin();
+        else wheel.Spin();
     }
 
     void OnSelectExited(SelectExitEventArgs args) => _pressed = false;

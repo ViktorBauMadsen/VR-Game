@@ -71,6 +71,8 @@ public class RouletteWheel : MonoBehaviour
 
         ValidatePockets();
         if (rotor == null) rotor = BuildRotor();
+        // The betting countdown that decides when this wheel spins.
+        if (GetComponent<RouletteRound>() == null) gameObject.AddComponent<RouletteRound>();
     }
 
     void OnDestroy()
@@ -98,15 +100,29 @@ public class RouletteWheel : MonoBehaviour
             rotor.Rotate(0f, (clockwise ? 1f : -1f) * _wheelSpeed * dt, 0f, Space.Self);
     }
 
-    public void Spin()
+    // A fair number to spin to (0-36), or -1 if no pockets are wired up.
+    public int PickRandomNumber()
     {
-        if (_isSpinning || ball == null || rotor == null) return;
+        var pocket = PickRandomPocket();
+        return pocket != null ? pocket.Number : -1;
+    }
 
-        _target = PickRandomPocket();
+    public void Spin() => SpinTo(PickRandomNumber());
+
+    // Spins so the ball lands on the given number. In multiplayer the host
+    // picks the number and every player's wheel spins to the same one.
+    public bool SpinTo(int number)
+    {
+        if (_isSpinning || ball == null || rotor == null) return false;
+
+        _target = null;
+        if (pockets != null)
+            foreach (var p in pockets)
+                if (p != null && p.Number == number) { _target = p; break; }
         if (_target == null)
         {
-            Debug.LogError("RouletteWheel: no pockets wired up - can't spin.");
-            return;
+            Debug.LogError($"RouletteWheel: no pocket for number {number} - can't spin.");
+            return false;
         }
 
         _isSpinning = true;
@@ -118,6 +134,7 @@ public class RouletteWheel : MonoBehaviour
         // timing never changes which pocket it lands in.
         float slowdownTime = Mathf.Max(0.5f, ballDuration - wheelSpinUpTime);
         _wheelDecel = wheelSpinSpeed / slowdownTime;
+        return true;
     }
 
     // Uniform over every wired pocket: 1/37 each on a European wheel.
