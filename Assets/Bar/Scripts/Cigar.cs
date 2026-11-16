@@ -45,6 +45,7 @@ public class Cigar : BarConsumable
     protected override void Update()
     {
         base.Update();
+        FlipIfBackwards();
 
         bool dragging = IsHeld && AtMouth && _dragsLeft > 0;
         if (dragging)
@@ -68,6 +69,28 @@ public class Cigar : BarConsumable
         {
             var emission = tipSmoke.emission;
             emission.rateOverTime = _lit ? Mathf.Lerp(5f, 16f, _glow) : 0f;
+        }
+    }
+
+    // Which way round the cigar ends up in the hand depends on how it was
+    // grabbed, so it can arrive at the mouth burning end first. Rather than
+    // make the player re-grip it, swap its two ends: everything under the
+    // root is turned half a turn, so the mouth end is always the one
+    // nearest the mouth. The collider is symmetric, so nothing else changes.
+    void FlipIfBackwards()
+    {
+        if (!IsHeld || Head == null || ember == null || mouthPoint == null) return;
+
+        Vector3 mouth = MouthPosition;
+        float emberDistance = Vector3.Distance(ember.transform.position, mouth);
+        float mouthEndDistance = Vector3.Distance(mouthPoint.position, mouth);
+        if (emberDistance > 0.3f || emberDistance + 0.03f > mouthEndDistance) return;
+
+        var half = Quaternion.Euler(0f, 180f, 0f);
+        foreach (Transform child in transform)
+        {
+            child.localPosition = half * child.localPosition;
+            child.localRotation = half * child.localRotation;
         }
     }
 
