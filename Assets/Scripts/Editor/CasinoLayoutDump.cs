@@ -33,6 +33,10 @@ public static class CasinoLayoutDump
     [MenuItem("Tools/Casino/View/Lounge and Bar")] static void ViewLounge() => View(new Vector3(0.5f, 1.7f, 22.5f), new Vector3(8f, 240f, 0f));
     [MenuItem("Tools/Casino/View/Blackjack Row")] static void ViewBlackjack() => View(new Vector3(-5.5f, 1.7f, 22f), new Vector3(8f, 150f, 0f));
 
+    [MenuItem("Tools/Casino/View/Exterior Approach")] static void ViewApproach() => View(new Vector3(-2.7f, 1.7f, 42f), new Vector3(2f, 180f, 0f));
+    [MenuItem("Tools/Casino/View/Exterior Aerial")] static void ViewAerial() => View(new Vector3(22f, 16f, 52f), new Vector3(22f, 222f, 0f));
+    [MenuItem("Tools/Casino/View/Exterior Side")] static void ViewSide() => View(new Vector3(-26f, 3f, 34f), new Vector3(4f, 140f, 0f));
+
     static void View(Vector3 eye, Vector3 euler)
     {
         var view = SceneView.lastActiveSceneView;

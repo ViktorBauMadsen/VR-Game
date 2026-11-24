@@ -27,7 +27,7 @@ using UnityEngine.Rendering;
 // VR/Quest budget: lighting is mostly emissive. Only the 4 big chandeliers and
 // the bar get a realtime point light each (no shadows); set AddRealtimeLights
 // to false to go fully emissive. All decor is marked batching-static.
-public static class DecorateInterior
+public static partial class DecorateInterior
 {
     const string RootName = "Interior Decor";
     const string Folder = "Assets/Materials/InteriorDecor";
@@ -106,7 +106,7 @@ public static class DecorateInterior
     static void CollectObstacles()
     {
         obstacles = new List<Bounds>();
-        var skipRoots = new HashSet<string> { "XR Origin (XR Rig)", "Player Avatar", "Player Hands", RootName };
+        var skipRoots = new HashSet<string> { "XR Origin (XR Rig)", "Player Avatar", "Player Hands", RootName, ExteriorRootName };
         foreach (var r in UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsInactive.Exclude))
         {
             if (!r.enabled || !r.gameObject.activeInHierarchy) continue;
@@ -747,11 +747,13 @@ public static class DecorateInterior
 
     enum RugStyle { Runner, Medallion, Trellis, Deco, Burgundy, Lounge }
 
-    static class Textures
+    static partial class Textures
     {
         static readonly Dictionary<string, Texture2D> cache = new Dictionary<string, Texture2D>();
 
-        static Texture2D Make(string name, int w, int h, bool repeat, Func<float, float, Color> f)
+        static Texture2D Make(string name, int w, int h, bool repeat, Func<float, float, Color> f) => Make(name, w, h, repeat, false, f);
+
+        static Texture2D Make(string name, int w, int h, bool repeat, bool alpha, Func<float, float, Color> f)
         {
             if (cache.TryGetValue(name, out var cached) && cached != null) return cached;
             var px = new Color[w * h];
@@ -771,7 +773,8 @@ public static class DecorateInterior
             imp.anisoLevel = 4;
             imp.filterMode = FilterMode.Trilinear;
             imp.sRGBTexture = true;
-            imp.alphaSource = TextureImporterAlphaSource.None;
+            imp.alphaSource = alpha ? TextureImporterAlphaSource.FromInput : TextureImporterAlphaSource.None;
+            imp.alphaIsTransparency = alpha;
             imp.SaveAndReimport();
             var result = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
             cache[name] = result;
