@@ -23,7 +23,7 @@ public class SlotBetPanel : MonoBehaviour
     static readonly Color TextColor = new Color(1f, 0.85f, 0.3f);
     static readonly Color ErrorColor = new Color(1f, 0.25f, 0.25f);
 
-    SlotMachine _machine;
+    SlotMachineBase _machine;
     TextMeshPro _label;
     Button _minus, _plus;
     Coroutine _flash;
@@ -37,11 +37,11 @@ public class SlotBetPanel : MonoBehaviour
         public bool hovered, pressed;
     }
 
-    public static SlotBetPanel Build(SlotMachine machine, SlotMachineReels reels, Vector3 offset)
+    public static SlotBetPanel Build(SlotMachineBase machine, Vector3 offset)
     {
-        if (!TryComputePose(machine, reels, offset, out Vector3 pos, out Quaternion facing))
+        if (!machine.TryGetBetPanelPose(offset, out Vector3 pos, out Quaternion facing))
         {
-            Debug.LogWarning($"SlotBetPanel: couldn't work out where {machine.name}'s reel screen is - no bet panel built.");
+            Debug.LogWarning($"SlotBetPanel: couldn't work out where {machine.name}'s screen is - no bet panel built.");
             return null;
         }
 
@@ -54,24 +54,20 @@ public class SlotBetPanel : MonoBehaviour
         return panel;
     }
 
-    // Where the panel goes: centered just below the bottom reel row, facing
-    // the player, then pushed toward the player until it's clear of the
-    // machine's own colliders (the reel screen sits recessed inside the
-    // cabinet; inside a collider the controller ray couldn't reach it).
-    // Also used by SlotMachine's editor gizmo.
-    public static bool TryComputePose(SlotMachine machine, SlotMachineReels reels, Vector3 offset, out Vector3 pos, out Quaternion facing)
+    // Where the panel goes: the machine picks a spot (just below its screen,
+    // facing the player), then it's pushed toward the player until it's
+    // clear of the machine's own colliders (the screen sits recessed inside
+    // the cabinet; inside a collider the controller ray couldn't reach it).
+    public static Vector3 PushClear(SlotMachineBase machine, Vector3 anchor, Quaternion facing, Vector3 offset)
     {
-        pos = Vector3.zero;
-        if (!reels.TryGetScreenFrame(out Vector3 center, out facing, out float rowSpacing, out _)) return false;
-
         Vector3 up = facing * Vector3.up, toPlayer = facing * Vector3.back, right = facing * Vector3.right;
-        pos = center - up * (rowSpacing * 1.75f) + toPlayer * 0.015f + right * offset.x + up * offset.y;
+        Vector3 pos = anchor + right * offset.x + up * offset.y;
 
         const float step = 0.01f, margin = 0.015f;
         var colliders = machine.GetComponentsInChildren<Collider>();
         for (int i = 0; i < 100 && InsideAny(colliders, pos); i++) pos += toPlayer * step;
         pos += toPlayer * (margin + offset.z);
-        return true;
+        return pos;
     }
 
     static bool InsideAny(Collider[] colliders, Vector3 p)
@@ -86,7 +82,7 @@ public class SlotBetPanel : MonoBehaviour
         return false;
     }
 
-    void Init(SlotMachine machine, Shader shader)
+    void Init(SlotMachineBase machine, Shader shader)
     {
         _machine = machine;
 
@@ -223,7 +219,7 @@ public class SlotBetPanel : MonoBehaviour
 
     // Reuse a shader the machine already renders with, so it's guaranteed
     // to be included in the Quest build (a Shader.Find'd one might be stripped).
-    static Shader FindLitShader(SlotMachine machine)
+    static Shader FindLitShader(SlotMachineBase machine)
     {
         foreach (var r in machine.GetComponentsInChildren<MeshRenderer>())
         {

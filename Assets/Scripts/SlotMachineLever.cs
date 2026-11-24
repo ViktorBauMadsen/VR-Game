@@ -21,7 +21,7 @@ public class SlotMachineLever : MonoBehaviour
     [SerializeField] float maxPullDistance = 0.15f; // meters of downward hand movement for a full pull
     [SerializeField] float pullThreshold = 0.95f;   // fraction of maxPullAngle that counts as "fully pulled"
     [SerializeField] float returnSpeed = 180f;      // degrees/sec spring-back speed after release
-    [SerializeField] SlotMachine slotMachine;
+    [SerializeField] SlotMachineBase slotMachine; // any machine: classic or video slot
     [SerializeField] AudioSource audioSource;
     // Lever sounds are generated in code: ratchet clicks while you pull, and
     // a heavy "ka-chunk" when the pull is far enough to trigger a spin.

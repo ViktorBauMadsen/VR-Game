@@ -968,7 +968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &13944783
 Transform:
   m_ObjectHideFlags: 0
@@ -6485,7 +6485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &140373676
 Transform:
   m_ObjectHideFlags: 0
@@ -8774,12 +8774,11 @@ GameObject:
   - component: {fileID: 191988782}
   - component: {fileID: 191988781}
   - component: {fileID: 191988780}
-  - component: {fileID: 191988779}
   - component: {fileID: 191988778}
-  - component: {fileID: 191988777}
   - component: {fileID: 191988776}
+  - component: {fileID: 191988783}
   m_Layer: 0
-  m_Name: SlotMachine (8)
+  m_Name: Golden Inferno Slot (SlotMachine (8))
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8882,38 +8881,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &191988777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191988775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 1613909750}
-    middle: {fileID: 1713327834}
-    bottom: {fileID: 142082648}
-  - top: {fileID: 1675505690}
-    middle: {fileID: 756377545}
-    bottom: {fileID: 896236630}
-  - top: {fileID: 1901286359}
-    middle: {fileID: 230188981}
-    bottom: {fileID: 2113712988}
-  - top: {fileID: 1595108837}
-    middle: {fileID: 1489275496}
-    bottom: {fileID: 1007257520}
-  spinTime: 2.5
-  reelStopGap: 0.7
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!65 &191988778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8935,66 +8902,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &191988779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191988775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 191988777}
-  audioSource: {fileID: 191988776}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!23 &191988780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9073,6 +8980,42 @@ Transform:
   - {fileID: 1920918547}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &191988783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191988775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb90b63b45ce46449ffb9fb9b9c78e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoldenInfernoSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 1607442517}
+  - {fileID: 1920918546}
+  - {fileID: 979122864}
+  cabinetRenderer: {fileID: 191988780}
+  audioSource: {fileID: 191988776}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
 --- !u!1001 &192629930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9601,7 +9544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &212844962
 Transform:
   m_ObjectHideFlags: 0
@@ -13508,7 +13451,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 706368464}
+  slotMachine: {fileID: 706368468}
   audioSource: {fileID: 321988653}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -15188,7 +15131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &366752744
 Transform:
   m_ObjectHideFlags: 0
@@ -18186,7 +18129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &420591632
 Transform:
   m_ObjectHideFlags: 0
@@ -20503,7 +20446,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 1400164316}
+  slotMachine: {fileID: 1400164320}
   audioSource: {fileID: 492709943}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -25962,7 +25905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &612586193
 Camera:
   m_ObjectHideFlags: 0
@@ -30057,7 +30000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &699432313
 Transform:
   m_ObjectHideFlags: 0
@@ -30561,12 +30504,11 @@ GameObject:
   - component: {fileID: 706368467}
   - component: {fileID: 706368466}
   - component: {fileID: 706368465}
-  - component: {fileID: 706368464}
   - component: {fileID: 706368463}
-  - component: {fileID: 706368462}
   - component: {fileID: 706368461}
+  - component: {fileID: 706368468}
   m_Layer: 0
-  m_Name: SlotMachine (3)
+  m_Name: 'Fruit Cocktail Slot (SlotMachine (3)) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30669,38 +30611,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &706368462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706368460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 1819986058}
-    middle: {fileID: 578051621}
-    bottom: {fileID: 1208644705}
-  - top: {fileID: 936197488}
-    middle: {fileID: 1150376498}
-    bottom: {fileID: 388999027}
-  - top: {fileID: 2017525506}
-    middle: {fileID: 170864669}
-    bottom: {fileID: 855388725}
-  - top: {fileID: 649672493}
-    middle: {fileID: 1581619996}
-    bottom: {fileID: 622047001}
-  spinTime: 2.5
-  reelStopGap: 0.7
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!65 &706368463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30722,66 +30632,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &706368464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706368460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 706368462}
-  audioSource: {fileID: 706368461}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!23 &706368465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30860,6 +30710,42 @@ Transform:
   - {fileID: 839034413}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706368468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706368460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4625e3355ae5f32459c07b4b3194e5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitCocktailSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 420591631}
+  - {fileID: 839034412}
+  - {fileID: 699432312}
+  cabinetRenderer: {fileID: 706368465}
+  audioSource: {fileID: 706368461}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
 --- !u!1 &711905363
 GameObject:
   m_ObjectHideFlags: 0
@@ -33681,7 +33567,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 1279379671}
+  slotMachine: {fileID: 1279379675}
   audioSource: {fileID: 761911692}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -36125,7 +36011,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 1501336409}
+  slotMachine: {fileID: 1501336413}
   audioSource: {fileID: 812809366}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -36685,7 +36571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &827144794
 Transform:
   m_ObjectHideFlags: 0
@@ -37349,7 +37235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &839034413
 Transform:
   m_ObjectHideFlags: 0
@@ -37443,7 +37329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &843007970
 Transform:
   m_ObjectHideFlags: 0
@@ -40844,7 +40730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &927167421
 Transform:
   m_ObjectHideFlags: 0
@@ -42878,7 +42764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &979122865
 Transform:
   m_ObjectHideFlags: 0
@@ -47320,7 +47206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1078487462
 Transform:
   m_ObjectHideFlags: 0
@@ -54339,7 +54225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1260666271
 Transform:
   m_ObjectHideFlags: 0
@@ -54716,7 +54602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1264919214
 SpriteRenderer:
   serializedVersion: 3
@@ -54930,7 +54816,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 3751193414279120759}
+  slotMachine: {fileID: 3751193414279120763}
   audioSource: {fileID: 1267303740}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -55444,12 +55330,11 @@ GameObject:
   - component: {fileID: 1279379674}
   - component: {fileID: 1279379673}
   - component: {fileID: 1279379672}
-  - component: {fileID: 1279379671}
   - component: {fileID: 1279379670}
-  - component: {fileID: 1279379669}
   - component: {fileID: 1279379668}
+  - component: {fileID: 1279379675}
   m_Layer: 0
-  m_Name: SlotMachine (9)
+  m_Name: Star Wheel Slot (SlotMachine (9))
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55552,38 +55437,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1279379669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279379667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 1360092902}
-    middle: {fileID: 1475483015}
-    bottom: {fileID: 1738966390}
-  - top: {fileID: 1634356088}
-    middle: {fileID: 92306602}
-    bottom: {fileID: 753111280}
-  - top: {fileID: 2077208744}
-    middle: {fileID: 1149505864}
-    bottom: {fileID: 110488570}
-  - top: {fileID: 882666742}
-    middle: {fileID: 1985553854}
-    bottom: {fileID: 181993798}
-  spinTime: 2.5
-  reelStopGap: 0.7
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!65 &1279379670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55605,66 +55458,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &1279379671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279379667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 1279379669}
-  audioSource: {fileID: 1279379668}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!23 &1279379672
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55743,6 +55536,53 @@ Transform:
   - {fileID: 1645450820}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1279379675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279379667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c4f7664ce8034195d324eb3441df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarWheelSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 1722454565}
+  - {fileID: 1645450819}
+  - {fileID: 827144793}
+  cabinetRenderer: {fileID: 1279379672}
+  audioSource: {fileID: 1279379668}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
+  wheelBottom: {x: 0, y: 2.39, z: 0.3}
+  wheelRadius: 0.3
+  wheelTilt: 18
+  pullTimeout: 8
+  wheelClackClips:
+  - {fileID: 8300000, guid: 446aba05fa362d241be78e3bfb6e62fc, type: 3}
+  - {fileID: 8300000, guid: 203d154ab8a6faa40b7ada4d7b5c7b34, type: 3}
+  - {fileID: 8300000, guid: f26c471f149c0634abf75d940a388e2d, type: 3}
+  - {fileID: 8300000, guid: 4c6e5d16be757e8499e1634d4530e584, type: 3}
+  wheelSpinLoopClip: {fileID: 8300000, guid: 8f096d3b91bf2d84fb3b312db0ecdc0d, type: 3}
+  wheelStopClip: {fileID: 8300000, guid: 3bbf68532983fb2479a16b6edff4cb29, type: 3}
 --- !u!1 &1287055878
 GameObject:
   m_ObjectHideFlags: 0
@@ -60342,12 +60182,11 @@ GameObject:
   - component: {fileID: 1400164319}
   - component: {fileID: 1400164318}
   - component: {fileID: 1400164317}
-  - component: {fileID: 1400164316}
   - component: {fileID: 1400164315}
-  - component: {fileID: 1400164314}
   - component: {fileID: 1400164313}
+  - component: {fileID: 1400164320}
   m_Layer: 0
-  m_Name: SlotMachine (10)
+  m_Name: Fruit Cocktail Slot (SlotMachine (10))
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60450,38 +60289,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1400164314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400164312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 589328771}
-    middle: {fileID: 1601879093}
-    bottom: {fileID: 1315082046}
-  - top: {fileID: 1081197500}
-    middle: {fileID: 1105700922}
-    bottom: {fileID: 622232567}
-  - top: {fileID: 815251778}
-    middle: {fileID: 674575451}
-    bottom: {fileID: 2013500104}
-  - top: {fileID: 181663990}
-    middle: {fileID: 2133648072}
-    bottom: {fileID: 370728915}
-  spinTime: 2.5
-  reelStopGap: 0.7
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!65 &1400164315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60503,66 +60310,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &1400164316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400164312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 1400164314}
-  audioSource: {fileID: 1400164313}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!23 &1400164317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60641,6 +60388,42 @@ Transform:
   - {fileID: 1828852295}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1400164320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400164312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4625e3355ae5f32459c07b4b3194e5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitCocktailSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 212844961}
+  - {fileID: 1828852294}
+  - {fileID: 927167420}
+  cabinetRenderer: {fileID: 1400164317}
+  audioSource: {fileID: 1400164313}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
 --- !u!1 &1400451186
 GameObject:
   m_ObjectHideFlags: 0
@@ -61312,7 +61095,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 191988779}
+  slotMachine: {fileID: 191988783}
   audioSource: {fileID: 1411278180}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -62529,7 +62312,7 @@ MonoBehaviour:
   maxPullDistance: 0.15
   pullThreshold: 0.95
   returnSpeed: 180
-  slotMachine: {fileID: 2080827931}
+  slotMachine: {fileID: 2080827935}
   audioSource: {fileID: 1443516977}
   customSpinClip: {fileID: 0}
   leverVolume: 0.8
@@ -65158,12 +64941,11 @@ GameObject:
   - component: {fileID: 1501336412}
   - component: {fileID: 1501336411}
   - component: {fileID: 1501336410}
-  - component: {fileID: 1501336409}
   - component: {fileID: 1501336408}
-  - component: {fileID: 1501336407}
   - component: {fileID: 1501336406}
+  - component: {fileID: 1501336413}
   m_Layer: 0
-  m_Name: SlotMachine (6)
+  m_Name: Star Wheel Slot (SlotMachine (6))
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65266,38 +65048,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1501336407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501336405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 2091311881}
-    middle: {fileID: 2049452937}
-    bottom: {fileID: 1322038983}
-  - top: {fileID: 1078651991}
-    middle: {fileID: 108007195}
-    bottom: {fileID: 112610500}
-  - top: {fileID: 2082357956}
-    middle: {fileID: 1707374366}
-    bottom: {fileID: 1986970907}
-  - top: {fileID: 483185617}
-    middle: {fileID: 555162269}
-    bottom: {fileID: 139685216}
-  spinTime: 2.5
-  reelStopGap: 0.7
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!65 &1501336408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65319,66 +65069,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &1501336409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501336405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 1501336407}
-  audioSource: {fileID: 1501336406}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!23 &1501336410
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65457,6 +65147,53 @@ Transform:
   - {fileID: 1805228183}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1501336413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501336405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96c4f7664ce8034195d324eb3441df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarWheelSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 1260666270}
+  - {fileID: 1805228182}
+  - {fileID: 1078487461}
+  cabinetRenderer: {fileID: 1501336410}
+  audioSource: {fileID: 1501336406}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
+  wheelBottom: {x: 0, y: 2.39, z: 0.3}
+  wheelRadius: 0.3
+  wheelTilt: 18
+  pullTimeout: 8
+  wheelClackClips:
+  - {fileID: 8300000, guid: 446aba05fa362d241be78e3bfb6e62fc, type: 3}
+  - {fileID: 8300000, guid: 203d154ab8a6faa40b7ada4d7b5c7b34, type: 3}
+  - {fileID: 8300000, guid: f26c471f149c0634abf75d940a388e2d, type: 3}
+  - {fileID: 8300000, guid: 4c6e5d16be757e8499e1634d4530e584, type: 3}
+  wheelSpinLoopClip: {fileID: 8300000, guid: 8f096d3b91bf2d84fb3b312db0ecdc0d, type: 3}
+  wheelStopClip: {fileID: 8300000, guid: 3bbf68532983fb2479a16b6edff4cb29, type: 3}
 --- !u!1 &1502305625
 GameObject:
   m_ObjectHideFlags: 0
@@ -70197,7 +69934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1607442518
 Transform:
   m_ObjectHideFlags: 0
@@ -71889,7 +71626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1645450820
 Transform:
   m_ObjectHideFlags: 0
@@ -75358,7 +75095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1722454566
 Transform:
   m_ObjectHideFlags: 0
@@ -77984,7 +77721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1805228183
 Transform:
   m_ObjectHideFlags: 0
@@ -79026,7 +78763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1828852295
 Transform:
   m_ObjectHideFlags: 0
@@ -82023,7 +81760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1920918547
 Transform:
   m_ObjectHideFlags: 0
@@ -88110,12 +87847,11 @@ GameObject:
   - component: {fileID: 2080827934}
   - component: {fileID: 2080827933}
   - component: {fileID: 2080827932}
-  - component: {fileID: 2080827931}
   - component: {fileID: 2080827930}
-  - component: {fileID: 2080827929}
   - component: {fileID: 2080827928}
+  - component: {fileID: 2080827935}
   m_Layer: 0
-  m_Name: SlotMachine (1)
+  m_Name: Fruit Cocktail Slot (SlotMachine (1))
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88218,38 +87954,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2080827929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080827927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 1571711492}
-    middle: {fileID: 1966283523}
-    bottom: {fileID: 2119989256}
-  - top: {fileID: 166435237}
-    middle: {fileID: 421933694}
-    bottom: {fileID: 505587927}
-  - top: {fileID: 1573208239}
-    middle: {fileID: 1039512841}
-    bottom: {fileID: 647246582}
-  - top: {fileID: 5799816}
-    middle: {fileID: 1271231163}
-    bottom: {fileID: 422598983}
-  spinTime: 2.5
-  reelStopGap: 0.7
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!65 &2080827930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88271,66 +87975,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &2080827931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080827927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 2080827929}
-  audioSource: {fileID: 2080827928}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!23 &2080827932
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -88409,6 +88053,42 @@ Transform:
   - {fileID: 140373676}
   m_Father: {fileID: 1893012888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2080827935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080827927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4625e3355ae5f32459c07b4b3194e5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitCocktailSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 13944782}
+  - {fileID: 140373675}
+  - {fileID: 366752743}
+  cabinetRenderer: {fileID: 2080827932}
+  audioSource: {fileID: 2080827928}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
 --- !u!1001 &2081354537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91376,12 +91056,11 @@ GameObject:
   - component: {fileID: 261544251235190995}
   - component: {fileID: 3751193414279120758}
   - component: {fileID: 1434992145901859772}
-  - component: {fileID: 3751193414279120759}
   - component: {fileID: 3751193414279120760}
-  - component: {fileID: 3751193414279120761}
   - component: {fileID: 3751193414279120762}
+  - component: {fileID: 3751193414279120763}
   m_Layer: 0
-  m_Name: SlotMachine
+  m_Name: Golden Inferno Slot (SlotMachine)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92340,66 +92019,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642574046128181865}
   m_Mesh: {fileID: -384257164455873005, guid: 36adfb5bf65b42d8a08d568bba2c28b6, type: 3}
---- !u!114 &3751193414279120759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642574046128181865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b77bbaeb80f2e42be7fc83ee6fdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  betAmount: 50
-  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
-  buildBetPanel: 1
-  betPanelOffset: {x: 0, y: 0, z: 0}
-  payoutDelay: 0.5
-  loseWeight: 60
-  reels: {fileID: 3751193414279120761}
-  audioSource: {fileID: 3751193414279120762}
-  spinStartSound: {fileID: 0}
-  reelTickClip: {fileID: 0}
-  reelStopClip: {fileID: 0}
-  reelTickVolume: 0.25
-  minTickGap: 0.05
-  reelStopVolume: 0.9
-  reelStopPitchStep: 0.06
-  winClip: {fileID: 0}
-  bigWinClip: {fileID: 0}
-  bigWinMultiplier: 8
-  winVolume: 0.8
-  winTiers:
-  - label: Cherry
-    weight: 15
-    payoutMultiplier: 0.5
-    symbol: {fileID: -220513962403893386, guid: 05b4715ea3e931c41bae7503ed10e518, type: 3}
-  - label: Lemon
-    weight: 10
-    payoutMultiplier: 1
-    symbol: {fileID: -6807825480757979039, guid: a923a67231965a246957eacd292edad1, type: 3}
-  - label: Blackberry
-    weight: 7
-    payoutMultiplier: 2
-    symbol: {fileID: 9087612932207676423, guid: b7baba541a61c4945a2ea1b34f0e03fd, type: 3}
-  - label: Watermelon
-    weight: 4
-    payoutMultiplier: 4
-    symbol: {fileID: -8513681411014044471, guid: 19feccdc55744534cb5ec969bfcd2458, type: 3}
-  - label: Bell
-    weight: 2
-    payoutMultiplier: 8
-    symbol: {fileID: -529192895784788273, guid: b46a5e3dcf6fed9449a0d58bfab8c224, type: 3}
-  - label: BAR
-    weight: 1.5
-    payoutMultiplier: 16
-    symbol: {fileID: -1935382178143783030, guid: 2d8e4678730ecc74491cc99f6997560f, type: 3}
-  - label: Seven
-    weight: 0.5
-    payoutMultiplier: 75
-    symbol: {fileID: 6470810975675657343, guid: 85e409e8526865d498627ddf8296b64d, type: 3}
 --- !u!65 &3751193414279120760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92421,38 +92040,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8623979, y: 2.6444993, z: 0.50165075}
   m_Center: {x: 0.000016510487, y: 1.3222494, z: 0.008312732}
---- !u!114 &3751193414279120761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642574046128181865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f9d2ff683fef24392e939edf84cde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlotMachineReels
-  columns:
-  - top: {fileID: 310763439}
-    middle: {fileID: 592304979}
-    bottom: {fileID: 459180454}
-  - top: {fileID: 2105106950}
-    middle: {fileID: 307743722}
-    bottom: {fileID: 814151303}
-  - top: {fileID: 2051840269}
-    middle: {fileID: 714362620}
-    bottom: {fileID: 331458575}
-  - top: {fileID: 1683217489}
-    middle: {fileID: 1112377584}
-    bottom: {fileID: 1683190843}
-  spinTime: 1.5
-  reelStopGap: 0.5
-  fastTickInterval: 0.04
-  slowTickInterval: 0.12
-  slowDownTime: 0.45
-  stopBounce: 0.12
-  stopBounceTime: 0.18
 --- !u!82 &3751193414279120762
 AudioSource:
   m_ObjectHideFlags: 0
@@ -92550,6 +92137,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3751193414279120763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642574046128181865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb90b63b45ce46449ffb9fb9b9c78e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoldenInfernoSlot
+  betAmount: 50
+  betLadder: 0100000002000000050000000a000000190000003200000064000000fa000000f4010000e8030000c409000088130000i
+  buildBetPanel: 1
+  betPanelOffset: {x: 0, y: 0, z: 0}
+  reelPanelBottom: {x: 0, y: 1.187, z: 0.158}
+  reelPanelTop: {x: 0, y: 1.701, z: 0.079}
+  upperPanelBottom: {x: 0, y: 1.701, z: 0.079}
+  upperPanelTop: {x: 0, y: 2.354, z: 0.216}
+  upperBars: {x: 1.732, y: 2.04, z: 2.1}
+  screenWidth: 0.584
+  screenLift: 0.012
+  hideOnStart:
+  - {fileID: 843007969}
+  - {fileID: 1264919213}
+  - {fileID: 612586192}
+  cabinetRenderer: {fileID: 1434992145901859772}
+  audioSource: {fileID: 3751193414279120762}
+  reelTickClip: {fileID: 8300000, guid: 3cf03f510700d14449a04bbbdf21019b, type: 3}
+  reelStopClip: {fileID: 8300000, guid: 96e0c6ea3fcd45541b84b655c6b20dc6, type: 3}
+  winClip: {fileID: 8300000, guid: 4d1efc0876499c34997f18a96eab0bbd, type: 3}
+  bigWinClip: {fileID: 8300000, guid: 9d93652cf68ddf44591fff0dcf40d19e, type: 3}
+  bonusChimeClip: {fileID: 8300000, guid: a6d47fb65b9e46dc8000b508ad6a0960, type: 3}
+  ascendingChimeClip: {fileID: 8300000, guid: dd3b17552bd44af3ae51a80330911648, type: 3}
+  volume: 0.9
 --- !u!1 &3861258559143363627
 GameObject:
   m_ObjectHideFlags: 0

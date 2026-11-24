@@ -27,6 +27,8 @@ public sealed class CasinoTables : MonoBehaviour
     readonly List<BlackjackTable> blackjack = new List<BlackjackTable>();
     readonly List<SlotMachine> slots = new List<SlotMachine>();
     const string SlotMessage = "Casino.Slot.v1";
+    readonly List<VideoSlotMachine> videoSlots = new List<VideoSlotMachine>();
+    const string VideoSlotMessage = "Casino.VSlot.v1";
 
     bool Connected => multiplayer != null && multiplayer.InSession;
     bool Authority => multiplayer == null || !multiplayer.IsGuest;
@@ -40,6 +42,7 @@ public sealed class CasinoTables : MonoBehaviour
         BlackjackTable.Send = SendBlackjack;
         RouletteBettingManager.LocalBetChanged += SendChip;
         SlotMachine.LocalSpinStarted += SendSlot;
+        VideoSlotMachine.LocalSpinStarted += SendVideoSlot;
     }
 
     void OnDisable()
@@ -51,6 +54,7 @@ public sealed class CasinoTables : MonoBehaviour
         BlackjackTable.Send = null;
         RouletteBettingManager.LocalBetChanged -= SendChip;
         SlotMachine.LocalSpinStarted -= SendSlot;
+        VideoSlotMachine.LocalSpinStarted -= SendVideoSlot;
         if (multiplayer == null) return;
         multiplayer.SessionStarted -= OnSessionStarted;
         multiplayer.GuestLeft -= OnPlayerLeft;
@@ -75,6 +79,39 @@ public sealed class CasinoTables : MonoBehaviour
         multiplayer.Register(ChipMessage, ReceiveChip);
         multiplayer.Register(BlackjackMessage, ReceiveBlackjack);
         multiplayer.Register(SlotMessage, ReceiveSlot);
+        multiplayer.Register(VideoSlotMessage, ReceiveVideoSlot);
+    }
+
+    // Video slots play every spin (bonus features included) from a seed, so
+    // the seed and the bet are all the others need to play the same thing.
+    void SendVideoSlot(VideoSlotMachine machine, int seed, int bet)
+    {
+        if (!Connected) return;
+        int index = videoSlots.IndexOf(machine);
+        if (index < 0) return;
+        using var writer = new FastBufferWriter(16, Allocator.Temp);
+        writer.WriteValueSafe((byte)index);
+        writer.WriteValueSafe(seed);
+        writer.WriteValueSafe(bet);
+        if (multiplayer.IsHost) multiplayer.SendToGuests(VideoSlotMessage, writer);
+        else multiplayer.SendToHost(VideoSlotMessage, writer);
+    }
+
+    void ReceiveVideoSlot(ulong sender, FastBufferReader reader)
+    {
+        if (!FromPeer(sender) || reader.Length - reader.Position != 9) return;
+        reader.ReadValueSafe(out byte index);
+        reader.ReadValueSafe(out int seed);
+        reader.ReadValueSafe(out int bet);
+        if (index >= videoSlots.Count || videoSlots[index] == null) return;
+        videoSlots[index].PlayRemoteSpin(seed, bet);
+
+        if (!multiplayer.IsHost) return;
+        using var writer = new FastBufferWriter(16, Allocator.Temp);
+        writer.WriteValueSafe(index);
+        writer.WriteValueSafe(seed);
+        writer.WriteValueSafe(bet);
+        multiplayer.SendToGuests(VideoSlotMessage, writer, sender);
     }
 
     // --------------------------------------------------------------- slots
@@ -132,6 +169,9 @@ public sealed class CasinoTables : MonoBehaviour
         slots.Clear();
         slots.AddRange(FindObjectsByType<SlotMachine>());
         slots.Sort((a, b) => Compare(a.transform, b.transform));
+        videoSlots.Clear();
+        videoSlots.AddRange(FindObjectsByType<VideoSlotMachine>());
+        videoSlots.Sort((a, b) => Compare(a.transform, b.transform));
     }
 
     static int Compare(Transform a, Transform b)

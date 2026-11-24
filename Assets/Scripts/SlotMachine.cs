@@ -1,22 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
-// Handles the betting/payout logic for a slot machine. Call Spin() to play
-// one round: the bet is deducted immediately, a weighted random outcome is
-// rolled against winTiers up front, the reels animate onto that result one
+// Handles the betting/payout logic for a classic slot machine. Call Spin() to
+// play one round: the bet is deducted immediately, a weighted random outcome
+// is rolled against winTiers up front, the reels animate onto that result one
 // reel at a time, and the payout happens once the last reel has stopped.
-public class SlotMachine : MonoBehaviour
+// (The bet itself - ladder, -/+ panel - lives in SlotMachineBase.)
+public class SlotMachine : SlotMachineBase
 {
-    [Header("Bet")]
-    [SerializeField] int betAmount = 10; // starting bet; the player changes it with the bet panel
-    // The bets the -/+ buttons step through, lowest to highest. (This
-    // replaced the old min/max/step fields, so every machine uses it.)
-    [SerializeField] int[] betLadder = { 1, 2, 5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000 };
-    [Tooltip("Build the -/+ bet panel under the reels at runtime.")]
-    [SerializeField] bool buildBetPanel = true;
-    [Tooltip("Nudge the bet panel, in meters: x = right, y = up, z = toward the player.")]
-    [SerializeField] Vector3 betPanelOffset = Vector3.zero;
-
     [Header("Rules")]
     [SerializeField] float payoutDelay = 0.5f; // only used if no reels are assigned
     [SerializeField] float loseWeight = 60f; // relative chance of no win at all - 40% chance of winning something
@@ -68,40 +59,15 @@ public class SlotMachine : MonoBehaviour
     // ticks, win jingle (or the spin-start clip) playing at the same time.
     AudioSource _tickSource, _stopSource, _winSource;
 
-    public bool IsSpinning => _isSpinning;
-    public int BetAmount => betAmount;
-    public bool CanBetDown => !_isSpinning && betAmount > betLadder[0];
-    public bool CanBetUp => !_isSpinning && betAmount < betLadder[betLadder.Length - 1];
+    public override bool IsSpinning => _isSpinning;
 
-    public event System.Action<int> BetChanged;      // new bet amount
-    public event System.Action SpinStateChanged;     // started or finished spinning
-    public event System.Action SpinRejected;         // not enough balance for the bet
-
-    // steps = +1 to raise the bet by betStep, -1 to lower it. Locked mid-spin.
-    public void ChangeBet(int steps)
+    protected override void OnBetChanged()
     {
-        if (_isSpinning) return;
-        int rung = Mathf.Clamp(System.Array.IndexOf(betLadder, ClampBet(betAmount)) + steps, 0, betLadder.Length - 1);
-        int newBet = betLadder[rung];
-        if (newBet == betAmount) return;
-        betAmount = newBet;
-        BetChanged?.Invoke(betAmount);
-
         if (_tickSource != null && reelTickClip != null)
         {
             Apply2DIfNoHeadset(_tickSource);
             _tickSource.PlayOneShot(reelTickClip, 0.8f);
         }
-    }
-
-    int ClampBet(int bet)
-    {
-        // The nearest rung of the ladder.
-        if (betLadder == null || betLadder.Length == 0) betLadder = new[] { 10 };
-        int best = betLadder[0];
-        foreach (int rung in betLadder)
-            if (Mathf.Abs(rung - bet) < Mathf.Abs(best - bet)) best = rung;
-        return best;
     }
 
     void Awake()
@@ -159,10 +125,10 @@ public class SlotMachine : MonoBehaviour
         for (int i = 0; i < winTiers.Length; i++) sprites[i] = winTiers[i].symbol;
         reels.SetSymbolPool(sprites);
 
-        if (buildBetPanel) SlotBetPanel.Build(this, reels, betPanelOffset);
+        BuildBetPanelIfWanted();
     }
 
-    public void Spin()
+    public override void Spin()
     {
         if (_isSpinning) return; // ignore pulls while the reels are still going
 
@@ -176,7 +142,7 @@ public class SlotMachine : MonoBehaviour
         if (!PlayerBalance.Instance.TrySpend(bet))
         {
             Debug.Log("SlotMachine: not enough balance to spin.");
-            SpinRejected?.Invoke();
+            RaiseSpinRejected();
             return;
         }
 
@@ -186,7 +152,7 @@ public class SlotMachine : MonoBehaviour
     IEnumerator ResolveSpin(int bet)
     {
         _isSpinning = true;
-        SpinStateChanged?.Invoke();
+        RaiseSpinStateChanged();
 
         // Roll the outcome up front; the reels then animate onto it.
         var tier = RollOutcome();
@@ -216,7 +182,7 @@ public class SlotMachine : MonoBehaviour
         }
 
         _isSpinning = false;
-        SpinStateChanged?.Invoke();
+        RaiseSpinStateChanged();
     }
 
     // Multiplayer: the local player pulled this machine's lever and the
@@ -236,7 +202,7 @@ public class SlotMachine : MonoBehaviour
     IEnumerator RemoteSpin(PayoutTier tier)
     {
         _isSpinning = true;
-        SpinStateChanged?.Invoke();
+        RaiseSpinStateChanged();
         if (audioSource != null && spinStartSound != null) audioSource.PlayOneShot(spinStartSound);
 
         if (reels != null)
@@ -248,7 +214,7 @@ public class SlotMachine : MonoBehaviour
 
         if (tier != null) PlayWinSound(tier);
         _isSpinning = false;
-        SpinStateChanged?.Invoke();
+        RaiseSpinStateChanged();
     }
 
     // Test without VR: in Play mode, ⋮ menu on this component > Debug Spin.
@@ -264,22 +230,16 @@ public class SlotMachine : MonoBehaviour
         Spin();
     }
 
-    // Shows where the bet panel will appear (yellow box) when this machine
-    // is selected, so betPanelOffset can be tuned without entering Play mode.
-    void OnDrawGizmosSelected()
+    // Centered just below the bottom reel row, facing the player.
+    public override bool TryGetBetPanelPose(Vector3 offset, out Vector3 position, out Quaternion facing)
     {
-        if (!buildBetPanel || reels == null) return;
-        if (!SlotBetPanel.TryComputePose(this, reels, betPanelOffset, out Vector3 pos, out Quaternion rot)) return;
-        Gizmos.color = Color.yellow;
-        Gizmos.matrix = Matrix4x4.TRS(pos, rot, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(0.345f, 0.085f, 0.02f));
+        position = Vector3.zero;
+        facing = Quaternion.identity;
+        if (reels == null || !reels.TryGetScreenFrame(out Vector3 center, out facing, out float rowSpacing, out _)) return false;
+        Vector3 up = facing * Vector3.up, toPlayer = facing * Vector3.back;
+        position = SlotBetPanel.PushClear(this, center - up * (rowSpacing * 1.75f) + toPlayer * 0.015f, facing, offset);
+        return true;
     }
-
-    [ContextMenu("Debug Bet Up")]
-    void DebugBetUp() => ChangeBet(+1);
-
-    [ContextMenu("Debug Bet Down")]
-    void DebugBetDown() => ChangeBet(-1);
 
     void HandleReelTick(int reel)
     {
