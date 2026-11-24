@@ -15,8 +15,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 // His arms are capsules stretched between shoulder, elbow and hand every
 // frame, so only the hands need animating.
 [RequireComponent(typeof(XRSimpleInteractable))]
-public class Bartender : MonoBehaviour
+public class Bartender : MonoBehaviour, IStaffRig
 {
+    // For StaffLook: right hand wipes the bar and serves, left rests on the counter.
+    public Transform StaffHead => head;
+    public Transform StaffHand(int index) => index == 0 ? rightHand : leftHand;
+    public float StaffHandWeight(int index) => 1f;
+    public bool StaffTalking => _talkTimeLeft > 0f;
+
     [Header("Body parts (all children of this object)")]
     [SerializeField] Transform head;
     [SerializeField] Transform mustache;
@@ -91,6 +97,9 @@ public class Bartender : MonoBehaviour
         if (smallTalk.Length == 0) return;
         Say(smallTalk[_smallTalkIndex++ % smallTalk.Length]);
     }
+
+    // True while he's reaching out to put the last order on the bar.
+    public bool Busy => _serving;
 
     public void Say(string line)
     {

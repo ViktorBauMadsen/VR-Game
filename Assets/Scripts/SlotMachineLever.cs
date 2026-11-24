@@ -134,6 +134,34 @@ public class SlotMachineLever : MonoBehaviour
         return _clunk;
     }
 
+    public SlotMachineBase Machine => slotMachine;
+
+    // The ball on top of the handle, where a hand takes hold of it.
+    public Vector3 KnobPosition
+    {
+        get
+        {
+            var knob = handle != null ? handle.Find("Sphere") : null;
+            return knob != null ? knob.position : (handle != null ? handle : transform).TransformPoint(Vector3.up);
+        }
+    }
+
+    float _scriptedPull = -1f;
+
+    // An NPC's hand is on the lever, pulling it: 0 = at rest .. 1 = fully
+    // down. Negative lets go (it springs back as usual).
+    public void SetScriptedPull(float amount) => _scriptedPull = amount < 0f ? -1f : Mathf.Clamp01(amount);
+
+    // Another player pulled this machine's lever: show it going down and
+    // springing back, with the ka-chunk.
+    public void PlayRemotePull()
+    {
+        if (_grabbingInteractor != null) return;
+        _scriptedPull = -1f;
+        _currentAngle = maxPullAngle;
+        PlayLever(customSpinClip != null ? customSpinClip : Clunk(), 1f, 1f);
+    }
+
     void Update()
     {
         if (_grabbingInteractor != null)
@@ -153,6 +181,13 @@ public class SlotMachineLever : MonoBehaviour
                 PlayLever(customSpinClip != null ? customSpinClip : Clunk(), 1f, 1f);
                 if (slotMachine != null) slotMachine.Spin();
             }
+        }
+        else if (_scriptedPull >= 0f)
+        {
+            _currentAngle = _scriptedPull * maxPullAngle;
+            int step = Mathf.FloorToInt(_scriptedPull * Mathf.Max(1, ratchetClicks));
+            if (step > _lastClickStep) PlayLever(Click(), 0.4f, 0.9f + step * 0.03f);
+            _lastClickStep = step;
         }
         else
         {

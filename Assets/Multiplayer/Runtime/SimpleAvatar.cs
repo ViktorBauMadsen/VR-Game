@@ -12,6 +12,8 @@ namespace Casino.Multiplayer
     // Each player's jacket is their own colour, which is also the colour of
     // their chips on the roulette table.
     //
+    // Their hands are copies of the rigged hand models the local player has
+    // (see UpdateRiggedHands); the blocky hands are only a fallback.
     // The local player gets only the blocky hands (and only when the scene
     // has no rigged hand models), never a body.
     public sealed class SimpleAvatar : MonoBehaviour
@@ -122,7 +124,57 @@ namespace Casino.Multiplayer
             Pose(head, target.HeadPosition, target.HeadRotation, t);
             Pose(left, target.LeftPosition, target.LeftRotation, t);
             Pose(right, target.RightPosition, target.RightRotation, t);
-            if (hasBody) PoseBody();
+            if (hasBody)
+            {
+                UpdateRiggedHands();
+                PoseBody();
+            }
+        }
+
+        // ------------------------------------------------ rigged hands
+        // Other players get the same rigged hand models you have (copied
+        // from your own HandPoser hands), with their fingers following the
+        // curls that player sends. The blocky hands stay only as a fallback
+        // for scenes without hand models.
+
+        readonly RemoteHand[] rigged = new RemoteHand[2]; // 0 = left, 1 = right
+        float nextRiggedTry;
+
+        void UpdateRiggedHands()
+        {
+            if ((rigged[0] == null || rigged[1] == null) && Time.unscaledTime >= nextRiggedTry)
+            {
+                nextRiggedTry = Time.unscaledTime + 1f;
+                foreach (var source in FindObjectsByType<HandPoser>())
+                {
+                    int i = source.HandSide == HandPoser.Side.Left ? 0 : 1;
+                    if (rigged[i] != null) continue;
+                    Transform holder = i == 0 ? left : right;
+                    var copy = source.CreateRemoteCopy(holder);
+                    if (copy == null) continue;
+                    rigged[i] = copy;
+                    foreach (var r in holder.GetComponentsInChildren<Renderer>(true))
+                        if (!r.transform.IsChildOf(copy.transform)) r.enabled = false;
+                }
+            }
+            if (rigged[0] != null)
+            {
+                rigged[0].SetCurls(AvatarPose.Curl(target.LeftIndex), AvatarPose.Curl(target.LeftGrip), AvatarPose.Curl(target.LeftThumb));
+                rigged[0].SetSkin(skin.color);
+            }
+            if (rigged[1] != null)
+            {
+                rigged[1].SetCurls(AvatarPose.Curl(target.RightIndex), AvatarPose.Curl(target.RightGrip), AvatarPose.Curl(target.RightThumb));
+                rigged[1].SetSkin(skin.color);
+            }
+        }
+
+        // Where the arm should end: the rigged hand's wrist, else the controller.
+        Vector3 HandAnchor(int i)
+        {
+            var hand = rigged[i == 0 ? 1 : 0]; // arm index 0 is the right arm
+            if (hand != null && hand.Wrist != null) return hand.Wrist.position;
+            return (i == 0 ? right : left).position;
         }
 
         // ------------------------------------------------ the player's own look
@@ -205,9 +257,8 @@ namespace Casino.Multiplayer
             for (int i = 0; i < 2; i++)
             {
                 float side = i == 0 ? 1f : -1f;
-                Transform hand = i == 0 ? right : left;
                 if (rig.Shoulders[i] != null)
-                    CharacterLimbs.PoseArm(rig.UpperArms[i], rig.Forearms[i], rig.Shoulders[i].position, hand.position, bodyRotation, side, rig.ArmThickness);
+                    CharacterLimbs.PoseArm(rig.UpperArms[i], rig.Forearms[i], rig.Shoulders[i].position, HandAnchor(i), bodyRotation, side, rig.ArmThickness);
 
                 if (rig.Hips[i] == null) continue;
                 Vector3 hip = rig.Hips[i].position;
@@ -233,9 +284,8 @@ namespace Casino.Multiplayer
             for (int i = 0; i < 2; i++)
             {
                 float side = i == 0 ? 1f : -1f;
-                Transform hand = i == 0 ? right : left;
                 Vector3 shoulder = neck + bodyRotation * new Vector3(side * 0.2f, -0.07f, 0f);
-                CharacterLimbs.PoseArm(upperArms[i], forearms[i], shoulder, hand.position, bodyRotation, side, ArmThickness);
+                CharacterLimbs.PoseArm(upperArms[i], forearms[i], shoulder, HandAnchor(i), bodyRotation, side, ArmThickness);
 
                 Vector3 hip = hips + bodyRotation * new Vector3(side * 0.09f, 0f, 0f);
                 Vector3 foot = new Vector3(hip.x, Mathf.Min(FloorY + 0.06f, hip.y - 0.1f), hip.z);

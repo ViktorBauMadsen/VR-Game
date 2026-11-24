@@ -473,6 +473,7 @@ namespace ithappy.Casino
             foreach (SkinnedMeshRenderer smr in
                      characterAnimator.GetComponentsInChildren<SkinnedMeshRenderer>(true))
                 smr.updateWhenOffscreen = false;
+            SkinnedBounds.Encompass(characterAnimator.transform);
 
             characterAnimator.Rebind();
             characterAnimator.Update(0f);

@@ -20,7 +20,11 @@ using UnityEngine;
 [DefaultExecutionOrder(10005)]
 public sealed class CasinoTables : MonoBehaviour
 {
-    const string RouletteMessage = "Casino.Ro.v1", ChipMessage = "Casino.Chip.v1", BlackjackMessage = "Casino.Bj.v1";
+    const string RouletteMessage = "Casino.Ro.v1", BlackjackMessage = "Casino.Bj.v1";
+    const string BeerPongMessage = "Casino.Pong.v1", DartsMessage = "Casino.Darts.v1";
+    readonly List<BeerPongTable> beerPong = new List<BeerPongTable>();
+    readonly List<Dartboard> darts = new List<Dartboard>();
+    readonly List<SlotMachineLever> levers = new List<SlotMachineLever>();
 
     CasinoMultiplayer multiplayer;
     readonly List<RouletteRound> roulette = new List<RouletteRound>();
@@ -40,9 +44,10 @@ public sealed class CasinoTables : MonoBehaviour
         BlackjackTable.LocalId = () => multiplayer != null ? multiplayer.LocalId : 0UL;
         RouletteRound.Send = SendRoulette;
         BlackjackTable.Send = SendBlackjack;
-        RouletteBettingManager.LocalBetChanged += SendChip;
         SlotMachine.LocalSpinStarted += SendSlot;
         VideoSlotMachine.LocalSpinStarted += SendVideoSlot;
+        BeerPongTable.LocalCupHit += SendCup;
+        Dartboard.LocalEvent += SendDarts;
     }
 
     void OnDisable()
@@ -52,9 +57,10 @@ public sealed class CasinoTables : MonoBehaviour
         BlackjackTable.LocalId = () => 0UL;
         RouletteRound.Send = null;
         BlackjackTable.Send = null;
-        RouletteBettingManager.LocalBetChanged -= SendChip;
         SlotMachine.LocalSpinStarted -= SendSlot;
         VideoSlotMachine.LocalSpinStarted -= SendVideoSlot;
+        BeerPongTable.LocalCupHit -= SendCup;
+        Dartboard.LocalEvent -= SendDarts;
         if (multiplayer == null) return;
         multiplayer.SessionStarted -= OnSessionStarted;
         multiplayer.GuestLeft -= OnPlayerLeft;
@@ -76,7 +82,8 @@ public sealed class CasinoTables : MonoBehaviour
     {
         FindTables();
         multiplayer.Register(RouletteMessage, ReceiveRoulette);
-        multiplayer.Register(ChipMessage, ReceiveChip);
+        multiplayer.Register(BeerPongMessage, ReceiveCup);
+        multiplayer.Register(DartsMessage, ReceiveDarts);
         multiplayer.Register(BlackjackMessage, ReceiveBlackjack);
         multiplayer.Register(SlotMessage, ReceiveSlot);
         multiplayer.Register(VideoSlotMessage, ReceiveVideoSlot);
@@ -105,6 +112,7 @@ public sealed class CasinoTables : MonoBehaviour
         reader.ReadValueSafe(out int bet);
         if (index >= videoSlots.Count || videoSlots[index] == null) return;
         videoSlots[index].PlayRemoteSpin(seed, bet);
+        PullLever(videoSlots[index]);
 
         if (!multiplayer.IsHost) return;
         using var writer = new FastBufferWriter(16, Allocator.Temp);
@@ -137,6 +145,7 @@ public sealed class CasinoTables : MonoBehaviour
         reader.ReadValueSafe(out byte tier);
         if (index >= slots.Count || slots[index] == null) return;
         slots[index].PlayRemoteSpin(tier - 1);
+        PullLever(slots[index]);
 
         if (!multiplayer.IsHost) return;
         using var writer = new FastBufferWriter(4, Allocator.Temp);
@@ -172,6 +181,14 @@ public sealed class CasinoTables : MonoBehaviour
         videoSlots.Clear();
         videoSlots.AddRange(FindObjectsByType<VideoSlotMachine>());
         videoSlots.Sort((a, b) => Compare(a.transform, b.transform));
+        beerPong.Clear();
+        beerPong.AddRange(FindObjectsByType<BeerPongTable>());
+        beerPong.Sort((a, b) => Compare(a.transform, b.transform));
+        darts.Clear();
+        darts.AddRange(FindObjectsByType<Dartboard>());
+        darts.Sort((a, b) => Compare(a.transform, b.transform));
+        levers.Clear();
+        levers.AddRange(FindObjectsByType<SlotMachineLever>());
     }
 
     static int Compare(Transform a, Transform b)
@@ -210,43 +227,84 @@ public sealed class CasinoTables : MonoBehaviour
         roulette[table].Receive(kind, arg);
     }
 
-    void SendChip(RouletteBettingManager betting, BettingSpot spot, int value, bool add)
+    // Other players' chips (in their hands and on the table) are shown by
+    // CasinoProps as real chip models, so there is no separate chip message.
+
+    // ----------------------------------------------------------- beer pong
+    // The ball itself is streamed by CasinoProps; this carries which cup it
+    // sank, so every table loses the same cup and keeps the same score.
+
+    void SendCup(BeerPongTable table, int cup)
     {
-        if (!Connected) return;
-        int table = roulette.FindIndex(round => round != null && round.Betting == betting);
-        int index = System.Array.IndexOf(betting.Spots, spot);
-        if (table < 0 || index < 0) return;
-        using var writer = new FastBufferWriter(16, Allocator.Temp);
-        WriteChip(writer, table, index, add, multiplayer.LocalId);
-        if (multiplayer.IsHost) multiplayer.SendToGuests(ChipMessage, writer);
-        else multiplayer.SendToHost(ChipMessage, writer);
+        if (!Connected || cup < 0) return;
+        int index = beerPong.IndexOf(table);
+        if (index < 0) return;
+        using var writer = new FastBufferWriter(4, Allocator.Temp);
+        writer.WriteValueSafe((byte)index);
+        writer.WriteValueSafe((byte)cup);
+        if (multiplayer.IsHost) multiplayer.SendToGuests(BeerPongMessage, writer);
+        else multiplayer.SendToHost(BeerPongMessage, writer);
     }
 
-    static void WriteChip(FastBufferWriter writer, int table, int spot, bool add, ulong player)
+    void ReceiveCup(ulong sender, FastBufferReader reader)
     {
-        writer.WriteValueSafe((byte)table);
-        writer.WriteValueSafe((byte)spot);
-        writer.WriteValueSafe(add);
-        writer.WriteValueSafe(player);
-    }
-
-    void ReceiveChip(ulong sender, FastBufferReader reader)
-    {
-        if (!FromPeer(sender) || reader.Length - reader.Position != 11) return;
-        reader.ReadValueSafe(out byte table);
-        reader.ReadValueSafe(out byte spot);
-        reader.ReadValueSafe(out bool add);
-        reader.ReadValueSafe(out ulong player);
-        if (multiplayer.IsHost) player = sender; // guests only speak for themselves
-        if (player == multiplayer.LocalId || table >= roulette.Count || roulette[table] == null) return;
-        var betting = roulette[table].Betting;
-        if (betting == null || spot >= betting.Spots.Length) return;
-        betting.ShowRemoteBet(player, betting.Spots[spot], add, CasinoMultiplayer.ColorFor(player));
+        if (!FromPeer(sender) || reader.Length - reader.Position != 2) return;
+        reader.ReadValueSafe(out byte index);
+        reader.ReadValueSafe(out byte cup);
+        if (index >= beerPong.Count || beerPong[index] == null) return;
+        beerPong[index].RemoteCupHit(cup);
 
         if (!multiplayer.IsHost) return;
-        using var writer = new FastBufferWriter(16, Allocator.Temp);
-        WriteChip(writer, table, spot, add, player);
-        multiplayer.SendToGuests(ChipMessage, writer, sender);
+        using var writer = new FastBufferWriter(4, Allocator.Temp);
+        writer.WriteValueSafe(index);
+        writer.WriteValueSafe(cup);
+        multiplayer.SendToGuests(BeerPongMessage, writer, sender);
+    }
+
+    // --------------------------------------------------------------- darts
+    // Where a dart landed (and the scoreboard buttons), so everyone's board
+    // counts the same game.
+
+    void SendDarts(Dartboard board, byte what, int value, string label)
+    {
+        if (!Connected) return;
+        int index = darts.IndexOf(board);
+        if (index < 0) return;
+        WriteDarts(index, what, value, label, ulong.MaxValue);
+    }
+
+    void WriteDarts(int index, byte what, int value, string label, ulong except)
+    {
+        var text = new FixedString32Bytes();
+        text.CopyFromTruncated(label ?? "");
+        using var writer = new FastBufferWriter(48, Allocator.Temp);
+        writer.WriteValueSafe((byte)index);
+        writer.WriteValueSafe(what);
+        writer.WriteValueSafe(value);
+        writer.WriteValueSafe(text);
+        if (multiplayer.IsHost) multiplayer.SendToGuests(DartsMessage, writer, except);
+        else multiplayer.SendToHost(DartsMessage, writer);
+    }
+
+    void ReceiveDarts(ulong sender, FastBufferReader reader)
+    {
+        if (!FromPeer(sender) || reader.Length - reader.Position < 8) return;
+        reader.ReadValueSafe(out byte index);
+        reader.ReadValueSafe(out byte what);
+        reader.ReadValueSafe(out int value);
+        reader.ReadValueSafe(out FixedString32Bytes text);
+        if (index >= darts.Count || darts[index] == null || what > Dartboard.EventReturn) return;
+        string label = text.ToString();
+        darts[index].RemoteEvent(what, value, label);
+        if (multiplayer.IsHost) WriteDarts(index, what, value, label, sender);
+    }
+
+    // ----------------------------------------------------------- slot levers
+
+    void PullLever(SlotMachineBase machine)
+    {
+        foreach (var lever in levers)
+            if (lever != null && lever.Machine == machine) lever.PlayRemotePull();
     }
 
     // ----------------------------------------------------------- blackjack

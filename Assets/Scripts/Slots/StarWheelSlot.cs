@@ -791,7 +791,7 @@ public class StarWheelSlot : VideoSlotMachine
             if (_info.text != msg) _info.text = msg;
         }
         float sweep = Mathf.Repeat(Time.time * 0.3f, 1.6f) - 0.3f;
-        s[Layer.OverlayFx].Quad(new Vector2(-0.35f + sweep * 0.7f, 0f), new Vector2(0.06f, full.height * 1.1f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(0.8f, 0.9f, 1f, 0.1f), 12f, true);
+        s[Layer.OverlayFx].QuadClipped(new Vector2(-0.35f + sweep * 0.7f, 0f), new Vector2(0.06f, full.height * 1.1f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(0.8f, 0.9f, 1f, 0.1f), 12f, s.Bounds, true);
     }
 
     // Upper screen, top section: logo.
@@ -806,7 +806,7 @@ public class StarWheelSlot : VideoSlotMachine
         s[Layer.FxTop].Quad(new Vector2(0f, 0f), new Vector2(w * 1.05f, w / logo.Aspect * 1.7f), FxAtlas.Uv(FxAtlas.Glow), Pal.A(_free ? Pink : new Color(0.5f, 0.3f, 1f), hot ? 0.75f : 0.4f), 0f, true);
         s[Layer.Ui].Quad(Vector2.zero, new Vector2(w, w / logo.Aspect), logo.Uv, Color.white);
         float sweep = Mathf.Repeat(t * 0.25f, 1.5f) - 0.25f;
-        s[Layer.OverlayFx].Quad(new Vector2(-0.35f + sweep * 0.7f, 0f), new Vector2(0.07f, 0.2f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(0.9f, 0.95f, 1f, 0.16f), 14f, true);
+        s[Layer.OverlayFx].QuadClipped(new Vector2(-0.35f + sweep * 0.7f, 0f), new Vector2(0.07f, 0.2f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(0.9f, 0.95f, 1f, 0.16f), 14f, s.Bounds, true);
         if (Random.value < dt * (hot ? 14f : 4f))
             Emit(s, Layer.OverlayFx, FxAtlas.Sparkle, new Vector2(Random.Range(-0.27f, 0.27f), Random.Range(-0.08f, 0.08f)), Vector2.zero, Random.Range(0.012f, 0.03f), 0.6f, Color.white, true, 0f, 0f, 90f);
     }

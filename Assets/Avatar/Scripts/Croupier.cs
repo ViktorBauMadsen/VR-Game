@@ -9,8 +9,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // Same procedural style as the Bartender: head follows the player, arms are
 // capsules stretched from shoulder to hand, text shows in a speech bubble.
 [RequireComponent(typeof(XRSimpleInteractable))]
-public class Croupier : MonoBehaviour
+public class Croupier : MonoBehaviour, IStaffRig
 {
+    // For StaffLook: the right hand follows the "no more bets" sweep.
+    public Transform StaffHead => head;
+    public Transform StaffHand(int index) => hands[index];
+    public float StaffHandWeight(int index) => index == 0 ? Mathf.Sin(_gesture * Mathf.PI) : 0f;
+    public bool StaffTalking => _speechTimeLeft > 0f;
+
     [SerializeField] RouletteWheel wheel;
 
     [Header("Body parts")]

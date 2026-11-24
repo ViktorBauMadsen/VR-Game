@@ -24,11 +24,11 @@ namespace Casino.Multiplayer
     public sealed class CasinoMultiplayer : MonoBehaviour
     {
         public const int MaxPlayers = 4;
-        const string PoseMessage = "Casino.Pose.v2";
-        const string Handshake = "Casino.v2:";
+        const string PoseMessage = "Casino.Pose.v3";
+        const string Handshake = "Casino.v3:";
         const ushort Port = 7777;
-        const int PoseBytes = 84;         // three Vector3/Quaternion pairs
-        const int TaggedPoseBytes = 92;   // + the ulong id of whose pose it is
+        const int PoseBytes = AvatarPose.Bytes;          // three Vector3/Quaternion pairs + finger curls
+        const int TaggedPoseBytes = AvatarPose.Bytes + 8; // + the ulong id of whose pose it is
 
         static readonly Color[] RemoteColors =
         {
@@ -164,7 +164,7 @@ namespace Casino.Multiplayer
             network.NetworkConfig = new NetworkConfig
             {
                 NetworkTransport = transport, EnableSceneManagement = false,
-                ConnectionApproval = true, TickRate = 30, ProtocolVersion = 2
+                ConnectionApproval = true, TickRate = 30, ProtocolVersion = 3
             };
             network.ConnectionApprovalCallback = Approve;
             network.OnClientConnectedCallback += Connected;
@@ -352,6 +352,7 @@ namespace Casino.Multiplayer
                 LeftPosition = left.position, LeftRotation = left.rotation,
                 RightPosition = right.position, RightRotation = right.rotation
             };
+            AddFingers(ref pose);
             if (localAvatar != null) localAvatar.Apply(pose, true);
             if (!network.IsListening || !network.IsConnectedClient || stopping || Time.unscaledTime < nextSend) return;
             var messaging = network.CustomMessagingManager;
@@ -375,6 +376,35 @@ namespace Casino.Multiplayer
                 foreach (var other in relayPoses)
                     if (other.Key != guest && Time.unscaledTime - relayTimes[other.Key] < 1f)
                         SendTagged(messaging, guest, other.Key, other.Value);
+            }
+        }
+
+        // The local rigged hands' finger curls go along with the pose, so the
+        // other players see your hands open, point and grab.
+        readonly HandPoser[] localHands = new HandPoser[2];
+        float nextHandSearch;
+
+        void AddFingers(ref AvatarPose pose)
+        {
+            if ((localHands[0] == null || localHands[1] == null) && Time.unscaledTime >= nextHandSearch)
+            {
+                nextHandSearch = Time.unscaledTime + 1f;
+                foreach (var hand in FindObjectsByType<HandPoser>())
+                    localHands[hand.HandSide == HandPoser.Side.Left ? 0 : 1] = hand;
+            }
+            var l = localHands[0];
+            var r = localHands[1];
+            if (l != null)
+            {
+                pose.LeftIndex = AvatarPose.Curl(l.IndexCurl);
+                pose.LeftGrip = AvatarPose.Curl(l.GripCurl);
+                pose.LeftThumb = AvatarPose.Curl(l.ThumbCurl);
+            }
+            if (r != null)
+            {
+                pose.RightIndex = AvatarPose.Curl(r.IndexCurl);
+                pose.RightGrip = AvatarPose.Curl(r.GripCurl);
+                pose.RightThumb = AvatarPose.Curl(r.ThumbCurl);
             }
         }
 

@@ -8,8 +8,14 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 // greets you when you walk up, and explains the rules if you point at her
 // and press grab.
 [RequireComponent(typeof(XRSimpleInteractable))]
-public class BlackjackDealer : MonoBehaviour
+public class BlackjackDealer : MonoBehaviour, IStaffRig
 {
+    // For StaffLook: both hands rest on the felt and the right one deals.
+    public Transform StaffHead => head;
+    public Transform StaffHand(int index) => hands[index];
+    public float StaffHandWeight(int index) => 1f;
+    public bool StaffTalking => _speechTimeLeft > 0f;
+
     [Header("Body parts")]
     [SerializeField] Transform head;
     [SerializeField] Transform body;

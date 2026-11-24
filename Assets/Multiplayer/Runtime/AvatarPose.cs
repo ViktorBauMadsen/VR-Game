@@ -8,6 +8,10 @@ namespace Casino.Multiplayer
     {
         public Vector3 HeadPosition, LeftPosition, RightPosition;
         public Quaternion HeadRotation, LeftRotation, RightRotation;
+        // Finger curls, 0 (open) .. 255 (closed): index, grip (middle/ring/pinky), thumb.
+        public byte LeftIndex, LeftGrip, LeftThumb, RightIndex, RightGrip, RightThumb;
+
+        public const int Bytes = 3 * (12 + 16) + 6;
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
@@ -17,7 +21,16 @@ namespace Casino.Multiplayer
             serializer.SerializeValue(ref LeftRotation);
             serializer.SerializeValue(ref RightPosition);
             serializer.SerializeValue(ref RightRotation);
+            serializer.SerializeValue(ref LeftIndex);
+            serializer.SerializeValue(ref LeftGrip);
+            serializer.SerializeValue(ref LeftThumb);
+            serializer.SerializeValue(ref RightIndex);
+            serializer.SerializeValue(ref RightGrip);
+            serializer.SerializeValue(ref RightThumb);
         }
+
+        public static byte Curl(float value) => (byte)Mathf.RoundToInt(Mathf.Clamp01(value) * 255f);
+        public static float Curl(byte value) => value / 255f;
 
         public bool IsValid => Valid(HeadPosition) && Valid(LeftPosition) && Valid(RightPosition)
             && Valid(HeadRotation) && Valid(LeftRotation) && Valid(RightRotation);

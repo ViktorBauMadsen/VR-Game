@@ -687,7 +687,7 @@ public class GoldenInfernoSlot : VideoSlotMachine
         }
         // Sweep of light across the meters.
         float sweep = Mathf.Repeat(Time.time * 0.35f, 1.6f) - 0.3f;
-        s[Layer.OverlayFx].Quad(new Vector2(-0.35f + sweep * 0.7f, 0f), new Vector2(0.06f, full.height * 1.1f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(1f, 0.9f, 0.6f, 0.12f), 12f, true);
+        s[Layer.OverlayFx].QuadClipped(new Vector2(-0.35f + sweep * 0.7f, 0f), new Vector2(0.06f, full.height * 1.1f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(1f, 0.9f, 0.6f, 0.12f), 12f, s.Bounds, true);
     }
 
     // Upper screen, top section: the logo in flames.
@@ -711,7 +711,7 @@ public class GoldenInfernoSlot : VideoSlotMachine
         s[Layer.FxTop].Quad(new Vector2(0f, 0.005f), new Vector2(w * 1.05f, w / logo.Aspect * 1.6f), FxAtlas.Uv(FxAtlas.Glow), new Color(1f, 0.4f, 0.05f, hot ? 0.7f : 0.35f), 0f, true);
         s[Layer.Ui].Quad(new Vector2(0f, 0.005f), new Vector2(w, w / logo.Aspect), logo.Uv, Color.white);
         float sweep = Mathf.Repeat(t * 0.25f, 1.5f) - 0.25f;
-        s[Layer.OverlayFx].Quad(new Vector2(-0.35f + sweep * 0.7f, 0.005f), new Vector2(0.07f, 0.2f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(1f, 0.95f, 0.7f, 0.18f), 14f, true);
+        s[Layer.OverlayFx].QuadClipped(new Vector2(-0.35f + sweep * 0.7f, 0.005f), new Vector2(0.07f, 0.2f), FxAtlas.Uv(FxAtlas.SoftRect), new Color(1f, 0.95f, 0.7f, 0.18f), 14f, s.Bounds, true);
         if (hot && Random.value < dt * 12f)
             Emit(s, Layer.OverlayFx, FxAtlas.Sparkle, new Vector2(Random.Range(-0.26f, 0.26f), Random.Range(-0.06f, 0.07f)), Vector2.zero, Random.Range(0.015f, 0.035f), 0.5f, Color.white, true, 0f, 0f, 90f);
     }

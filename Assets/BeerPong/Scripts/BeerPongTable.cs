@@ -175,10 +175,28 @@ public class BeerPongTable : MonoBehaviour
         if (_scoreRenderFramesLeft > 0) _scoreRenderFramesLeft--;
     }
 
+    // Multiplayer: this player's ball sank a cup (index into this table's
+    // cups). CasinoTables sends it on; the others call RemoteCupHit.
+    public static event System.Action<BeerPongTable, int> LocalCupHit;
+
     public void OnCupHit(BeerPongCup cup)
     {
-        if (_gameOver) return;
+        if (_gameOver || cup == null || !cup.IsStanding) return;
+        LocalCupHit?.Invoke(this, System.Array.IndexOf(_cups, cup));
+        ApplyCupHit(cup);
+    }
 
+    // Another player's ball went into this cup on their table.
+    public void RemoteCupHit(int index)
+    {
+        if (_cups == null || index < 0 || index >= _cups.Length) return;
+        var cup = _cups[index];
+        if (_gameOver || cup == null || !cup.IsStanding) return;
+        ApplyCupHit(cup);
+    }
+
+    void ApplyCupHit(BeerPongCup cup)
+    {
         int scoringTeam = 1 - cup.Side;
         Vector3 position = cup.transform.position;
         cup.Remove();

@@ -14,6 +14,8 @@ public class BarOrderButton : MonoBehaviour
     [SerializeField] int price = 100;
     [Tooltip("Extra rotation for the served item, relative to the serve point.")]
     [SerializeField] Vector3 serveEuler;
+    [Tooltip("If set, the button opens/closes this drinks menu instead of ordering directly.")]
+    [SerializeField] DrinkMenu menu;
     [SerializeField] Transform cap;
     [SerializeField] float pressDepth = 0.012f;
     [SerializeField] float pressSpeed = 0.15f;
@@ -43,6 +45,11 @@ public class BarOrderButton : MonoBehaviour
     void OnSelectEntered(SelectEnterEventArgs args)
     {
         _pressed = true;
+        if (menu != null)
+        {
+            menu.Toggle();
+            return;
+        }
         if (bartender != null)
             bartender.Order(itemPrefab, itemName, price, Quaternion.Euler(serveEuler), args.interactorObject);
     }

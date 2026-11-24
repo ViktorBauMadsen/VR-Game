@@ -52,10 +52,39 @@ public class Dartboard : MonoBehaviour
         foreach (var button in GetComponentsInChildren<XRSimpleInteractable>(true))
         {
             string station = button.transform.parent != null ? button.transform.parent.name : button.name;
-            if (station.Contains("Add")) button.selectEntered.AddListener(_ => SetPlayers(_players + 1));
-            else if (station.Contains("Remove")) button.selectEntered.AddListener(_ => SetPlayers(_players - 1));
-            else if (station.Contains("New")) button.selectEntered.AddListener(_ => NewGame());
-            else button.selectEntered.AddListener(_ => ReturnDarts());
+            if (station.Contains("Add")) button.selectEntered.AddListener(_ => Local(EventPlayers, _players + 1, ""));
+            else if (station.Contains("Remove")) button.selectEntered.AddListener(_ => Local(EventPlayers, _players - 1, ""));
+            else if (station.Contains("New")) button.selectEntered.AddListener(_ => Local(EventNewGame, 0, ""));
+            else button.selectEntered.AddListener(_ => Local(EventReturn, 0, ""));
+        }
+    }
+
+    // ----- Multiplayer: everything that changes the game (a dart landing,
+    // the buttons) is sent to the other players by CasinoTables, so the
+    // whole room plays the same game of 301 on the same scoreboard.
+    public const byte EventScore = 0, EventPlayers = 1, EventNewGame = 2, EventReturn = 3;
+    public static event System.Action<Dartboard, byte, int, string> LocalEvent;
+
+    void Local(byte what, int value, string label)
+    {
+        LocalEvent?.Invoke(this, what, value, label);
+        Apply(what, value, label);
+    }
+
+    public void RemoteEvent(byte what, int value, string label)
+    {
+        if (what == EventScore && value > 0) AudioSource.PlayClipAtPoint(Thud(), transform.position, 0.8f);
+        Apply(what, value, label);
+    }
+
+    void Apply(byte what, int value, string label)
+    {
+        switch (what)
+        {
+            case EventScore: Register(Mathf.Clamp(value, 0, 60), label ?? ""); break;
+            case EventPlayers: SetPlayers(value); break;
+            case EventNewGame: NewGame(); break;
+            case EventReturn: ReturnDarts(); break;
         }
     }
 
@@ -146,13 +175,13 @@ public class Dartboard : MonoBehaviour
         dart.StickAt(transform.TransformPoint(local), direction);
 
         int value = Score(local, distance, out string label);
-        Register(value, label);
+        Local(EventScore, value, label);
         AudioSource.PlayClipAtPoint(Thud(), point, 0.8f);
         if (value >= 50) BarSounds.Play(BarSounds.Ding, point, 0.7f);
         return true;
     }
 
-    public void Missed(Dart dart) => Register(0, "MISS");
+    public void Missed(Dart dart) => Local(EventScore, 0, "MISS");
 
     int Score(Vector3 local, float distance, out string label)
     {

@@ -25,7 +25,6 @@ using UnityEngine.Rendering;
 public static partial class DecorateInterior
 {
     const string ExteriorRootName = "Exterior Decor";
-    const string SignText = "GRAND CASINO";
     const string EveningPrefKey = "DecorateExterior.EveningPrev";
 
     // Exterior shell of the building (from the wall/roof cubes under "Assets").
@@ -319,7 +318,6 @@ public static partial class DecorateInterior
         var textGo = new GameObject("Sign Text");
         textGo.transform.SetParent(s, false);
         var tmp = textGo.AddComponent<TextMeshPro>();
-        tmp.text = SignText;
         tmp.alignment = TextAlignmentOptions.Center;
         tmp.fontStyle = FontStyles.Bold;
         tmp.enableAutoSizing = true;
@@ -328,6 +326,7 @@ public static partial class DecorateInterior
         tmp.characterSpacing = 10f;
         tmp.color = new Color(1f, 0.84f, 0.45f);
         tmp.rectTransform.sizeDelta = new Vector2(sw - 0.5f, sh - 0.42f);
+        ApplySignText(tmp); // "THE GRAND MIRAGE" with CASINO underneath (DesertSurroundings.cs)
         textGo.transform.SetPositionAndRotation(new Vector3(sx, sy, sz + 0.065f), Quaternion.Euler(0f, 180f, 0f));
     }
 
@@ -675,7 +674,7 @@ public static partial class DecorateInterior
             Granite = MakeMat("Ext Granite", Color.white, 0.6f, 0f, Textures.Granite());
             Bronze = MakeMat("Ext Bronze", new Color(0.16f, 0.11f, 0.07f), 0.55f, 0.6f);
             Paving = MakeMat("Ext Paving", Color.white, 0.25f, 0f, Textures.Paving());
-            Lawn = MakeMat("Ext Lawn", Color.white, 0.1f, 0f, Textures.Grass());
+            Lawn = MakeMat("Ext Lawn", Color.white, 0.08f, 0f, Textures.Sand()); // desert sand (see DesertSurroundings.cs)
             Checker = MakeMat("Ext Lobby Marble", Color.white, 0.85f, 0f, Textures.Checker());
             Foliage = MakeMat("Ext Foliage", Color.white, 0.15f, 0f, Textures.Leaves());
             Frond = MakeMat("Ext Palm Frond", new Color(0.55f, 0.85f, 0.45f), 0.2f, 0f, Textures.Leaves());

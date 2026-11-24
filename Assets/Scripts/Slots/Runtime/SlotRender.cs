@@ -86,6 +86,48 @@ namespace VideoSlots
                 c, c, c, c);
         }
 
+        // Rotated quad cut to clip (e.g. a light sweep that must stay on its
+        // screen): the quad is clipped as a polygon, UVs interpolated along.
+        public void QuadClipped(Vector2 center, Vector2 size, Rect uv, Color color, float angle, Rect clip, bool additive = false)
+        {
+            Color c = Prep(color, additive);
+            if (!Visible(c) || size.x <= 0f || size.y <= 0f) return;
+            float r = angle * Mathf.Deg2Rad, cs = Mathf.Cos(r), sn = Mathf.Sin(r);
+            Vector2 hx = new Vector2(size.x * 0.5f * cs, size.x * 0.5f * sn), hy = new Vector2(-size.y * 0.5f * sn, size.y * 0.5f * cs);
+            _polyA.Clear();
+            _polyA.Add(new Vector4(center.x - hx.x - hy.x, center.y - hx.y - hy.y, uv.xMin, uv.yMin));
+            _polyA.Add(new Vector4(center.x - hx.x + hy.x, center.y - hx.y + hy.y, uv.xMin, uv.yMax));
+            _polyA.Add(new Vector4(center.x + hx.x + hy.x, center.y + hx.y + hy.y, uv.xMax, uv.yMax));
+            _polyA.Add(new Vector4(center.x + hx.x - hy.x, center.y + hx.y - hy.y, uv.xMax, uv.yMin));
+            ClipEdge(_polyA, _polyB, 0, clip.xMin, true);
+            ClipEdge(_polyB, _polyA, 0, clip.xMax, false);
+            ClipEdge(_polyA, _polyB, 1, clip.yMin, true);
+            ClipEdge(_polyB, _polyA, 1, clip.yMax, false);
+            // Fan of the (convex) result, two triangles per pushed quad.
+            for (int i = 1; i + 1 < _polyA.Count; i += 2)
+            {
+                Vector4 a = _polyA[0], b = _polyA[i], d = _polyA[i + 1], e = i + 2 < _polyA.Count ? _polyA[i + 2] : _polyA[i + 1];
+                Push(new Vector2(a.x, a.y), new Vector2(b.x, b.y), new Vector2(d.x, d.y), new Vector2(e.x, e.y),
+                    new Vector2(a.z, a.w), new Vector2(b.z, b.w), new Vector2(d.z, d.w), new Vector2(e.z, e.w), c, c, c, c);
+            }
+        }
+
+        readonly List<Vector4> _polyA = new List<Vector4>(8), _polyB = new List<Vector4>(8);
+
+        // Sutherland-Hodgman against one axis line; keeps the side >= (min) or <= (max) the limit.
+        static void ClipEdge(List<Vector4> src, List<Vector4> dst, int axis, float limit, bool keepAbove)
+        {
+            dst.Clear();
+            for (int i = 0; i < src.Count; i++)
+            {
+                Vector4 p = src[i], q = src[(i + 1) % src.Count];
+                float pv = axis == 0 ? p.x : p.y, qv = axis == 0 ? q.x : q.y;
+                bool pIn = keepAbove ? pv >= limit : pv <= limit, qIn = keepAbove ? qv >= limit : qv <= limit;
+                if (pIn) dst.Add(p);
+                if (pIn != qIn) dst.Add(Vector4.Lerp(p, q, (limit - pv) / (qv - pv)));
+            }
+        }
+
         // Axis-aligned quad with a vertical color gradient, cropped to clip.
         public void Rect(Rect rect, Rect uv, Color top, Color bottom, Rect clip, bool additive = false)
         {

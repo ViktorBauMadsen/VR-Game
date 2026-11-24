@@ -282,9 +282,8 @@ public static class SetupAvatar
                 root.transform.rotation, i == 0 ? 1f : -1f, ArmThickness);
     }
 
-    // Beside the roulette layout, on whichever side is further from where
-    // the player starts, facing the table. Stepped outward until he isn't
-    // standing inside anything.
+    // Behind the wheel, facing down the table toward the betting layout.
+    // Stepped outward until he isn't standing inside anything.
     static void PlaceCroupier(Transform croupier, RouletteWheel wheel)
     {
         if (wheel == null)
@@ -306,13 +305,16 @@ public static class SetupAvatar
             if (d.sqrMagnitude > 0.01f) along = d.normalized;
         }
 
+        // Behind the wheel, at the end opposite the betting layout, so a
+        // player at the layout faces him while placing bets.
         Vector3 centre = bounds.center;
-        Vector3 perp = Vector3.Cross(Vector3.up, along).normalized;
+        Vector3 perp = -along;
         var rig = Object.FindAnyObjectByType<XROrigin>();
-        if (rig != null && Vector3.Dot(rig.transform.position - centre, perp) > 0f) perp = -perp;
 
-        float reach = Mathf.Abs(perp.x) * bounds.extents.x + Mathf.Abs(perp.z) * bounds.extents.z;
-        Vector3 spot = centre + perp * (reach + 0.45f);
+        Vector3 wheelPos = wheel.transform.position;
+        float reach = Mathf.Abs(perp.x) * bounds.extents.x + Mathf.Abs(perp.z) * bounds.extents.z
+            - Vector3.Dot(new Vector3(centre.x - wheelPos.x, 0f, centre.z - wheelPos.z), perp);
+        Vector3 spot = new Vector3(wheelPos.x, centre.y, wheelPos.z) + perp * (reach + 0.45f);
         float floorY = rig != null ? rig.transform.position.y : bounds.min.y;
         for (int i = 0; i < 10; i++)
         {
