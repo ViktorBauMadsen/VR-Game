@@ -18,13 +18,12 @@ public class RouletteRampBuilder : MonoBehaviour
     [SerializeField] float innerHeight = 0f;      // local Y at innerRadius - match the pocket floor's height relative to this object
     [SerializeField] float outerHeight = 0.15f;   // local Y at outerRadius - match the outer track's height relative to this object
     [SerializeField] int radialSegments = 12;
-    // High by default on purpose: this is a flat-faceted approximation of a
-    // circle, and at typical wheel radii, a coarse segment count (e.g. 96)
-    // makes each facet's edge close to the ball's own diameter - a fast
-    // ball then visibly chatters/bounces at every seam, bleeding speed (or
-    // worse, launching) much faster than a real rolling friction loss
-    // would. More segments shrink each seam well below the ball's size.
-    [SerializeField] int angularSegments = 360;
+    // Was 360 so a physics ball wouldn't chatter on the seams between facets.
+    // The ball is a scripted animation now, so 96 (smooth-shaded, looks the
+    // same) is plenty - 2,304 triangles instead of 8,640 per wheel.
+    // Tools > Roulette > Lighten Ramps applies this to existing wheels.
+    public const int LightSegments = 96;
+    [SerializeField] int angularSegments = LightSegments;
     // Height fraction (0 at inner radius, 1 at outer radius) along the
     // slope - the default eases in/out for a gentle bowl curve. Make it
     // steeper near t=1 (outer) and flatter near t=0 (inner) for a profile
@@ -34,6 +33,19 @@ public class RouletteRampBuilder : MonoBehaviour
 
     [ContextMenu("Rebuild Ramp")]
     public void Rebuild()
+    {
+        var mesh = CreateMesh();
+        GetComponent<MeshFilter>().sharedMesh = mesh;
+
+        var collider = GetComponent<MeshCollider>();
+        if (collider == null) collider = gameObject.AddComponent<MeshCollider>();
+        collider.sharedMesh = mesh;
+        if (physicsMaterial != null) collider.sharedMaterial = physicsMaterial;
+    }
+
+    public void SetAngularSegments(int segments) => angularSegments = Mathf.Max(8, segments);
+
+    public Mesh CreateMesh()
     {
         int ringCount = radialSegments + 1;
         int vertsPerRing = angularSegments + 1; // duplicate seam vertex so UVs wrap cleanly
@@ -78,12 +90,6 @@ public class RouletteRampBuilder : MonoBehaviour
         mesh.triangles = triangles.ToArray();
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
-
-        GetComponent<MeshFilter>().sharedMesh = mesh;
-
-        var collider = GetComponent<MeshCollider>();
-        if (collider == null) collider = gameObject.AddComponent<MeshCollider>();
-        collider.sharedMesh = mesh;
-        if (physicsMaterial != null) collider.sharedMaterial = physicsMaterial;
+        return mesh;
     }
 }

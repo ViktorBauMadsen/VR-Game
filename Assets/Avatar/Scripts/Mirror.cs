@@ -13,7 +13,7 @@ using UnityEngine.XR;
 // reflection has proper depth instead of looking like a flat TV screen.
 //
 // Two extra scene renders are not free, so the cameras only run while the
-// player is in front of the mirror and within maxDistance; otherwise the
+// player is in front of the mirror, within maxDistance and has it in view; otherwise the
 // glass just keeps its last image. Without a headset (editor) one camera
 // feeds both eyes.
 [RequireComponent(typeof(Renderer))]
@@ -102,8 +102,7 @@ public class Mirror : MonoBehaviour
         Vector3 front = -transform.forward; // the side the glass faces
         Vector3 toViewer = viewer.transform.position - transform.position;
         float distance = Vector3.Dot(toViewer, front);
-        bool facing = Vector3.Dot(viewer.transform.forward, -toViewer.normalized) > -0.3f;
-        if (distance < 0.05f || toViewer.magnitude > maxDistance || !facing)
+        if (distance < 0.05f || toViewer.magnitude > maxDistance || !InView(viewer))
         {
             SetActive(false, false);
             return;
@@ -128,6 +127,19 @@ public class Mirror : MonoBehaviour
     }
 
     bool _wasStereo = true;
+
+    static readonly Plane[] FrustumPlanes = new Plane[6];
+
+    // Only pay for the two reflection renders when the glass is actually on
+    // screen (the old check let them run while looking almost sideways). The
+    // bounds are padded so the edge of each eye's wider view is covered too.
+    bool InView(Camera viewer)
+    {
+        GeometryUtility.CalculateFrustumPlanes(viewer, FrustumPlanes);
+        var bounds = GetComponent<Renderer>().bounds;
+        bounds.Expand(1f);
+        return GeometryUtility.TestPlanesAABB(FrustumPlanes, bounds);
+    }
 
     void SetActive(bool left, bool right)
     {

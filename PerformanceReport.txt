@@ -1,0 +1,209 @@
+Performance report - 2026-11-25 21:25 - edit mode
+Scenes: SampleScene
+
+== TOTALS (active, enabled renderers) ==
+Renderers: 1460  (skinned: 4)
+Triangles: 618,232
+Draw calls if everything were in view (renderer x material): 1,487
+Shadow casters: 258  (252,444 tris drawn again into the shadow map)
+Batching-static renderers: 316 of 1460
+LOD groups: 0
+Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame at 72 Hz.
+
+== TOP 40 OBJECTS BY TRIANGLES ==
+   22,578  mats  1  shadow          Roulette Table/RouletteWheel   [RouletteModel]
+   22,578  mats  1  shadow          Roulette Table (1)/RouletteWheel   [RouletteModel]
+   22,578  mats  1  shadow          Roulette Table 2/RouletteWheel   [RouletteModel]
+   16,112  mats  1                  Desert Surroundings/Scenery/Desert Cactus -1_0  [Desert Cactus -1_0]
+   11,096  mats  1                  Desert Surroundings/Scenery/Desert Cactus 0_0  [Desert Cactus 0_0]
+   10,636  mats  1                  Desert Surroundings/Scenery/Desert Cactus -1_-1  [Desert Cactus -1_-1]
+    8,640  mats  1  shadow          Roulette Table/RouletteWheel /Ramp  [RouletteRamp]
+    8,640  mats  1  shadow          Roulette Table (1)/RouletteWheel /Ramp  [RouletteRamp]
+    8,640  mats  1  shadow          Roulette Table 2/RouletteWheel /Ramp  [RouletteRamp]
+    8,090  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood 0_0  [Desert Dead Wood 0_0]
+    7,534  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood -1_-1  [Desert Dead Wood -1_-1]
+    7,120  mats  1                  Desert Surroundings/Scenery/Desert Cactus 0_-1  [Desert Cactus 0_-1]
+    6,456  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood -1_0  [Desert Dead Wood -1_0]
+    6,144  mats  1                  Casino Bar/Back Bar/Bottles/Bottle Dark Amber  [Back Bar Bottles Bottle Dark Amber]
+    5,832  mats  1                  Desert Surroundings/Scenery/Desert Bone 0_0  [Desert Bone 0_0]
+    5,720  mats  1  shadow          Merged Decor/Outside -2_4 Ext Palm Frond 188  [Outside -2_4 Ext Palm Frond 188]
+    5,720  mats  1  shadow          Merged Decor/Outside 0_4 Ext Palm Frond 192  [Outside 0_4 Ext Palm Frond 192]
+    5,720  mats  1  shadow          Merged Decor/Outside -2_5 Ext Palm Frond 197  [Outside -2_5 Ext Palm Frond 197]
+    5,720  mats  1  shadow          Merged Decor/Outside 0_5 Ext Palm Frond 201  [Outside 0_5 Ext Palm Frond 201]
+    5,720  mats  1  shadow          Merged Decor/Outside 1_0 Ext Palm Frond 208  [Outside 1_0 Ext Palm Frond 208]
+    5,720  mats  1  shadow          Merged Decor/Outside 1_1 Ext Palm Frond 215  [Outside 1_1 Ext Palm Frond 215]
+    5,720  mats  1  shadow          Merged Decor/Outside 1_2 Ext Palm Frond 222  [Outside 1_2 Ext Palm Frond 222]
+    5,720  mats  1  shadow          Merged Decor/Outside 1_3 Ext Palm Frond 229  [Outside 1_3 Ext Palm Frond 229]
+    5,552  mats  1                  Merged Decor/Inside -1_1 Decor Gold 62  [Inside -1_1 Decor Gold 62]
+    5,280  mats  1                  Merged Decor/Outside -1_4 Decor Velvet 179  [Outside -1_4 Decor Velvet 179]
+    5,200  mats  1  shadow          Merged Decor/Outside -2_-1 Ext Palm Frond 232  [Outside -2_-1 Ext Palm Frond 232]
+    5,200  mats  1  shadow          Merged Decor/Outside 0_-1 Ext Palm Frond 239  [Outside 0_-1 Ext Palm Frond 239]
+    4,680  mats  1  shadow          Merged Decor/Outside -1_-1 Ext Palm Frond 235  [Outside -1_-1 Ext Palm Frond 235]
+    4,214  mats  1                  Desert Surroundings/Scenery/Desert Bone -1_-1  [Desert Bone -1_-1]
+    4,160  mats  1  shadow          Merged Decor/Outside -2_3 Ext Palm Frond 225  [Outside -2_3 Ext Palm Frond 225]
+    4,154  mats  1                  Desert Surroundings/Scenery/Desert Bone -1_0  [Desert Bone -1_0]
+    4,100  mats  1                  Merged Decor/Inside -1_1 Decor Crystal 63  [Inside -1_1 Decor Crystal 63]
+    4,000  mats  1                  Merged Decor/Inside -1_0 Decor Crystal 60  [Inside -1_0 Decor Crystal 60]
+    3,700  mats  1                  Merged Decor/Inside -1_0 Decor Gold 57  [Inside -1_0 Decor Gold 57]
+    3,640  mats  1  shadow          Merged Decor/Outside -3_0 Ext Palm Frond 204  [Outside -3_0 Ext Palm Frond 204]
+    3,640  mats  1  shadow          Merged Decor/Outside -3_1 Ext Palm Frond 211  [Outside -3_1 Ext Palm Frond 211]
+    3,468  mats  1                  Desert Surroundings/Scenery/Desert Cactus -2_0  [Desert Cactus -2_0]
+    3,160  mats  1                  Merged Decor/Inside -1_2 Decor Gold 67  [Inside -1_2 Decor Gold 67]
+    3,160  mats  1                  Merged Decor/Outside -1_4 Decor Gold 177  [Outside -1_4 Decor Gold 177]
+    3,120  mats  1  shadow          Merged Decor/Outside -2_2 Ext Palm Frond 218  [Outside -2_2 Ext Palm Frond 218]
+
+== TOP 30 MESHES BY TOTAL TRIANGLES (tris x copies) ==
+     67,734  =   22,578 x    3  RouletteModel  (Assets/FBX/RouletteWheel (1).fbx)
+     25,920  =    8,640 x    3  RouletteRamp  (Assets/Prefabs/Roulette/RouletteRamp.asset)
+     24,200  =      100 x  242  LowPoly Sphere 100  (Assets/Generated/LowPoly/LowPoly Sphere 100.asset)
+     21,098  =    1,918 x   11  Flower_03  (Assets/ithappy/Casino_Free/Meshes/Assets/Flower_03.fbx)
+     16,112  =   16,112 x    1  Desert Cactus -1_0  (Assets/Materials/InteriorDecor/Desert/Desert Cactus -1_0.asset)
+     13,392  =      144 x   93  LowPoly Capsule 144  (Assets/Generated/LowPoly/LowPoly Capsule 144.asset)
+     13,360  =       80 x  167  Cylinder  (Library/unity default resources)
+     11,096  =   11,096 x    1  Desert Cactus 0_0  (Assets/Materials/InteriorDecor/Desert/Desert Cactus 0_0.asset)
+     10,636  =   10,636 x    1  Desert Cactus -1_-1  (Assets/Materials/InteriorDecor/Desert/Desert Cactus -1_-1.asset)
+      8,090  =    8,090 x    1  Desert Dead Wood 0_0  (Assets/Materials/InteriorDecor/Desert/Desert Dead Wood 0_0.asset)
+      7,534  =    7,534 x    1  Desert Dead Wood -1_-1  (Assets/Materials/InteriorDecor/Desert/Desert Dead Wood -1_-1.asset)
+      7,120  =    7,120 x    1  Desert Cactus 0_-1  (Assets/Materials/InteriorDecor/Desert/Desert Cactus 0_-1.asset)
+      6,456  =    6,456 x    1  Desert Dead Wood -1_0  (Assets/Materials/InteriorDecor/Desert/Desert Dead Wood -1_0.asset)
+      6,144  =    6,144 x    1  Back Bar Bottles Bottle Dark Amber  (Assets/Bar/Meshes/Back Bar Bottles Bottle Dark Amber.asset)
+      5,832  =    5,832 x    1  Desert Bone 0_0  (Assets/Materials/InteriorDecor/Desert/Desert Bone 0_0.asset)
+      5,720  =    5,720 x    1  Outside -2_4 Ext Palm Frond 188  (Assets/Generated/Merged/SampleScene/Outside -2_4 Ext Palm Frond 188.asset)
+      5,720  =    5,720 x    1  Outside 0_4 Ext Palm Frond 192  (Assets/Generated/Merged/SampleScene/Outside 0_4 Ext Palm Frond 192.asset)
+      5,720  =    5,720 x    1  Outside -2_5 Ext Palm Frond 197  (Assets/Generated/Merged/SampleScene/Outside -2_5 Ext Palm Frond 197.asset)
+      5,720  =    5,720 x    1  Outside 0_5 Ext Palm Frond 201  (Assets/Generated/Merged/SampleScene/Outside 0_5 Ext Palm Frond 201.asset)
+      5,720  =    5,720 x    1  Outside 1_0 Ext Palm Frond 208  (Assets/Generated/Merged/SampleScene/Outside 1_0 Ext Palm Frond 208.asset)
+      5,720  =    5,720 x    1  Outside 1_1 Ext Palm Frond 215  (Assets/Generated/Merged/SampleScene/Outside 1_1 Ext Palm Frond 215.asset)
+      5,720  =    5,720 x    1  Outside 1_2 Ext Palm Frond 222  (Assets/Generated/Merged/SampleScene/Outside 1_2 Ext Palm Frond 222.asset)
+      5,720  =    5,720 x    1  Outside 1_3 Ext Palm Frond 229  (Assets/Generated/Merged/SampleScene/Outside 1_3 Ext Palm Frond 229.asset)
+      5,552  =    5,552 x    1  Inside -1_1 Decor Gold 62  (Assets/Generated/Merged/SampleScene/Inside -1_1 Decor Gold 62.asset)
+      5,520  =    1,104 x    5  CardTable_LOD0  (Assets/SubstanceAssets/LittleGamesPack/Models/Cards/CardTable.fbx)
+      5,280  =    5,280 x    1  Outside -1_4 Decor Velvet 179  (Assets/Generated/Merged/SampleScene/Outside -1_4 Decor Velvet 179.asset)
+      5,200  =    5,200 x    1  Outside -2_-1 Ext Palm Frond 232  (Assets/Generated/Merged/SampleScene/Outside -2_-1 Ext Palm Frond 232.asset)
+      5,200  =    5,200 x    1  Outside 0_-1 Ext Palm Frond 239  (Assets/Generated/Merged/SampleScene/Outside 0_-1 Ext Palm Frond 239.asset)
+      4,796  =    2,398 x    2  Controller_Base  (Assets/Samples/XR Interaction Toolkit/3.6.0/Starter Assets/Models/UniversalController.fbx)
+      4,680  =    4,680 x    1  Outside -1_-1 Ext Palm Frond 235  (Assets/Generated/Merged/SampleScene/Outside -1_-1 Ext Palm Frond 235.asset)
+
+== TOP 30 GROUPS (first two hierarchy levels) ==
+    160,718 tris    120 renderers    120 draw calls  Desert Surroundings/Scenery
+     31,552 tris     42 renderers     42 draw calls  Roulette Table/RouletteWheel 
+     31,552 tris     42 renderers     42 draw calls  Roulette Table (1)/RouletteWheel 
+     31,552 tris     42 renderers     42 draw calls  Roulette Table 2/RouletteWheel 
+     23,584 tris     23 renderers     23 draw calls  Casino Bar/Back Bar
+     17,262 tris      9 renderers      9 draw calls  Interior Decor/Plants
+     16,032 tris     20 renderers     20 draw calls  XR Origin (XR Rig)/Camera Offset
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside -2_4 Ext Palm Frond 188
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside 0_4 Ext Palm Frond 192
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside -2_5 Ext Palm Frond 197
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside 0_5 Ext Palm Frond 201
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside 1_0 Ext Palm Frond 208
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside 1_1 Ext Palm Frond 215
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside 1_2 Ext Palm Frond 222
+      5,720 tris      1 renderers      1 draw calls  Merged Decor/Outside 1_3 Ext Palm Frond 229
+      5,552 tris      1 renderers      1 draw calls  Merged Decor/Inside -1_1 Decor Gold 62
+      5,292 tris     21 renderers     35 draw calls  Assets/Slot Machines
+      5,280 tris      1 renderers      1 draw calls  Merged Decor/Outside -1_4 Decor Velvet 179
+      5,200 tris      1 renderers      1 draw calls  Merged Decor/Outside -2_-1 Ext Palm Frond 232
+      5,200 tris      1 renderers      1 draw calls  Merged Decor/Outside 0_-1 Ext Palm Frond 239
+      4,928 tris     44 renderers     44 draw calls  Casino Bar/Drink Menu
+      4,680 tris      1 renderers      1 draw calls  Merged Decor/Outside -1_-1 Ext Palm Frond 235
+      4,362 tris     39 renderers     39 draw calls  Casino Bar/Bartender
+      4,282 tris     40 renderers     40 draw calls  Token Stall/Zorp
+      4,160 tris      1 renderers      1 draw calls  Merged Decor/Outside -2_3 Ext Palm Frond 225
+      4,122 tris     38 renderers     38 draw calls  Blackjack Table/Dealer
+      4,122 tris     38 renderers     38 draw calls  Blackjack Table 3/Dealer
+      4,122 tris     38 renderers     38 draw calls  Blackjack Table 2/Dealer
+      4,100 tris      1 renderers      1 draw calls  Merged Decor/Inside -1_1 Decor Crystal 63
+      4,002 tris     37 renderers     37 draw calls  Roulette Table/Croupier
+
+== HOT SPOTS (4 m floor cells, by triangles) ==
+x      0..4     z      4..8          40,806 tris    74 renderers    74 draw calls   biggest: Roulette Table/RouletteWheel  (22,578)
+x     -4..0     z     12..16         37,748 tris    89 renderers    89 draw calls   biggest: Roulette Table (1)/RouletteWheel  (22,578)
+x    -12..-8    z     12..16         34,232 tris   136 renderers   136 draw calls   biggest: Casino Bar/Back Bar/Bottles/Bottle Dark Amber (6,144)
+x     -8..-4    z      4..8          33,694 tris    47 renderers    47 draw calls   biggest: Roulette Table 2/RouletteWheel  (22,578)
+x     -4..0     z     36..40         23,634 tris    28 renderers    28 draw calls   biggest: Merged Decor/Outside -1_4 Decor Velvet 179 (5,280)
+x    -44..-40   z    -48..-44        19,178 tris     3 renderers     3 draw calls   biggest: Desert Surroundings/Scenery/Desert Cactus -1_-1 (10,636)
+x    -48..-44   z     44..48         18,812 tris     2 renderers     2 draw calls   biggest: Desert Surroundings/Scenery/Desert Cactus -1_0 (16,112)
+x     -4..0     z      4..8          17,806 tris    58 renderers    58 draw calls   biggest: Merged Decor/Inside -1_0 Decor Crystal 60 (4,000)
+x     40..44    z     44..48         13,076 tris     2 renderers     2 draw calls   biggest: Desert Surroundings/Scenery/Desert Cactus 0_0 (11,096)
+x     -8..-4    z      8..12         11,748 tris     7 renderers     9 draw calls   biggest: Merged Decor/Inside -1_1 Decor Crystal 63 (4,100)
+x      0..4     z     12..16          9,302 tris    74 renderers    74 draw calls   biggest: Interior Decor/Plants/Plant 3 (1,918)
+x     -8..-4    z     20..24          8,588 tris    23 renderers    25 draw calls   biggest: Merged Decor/Inside -1_2 Decor Gold 67 (3,160)
+x     -8..-4    z     24..28          8,450 tris    12 renderers    15 draw calls   biggest: Assets/Fruits_01 (1) (2,318)
+x      0..4     z     16..20          8,312 tris    71 renderers    71 draw calls   biggest: Interior Decor/Plants/Plant 4 (1,918)
+x     -8..-4    z     12..16          8,182 tris     9 renderers     9 draw calls   biggest: Merged Decor/Inside -1_1 Decor Gold 62 (5,552)
+x     48..52    z     44..48          8,090 tris     1 renderers     1 draw calls   biggest: Desert Surroundings/Scenery/Desert Dead Wood 0_0 (8,090)
+x     36..40    z     28..32          8,012 tris     3 renderers     3 draw calls   biggest: Desert Surroundings/Scenery/Desert Bone 0_0 (5,832)
+x      4..8     z     40..44          7,880 tris     6 renderers     6 draw calls   biggest: Merged Decor/Outside 0_5 Ext Palm Frond 201 (5,720)
+x      4..8     z     32..36          7,300 tris     5 renderers     5 draw calls   biggest: Merged Decor/Outside 0_4 Ext Palm Frond 192 (5,720)
+x     -8..-4    z     28..32          7,298 tris    92 renderers    92 draw calls   biggest: Merged Decor/Outside -1_3 Decor Gold 145 (596)
+By draw calls:
+x    -12..-8    z     12..16      136 draw calls   136 renderers      34,232 tris
+x     -8..-4    z     28..32       92 draw calls    92 renderers       7,298 tris
+x     -4..0     z     12..16       89 draw calls    89 renderers      37,748 tris
+x      0..4     z      4..8        74 draw calls    74 renderers      40,806 tris
+x      0..4     z     12..16       74 draw calls    74 renderers       9,302 tris
+x      0..4     z     16..20       71 draw calls    71 renderers       8,312 tris
+x      0..4     z      8..12       69 draw calls    69 renderers       6,954 tris
+x     -4..0     z      4..8        58 draw calls    58 renderers      17,806 tris
+x     -8..-4    z      4..8        47 draw calls    47 renderers      33,694 tris
+x     -4..0     z     28..32       42 draw calls    42 renderers       3,964 tris
+
+== LOOK AROUND from (-6.0, 2.2, 1.2) (Scene view camera, 90 deg view, 400 m) ==
+N (+z)     479,734 tris   1191 draw calls   1175 renderers   heaviest: RouletteWheel  22,578, RouletteWheel  22,578, RouletteWheel  22,578
+NE         385,376 tris    975 draw calls    972 renderers   heaviest: RouletteWheel  22,578, RouletteWheel  22,578, RouletteWheel  22,578
+E (+x)     165,152 tris    275 draw calls    270 renderers   heaviest: RouletteWheel  22,578, Desert Cactus 0_0 11,096, Ramp 8,640
+SE          76,920 tris    160 draw calls    154 renderers   heaviest: Desert Dead Wood -1_-1 7,534, Desert Cactus 0_-1 7,120, Desert Bone 0_0 5,832
+S (-z)      71,666 tris     72 draw calls     70 renderers   heaviest: Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534, Desert Cactus 0_-1 7,120
+SW          58,762 tris     89 draw calls     85 renderers   heaviest: Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534, Outside -2_-1 Ext Palm Frond 232 5,200
+W (-x)     106,306 tris    128 draw calls    120 renderers   heaviest: Desert Cactus -1_0 16,112, Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534
+NW         205,360 tris    417 draw calls    401 renderers   heaviest: Desert Cactus -1_0 16,112, Desert Dead Wood -1_0 6,456, Bottle Dark Amber 6,144
+(Frustum culling only - no occlusion culling, so walls don't hide what's behind them.)
+
+== CAMERAS (each enabled one renders the scene again) ==
+ENABLED   target screen/headset  far 1000  mask -1  XR Origin (XR Rig)/Camera Offset/Main Camera
+
+== LIGHTS ==
+Directional Realtime shadows Soft range    10  Directional Light
+Point       Realtime shadows None range   7.5  Interior Decor/Chandeliers/Chandelier Roulette A/Warm Light
+Point       Realtime shadows None range   7.5  Interior Decor/Chandeliers/Chandelier Roulette B/Warm Light
+Point       Realtime shadows None range   7.5  Interior Decor/Chandeliers/Chandelier Roulette C/Warm Light
+Point       Realtime shadows None range   7.5  Interior Decor/Chandeliers/Chandelier Entrance/Warm Light
+Point       Realtime shadows None range   4.5  Interior Decor/Bar Decor/Warm Light
+
+== SHADERS (renderer slots using each) ==
+  1422  Universal Render Pipeline/Lit
+    58  Universal Render Pipeline/Unlit
+     3  Universal Render Pipeline/2D/Sprite-Unlit-Default
+     2  Shader Graphs/Unlit_Fresnel
+     1  Casino/Stereo Mirror
+     1  TextMeshPro/Mobile/Distance Field
+Transparent material slots: 19 (overdraw - expensive on Quest)
+Unique materials: 204
+
+== TOP 25 TEXTURES BY MEMORY ==
+   19.0 MB  4096x4096  GamePieces_Base_color  (Assets/SubstanceAssets/LittleGamesPack/Textures/GamePieces/GamePieces_Base_color.png)
+   19.0 MB  4096x4096  CardsAndTables_Base_color  (Assets/SubstanceAssets/LittleGamesPack/Textures/CardsAndTables/CardsAndTables_Base_color.png)
+    4.8 MB  2048x2048  DefaultMaterial_AO  (Assets/Samples/XR Interaction Toolkit/3.6.0/Starter Assets/Textures/DefaultMaterial_AO.png)
+    4.8 MB  2048x2048  Carpet_Normal  (Assets/ithappy/Casino_Free/Textures/Carpet_Normal.png)
+    4.8 MB  2048x2048  Screens_2  (Assets/ithappy/Casino_Free/Textures/Screens_2.png)
+    4.8 MB  2048x2048  Fabric_Normal  (Assets/ithappy/Casino_Free/Textures/Fabric_Normal.png)
+    4.8 MB  2048x2048  Screens_1  (Assets/ithappy/Casino_Free/Textures/Screens_1.png)
+    2.0 MB  1024x1024  LiberationSans SDF Atlas  (Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset)
+    1.2 MB  1024x1024  Carpet_4  (Assets/ithappy/Casino_Free/Textures/Carpet_4.png)
+    1.2 MB  1024x1024  Textures_4  (Assets/ithappy/Casino_Free/Textures/Textures_4.png)
+    0.3 MB  256x1024  Rug Blackjack Rug  (Assets/Materials/InteriorDecor/Textures/Rug Blackjack Rug.png)
+    0.3 MB  512x512  Art 4 0.73  (Assets/Materials/InteriorDecor/Textures/Art 4 0.73.png)
+    0.2 MB  128x1024  Rug Entrance Runner  (Assets/Materials/InteriorDecor/Textures/Rug Entrance Runner.png)
+    0.2 MB  128x1024  Rug Front Carpet  (Assets/Materials/InteriorDecor/Textures/Rug Front Carpet.png)
+    0.2 MB  256x512  Rug Roulette Rug A  (Assets/Materials/InteriorDecor/Textures/Rug Roulette Rug A.png)
+    0.2 MB  256x512  Rug Roulette Rug B  (Assets/Materials/InteriorDecor/Textures/Rug Roulette Rug B.png)
+    0.2 MB  256x512  Rug Roulette Rug C  (Assets/Materials/InteriorDecor/Textures/Rug Roulette Rug C.png)
+    0.2 MB  512x256  Rug Slots Rug  (Assets/Materials/InteriorDecor/Textures/Rug Slots Rug.png)
+    0.2 MB  256x512  Rug Bar Rug  (Assets/Materials/InteriorDecor/Textures/Rug Bar Rug.png)
+    0.2 MB  256x512  Rug Lounge Rug  (Assets/Materials/InteriorDecor/Textures/Rug Lounge Rug.png)
+    0.2 MB  256x512  Rug Darts Rug  (Assets/Materials/InteriorDecor/Textures/Rug Darts Rug.png)
+    0.2 MB  512x256  Art 0 1.50  (Assets/Materials/InteriorDecor/Textures/Art 0 1.50.png)
+    0.2 MB  512x256  Art 1 1.50  (Assets/Materials/InteriorDecor/Textures/Art 1 1.50.png)
+    0.2 MB  512x256  Art 2 1.50  (Assets/Materials/InteriorDecor/Textures/Art 2 1.50.png)
+    0.2 MB  512x256  Art 3 1.45  (Assets/Materials/InteriorDecor/Textures/Art 3 1.45.png)

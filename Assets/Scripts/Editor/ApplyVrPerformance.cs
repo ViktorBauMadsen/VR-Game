@@ -22,6 +22,8 @@ using UnityEngine.XR.OpenXR.Features;
 //                                Unity drops one - lighting popped on and off.
 //   Foveated rendering on        (OpenXR feature, Android) - level is set at
 //                                runtime by VrComfort.
+//   Fixed refresh rate on        (RefreshRateFeature, Android) - 72 Hz on
+//                                every headset, whatever its system setting.
 //
 // VrComfort fixes the camera's depth precision (z-fighting flicker) and runs
 // physics at the headset's refresh rate at runtime.
@@ -60,10 +62,19 @@ public static class ApplyVrPerformance
             done.Add(asset.name);
         }
 
+        UnityEditor.XR.OpenXR.Features.FeatureHelpers.RefreshFeatures(BuildTargetGroup.Android);
         var openxr = OpenXRSettings.GetSettingsForBuildTargetGroup(BuildTargetGroup.Android);
-        bool foveation = false;
+        bool foveation = false, refreshRate = false;
         if (openxr != null)
         {
+            var rr = openxr.GetFeature<RefreshRateFeature>();
+            if (rr != null)
+            {
+                rr.enabled = true;
+                EditorUtility.SetDirty(rr);
+                refreshRate = true;
+            }
+
             var feature = openxr.GetFeature<FoveatedRenderingFeature>();
             if (feature != null)
             {
@@ -75,7 +86,7 @@ public static class ApplyVrPerformance
         }
 
         AssetDatabase.SaveAssets();
-        Debug.Log($"ApplyVrPerformance: updated {string.Join(", ", done)} (render scale 1, MSAA 4x, HDR off, 20 m shadows, 8 lights/object). Foveated rendering {(foveation ? "on" : "not found")}.");
+        Debug.Log($"ApplyVrPerformance: updated {string.Join(", ", done)} (render scale 1, MSAA 4x, HDR off, 20 m shadows, 8 lights/object). Foveated rendering {(foveation ? "on" : "not found")}. Fixed refresh rate {(refreshRate ? "on" : "not found")}.");
     }
 
     static void Set(SerializedObject so, string name, float value)

@@ -13,7 +13,7 @@ using UnityEngine.XR;
 //     to your mouth and see to the end of the desert.
 //   - Physics at the display rate. Physics ran at 50 Hz on a 72-120 Hz
 //     headset, so anything held or thrown stuttered against your hand. The
-//     fixed timestep now follows the headset's refresh rate.
+//     fixed timestep now follows the headset's refresh rate (at most 90 Hz).
 //   - Foveated rendering (when the OpenXR Foveated Rendering feature is on -
 //     Tools > Casino > Apply VR Performance Settings turns it on): the edges
 //     of each eye, which you can't see sharply anyway, are drawn at lower
@@ -64,7 +64,9 @@ public sealed class VrComfort : MonoBehaviour
             if (!display.running) continue;
             if (display.TryGetDisplayRefreshRate(out float hz) && hz >= 50f)
             {
-                float step = Mathf.Clamp(1f / hz, 1f / 120f, 1f / 50f);
+                // Capped at 90 Hz: 120 Hz physics nearly doubles the CPU cost
+                // for no visible gain (RefreshRateFeature normally pins 72 Hz).
+                float step = Mathf.Clamp(1f / hz, 1f / 90f, 1f / 50f);
                 if (Mathf.Abs(Time.fixedDeltaTime - step) > 0.0001f) Time.fixedDeltaTime = step;
             }
             if (Mathf.Abs(display.foveatedRenderingLevel - foveation) > 0.001f)

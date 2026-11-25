@@ -8179,7 +8179,7 @@ MonoBehaviour:
   innerHeight: 0
   outerHeight: 0.01
   radialSegments: 12
-  angularSegments: 360
+  angularSegments: 96
   heightProfile:
     serializedVersion: 2
     m_Curve:

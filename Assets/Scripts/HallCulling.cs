@@ -28,8 +28,18 @@ using UnityEngine.SceneManagement;
 public sealed class HallCulling : MonoBehaviour
 {
     // The hall's inside (from DecorateInterior) and the building's outer shell (DecorateExterior).
-    static readonly Bounds Hall = MinMax(new Vector3(-9.97f, 0.3f, -0.35f), new Vector3(4.18f, 5.4f, 28.09f));
-    static readonly Bounds Shell = MinMax(new Vector3(-10.12f, -1f, -0.5f), new Vector3(4.32f, 7.05f, 28.28f));
+    public static readonly Bounds Hall = MinMax(new Vector3(-9.97f, 0.3f, -0.35f), new Vector3(4.18f, 5.4f, 28.09f));
+    public static readonly Bounds Shell = MinMax(new Vector3(-10.12f, -1f, -0.5f), new Vector3(4.32f, 7.05f, 28.28f));
+
+    public enum Zone { Inside, Outside, Between }
+
+    // Which list a mesh with these bounds ends up in (Merge Decor keeps
+    // merged meshes from straddling two zones).
+    public static Zone ZoneOf(Bounds b)
+    {
+        if (Hall.Contains(b.min) && Hall.Contains(b.max)) return Zone.Inside;
+        return Shell.Intersects(b) ? Zone.Between : Zone.Outside;
+    }
     // The front door's opening, generously padded, and how close counts as "at the door".
     static readonly Bounds Doorway = MinMax(new Vector3(-4.75f, 0.2f, 27.6f), new Vector3(-0.63f, 4.5f, 28.6f));
     const float NearDoor = 3f, HideDelay = 0.4f;
@@ -96,7 +106,8 @@ public sealed class HallCulling : MonoBehaviour
                 if (r.GetComponentInParent<Rigidbody>(true) != null) continue; // can be picked up / thrown
                 Bounds b = r.bounds;
                 if (b.size == Vector3.zero) continue;
-                if (Hall.Contains(b.min) && Hall.Contains(b.max))
+                var zone = ZoneOf(b);
+                if (zone == Zone.Inside)
                 {
                     _inside.Add(r);
                     if (r.shadowCastingMode == ShadowCastingMode.On || r.shadowCastingMode == ShadowCastingMode.TwoSided)
@@ -105,7 +116,7 @@ public sealed class HallCulling : MonoBehaviour
                         shadowsOff++;
                     }
                 }
-                else if (!Shell.Intersects(b)) _outside.Add(r);
+                else if (zone == Zone.Outside) _outside.Add(r);
             }
         }
         Debug.Log($"HallCulling: {_inside.Count} meshes inside the hall ({shadowsOff} no longer cast sun shadows), {_outside.Count} outside.");
