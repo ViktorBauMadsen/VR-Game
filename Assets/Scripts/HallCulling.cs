@@ -40,6 +40,9 @@ public sealed class HallCulling : MonoBehaviour
 
     public enum Zone { Inside, Outside, Between }
 
+    // Keeps the sun off wherever you are (the mafia's night-time desert scene).
+    public static bool ForceSunOff;
+
     // Which list a mesh with these bounds ends up in (Merge Decor keeps
     // merged meshes from straddling two zones).
     public static Zone ZoneOf(Bounds b)
@@ -114,6 +117,7 @@ public sealed class HallCulling : MonoBehaviour
             foreach (var r in root.GetComponentsInChildren<MeshRenderer>(true))
             {
                 if (r.GetComponentInParent<Rigidbody>(true) != null) continue; // can be picked up / thrown
+                if (Moves(r)) continue;
                 Bounds b = r.bounds;
                 if (b.size == Vector3.zero) continue;
                 var zone = ZoneOf(b);
@@ -136,6 +140,19 @@ public sealed class HallCulling : MonoBehaviour
                 if (light.type == LightType.Directional && light.enabled && light.gameObject.scene == gameObject.scene) { _sun = light; break; }
 
         Debug.Log($"HallCulling: {_inside.Count} meshes inside the hall ({shadowsOff} no longer cast sun shadows), {_outside.Count} outside. Sun: {(_sun != null ? _sun.name : "none")}.");
+    }
+
+    // Things that go wherever you go, so where they were at start says
+    // nothing: your own body (seen only in the mirror - it used to be sorted
+    // by where you stood at start, and vanished from the mirror once you
+    // crossed into the other zone).
+    static int _playerBodyLayer = -2;
+
+    static bool Moves(Renderer r)
+    {
+        if (_playerBodyLayer == -2) _playerBodyLayer = LayerMask.NameToLayer(PlayerAvatarBody.LayerName);
+        if (_playerBodyLayer >= 0 && r.gameObject.layer == _playerBodyLayer) return true;
+        return r.GetComponentInParent<PlayerAvatarBody>(true) != null;
     }
 
     void Update()
@@ -171,7 +188,8 @@ public sealed class HallCulling : MonoBehaviour
         bool inside = all || _wantInside, outside = all || _wantOutside;
         if (inside != _shownInside) { Show(_inside, inside); _shownInside = inside; }
         if (outside != _shownOutside) { Show(_outside, outside); _shownOutside = outside; }
-        if (_sun != null && outside != _sunShown) { _sun.enabled = outside; _sunShown = outside; }
+        bool sun = outside && !ForceSunOff;
+        if (_sun != null && sun != _sunShown) { _sun.enabled = sun; _sunShown = sun; }
     }
 
     static void Show(List<Renderer> renderers, bool show)

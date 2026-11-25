@@ -86,7 +86,7 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         else if (pocketsWereVisible) pockets.SetPocketsVisible(true);
     }
-    AudioSource audioSource;
+    AudioSource audioSource, ambience;
     AudioClip gunshot, beep, cash;
     Coroutine showing;
     float nextSetupAttempt, firstSetupAttempt = -1f, nextRefresh;
@@ -101,6 +101,11 @@ public sealed class CasinoRunHud : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.spatialBlend = 0f;
         audioSource.playOnAwake = false;
+        ambience = gameObject.AddComponent<AudioSource>();
+        ambience.spatialBlend = 0f;
+        ambience.playOnAwake = false;
+        ambience.loop = true;
+        ambience.volume = 0.35f;
         gunshot = Gunshot();
         beep = Tone("Beep", 0.09f, 880f, 880f);
         cash = Tone("Cash", 0.45f, 1320f, 1760f);
@@ -109,6 +114,15 @@ public sealed class CasinoRunHud : MonoBehaviour
     void OnDestroy()
     {
         if (run != null) run.Happened -= OnHappened;
+        MafiaHit.Dismiss();
+        KidnapScene.Exit();
+    }
+
+    // Back from the desert scene to where you were taken (if you're there).
+    void LeaveDesert()
+    {
+        if (ambience != null) ambience.Stop();
+        KidnapScene.Exit();
     }
 
     // ------------------------------------------------------------- set-up
@@ -286,6 +300,7 @@ public sealed class CasinoRunHud : MonoBehaviour
     {
         if (showing != null) StopCoroutine(showing);
         MafiaHit.Dismiss(); // in case a death scene was cut short
+        LeaveDesert();
         SetHudVisible(true);
         banner.low = false;
         fade.enabled = false;
@@ -349,8 +364,20 @@ public sealed class CasinoRunHud : MonoBehaviour
         yield return Announce(text, Gold, 6f);
     }
 
+    // Seconds after the run is lost (on every headset alike) that the hood
+    // comes off out in the desert, and that the first shot is fired; then
+    // one shot every ShotInterval, down the line.
+    const float RevealAt = 10.5f, FirstShotAt = RevealAt + 6.5f, ShotInterval = 3f;
+    static readonly Color Hood = new Color(0.035f, 0.025f, 0.018f);
+    static readonly Color Muffled = new Color(0.75f, 0.72f, 0.68f);
+
+    // Losing a run: the hitman walks up, pulls a hood over your head, and
+    // you (and the rest of the team) are driven out into the desert. The
+    // hood comes off standing in a line in front of a pit, the car's
+    // headlights in your eyes, and he works his way down the line.
     IEnumerator Death(int daysSurvived)
     {
+        float start = Time.unscaledTime;
         // Nothing between you and the hitman: balance, status line and chip
         // pockets are put away (the menu closes itself), and what he says
         // is a thin subtitle low in the view rather than a card in the middle.
@@ -359,17 +386,95 @@ public sealed class CasinoRunHud : MonoBehaviour
         banner.color = Bad;
         banner.text = "THE COLLECTOR HAS RUN OUT OF PATIENCE...";
 
-        // The hitman walks up to you and raises his gun (see MafiaHit).
         var player = Camera.main != null ? Camera.main.transform : null;
-        if (player != null)
+        if (player == null)
         {
-            var origin = FindAnyObjectByType<Unity.XR.CoreUtils.XROrigin>();
-            float floor = origin != null ? origin.transform.position.y : player.position.y - 1.6f;
-            yield return MafiaHit.WalkUp(player, floor, said => banner.text = said);
-            MafiaHit.Fire();
+            yield return new WaitForSecondsRealtime(1.6f);
+            yield return ShotAndEnd(daysSurvived);
+            yield break;
         }
-        else yield return new WaitForSecondsRealtime(1.6f);
 
+        // ----- taken
+        var origin = FindAnyObjectByType<Unity.XR.CoreUtils.XROrigin>();
+        float floor = origin != null ? origin.transform.position.y : player.position.y - 1.6f;
+        yield return MafiaHit.Approach(player, floor);
+        banner.text = "\"THE BOSS WANTS A WORD WITH YOU.\"";
+        yield return MafiaHit.Act(() => player.position, 0.6f, 0f, 0f);
+        yield return MafiaHit.WalkTo(() => player.position, 0.62f, 1.5f, () => player.position);
+        yield return MafiaHit.Act(() => player.position, 0.55f, 0f, 1f);
+
+        // The hood goes on.
+        audioSource.PlayOneShot(KidnapScene.Thump, 1f);
+        fade.enabled = true;
+        for (float t = 0f; t < 0.18f; t += Time.unscaledDeltaTime)
+        {
+            fade.color = new Color(Hood.r, Hood.g, Hood.b, t / 0.18f);
+            yield return null;
+        }
+        fade.color = Hood;
+        banner.text = "";
+        MafiaHit.Dismiss();
+        KidnapScene.Enter(); // you're moved while you can't see
+
+        yield return new WaitForSecondsRealtime(0.7f);
+        banner.color = Muffled;
+        banner.text = "<i>[you're dragged into a car]</i>";
+        audioSource.PlayOneShot(KidnapScene.DoorSlam, 0.8f);
+        yield return new WaitForSecondsRealtime(0.9f);
+        audioSource.PlayOneShot(KidnapScene.Engine, 0.75f);
+        banner.text = "<i>[a long drive into the desert]</i>";
+
+        // On a fixed clock, so the whole team's hoods come off together.
+        float reveal = Mathf.Max(start + RevealAt, Time.unscaledTime + 3f);
+        while (Time.unscaledTime < reveal - 1.2f) yield return null;
+        banner.text = "<i>[the engine stops]</i>";
+        audioSource.PlayOneShot(KidnapScene.DoorSlam, 0.8f);
+        while (Time.unscaledTime < reveal) yield return null;
+
+        // ----- the desert
+        MafiaHit.Spawn(KidnapScene.HitmanStart, KidnapScene.LineCentre, true);
+        ambience.clip = KidnapScene.Crickets;
+        ambience.Play();
+        banner.text = "";
+        for (float t = 0f; t < 1.2f; t += Time.unscaledDeltaTime)
+        {
+            float k = t / 1.2f;
+            fade.color = new Color(Hood.r, Hood.g, Hood.b, 1f - k * k * (3f - 2f * k));
+            yield return null;
+        }
+        fade.enabled = false;
+        banner.color = Bad;
+        banner.text = KidnapScene.Order.Count > 1 ? "\"END OF THE LINE, ALL OF YOU.\"" : "\"END OF THE LINE.\"";
+
+        float late = reveal - (start + RevealAt); // only if this headset fell behind
+        int n = KidnapScene.Order.Count;
+        for (int k = 0; k < n; k++)
+        {
+            int victim = k;
+            float fireAt = start + late + FirstShotAt + ShotInterval * k;
+            Vector3 Head() => KidnapScene.HeadOf(victim);
+
+            yield return MafiaHit.WalkTo(() => KidnapScene.StandPoint(victim), 0.05f, Mathf.Max(0.3f, fireAt - 0.9f - Time.unscaledTime), Head);
+            if (k == 0) banner.text = "";
+            yield return MafiaHit.Act(Head, 0.6f, 1f, 0f);
+            yield return MafiaHit.Act(Head, Mathf.Max(0f, fireAt - Time.unscaledTime), 1f, 0f);
+            if (victim == KidnapScene.LocalIndex) break; // your turn
+
+            MafiaHit.Fire();
+            audioSource.PlayOneShot(gunshot, 0.85f);
+            yield return new WaitForSecondsRealtime(0.07f);
+            MafiaHit.StopFlash();
+            KidnapScene.Fell(victim);
+            yield return MafiaHit.Act(Head, 0.4f, 0f, 0f);
+        }
+        MafiaHit.Fire();
+        yield return ShotAndEnd(daysSurvived);
+    }
+
+    // The shot that kills you, then the end screen; you're back where you
+    // were taken from when it fades.
+    IEnumerator ShotAndEnd(int daysSurvived)
+    {
         audioSource.PlayOneShot(gunshot, 1f);
         yield return new WaitForSecondsRealtime(0.07f); // the muzzle flash, for a moment
         fade.enabled = true;
@@ -396,6 +501,7 @@ public sealed class CasinoRunHud : MonoBehaviour
             + "Open the menu (Y) to try again.</size>";
         banner.color = Bad;
         yield return new WaitForSecondsRealtime(9f);
+        LeaveDesert();
 
         for (float t = 0f; t < 1.5f; t += Time.unscaledDeltaTime)
         {

@@ -77,6 +77,10 @@ namespace Casino.Multiplayer
 
         public bool IsGuestId(ulong id) => guests.Contains(id);
 
+        // The other players this headset can see (host and guests alike).
+        public IEnumerable<ulong> RemoteIds => remotes.Keys;
+        public SimpleAvatar RemoteAvatar(ulong id) => remotes.TryGetValue(id, out var avatar) ? avatar : null;
+
         // This player's id in the session (the host is always 0).
         public ulong LocalId => InSession ? network.LocalClientId : 0UL;
 

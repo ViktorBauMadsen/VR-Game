@@ -100,10 +100,27 @@ namespace Casino.Multiplayer
             return part.transform;
         }
 
+        public Transform Head => head;
+
+        // Kept out of sight even while poses keep arriving (the mafia's
+        // death scene swaps a shot player for a body on the ground).
+        public bool Hidden
+        {
+            get => hidden;
+            set
+            {
+                hidden = value;
+                if (value) gameObject.SetActive(false);
+                else if (received && Time.unscaledTime - lastPose < 3f) gameObject.SetActive(true);
+            }
+        }
+        bool hidden;
+
         public void Apply(AvatarPose pose, bool immediate)
         {
             target = pose;
             lastPose = Time.unscaledTime;
+            if (hidden) { received = true; return; }
             gameObject.SetActive(true);
             if (immediate || !received || Vector3.Distance(head.position, pose.HeadPosition) > 2f)
             {

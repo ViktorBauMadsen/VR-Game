@@ -37,6 +37,8 @@ public class PlayerFallGuard : MonoBehaviour
             _haveHome = true;
             return;
         }
+        // The mafia's desert scene is far below the casino on purpose.
+        if (KidnapScene.Active) { _ignoreUntil = Time.time + 1.5f; return; }
         if (Time.time < _ignoreUntil || _player.transform.position.y > _home.y - fallDepth) return;
 
         _ignoreUntil = Time.time + 1.5f;
