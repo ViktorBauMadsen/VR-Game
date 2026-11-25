@@ -24,6 +24,8 @@ using UnityEngine.XR.OpenXR.Features;
 //                                runtime by VrComfort.
 //   Fixed refresh rate on        (RefreshRateFeature, Android) - 72 Hz on
 //                                every headset, whatever its system setting.
+//   Textures max 2048 (Android)  4096 textures cost 4x the memory for nothing
+//                                you can see in the headset.
 //
 // VrComfort fixes the camera's depth precision (z-fighting flicker) and runs
 // physics at the headset's refresh rate at runtime.
@@ -85,8 +87,34 @@ public static class ApplyVrPerformance
             }
         }
 
+        int capped = CapAndroidTextures();
+
         AssetDatabase.SaveAssets();
-        Debug.Log($"ApplyVrPerformance: updated {string.Join(", ", done)} (render scale 1, MSAA 4x, HDR off, 20 m shadows, 8 lights/object). Foveated rendering {(foveation ? "on" : "not found")}. Fixed refresh rate {(refreshRate ? "on" : "not found")}.");
+        Debug.Log($"ApplyVrPerformance: updated {string.Join(", ", done)} (render scale 1, MSAA 4x, HDR off, 20 m shadows, 8 lights/object). Foveated rendering {(foveation ? "on" : "not found")}. Fixed refresh rate {(refreshRate ? "on" : "not found")}. {capped} texture(s) capped at {AndroidMaxTexture} on Android.");
+    }
+
+    // 4096 textures (the card-table and game-piece sets) take 4x the memory
+    // and bandwidth of 2048 for no visible gain at VR distances. Android only;
+    // PC builds keep full size. An existing smaller Android override is kept.
+    const int AndroidMaxTexture = 2048;
+
+    static int CapAndroidTextures()
+    {
+        int n = 0;
+        foreach (var guid in AssetDatabase.FindAssets("t:Texture2D", new[] { "Assets" }))
+        {
+            var importer = AssetImporter.GetAtPath(AssetDatabase.GUIDToAssetPath(guid)) as TextureImporter;
+            if (importer == null) continue;
+            var android = importer.GetPlatformTextureSettings("Android");
+            int current = android.overridden ? android.maxTextureSize : importer.maxTextureSize;
+            if (current <= AndroidMaxTexture) continue;
+            android.overridden = true;
+            android.maxTextureSize = AndroidMaxTexture;
+            importer.SetPlatformTextureSettings(android);
+            importer.SaveAndReimport();
+            n++;
+        }
+        return n;
     }
 
     static void Set(SerializedObject so, string name, float value)

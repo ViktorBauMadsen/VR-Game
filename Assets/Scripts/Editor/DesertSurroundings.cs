@@ -18,7 +18,8 @@ using Rng = System.Random;
 //
 // All scenery is merged into a handful of static meshes per material (saved in
 // Assets/Materials/InteriorDecor/Desert) so it costs only a few draw calls on
-// Quest. Re-running rebuilds it identically (fixed random seed).
+// Quest. Re-running rebuilds it identically (fixed random seed). Kept light
+// for Quest: fewer props than the first version, each with fewer facets.
 //
 // Tools > Casino > Rename Casino (The Grand Mirage) puts the new name on the
 // marquee above the doors, with "CASINO" kept underneath.
@@ -238,15 +239,17 @@ public static partial class DecorateInterior
             Mesa(p, r, Lerp(rnd, 22f, 55f), i + 1);
         }
 
-        Scatter(rnd, 25, 45f, 210f, 4f, 1.2f, p => Rock(p, Lerp(rnd, 1.5f, 3.5f), rnd));
-        Scatter(rnd, 12, 40f, 180f, 3f, 1.4f, p => DeadTree(p, rnd));
-        Scatter(rnd, 45, 32f, 170f, 1.4f, 1.6f, p => Saguaro(p, Lerp(rnd, 2f, 5.5f), rnd));
-        Scatter(rnd, 12, 30f, 120f, 2.4f, 1.8f, p => BoneGroup(p, rnd));
-        Scatter(rnd, 45, 30f, 130f, 0.7f, 1.8f, p => Barrel(p, Lerp(rnd, 0.7f, 1.4f), rnd));
-        Scatter(rnd, 35, 30f, 130f, 1f, 1.8f, p => PricklyPear(p, rnd));
-        Scatter(rnd, 90, 28f, 160f, 0.9f, 1.6f, p => DeadBush(p, Lerp(rnd, 0.7f, 1.3f), rnd));
-        Scatter(rnd, 20, 30f, 110f, 0.7f, 1.6f, p => Tumbleweed(p, rnd));
-        Scatter(rnd, 80, 28f, 150f, 0.8f, 1.6f, p => Rock(p, Lerp(rnd, 0.25f, 0.9f), rnd));
+        // Quest-light: roughly half as many props as the first version, and
+        // each built from far fewer triangles (see DesertMesh.Tube/Ellipsoid).
+        Scatter(rnd, 15, 45f, 210f, 4f, 1.2f, p => Rock(p, Lerp(rnd, 1.5f, 3.5f), rnd));
+        Scatter(rnd, 8, 40f, 180f, 3f, 1.4f, p => DeadTree(p, rnd));
+        Scatter(rnd, 28, 32f, 170f, 1.4f, 1.6f, p => Saguaro(p, Lerp(rnd, 2f, 5.5f), rnd));
+        Scatter(rnd, 6, 30f, 120f, 2.4f, 1.8f, p => BoneGroup(p, rnd));
+        Scatter(rnd, 20, 30f, 130f, 0.7f, 1.8f, p => Barrel(p, Lerp(rnd, 0.7f, 1.4f), rnd));
+        Scatter(rnd, 18, 30f, 130f, 1f, 1.8f, p => PricklyPear(p, rnd));
+        Scatter(rnd, 35, 28f, 160f, 0.9f, 1.6f, p => DeadBush(p, Lerp(rnd, 0.7f, 1.3f), rnd));
+        Scatter(rnd, 10, 30f, 110f, 0.7f, 1.6f, p => Tumbleweed(p, rnd));
+        Scatter(rnd, 35, 28f, 150f, 0.8f, 1.6f, p => Rock(p, Lerp(rnd, 0.25f, 0.9f), rnd));
     }
 
     static void Scatter(Rng rnd, int count, float rMin, float rMax, float foot, float bias, Action<Vector3> make)
@@ -302,7 +305,7 @@ public static partial class DecorateInterior
     {
         desertTaken.Add(new Vector3(c.x, Mathf.Max(rx, rz) * 0.9f, c.z));
         dm.At(c);
-        const int rings = 9, segs = 22;
+        const int rings = 6, segs = 14;
         var rot = Quaternion.Euler(0f, yaw, 0f);
         var inv = Quaternion.Inverse(rot);
         var pos = new Vector3[rings + 1, segs + 1];
@@ -333,7 +336,7 @@ public static partial class DecorateInterior
     static void Mesa(Vector3 c, float r, float h, int seed)
     {
         dm.At(c);
-        const int segs = 26;
+        const int segs = 18;
         float[] ys = { -1.5f, 0.12f * h, 0.3f * h, 0.55f * h, 0.85f * h, h };
         float[] rs = { 1.6f, 1.25f, 1.08f, 1.02f, 1f, 0.97f };
         int rows = ys.Length;
@@ -412,9 +415,9 @@ public static partial class DecorateInterior
     {
         dm.Ellipsoid(dmat.Cactus, p + Vector3.up * 0.2f * s, Quaternion.Euler(0f, Lerp(rnd, 0f, 360f), 0f), new Vector3(0.3f, 0.36f, 0.3f) * s, 7, 14, 0f, 0, 2.5f);
         float top = (0.2f + 0.33f) * s;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
-            float a = i * Mathf.PI * 2f / 5f + Lerp(rnd, -0.3f, 0.3f);
+            float a = i * Mathf.PI * 2f / 3f + Lerp(rnd, -0.3f, 0.3f);
             dm.Ellipsoid(dmat.Flower, p + new Vector3(Mathf.Cos(a) * 0.08f * s, top, Mathf.Sin(a) * 0.08f * s), Quaternion.identity,
                 new Vector3(0.045f, 0.03f, 0.045f) * s, 3, 6, 0f, 0, 1f);
         }
@@ -423,7 +426,7 @@ public static partial class DecorateInterior
     static void PricklyPear(Vector3 p, Rng rnd)
     {
         var tips = new List<(Vector3 pos, Vector3 up)> { (p - Vector3.up * 0.05f, Vector3.up) };
-        int count = 5 + rnd.Next(7);
+        int count = 3 + rnd.Next(4);
         for (int i = 0; i < count; i++)
         {
             var (from, up) = tips[rnd.Next(tips.Count)];
@@ -442,11 +445,11 @@ public static partial class DecorateInterior
 
     static void DeadBush(Vector3 p, float s, Rng rnd)
     {
-        int stems = 5 + rnd.Next(4);
+        int stems = 4 + rnd.Next(3);
         for (int i = 0; i < stems; i++)
         {
             var dir = (Flat(rnd) * Lerp(rnd, 0.4f, 1.1f) + Vector3.up).normalized;
-            Branch(dmat.Wood, p - Vector3.up * 0.05f, dir, Lerp(rnd, 0.35f, 0.7f) * s, 0.022f * s, 2, 4, rnd);
+            Branch(dmat.Wood, p - Vector3.up * 0.05f, dir, Lerp(rnd, 0.35f, 0.7f) * s, 0.022f * s, 1, 3, rnd);
         }
     }
 
@@ -460,7 +463,7 @@ public static partial class DecorateInterior
         {
             var from = Vector3.Lerp(p, top, Lerp(rnd, 0.6f, 1f));
             var dir = (Flat(rnd) * Lerp(rnd, 0.5f, 1.2f) + Vector3.up).normalized;
-            Branch(dmat.Wood, from, dir, Lerp(rnd, 0.9f, 1.5f), 0.075f, 3, 5, rnd);
+            Branch(dmat.Wood, from, dir, Lerp(rnd, 0.9f, 1.5f), 0.075f, 2, 5, rnd);
         }
     }
 
@@ -483,7 +486,7 @@ public static partial class DecorateInterior
     {
         float R = Lerp(rnd, 0.28f, 0.48f);
         var c = p + Vector3.up * R * 0.9f;
-        for (int i = 0; i < 45; i++)
+        for (int i = 0; i < 20; i++)
         {
             var a = c + OnSphere(rnd) * R * Lerp(rnd, 0.2f, 0.9f);
             var b = a + OnSphere(rnd) * R * Lerp(rnd, 0.5f, 1f);
@@ -630,8 +633,14 @@ public static partial class DecorateInterior
             }
         }
 
+        // Every tube and ellipsoid is built with about half the facets asked
+        // for - the desert is seen from metres away, smooth-shaded, on a
+        // Quest 2; the original counts made it 160k triangles.
+        static int LessSides(int sides) => Mathf.Max(3, Mathf.CeilToInt(sides * 0.5f));
+
         public void Tube(Material m, Vector3 a, Vector3 b, float ra, float rb, int sides, float uRepeat)
         {
+            sides = LessSides(sides);
             var d = b - a;
             float len = d.magnitude;
             if (len < 1e-4f) return;
@@ -657,6 +666,8 @@ public static partial class DecorateInterior
 
         public void Ellipsoid(Material m, Vector3 c, Quaternion rot, Vector3 radii, int lat, int lon, float jitter, int seed, float uRepeat)
         {
+            lat = Mathf.Max(2, Mathf.CeilToInt(lat * 0.6f));
+            lon = Mathf.Max(4, Mathf.CeilToInt(lon * 0.55f));
             var pos = new Vector3[lat + 1, lon + 1];
             var nrm = new Vector3[lat + 1, lon + 1];
             var uv = new Vector2[lat + 1, lon + 1];

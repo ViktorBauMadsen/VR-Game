@@ -130,9 +130,14 @@ public class HandPoser : MonoBehaviour
         }
     }
 
+    // GameObject.Find walks every object in the scene (~3,700 here), and the
+    // blocky hands are normally never made (the multiplayer bootstrap skips
+    // them when these hands exist) - so this used to search forever, twice
+    // every 30 frames: a small regular hitch. Now it gives up after ~15 s.
     void LateUpdate()
     {
         if (_blockHandsHidden || Time.frameCount % 30 != 0) return;
+        if (++_blockHandSearches > 30) { _blockHandsHidden = true; return; }
         var blocky = GameObject.Find("Your hands");
         if (blocky == null) return;
         foreach (var r in blocky.GetComponentsInChildren<Renderer>(true)) r.enabled = false;
@@ -140,6 +145,7 @@ public class HandPoser : MonoBehaviour
     }
 
     bool _blockHandsHidden;
+    int _blockHandSearches;
 }
 
 // The finger joints of one rigged hand and how far each finger is curled.

@@ -1,11 +1,11 @@
-Performance report - 2026-11-25 21:25 - edit mode
+Performance report - 2026-11-25 21:35 - edit mode
 Scenes: SampleScene
 
 == TOTALS (active, enabled renderers) ==
 Renderers: 1460  (skinned: 4)
-Triangles: 618,232
+Triangles: 599,224
 Draw calls if everything were in view (renderer x material): 1,487
-Shadow casters: 258  (252,444 tris drawn again into the shadow map)
+Shadow casters: 258  (233,436 tris drawn again into the shadow map)
 Batching-static renderers: 316 of 1460
 LOD groups: 0
 Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame at 72 Hz.
@@ -17,9 +17,6 @@ Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame
    16,112  mats  1                  Desert Surroundings/Scenery/Desert Cactus -1_0  [Desert Cactus -1_0]
    11,096  mats  1                  Desert Surroundings/Scenery/Desert Cactus 0_0  [Desert Cactus 0_0]
    10,636  mats  1                  Desert Surroundings/Scenery/Desert Cactus -1_-1  [Desert Cactus -1_-1]
-    8,640  mats  1  shadow          Roulette Table/RouletteWheel /Ramp  [RouletteRamp]
-    8,640  mats  1  shadow          Roulette Table (1)/RouletteWheel /Ramp  [RouletteRamp]
-    8,640  mats  1  shadow          Roulette Table 2/RouletteWheel /Ramp  [RouletteRamp]
     8,090  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood 0_0  [Desert Dead Wood 0_0]
     7,534  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood -1_-1  [Desert Dead Wood -1_-1]
     7,120  mats  1                  Desert Surroundings/Scenery/Desert Cactus 0_-1  [Desert Cactus 0_-1]
@@ -51,10 +48,12 @@ Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame
     3,160  mats  1                  Merged Decor/Inside -1_2 Decor Gold 67  [Inside -1_2 Decor Gold 67]
     3,160  mats  1                  Merged Decor/Outside -1_4 Decor Gold 177  [Outside -1_4 Decor Gold 177]
     3,120  mats  1  shadow          Merged Decor/Outside -2_2 Ext Palm Frond 218  [Outside -2_2 Ext Palm Frond 218]
+    2,910  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood -1_1  [Desert Dead Wood -1_1]
+    2,740  mats  1                  Desert Surroundings/Scenery/Desert Dead Wood -2_0  [Desert Dead Wood -2_0]
+    2,700  mats  1                  Desert Surroundings/Scenery/Desert Cactus Flower -1_0  [Desert Cactus Flower -1_0]
 
 == TOP 30 MESHES BY TOTAL TRIANGLES (tris x copies) ==
      67,734  =   22,578 x    3  RouletteModel  (Assets/FBX/RouletteWheel (1).fbx)
-     25,920  =    8,640 x    3  RouletteRamp  (Assets/Prefabs/Roulette/RouletteRamp.asset)
      24,200  =      100 x  242  LowPoly Sphere 100  (Assets/Generated/LowPoly/LowPoly Sphere 100.asset)
      21,098  =    1,918 x   11  Flower_03  (Assets/ithappy/Casino_Free/Meshes/Assets/Flower_03.fbx)
      16,112  =   16,112 x    1  Desert Cactus -1_0  (Assets/Materials/InteriorDecor/Desert/Desert Cactus -1_0.asset)
@@ -65,6 +64,7 @@ Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame
       8,090  =    8,090 x    1  Desert Dead Wood 0_0  (Assets/Materials/InteriorDecor/Desert/Desert Dead Wood 0_0.asset)
       7,534  =    7,534 x    1  Desert Dead Wood -1_-1  (Assets/Materials/InteriorDecor/Desert/Desert Dead Wood -1_-1.asset)
       7,120  =    7,120 x    1  Desert Cactus 0_-1  (Assets/Materials/InteriorDecor/Desert/Desert Cactus 0_-1.asset)
+      6,912  =    2,304 x    3  RouletteRamp  (Assets/Prefabs/Roulette/RouletteRamp.asset)
       6,456  =    6,456 x    1  Desert Dead Wood -1_0  (Assets/Materials/InteriorDecor/Desert/Desert Dead Wood -1_0.asset)
       6,144  =    6,144 x    1  Back Bar Bottles Bottle Dark Amber  (Assets/Bar/Meshes/Back Bar Bottles Bottle Dark Amber.asset)
       5,832  =    5,832 x    1  Desert Bone 0_0  (Assets/Materials/InteriorDecor/Desert/Desert Bone 0_0.asset)
@@ -86,9 +86,9 @@ Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame
 
 == TOP 30 GROUPS (first two hierarchy levels) ==
     160,718 tris    120 renderers    120 draw calls  Desert Surroundings/Scenery
-     31,552 tris     42 renderers     42 draw calls  Roulette Table/RouletteWheel 
-     31,552 tris     42 renderers     42 draw calls  Roulette Table (1)/RouletteWheel 
-     31,552 tris     42 renderers     42 draw calls  Roulette Table 2/RouletteWheel 
+     25,216 tris     42 renderers     42 draw calls  Roulette Table/RouletteWheel 
+     25,216 tris     42 renderers     42 draw calls  Roulette Table (1)/RouletteWheel 
+     25,216 tris     42 renderers     42 draw calls  Roulette Table 2/RouletteWheel 
      23,584 tris     23 renderers     23 draw calls  Casino Bar/Back Bar
      17,262 tris      9 renderers      9 draw calls  Interior Decor/Plants
      16,032 tris     20 renderers     20 draw calls  XR Origin (XR Rig)/Camera Offset
@@ -117,10 +117,10 @@ Quest 2 rough budget: ~100-200k tris and ~100-200 draw calls *in view* per frame
       4,002 tris     37 renderers     37 draw calls  Roulette Table/Croupier
 
 == HOT SPOTS (4 m floor cells, by triangles) ==
-x      0..4     z      4..8          40,806 tris    74 renderers    74 draw calls   biggest: Roulette Table/RouletteWheel  (22,578)
-x     -4..0     z     12..16         37,748 tris    89 renderers    89 draw calls   biggest: Roulette Table (1)/RouletteWheel  (22,578)
+x      0..4     z      4..8          34,470 tris    74 renderers    74 draw calls   biggest: Roulette Table/RouletteWheel  (22,578)
 x    -12..-8    z     12..16         34,232 tris   136 renderers   136 draw calls   biggest: Casino Bar/Back Bar/Bottles/Bottle Dark Amber (6,144)
-x     -8..-4    z      4..8          33,694 tris    47 renderers    47 draw calls   biggest: Roulette Table 2/RouletteWheel  (22,578)
+x     -4..0     z     12..16         31,412 tris    89 renderers    89 draw calls   biggest: Roulette Table (1)/RouletteWheel  (22,578)
+x     -8..-4    z      4..8          27,358 tris    47 renderers    47 draw calls   biggest: Roulette Table 2/RouletteWheel  (22,578)
 x     -4..0     z     36..40         23,634 tris    28 renderers    28 draw calls   biggest: Merged Decor/Outside -1_4 Decor Velvet 179 (5,280)
 x    -44..-40   z    -48..-44        19,178 tris     3 renderers     3 draw calls   biggest: Desert Surroundings/Scenery/Desert Cactus -1_-1 (10,636)
 x    -48..-44   z     44..48         18,812 tris     2 renderers     2 draw calls   biggest: Desert Surroundings/Scenery/Desert Cactus -1_0 (16,112)
@@ -140,24 +140,24 @@ x     -8..-4    z     28..32          7,298 tris    92 renderers    92 draw call
 By draw calls:
 x    -12..-8    z     12..16      136 draw calls   136 renderers      34,232 tris
 x     -8..-4    z     28..32       92 draw calls    92 renderers       7,298 tris
-x     -4..0     z     12..16       89 draw calls    89 renderers      37,748 tris
-x      0..4     z      4..8        74 draw calls    74 renderers      40,806 tris
+x     -4..0     z     12..16       89 draw calls    89 renderers      31,412 tris
+x      0..4     z      4..8        74 draw calls    74 renderers      34,470 tris
 x      0..4     z     12..16       74 draw calls    74 renderers       9,302 tris
 x      0..4     z     16..20       71 draw calls    71 renderers       8,312 tris
 x      0..4     z      8..12       69 draw calls    69 renderers       6,954 tris
 x     -4..0     z      4..8        58 draw calls    58 renderers      17,806 tris
-x     -8..-4    z      4..8        47 draw calls    47 renderers      33,694 tris
+x     -8..-4    z      4..8        47 draw calls    47 renderers      27,358 tris
 x     -4..0     z     28..32       42 draw calls    42 renderers       3,964 tris
 
-== LOOK AROUND from (-6.0, 2.2, 1.2) (Scene view camera, 90 deg view, 400 m) ==
-N (+z)     479,734 tris   1191 draw calls   1175 renderers   heaviest: RouletteWheel  22,578, RouletteWheel  22,578, RouletteWheel  22,578
-NE         385,376 tris    975 draw calls    972 renderers   heaviest: RouletteWheel  22,578, RouletteWheel  22,578, RouletteWheel  22,578
-E (+x)     165,152 tris    275 draw calls    270 renderers   heaviest: RouletteWheel  22,578, Desert Cactus 0_0 11,096, Ramp 8,640
-SE          76,920 tris    160 draw calls    154 renderers   heaviest: Desert Dead Wood -1_-1 7,534, Desert Cactus 0_-1 7,120, Desert Bone 0_0 5,832
-S (-z)      71,666 tris     72 draw calls     70 renderers   heaviest: Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534, Desert Cactus 0_-1 7,120
-SW          58,762 tris     89 draw calls     85 renderers   heaviest: Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534, Outside -2_-1 Ext Palm Frond 232 5,200
-W (-x)     106,306 tris    128 draw calls    120 renderers   heaviest: Desert Cactus -1_0 16,112, Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534
-NW         205,360 tris    417 draw calls    401 renderers   heaviest: Desert Cactus -1_0 16,112, Desert Dead Wood -1_0 6,456, Bottle Dark Amber 6,144
+== LOOK AROUND from (-4.5, 3.2, 1.3) (Scene view camera, 90 deg view, 400 m) ==
+N (+z)     463,546 tris   1234 draw calls   1220 renderers   heaviest: RouletteWheel  22,578, RouletteWheel  22,578, RouletteWheel  22,578
+NE         335,008 tris    857 draw calls    854 renderers   heaviest: RouletteWheel  22,578, RouletteWheel  22,578, RouletteWheel  22,578
+E (+x)     138,846 tris    217 draw calls    212 renderers   heaviest: RouletteWheel  22,578, Desert Cactus 0_0 11,096, Desert Dead Wood 0_0 8,090
+SE          74,608 tris    154 draw calls    150 renderers   heaviest: Desert Dead Wood -1_-1 7,534, Desert Cactus 0_-1 7,120, Desert Bone 0_0 5,832
+S (-z)      75,396 tris     70 draw calls     68 renderers   heaviest: Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534, Desert Cactus 0_-1 7,120
+SW          64,388 tris    104 draw calls     98 renderers   heaviest: Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534, Outside -2_-1 Ext Palm Frond 232 5,200
+W (-x)     109,594 tris    149 draw calls    139 renderers   heaviest: Desert Cactus -1_0 16,112, Desert Cactus -1_-1 10,636, Desert Dead Wood -1_-1 7,534
+NW         254,910 tris    550 draw calls    534 renderers   heaviest: RouletteWheel  22,578, Desert Cactus -1_0 16,112, Desert Dead Wood -1_0 6,456
 (Frustum culling only - no occlusion culling, so walls don't hide what's behind them.)
 
 == CAMERAS (each enabled one renders the scene again) ==

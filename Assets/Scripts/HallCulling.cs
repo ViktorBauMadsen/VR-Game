@@ -22,6 +22,13 @@ using UnityEngine.SceneManagement;
 // shadow map every frame. Interior meshes stop casting sun shadows (the
 // building shell still does, so the look is unchanged).
 //
+// The sun: for the same reason, while you're inside and the outside isn't
+// drawn, the directional light is switched off - no shadow map is rendered
+// and no sun lighting is computed for anything. The hall is in the roof's
+// shadow anyway, so it looks the same (except the far end of the hall, past
+// the 20 m shadow range, which the sun used to light straight through the
+// roof). It comes back the moment the doorway is in view.
+//
 // Only meshes that exist at start and can't be picked up are managed;
 // anything spawned later (NPCs, drinks, other players) is always drawn.
 // Installs itself in any scene with an "Interior Decor" root.
@@ -47,6 +54,8 @@ public sealed class HallCulling : MonoBehaviour
     readonly List<Renderer> _inside = new List<Renderer>(), _outside = new List<Renderer>();
     readonly Plane[] _planes = new Plane[6];
     bool _ready, _wantInside = true, _wantOutside = true, _shownInside = true, _shownOutside = true;
+    Light _sun;
+    bool _sunShown = true;
     float _insideOffAt, _outsideOffAt;
 
     static Bounds MinMax(Vector3 min, Vector3 max)
@@ -92,6 +101,7 @@ public sealed class HallCulling : MonoBehaviour
         RenderPipelineManager.beginCameraRendering -= BeforeCamera;
         Show(_inside, true);
         Show(_outside, true);
+        if (_sun != null) _sun.enabled = true;
     }
 
     void Sort()
@@ -119,7 +129,13 @@ public sealed class HallCulling : MonoBehaviour
                 else if (zone == Zone.Outside) _outside.Add(r);
             }
         }
-        Debug.Log($"HallCulling: {_inside.Count} meshes inside the hall ({shadowsOff} no longer cast sun shadows), {_outside.Count} outside.");
+        // The scene's sun (Lighting settings), else its first switched-on directional light.
+        _sun = RenderSettings.sun != null && RenderSettings.sun.enabled ? RenderSettings.sun : null;
+        if (_sun == null)
+            foreach (var light in FindObjectsByType<Light>())
+                if (light.type == LightType.Directional && light.enabled && light.gameObject.scene == gameObject.scene) { _sun = light; break; }
+
+        Debug.Log($"HallCulling: {_inside.Count} meshes inside the hall ({shadowsOff} no longer cast sun shadows), {_outside.Count} outside. Sun: {(_sun != null ? _sun.name : "none")}.");
     }
 
     void Update()
@@ -155,6 +171,7 @@ public sealed class HallCulling : MonoBehaviour
         bool inside = all || _wantInside, outside = all || _wantOutside;
         if (inside != _shownInside) { Show(_inside, inside); _shownInside = inside; }
         if (outside != _shownOutside) { Show(_outside, outside); _shownOutside = outside; }
+        if (_sun != null && outside != _sunShown) { _sun.enabled = outside; _sunShown = outside; }
     }
 
     static void Show(List<Renderer> renderers, bool show)
