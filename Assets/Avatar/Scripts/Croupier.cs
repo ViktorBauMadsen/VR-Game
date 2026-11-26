@@ -72,12 +72,7 @@ public class Croupier : MonoBehaviour, IStaffRig
         for (int i = 0; i < 2; i++) _handRest[i] = hands[i].localPosition;
 
         // Voice comes from his head, in 3D.
-        _voice = head.gameObject.AddComponent<AudioSource>();
-        _voice.playOnAwake = false;
-        _voice.spatialBlend = 1f;
-        _voice.rolloffMode = AudioRolloffMode.Linear;
-        _voice.minDistance = 1.5f;
-        _voice.maxDistance = 14f;
+        _voice = CharacterVoice.Create(head);
     }
 
     void Start()
@@ -123,9 +118,7 @@ public class Croupier : MonoBehaviour, IStaffRig
         if (_voice != null) _voice.Stop();
         if (line.clip != null && _voice != null)
         {
-            _voice.clip = line.clip;
-            _voice.volume = voiceVolume;
-            _voice.Play();
+            CharacterVoice.Play(_voice, line.clip, voiceVolume);
             seconds = line.clip.length + afterSpeechHold;
         }
         ShowBubble(line.text, seconds);

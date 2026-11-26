@@ -12,7 +12,7 @@ public sealed class NpcVoice : ScriptableObject
     [Header("Mumble (lines without a recording)")]
     [Tooltip("Loops quietly while a line with no recording is in their speech bubble.")]
     public AudioClip mumble;
-    [Range(0f, 1f)] public float mumbleVolume = 0.2f;
+    [Range(0f, 1f)] public float mumbleVolume = 0.1f;
     [Tooltip("Metres: full volume within half a metre, fading to silent at this distance.")]
     public float mumbleRange = 3.5f;
 

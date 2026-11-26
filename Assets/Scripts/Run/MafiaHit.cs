@@ -106,19 +106,8 @@ public static class MafiaHit
     {
         if (!Present || clip == null) return;
         var source = _parts.Head.GetComponent<AudioSource>();
-        if (source == null)
-        {
-            source = _parts.Head.gameObject.AddComponent<AudioSource>();
-            source.playOnAwake = false;
-            source.spatialBlend = 1f;
-            source.rolloffMode = AudioRolloffMode.Linear;
-            source.minDistance = 2f;
-            source.maxDistance = 20f;
-        }
-        source.Stop();
-        source.clip = clip;
-        source.volume = volume;
-        source.Play();
+        if (source == null) source = CharacterVoice.Create(_parts.Head, 20f / 3f);
+        CharacterVoice.Play(source, clip, volume);
     }
     public static void StopFlash() => SetFlash(false);
 

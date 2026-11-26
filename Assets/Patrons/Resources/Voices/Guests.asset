@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcVoice
   lines: []
   mumble: {fileID: 8300000, guid: c559f21cc07078343ac45d2910e3e36e, type: 3}
-  mumbleVolume: 0.2
+  mumbleVolume: 0.1
   mumbleRange: 3.5

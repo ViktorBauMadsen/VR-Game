@@ -14,7 +14,8 @@ public static class BarSounds
 
     public static void Play(AudioClip clip, Vector3 position, float volume = 1f)
     {
-        SpatialAudio.PlayAt(clip, position, volume);
+        // Above the machines' loops, so a purchase is never silent.
+        SpatialAudio.PlayAt(clip, position, volume, priority: 48);
     }
 
     // Two-note cash register "ka-ching".

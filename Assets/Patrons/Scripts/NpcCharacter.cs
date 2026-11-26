@@ -109,19 +109,8 @@ public abstract class NpcCharacter : MonoBehaviour
             return seconds;
         }
 
-        if (_voiceSource == null)
-        {
-            Transform mouth = HeadBone != null ? HeadBone : transform;
-            _voiceSource = mouth.gameObject.AddComponent<AudioSource>();
-            _voiceSource.playOnAwake = false;
-            _voiceSource.spatialBlend = 1f;
-            _voiceSource.rolloffMode = AudioRolloffMode.Linear;
-            _voiceSource.minDistance = 1.5f;
-            _voiceSource.maxDistance = 12f;
-        }
-        _voiceSource.Stop();
-        _voiceSource.clip = clip;
-        _voiceSource.Play();
+        if (_voiceSource == null) _voiceSource = CharacterVoice.Create(HeadBone != null ? HeadBone : transform, 12f / 3f);
+        CharacterVoice.Play(_voiceSource, clip);
         StopMumble();
         ShowBubble(line, clip.length + AfterSpeechHold);
         return clip.length;
@@ -133,16 +122,22 @@ public abstract class NpcCharacter : MonoBehaviour
     {
         if (_voiceSource != null) _voiceSource.Stop();
         ShowBubble(line, seconds);
-        StartMumble();
+        StartMumble(Mathf.Min(MumbleTime(line), seconds));
     }
 
     // ------------------------------------------------------------ mumble
 
     AudioSource _mumbleSource;
     bool _mumbleFading;
+    float _mumbleLeft;
 
-    void StartMumble()
+    // How long the mumble runs for a line: about as long as saying it would
+    // take (the bubble stays up longer, for reading).
+    public static float MumbleTime(string line) => Mathf.Clamp(line.Length * 0.06f, 0.6f, 3.5f);
+
+    void StartMumble(float seconds)
     {
+        _mumbleLeft = seconds;
         AudioClip clip = Voice != null ? Voice.mumble : null;
         if (clip == null) return;
         if (_mumbleSource == null)
@@ -164,7 +159,7 @@ public abstract class NpcCharacter : MonoBehaviour
         {
             _mumbleSource.Play();
             // From a random point, so guests near each other don't mumble in step.
-            _mumbleSource.time = Random.Range(0f, clip.length * 0.9f);
+            _mumbleSource.time = Random.Range(0f, Mathf.Max(0f, clip.length - seconds - 0.2f));
         }
     }
 
@@ -176,8 +171,13 @@ public abstract class NpcCharacter : MonoBehaviour
 
     void UpdateMumble()
     {
+        if (_mumbleLeft > 0f)
+        {
+            _mumbleLeft -= Time.deltaTime;
+            if (_mumbleLeft <= 0f) StopMumble();
+        }
         if (!_mumbleFading || _mumbleSource == null) return;
-        float full = Voice != null ? Voice.mumbleVolume : 0.2f;
+        float full = Voice != null ? Voice.mumbleVolume : 0.1f;
         _mumbleSource.volume = Mathf.MoveTowards(_mumbleSource.volume, 0f, full * Time.deltaTime / 0.15f);
         if (_mumbleSource.volume <= 0f)
         {

@@ -24,13 +24,16 @@ public static class SpatialAudio
     }
 
     // In place of AudioSource.PlayClipAtPoint, with the falloff above.
-    public static void PlayAt(AudioClip clip, Vector3 position, float volume = 1f, float near = Near, float far = Far)
+    // priority: lower = more important (Unity's default is 128); the most
+    // important sounds keep playing when too many play at once.
+    public static void PlayAt(AudioClip clip, Vector3 position, float volume = 1f, float near = Near, float far = Far, int priority = 128)
     {
         if (clip == null) return;
         var go = new GameObject("One Shot Audio");
         go.transform.position = position;
         var source = go.AddComponent<AudioSource>();
         Setup(source, near, far);
+        source.priority = priority;
         source.playOnAwake = false;
         source.clip = clip;
         source.volume = volume;

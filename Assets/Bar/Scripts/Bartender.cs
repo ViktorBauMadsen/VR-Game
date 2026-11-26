@@ -105,17 +105,13 @@ public class Bartender : MonoBehaviour, IStaffRig
         if (mustache != null) _mustacheRest = mustache.localRotation;
 
         // Voice comes from his head, in 3D.
-        _voice = head.gameObject.AddComponent<AudioSource>();
-        _voice.playOnAwake = false;
-        _voice.spatialBlend = 1f;
-        _voice.rolloffMode = AudioRolloffMode.Linear;
-        _voice.minDistance = 1.5f;
-        _voice.maxDistance = 14f;
+        _voice = CharacterVoice.Create(head);
     }
 
     void Start()
     {
         if (speechBubble != null) speechBubble.Visible = false;
+        CharacterVoice.Preload(greetings, smallTalk, serveLines, cantAffordLines, bondReplies);
     }
 
     void OnEnable() => _interactable.selectEntered.AddListener(OnPoked);
@@ -139,9 +135,7 @@ public class Bartender : MonoBehaviour, IStaffRig
         if (_voice != null) _voice.Stop();
         if (clip != null && _voice != null)
         {
-            _voice.clip = clip;
-            _voice.volume = voiceVolume;
-            _voice.Play();
+            CharacterVoice.Play(_voice, clip, voiceVolume);
             _talkTimeLeft = clip.length;
             _speechTimeLeft = clip.length + afterSpeechHold;
         }
