@@ -41,9 +41,8 @@ public class RouletteAudio : MonoBehaviour
 
     [Header("3D sound")]
     [SerializeField] float minDistance = 0.3f;
+    [Tooltip("Silent beyond this many metres.")]
     [SerializeField] float maxDistance = 10f;
-    [Tooltip("Testing without a headset, the listener (XR camera) sits wherever the rig spawned, often far from the wheel. With this on, sounds play at full volume (2D) whenever no headset is active, and switch back to 3D with the headset on.")]
-    [SerializeField] bool use2DWhenNoHeadset = true;
 
     RouletteBall _ball;
     AudioSource _rollSource, _wheelSource, _hitSource;
@@ -80,9 +79,6 @@ public class RouletteAudio : MonoBehaviour
 
     void Update()
     {
-        float blend = use2DWhenNoHeadset && !UnityEngine.XR.XRSettings.isDeviceActive ? 0f : 1f;
-        _rollSource.spatialBlend = _wheelSource.spatialBlend = _hitSource.spatialBlend = blend;
-
         // Spin sound: on while the ball spins around the track and drops in,
         // then a smooth fade-out once it starts bouncing on the pockets.
         float speed = _ball.RollSpeed01;
@@ -135,11 +131,9 @@ public class RouletteAudio : MonoBehaviour
         s.loop = loop;
         s.playOnAwake = false;
         s.volume = 0f;
-        s.spatialBlend = 1f;
-        s.rolloffMode = AudioRolloffMode.Logarithmic;
-        s.minDistance = minDistance;
-        s.maxDistance = maxDistance;
-        s.dopplerLevel = 0f; // the ball moves fast; doppler would warble the pitch
+        // 3D, silent past maxDistance (no doppler: the ball moves fast and
+        // it would warble the pitch).
+        SpatialAudio.Setup(s, minDistance, maxDistance);
         if (!loop) s.volume = 1f;
         return s;
     }

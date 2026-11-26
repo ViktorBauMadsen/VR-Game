@@ -100,6 +100,26 @@ public static class MafiaHit
     // The muzzle flash. Call at the same moment as the gunshot sound, and
     // StopFlash a moment later if he is going to shoot again.
     public static void Fire() => SetFlash(true);
+
+    // Plays a voice line from his head, in 3D.
+    public static void Speak(AudioClip clip, float volume = 1f)
+    {
+        if (!Present || clip == null) return;
+        var source = _parts.Head.GetComponent<AudioSource>();
+        if (source == null)
+        {
+            source = _parts.Head.gameObject.AddComponent<AudioSource>();
+            source.playOnAwake = false;
+            source.spatialBlend = 1f;
+            source.rolloffMode = AudioRolloffMode.Linear;
+            source.minDistance = 2f;
+            source.maxDistance = 20f;
+        }
+        source.Stop();
+        source.clip = clip;
+        source.volume = volume;
+        source.Play();
+    }
     public static void StopFlash() => SetFlash(false);
 
     static void SetFlash(bool on)

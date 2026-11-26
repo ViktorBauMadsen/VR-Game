@@ -40,32 +40,53 @@ public class Bartender : MonoBehaviour, IStaffRig
     [SerializeField] WorldTextPanel speechBubble;
     [SerializeField] Transform[] servePoints;
 
+    // Each line can have a recorded voice (see VoiceLine).
     [Header("Talking")]
     [SerializeField] float greetDistance = 2.6f;
-    [SerializeField] string[] greetings =
+    [SerializeField] VoiceLine[] greetings =
     {
-        "Evening! What can I get you?",
-        "Welcome back. The usual?",
-        "Take a seat, friend. What'll it be?",
+        new VoiceLine("Evening! What can I get you?"),
+        new VoiceLine("Welcome back. The usual?"),
+        new VoiceLine("Take a seat, friend. What'll it be?"),
     };
-    [SerializeField] string[] smallTalk =
+    [SerializeField] VoiceLine[] smallTalk =
     {
-        "Just press a button on the bar to order.",
-        "Cigars are $100, whiskey is $50.",
-        "Hold it up to your mouth - you'll figure it out.",
-        "The roulette table's been hot tonight.",
-        "Easy on the whiskey. It sneaks up on you.",
-        "I've seen fortunes won and lost at those slots.",
+        new VoiceLine("Cigars are $100. Cocktails are on the menu."),
+        new VoiceLine("Press DRINKS on the bar and pick your poison."),
+        new VoiceLine("Hold it up to your mouth - you'll figure it out."),
+        new VoiceLine("The roulette table's been hot tonight."),
+        new VoiceLine("Easy on the whiskey. It sneaks up on you."),
+        new VoiceLine("I've seen fortunes won and lost at those slots."),
     };
-    [SerializeField] string[] serveLines =
+    [SerializeField] VoiceLine[] serveLines =
     {
-        "One {0}, coming right up.",
-        "Here's your {0}. Enjoy!",
-        "Excellent choice. One {0}.",
+        new VoiceLine("Coming right up."),
+        new VoiceLine("Here you go. Enjoy!"),
+        new VoiceLine("Excellent choice."),
+        new VoiceLine("One of my favourites. Enjoy."),
+        new VoiceLine("There you are, friend."),
     };
-    [SerializeField] string cantAffordLine = "That's ${1}, friend. You're a little short.";
+    [SerializeField] VoiceLine[] cantAffordLines =
+    {
+        new VoiceLine("Ah, you're a little short, friend."),
+        new VoiceLine("Afraid that's a bit out of your budget tonight. Perhaps you should try your luck at the tables."),
+        new VoiceLine("Come back when the tables have been kind to you."),
+    };
+    [Tooltip("When James Bond orders his martini (BondNpc).")]
+    [SerializeField] VoiceLine[] bondReplies =
+    {
+        new VoiceLine("Shaken, not stirred. Right away, Mr. Bond."),
+        new VoiceLine("Of course, Mr. Bond. The usual."),
+        new VoiceLine("Coming right up, sir."),
+    };
+
+    [Header("Voice")]
+    [Tooltip("How long the speech bubble stays up after a voice clip finishes, in seconds.")]
+    [SerializeField] float afterSpeechHold = 0.5f;
+    [SerializeField, Range(0f, 1f)] float voiceVolume = 1f;
 
     XRSimpleInteractable _interactable;
+    AudioSource _voice;
     Transform _player;
     Vector3 _headRestPos, _rightRest, _leftRest;
     Quaternion _headRestRot, _mustacheRest;
@@ -82,6 +103,14 @@ public class Bartender : MonoBehaviour, IStaffRig
         _rightRest = rightHand.localPosition;
         _leftRest = leftHand.localPosition;
         if (mustache != null) _mustacheRest = mustache.localRotation;
+
+        // Voice comes from his head, in 3D.
+        _voice = head.gameObject.AddComponent<AudioSource>();
+        _voice.playOnAwake = false;
+        _voice.spatialBlend = 1f;
+        _voice.rolloffMode = AudioRolloffMode.Linear;
+        _voice.minDistance = 1.5f;
+        _voice.maxDistance = 14f;
     }
 
     void Start()
@@ -101,13 +130,37 @@ public class Bartender : MonoBehaviour, IStaffRig
     // True while he's reaching out to put the last order on the bar.
     public bool Busy => _serving;
 
-    public void Say(string line)
+    public void Say(string line) => Say(line, null);
+
+    public void Say(VoiceLine line) => Say(line.text, line.clip);
+
+    public void Say(string line, AudioClip clip)
     {
+        if (_voice != null) _voice.Stop();
+        if (clip != null && _voice != null)
+        {
+            _voice.clip = clip;
+            _voice.volume = voiceVolume;
+            _voice.Play();
+            _talkTimeLeft = clip.length;
+            _speechTimeLeft = clip.length + afterSpeechHold;
+        }
+        else
+        {
+            _talkTimeLeft = Mathf.Clamp(line.Length * 0.05f, 0.8f, 2.5f);
+            _speechTimeLeft = _talkTimeLeft + 2.5f;
+        }
+
         if (speechBubble == null) return;
         speechBubble.SetText(line);
         speechBubble.Visible = true;
-        _talkTimeLeft = Mathf.Clamp(line.Length * 0.05f, 0.8f, 2.5f);
-        _speechTimeLeft = _talkTimeLeft + 2.5f;
+    }
+
+    static VoiceLine Pick(VoiceLine[] lines) => lines[Random.Range(0, lines.Length)];
+
+    public void ReplyToBond()
+    {
+        if (bondReplies.Length > 0) Say(Pick(bondReplies));
     }
 
     // Called by a BarOrderButton. Takes the money and serves the item, or
@@ -120,14 +173,13 @@ public class Bartender : MonoBehaviour, IStaffRig
         var balance = PlayerBalance.Instance;
         if (balance == null || !balance.TrySpend(price))
         {
-            Say(string.Format(cantAffordLine, itemName, price));
+            if (cantAffordLines.Length > 0) Say(Pick(cantAffordLines));
             if (customer is XRBaseInputInteractor input) input.SendHapticImpulse(0.6f, 0.15f);
             return;
         }
 
         BarSounds.Play(BarSounds.Ding, transform.position + Vector3.up * 1.1f, 0.6f);
-        if (serveLines.Length > 0)
-            Say(string.Format(serveLines[Random.Range(0, serveLines.Length)], itemName, price));
+        if (serveLines.Length > 0) Say(Pick(serveLines));
         StartCoroutine(Serve(prefab, serveRotation));
     }
 
@@ -170,7 +222,7 @@ public class Bartender : MonoBehaviour, IStaffRig
             if (!_playerNear && distance < greetDistance)
             {
                 _playerNear = true;
-                if (greetings.Length > 0) Say(greetings[Random.Range(0, greetings.Length)]);
+                if (greetings.Length > 0) Say(Pick(greetings));
             }
             else if (_playerNear && distance > greetDistance + 1.5f)
             {

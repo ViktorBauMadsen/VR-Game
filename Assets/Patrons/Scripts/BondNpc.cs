@@ -8,9 +8,7 @@ public class BondNpc : NpcCharacter
 {
     static readonly string[] Greetings =
     {
-        "Bond. James Bond.",
-        "The name's Bond. James Bond.",
-        "Good evening. I don't believe we've met.",
+        "Good evening. I don't believe we've met. The name's Bond..... James Bond.",
     };
 
     static readonly string[] Lines =
@@ -30,15 +28,9 @@ public class BondNpc : NpcCharacter
     static readonly string[] Orders =
     {
         "Vodka martini, please. Shaken, not stirred.",
-        "Another martini. Shaken, not stirred.",
     };
 
-    static readonly string[] BartenderReplies =
-    {
-        "Shaken, not stirred. Right away, Mr. Bond.",
-        "Of course, Mr. Bond. The usual.",
-        "Coming right up, sir.",
-    };
+    // (The bartender's answers are on the Bartender, with his voice.)
 
     [Header("Martini sips")]
     [Tooltip("Seconds between sips (random in this range).")]
@@ -146,6 +138,7 @@ public class BondNpc : NpcCharacter
     {
         Init(manager, controller);
         _bartender = bartender;
+        Voice = NpcVoice.Load("James Bond");
         lookDistance = 3.5f;
         SetPose(PoseSitTalk);
         _lineIndex = Random.Range(0, Lines.Length);
@@ -159,9 +152,9 @@ public class BondNpc : NpcCharacter
         if (!_greeted)
         {
             _greeted = true;
-            Say(Greetings[Random.Range(0, Greetings.Length)]);
+            Speak(Greetings[Random.Range(0, Greetings.Length)]);
         }
-        else Say(Lines[_lineIndex++ % Lines.Length]);
+        else Speak(Lines[_lineIndex++ % Lines.Length]);
         _nextLine = Time.time + Random.Range(12f, 20f);
     }
 
@@ -180,8 +173,8 @@ public class BondNpc : NpcCharacter
         else if (!_greeted && distance < 2.6f)
         {
             _greeted = true;
-            Say(Greetings[Random.Range(0, Greetings.Length)]);
-            _nextLine = Time.time + Random.Range(8f, 14f);
+            float length = Speak(Greetings[Random.Range(0, Greetings.Length)]);
+            _nextLine = Time.time + length + Random.Range(8f, 14f);
         }
         else if (_greeted && distance > 6f) _greeted = false;
 
@@ -189,7 +182,7 @@ public class BondNpc : NpcCharacter
         if (Time.time >= _nextLine)
         {
             _nextLine = Time.time + Random.Range(12f, 22f);
-            if (distance < 6f) Say(Lines[_lineIndex++ % Lines.Length]);
+            if (distance < 6f && !Speaking) Speak(Lines[_lineIndex++ % Lines.Length]);
         }
 
         // Ordering another round, and the bartender's answer.
@@ -198,14 +191,15 @@ public class BondNpc : NpcCharacter
             _nextOrder = Time.time + Random.Range(40f, 70f);
             if (distance < 8f && !Speaking)
             {
-                Say(Orders[Random.Range(0, Orders.Length)]);
-                _replyAt = Time.time + 2.2f;
+                // The bartender answers once he's finished ordering.
+                float length = Speak(Orders[Random.Range(0, Orders.Length)]);
+                _replyAt = Time.time + length + 0.4f;
             }
         }
         if (_replyAt > 0f && Time.time >= _replyAt)
         {
             _replyAt = -1f;
-            if (_bartender != null) _bartender.Say(BartenderReplies[Random.Range(0, BartenderReplies.Length)]);
+            if (_bartender != null) _bartender.ReplyToBond();
         }
     }
 

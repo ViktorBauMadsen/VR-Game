@@ -46,6 +46,7 @@ public class SlotMachineLever : MonoBehaviour
         _interactable = GetComponent<XRSimpleInteractable>();
         if (handle == null) handle = transform;
         if (pivot == null) pivot = handle.parent != null ? handle.parent : transform;
+        SpatialAudio.Setup(audioSource); // only heard near the machine
     }
 
     void OnEnable()
@@ -77,7 +78,7 @@ public class SlotMachineLever : MonoBehaviour
         if (clip == null) return;
         if (audioSource == null)
         {
-            AudioSource.PlayClipAtPoint(clip, transform.position, volume * leverVolume);
+            SpatialAudio.PlayAt(clip, transform.position, volume * leverVolume);
             return;
         }
         audioSource.pitch = pitch;

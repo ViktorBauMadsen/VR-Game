@@ -63,11 +63,7 @@ public class SlotMachine : SlotMachineBase
 
     protected override void OnBetChanged()
     {
-        if (_tickSource != null && reelTickClip != null)
-        {
-            Apply2DIfNoHeadset(_tickSource);
-            _tickSource.PlayOneShot(reelTickClip, 0.8f);
-        }
+        if (_tickSource != null && reelTickClip != null) _tickSource.PlayOneShot(reelTickClip, 0.8f);
     }
 
     void Awake()
@@ -79,28 +75,19 @@ public class SlotMachine : SlotMachineBase
         if (winClip == null) winClip = Resources.Load<AudioClip>(DefaultWinPath);
         if (bigWinClip == null) bigWinClip = Resources.Load<AudioClip>(DefaultBigWinPath);
 
+        SpatialAudio.Setup(audioSource); // only heard near the machine
         _tickSource = CreateReelSource();
         _stopSource = CreateReelSource();
         _winSource = CreateReelSource();
     }
 
-    // Matches the machine's own AudioSource (3D settings etc.) if it has one.
+    // 3D, only heard near the machine (see SpatialAudio).
     AudioSource CreateReelSource()
     {
         var s = gameObject.AddComponent<AudioSource>();
         s.playOnAwake = false;
-        if (audioSource != null)
-        {
-            s.spatialBlend = audioSource.spatialBlend;
-            s.minDistance = audioSource.minDistance;
-            s.maxDistance = audioSource.maxDistance;
-            s.rolloffMode = audioSource.rolloffMode;
-            s.outputAudioMixerGroup = audioSource.outputAudioMixerGroup;
-        }
-        else
-        {
-            s.spatialBlend = 1f;
-        }
+        SpatialAudio.Setup(s);
+        if (audioSource != null) s.outputAudioMixerGroup = audioSource.outputAudioMixerGroup;
         return s;
     }
 
@@ -245,7 +232,6 @@ public class SlotMachine : SlotMachineBase
     {
         if (_tickSource == null || reelTickClip == null) return;
         if (Time.time - _lastTickTime < minTickGap) return;
-        Apply2DIfNoHeadset(_tickSource);
         _lastTickTime = Time.time;
         _tickSource.PlayOneShot(reelTickClip, reelTickVolume * Random.Range(0.85f, 1f));
     }
@@ -253,7 +239,6 @@ public class SlotMachine : SlotMachineBase
     void HandleReelStopped(int reel)
     {
         if (_stopSource == null || reelStopClip == null) return;
-        Apply2DIfNoHeadset(_stopSource);
         _stopSource.pitch = 1f + reel * reelStopPitchStep;
         _stopSource.PlayOneShot(reelStopClip, reelStopVolume);
     }
@@ -262,17 +247,7 @@ public class SlotMachine : SlotMachineBase
     {
         var clip = tier.payoutMultiplier >= bigWinMultiplier && bigWinClip != null ? bigWinClip : winClip;
         if (_winSource == null || clip == null) return;
-        Apply2DIfNoHeadset(_winSource);
         _winSource.PlayOneShot(clip, winVolume);
-    }
-
-    // Testing without a headset, the listener (XR camera) stays at the rig's
-    // spawn point, maybe far from this machine - play reel sounds 2D then.
-    // With a headset on they keep the machine's normal 3D setting.
-    void Apply2DIfNoHeadset(AudioSource s)
-    {
-        float normal = audioSource != null ? audioSource.spatialBlend : 1f;
-        s.spatialBlend = UnityEngine.XR.XRSettings.isDeviceActive ? normal : 0f;
     }
 
     PayoutTier RollOutcome()

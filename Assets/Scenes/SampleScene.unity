@@ -19941,21 +19941,54 @@ MonoBehaviour:
   - {fileID: 1115228756}
   greetDistance: 2.6
   greetings:
-  - Evening! What can I get you?
-  - Welcome back. The usual?
-  - Take a seat, friend. What'll it be?
+  - text: Evening! What can I get you?
+    clip: {fileID: 8300000, guid: 39330be5ba05b894285e4732bcbf6d05, type: 3}
+  - text: Welcome back. The usual?
+    clip: {fileID: 8300000, guid: e499dccfd8a07094a8f8c434ea35c44a, type: 3}
+  - text: Take a seat, friend. What'll it be?
+    clip: {fileID: 8300000, guid: 3fcc74a9851bb564b9d29ef537c3c736, type: 3}
   smallTalk:
-  - Cigars are $100. Cocktails are on the menu.
-  - Press DRINKS on the bar and pick your poison.
-  - Hold it up to your mouth - you'll figure it out.
-  - The roulette table's been hot tonight.
-  - Easy on the whiskey. It sneaks up on you.
-  - I've seen fortunes won and lost at those slots.
+  - text: Cigars are $100. Cocktails are on the menu.
+    clip: {fileID: 8300000, guid: 69e68f1ae1bcecb4b9c1311d5cfdf2f6, type: 3}
+  - text: Press DRINKS on the bar and pick your poison.
+    clip: {fileID: 8300000, guid: 2353d9c7daba6004f8385c44fa587321, type: 3}
+  - text: Hold it up to your mouth - you'll figure it out.
+    clip: {fileID: 8300000, guid: dcdf347c9e5cc134192c8af0cba9dda0, type: 3}
+  - text: The roulette table's been hot tonight.
+    clip: {fileID: 8300000, guid: 4d84f1e58c4b0c04c9747409d4911a3d, type: 3}
+  - text: Easy on the whiskey. It sneaks up on you.
+    clip: {fileID: 8300000, guid: 0b0c99a58d5cfbe40ae6bce16e3f6f70, type: 3}
+  - text: I've seen fortunes won and lost at those slots.
+    clip: {fileID: 8300000, guid: e041d78761f3db94ebce31dd37ee973a, type: 3}
+
   serveLines:
-  - One {0}, coming right up.
-  - Here's your {0}. Enjoy!
-  - Excellent choice. One {0}.
-  cantAffordLine: That's ${1}, friend. You're a little short.
+  - text: Coming right up.
+    clip: {fileID: 8300000, guid: 94371275afc5c30468c377abe331f6ae, type: 3}
+  - text: Here you go. Enjoy!
+    clip: {fileID: 8300000, guid: 6ff65cdb763ae1f41a9cb592cb3c834e, type: 3}
+  - text: Excellent choice.
+    clip: {fileID: 8300000, guid: 8e5cd5009825d204eabadb32491c89e9, type: 3}
+  - text: One of my favourites. Enjoy.
+    clip: {fileID: 8300000, guid: c41ac06b4f377a949baafb4cf110a026, type: 3}
+  - text: There you are, friend.
+    clip: {fileID: 8300000, guid: 9561e4b7dc957ec42a692c3bdc3d0521, type: 3}
+  cantAffordLines:
+  - text: Ah, you're a little short, friend.
+    clip: {fileID: 8300000, guid: 96d353bbc9e268c478ce5135c827dc5a, type: 3}
+  - text: Afraid that's a bit out of your budget tonight. Perhaps you should try your
+      luck at the tables.
+    clip: {fileID: 8300000, guid: 6fafb521b064f0b46a96531c80929be7, type: 3}
+  - text: Come back when the tables have been kind to you.
+    clip: {fileID: 8300000, guid: bbdff971bb9f98244847981da85d9027, type: 3}
+  bondReplies:
+  - text: Shaken, not stirred. Right away, Mr. Bond.
+    clip: {fileID: 8300000, guid: 1bb86f7f377fa3f4fa1e517d19580116, type: 3}
+  - text: Of course, Mr. Bond. The usual.
+    clip: {fileID: 8300000, guid: 5366405d0a9c470498cc18c1a8f54024, type: 3}
+  - text: Coming right up, sir.
+    clip: {fileID: 8300000, guid: ca128df3f7c2de1478a8a71a4dfad8cf, type: 3}
+  afterSpeechHold: 0.5
+  voiceVolume: 1
 --- !u!114 &102672547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66561,15 +66594,52 @@ MonoBehaviour:
   speechBubble: {fileID: 398786241}
   greetDistance: 2.6
   greetings:
-  - Blackjack! Care for a hand?
-  - Welcome. Pick your bet and press DEAL.
-  - Take a seat - the cards are warm tonight.
+  - text: Blackjack! Care for a hand?
+    clip: {fileID: 8300000, guid: b115bd85915873e4eba1d6d1f5c193e2, type: 3}
+  - text: Take a seat - the cards are warm tonight.
+    clip: {fileID: 8300000, guid: 5b45e7cd7a9516249b09ba2b018ae69e, type: 3}
   rules:
-  - Get closer to 21 than me without going over.
-  - Face cards count 10. Aces count 1 or 11.
-  - HIT takes a card. STAND keeps what you have.
-  - DOUBLE doubles your bet for exactly one more card.
-  - Blackjack pays 3 to 2. I stand on 17.
+  - text: Get closer to 21 than me without going over.
+    clip: {fileID: 8300000, guid: 7ae1e7fd285d87440b876b9e2fa03e89, type: 3}
+  - text: Face cards count 10. Aces count 1 or 11.
+    clip: {fileID: 8300000, guid: 5ed83751985bb164896548d2dd2e712f, type: 3}
+  - text: HIT takes a card. STAND keeps what you have.
+    clip: {fileID: 8300000, guid: 4893a114ada952f42b633868cb6a153f, type: 3}
+  - text: DOUBLE doubles your bet for exactly one more card.
+    clip: {fileID: 8300000, guid: 1a534b9dc7f81c9418b6bab89d56a5b1, type: 3}
+  - text: Blackjack pays 3 to 2. I stand on 17.
+    clip: {fileID: 8300000, guid: aa2a76b890ca4fc42b1ce022f6d09bc4, type: 3}
+  wins:
+  - text: You win! Nicely played.
+    clip: {fileID: 8300000, guid: b43f079757a79d043831262247d496e0, type: 3}
+  - text: Winner! Well done.
+    clip: {fileID: 8300000, guid: 8ff6881dc707d15429280079d5f4f736, type: 3}
+  blackjack:
+    text: Blackjack! Pays three to two.
+    clip: {fileID: 8300000, guid: 4bd7ca7327934de47ae67f4ba89f84a4, type: 3}
+  push:
+    text: It's a push. Your bet comes back.
+    clip: {fileID: 8300000, guid: 078a5c5577168a04d833ab9051f40c0e, type: 3}
+  losses:
+  - text: House wins. Better luck next hand.
+    clip: {fileID: 8300000, guid: 47c5e2d7c36c12f4aa23344d01ba2016, type: 3}
+  - text: Not this time.
+    clip: {fileID: 8300000, guid: 7d42fd2815f7e2a43a57cbca51dc9ea1, type: 3}
+  tooShort:
+    text: You're a little short for that bet.
+    clip: {fileID: 8300000, guid: b7e43c580c7de6e4d8769340849d0064, type: 3}
+  notInHand:
+    text: You're not in this hand - press DEAL on the next one.
+    clip: {fileID: 8300000, guid: ee6c4741f9ab3af4c83bf760703f95f2, type: 3}
+  doubleFirstTwoOnly:
+    text: You can only double on your first two cards.
+    clip: {fileID: 8300000, guid: 12f458f7235a8ee4b9452e6c0d7104ee, type: 3}
+  cantCoverDouble:
+    text: You can't cover the double - your bet stays as it is.
+    clip: {fileID: 8300000, guid: 7a96b098e87c7d048be1869b8a11c366, type: 3}
+  afterSpeechHold: 0.5
+  voiceVolume: 1
+
 --- !u!4 &376889480
 Transform:
   m_ObjectHideFlags: 0
@@ -164102,15 +164172,52 @@ MonoBehaviour:
   speechBubble: {fileID: 23056480}
   greetDistance: 2.6
   greetings:
-  - Blackjack! Care for a hand?
-  - Welcome. Pick your bet and press DEAL.
-  - Take a seat - the cards are warm tonight.
+  - text: Blackjack! Care for a hand?
+    clip: {fileID: 8300000, guid: b115bd85915873e4eba1d6d1f5c193e2, type: 3}
+  - text: Take a seat - the cards are warm tonight.
+    clip: {fileID: 8300000, guid: 5b45e7cd7a9516249b09ba2b018ae69e, type: 3}
   rules:
-  - Get closer to 21 than me without going over.
-  - Face cards count 10. Aces count 1 or 11.
-  - HIT takes a card. STAND keeps what you have.
-  - DOUBLE doubles your bet for exactly one more card.
-  - Blackjack pays 3 to 2. I stand on 17.
+  - text: Get closer to 21 than me without going over.
+    clip: {fileID: 8300000, guid: 7ae1e7fd285d87440b876b9e2fa03e89, type: 3}
+  - text: Face cards count 10. Aces count 1 or 11.
+    clip: {fileID: 8300000, guid: 5ed83751985bb164896548d2dd2e712f, type: 3}
+  - text: HIT takes a card. STAND keeps what you have.
+    clip: {fileID: 8300000, guid: 4893a114ada952f42b633868cb6a153f, type: 3}
+  - text: DOUBLE doubles your bet for exactly one more card.
+    clip: {fileID: 8300000, guid: 1a534b9dc7f81c9418b6bab89d56a5b1, type: 3}
+  - text: Blackjack pays 3 to 2. I stand on 17.
+    clip: {fileID: 8300000, guid: aa2a76b890ca4fc42b1ce022f6d09bc4, type: 3}
+  wins:
+  - text: You win! Nicely played.
+    clip: {fileID: 8300000, guid: b43f079757a79d043831262247d496e0, type: 3}
+  - text: Winner! Well done.
+    clip: {fileID: 8300000, guid: 8ff6881dc707d15429280079d5f4f736, type: 3}
+  blackjack:
+    text: Blackjack! Pays three to two.
+    clip: {fileID: 8300000, guid: 4bd7ca7327934de47ae67f4ba89f84a4, type: 3}
+  push:
+    text: It's a push. Your bet comes back.
+    clip: {fileID: 8300000, guid: 078a5c5577168a04d833ab9051f40c0e, type: 3}
+  losses:
+  - text: House wins. Better luck next hand.
+    clip: {fileID: 8300000, guid: 47c5e2d7c36c12f4aa23344d01ba2016, type: 3}
+  - text: Not this time.
+    clip: {fileID: 8300000, guid: 7d42fd2815f7e2a43a57cbca51dc9ea1, type: 3}
+  tooShort:
+    text: You're a little short for that bet.
+    clip: {fileID: 8300000, guid: b7e43c580c7de6e4d8769340849d0064, type: 3}
+  notInHand:
+    text: You're not in this hand - press DEAL on the next one.
+    clip: {fileID: 8300000, guid: ee6c4741f9ab3af4c83bf760703f95f2, type: 3}
+  doubleFirstTwoOnly:
+    text: You can only double on your first two cards.
+    clip: {fileID: 8300000, guid: 12f458f7235a8ee4b9452e6c0d7104ee, type: 3}
+  cantCoverDouble:
+    text: You can't cover the double - your bet stays as it is.
+    clip: {fileID: 8300000, guid: 7a96b098e87c7d048be1869b8a11c366, type: 3}
+  afterSpeechHold: 0.5
+  voiceVolume: 1
+
 --- !u!4 &953003423
 Transform:
   m_ObjectHideFlags: 0
@@ -266826,15 +266933,52 @@ MonoBehaviour:
   speechBubble: {fileID: 1547716200}
   greetDistance: 2.6
   greetings:
-  - Blackjack! Care for a hand?
-  - Welcome. Pick your bet and press DEAL.
-  - Take a seat - the cards are warm tonight.
+  - text: Blackjack! Care for a hand?
+    clip: {fileID: 8300000, guid: b115bd85915873e4eba1d6d1f5c193e2, type: 3}
+  - text: Take a seat - the cards are warm tonight.
+    clip: {fileID: 8300000, guid: 5b45e7cd7a9516249b09ba2b018ae69e, type: 3}
   rules:
-  - Get closer to 21 than me without going over.
-  - Face cards count 10. Aces count 1 or 11.
-  - HIT takes a card. STAND keeps what you have.
-  - DOUBLE doubles your bet for exactly one more card.
-  - Blackjack pays 3 to 2. I stand on 17.
+  - text: Get closer to 21 than me without going over.
+    clip: {fileID: 8300000, guid: 7ae1e7fd285d87440b876b9e2fa03e89, type: 3}
+  - text: Face cards count 10. Aces count 1 or 11.
+    clip: {fileID: 8300000, guid: 5ed83751985bb164896548d2dd2e712f, type: 3}
+  - text: HIT takes a card. STAND keeps what you have.
+    clip: {fileID: 8300000, guid: 4893a114ada952f42b633868cb6a153f, type: 3}
+  - text: DOUBLE doubles your bet for exactly one more card.
+    clip: {fileID: 8300000, guid: 1a534b9dc7f81c9418b6bab89d56a5b1, type: 3}
+  - text: Blackjack pays 3 to 2. I stand on 17.
+    clip: {fileID: 8300000, guid: aa2a76b890ca4fc42b1ce022f6d09bc4, type: 3}
+  wins:
+  - text: You win! Nicely played.
+    clip: {fileID: 8300000, guid: b43f079757a79d043831262247d496e0, type: 3}
+  - text: Winner! Well done.
+    clip: {fileID: 8300000, guid: 8ff6881dc707d15429280079d5f4f736, type: 3}
+  blackjack:
+    text: Blackjack! Pays three to two.
+    clip: {fileID: 8300000, guid: 4bd7ca7327934de47ae67f4ba89f84a4, type: 3}
+  push:
+    text: It's a push. Your bet comes back.
+    clip: {fileID: 8300000, guid: 078a5c5577168a04d833ab9051f40c0e, type: 3}
+  losses:
+  - text: House wins. Better luck next hand.
+    clip: {fileID: 8300000, guid: 47c5e2d7c36c12f4aa23344d01ba2016, type: 3}
+  - text: Not this time.
+    clip: {fileID: 8300000, guid: 7d42fd2815f7e2a43a57cbca51dc9ea1, type: 3}
+  tooShort:
+    text: You're a little short for that bet.
+    clip: {fileID: 8300000, guid: b7e43c580c7de6e4d8769340849d0064, type: 3}
+  notInHand:
+    text: You're not in this hand - press DEAL on the next one.
+    clip: {fileID: 8300000, guid: ee6c4741f9ab3af4c83bf760703f95f2, type: 3}
+  doubleFirstTwoOnly:
+    text: You can only double on your first two cards.
+    clip: {fileID: 8300000, guid: 12f458f7235a8ee4b9452e6c0d7104ee, type: 3}
+  cantCoverDouble:
+    text: You can't cover the double - your bet stays as it is.
+    clip: {fileID: 8300000, guid: 7a96b098e87c7d048be1869b8a11c366, type: 3}
+  afterSpeechHold: 0.5
+  voiceVolume: 1
+
 --- !u!4 &1555882635
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5948033282b4233ac1cc7b681ec0c2b, type: 3}
+  m_Name: James Bond
+  m_EditorClassIdentifier: Assembly-CSharp::NpcVoice
+  lines:
+  - text: Good evening. I don't believe we've met. The name's Bond..... James Bond.
+    clip: {fileID: 8300000, guid: a68d7a0ea752a10449588a5cb87808fe, type: 3}
+  - text: Vodka martini, please. Shaken, not stirred.
+    clip: {fileID: 8300000, guid: 5b7f43dfd8b6e2140a0916d197fd91df, type: 3}
+  - text: I never joke about my work.
+    clip: {fileID: 8300000, guid: 5f351210081d58a4dbea5538671c8e64, type: 3}
+  - text: Shocking. Positively shocking.
+    clip: {fileID: 8300000, guid: 217a19f001502784983050f5607d99c0, type: 3}
+  - text: Roulette is a game of nerve. Never show your hand.
+    clip: {fileID: 8300000, guid: 98ccccb8b19ba8b4a962ec255bf9f565, type: 3}
+  - text: I'd stay away from table three. The dealer works for SPECTRE.
+    clip: {fileID: 8300000, guid: 62fd38c5a422e2345999b59253e1fbb3, type: 3}
+  - text: A gentleman always knows when to walk away from the table.
+    clip: {fileID: 8300000, guid: 86430b3181385a1478f781b55117f13c, type: 3}
+  - text: The odds are only interesting when you can't afford to lose.
+    clip: {fileID: 8300000, guid: 7355794d7ab6eac4aa44c3d8799416ea, type: 3}
+  - text: One last hand. Then I have a plane to catch.
+    clip: {fileID: 8300000, guid: bd907724c4d005a4984e011ada0895f2, type: 3}
+  - text: Careful. Everyone in this room is watching everyone else.
+    clip: {fileID: 8300000, guid: cb98eff96dd0ecd46a5aaf0c9514375d, type: 3}
+  - text: I prefer my luck the way I prefer my martinis. Dry.
+    clip: {fileID: 8300000, guid: 578fd86e027c5754abdbf3d189efc8ec, type: 3}

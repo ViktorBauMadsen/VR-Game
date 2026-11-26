@@ -8538,16 +8538,102 @@ MonoBehaviour:
   speechBubble: {fileID: 2715246715835946281}
   greetDistance: 2.6
   greetings:
-  - Place your bets, please!
-  - Welcome to the table. Feeling lucky?
-  - Step right up - place your bets!
+  - text: Welcome to the table. Feeling lucky?
+    clip: {fileID: 8300000, guid: f9982527d564f684dbeb7784ea926ab6, type: 3}
+  - text: Step right up - place your bets!
+    clip: {fileID: 8300000, guid: 8b5bebcee3529694780265e3355cb0b7, type: 3}
   smallTalk:
-  - Grab chips from your pockets and drop them on the table.
-  - Then press the spin button and we'll see what luck brings.
-  - A single number pays 35 to 1.
-  - Red or black? Classic choice.
-  - The wheel has no memory, my friend.
-  noMoreBets: No more bets!
+  - text: Grab chips from your pockets and drop them on the table.
+    clip: {fileID: 8300000, guid: 252d10626f9a24b4da1e453c27af9e3d, type: 3}
+  - text: Then press the spin button and we'll see what luck brings.
+    clip: {fileID: 8300000, guid: 393c245dbf3a070458ca4c4f4f5e1be9, type: 3}
+  - text: A single number pays 35 to 1.
+    clip: {fileID: 8300000, guid: 4fca003f6a0761a42be992209afa0817, type: 3}
+  - text: Red or black? Classic choice.
+    clip: {fileID: 8300000, guid: 6aae17cd91d9fd640aca40835a2244b3, type: 3}
+  - text: The wheel has no memory, my friend.
+    clip: {fileID: 8300000, guid: 77d3d52c5530fe243a60be8ff6564ce2, type: 3}
+  noMoreBets:
+    text: No more bets!
+    clip: {fileID: 8300000, guid: 037a2b714fafed843a46ee687ebadb0d, type: 3}
+  results:
+  - text: 0, green!
+    clip: {fileID: 8300000, guid: 25c194c419cb92145b311e9a252bb3c7, type: 3}
+  - text: 1, red!
+    clip: {fileID: 8300000, guid: f8ec7ccadfa985f4e8ccc17cec6efbe1, type: 3}
+  - text: 2, black!
+    clip: {fileID: 8300000, guid: 8c1543ae2a09ec549b4886fadd02afa1, type: 3}
+  - text: 3, red!
+    clip: {fileID: 8300000, guid: 690686f7ee057934e8a26b05ef5777d7, type: 3}
+  - text: 4, black!
+    clip: {fileID: 8300000, guid: c58545e5a05d23541802e30c46032313, type: 3}
+  - text: 5, red!
+    clip: {fileID: 8300000, guid: 604b79f3f5e46224d986320da71f2f8e, type: 3}
+  - text: 6, black!
+    clip: {fileID: 8300000, guid: 22d733c66fd368d4da7823c522c1dde3, type: 3}
+  - text: 7, red!
+    clip: {fileID: 8300000, guid: e8e03131f3995fd48b89bf91eb4cc44d, type: 3}
+  - text: 8, black!
+    clip: {fileID: 8300000, guid: 44d73dcf6ed07484a9982a16f5632416, type: 3}
+  - text: 9, red!
+    clip: {fileID: 8300000, guid: 662d1076561181249b658cec2ca5a0d7, type: 3}
+  - text: 10, black!
+    clip: {fileID: 8300000, guid: 28d64f9887a3e734aa3c6d775d4dac1d, type: 3}
+  - text: 11, black!
+    clip: {fileID: 8300000, guid: 442b2dbda3bdc5c42a6355d6b82222fd, type: 3}
+  - text: 12, red!
+    clip: {fileID: 8300000, guid: 97d6e5fd17fcf994e85276bd173c613d, type: 3}
+  - text: 13, black!
+    clip: {fileID: 8300000, guid: 43b921e94ea603246926687b79ff6c07, type: 3}
+  - text: 14, red!
+    clip: {fileID: 8300000, guid: f2ab04dfcc30b4a4cbc5970d6c4f9077, type: 3}
+  - text: 15, black!
+    clip: {fileID: 8300000, guid: 70dfed615e45b61439f8f5b403003262, type: 3}
+  - text: 16, red!
+    clip: {fileID: 8300000, guid: 03a2d989a42be88469cce7dce9e58d3d, type: 3}
+  - text: 17, black!
+    clip: {fileID: 8300000, guid: 8ed3fe3e642cce147bb4f5aa8d54d260, type: 3}
+  - text: 18, red!
+    clip: {fileID: 8300000, guid: 2b3b928c6ee4653439f669a3168d6eae, type: 3}
+  - text: 19, red!
+    clip: {fileID: 8300000, guid: 1411a6d16389e1f4a81e06a76c4c917e, type: 3}
+  - text: 20, black!
+    clip: {fileID: 8300000, guid: b4cc7ddfa7c137d48b76a6626d063752, type: 3}
+  - text: 21, red!
+    clip: {fileID: 8300000, guid: 689f8e1634e87e04e9209e2df8377933, type: 3}
+  - text: 22, black!
+    clip: {fileID: 8300000, guid: 90c3d06bc27c70c41addbe4ef2c7a104, type: 3}
+  - text: 23, red!
+    clip: {fileID: 8300000, guid: 2e65c909cd5588d42a9f7c6bca250100, type: 3}
+  - text: 24, black!
+    clip: {fileID: 8300000, guid: 53766d97d31d76544b4fc91cfc6d7d2a, type: 3}
+  - text: 25, red!
+    clip: {fileID: 8300000, guid: 10cb94fbc8c5b6b41855bc18992e6992, type: 3}
+  - text: 26, black!
+    clip: {fileID: 8300000, guid: fb4bd3676c8073c4f82bdfa8f3204605, type: 3}
+  - text: 27, red!
+    clip: {fileID: 8300000, guid: 65da4b2c780d54a4894bb51a1f9bf3ca, type: 3}
+  - text: 28, black!
+    clip: {fileID: 8300000, guid: 4695eb8a57dc31a43880a9646abb6e72, type: 3}
+  - text: 29, black!
+    clip: {fileID: 8300000, guid: 800e18a8ed8be7545a91fc36781aaf7c, type: 3}
+  - text: 30, red!
+    clip: {fileID: 8300000, guid: 280573096b8ff88428e64cfd26808d2a, type: 3}
+  - text: 31, black!
+    clip: {fileID: 8300000, guid: b622396bcbfd71f4faac462ffabd81c0, type: 3}
+  - text: 32, red!
+    clip: {fileID: 8300000, guid: 187e2775127847342a704aaae9c8f811, type: 3}
+  - text: 33, black!
+    clip: {fileID: 8300000, guid: 5b3508370ec4e5b4a8939603c2803e78, type: 3}
+  - text: 34, red!
+    clip: {fileID: 8300000, guid: dbb3180d566473544883cf6033f780be, type: 3}
+  - text: 35, black!
+    clip: {fileID: 8300000, guid: 1d86575184175724f9ce712f23cf93e9, type: 3}
+  - text: 36, red!
+    clip: {fileID: 8300000, guid: f4593a84f93f4374d880341c1d9a9477, type: 3}
+  afterSpeechHold: 0.5
+  voiceVolume: 1
+
 --- !u!1 &4715310945042292953
 GameObject:
   m_ObjectHideFlags: 0

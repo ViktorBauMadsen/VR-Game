@@ -54,9 +54,6 @@ public class BeerPongBall : MonoBehaviour
     [SerializeField] float fullVolumeImpactSpeed = 3f;
     [Tooltip("Hits slower than this (m/s) make no sound, so a rolling ball doesn't buzz.")]
     [SerializeField] float minImpactSpeed = 0.25f;
-    [Tooltip("Testing without a headset the listener can be far away; play 2D then. 3D with the headset on.")]
-    [SerializeField] bool use2DWhenNoHeadset = true;
-
     const int SampleCount = 16;
     const float MinSoundGap = 0.04f;
 
@@ -87,11 +84,7 @@ public class BeerPongBall : MonoBehaviour
 
         _audio = gameObject.AddComponent<AudioSource>();
         _audio.playOnAwake = false;
-        _audio.spatialBlend = 1f;
-        _audio.rolloffMode = AudioRolloffMode.Logarithmic;
-        _audio.minDistance = 0.3f;
-        _audio.maxDistance = 15f;
-        _audio.dopplerLevel = 0f;
+        SpatialAudio.Setup(_audio, 0.3f, 12f); // only heard near the table
     }
 
     // Generated defaults live in Assets/BeerPong/Audio/Resources/BeerPongSounds.
@@ -117,7 +110,6 @@ public class BeerPongBall : MonoBehaviour
         if (clip == null) return;
 
         _lastSoundTime = Time.time;
-        _audio.spatialBlend = use2DWhenNoHeadset && !UnityEngine.XR.XRSettings.isDeviceActive ? 0f : 1f;
         _audio.pitch = Random.Range(0.95f, 1.05f);
         float loudness = Mathf.Clamp01(speed / Mathf.Max(0.01f, fullVolumeImpactSpeed));
         _audio.PlayOneShot(clip, bounceVolume * loudness);

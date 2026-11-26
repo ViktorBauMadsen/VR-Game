@@ -90,7 +90,103 @@ public abstract class NpcCharacter : MonoBehaviour
 
     protected bool Speaking => _speechLeft > 0f;
 
+    // The recorded voice for this NPC's lines, if they have one (see NpcVoice).
+    protected NpcVoice Voice { get; set; }
+    // How long the bubble stays up after a voiced line ends.
+    const float AfterSpeechHold = 0.5f;
+    AudioSource _voiceSource;
+
+    // Says a line: its recorded clip if Voice has one (the bubble then stays
+    // up for the clip plus AfterSpeechHold), otherwise just the bubble.
+    // Returns how long the line takes.
+    public float Speak(string line)
+    {
+        AudioClip clip = Voice != null ? Voice.ClipFor(line) : null;
+        if (clip == null)
+        {
+            float seconds = ReadTime(line);
+            Say(line, seconds);
+            return seconds;
+        }
+
+        if (_voiceSource == null)
+        {
+            Transform mouth = HeadBone != null ? HeadBone : transform;
+            _voiceSource = mouth.gameObject.AddComponent<AudioSource>();
+            _voiceSource.playOnAwake = false;
+            _voiceSource.spatialBlend = 1f;
+            _voiceSource.rolloffMode = AudioRolloffMode.Linear;
+            _voiceSource.minDistance = 1.5f;
+            _voiceSource.maxDistance = 12f;
+        }
+        _voiceSource.Stop();
+        _voiceSource.clip = clip;
+        _voiceSource.Play();
+        StopMumble();
+        ShowBubble(line, clip.length + AfterSpeechHold);
+        return clip.length;
+    }
+
+    // Shows a line without a recording (with the quiet mumble, if Voice has
+    // one). Anything they were saying is cut off.
     public void Say(string line, float seconds = 4.5f)
+    {
+        if (_voiceSource != null) _voiceSource.Stop();
+        ShowBubble(line, seconds);
+        StartMumble();
+    }
+
+    // ------------------------------------------------------------ mumble
+
+    AudioSource _mumbleSource;
+    bool _mumbleFading;
+
+    void StartMumble()
+    {
+        AudioClip clip = Voice != null ? Voice.mumble : null;
+        if (clip == null) return;
+        if (_mumbleSource == null)
+        {
+            Transform mouth = HeadBone != null ? HeadBone : transform;
+            _mumbleSource = mouth.gameObject.AddComponent<AudioSource>();
+            _mumbleSource.playOnAwake = false;
+            _mumbleSource.loop = true;
+            _mumbleSource.spatialBlend = 1f;
+            _mumbleSource.dopplerLevel = 0f;
+            _mumbleSource.rolloffMode = AudioRolloffMode.Linear; // silent at maxDistance
+            _mumbleSource.minDistance = 0.5f;
+            _mumbleSource.clip = clip;
+        }
+        _mumbleSource.maxDistance = Mathf.Max(0.6f, Voice.mumbleRange);
+        _mumbleSource.volume = Voice.mumbleVolume;
+        _mumbleFading = false;
+        if (!_mumbleSource.isPlaying)
+        {
+            _mumbleSource.Play();
+            // From a random point, so guests near each other don't mumble in step.
+            _mumbleSource.time = Random.Range(0f, clip.length * 0.9f);
+        }
+    }
+
+    // A quick fade rather than a hard cut.
+    void StopMumble()
+    {
+        if (_mumbleSource != null && _mumbleSource.isPlaying) _mumbleFading = true;
+    }
+
+    void UpdateMumble()
+    {
+        if (!_mumbleFading || _mumbleSource == null) return;
+        float full = Voice != null ? Voice.mumbleVolume : 0.2f;
+        _mumbleSource.volume = Mathf.MoveTowards(_mumbleSource.volume, 0f, full * Time.deltaTime / 0.15f);
+        if (_mumbleSource.volume <= 0f)
+        {
+            _mumbleSource.Stop();
+            _mumbleFading = false;
+        }
+    }
+
+    void ShowBubble(string line, float seconds)
     {
         if (_bubble == null)
         {
@@ -108,8 +204,11 @@ public abstract class NpcCharacter : MonoBehaviour
         FaceBubble();
     }
 
+    // Hides the bubble (when its time is up, or when cut short).
     public void HideSpeech()
     {
+        if (_speechLeft > 0f && _voiceSource != null) _voiceSource.Stop();
+        StopMumble();
         _speechLeft = 0f;
         if (_bubble != null) _bubble.Visible = false;
     }
@@ -124,6 +223,7 @@ public abstract class NpcCharacter : MonoBehaviour
             _speechLeft -= Time.deltaTime;
             if (_speechLeft <= 0f) HideSpeech();
         }
+        UpdateMumble();
         FaceBubble();
     }
 

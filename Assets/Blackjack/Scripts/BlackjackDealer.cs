@@ -27,24 +27,57 @@ public class BlackjackDealer : MonoBehaviour, IStaffRig
     [SerializeField] float armThickness = 0.085f;
     [SerializeField] WorldTextPanel speechBubble;
 
+    // What BlackjackTable asks her to say. Kept generic (no card totals or
+    // amounts) so each one is a single recording; the table's display shows
+    // the numbers.
+    public enum Line { Win, Blackjack, Push, Lose, TooShort, NotInHand, DoubleFirstTwoOnly, CantCoverDouble }
+
+    // Each line can have a recorded voice (see VoiceLine).
     [Header("Talking")]
     [SerializeField] float greetDistance = 2.6f;
-    [SerializeField] string[] greetings =
+    [SerializeField] VoiceLine[] greetings =
     {
-        "Blackjack! Care for a hand?",
-        "Welcome. Pick your bet and press DEAL.",
-        "Take a seat - the cards are warm tonight.",
+        new VoiceLine("Blackjack! Care for a hand?"),
+        new VoiceLine("Take a seat - the cards are warm tonight."),
     };
-    [SerializeField] string[] rules =
+    [SerializeField] VoiceLine[] rules =
     {
-        "Get closer to 21 than me without going over.",
-        "Face cards count 10. Aces count 1 or 11.",
-        "HIT takes a card. STAND keeps what you have.",
-        "DOUBLE doubles your bet for exactly one more card.",
-        "Blackjack pays 3 to 2. I stand on 17.",
+        new VoiceLine("Get closer to 21 than me without going over."),
+        new VoiceLine("Face cards count 10. Aces count 1 or 11."),
+        new VoiceLine("HIT takes a card. STAND keeps what you have."),
+        new VoiceLine("DOUBLE doubles your bet for exactly one more card."),
+        new VoiceLine("Blackjack pays 3 to 2. I stand on 17."),
     };
 
+    [Header("End of a hand")]
+    [Tooltip("One picked at random.")]
+    [SerializeField] VoiceLine[] wins =
+    {
+        new VoiceLine("You win! Nicely played."),
+        new VoiceLine("Winner! Well done."),
+    };
+    [SerializeField] VoiceLine blackjack = new VoiceLine("Blackjack! Pays three to two.");
+    [SerializeField] VoiceLine push = new VoiceLine("It's a push. Your bet comes back.");
+    [Tooltip("One picked at random.")]
+    [SerializeField] VoiceLine[] losses =
+    {
+        new VoiceLine("House wins. Better luck next hand."),
+        new VoiceLine("Not this time."),
+    };
+
+    [Header("Can't do that")]
+    [SerializeField] VoiceLine tooShort = new VoiceLine("You're a little short for that bet.");
+    [SerializeField] VoiceLine notInHand = new VoiceLine("You're not in this hand - press DEAL on the next one.");
+    [SerializeField] VoiceLine doubleFirstTwoOnly = new VoiceLine("You can only double on your first two cards.");
+    [SerializeField] VoiceLine cantCoverDouble = new VoiceLine("You can't cover the double - your bet stays as it is.");
+
+    [Header("Voice")]
+    [Tooltip("How long the speech bubble stays up after a voice clip finishes, in seconds.")]
+    [SerializeField] float afterSpeechHold = 0.5f;
+    [SerializeField, Range(0f, 1f)] float voiceVolume = 1f;
+
     XRSimpleInteractable _interactable;
+    AudioSource _voice;
     Transform _player;
     Quaternion _headRest;
     readonly Vector3[] _handRest = new Vector3[2];
@@ -61,6 +94,14 @@ public class BlackjackDealer : MonoBehaviour, IStaffRig
         _interactable = GetComponent<XRSimpleInteractable>();
         _headRest = head.localRotation;
         for (int i = 0; i < 2; i++) _handRest[i] = hands[i].localPosition;
+
+        // Voice comes from her head, in 3D.
+        _voice = head.gameObject.AddComponent<AudioSource>();
+        _voice.playOnAwake = false;
+        _voice.spatialBlend = 1f;
+        _voice.rolloffMode = AudioRolloffMode.Linear;
+        _voice.minDistance = 1.5f;
+        _voice.maxDistance = 14f;
     }
 
     void Start()
@@ -76,7 +117,44 @@ public class BlackjackDealer : MonoBehaviour, IStaffRig
         if (rules.Length > 0) Say(rules[_ruleIndex++ % rules.Length], 4.5f);
     }
 
+    public void Say(Line line)
+    {
+        switch (line)
+        {
+            case Line.Win: if (wins.Length > 0) Say(wins[Random.Range(0, wins.Length)], 4.5f); break;
+            case Line.Blackjack: Say(blackjack, 4.5f); break;
+            case Line.Push: Say(push, 4.5f); break;
+            case Line.Lose: if (losses.Length > 0) Say(losses[Random.Range(0, losses.Length)], 4.5f); break;
+            case Line.TooShort: Say(tooShort); break;
+            case Line.NotInHand: Say(notInHand); break;
+            case Line.DoubleFirstTwoOnly: Say(doubleFirstTwoOnly); break;
+            case Line.CantCoverDouble: Say(cantCoverDouble); break;
+        }
+    }
+
+    // A line with a clip is spoken, and the bubble stays up until shortly
+    // after it ends; without one the bubble shows for `seconds`. Either way,
+    // whatever she was saying is cut off and replaced.
+    public void Say(VoiceLine line, float seconds = 3.5f)
+    {
+        if (_voice != null) _voice.Stop();
+        if (line.clip != null && _voice != null)
+        {
+            _voice.clip = line.clip;
+            _voice.volume = voiceVolume;
+            _voice.Play();
+            seconds = line.clip.length + afterSpeechHold;
+        }
+        ShowBubble(line.text, seconds);
+    }
+
     public void Say(string line, float seconds = 3.5f)
+    {
+        if (_voice != null) _voice.Stop();
+        ShowBubble(line, seconds);
+    }
+
+    void ShowBubble(string line, float seconds)
     {
         if (speechBubble == null) return;
         speechBubble.SetText(line);

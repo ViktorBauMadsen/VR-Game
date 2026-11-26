@@ -44,6 +44,7 @@ public class CasinoPatron : NpcCharacter
     public void Init(CasinoPatrons manager, RuntimeAnimatorController controller, float walkClipSpeed)
     {
         Init(manager, controller);
+        Voice = NpcVoice.Load("Guests"); // the quiet mumble while they talk
         _walkClipSpeed = Mathf.Max(0.3f, walkClipSpeed);
         _agent = gameObject.AddComponent<NavMeshAgent>();
         _agent.agentTypeID = 0;

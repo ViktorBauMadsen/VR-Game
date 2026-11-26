@@ -17,6 +17,7 @@ public class SlotGambler : NpcCharacter
     public void Init(CasinoPatrons manager, RuntimeAnimatorController controller, SlotMachineBase machine, Vector3 machineFront)
     {
         Init(manager, controller);
+        Voice = NpcVoice.Load("Guests"); // the quiet mumble while they talk
         _machine = machine;
         _machineFront = machineFront;
         foreach (var lever in FindObjectsByType<SlotMachineLever>())

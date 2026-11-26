@@ -14,7 +14,7 @@ public static class BarSounds
 
     public static void Play(AudioClip clip, Vector3 position, float volume = 1f)
     {
-        if (clip != null) AudioSource.PlayClipAtPoint(clip, position, volume);
+        SpatialAudio.PlayAt(clip, position, volume);
     }
 
     // Two-note cash register "ka-ching".

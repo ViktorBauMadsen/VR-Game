@@ -158,7 +158,7 @@ public class BlackjackTable : MonoBehaviour
                 if (balance == null || !balance.CanAfford(Bet))
                 {
                     if (balance != null) balance.ReportInsufficientFunds(Bet);
-                    if (dealer != null) dealer.Say($"The bet is ${Bet}. You're a little short.");
+                    if (dealer != null) dealer.Say(BlackjackDealer.Line.TooShort);
                     return false;
                 }
                 return true;
@@ -169,12 +169,12 @@ public class BlackjackTable : MonoBehaviour
                 if (_state != State.PlayerTurn) return false;
                 if (!_inHand)
                 {
-                    if (dealer != null) dealer.Say("You're not in this hand - press DEAL on the next one.");
+                    if (dealer != null) dealer.Say(BlackjackDealer.Line.NotInHand);
                     return false;
                 }
                 if (what == BlackjackEvent.Double && _player.Cards.Count != 2)
                 {
-                    if (dealer != null) dealer.Say("You can only double on your first two cards.");
+                    if (dealer != null) dealer.Say(BlackjackDealer.Line.DoubleFirstTwoOnly);
                     return false;
                 }
                 return true;
@@ -335,7 +335,7 @@ public class BlackjackTable : MonoBehaviour
                 if (_inHand)
                 {
                     if (balance != null && balance.CanAfford(_wager) && balance.TrySpend(_wager)) _wager *= 2;
-                    else if (dealer != null) dealer.Say("You can't cover the double - your bet stays as it is.");
+                    else if (dealer != null) dealer.Say(BlackjackDealer.Line.CantCoverDouble);
                 }
                 ShowChips(Stake * (_inHand ? 1 : 2));
                 StartCoroutine(Hit(true));
@@ -386,9 +386,9 @@ public class BlackjackTable : MonoBehaviour
         if (playerBlackjack || dealerBlackjack)
         {
             yield return RevealHole();
-            if (playerBlackjack && dealerBlackjack) Finish(_wager, "PUSH", "Blackjack each. That's a push.");
-            else if (playerBlackjack) Finish(_wager + _wager * 3 / 2, "BLACKJACK!", "Blackjack! Pays three to two.");
-            else Finish(0, "DEALER BLACKJACK", "Blackjack for the house. Sorry!");
+            if (playerBlackjack && dealerBlackjack) Finish(_wager, "PUSH", BlackjackDealer.Line.Push);
+            else if (playerBlackjack) Finish(_wager + _wager * 3 / 2, "BLACKJACK!", BlackjackDealer.Line.Blackjack);
+            else Finish(0, "DEALER BLACKJACK", BlackjackDealer.Line.Lose);
             yield break;
         }
 
@@ -405,7 +405,7 @@ public class BlackjackTable : MonoBehaviour
         if (total > 21)
         {
             yield return RevealHole();
-            Finish(0, "BUST", $"{total}. Too many!");
+            Finish(0, "BUST", BlackjackDealer.Line.Lose);
         }
         else if (doubled || total == 21)
         {
@@ -426,15 +426,15 @@ public class BlackjackTable : MonoBehaviour
             yield return Deal(_dealer, true);
 
         int player = _player.Total(), house = _dealer.Total();
-        if (house > 21) Finish(_wager * 2, "YOU WIN", $"{house} - dealer busts. You win!");
-        else if (player > house) Finish(_wager * 2, "YOU WIN", $"{player} beats {house}. You win!");
-        else if (player == house) Finish(_wager, "PUSH", $"{house} each. Push - your bet comes back.");
-        else Finish(0, "DEALER WINS", $"Dealer has {house}. House wins.");
+        if (house > 21) Finish(_wager * 2, "DEALER BUSTS", BlackjackDealer.Line.Win);
+        else if (player > house) Finish(_wager * 2, "YOU WIN", BlackjackDealer.Line.Win);
+        else if (player == house) Finish(_wager, "PUSH", BlackjackDealer.Line.Push);
+        else Finish(0, "DEALER WINS", BlackjackDealer.Line.Lose);
     }
 
     // payout includes the stake (0 = lost it, wager = push). For someone
     // who is only watching, the wager and so the payout are 0.
-    void Finish(int payout, string headline, string dealerLine)
+    void Finish(int payout, string headline, BlackjackDealer.Line dealerLine)
     {
         if (payout > 0 && PlayerBalance.Instance != null) payout = PlayerBalance.Instance.Payout(payout, _wager);
         int net = payout - _wager;
@@ -448,7 +448,7 @@ public class BlackjackTable : MonoBehaviour
 
         if (dealer != null)
         {
-            dealer.Say(dealerLine, 4.5f);
+            dealer.Say(dealerLine);
             dealer.Busy = false;
         }
         _inHand = false;

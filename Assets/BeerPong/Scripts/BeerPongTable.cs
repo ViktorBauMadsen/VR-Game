@@ -46,8 +46,6 @@ public class BeerPongTable : MonoBehaviour
     [Tooltip("Played when a team wins. Empty = the built-in synthesised fanfare.")]
     [SerializeField] AudioClip gameWinClip;
     [SerializeField, Range(0f, 1f)] float soundVolume = 1f;
-    [Tooltip("Testing without a headset the listener can be far away; play 2D then. 3D with the headset on.")]
-    [SerializeField] bool use2DWhenNoHeadset = true;
 
     [Tooltip("Invoked with the index of the team that scored (0 = Red, 1 = Blue).")]
     public UnityEvent<int> onCupHit;
@@ -79,8 +77,7 @@ public class BeerPongTable : MonoBehaviour
 
         _audio = gameObject.AddComponent<AudioSource>();
         _audio.playOnAwake = false;
-        _audio.spatialBlend = 1f;
-        _audio.maxDistance = 15f;
+        SpatialAudio.Setup(_audio); // only heard near the table
         _popClip = cupPopClip != null ? cupPopClip : CreatePopClip();
         _winClip = gameWinClip != null ? gameWinClip : CreateWinClip();
 
@@ -356,18 +353,15 @@ public class BeerPongTable : MonoBehaviour
         go.SetActive(true);
     }
 
-    // At a point in 3D (the cup) or from the table. Without a headset, 2D
-    // from the table so it's audible however far away the camera is.
+    // At a point in 3D (the cup) or from the table; only heard nearby.
     void PlaySound(AudioClip clip, Vector3? at)
     {
         if (clip == null) return;
-        bool flat = use2DWhenNoHeadset && !UnityEngine.XR.XRSettings.isDeviceActive;
-        if (at.HasValue && !flat)
+        if (at.HasValue)
         {
-            AudioSource.PlayClipAtPoint(clip, at.Value, soundVolume);
+            SpatialAudio.PlayAt(clip, at.Value, soundVolume);
             return;
         }
-        _audio.spatialBlend = flat ? 0f : 1f;
         _audio.PlayOneShot(clip, soundVolume);
     }
 

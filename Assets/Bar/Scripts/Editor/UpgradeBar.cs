@@ -326,7 +326,7 @@ public static class UpgradeBar
             var talk = so.FindProperty("smallTalk");
             for (int i = 0; i < talk.arraySize; i++)
             {
-                var line = talk.GetArrayElementAtIndex(i);
+                var line = talk.GetArrayElementAtIndex(i).FindPropertyRelative("text");
                 if (line.stringValue.Contains("whiskey is $50")) line.stringValue = "Press DRINKS on the bar and pick your poison.";
                 if (line.stringValue.StartsWith("Just press a button")) line.stringValue = "Cigars are $100. Cocktails are on the menu.";
             }

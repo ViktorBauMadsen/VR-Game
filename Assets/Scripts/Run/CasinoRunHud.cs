@@ -86,8 +86,9 @@ public sealed class CasinoRunHud : MonoBehaviour
         }
         else if (pocketsWereVisible) pockets.SetPocketsVisible(true);
     }
-    AudioSource audioSource, ambience;
+    AudioSource audioSource, ambience, carSource;
     AudioClip gunshot, beep, cash;
+    MafiaSounds sounds;
     Coroutine showing;
     float nextSetupAttempt, firstSetupAttempt = -1f, nextRefresh;
     int lastBeepSecond = -1;
@@ -106,7 +107,11 @@ public sealed class CasinoRunHud : MonoBehaviour
         ambience.playOnAwake = false;
         ambience.loop = true;
         ambience.volume = 0.35f;
-        gunshot = Gunshot();
+        carSource = gameObject.AddComponent<AudioSource>();
+        carSource.spatialBlend = 0f;
+        carSource.playOnAwake = false;
+        sounds = MafiaSounds.Instance;
+        gunshot = sounds != null && sounds.gunshot != null ? sounds.gunshot : Gunshot();
         beep = Tone("Beep", 0.09f, 880f, 880f);
         cash = Tone("Cash", 0.45f, 1320f, 1760f);
     }
@@ -122,6 +127,7 @@ public sealed class CasinoRunHud : MonoBehaviour
     void LeaveDesert()
     {
         if (ambience != null) ambience.Stop();
+        if (carSource != null) carSource.Stop();
         KidnapScene.Exit();
     }
 
@@ -365,9 +371,41 @@ public sealed class CasinoRunHud : MonoBehaviour
     }
 
     // Seconds after the run is lost (on every headset alike) that the hood
-    // comes off out in the desert, and that the first shot is fired; then
-    // one shot every ShotInterval, down the line.
-    const float RevealAt = 10.5f, FirstShotAt = RevealAt + 6.5f, ShotInterval = 3f;
+    // comes off out in the desert, and that he starts his line to the first
+    // in the row; then he shoots, and moves on to the next ShotInterval later.
+    const float RevealAt = 14.5f, FirstShotAt = RevealAt + 6.5f, ShotInterval = 3f;
+    // How long a subtitle stays up after its voice line ends.
+    const float SubtitleHold = 0.5f;
+
+    // One of the hitman's lines: spoken from him, shown as a subtitle until
+    // shortly after it ends. Returns when the line ends.
+    float HitmanSays(AudioClip clip, string subtitle, float fallbackSeconds)
+    {
+        banner.color = Bad;
+        banner.text = subtitle;
+        MafiaHit.Speak(clip);
+        float end = Time.unscaledTime + (clip != null ? clip.length : fallbackSeconds);
+        StartCoroutine(ClearSubtitle(subtitle, end + SubtitleHold));
+        return end;
+    }
+
+    IEnumerator ClearSubtitle(string subtitle, float at)
+    {
+        while (Time.unscaledTime < at) yield return null;
+        if (banner.text == subtitle) banner.text = "";
+    }
+
+    IEnumerator FadeOut(AudioSource source, float seconds)
+    {
+        float volume = source.volume;
+        for (float t = 0f; t < seconds; t += Time.unscaledDeltaTime)
+        {
+            source.volume = volume * (1f - t / seconds);
+            yield return null;
+        }
+        source.Stop();
+        source.volume = volume;
+    }
     static readonly Color Hood = new Color(0.035f, 0.025f, 0.018f);
     static readonly Color Muffled = new Color(0.75f, 0.72f, 0.68f);
 
@@ -398,8 +436,9 @@ public sealed class CasinoRunHud : MonoBehaviour
         var origin = FindAnyObjectByType<Unity.XR.CoreUtils.XROrigin>();
         float floor = origin != null ? origin.transform.position.y : player.position.y - 1.6f;
         yield return MafiaHit.Approach(player, floor);
-        banner.text = "\"THE BOSS WANTS A WORD WITH YOU.\"";
-        yield return MafiaHit.Act(() => player.position, 0.6f, 0f, 0f);
+        // He stops in front of you, says his piece, then steps in with the hood.
+        float lineEnd = HitmanSays(sounds != null ? sounds.comingWithMe : null, "\"YOU'RE COMING WITH ME!\"", 2f);
+        yield return MafiaHit.Act(() => player.position, Mathf.Max(0.6f, lineEnd - 0.9f - Time.unscaledTime), 0f, 0f);
         yield return MafiaHit.WalkTo(() => player.position, 0.62f, 1.5f, () => player.position);
         yield return MafiaHit.Act(() => player.position, 0.55f, 0f, 1f);
 
@@ -416,19 +455,32 @@ public sealed class CasinoRunHud : MonoBehaviour
         MafiaHit.Dismiss();
         KidnapScene.Enter(); // you're moved while you can't see
 
-        yield return new WaitForSecondsRealtime(0.7f);
+        yield return new WaitForSecondsRealtime(0.5f);
         banner.color = Muffled;
         banner.text = "<i>[you're dragged into a car]</i>";
-        audioSource.PlayOneShot(KidnapScene.DoorSlam, 0.8f);
-        yield return new WaitForSecondsRealtime(0.9f);
-        audioSource.PlayOneShot(KidnapScene.Engine, 0.75f);
+        if (sounds != null && sounds.car != null)
+        {
+            carSource.clip = sounds.car;
+            carSource.volume = 0.8f;
+            carSource.Play();
+        }
+        else
+        {
+            audioSource.PlayOneShot(KidnapScene.DoorSlam, 0.8f);
+            carSource.clip = KidnapScene.Engine;
+            carSource.volume = 0.75f;
+            carSource.PlayDelayed(0.9f);
+        }
+        yield return new WaitForSecondsRealtime(2f);
         banner.text = "<i>[a long drive into the desert]</i>";
 
         // On a fixed clock, so the whole team's hoods come off together.
+        // The car pulls up and you're thrown out onto the sand just before.
         float reveal = Mathf.Max(start + RevealAt, Time.unscaledTime + 3f);
-        while (Time.unscaledTime < reveal - 1.2f) yield return null;
-        banner.text = "<i>[the engine stops]</i>";
-        audioSource.PlayOneShot(KidnapScene.DoorSlam, 0.8f);
+        while (Time.unscaledTime < reveal - 2f) yield return null;
+        yield return FadeOut(carSource, 0.6f);
+        banner.text = "<i>[you're thrown out of the car]</i>";
+        audioSource.PlayOneShot(sounds != null && sounds.hitGround != null ? sounds.hitGround : KidnapScene.Thump, 1f);
         while (Time.unscaledTime < reveal) yield return null;
 
         // ----- the desert
@@ -443,24 +495,30 @@ public sealed class CasinoRunHud : MonoBehaviour
             yield return null;
         }
         fade.enabled = false;
-        banner.color = Bad;
-        banner.text = KidnapScene.Order.Count > 1 ? "\"END OF THE LINE, ALL OF YOU.\"" : "\"END OF THE LINE.\"";
+        banner.text = "";
 
+        // He says his line to each of you before he shoots (the same length
+        // on every headset, so the shots stay in step).
+        AudioClip lastWords = sounds != null ? sounds.endOfTheLine : null;
+        float lineTime = (lastWords != null ? lastWords.length : 2f) + 0.25f;
         float late = reveal - (start + RevealAt); // only if this headset fell behind
         int n = KidnapScene.Order.Count;
         for (int k = 0; k < n; k++)
         {
             int victim = k;
-            float fireAt = start + late + FirstShotAt + ShotInterval * k;
+            float speakAt = start + late + FirstShotAt + (ShotInterval + lineTime) * k;
+            float fireAt = speakAt + lineTime;
             Vector3 Head() => KidnapScene.HeadOf(victim);
 
-            yield return MafiaHit.WalkTo(() => KidnapScene.StandPoint(victim), 0.05f, Mathf.Max(0.3f, fireAt - 0.9f - Time.unscaledTime), Head);
-            if (k == 0) banner.text = "";
+            yield return MafiaHit.WalkTo(() => KidnapScene.StandPoint(victim), 0.05f, Mathf.Max(0.3f, speakAt - 0.9f - Time.unscaledTime), Head);
             yield return MafiaHit.Act(Head, 0.6f, 1f, 0f);
+            yield return MafiaHit.Act(Head, Mathf.Max(0f, speakAt - Time.unscaledTime), 1f, 0f);
+            HitmanSays(lastWords, "\"END OF THE LINE, PUNK!\"", 2f);
             yield return MafiaHit.Act(Head, Mathf.Max(0f, fireAt - Time.unscaledTime), 1f, 0f);
             if (victim == KidnapScene.LocalIndex) break; // your turn
 
             MafiaHit.Fire();
+            banner.text = "";
             audioSource.PlayOneShot(gunshot, 0.85f);
             yield return new WaitForSecondsRealtime(0.07f);
             MafiaHit.StopFlash();

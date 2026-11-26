@@ -73,7 +73,7 @@ public class Dartboard : MonoBehaviour
 
     public void RemoteEvent(byte what, int value, string label)
     {
-        if (what == EventScore && value > 0) AudioSource.PlayClipAtPoint(Thud(), transform.position, 0.8f);
+        if (what == EventScore && value > 0) SpatialAudio.PlayAt(Thud(), transform.position, 0.8f);
         Apply(what, value, label);
     }
 
@@ -176,7 +176,7 @@ public class Dartboard : MonoBehaviour
 
         int value = Score(local, distance, out string label);
         Local(EventScore, value, label);
-        AudioSource.PlayClipAtPoint(Thud(), point, 0.8f);
+        SpatialAudio.PlayAt(Thud(), point, 0.8f);
         if (value >= 50) BarSounds.Play(BarSounds.Ding, point, 0.7f);
         return true;
     }

@@ -234,6 +234,7 @@ public abstract class VideoSlotMachine : SlotMachineBase
 
     void SetupAudio()
     {
+        SpatialAudio.Setup(audioSource);
         _sfx = new AudioSource[8];
         for (int i = 0; i < _sfx.Length; i++) _sfx[i] = NewSource();
         for (int i = 0; i < _loops.Length; i++)
@@ -247,20 +248,8 @@ public abstract class VideoSlotMachine : SlotMachineBase
     {
         var s = gameObject.AddComponent<AudioSource>();
         s.playOnAwake = false;
-        if (audioSource != null)
-        {
-            s.spatialBlend = audioSource.spatialBlend;
-            s.minDistance = audioSource.minDistance;
-            s.maxDistance = audioSource.maxDistance;
-            s.rolloffMode = audioSource.rolloffMode;
-            s.outputAudioMixerGroup = audioSource.outputAudioMixerGroup;
-        }
-        else
-        {
-            s.spatialBlend = 1f;
-            s.minDistance = 1.2f;
-            s.maxDistance = 18f;
-        }
+        SpatialAudio.Setup(s); // only heard near the machine
+        if (audioSource != null) s.outputAudioMixerGroup = audioSource.outputAudioMixerGroup;
         return s;
     }
 
@@ -413,7 +402,6 @@ public abstract class VideoSlotMachine : SlotMachineBase
     {
         if (clip == null || _sfx == null) return;
         var s = _sfx[_sfxNext++ % _sfx.Length];
-        Apply2DIfNoHeadset(s);
         s.pitch = pitch;
         s.PlayOneShot(clip, vol * volume);
     }
@@ -422,7 +410,6 @@ public abstract class VideoSlotMachine : SlotMachineBase
     {
         var s = _loops[(int)slot];
         if (s == null || clip == null) return;
-        Apply2DIfNoHeadset(s);
         if (s.clip != clip || !s.isPlaying)
         {
             s.clip = clip;
@@ -459,13 +446,6 @@ public abstract class VideoSlotMachine : SlotMachineBase
             }
             else s.volume = Mathf.MoveTowards(s.volume, target, dt * 2f);
         }
-    }
-
-    // Without a headset the listener stays at the rig's spawn point, maybe far away.
-    protected void Apply2DIfNoHeadset(AudioSource s)
-    {
-        float normal = audioSource != null ? audioSource.spatialBlend : 1f;
-        s.spatialBlend = UnityEngine.XR.XRSettings.isDeviceActive ? normal : 0f;
     }
 
     // ================================================================ frame

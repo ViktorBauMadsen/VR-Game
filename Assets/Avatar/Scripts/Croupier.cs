@@ -30,25 +30,33 @@ public class Croupier : MonoBehaviour, IStaffRig
     [SerializeField] float armThickness = 0.085f;
     [SerializeField] WorldTextPanel speechBubble;
 
+    // Each line can have a recorded voice (see VoiceLine).
     [Header("Talking")]
     [SerializeField] float greetDistance = 2.6f;
-    [SerializeField] string[] greetings =
+    [SerializeField] VoiceLine[] greetings =
     {
-        "Place your bets, please!",
-        "Welcome to the table. Feeling lucky?",
-        "Step right up - place your bets!",
+        new VoiceLine("Welcome to the table. Feeling lucky?"),
+        new VoiceLine("Step right up - place your bets!"),
     };
-    [SerializeField] string[] smallTalk =
+    [SerializeField] VoiceLine[] smallTalk =
     {
-        "Grab chips from your pockets and drop them on the table.",
-        "Then press the spin button and we'll see what luck brings.",
-        "A single number pays 35 to 1.",
-        "Red or black? Classic choice.",
-        "The wheel has no memory, my friend.",
+        new VoiceLine("Grab chips from your pockets and drop them on the table."),
+        new VoiceLine("Then press the spin button and we'll see what luck brings."),
+        new VoiceLine("A single number pays 35 to 1."),
+        new VoiceLine("Red or black? Classic choice."),
+        new VoiceLine("The wheel has no memory, my friend."),
     };
-    [SerializeField] string noMoreBets = "No more bets!";
+    [SerializeField] VoiceLine noMoreBets = new VoiceLine("No more bets!");
+    [Tooltip("The winning number called out, one per number: element 0 is zero, element 17 is 17, and so on.")]
+    [SerializeField] VoiceLine[] results = new VoiceLine[0];
+
+    [Header("Voice")]
+    [Tooltip("How long the speech bubble stays up after a voice clip finishes, in seconds.")]
+    [SerializeField] float afterSpeechHold = 0.5f;
+    [SerializeField, Range(0f, 1f)] float voiceVolume = 1f;
 
     XRSimpleInteractable _interactable;
+    AudioSource _voice;
     Transform _player;
     Quaternion _headRest;
     readonly Vector3[] _handRest = new Vector3[2];
@@ -62,6 +70,14 @@ public class Croupier : MonoBehaviour, IStaffRig
         _interactable = GetComponent<XRSimpleInteractable>();
         _headRest = head.localRotation;
         for (int i = 0; i < 2; i++) _handRest[i] = hands[i].localPosition;
+
+        // Voice comes from his head, in 3D.
+        _voice = head.gameObject.AddComponent<AudioSource>();
+        _voice.playOnAwake = false;
+        _voice.spatialBlend = 1f;
+        _voice.rolloffMode = AudioRolloffMode.Linear;
+        _voice.minDistance = 1.5f;
+        _voice.maxDistance = 14f;
     }
 
     void Start()
@@ -90,11 +106,38 @@ public class Croupier : MonoBehaviour, IStaffRig
 
     void OnResult(int number)
     {
+        if (number >= 0 && number < results.Length && !string.IsNullOrEmpty(results[number].text))
+        {
+            Say(results[number], 5f);
+            return;
+        }
         string colour = number == 0 ? "green" : RouletteWheel.IsRed(number) ? "red" : "black";
         Say($"{number}, {colour}!", 5f);
     }
 
+    // A line with a clip is spoken, and the bubble stays up until shortly
+    // after it ends; without one the bubble shows for `seconds`.
+    // Either way, whatever he was saying is cut off and replaced.
+    public void Say(VoiceLine line, float seconds = 3.5f)
+    {
+        if (_voice != null) _voice.Stop();
+        if (line.clip != null && _voice != null)
+        {
+            _voice.clip = line.clip;
+            _voice.volume = voiceVolume;
+            _voice.Play();
+            seconds = line.clip.length + afterSpeechHold;
+        }
+        ShowBubble(line.text, seconds);
+    }
+
     public void Say(string line, float seconds = 3.5f)
+    {
+        if (_voice != null) _voice.Stop();
+        ShowBubble(line, seconds);
+    }
+
+    void ShowBubble(string line, float seconds)
     {
         if (speechBubble == null) return;
         speechBubble.SetText(line);
