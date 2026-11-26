@@ -88,6 +88,7 @@ public sealed class CasinoRunHud : MonoBehaviour
     }
     AudioSource audioSource, ambience, carSource;
     AudioClip gunshot, beep, cash;
+    float bangAt; // seconds into `gunshot` where the bang is
     MafiaSounds sounds;
     Coroutine showing;
     float nextSetupAttempt, firstSetupAttempt = -1f, nextRefresh;
@@ -112,6 +113,13 @@ public sealed class CasinoRunHud : MonoBehaviour
         carSource.playOnAwake = false;
         sounds = MafiaSounds.Instance;
         gunshot = sounds != null && sounds.gunshot != null ? sounds.gunshot : Gunshot();
+        // The recorded shot starts with the gun being cocked; the bang comes this far in.
+        bangAt = sounds != null && sounds.gunshot != null ? Mathf.Clamp(sounds.gunshotBangAt, 0f, gunshot.length) : 0f;
+        // Loaded now, so the first shot isn't late while the clip loads.
+        gunshot.LoadAudioData();
+        if (sounds != null)
+            foreach (var clip in new[] { sounds.comingWithMe, sounds.endOfTheLine, sounds.car, sounds.hitGround, sounds.crickets })
+                if (clip != null) clip.LoadAudioData();
         beep = Tone("Beep", 0.09f, 880f, 880f);
         cash = Tone("Cash", 0.45f, 1320f, 1760f);
     }
@@ -360,6 +368,7 @@ public sealed class CasinoRunHud : MonoBehaviour
     IEnumerator VestHit(string text)
     {
         audioSource.PlayOneShot(gunshot, 0.9f);
+        yield return new WaitForSecondsRealtime(bangAt);
         fade.enabled = true;
         for (float t = 0f; t < 0.6f; t += Time.unscaledDeltaTime)
         {
@@ -428,6 +437,8 @@ public sealed class CasinoRunHud : MonoBehaviour
         if (player == null)
         {
             yield return new WaitForSecondsRealtime(1.6f);
+            audioSource.PlayOneShot(gunshot, 1f);
+            yield return new WaitForSecondsRealtime(bangAt);
             yield return ShotAndEnd(daysSurvived);
             yield break;
         }
@@ -485,7 +496,9 @@ public sealed class CasinoRunHud : MonoBehaviour
 
         // ----- the desert
         MafiaHit.Spawn(KidnapScene.HitmanStart, KidnapScene.LineCentre, true);
-        ambience.clip = KidnapScene.Crickets;
+        bool recorded = sounds != null && sounds.crickets != null;
+        ambience.clip = recorded ? sounds.crickets : KidnapScene.Crickets;
+        ambience.volume = recorded ? sounds.cricketsVolume : 0.35f;
         ambience.Play();
         banner.text = "";
         for (float t = 0f; t < 1.2f; t += Time.unscaledDeltaTime)
@@ -498,7 +511,9 @@ public sealed class CasinoRunHud : MonoBehaviour
         banner.text = "";
 
         // He says his line to each of you before he shoots (the same length
-        // on every headset, so the shots stay in step).
+        // on every headset, so the shots stay in step). The gunshot clip is
+        // started bangAt early - he cocks the gun after his line - so the
+        // bang lands exactly with the flash and the hit.
         AudioClip lastWords = sounds != null ? sounds.endOfTheLine : null;
         float lineTime = (lastWords != null ? lastWords.length : 2f) + 0.25f;
         float late = reveal - (start + RevealAt); // only if this headset fell behind
@@ -506,20 +521,22 @@ public sealed class CasinoRunHud : MonoBehaviour
         for (int k = 0; k < n; k++)
         {
             int victim = k;
-            float speakAt = start + late + FirstShotAt + (ShotInterval + lineTime) * k;
-            float fireAt = speakAt + lineTime;
+            bool me = victim == KidnapScene.LocalIndex;
+            float speakAt = start + late + FirstShotAt + (ShotInterval + lineTime + bangAt) * k;
+            float fireAt = speakAt + lineTime + bangAt;
             Vector3 Head() => KidnapScene.HeadOf(victim);
 
             yield return MafiaHit.WalkTo(() => KidnapScene.StandPoint(victim), 0.05f, Mathf.Max(0.3f, speakAt - 0.9f - Time.unscaledTime), Head);
             yield return MafiaHit.Act(Head, 0.6f, 1f, 0f);
             yield return MafiaHit.Act(Head, Mathf.Max(0f, speakAt - Time.unscaledTime), 1f, 0f);
             HitmanSays(lastWords, "\"END OF THE LINE, PUNK!\"", 2f);
+            yield return MafiaHit.Act(Head, Mathf.Max(0f, fireAt - bangAt - Time.unscaledTime), 1f, 0f);
+            audioSource.PlayOneShot(gunshot, me ? 1f : 0.85f);
             yield return MafiaHit.Act(Head, Mathf.Max(0f, fireAt - Time.unscaledTime), 1f, 0f);
-            if (victim == KidnapScene.LocalIndex) break; // your turn
+            if (me) break; // your turn: the bang is now
 
             MafiaHit.Fire();
             banner.text = "";
-            audioSource.PlayOneShot(gunshot, 0.85f);
             yield return new WaitForSecondsRealtime(0.07f);
             MafiaHit.StopFlash();
             KidnapScene.Fell(victim);
@@ -529,11 +546,10 @@ public sealed class CasinoRunHud : MonoBehaviour
         yield return ShotAndEnd(daysSurvived);
     }
 
-    // The shot that kills you, then the end screen; you're back where you
-    // were taken from when it fades.
+    // The moment of the bang that kills you (the sound is already playing),
+    // then the end screen; you're back where you were taken from when it fades.
     IEnumerator ShotAndEnd(int daysSurvived)
     {
-        audioSource.PlayOneShot(gunshot, 1f);
         yield return new WaitForSecondsRealtime(0.07f); // the muzzle flash, for a moment
         fade.enabled = true;
         banner.text = "";

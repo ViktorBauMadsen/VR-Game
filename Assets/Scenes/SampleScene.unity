@@ -19987,7 +19987,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ca128df3f7c2de1478a8a71a4dfad8cf, type: 3}
   afterSpeechHold: 0.5
   voiceVolume: 1
-  logVoice: 1
 --- !u!114 &102672547
 MonoBehaviour:
   m_ObjectHideFlags: 0

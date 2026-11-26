@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MafiaSounds
   comingWithMe: {fileID: 8300000, guid: 1a0c510f9918a0f428bb8aa672338381, type: 3}
   endOfTheLine: {fileID: 8300000, guid: fb55d461cde030642946a857d6a36a28, type: 3}
-  gunshot: {fileID: 8300000, guid: 10d347d59057076459d9cdb793fd9570, type: 3}
+  gunshot: {fileID: 8300000, guid: 47ee0cfc19bae364dbbd1d05835493c3, type: 3}
+  gunshotBangAt: 0.7173016
   car: {fileID: 8300000, guid: f1dddd4d4b7769249bf8c1f03d26f9b5, type: 3}
   hitGround: {fileID: 8300000, guid: 04526fd3feb50344db8148d9e66cd9e0, type: 3}
+  crickets: {fileID: 8300000, guid: fedc47d304a97e246a6ea4e2c76f230f, type: 3}
+  cricketsVolume: 0.35

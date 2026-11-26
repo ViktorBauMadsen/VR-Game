@@ -12,13 +12,26 @@ public sealed class MafiaSounds : ScriptableObject
     [Tooltip("Right before he shoots: \"End of the line, punk!\"")]
     public AudioClip endOfTheLine;
     public AudioClip gunshot;
+    [Tooltip("Seconds into the gunshot clip where the bang is (anything before it - the gun being cocked - plays first). "
+        + "The muzzle flash and the hit are timed to this. Tools > Casino > Mafia > Build Mafia Assets measures it.")]
+    public float gunshotBangAt;
     [Tooltip("Plays while you're hooded in the car.")]
     public AudioClip car;
     [Tooltip("You hitting the ground when you're thrown out of the car.")]
     public AudioClip hitGround;
+    [Tooltip("Loops in the background out in the desert.")]
+    public AudioClip crickets;
+    [Range(0f, 1f)] public float cricketsVolume = 0.35f;
 
     static MafiaSounds _instance;
     static bool _loaded;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ResetStatics()
+    {
+        _instance = null;
+        _loaded = false;
+    }
 
     public static MafiaSounds Instance
     {

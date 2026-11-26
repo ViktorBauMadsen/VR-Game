@@ -451,6 +451,336 @@ public static class SetupPatrons
         }
     }
 
+    // ------------------------------------------------------------ hitman
+
+    public const string HitmanPath = "Assets/Scripts/Run/Resources/Mafia Hitman.prefab";
+
+    // The mafia hitman (MafiaHit loads it from Resources): the suited
+    // gentleman's outfit recoloured charcoal-black, the security man's
+    // sunglasses, and the senior's boater turned into a dark fedora with a
+    // red band. Same palette material and controller as the guests, so he
+    // shades and moves like them.
+    public static GameObject BuildHitman()
+    {
+        var source = Load<GameObject>(Ithappy + "/Prefabs/Ready_Characters/200.prefab");
+        var security = Load<GameObject>(Ithappy + "/Prefabs/Ready_Characters/77_Security.prefab");
+        var palette = Load<Material>(Ithappy + "/Materials/Color.mat");
+        var controller = Load<RuntimeAnimatorController>(Folder + "/Patron.controller");
+        if (source == null || palette == null || controller == null) return null;
+        var atlas = ReadTexture(palette.GetTexture("_BaseMap") as Texture2D);
+        if (atlas == null) return null;
+        Vector2 felt = Swatch(atlas, new Color(0.15f, 0.15f, 0.16f), 0.75f, 1f);
+        Vector2 band = Swatch(atlas, new Color(0.5f, 0.05f, 0.07f), 0f, 0.2f);
+
+        var man = Object.Instantiate(source);
+        man.name = "Mafia Hitman";
+        var temps = new List<GameObject>();
+        try
+        {
+            Transform root = man.transform;
+            root.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+            root.localScale = Vector3.one;
+            var bones = new Dictionary<string, Transform>();
+            foreach (var t in man.GetComponentsInChildren<Transform>(true))
+                if (!bones.ContainsKey(t.name)) bones[t.name] = t;
+            if (!bones.TryGetValue("Head", out var head))
+            {
+                Debug.LogWarning("SetupPatrons: hitman skeleton has no Head bone.");
+                return null;
+            }
+
+            SkinnedMeshRenderer face = null;
+            foreach (var smr in man.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+            {
+                if (smr.name.Contains("Hat_10")) Object.DestroyImmediate(smr.gameObject);
+                else if (smr.name.Contains("Face")) face = smr;
+            }
+
+            // ---- The suit: purple cloth -> charcoal black.
+            var swapped = new Dictionary<Material, Material>();
+            foreach (var renderer in man.GetComponentsInChildren<Renderer>(true))
+            {
+                var mats = renderer.sharedMaterials;
+                for (int i = 0; i < mats.Length; i++)
+                {
+                    if (mats[i] == null) continue;
+                    if (!swapped.TryGetValue(mats[i], out var suit)) swapped[mats[i]] = suit = RecolourPurple(mats[i], "Hitman", 0.6f, 0.06f, 0.05f, 0.17f);
+                    mats[i] = suit;
+                }
+                renderer.sharedMaterials = mats;
+            }
+
+            // ---- Sunglasses: the security outfit's, on the same skeleton.
+            SkinnedMeshRenderer shades = null;
+            if (security != null)
+                foreach (var glasses in security.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                {
+                    if (!glasses.name.Contains("Glasses") || glasses.sharedMesh == null) continue;
+                    var mapped = new Transform[glasses.bones.Length];
+                    bool ok = glasses.rootBone != null && bones.ContainsKey(glasses.rootBone.name);
+                    for (int i = 0; i < mapped.Length && ok; i++)
+                        ok = glasses.bones[i] != null && bones.TryGetValue(glasses.bones[i].name, out mapped[i]);
+                    if (!ok) { Debug.LogWarning("SetupPatrons: sunglasses don't fit the hitman's skeleton - skipped."); continue; }
+                    var go = new GameObject("Part_Sunglasses");
+                    go.transform.SetParent(root, false);
+                    var smr = go.AddComponent<SkinnedMeshRenderer>();
+                    smr.sharedMesh = glasses.sharedMesh;
+                    smr.sharedMaterials = glasses.sharedMaterials;
+                    smr.bones = mapped;
+                    smr.rootBone = bones[glasses.rootBone.name];
+                    smr.localBounds = glasses.localBounds;
+                    shades = smr;
+                }
+
+            // ---- No smile: the mouth turned down, and angry brows above the shades.
+            if (face != null) AngryFace(face, root, head, shades, atlas, palette, Swatch(atlas, new Color(0.16f, 0.1f, 0.07f), 0.75f, 1f));
+
+            // ---- Fedora: the senior's hat, fitted to this head and reshaped.
+            var hatPrefab = Load<GameObject>(Ithappy + "/Prefabs/Characters/Senior_Male_Hat_06.prefab");
+            var seniorFacePrefab = Load<GameObject>(Ithappy + "/Prefabs/Characters/Senior_Male_Face_Usual.prefab");
+            if (hatPrefab != null && seniorFacePrefab != null && face != null)
+            {
+                var h = Object.Instantiate(hatPrefab);
+                var sf = Object.Instantiate(seniorFacePrefab);
+                temps.Add(h);
+                temps.Add(sf);
+                h.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+                sf.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+                var hSmr = h.GetComponentInChildren<SkinnedMeshRenderer>(true);
+                var sfSmr = sf.GetComponentInChildren<SkinnedMeshRenderer>(true);
+                if (hSmr != null && sfSmr != null)
+                    AddFedora(hSmr, h.transform, BakeToRoot(sfSmr, sf.transform, out _), BakeToRoot(face, root, out _), head, atlas, palette, felt, band);
+            }
+
+            var anim = man.GetComponent<Animator>();
+            if (anim == null) anim = man.AddComponent<Animator>();
+            anim.runtimeAnimatorController = controller;
+            anim.applyRootMotion = false;
+            anim.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            if (man.GetComponent<MafiaHitmanRig>() == null) man.AddComponent<MafiaHitmanRig>();
+            foreach (var r in man.GetComponentsInChildren<Renderer>(true)) r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+
+            return PrefabUtility.SaveAsPrefabAsset(man, HitmanPath);
+        }
+        finally
+        {
+            Object.DestroyImmediate(atlas);
+            Object.DestroyImmediate(man);
+            foreach (var t in temps) if (t != null) Object.DestroyImmediate(t);
+        }
+    }
+
+    // The face's smile (the dark mouth line below the nose) bent the other
+    // way into a frown, in the mesh itself; and two heavy brows, low at the
+    // inner ends, sitting on the top of the sunglasses.
+    static void AngryFace(SkinnedMeshRenderer face, Transform root, Transform head, SkinnedMeshRenderer shades,
+        Texture2D atlas, Material palette, Vector2 browColour)
+    {
+        var mesh = ReadableCopy(face.sharedMesh);
+        if (mesh == null) { Debug.LogWarning("SetupPatrons: hitman face mesh not readable - kept the smile."); return; }
+        // The face mesh is only the features (brows, eyes, mouth); the skin is the body's.
+        var pose = BakeToRoot(face, root, out _);
+        int count = Mathf.Min(pose.Length, mesh.vertexCount);
+
+        // Split the features by height wherever there's a gap: mouth lowest, brows highest.
+        var order = new List<int>();
+        for (int i = 0; i < count; i++) order.Add(i);
+        order.Sort((a, b) => pose[a].y.CompareTo(pose[b].y));
+        var clusters = new List<List<int>> { new List<int>() };
+        for (int k = 0; k < order.Count; k++)
+        {
+            if (k > 0 && pose[order[k]].y - pose[order[k - 1]].y > 0.005f) clusters.Add(new List<int>());
+            clusters[clusters.Count - 1].Add(order[k]);
+        }
+        if (clusters.Count < 2) { Object.DestroyImmediate(mesh); Debug.LogWarning("SetupPatrons: hitman face features not as expected - kept the smile."); return; }
+        var mouth = clusters[0];
+        var brows = clusters.Count >= 3 ? clusters[clusters.Count - 1] : new List<int>();
+
+        float cx = 0f;
+        foreach (int i in mouth) cx += pose[i].x;
+        cx /= mouth.Count;
+        var vertices = mesh.vertices;
+        var weights = mesh.boneWeights;
+        var bindposes = mesh.bindposes;
+        var meshBones = face.bones;
+        // Moves a vertex by a root-space offset (through its main bone; the root sits at the origin).
+        void Move(int i, Vector3 delta)
+        {
+            int b = i < weights.Length ? weights[i].boneIndex0 : -1;
+            if (b >= 0 && b < meshBones.Length && meshBones[b] != null && b < bindposes.Length)
+                delta = (meshBones[b].localToWorldMatrix * bindposes[b]).inverse.MultiplyVector(delta);
+            else
+                delta = face.transform.InverseTransformVector(delta);
+            vertices[i] += delta;
+        }
+
+        // ---- Mouth: the smile's curve turned over into a frown.
+        float half = 0.001f;
+        foreach (int i in mouth) half = Mathf.Max(half, Mathf.Abs(pose[i].x - cx));
+        float centreY = 0f, cornerY = 0f;
+        int centreN = 0, cornerN = 0;
+        foreach (int i in mouth)
+        {
+            float dx = Mathf.Abs(pose[i].x - cx);
+            if (dx < half * 0.3f) { centreY += pose[i].y; centreN++; }
+            if (dx > half * 0.75f) { cornerY += pose[i].y; cornerN++; }
+        }
+        float curve = centreN > 0 && cornerN > 0 ? (cornerY / cornerN - centreY / centreN) / (half * half) : 0f;
+        float bend = Mathf.Max(curve, 0f) * 1.7f + 6f;
+        foreach (int i in mouth)
+        {
+            float dx = pose[i].x - cx;
+            // Corners down, and the whole mouth a little narrower - tight-lipped.
+            Move(i, Vector3.down * bend * dx * dx + Vector3.left * dx * 0.12f);
+        }
+
+        // ---- Brows: inner ends pulled down toward the nose, the whole brow a bit lower.
+        float browsBottom = float.MaxValue;
+        foreach (int i in brows) browsBottom = Mathf.Min(browsBottom, pose[i].y);
+        float shadesTop = float.MinValue;
+        if (shades != null) foreach (var p in BakeToRoot(shades, root, out _)) shadesTop = Mathf.Max(shadesTop, p.y);
+        bool browsShow = brows.Count > 0 && browsBottom > shadesTop - 0.004f;
+        if (browsShow)
+        {
+            float outer = 0f;
+            foreach (int i in brows) outer = Mathf.Max(outer, Mathf.Abs(pose[i].x - cx));
+            float slant = Mathf.Tan(24f * Mathf.Deg2Rad);
+            foreach (int i in brows)
+            {
+                float inward = outer - Mathf.Abs(pose[i].x - cx); // 0 at the outer end
+                Move(i, Vector3.down * (slant * inward + 0.002f));
+            }
+        }
+        mesh.vertices = vertices;
+        mesh.RecalculateBounds();
+        face.sharedMesh = SaveMesh(mesh, "Hitman Face");
+        Debug.Log($"SetupPatrons: hitman face - {clusters.Count} feature groups, mouth {mouth.Count} verts (smile curve {curve:0.0}) now a frown, "
+            + (browsShow ? $"own brows ({brows.Count} verts) slanted." : "brows hidden by the shades - adding heavy ones above them."));
+        if (browsShow) return;
+
+        // Brows hidden behind the shades: heavy slanted ones on top of the frame instead.
+        float browY = shadesTop > float.MinValue ? shadesTop + 0.004f : pose[order[order.Count - 1]].y;
+        float spread = 0.032f, frontZ = float.MinValue;
+        foreach (int i in clusters[clusters.Count - 1]) frontZ = Mathf.Max(frontZ, pose[i].z);
+        for (int s = -1; s <= 1; s += 2)
+        {
+            var brow = AddProp(s < 0 ? "Brow Right" : "Brow Left", SaveMesh(Paint(Brow(s), browColour), s < 0 ? "Hitman Brow R" : "Hitman Brow L"),
+                palette, head, new Vector3(cx + s * spread, browY, frontZ + 0.006f));
+            brow.transform.rotation = Quaternion.Euler(-8f, s * 8f, s * 22f);
+        }
+    }
+
+    // A heavy eyebrow along X, thick at the inner end (toward -side).
+    static Mesh Brow(int side)
+    {
+        var cube = Object.Instantiate(Resources.GetBuiltinResource<Mesh>("Cube.fbx"));
+        var v = cube.vertices;
+        for (int i = 0; i < v.Length; i++)
+        {
+            bool inner = v[i].x * side < 0f;
+            v[i] = new Vector3(v[i].x * 0.05f, v[i].y * (inner ? 0.016f : 0.009f) + (inner ? 0f : 0.002f), v[i].z * 0.012f);
+        }
+        cube.vertices = v;
+        cube.RecalculateNormals();
+        cube.RecalculateBounds();
+        return cube;
+    }
+
+    // Top-centre of a head and its width, from its face mesh.
+    static void HeadTop(Vector3[] face, out Vector3 top, out float width)
+    {
+        var bounds = new Bounds(face.Length > 0 ? face[0] : Vector3.zero, Vector3.zero);
+        foreach (var p in face) bounds.Encapsulate(p);
+        top = new Vector3(bounds.center.x, bounds.max.y, bounds.center.z);
+        width = Mathf.Max(0.01f, bounds.size.x);
+    }
+
+    // The boater's crown made taller-looking and pinched at the top, the brim
+    // snapped down at the front, then moved from the senior's head onto this
+    // one and painted: felt where the boater was light, the band red.
+    static void AddFedora(SkinnedMeshRenderer hat, Transform hatRoot, Vector3[] seniorFace, Vector3[] face, Transform head,
+        Texture2D atlas, Material palette, Vector2 felt, Vector2 band)
+    {
+        HeadTop(seniorFace, out var seniorTop, out float seniorWidth);
+        HeadTop(face, out var top, out float width);
+        float scale = width / seniorWidth * 1.04f;
+
+        var verts = BakeToRoot(hat, hatRoot, out _);
+        var baked = new Mesh();
+        hat.BakeMesh(baked, true);
+        var uvs = baked.uv;
+
+        // Shape: find the brim (the widest ring) and the crown above it.
+        Vector3 centre = Vector3.zero;
+        foreach (var p in verts) centre += p;
+        centre /= Mathf.Max(1, verts.Length);
+        float maxR = 0f, topY = float.MinValue;
+        foreach (var p in verts)
+        {
+            maxR = Mathf.Max(maxR, new Vector2(p.x - centre.x, p.z - centre.z).magnitude);
+            topY = Mathf.Max(topY, p.y);
+        }
+        float brimY = 0f;
+        int brimCount = 0;
+        foreach (var p in verts)
+            if (new Vector2(p.x - centre.x, p.z - centre.z).magnitude > maxR * 0.85f) { brimY += p.y; brimCount++; }
+        brimY = brimCount > 0 ? brimY / brimCount : topY - 0.1f;
+        float crown = Mathf.Max(0.01f, topY - brimY);
+
+        var colours = atlas.GetPixels32();
+        var shaped = new Vector3[verts.Length];
+        var uv = new Vector2[verts.Length];
+        for (int i = 0; i < verts.Length; i++)
+        {
+            Vector3 p = verts[i];
+            float dx = p.x - centre.x, dz = p.z - centre.z;
+            float r = new Vector2(dx, dz).magnitude / maxR;
+            float up = Mathf.Clamp01((p.y - brimY) / crown);
+            if (up > 0.1f)
+            {
+                // Crown: a little taller, tapering, with a dent along the top front to back.
+                float taper = Mathf.Lerp(1f, 0.86f, up);
+                p.x = centre.x + dx * taper;
+                p.z = centre.z + dz * taper;
+                p.y = brimY + (p.y - brimY) * 1.18f;
+                float side = Mathf.Abs(dx) / (maxR * 0.5f);
+                p.y -= Mathf.SmoothStep(0.6f, 1f, up) * Mathf.Clamp01(1f - side * side) * crown * 0.28f;
+                // Pinched in at the front.
+                if (dz > 0f) p.x = centre.x + (p.x - centre.x) * Mathf.Lerp(1f, 0.82f, up * Mathf.Clamp01(dz / (maxR * 0.5f)));
+            }
+            else
+            {
+                // Brim: down in front, up a touch at the back.
+                float k = Mathf.SmoothStep(0.5f, 1f, r);
+                p.y += (dz > 0f ? -0.035f : 0.012f) * k * Mathf.Abs(dz) / maxR;
+            }
+            shaped[i] = (p - seniorTop) * scale + top + Vector3.down * 0.012f;
+
+            // Paint by what the boater was: light felt -> dark felt, the dark band -> red.
+            Vector2 src = i < uvs.Length ? uvs[i] : Vector2.zero;
+            int px = Mathf.Clamp((int)(src.x * atlas.width), 0, atlas.width - 1);
+            int py = Mathf.Clamp((int)(src.y * atlas.height), 0, atlas.height - 1);
+            Color c = colours[py * atlas.width + px];
+            uv[i] = c.grayscale > 0.35f ? felt : band;
+        }
+
+        var mesh = new Mesh { name = "Hitman Fedora" };
+        var local = new Vector3[shaped.Length];
+        Vector3 pivot = head.InverseTransformPoint(top);
+        for (int i = 0; i < shaped.Length; i++) local[i] = head.InverseTransformPoint(shaped[i]) - pivot;
+        mesh.vertices = local;
+        mesh.uv = uv;
+        var tris = new List<int>();
+        for (int s = 0; s < baked.subMeshCount; s++) tris.AddRange(baked.GetTriangles(s));
+        mesh.SetTriangles(tris, 0);
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+        Object.DestroyImmediate(baked);
+        var fedora = AddProp("Fedora", SaveMesh(mesh, "Hitman Fedora"), palette, head, Vector3.zero);
+        fedora.transform.localPosition = pivot;
+        fedora.transform.localRotation = Quaternion.identity;
+    }
+
     static float ArmWeight(SkinnedMeshRenderer smr, int bone)
     {
         if (bone < 0 || bone >= smr.bones.Length || smr.bones[bone] == null) return 0f;
@@ -504,11 +834,20 @@ public static class SetupPatrons
 
     static Mesh SaveMesh(Mesh mesh, string name)
     {
+        // Updated in place when it exists, so loaded prefabs keep a valid reference.
         string path = Folder + "/" + name + ".asset";
-        AssetDatabase.DeleteAsset(path);
         mesh.name = name;
-        AssetDatabase.CreateAsset(mesh, path);
-        return mesh;
+        var existing = AssetDatabase.LoadAssetAtPath<Mesh>(path);
+        if (existing == null)
+        {
+            AssetDatabase.CreateAsset(mesh, path);
+            return mesh;
+        }
+        EditorUtility.CopySerialized(mesh, existing);
+        existing.name = name;
+        EditorUtility.SetDirty(existing);
+        Object.DestroyImmediate(mesh);
+        return existing;
     }
 
     // Every vertex samples one palette colour.
@@ -597,13 +936,16 @@ public static class SetupPatrons
 
     // A copy of the material whose colour atlas has its purple band turned
     // into black dinner-jacket cloth (a dark charcoal, so folds still show).
-    static Material TuxedoMaterial(Material source)
+    static Material TuxedoMaterial(Material source) => RecolourPurple(source, "Bond", 0.67f, 0.12f, 0.035f, 0.14f);
+
+    // The same, into any dark cloth (hue/saturation, value range dark..light).
+    static Material RecolourPurple(Material source, string prefix, float hue, float sat, float dark, float light)
     {
         var tex = source.HasProperty("_BaseMap") ? source.GetTexture("_BaseMap") as Texture2D : null;
         string texPath = tex != null ? AssetDatabase.GetAssetPath(tex) : null;
         if (string.IsNullOrEmpty(texPath) || !File.Exists(texPath)) return source;
 
-        string outTex = Folder + "/Bond " + Path.GetFileNameWithoutExtension(texPath) + ".png";
+        string outTex = Folder + "/" + prefix + " " + Path.GetFileNameWithoutExtension(texPath) + ".png";
         var img = new Texture2D(2, 2, TextureFormat.RGBA32, false);
         img.LoadImage(File.ReadAllBytes(texPath));
         var px = img.GetPixels32();
@@ -612,9 +954,9 @@ public static class SetupPatrons
             Color c = px[i];
             Color.RGBToHSV(c, out float h, out float s, out float v);
             if (h < 0.69f || h > 0.88f || s < 0.22f) continue;
-            float shade = Mathf.Lerp(0.035f, 0.14f, v);
-            var dark = Color.HSVToRGB(0.67f, 0.12f, shade);
-            px[i] = new Color(dark.r, dark.g, dark.b, c.a);
+            float shade = Mathf.Lerp(dark, light, v);
+            var cloth = Color.HSVToRGB(hue, sat, shade);
+            px[i] = new Color(cloth.r, cloth.g, cloth.b, c.a);
         }
         img.SetPixels32(px);
         File.WriteAllBytes(outTex, img.EncodeToPNG());
@@ -634,12 +976,18 @@ public static class SetupPatrons
         }
         var newTex = AssetDatabase.LoadAssetAtPath<Texture2D>(outTex);
 
-        string matPath = Folder + "/Bond " + source.name + ".mat";
-        AssetDatabase.DeleteAsset(matPath);
-        var mat = new Material(source) { name = "Bond " + source.name };
+        // Updated in place when it exists, so anything already using it (a
+        // prefab loaded in a running game) keeps a valid material.
+        string matPath = Folder + "/" + prefix + " " + source.name + ".mat";
+        var mat = AssetDatabase.LoadAssetAtPath<Material>(matPath);
+        bool created = mat == null;
+        if (created) mat = new Material(source);
+        else mat.CopyPropertiesFromMaterial(source);
+        mat.name = prefix + " " + source.name;
         mat.SetTexture("_BaseMap", newTex);
         if (mat.HasProperty("_MainTex")) mat.SetTexture("_MainTex", newTex);
-        AssetDatabase.CreateAsset(mat, matPath);
+        if (created) AssetDatabase.CreateAsset(mat, matPath);
+        else EditorUtility.SetDirty(mat);
         return mat;
     }
 
