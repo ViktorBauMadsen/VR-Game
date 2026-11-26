@@ -115,8 +115,6 @@ public class Bartender : MonoBehaviour, IStaffRig
     }
 
     void OnEnable() => _interactable.selectEntered.AddListener(OnPoked);
-    void OnDisable() => _interactable.selectEntered.RemoveListener(OnPoked);
-
     void OnPoked(SelectEnterEventArgs args)
     {
         if (smallTalk.Length == 0) return;
@@ -149,6 +147,8 @@ public class Bartender : MonoBehaviour, IStaffRig
         speechBubble.SetText(line);
         speechBubble.Visible = true;
     }
+
+    void OnDisable() => _interactable.selectEntered.RemoveListener(OnPoked);
 
     static VoiceLine Pick(VoiceLine[] lines) => lines[Random.Range(0, lines.Length)];
 

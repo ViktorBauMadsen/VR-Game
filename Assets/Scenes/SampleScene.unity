@@ -19960,7 +19960,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0b0c99a58d5cfbe40ae6bce16e3f6f70, type: 3}
   - text: I've seen fortunes won and lost at those slots.
     clip: {fileID: 8300000, guid: e041d78761f3db94ebce31dd37ee973a, type: 3}
-
   serveLines:
   - text: Coming right up.
     clip: {fileID: 8300000, guid: 94371275afc5c30468c377abe331f6ae, type: 3}
@@ -19975,8 +19974,7 @@ MonoBehaviour:
   cantAffordLines:
   - text: Ah, you're a little short, friend.
     clip: {fileID: 8300000, guid: 96d353bbc9e268c478ce5135c827dc5a, type: 3}
-  - text: Afraid that's a bit out of your budget tonight. Perhaps you should try your
-      luck at the tables.
+  - text: Afraid that's a bit out of your budget tonight. Perhaps you should try your luck at the tables.
     clip: {fileID: 8300000, guid: 6fafb521b064f0b46a96531c80929be7, type: 3}
   - text: Come back when the tables have been kind to you.
     clip: {fileID: 8300000, guid: bbdff971bb9f98244847981da85d9027, type: 3}
@@ -19989,6 +19987,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ca128df3f7c2de1478a8a71a4dfad8cf, type: 3}
   afterSpeechHold: 0.5
   voiceVolume: 1
+  logVoice: 1
 --- !u!114 &102672547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66639,7 +66638,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7a96b098e87c7d048be1869b8a11c366, type: 3}
   afterSpeechHold: 0.5
   voiceVolume: 1
-
 --- !u!4 &376889480
 Transform:
   m_ObjectHideFlags: 0
@@ -70333,7 +70331,6 @@ MonoBehaviour:
   bounceVolume: 0.8
   fullVolumeImpactSpeed: 3
   minImpactSpeed: 0.25
-  use2DWhenNoHeadset: 1
 --- !u!114 &397462901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161563,7 +161560,6 @@ MonoBehaviour:
   bounceVolume: 0.8
   fullVolumeImpactSpeed: 3
   minImpactSpeed: 0.25
-  use2DWhenNoHeadset: 1
 --- !u!114 &940074892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164217,7 +164213,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7a96b098e87c7d048be1869b8a11c366, type: 3}
   afterSpeechHold: 0.5
   voiceVolume: 1
-
 --- !u!4 &953003423
 Transform:
   m_ObjectHideFlags: 0
@@ -255615,7 +255610,6 @@ MonoBehaviour:
   cupPopClip: {fileID: 0}
   gameWinClip: {fileID: 0}
   soundVolume: 1
-  use2DWhenNoHeadset: 1
   onCupHit:
     m_PersistentCalls:
       m_Calls: []
@@ -266978,7 +266972,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7a96b098e87c7d048be1869b8a11c366, type: 3}
   afterSpeechHold: 0.5
   voiceVolume: 1
-
 --- !u!4 &1555882635
 Transform:
   m_ObjectHideFlags: 0
